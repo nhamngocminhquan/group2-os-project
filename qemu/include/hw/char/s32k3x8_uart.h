@@ -34,6 +34,8 @@
 #define LPUART15_BASE_ADDRESS       0x404A8000
 #define REGION_SIZE                 0x1000 /* MMIO region size, The real size is 0x7FC (From the ref manual) */
 
+#define UART_SR_RDRF    (1u << 21)   /* Receive Data Register Full */
+#define UART_SR_TDRE    (1u << 23)   /* Transmit Data Register Empty*/
 
  
  /*
@@ -78,6 +80,11 @@
 
     //Clock *periph_clk;
     //Clock *ipg_clk;
+
+    //RX stuff
+    uint8_t rx_buf;           // received byte
+    bool rx_ready;            // Set to true when rx_buf is valid
+
 };
 
 

@@ -31,7 +31,43 @@
  #define OFFSET_BDR      0x10  /* Baud Rate Divider */
  #define OFFSET_UDR      0x1C  /* Data Register (TX) */
  
+    //UART RESET
+ static void s32k3x8_uart_reset(DeviceState *dev)
+{
+    S32K3X8UARTState *s = S32K3X8_UART(dev);
 
+    s->rx_ready = false;
+    s->uartsr   = 0;      //clear the status
+    
+    // Set TDRE = 1 (Transmit empty)
+    s->uartsr  |= UART_SR_TDRE;
+}
+
+//uart can receive for uart_rx to work. 
+//Looks like qemu first needs function to return 1, before running uart_rx.
+static int uart_can_receive(void *opaque)
+{
+    /* Always ready to accept one byte at a time */
+    return 1;
+}
+
+
+    //RX callback
+ static void uart_rx(void *opaque, const uint8_t *buf, int size)
+ {
+     S32K3X8UARTState *s = opaque;
+     if (size > 0) {
+
+         s->rx_buf = buf[0];   // Only 1 byte at a time
+         s->rx_ready = true;
+ 
+         // set Receive Data Register Full Flag
+         s->uartsr |= UART_SR_RDRF;
+ 
+         // TODO: trigger IRQ here
+         // qemu_set_irq(s->irq, 1);
+     }
+ }
  
  /**
   * Read handler for MMIO reads
@@ -49,7 +85,14 @@
      case OFFSET_BDR:
          return s->bdr;
      case OFFSET_UDR:
-         return 0; /* RX not yet supported */
+        if (s->rx_ready) {
+            s->rx_ready = false;
+            s->uartsr &= ~UART_SR_RDRF; //clear rx data reg full flag
+            return s->rx_buf;
+        } 
+        else {
+            return 0; // no data
+        }
      default:
          qemu_log_mask(LOG_GUEST_ERROR,
              "%s: invalid read offset 0x%02"HWADDR_PRIx"\n", TYPE_S32K3X8_UART, offset);
@@ -119,10 +162,16 @@
  static void s32k3x8_uart_realize(DeviceState *dev, Error **errp)
 {
     S32K3X8UARTState *s = S32K3X8_UART(dev);
-    //TODO: When RX implemented change accordingly
-    qemu_chr_fe_set_handlers(&s->chr, NULL, NULL, NULL, NULL, s, NULL, NULL);
-    //TODO: RESET neeeded.
-    //s32k3x8_uart_reset(dev);
+    /*
+    *   the rx_uart function is gonna be called when there is these two happens,
+    *   
+    *   the host terminal sends input (e.g., typing A), 
+    *   (QEMU’s -serial stdio setup pushes that byte into the chardev. This way terminal can be used as a input) 
+    * 
+    *   or a socket/pty receives a byte. 
+    */
+    qemu_chr_fe_set_handlers(&s->chr,uart_can_receive ,uart_rx, NULL, NULL, s, NULL, NULL);
+    s32k3x8_uart_reset(dev);
 }
 
  static const Property s32k3x8_uart_props[] = {
