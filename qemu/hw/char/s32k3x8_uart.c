@@ -3,16 +3,7 @@
  * Basic S32K3x8 UART-only driver (LINFlexD minimal UART mode)
  *
  * This file provides the minimal implementation to support UART
- * transmit (TX only) on the S32K3x8 LINFlexD peripheral in UART mode.
- * Inspired by QEMU's pl011.c but tailored for basic UART functionality.
- *
- * Steps to use:
- *   1. Confirm the actual register offsets from the S32K3x8 reference manual
- *      and update OFFSET_* macros accordingly.
- *   2. Add this file to hw/char/meson.build.
- *   3. In your board file, map the UART MMIO region with sysbus_mmio_map
- *      and connect its IRQ via sysbus_connect_irq.
- *   4. Rebuild QEMU and test with firmware that writes to the DATA register.
+ * transmit (TX Only) Inspired by QEMU's pl011.c.
  */
 
  #include "qemu/osdep.h"               /* QEMU OS dependencies — always first */
@@ -90,8 +81,6 @@
      case OFFSET_UDR: {
          uint8_t ch = val & 0xFF;
          qemu_chr_fe_write_all(&s->chr, &ch, 1);
-         //printf("here chr = %c!\n",ch); 
-         //fflush(stdout);
          s->udr = (uint32_t)val;
          break;
      }
@@ -121,10 +110,10 @@
     /* Initialize MMIO region */
     memory_region_init_io(&s->mmio, obj, &s32k3x8_uart_ops, s, TYPE_S32K3X8_UART, REGION_SIZE);
     sysbus_init_mmio(SYS_BUS_DEVICE(s), &s->mmio);
+
     /* Setup IRQ line (NEED TO BE IMPLEMENTED)*/
     //sysbus_init_irq(SYS_BUS_DEVICE(s), &s->irq);
-    /* Default to stdio if no chardev property set */
-    //qemu_chr_fe_init(&s->chr, obj, NULL);
+
  }
 
  static void s32k3x8_uart_realize(DeviceState *dev, Error **errp)
@@ -137,8 +126,6 @@
 }
 
  static const Property s32k3x8_uart_props[] = {
-    /* name    member      default */
-    //DEFINE_PROP_CHR Throws an error about the second argument.
     DEFINE_PROP_CHR("chardev", S32K3X8UARTState, chr),  
 };
  
@@ -148,7 +135,6 @@
  static void s32k3x8_uart_class_init(ObjectClass *klass, void *data)
  {
     DeviceClass *dc = DEVICE_CLASS(klass);
-    /* register the chardev property so qdev_prop_set_chr() works: */
     device_class_set_props(dc, s32k3x8_uart_props);
     dc->realize = s32k3x8_uart_realize;
 
