@@ -13,6 +13,7 @@
 #include "hw/qdev-clock.h"
 #include "hw/misc/unimp.h"
 #include "hw/or-irq.h"
+#include "hw/char/s32k3x8_uart.h"  // UART definitions
 
 /* Main SYSCLK frequency in Hz */
 #define SYSCLK_FRQ 25000000
@@ -41,6 +42,7 @@ struct S32K3X8MachineClass {
 struct S32K3X8MachineState {
     MachineState parent;
     ARMv7MState armv7m;
+    S32K3X8UARTState uart0;
 
     Clock *sysclk;
     Clock *refclk;
