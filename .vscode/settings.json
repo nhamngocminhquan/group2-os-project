@@ -6,6 +6,10 @@
         "*.idef": "c",
         "*.def": "c",
         "cmsdk-apb-timer.h": "c",
-        "sysbus.h": "c"
+        "sysbus.h": "c",
+        "module.h": "c",
+        "config-host.h": "c",
+        "s32k3x8-timer.h": "c",
+        "ptimer.h": "c"
     }
 }

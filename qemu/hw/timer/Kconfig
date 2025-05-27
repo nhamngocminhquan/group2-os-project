@@ -34,6 +34,10 @@ config CMSDK_APB_TIMER
     bool
     select PTIMER
 
+config S32K3X8_TIMER
+    bool
+    select PTIMER
+
 config CMSDK_APB_DUALTIMER
     bool
     select PTIMER

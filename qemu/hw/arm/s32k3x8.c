@@ -25,7 +25,8 @@
 
 //      mps2 includes - peripherals
 // #include "hw/char/cmsdk-apb-uart.h"
- #include "hw/timer/cmsdk-apb-timer.h"
+ //#include "hw/timer/cmsdk-apb-timer.h"
+ #include "hw/timer/s32k3x8-timer.h"
 // #include "hw/timer/cmsdk-apb-dualtimer.h"
 // #include "hw/watchdog/cmsdk-apb-watchdog.h"
 // #include "hw/i2c/arm_sbcon_i2c.h"
@@ -33,6 +34,11 @@
 // #include "hw/misc/mps2-fpgaio.h"
 // #include "hw/ssi/pl022.h"
 // #include "hw/net/lan9118.h"
+
+/*PIT_0 base address: 400B_0000h
+PIT_1 base address: 400B_4000h
+PIT_2 base address: 402F_C000h
+PIT_3 base address: 4030_0000h */
 
 static const uint32_t timer_addr[] = { 0x400B0000, 0x400B4000,
                                        0x402FC000, 0x40300000 }; 
@@ -91,25 +97,16 @@ static void s32k3x8_init(MachineState *ms) {
                              OBJECT(system_memory), &error_abort);
     sysbus_realize(SYS_BUS_DEVICE(&sms->armv7m), &error_fatal);
     
+     //-------------- TIMER IMPLEMENTATION -----------------
     for (i = 0; i < NUM_TIMERS; i++) {
         g_autofree char *name = g_strdup_printf("timer%d", i);
         object_initialize_child(OBJECT(sms), name, &sms->timer[i],
-                               TYPE_CMSDK_APB_TIMER);
+                               TYPE_S32K3X8_TIMER);
     }
-    // // pit_timer1 = qdev_new(TYPE_CMSDK_APB_TIMER);
-    // // Try to configure timer here
-    //     /* CMSDK APB subsystem */
+
     for (i = 0; i < NUM_TIMERS; i++) {
-        //pit_timers[i] = qdev_new(TYPE_CMSDK_APB_TIMER);
-        //g_autofree char *name = g_strdup_printf("TIMER%d", i);
-        //hwaddr base = timer_addr[i];
-        //int irqno = timer_irq[i];
+        
         SysBusDevice *sbd;
-
-        //need to understand the correct definition of timer[i]
-        //object_initialize_child(OBJECT(sms), "timer[*]", pit_timers[i],
-        //                        TYPE_CMSDK_APB_TIMER);//need to check the type 
-
         sbd = SYS_BUS_DEVICE(&sms->timer[i]);
         qdev_connect_clock_in(DEVICE(&sms->timer[i]), "pclk", sms->sysclk);
         if (!sysbus_realize(sbd, &error_fatal)) {
@@ -119,6 +116,7 @@ static void s32k3x8_init(MachineState *ms) {
         sysbus_mmio_map(sbd, 0, timer_addr[i]);
         sysbus_connect_irq(sbd, 0, qdev_get_gpio_in(armv7m, timer_irq[i]));//need to understand to what irq assign them
     }
+    //-------------------------------------------------
 
     // Q:   Load kernel for simulation, size argument means kernel cannot
     //      exceed this size? (probably cropped)

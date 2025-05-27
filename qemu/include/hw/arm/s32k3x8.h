@@ -14,7 +14,8 @@
 #include "hw/misc/unimp.h"
 #include "hw/or-irq.h"
 
- #include "hw/timer/cmsdk-apb-timer.h"
+ //#include "hw/timer/cmsdk-apb-timer.h"
+ #include "hw/timer/s32k3x8-timer.h"
 /* Main SYSCLK frequency in Hz */
 #define SYSCLK_FRQ 25000000
 // Q:   ARMV7M needs 2 clocks, sysclk and refclk. From mps2 this
@@ -51,16 +52,13 @@ struct S32K3X8MachineState {
     MemoryRegion itcm;
     MemoryRegion pflash;
 
-    CMSDKAPBTimer timer[NUM_TIMERS];
+    S32K3X8Timer timer[NUM_TIMERS];
 };
 
 /*PIT_0 base address: 400B_0000h
 PIT_1 base address: 400B_4000h
 PIT_2 base address: 402F_C000h
 PIT_3 base address: 4030_0000h */
-//static const uint32_t timer_addr[] = { 0x40037000, 0x40038000,
-//                                       0x40039000, 0x40040000 }; 
-//DeviceState *pit_timers[4];  // Array of 4 DeviceState pointers
 
 #define TYPE_S32K3X8_MACHINE "S32K3X8-machine"
 // Q:   Since we have no virtual methods, SIMPLE_TYPE is enough
