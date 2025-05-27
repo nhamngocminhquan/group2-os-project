@@ -1,0 +1,11 @@
+{
+    "files.associations": {
+        "osdep.h": "c",
+        "s32k3x8.h": "c",
+        "*.inc": "c",
+        "*.idef": "c",
+        "*.def": "c",
+        "cmsdk-apb-timer.h": "c",
+        "sysbus.h": "c"
+    }
+}

@@ -25,7 +25,7 @@
 
 //      mps2 includes - peripherals
 // #include "hw/char/cmsdk-apb-uart.h"
-// #include "hw/timer/cmsdk-apb-timer.h"
+ #include "hw/timer/cmsdk-apb-timer.h"
 // #include "hw/timer/cmsdk-apb-dualtimer.h"
 // #include "hw/watchdog/cmsdk-apb-watchdog.h"
 // #include "hw/i2c/arm_sbcon_i2c.h"
@@ -34,9 +34,14 @@
 // #include "hw/ssi/pl022.h"
 // #include "hw/net/lan9118.h"
 
+static const uint32_t timer_addr[] = { 0x400B0000, 0x400B4000,
+                                       0x402FC000, 0x40300000 }; 
+static const int    timer_irq[] = { 8, 9, 10, 11 };
 
 // Q:   From Airbus and mps2
 static void s32k3x8_init(MachineState *ms) {
+    int i=0;//for timer iteration
+
     // Q:   Useful variables
     DeviceState *armv7m;
     MachineClass *mc = MACHINE_GET_CLASS(ms);
@@ -78,13 +83,42 @@ static void s32k3x8_init(MachineState *ms) {
     qdev_prop_set_string(armv7m, "cpu-type", ms->cpu_type);
 
     // Q:   Unknowns
-    qdev_prop_set_uint32(armv7m, "num-irq", 0);
+    qdev_prop_set_uint32(armv7m, "num-irq", 256);
     qdev_prop_set_bit(armv7m, "enable-bitband", true);
 
     // Q:   Connect CPU to memory
     object_property_set_link(OBJECT(&sms->armv7m), "memory",
                              OBJECT(system_memory), &error_abort);
     sysbus_realize(SYS_BUS_DEVICE(&sms->armv7m), &error_fatal);
+    
+    for (i = 0; i < NUM_TIMERS; i++) {
+        g_autofree char *name = g_strdup_printf("timer%d", i);
+        object_initialize_child(OBJECT(sms), name, &sms->timer[i],
+                               TYPE_CMSDK_APB_TIMER);
+    }
+    // // pit_timer1 = qdev_new(TYPE_CMSDK_APB_TIMER);
+    // // Try to configure timer here
+    //     /* CMSDK APB subsystem */
+    for (i = 0; i < NUM_TIMERS; i++) {
+        //pit_timers[i] = qdev_new(TYPE_CMSDK_APB_TIMER);
+        //g_autofree char *name = g_strdup_printf("TIMER%d", i);
+        //hwaddr base = timer_addr[i];
+        //int irqno = timer_irq[i];
+        SysBusDevice *sbd;
+
+        //need to understand the correct definition of timer[i]
+        //object_initialize_child(OBJECT(sms), "timer[*]", pit_timers[i],
+        //                        TYPE_CMSDK_APB_TIMER);//need to check the type 
+
+        sbd = SYS_BUS_DEVICE(&sms->timer[i]);
+        qdev_connect_clock_in(DEVICE(&sms->timer[i]), "pclk", sms->sysclk);
+        if (!sysbus_realize(sbd, &error_fatal)) {
+            error_report("Failed to realize timer %d", i);
+            return;
+        }
+        sysbus_mmio_map(sbd, 0, timer_addr[i]);
+        sysbus_connect_irq(sbd, 0, qdev_get_gpio_in(armv7m, timer_irq[i]));//need to understand to what irq assign them
+    }
 
     // Q:   Load kernel for simulation, size argument means kernel cannot
     //      exceed this size? (probably cropped)
@@ -121,6 +155,8 @@ static void s32k3x8_machine_class_init(ObjectClass *oc, void *data)
 static const TypeInfo s32k3x8_machine_typeinfo = {
     .name       = TYPE_S32K3X8_MACHINE,
     .parent     = TYPE_MACHINE,
+    .instance_size = sizeof(S32K3X8MachineState),
+    //.class_size = sizeof(S32K3X8MachineState),
     .class_init = s32k3x8_machine_class_init,
 };
 
@@ -129,3 +165,4 @@ static void s32k3x8_machine_register_types(void)
     type_register_static(&s32k3x8_machine_typeinfo);
 }
 type_init(s32k3x8_machine_register_types)
+ 

@@ -1,0 +1,1 @@
+/home/jacqui/qemu/.gdbinit

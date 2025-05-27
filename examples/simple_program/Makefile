@@ -1,9 +1,10 @@
 QEMU := ../../qemu/build/qemu-system-arm # qemu-system-arm
+#QEMU := ../../build/qemu-system-arm # qemu-system-arm
 MACHINE := S32K3X8
 CPU := cortex-m7
 LINKER_FILE := linker.ld	# linker_rtos.ld
 
-# MACHINE := mps2-an500 # netduinoplus2 # mps2-an385 
+#MACHINE := mps2-an500 # netduinoplus2 # mps2-an385 
 # CPU := cortex-m7 # cortex-m4 # cortex-m3
 # LINKER_FILE := linker_s32.ld
 # Options for GCC: -g3 -Os
