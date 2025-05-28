@@ -12,6 +12,7 @@
 #include "hw/qdev-clock.h"
 #include "hw/misc/unimp.h"
 #include "hw/or-irq.h"
+#include "hw/char/s32k3x8_uart.h"  // UART definitions
 
 //      mps2 includes - may be important
 #include "qemu/error-report.h"  // For error reporting
@@ -120,6 +121,37 @@ static void s32k3x8_init(MachineState *ms) {
         sysbus_connect_irq(sbd, 0, qdev_get_gpio_in(armv7m, timer_irq[i]));//need to understand to what irq assign them
     }
     //-------------------------------------------------
+
+    /* E:UART 
+    * TODO: Implement UART interrupt handling
+    *       Currently, it is not connected to the CPU IRQ line.
+    * 
+    * 
+    */
+    {
+        /* Create child UART device */
+        object_initialize_child(OBJECT(ms), "lpuart0", &sms->uart0, TYPE_S32K3X8_UART);
+        
+        qdev_prop_set_chr(DEVICE(&sms->uart0), "chardev", qemu_chr_find("serial0"));
+
+        /* Connect clocks 
+        * TODO: When clocks are needed uncomment.
+        */
+        //qdev_connect_clock_in(DEVICE(&sms->uart0), "periph_clk", sms->sysclk);
+        //qdev_connect_clock_in(DEVICE(&sms->uart0), "ipg_clk", sms->refclk);
+
+        /* Realize UART */
+        sysbus_realize(SYS_BUS_DEVICE(&sms->uart0), &error_fatal);
+
+        /* Map MMIO region */
+        sysbus_mmio_map(SYS_BUS_DEVICE(&sms->uart0), 0,
+                        LPUART0_BASE_ADDRESS);
+
+        /* Hook its interrupt line which is not implemented yet.*/
+        //sysbus_connect_irq(SYS_BUS_DEVICE(&sms->uart0), 0, sms->armv7m.cpu->irq[irq_LPUART0]);
+
+    }
+    /*E: End UART */
 
     // Q:   Load kernel for simulation, size argument means kernel cannot
     //      exceed this size? (probably cropped)
