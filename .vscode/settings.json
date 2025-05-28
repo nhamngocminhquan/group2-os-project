@@ -10,6 +10,8 @@
         "module.h": "c",
         "config-host.h": "c",
         "s32k3x8-timer.h": "c",
-        "ptimer.h": "c"
+        "ptimer.h": "c",
+        "log.h": "c",
+        "inttimer.h": "c"
     }
 }

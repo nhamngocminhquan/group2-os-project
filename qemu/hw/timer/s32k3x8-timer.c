@@ -44,6 +44,9 @@
  >./configure --target-list=arm-softmmu   # plus your usual options
  >make -j$(nproc)
 
+ To check adress in mem:
+(qemu) info mtree
+
  */
 
 
@@ -240,7 +243,7 @@ static void s32k3x8_timer_init(Object *obj)
     S32K3X8Timer *s = S32K3X8_TIMER(obj);
 
     memory_region_init_io(&s->iomem, obj, &s32k3x8_timer_ops,
-                          s, "s32k3x8-timer", 0x1000);
+                          s, "s32k3x8-timer", 0x4000);//changed to 0x4000 to match the S32K3X8 timer size
     sysbus_init_mmio(sbd, &s->iomem);
     sysbus_init_irq(sbd, &s->timerint);
     s->pclk = qdev_init_clock_in(DEVICE(s), "pclk",

@@ -35,14 +35,17 @@
 // #include "hw/ssi/pl022.h"
 // #include "hw/net/lan9118.h"
 
-/*PIT_0 base address: 400B_0000h
-PIT_1 base address: 400B_4000h
-PIT_2 base address: 402F_C000h
-PIT_3 base address: 4030_0000h */
+/*
+PIT_0 base address: 0x400B0000 - 0x400B3FFF
+PIT_1 base address: 0x400B4000 - 0x400B7FFF
+PIT_2 base address: 0x402FC000 - 0x402FFFFF
+PIT_3 base address: 0x40300000 - 0x40303FFF --not used in S32K348
+ */
 
 static const uint32_t timer_addr[] = { 0x400B0000, 0x400B4000,
-                                       0x402FC000, 0x40300000 }; 
-static const int    timer_irq[] = { 8, 9, 10, 11 };
+                                       0x402FC000 }; 
+//static const int    timer_irq[] = { 96, 97, 98 };
+static const int    timer_irq[] = { 8, 9, 10 };
 
 // Q:   From Airbus and mps2
 static void s32k3x8_init(MachineState *ms) {

@@ -36,7 +36,7 @@
 #define ITCM_BASE_ADDRESS        0x00000000
 #define ITCM_SIZE                (64 * KiB)
 
-#define NUM_TIMERS 4
+#define NUM_TIMERS 3
 
 struct S32K3X8MachineClass {
     MachineClass parent;
@@ -55,10 +55,6 @@ struct S32K3X8MachineState {
     S32K3X8Timer timer[NUM_TIMERS];
 };
 
-/*PIT_0 base address: 400B_0000h
-PIT_1 base address: 400B_4000h
-PIT_2 base address: 402F_C000h
-PIT_3 base address: 4030_0000h */
 
 #define TYPE_S32K3X8_MACHINE "S32K3X8-machine"
 // Q:   Since we have no virtual methods, SIMPLE_TYPE is enough
