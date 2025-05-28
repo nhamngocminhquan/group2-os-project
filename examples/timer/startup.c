@@ -24,17 +24,22 @@
  *
  */
 
-#include "uart.h"
+//#include "uart.h"
+#include "stdint.h"
 
-/* FreeRTOS interrupt handlers. */
-extern void vPortSVCHandler( void );
-extern void xPortPendSVHandler( void );
-extern void xPortSysTickHandler( void );
+// /* FreeRTOS interrupt handlers. */
+// extern void vPortSVCHandler( void );
+// extern void xPortPendSVHandler( void );
+// extern void xPortSysTickHandler( void );
 
 /* Exception handlers. */
 static void HardFault_Handler( void ) __attribute__( ( naked ) );
 static void Default_Handler( void ) __attribute__( ( naked ) );
 void Reset_Handler( void ) __attribute__( ( naked ) );
+
+/*Timer handler*/
+extern void TIMER0_Handler(void);
+extern void TIMER1_Handler(void);
 
 extern int main( void );
 extern uint32_t _estack;
@@ -53,11 +58,11 @@ const uint32_t* isr_vector[] __attribute__((section(".isr_vector"), used)) =
     0, // reserved   -8
     0, // reserved   -7
     0, // reserved   -6
-    ( uint32_t * ) &vPortSVCHandler,    // SVC_Handler          -5
+    ( uint32_t * ) &Default_Handler,    // SVC_Handler          -5  // &vPortSVCHandler
     ( uint32_t * ) &Default_Handler,    // DebugMon_Handler     -4
     0, // reserved   -3
-    ( uint32_t * ) &xPortPendSVHandler, // PendSV handler       -2
-    ( uint32_t * ) &xPortSysTickHandler,// SysTick_Handler      -1
+    ( uint32_t * ) &Default_Handler,    // PendSV handler       -2  // &xPortPendSVHandler
+    ( uint32_t * ) &Default_Handler,    // SysTick_Handler      -1  // &xPortSysTickHandler
     0,
     0,
     0,
@@ -66,8 +71,8 @@ const uint32_t* isr_vector[] __attribute__((section(".isr_vector"), used)) =
     0,
     0,
     0,
-    0, // Timer 0
-    0, // Timer 1
+    ( uint32_t * ) TIMER0_Handler, // Timer 0
+    ( uint32_t * ) TIMER1_Handler, // Timer 1
     0,
     0,
     0,
@@ -106,7 +111,7 @@ __attribute__( ( used ) ) void prvGetRegistersFromStack( uint32_t *pulFaultStack
     pc = pulFaultStackAddress[ 6 ];
     psr = pulFaultStackAddress[ 7 ];
 
-    UART_printf( "Calling prvGetRegistersFromStack() from fault handler" );
+    // UART_printf( "Calling prvGetRegistersFromStack() from fault handler" );
     //fflush( stdout );
 
     /* When the following line is hit, the variables contain the register values. */

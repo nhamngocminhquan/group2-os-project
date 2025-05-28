@@ -1,157 +1,100 @@
-/* FreeRTOS includes. */
-#include "FreeRTOS.h"
-#include "task.h"
-#include "semphr.h"
+// main.c - Example usage
+#include "timer.h"
+#include "uart.h"
 
-/* Standard includes. */
-#include <stdio.h>
-#include <string.h>
+// User variables that will be updated by timers
+volatile uint32_t led_toggle_count = 0;
+volatile uint32_t sensor_read_count = 0;
 
-/* Application includes. */
-#include "IntTimer.h"
+/* Timer frequencies are slightly offset so they nest. 
+ * The frequency is defined here in Hz.
+ *
+ * Timer0 has a period of 1/2000 sec 
+ * Timer1 has a period of 1/1000 sec
+ *
+ *
+ * */
+#define tmrTIMER_0_FREQUENCY	( 200UL )
+#define tmrTIMER_1_FREQUENCY	( 100UL )
+   
+// Counter variables that can be accessed from main
+extern uint32_t timer0_tick_count;
+extern uint32_t timer1_tick_count;
 
-/* Task priorities */
-
-#define mainTASKA_STACK_SIZE ( configMINIMAL_STACK_SIZE + ( configMINIMAL_STACK_SIZE >> 1 ) )
-#define mainTASKB_STACK_SIZE ( configMINIMAL_STACK_SIZE  )
-
-/* printf() output uses the UART.  These constants define the addresses of the
- * required UART registers. */
-
-#define UART0_ADDRESS                         ( 0x40004000UL )
-#define UART0_DATA                            ( *( ( ( volatile uint32_t * ) ( UART0_ADDRESS + 0UL ) ) ) )
-#define UART0_STATE                           ( *( ( ( volatile uint32_t * ) ( UART0_ADDRESS + 4UL ) ) ) )
-#define UART0_CTRL                            ( *( ( ( volatile uint32_t * ) ( UART0_ADDRESS + 8UL ) ) ) )
-#define UART0_BAUDDIV                         ( *( ( ( volatile uint32_t * ) ( UART0_ADDRESS + 16UL ) ) ) )
-#define TX_BUFFER_MASK                        ( 1UL )
-
-
-/* GLOBAL VARIABLES */
-
-/* Semaphore used to implement the deferred interrupt */
-SemaphoreHandle_t xBinarySemaphore;
-/* Seed used to generate pseudo random numbers */
-static uint32_t seed = 14536;
-/* Global counter to count when nested interrupts occur */
-extern uint32_t ulNestCount;
-
-
-static void prvUARTInit( void )
-{
-    UART0_BAUDDIV = 16;
-    UART0_CTRL = 1;
-}
-
-/* Custom function to generate a pseudo-random number */
-uint32_t simpleRandom() {
-    // Linear Congruential Generator (LCG) parameters
-    seed = (seed * 1664525 + 1013904223); // Modulus is implicitly 2^32
-    return seed;
-}
-
-/* Funcion to generate CPU intensive activity  */
-uint32_t cpuIntensiveFibonacci(uint32_t n) {
-    uint32_t a = 0, b = 1, temp;
-
-    if (n == 0) {
-        return a;
-    }
-    if (n == 1) {
-        return b;
-    }
-
-    // Calculate Fibonacci iteratively
-    for (uint32_t i = 2; i <= n; i++) {
-        temp = a + b;
-        a = b;
-        b = temp;
-    }
-
-    return b;
-}
-
-/* Deferred interrupt task called on Timer 0 */
-void TaskB( void * pvParameters ) {
-    ( void ) pvParameters;
-    for (;;) {
-        // Wait for the semaphore from the ISR
-        if (xSemaphoreTake(xBinarySemaphore, portMAX_DELAY) == pdTRUE) {
-            // The semaphore was successfully taken, meaning the ISR occurred
-            // Perform the deferred processing here
-	    	if (ulNestCount > 0) {
-			printf ("Deferred task executed and detected %u nested interrupts \n",(unsigned) ulNestCount);
-			ulNestCount = 0;
-		}
-        }
-    }
-
-}
-	
-/* Main task */
-void TaskA( void * pvParameters )
-{
-    /* Avoid warning about unused parameter. */
-    ( void ) pvParameters;
-
-    int fib;
+// User callback functions
+void timer0_user_callback(void) {
+    UART_printf("T0\n");
+    //This function will execute every 500us
+    led_toggle_count++;
+    __asm ("MOV R5, %[input_i]"
+            :  /* This is an empty output operand list */
+            : [input_i] "r" (led_toggle_count)
+    );
     
-    const TickType_t xTaskPeriod = pdMS_TO_TICKS( 5000UL );
-    TickType_t xPreviousWakeTime;
-
-
-    xPreviousWakeTime = xTaskGetTickCount();
-
-    for( ; ; )
-    {
-
-	/* In FreeRTOS, vTaskDelayUntil() is a function that allows a task to enter a timed waiting state 
-	 * in a way that maintains a fixed, periodic execution rate. It is particularly useful for tasks 
-	 * that need to run at precise intervals, as it helps prevent "drift" in timing. 
-	 *
-	 * Unlike vTaskDelay(), which simply delays a task for a set amount of time from the moment 
-	 * it is called, vTaskDelayUntil() calculates the delay relative to a previous "last wake time."
-	 *
-	 * This allows the task to run at precise intervals, even if the task's execution is delayed by 
-	 * other tasks or interrupts.
-	 *
-	 * vTaskDelayUntil() compensates for any delays or time spent while the task was running. 
-	 * It ensures that the task resumes on a consistent schedule rather than accumulating 
-	 * delays over time.
-	 */
-
-        vTaskDelayUntil( &xPreviousWakeTime, xTaskPeriod );
-	fib = (simpleRandom() % (20 - 1 + 1)) + 1;
-        printf( "Fibonacci %d = %u - TickCount %d \r\n", 
-			fib, 
-			(unsigned) cpuIntensiveFibonacci(fib), 
-			( int ) xTaskGetTickCount() 
-			);
-    }
 }
 
-void main( void )
-{
-
-    xBinarySemaphore = xSemaphoreCreateBinary();
-    if (xBinarySemaphore != NULL) {
-        // Create the deferred task with a priority that suits your application
-        xTaskCreate(TaskB, "TaskB", mainTASKB_STACK_SIZE, NULL, tskIDLE_PRIORITY + 2, NULL);
-    }
-
-    /* Hardware initialisation.   */
-    prvUARTInit();
-    vInitialiseTimers();
-
-
-    xTaskCreate( TaskA, "TaskA", mainTASKA_STACK_SIZE, NULL, tskIDLE_PRIORITY+1, NULL );
-
-    /* Start the scheduler. */
-    vTaskStartScheduler();
-
-    for( ; ; )
-    {
-    }
-
+void timer1_user_callback(void) {
+    UART_printf("T1\n");
+    // This runs every 1ms (1kHz)
+    sensor_read_count++;
+    __asm ("MOV R6, %[input_i]"
+            :  /* This is an empty output operand list */
+            : [input_i] "r" (sensor_read_count)
+    );
 }
 
+int main(void) {
+    __asm ("MOV R4, #5"
+            :  /* This is an empty output operand list */
+            :  /* This is an empty input operand list */
+            : "r5"  // Clobber list
+    );
 
+    UART_init();
+    UART_printf("Hello\n");
+    
+    // Set up callback functions
+    timer0_set_callback(timer0_user_callback);
+    timer1_set_callback(timer1_user_callback);
+    
+    // Start timers with different frequencies
+    timer0_start(tmrTIMER_0_FREQUENCY);  // 2kHz - fast operations
+
+    timer1_start(tmrTIMER_1_FREQUENCY);  // 1kHz - slower operations
+
+    // Main loop
+    while (1) {
+        // Main application logic here
+        
+        // You can check timer tick counts
+        if (timer0_tick_count >= 2000) {  
+            // Do something every second
+            UART_printf("T0_ti\n");
+            timer0_tick_count = 0;  // Reset counter
+        }
+        
+        if (timer1_tick_count >= 1000) { 
+            UART_printf("T1_ti\n");
+            // Do something else every second
+            timer1_tick_count = 0;  // Reset counter
+        }
+        
+        // Check user variables
+        if (led_toggle_count >= 1000) {  //int i, int j
+            __asm ("ADD R8, %[input_i], %[input_j]"
+                    :  /* This is an empty output operand list */
+                    : [input_i] "r" (led_toggle_count), [input_j] "r" (sensor_read_count)
+             );
+            // LED has toggled 1000 times in t seconds
+            led_toggle_count = 0;
+        }
+        
+        if (sensor_read_count >= 100) {  // Every 100ms
+            // Sensor has been read 100 times
+            sensor_read_count = 0;
+        }
+        
+    }
+    
+    return 0;
+}

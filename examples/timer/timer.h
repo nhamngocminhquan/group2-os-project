@@ -28,11 +28,9 @@ PIT_3 base address: 0x40300000 - 0x40303FFF --not used in S32K348
 
 // Control register bits
 #define TIMER_CTRL_EN       (1UL << 0)  // Timer enable
-//#define TIMER_CTRL_SELEXTCLK   (1UL << 1)  // External clock select
-//#define TIMER_CTRL_SELEXTEN (1UL << 2)  // External enable
 #define TIMER_CTRL_IRQEN    (1UL << 3)  // Interrupt enable
 
-// IRQ numbers 
+// IRQ numbers (need to match the defined in the s32k38.c file)
 #define TIMER0_IRQn         8
 #define TIMER1_IRQn         9
 #define TIMER2_IRQn         10
@@ -53,5 +51,8 @@ typedef void (*timer_callback_t)(void);
 void timer0_set_callback(timer_callback_t callback);
 void timer1_set_callback(timer_callback_t callback);
 void timer2_set_callback(timer_callback_t callback);
+
+void TIMER0_Handler(void);
+void TIMER1_Handler(void);
 
 #endif // TIMER_H

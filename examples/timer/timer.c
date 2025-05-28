@@ -19,21 +19,21 @@ volatile uint32_t timer1_tick_count = 0;
 * source. It configures the Nested Vectored Interrupt Controller (NVIC) to allow the processor 
 * to respond to a particular interrupt. 
 */
-static void nvic_enable_irq(uint32_t irq_num) {
+static void NVIC_EnableIRQ(uint32_t irq_num) {
     // Enable interrupt in NVIC
     // This is a simplified version - actual implementation depends on your MCU
     volatile uint32_t *nvic_iser = (volatile uint32_t*)(0xE000E100UL);
-    nvic_iser[irq_num / 32] = (1UL << (irq_num % 32));
+    nvic_iser[irq_num >> 5] = (1UL << (irq_num % 31));
 }
 
 /* NVIC_SetPriority: is an ARM CMSIS function that configures the priority of a specific interrupt 
 * in the Nested Vectored Interrupt Controller (NVIC).  	 
 * It takes two parameters: the interrupt number and the priority level to assign.*/
-static void nvic_set_priority(uint32_t irq_num, uint32_t priority) {
+static void NVIC_SetPriority(uint32_t irq_num, uint32_t priority) {
     // Set interrupt priority
     // This is a simplified version - actual implementation depends on your MCU
     volatile uint8_t *nvic_ipr = (volatile uint8_t*)(0xE000E400UL);
-    nvic_ipr[irq_num] = (priority << 4) & 0xF0;
+    nvic_ipr[irq_num] = (uint8_t) (priority << 4);
 }
 /****************************************************** */
 //       Start Timers with a specific frequency
@@ -55,9 +55,9 @@ void timer0_start(uint32_t frequency_hz) {
 					 TIMER_CTRL_EN );  /* Enable Timer. */
 
     // Set interrupt priorities (Timer0 higher priority than Timer1)
-    nvic_set_priority(TIMER0_IRQn, 2);  // Higher priority (lower number)
+    NVIC_SetPriority(TIMER0_IRQn, 2);  // Higher priority (lower number)
     // Enable interrupts in NVIC
-    nvic_enable_irq(TIMER0_IRQn);
+    NVIC_EnableIRQ(TIMER0_IRQn);
 }
 
 void timer1_start(uint32_t frequency_hz) {
@@ -77,9 +77,9 @@ void timer1_start(uint32_t frequency_hz) {
 					 TIMER_CTRL_EN );  /* Enable Timer. */
 
     // Set interrupt priorities (Timer0 higher priority than Timer1)
-    nvic_set_priority(TIMER0_IRQn, 2+1);  // Higher priority (lower number)
+    NVIC_SetPriority(TIMER0_IRQn, 2+1);  // Higher priority (lower number)
     // Enable interrupts in NVIC
-    nvic_enable_irq(TIMER0_IRQn);
+    NVIC_EnableIRQ(TIMER0_IRQn);
 }
 
 void timer0_stop(void) {
@@ -108,14 +108,13 @@ void timer1_set_callback(timer_callback_t callback) {
 
 // Interrupt Service Routines
 void TIMER0_Handler(void) {
+    // Clear interrupt flag
+    TIMER0->INTCLEAR = ( 1ul <<  0 );
 
     /* Increment the nest count while inside this ISR as a crude way of the
 	higher priority timer interrupt knowing if it interrupted the execution of
 	this ISR. */
     timer0_tick_count++;
-
-    // Clear interrupt flag
-    TIMER0->INTCLEAR = ( 1ul <<  0 );
         
     // Call user callback if registered
     if (timer0_callback != 0) {

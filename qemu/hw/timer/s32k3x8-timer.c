@@ -41,7 +41,7 @@
  with the specific target to ensure that the new timer is built
  and associate PTIMER to it.
  >rm -rf build
- >./configure --target-list=arm-softmmu   # plus your usual options
+ >../configure --target-list=arm-softmmu   # plus your usual options
  >make -j$(nproc)
 
  To check adress in mem:

@@ -12,6 +12,7 @@
         "s32k3x8-timer.h": "c",
         "ptimer.h": "c",
         "log.h": "c",
-        "inttimer.h": "c"
+        "inttimer.h": "c",
+        "timer.h": "c"
     }
 }
