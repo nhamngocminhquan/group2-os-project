@@ -92,6 +92,10 @@ static void s32k3x8_init(MachineState *ms) {
     qdev_connect_clock_in(armv7m, "refclk", sms->refclk);
     qdev_prop_set_string(armv7m, "cpu-type", ms->cpu_type);
 
+    // Q:   Set the starting addresses
+    // qdev_prop_set_uint32(armv7m, "init-svtor", P_FLASH_BASE_ADDRESS);
+    // qdev_prop_set_uint32(armv7m, "init-nsvtor", P_FLASH_BASE_ADDRESS);
+
     // Q:   Unknowns
     qdev_prop_set_uint32(armv7m, "num-irq", 256);
     qdev_prop_set_bit(armv7m, "enable-bitband", true);

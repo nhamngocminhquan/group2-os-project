@@ -78,6 +78,7 @@ const uint32_t* isr_vector[] __attribute__((section(".isr_vector"), used)) =
 void Reset_Handler( void )
 {
     main();
+    while (1);
 }
 
 /* Variables used to store the value of registers at the time a hardfault
