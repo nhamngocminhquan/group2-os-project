@@ -1,4 +1,5 @@
 # The directory that contains FreeRTOS source code
+#FREERTOS_ROOT := /home/jacqui/FreeRTOS/FreeRTOS
 FREERTOS_ROOT := ../FreeRTOS/FreeRTOS
 
 # Demo code
@@ -21,6 +22,7 @@ LD := arm-none-eabi-gcc
 SIZE := arm-none-eabi-size
 
 # Target embedded board and CPU
+#MACHINE := S32K3X8
 MACHINE := mps2-an500
 CPU := cortex-m7
 

@@ -13,6 +13,7 @@
         "ptimer.h": "c",
         "log.h": "c",
         "inttimer.h": "c",
-        "timer.h": "c"
+        "timer.h": "c",
+        "uart.h": "c"
     }
 }

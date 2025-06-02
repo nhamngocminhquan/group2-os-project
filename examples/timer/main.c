@@ -1,4 +1,5 @@
-// main.c - Example usage
+// main.c - Example of timer
+#include <stdbool.h>  // For boolean data type (bool, true, false)
 #include "timer.h"
 #include "uart.h"
 
@@ -14,8 +15,8 @@ volatile uint32_t sensor_read_count = 0;
  *
  *
  * */
-#define tmrTIMER_0_FREQUENCY	( 200UL )
-#define tmrTIMER_1_FREQUENCY	( 100UL )
+#define tmrTIMER_0_FREQUENCY	( 1UL ) //500us
+#define tmrTIMER_1_FREQUENCY	( 1000UL ) //1ms
    
 // Counter variables that can be accessed from main
 extern uint32_t timer0_tick_count;
@@ -26,6 +27,7 @@ void timer0_user_callback(void) {
     UART_printf("T0\n");
     //This function will execute every 500us
     led_toggle_count++;
+    //Added inline assembly for debugging purposes
     __asm ("MOV R5, %[input_i]"
             :  /* This is an empty output operand list */
             : [input_i] "r" (led_toggle_count)
@@ -37,6 +39,7 @@ void timer1_user_callback(void) {
     UART_printf("T1\n");
     // This runs every 1ms (1kHz)
     sensor_read_count++;
+    //Added inline assembly for debugging purposes
     __asm ("MOV R6, %[input_i]"
             :  /* This is an empty output operand list */
             : [input_i] "r" (sensor_read_count)
@@ -62,35 +65,37 @@ int main(void) {
 
     timer1_start(tmrTIMER_1_FREQUENCY);  // 1kHz - slower operations
 
+    bool loop_en = true;
     // Main loop
-    while (1) {
-        // Main application logic here
+    while (loop_en) {
+
         
-        // You can check timer tick counts
-        if (timer0_tick_count >= 2000) {  
-            // Do something every second
-            UART_printf("T0_ti\n");
+        //When Timer0 has triggered 10 times: prints "T0_ti" and resets counter
+        if (timer0_tick_count >= 10) {  
+            UART_printf("T0_tick\n");
             timer0_tick_count = 0;  // Reset counter
+            timer0_stop();  // Stop Timer0
+            loop_en = false;  // Exit loop after Timer0 stops
+            UART_printf("END T0\n");
         }
         
-        if (timer1_tick_count >= 1000) { 
-            UART_printf("T1_ti\n");
-            // Do something else every second
+        if (timer1_tick_count >= 5) { 
+            UART_printf("T1_tick\n");
             timer1_tick_count = 0;  // Reset counter
-        }
-        
-        // Check user variables
-        if (led_toggle_count >= 1000) {  //int i, int j
+            //Added inline assembly for debugging purposes
             __asm ("ADD R8, %[input_i], %[input_j]"
-                    :  /* This is an empty output operand list */
-                    : [input_i] "r" (led_toggle_count), [input_j] "r" (sensor_read_count)
+                :  /* This is an empty output operand list */
+                : [input_i] "r" (led_toggle_count), [input_j] "r" (sensor_read_count)
              );
-            // LED has toggled 1000 times in t seconds
-            led_toggle_count = 0;
         }
         
-        if (sensor_read_count >= 100) {  // Every 100ms
-            // Sensor has been read 100 times
+        // Check variables
+        if (led_toggle_count >= 15) {  //int i, int j
+            led_toggle_count = 0;
+            //timer0_stop();  // Stop Timer0
+        }
+        
+        if (sensor_read_count >= 10) { 
             sensor_read_count = 0;
         }
         
