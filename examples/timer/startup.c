@@ -7,6 +7,7 @@
 #include "timer.h"     
 #include "stdint.h"
 
+#define OFFSET  16
  // /* FreeRTOS interrupt handlers. */
  // extern void vPortSVCHandler( void );
  // extern void xPortPendSVHandler( void );
@@ -28,38 +29,29 @@ extern uint32_t _estack;
 /* Vector table - customize based on your microcontroller */
 const uint32_t* isr_vector[] __attribute__((section(".isr_vector"), used)) =
 {
-    ( uint32_t * ) &_estack,           // Initial Stack Pointer
-    ( uint32_t * ) &Reset_Handler,     // Reset Handler            -15
-    ( uint32_t * ) &Default_Handler,   // NMI Handler              -14
-    ( uint32_t * ) &HardFault_Handler, // HardFault Handler        -13
-    ( uint32_t * ) &Default_Handler,   // MemManage Handler        -12
-    ( uint32_t * ) &Default_Handler,   // BusFault Handler         -11
-    ( uint32_t * ) &Default_Handler,   // UsageFault Handler       -10
-    0, // Reserved                     -9
-    0, // Reserved                     -8
-    0, // Reserved                     -7
-    0, // Reserved                     -6
-    ( uint32_t * ) &Default_Handler,   // SVCall Handler (FreeRTOS)          -5
-    ( uint32_t * ) &Default_Handler,   // Debug Monitor Handler    -4
-    0, // Reserved                     -3
-    ( uint32_t * ) &Default_Handler,   // PendSV Handler           -2
-    ( uint32_t * ) &Default_Handler,   // SysTick Handler          -1
+    [0]  = (uint32_t*)&_estack,          // Initial Stack Pointer
+    [1]  = (uint32_t*)&Reset_Handler,    // Reset Handler -15
+    [2]  = (uint32_t*)&Default_Handler,  // NMI Handler -14
+    [3]  = (uint32_t*)&HardFault_Handler,// HardFault Handler -13
+    [4]  = (uint32_t*)&Default_Handler,  // MemManage Handler -12
+    [5]  = (uint32_t*)&Default_Handler,  // BusFault Handler -11
+    [6]  = (uint32_t*)&Default_Handler,  // UsageFault Handler -10
+    [7]  = 0,                            // Reserved -9
+    [8]  = 0,                            // Reserved -8
+    [9]  = 0,                            // Reserved -7
+    [10] = 0,                            // Reserved -6
+    [11] = (uint32_t*)&Default_Handler,  // SVCall Handler -5
+    [12] = (uint32_t*)&Default_Handler,  // Debug Monitor Handler -4
+    [13] = 0,                            // Reserved -3
+    [14] = (uint32_t*)&Default_Handler,  // PendSV Handler -2
+    [15] = (uint32_t*)&Default_Handler,  // SysTick Handler -1
     
-    /* External Interrupts - customize for your specific MCU */
-     0, //IRQ 0
-     0,
-     0,
-     0,
-     0,
-     0,
-     0,
-     0,
-    ( uint32_t * ) TIMER0_Handler,     // Timer 0                   IRQ 8
-    ( uint32_t * ) TIMER1_Handler,     // Timer 1                   IRQ 9
-    ( uint32_t * ) TIMER2_Handler,     // Timer 2                   IRQ 10
-     0,
-     0,
-     0, // Ethernet IRQ 13
+    // External Interrupts - only specify the ones needed
+    // Not being used will be automatically zero    
+    // Timer interrupts
+    [TIMER0_IRQn + OFFSET] = (uint32_t*)TIMER0_Handler,        
+    [TIMER1_IRQn + OFFSET] = (uint32_t*)TIMER1_Handler,        
+    [TIMER2_IRQn + OFFSET] = (uint32_t*)TIMER2_Handler,        
 };
 
 
