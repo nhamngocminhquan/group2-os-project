@@ -9,18 +9,21 @@ volatile uint32_t sensor_read_count = 0;
 
 /* Timer frequencies are slightly offset so they nest. 
  * The frequency is defined here in Hz.
- *
- * Timer0 has a period of 1/2000 sec 
- * Timer1 has a period of 1/1000 sec
- *
+ * TImer period calculation:1/frequency seconds
+ * Timer0 has a period of 1/1 = 1 sec 
+ * Timer1 has a period of 1/2 = 0.5 sec
+ * Timer2 has a period of 1/3 = 0.3 sec
  *
  * */
-#define tmrTIMER_0_FREQUENCY	( 1UL ) //500us
-#define tmrTIMER_1_FREQUENCY	( 1000UL ) //1ms
+#define tmrTIMER_0_FREQUENCY	( 1UL )
+#define tmrTIMER_1_FREQUENCY	( 2UL ) 
+#define tmrTIMER_2_FREQUENCY	( 3UL ) 
+
    
 // Counter variables that can be accessed from main
 extern uint32_t timer0_tick_count;
 extern uint32_t timer1_tick_count;
+extern uint32_t timer2_tick_count;
 
 // User callback functions
 void timer0_user_callback(void) {
@@ -46,6 +49,11 @@ void timer1_user_callback(void) {
     );
 }
 
+void timer2_user_callback(void) {
+    UART_printf("T2\n");
+    // Do something
+}
+
 int main(void) {
     __asm ("MOV R4, #5"
             :  /* This is an empty output operand list */
@@ -59,19 +67,20 @@ int main(void) {
     // Set up callback functions
     timer0_set_callback(timer0_user_callback);
     timer1_set_callback(timer1_user_callback);
+    timer2_set_callback(timer2_user_callback);
     
     // Start timers with different frequencies
-    timer0_start(tmrTIMER_0_FREQUENCY);  // 2kHz - fast operations
-
-    timer1_start(tmrTIMER_1_FREQUENCY);  // 1kHz - slower operations
+    timer0_start(tmrTIMER_0_FREQUENCY);  
+    timer1_start(tmrTIMER_1_FREQUENCY);  
+    timer2_start(tmrTIMER_2_FREQUENCY);  
 
     bool loop_en = true;
     // Main loop
     while (loop_en) {
 
         
-        //When Timer0 has triggered 10 times: prints "T0_ti" and resets counter
-        if (timer0_tick_count >= 10) {  
+        //When Timer0 has triggered 5 times: prints "T0_ti" and resets counter
+        if (timer0_tick_count >= 5) {  
             UART_printf("T0_tick\n");
             timer0_tick_count = 0;  // Reset counter
             timer0_stop();  // Stop Timer0

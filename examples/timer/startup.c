@@ -20,6 +20,7 @@ void Reset_Handler( void ) __attribute__( ( naked ) );
 /* interrupt handlers */
 extern void TIMER0_Handler(void);
 extern void TIMER1_Handler(void);
+extern void TIMER2_Handler(void);
 
 extern int main( void );
 extern uint32_t _estack;
@@ -55,7 +56,7 @@ const uint32_t* isr_vector[] __attribute__((section(".isr_vector"), used)) =
      0,
     ( uint32_t * ) TIMER0_Handler,     // Timer 0                   IRQ 8
     ( uint32_t * ) TIMER1_Handler,     // Timer 1                   IRQ 9
-     0,
+    ( uint32_t * ) TIMER2_Handler,     // Timer 2                   IRQ 10
      0,
      0,
      0, // Ethernet IRQ 13

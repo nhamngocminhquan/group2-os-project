@@ -39,9 +39,11 @@ PIT_3 base address: 0x40300000 - 0x40303FFF --not used in S32K348
 void timer0_start(uint32_t frequency_hz);
 void timer1_start(uint32_t frequency_hz);
 void timer2_start(uint32_t frequency_hz);
+
 void timer0_stop(void);
 void timer1_stop(void);
 void timer2_stop(void);
+
 uint32_t timer0_get_count(void);
 uint32_t timer1_get_count(void);
 uint32_t timer2_get_count(void);
@@ -54,5 +56,6 @@ void timer2_set_callback(timer_callback_t callback);
 
 void TIMER0_Handler(void);
 void TIMER1_Handler(void);
+void TIMER2_Handler(void);
 
 #endif // TIMER_H

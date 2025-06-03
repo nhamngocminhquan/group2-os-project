@@ -7,10 +7,12 @@
 // Global variables for user callbacks
 static timer_callback_t timer0_callback = 0;
 static timer_callback_t timer1_callback = 0;
+static timer_callback_t timer2_callback = 0;
 
 // Counter variables that can be accessed from main
 volatile uint32_t timer0_tick_count = 0;
 volatile uint32_t timer1_tick_count = 0;
+volatile uint32_t timer2_tick_count = 0;
 
 /****************************************************** */
 // Define this functions bcs I am not usign CMSIS library
@@ -77,9 +79,31 @@ void timer1_start(uint32_t frequency_hz) {
 					 TIMER_CTRL_EN );  /* Enable Timer. */
 
     // Set interrupt priorities (Timer0 higher priority than Timer1)
-    NVIC_SetPriority(TIMER0_IRQn, 2+1);  // Higher priority (lower number)
+    NVIC_SetPriority(TIMER1_IRQn, 2+1);  // Higher priority (lower number)
     // Enable interrupts in NVIC
-    NVIC_EnableIRQ(TIMER0_IRQn);
+    NVIC_EnableIRQ(TIMER1_IRQn);
+}
+
+void timer2_start(uint32_t frequency_hz) {
+    //Cleat interrupts
+    TIMER2->INTCLEAR = ( 1ul <<  0 );
+    
+    // Calculate reload value
+    uint32_t reload_value = (CPU_CLOCK_HZ / frequency_hz) + 1;
+    
+    // Set reload value
+    TIMER2->RELOAD = reload_value;
+    
+    /*This register configures and controls various 
+	 * aspects of the timer’s operation, including enabling the timer, setting the timer mode, 
+	 * and configuring the timer’s interrupt.*/
+    TIMER2->CTRL = ( TIMER_CTRL_IRQEN | /* Enable Timer interrupt. */
+					 TIMER_CTRL_EN );  /* Enable Timer. */
+
+    // Set interrupt priorities (Timer0 higher priority than Timer1)
+    NVIC_SetPriority(TIMER2_IRQn, 2+2);  // Higher priority (lower number)
+    // Enable interrupts in NVIC
+    NVIC_EnableIRQ(TIMER2_IRQn);
 }
 
 void timer0_stop(void) {
@@ -90,6 +114,10 @@ void timer1_stop(void) {
     TIMER1->CTRL = 0;
 }
 
+void timer2_stop(void) {
+    TIMER2->CTRL = 0;
+}
+
 uint32_t timer0_get_count(void) {
     return TIMER0->VALUE;
 }
@@ -98,12 +126,20 @@ uint32_t timer1_get_count(void) {
     return TIMER1->VALUE;
 }
 
+uint32_t timer2_get_count(void) {
+    return TIMER2->VALUE;
+}
+
 void timer0_set_callback(timer_callback_t callback) {
     timer0_callback = callback;
 }
 
 void timer1_set_callback(timer_callback_t callback) {
     timer1_callback = callback;
+}
+
+void timer2_set_callback(timer_callback_t callback) {
+    timer2_callback = callback;
 }
 
 // Interrupt Service Routines
@@ -132,5 +168,18 @@ void TIMER1_Handler(void) {
     // Call user callback if registered
     if (timer1_callback != 0) {
         timer1_callback();
+    }
+}
+
+void TIMER2_Handler(void) {
+    // Clear interrupt flag
+    TIMER2->INTCLEAR = 1;
+    
+    // Increment tick counter
+    timer2_tick_count++;
+    
+    // Call user callback if registered
+    if (timer2_callback != 0) {
+        timer2_callback();
     }
 }
