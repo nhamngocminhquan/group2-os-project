@@ -276,7 +276,7 @@ static void armv7m_instance_init(Object *obj)
     s->refclk = qdev_init_clock_in(DEVICE(obj), "refclk", NULL, NULL, 0);
     s->cpuclk = qdev_init_clock_in(DEVICE(obj), "cpuclk", NULL, NULL, 0);
 }
-
+// Q:   avr32exp_realize
 static void armv7m_realize(DeviceState *dev, Error **errp)
 {
     ARMv7MState *s = ARMV7M(dev);
@@ -564,7 +564,7 @@ static const VMStateDescription vmstate_armv7m = {
         VMSTATE_END_OF_LIST()
     }
 };
-
+// Q:   avr32exp_class_init
 static void armv7m_class_init(ObjectClass *klass, void *data)
 {
     DeviceClass *dc = DEVICE_CLASS(klass);
@@ -588,7 +588,7 @@ static void armv7m_reset(void *opaque)
 
     cpu_reset(CPU(cpu));
 }
-
+// Q:   Florian: avr32_load_firmware
 void armv7m_load_kernel(ARMCPU *cpu, const char *kernel_filename,
                         hwaddr mem_base, int mem_size)
 {

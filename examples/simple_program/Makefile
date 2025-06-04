@@ -20,6 +20,16 @@ build:
 	arm-none-eabi-gcc -c -mcpu=$(CPU) -mthumb main.c -o main.o
 	arm-none-eabi-ld -T $(LINKER_FILE) startup.o main.o uart.o -o main.elf
 
+# Load custom location in GDB + QEMU
+# https://stackoverflow.com/questions/71486314/loading-an-elf-file-into-qemu
+
+# Using -loader
+# https://qemu-project.gitlab.io/qemu/system/generic-loader.html
+
+# Differences between -kernel and -loader
+# https://stackoverflow.com/questions/58420670/qemu-bios-vs-kernel-vs-device-loader-file
+# https://stackoverflow.com/questions/70603156/why-arm-cores-behaving-differently-with-an-elf-and-binary-file?noredirect=1&lq=1
+
 run:
 # $(QEMU) -machine $(MACHINE) -cpu $(CPU) -monitor stdio -kernel main.elf -s -S
 # -nographic -monitor none -serial stdio -s -S

@@ -52,6 +52,7 @@ struct S32K3X8MachineState {
     Clock *refclk;
 
     MemoryRegion itcm;
+    MemoryRegion sram;  // Unused
     MemoryRegion pflash;
 
     S32K3X8Timer timer[NUM_TIMERS];

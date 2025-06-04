@@ -33,7 +33,8 @@
 
 /* Main SYSCLK frequency in Hz (168MHz) */
 #define SYSCLK_FRQ 168000000ULL
-
+// Q:   Florian: avr32example_board_init
+//      Airbus: cpiom_init
 static void netduinoplus2_init(MachineState *machine)
 {
     DeviceState *dev;
@@ -43,6 +44,7 @@ static void netduinoplus2_init(MachineState *machine)
     sysclk = clock_new(OBJECT(machine), "SYSCLK");
     clock_set_hz(sysclk, SYSCLK_FRQ);
 
+    // Q:   Make the ARM SOC a child of this machine
     dev = qdev_new(TYPE_STM32F405_SOC);
     object_property_add_child(OBJECT(machine), "soc", OBJECT(dev));
     qdev_connect_clock_in(dev, "sysclk", sysclk);
@@ -52,9 +54,18 @@ static void netduinoplus2_init(MachineState *machine)
                        machine->kernel_filename,
                        0, FLASH_SIZE);
 }
-
+// Q:   Florian: 2nd half of avr32example_board_class_init
+//      Airbus: cpiom_machine_init
+//      
+//      No default_ram_size like Airbus
+//      No default_cpus, min_cpus, max_cpus, no_floppy, no_parallel
+//      etc. like Florian
+//
 static void netduinoplus2_machine_init(MachineClass *mc)
 {
+    // Q:   List of valid CPUs for the machine is given here, and
+    //      is passed to mc with valid_cpu_types.
+    //      Airbus use mc->default_cpu_type instead
     static const char * const valid_cpu_types[] = {
         ARM_CPU_TYPE_NAME("cortex-m4"),
         NULL
@@ -64,5 +75,19 @@ static void netduinoplus2_machine_init(MachineClass *mc)
     mc->init = netduinoplus2_init;
     mc->valid_cpu_types = valid_cpu_types;
 }
-
+// Q:   Predefined macro according to Airbus, takes care
+//      of the following functions/objects by Florian:
+//
+//          1st half of avr32example_board_class_init
+//          avr32example_board_machine_types
+//          DEFINE_TYPES (another macro)
+//          ...
+//
+//      Florian defined TYPE_AVR32EXAMPLE_BOARD_MACHINE, but
+//      the DEFINE_MACHINE macro creates automatically a type
+//      from the provided string (MACHINE_TYPE_NAME("netduinoplus2"))
+//
+//      Morexamples of DEFINE_MACHINE can be found here:
+//      https://mail.gnu.org/archive/html/qemu-devel/2015-09/msg05133.html
+//
 DEFINE_MACHINE("netduinoplus2", netduinoplus2_machine_init)

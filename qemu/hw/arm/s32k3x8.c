@@ -70,6 +70,8 @@ static void s32k3x8_init(MachineState *ms) {
     // Q:   Memory mappings used in loader file
     //      ms->ram was created automatically, used as default RAM
     memory_region_add_subregion(system_memory, RAM_BASE_ADDRESS, ms->ram);
+    // memory_region_init_ram(&sms->sram, NULL, "s32k3x8.sram", RAM_SIZE, &error_fatal);
+    // memory_region_add_subregion(get_system_memory(), RAM_BASE_ADDRESS, &sms->sram);
 
     // Q:   ITCM is needed for memory starting at 0, for the 
     //      program/interrupt vector table
@@ -156,6 +158,14 @@ static void s32k3x8_init(MachineState *ms) {
 
     }
     /*E: End UART */
+    // // Q:   Create placeholder unimplemented devices
+    // //      Each device gets created into the unimplemented area
+    // create_unimplemented_device("CMSDK APB peripheral region @0x40000000",
+    //                             0x40000000, 0x00010000);
+    // create_unimplemented_device("CMSDK AHB peripheral region @0x40010000",
+    //                             0x40010000, 0x00010000);
+    // create_unimplemented_device("Extra peripheral region @0x40020000",
+    //                             0x40020000, 0x00010000);
 
     // Q:   Load kernel for simulation, size argument means kernel cannot
     //      exceed this size? (probably cropped)
@@ -176,6 +186,8 @@ static void s32k3x8_machine_init(MachineClass *mc) {
     mc->default_ram_size = RAM_SIZE;
     // Q:   IMPORTANT: ID is crucial, otherwise QEMU will not create RAM
     mc->default_ram_id = "s32k3x8.ram";
+    // mc->default_cpu_type = POWERPC_CPU_TYPE_NAME("755_v2.8");
+    // mc->default_ram_size = CPIOM_MMAP_SDRAM_SIZE
 }
 
 // Q:   Macro used to automate creation of types
