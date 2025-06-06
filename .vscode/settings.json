@@ -1,0 +1,20 @@
+{
+    "files.associations": {
+        "osdep.h": "c",
+        "s32k3x8.h": "c",
+        "*.inc": "c",
+        "*.idef": "c",
+        "*.def": "c",
+        "cmsdk-apb-timer.h": "c",
+        "sysbus.h": "c",
+        "module.h": "c",
+        "config-host.h": "c",
+        "s32k3x8-timer.h": "c",
+        "ptimer.h": "c",
+        "log.h": "c",
+        "inttimer.h": "c",
+        "timer.h": "c",
+        "uart.h": "c",
+        "s32k3x8_uart.h": "c"
+    }
+}
