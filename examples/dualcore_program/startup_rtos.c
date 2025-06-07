@@ -32,19 +32,29 @@
 // extern void xPortPendSVHandler( void );
 // extern void xPortSysTickHandler( void );
 
+/* Shared objects */
 /* Exception handlers. */
+// Both CPUs have similar hardfault and default handler codes, 
+// so they are shared
 static void HardFault_Handler( void ) __attribute__( ( naked ) );
 static void Default_Handler( void ) __attribute__( ( naked ) );
-void Reset_Handler( void ) __attribute__( ( naked ) );
 
-extern int main( void );
+/* The stack is located in private memory (TCM) so we only need one */
 extern uint32_t _estack;
 
-/* Vector table. */
-const uint32_t* isr_vector[] __attribute__((section(".isr_vector"), used)) =
+/* Individual objects */
+/* Exception handlers for CPU 0 */
+void Reset_Handler_0( void ) __attribute__( ( naked ) );
+/* Exception handlers for CPU 1 */
+void Reset_Handler_1( void ) __attribute__( ( naked ) );
+// Main programs for both CPUs
+extern int main_0( void ), main_1( void );
+
+/* Vector table for CPU 0 */
+const uint32_t* isr_vector_0[] __attribute__((section(".isr_vector_0"), used)) =
 {
     ( uint32_t * ) &_estack,
-    ( uint32_t * ) &Reset_Handler,     // Reset                -15
+    ( uint32_t * ) &Reset_Handler_0,     // Reset                -15
     ( uint32_t * ) &Default_Handler,   // NMI_Handler          -14
     ( uint32_t * ) &HardFault_Handler, // HardFault_Handler    -13
     ( uint32_t * ) &Default_Handler,   // MemManage_Handler    -12
@@ -59,25 +69,50 @@ const uint32_t* isr_vector[] __attribute__((section(".isr_vector"), used)) =
     0, // reserved   -3
     ( uint32_t * ) &Default_Handler,    // PendSV handler       -2  // &xPortPendSVHandler
     ( uint32_t * ) &Default_Handler,    // SysTick_Handler      -1  // &xPortSysTickHandler
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0, // Timer 0
-    0, // Timer 1
-    0,
-    0,
-    0,
-    0, // Ethernet   13
 };
 
-void Reset_Handler( void )
+/* Vector table for CPU 1 */
+const uint32_t* isr_vector_1[] __attribute__((section(".isr_vector_1"), used)) =
 {
-    main();
+    ( uint32_t * ) &_estack,
+    ( uint32_t * ) &Reset_Handler_1,     // Reset                -15
+    ( uint32_t * ) &Default_Handler,   // NMI_Handler          -14
+    ( uint32_t * ) &HardFault_Handler, // HardFault_Handler    -13
+    ( uint32_t * ) &Default_Handler,   // MemManage_Handler    -12
+    ( uint32_t * ) &Default_Handler,   // BusFault_Handler     -11
+    ( uint32_t * ) &Default_Handler,   // UsageFault_Handler   -10
+    0, // reserved   -9
+    0, // reserved   -8
+    0, // reserved   -7
+    0, // reserved   -6
+    ( uint32_t * ) &Default_Handler,    // SVC_Handler          -5  // &vPortSVCHandler
+    ( uint32_t * ) &Default_Handler,    // DebugMon_Handler     -4
+    0, // reserved   -3
+    ( uint32_t * ) &Default_Handler,    // PendSV handler       -2  // &xPortPendSVHandler
+    ( uint32_t * ) &Default_Handler,    // SysTick_Handler      -1  // &xPortSysTickHandler
+};
+
+/* Boot vector table, for SBAF to find */
+const uint32_t* boot_ivt[] __attribute__((section(".boot_ivt"), used)) =
+{
+    ( uint32_t * ) 0x5AA55AA5,          // Image vector table marker
+    ( uint32_t * ) 0x00000005,
+    0,
+    ( uint32_t * ) &isr_vector_0,
+    0,
+    0,
+    0,
+    ( uint32_t * ) &isr_vector_1,
+};
+
+/* Definitions of individual exception handlers */
+void Reset_Handler_0( void )
+{
+    main_0();
+}
+void Reset_Handler_1( void )
+{
+    main_1();
 }
 
 /* Variables used to store the value of registers at the time a hardfault

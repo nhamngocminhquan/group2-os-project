@@ -24,14 +24,12 @@
  *
  */
 
-/* Q:   Copied from Lab 3 */
-
 MEMORY
 {
-    FLASH (xr) : ORIGIN = 0x00000000, LENGTH = 64K /* to 0x00003FFF = 0x007FFFFF*/
+    FLASH (xr) : ORIGIN = 0x00400000, LENGTH = 8M /* to 0x00003FFF = 0x007FFFFF*/
     RAM (rw)  : ORIGIN = 0x20400000, LENGTH = 768K /* to 0x21FFFFFF = 0xFFFFFF */
+    ITCM (rw)  : ORIGIN = 0x00000000, LENGTH = 64K /* to 0x21FFFFFF = 0xFFFFFF */
 }
-ENTRY(Reset_Handler)
 
 _Min_Heap_Size = 0x8 ;        /* Not used as building heap_4.c */
 _Min_Stack_Size = 0x400 ;       /* Required amount of stack.  Used by main(), then re-used as the interrupt stack after the kernel starts. */
@@ -40,11 +38,28 @@ _estack = ORIGIN(RAM) + LENGTH(RAM);
 
 SECTIONS
 {
-    .isr_vector :
+    .boot_ivt :
     {
-        __vector_table = .;
-        KEEP(*(.isr_vector))
-        . = ALIGN(4);
+        /* __vector_table = .; */
+        . = ALIGN(128);      /* This is very important, see below */
+        KEEP(*(.boot_ivt))
+    } > FLASH
+
+    /* The individual vector table must be 7-bit aligned in memory.
+     * Therefore, we need to add at least ALIGN(128) between every
+     * CPU's vector table. See also:
+     * https://developer.arm.com/documentation/dui0646/c/Cortex-M7-Peripherals/System-control-block/Vector-Table-Offset-Register?lang=en
+     */
+    .isr_vector_0 :
+    {
+        . = ALIGN(128);
+        KEEP(*(.isr_vector_0))
+    } > FLASH
+
+    .isr_vector_1 :
+    {
+        . = ALIGN(128);
+        KEEP(*(.isr_vector_1))
     } > FLASH
 
     .text :
@@ -64,7 +79,7 @@ SECTIONS
         *(vtable)
         *(.data)
         _edata = .;
-    } > RAM
+    } > ITCM
 
     .bss :
     {
@@ -73,7 +88,7 @@ SECTIONS
         _sbss = .;
         *(.bss)
         _ebss = .;
-    } > RAM
+    } > ITCM
     
     .heap :
     {
@@ -85,11 +100,11 @@ SECTIONS
         _heap_top = .;
         . = . + _Min_Stack_Size;
         . = ALIGN(8);
-   } >RAM
+   } > ITCM
    
    /* Set stack top to end of RAM, and stack limit move down by
     * size of stack_dummy section */
-   stack_top = ORIGIN(RAM) + LENGTH(RAM);
+   stack_top = ORIGIN(ITCM) + LENGTH(ITCM);
    __StackLimit = stack_top - _Min_Stack_Size;
    PROVIDE(__stack = stack_top);
      
