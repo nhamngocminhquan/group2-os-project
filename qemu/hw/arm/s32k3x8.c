@@ -106,14 +106,16 @@ static void s32k3x8_init(MachineState *ms) {
     // Q:   Memory mappings used in loader file
     //      ms->ram was created automatically, used as default RAM
     memory_region_add_subregion(system_memory, RAM_BASE_ADDRESS, ms->ram);
-    // memory_region_init_ram(&sms->sram, NULL, "s32k3x8.sram", RAM_SIZE, &error_fatal);
-    // memory_region_add_subregion(get_system_memory(), RAM_BASE_ADDRESS, &sms->sram);
-
     memory_region_init_rom(
-        &sms->pflash, NULL, "s32k3x8.flash",
+        &sms->pflash, NULL, "s32k3x8.pflash",
         P_FLASH_SIZE, &error_fatal
     );
     memory_region_add_subregion(system_memory, P_FLASH_BASE_ADDRESS, &sms->pflash);
+    memory_region_init_rom(
+        &sms->dflash, NULL, "s32k3x8.dflash",
+        D_FLASH_SIZE, &error_fatal
+    );
+    memory_region_add_subregion(system_memory, D_FLASH_BASE_ADDRESS, &sms->dflash);
 
     // Q:   Create CPU children
     for (int cpu_i = 0; cpu_i < ms->smp.cpus; cpu_i++) {
@@ -121,7 +123,8 @@ static void s32k3x8_init(MachineState *ms) {
         g_autofree char *cpu_name = g_strdup_printf("armv7m-%d", cpu_i);
         g_autofree char *cpu_mem_name = g_strdup_printf("armv7m-%d-memory", cpu_i);
         g_autofree char *sys_mem_alias_name = g_strdup_printf("armv7m-%d-sysmem-alias", cpu_i);
-        g_autofree char *itcm_name = g_strdup_printf("armv7m-%d-itcm", cpu_i);
+        g_autofree char *itcm_name = g_strdup_printf("s32k3x8.itcm-%d", cpu_i);
+        g_autofree char *dtcm_name = g_strdup_printf("s32k3x8.dtcm-%d", cpu_i);
 
         // Create CPU-specific memory region. We alias
         // system_memory to add it to the CPUs as subregion
@@ -167,8 +170,7 @@ static void s32k3x8_init(MachineState *ms) {
             return;
         }
 
-        // ITCM is needed for memory starting at 0. It is
-        // specific to each CPU
+        // ITCM and DTCM are specific to each CPU
         memory_region_init_ram(
             &sms->itcm[cpu_i], NULL, itcm_name,
             ITCM_SIZE, &error_fatal
@@ -176,6 +178,14 @@ static void s32k3x8_init(MachineState *ms) {
         memory_region_add_subregion(
             &sms->cpu_memory[cpu_i], ITCM_BASE_ADDRESS,
             &sms->itcm[cpu_i]
+        );
+        memory_region_init_ram(
+            &sms->dtcm[cpu_i], NULL, dtcm_name,
+            DTCM_SIZE, &error_fatal
+        );
+        memory_region_add_subregion(
+            &sms->cpu_memory[cpu_i], DTCM_BASE_ADDRESS,
+            &sms->dtcm[cpu_i]
         );
     }
 

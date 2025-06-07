@@ -26,9 +26,11 @@
 
 MEMORY
 {
-    FLASH (xr) : ORIGIN = 0x00400000, LENGTH = 8M /* to 0x00003FFF = 0x007FFFFF*/
-    RAM (rw)  : ORIGIN = 0x20400000, LENGTH = 768K /* to 0x21FFFFFF = 0xFFFFFF */
-    ITCM (rw)  : ORIGIN = 0x00000000, LENGTH = 64K /* to 0x21FFFFFF = 0xFFFFFF */
+    PFLASH (xr) : ORIGIN = 0x00400000, LENGTH = 8M
+    DFLASH (xr) : ORIGIN = 0x10000000, LENGTH = 128K
+    RAM (rw)  : ORIGIN = 0x20400000, LENGTH = 768K
+    ITCM (rw)  : ORIGIN = 0x00000000, LENGTH = 64K
+    DTCM (rw)  : ORIGIN = 0x20000000, LENGTH = 128K
 }
 
 _Min_Heap_Size = 0x8 ;        /* Not used as building heap_4.c */
@@ -43,7 +45,7 @@ SECTIONS
         /* __vector_table = .; */
         . = ALIGN(128);      /* This is very important, see below */
         KEEP(*(.boot_ivt))
-    } > FLASH
+    } > PFLASH
 
     /* The individual vector table must be 7-bit aligned in memory.
      * Therefore, we need to add at least ALIGN(128) between every
@@ -54,13 +56,13 @@ SECTIONS
     {
         . = ALIGN(128);
         KEEP(*(.isr_vector_0))
-    } > FLASH
+    } > PFLASH
 
     .isr_vector_1 :
     {
         . = ALIGN(128);
         KEEP(*(.isr_vector_1))
-    } > FLASH
+    } > PFLASH
 
     .text :
     {
@@ -69,7 +71,7 @@ SECTIONS
         *(.constdata*)
         _etext = .;
         _sidata = .;
-    } > FLASH
+    } > PFLASH
 
     .data :
     {
@@ -79,7 +81,7 @@ SECTIONS
         *(vtable)
         *(.data)
         _edata = .;
-    } > ITCM
+    } > DTCM
 
     .bss :
     {
@@ -88,7 +90,7 @@ SECTIONS
         _sbss = .;
         *(.bss)
         _ebss = .;
-    } > ITCM
+    } > DTCM
     
     .heap :
     {
@@ -100,11 +102,11 @@ SECTIONS
         _heap_top = .;
         . = . + _Min_Stack_Size;
         . = ALIGN(8);
-   } > ITCM
+   } > DTCM
    
    /* Set stack top to end of RAM, and stack limit move down by
     * size of stack_dummy section */
-   stack_top = ORIGIN(ITCM) + LENGTH(ITCM);
+   stack_top = ORIGIN(DTCM) + LENGTH(DTCM);
    __StackLimit = stack_top - _Min_Stack_Size;
    PROVIDE(__stack = stack_top);
      

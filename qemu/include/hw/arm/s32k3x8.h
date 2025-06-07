@@ -37,12 +37,14 @@
 #define P_FLASH_BASE_ADDRESS        0x00400000
 #define P_FLASH_SIZE                (8192 * KiB)
 
-#define D_FLASH_BASE_ADDRESS        0x10020000
+#define D_FLASH_BASE_ADDRESS        0x10000000
 #define D_FLASH_SIZE                (128 * KiB)
 
 #define ITCM_BASE_ADDRESS           0x00000000
 #define ITCM_SIZE                   (64 * KiB)
 
+#define DTCM_BASE_ADDRESS           0x20000000
+#define DTCM_SIZE                   (128 * KiB)
 #define NUM_TIMERS 3
 
 struct S32K3X8MachineClass {
@@ -63,8 +65,9 @@ struct S32K3X8MachineState {
     Clock *refclk;
 
     MemoryRegion itcm[MAX_CPU];
-    MemoryRegion sram;  // Unused
+    MemoryRegion dtcm[MAX_CPU];
     MemoryRegion pflash;
+    MemoryRegion dflash;
 
     S32K3X8Timer timer[NUM_TIMERS];
 };
