@@ -88,6 +88,7 @@ static int uart_can_receive(void *opaque)
         if (s->rx_ready) {
             s->rx_ready = false;
             s->uartsr &= ~UART_SR_RDRF; //clear rx data reg full flag
+            qemu_set_irq(s->irq, 0);
             return s->rx_buf;
         } 
         else {
@@ -154,8 +155,8 @@ static int uart_can_receive(void *opaque)
     memory_region_init_io(&s->mmio, obj, &s32k3x8_uart_ops, s, TYPE_S32K3X8_UART, REGION_SIZE);
     sysbus_init_mmio(SYS_BUS_DEVICE(s), &s->mmio);
 
-    /* Setup IRQ line (NEED TO BE IMPLEMENTED)*/
-    //sysbus_init_irq(SYS_BUS_DEVICE(s), &s->irq);
+    /* Setup IRQ line */
+    sysbus_init_irq(SYS_BUS_DEVICE(s), &s->irq);
 
  }
 

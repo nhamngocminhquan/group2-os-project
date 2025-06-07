@@ -66,6 +66,11 @@ static const uint32_t uart_addr[] = {
 
 //static const int    timer_irq[] = { 96, 97, 98 };
 static const int    timer_irq[] = { 8, 9, 10 };
+static const int    uart_irq[] = {141, 142, 143, 144, 145,
+                                146, 147, 148, 149, 150,
+                                151, 152, 153, 154, 155,
+                                156}; //Looks like rx and tx is connected to the same irq. Need to check.
+
 
 // Q:   From Airbus and mps2
 static void s32k3x8_init(MachineState *ms) {
@@ -166,7 +171,7 @@ static void s32k3x8_init(MachineState *ms) {
             sysbus_mmio_map(sbd, 0, uart_addr[i]);
 
             /* Hook its interrupt line which is not implemented yet.*/
-            //sysbus_connect_irq(sbd, 0, sms->armv7m.cpu->irq[irq_LPUART0]);
+            sysbus_connect_irq(sbd, 0, qdev_get_gpio_in(armv7m, uart_irq[i])); //armv7m is deviceState
 
         }
 
