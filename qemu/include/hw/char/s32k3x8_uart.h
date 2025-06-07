@@ -32,7 +32,7 @@
 #define LPUART13_BASE_ADDRESS       0x404A0000
 #define LPUART14_BASE_ADDRESS       0x404A4000
 #define LPUART15_BASE_ADDRESS       0x404A8000
-#define REGION_SIZE                 0x1000 /* MMIO region size, The real size is 0x7FC (From the ref manual) */
+#define REGION_SIZE                 0x1000 /* This is specific for only one uart(not whole region I guess)** need to check.*/
 
 #define UART_SR_RDRF    (1u << 21)   /* Receive Data Register Full */
 #define UART_SR_TDRE    (1u << 23)   /* Transmit Data Register Empty*/

@@ -38,6 +38,7 @@
 #define ITCM_SIZE                (64 * KiB)
 
 #define NUM_TIMERS 3
+#define NUM_UARTS 16
 
 struct S32K3X8MachineClass {
     MachineClass parent;
@@ -46,7 +47,6 @@ struct S32K3X8MachineClass {
 struct S32K3X8MachineState {
     MachineState parent;
     ARMv7MState armv7m;
-    S32K3X8UARTState uart0;
 
     Clock *sysclk;
     Clock *refclk;
@@ -54,6 +54,7 @@ struct S32K3X8MachineState {
     MemoryRegion itcm;
     MemoryRegion pflash;
 
+    S32K3X8UARTState uart[NUM_UARTS];
     S32K3X8Timer timer[NUM_TIMERS];
 };
 
