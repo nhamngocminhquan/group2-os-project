@@ -35,4 +35,4 @@ system_ss.add(when: 'CONFIG_SIFIVE_PWM', if_true: files('sifive_pwm.c'))
 
 specific_ss.add(when: 'CONFIG_AVR_TIMER16', if_true: files('avr_timer16.c'))
 
-system_ss.add(files('s32k3x8-timer.c'))
+system_ss.add(when: 'CONFIG_S32K3X8_TIMER', if_true: files('s32k3x8-timer.c'))
