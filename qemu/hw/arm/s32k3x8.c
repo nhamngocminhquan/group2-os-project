@@ -55,7 +55,6 @@ static void s32k3x8_init(MachineState *ms) {
 
     // Q:   Useful variables
     DeviceState *armv7m;
-    MachineClass *mc = MACHINE_GET_CLASS(ms);
 
     // Q:   SBAF variables
     // Q:   According to Table 191 @ reference manual, the SBAF
@@ -79,7 +78,7 @@ static void s32k3x8_init(MachineState *ms) {
 #if USE_SBAF == 1
     if (parse_elf_for_ivt(
         ms->kernel_filename, ms->smp.cpus,
-        0b0101, cpu_enable, ivt_addr
+        CPU_MASK, cpu_enable, ivt_addr
     ) < 0) {
         exit(1);
     }
@@ -389,7 +388,7 @@ static ssize_t parse_elf_for_ivt(
                 cpu_enable[cpu] = (ivt_table[1] >> 8) & 1;
                 ivt_addr[cpu] = ivt_table[10];
             }
-            info_report("Set CPU %d with IVT %x", cpu, ivt_addr[cpu]);
+            info_report("Set CPU %d with IVT %lx", cpu, ivt_addr[cpu]);
             cpu++;
         }
 

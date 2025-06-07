@@ -24,7 +24,8 @@
 #define REFCLK_FRQ (1 * 1000 * 1000)
 
 // Multi-CPU variables
-#define MAX_CPU                     2
+#define MAX_CPU                     4               // Absolute maximum number of cores (ex. 388)
+#define CPU_MASK                    0b0101          // The 358 has CPUs 0 and 2, so bits 0 and 2 are selected
 #define USE_SBAF                    0
 #define IVT_SIZE                    11
 

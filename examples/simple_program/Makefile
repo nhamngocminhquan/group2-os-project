@@ -31,12 +31,12 @@ build:
 # https://stackoverflow.com/questions/70603156/why-arm-cores-behaving-differently-with-an-elf-and-binary-file?noredirect=1&lq=1
 
 run:
-# $(QEMU) -machine $(MACHINE) -cpu $(CPU) -monitor stdio -kernel main.elf -s -S
+	$(QEMU) -machine $(MACHINE) -cpu $(CPU) -smp 2 -monitor stdio -kernel main.elf -s -S 
 # -nographic -monitor none -serial stdio -s -S
-	$(QEMU) -machine $(MACHINE) -cpu $(CPU) \
-	-monitor stdio -s -S \
-	-d cpu,int,guest_errors,unimp,in_asm \
-	-device loader,file=main.elf,cpu-num=0
+	# $(QEMU) -machine $(MACHINE) -cpu $(CPU) -smp 2 \
+	# -monitor stdio -s -S \
+	# -d cpu,int,guest_errors,unimp,in_asm \
+	# -device loader,file=main.elf
 	
 gdb:
 	gdb-multiarch -ex 'tar extended-rem :1234' main.elf
