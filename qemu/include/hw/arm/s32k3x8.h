@@ -13,6 +13,7 @@
 #include "hw/qdev-clock.h"
 #include "hw/misc/unimp.h"
 #include "hw/or-irq.h"
+#include "hw/core/split-irq.h"  // For IRQ splitter
 #include "hw/char/s32k3x8_uart.h"  // UART definitions
 
  //#include "hw/timer/cmsdk-apb-timer.h"
@@ -45,7 +46,12 @@
 
 #define DTCM_BASE_ADDRESS           0x20000000
 #define DTCM_SIZE                   (128 * KiB)
+
+// Peripheral definitions
 #define NUM_TIMERS 3
+#define NUM_ITN_IRQ 16
+#define NUM_EXT_IRQ 240
+#define NUM_IRQ (NUM_ITN_IRQ + NUM_EXT_IRQ)
 
 struct S32K3X8MachineClass {
     MachineClass parent;
@@ -70,6 +76,7 @@ struct S32K3X8MachineState {
     MemoryRegion dflash;
 
     S32K3X8Timer timer[NUM_TIMERS];
+    SplitIRQ irq_splitter[NUM_EXT_IRQ];
 };
 
 

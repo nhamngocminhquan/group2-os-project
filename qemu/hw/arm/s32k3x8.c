@@ -49,6 +49,15 @@ static const uint32_t timer_addr[] = { 0x400B0000, 0x400B4000,
 //static const int    timer_irq[] = { 96, 97, 98 };
 static const int    timer_irq[] = { 8, 9, 10 };
 
+// Table to define peripheral interrupt routing
+// Route interrupt to enabled cores. 358 has cores
+// 0 and 2, so bits 0 and 2 are enabled
+static const uint8_t IRSPRC_reg[NUM_EXT_IRQ] = {
+    [8] = 0b0101,
+    [9] = 0b0101,
+    [10] = 0b0101,
+};
+
 // Q:   From Airbus and mps2
 static void s32k3x8_init(MachineState *ms) {
     int i=0;//for timer iteration
@@ -156,7 +165,7 @@ static void s32k3x8_init(MachineState *ms) {
         qdev_prop_set_uint32(armv7m, "init-nsvtor", ivt_addr[cpu_i]);
 
         // IRQ-related properties
-        qdev_prop_set_uint32(armv7m, "num-irq", 256);
+        qdev_prop_set_uint32(armv7m, "num-irq", NUM_IRQ);
         qdev_prop_set_uint8(armv7m, "num-prio-bits", 4);
         qdev_prop_set_bit(armv7m, "enable-bitband", true);
 
@@ -189,6 +198,38 @@ static void s32k3x8_init(MachineState *ms) {
         );
     }
 
+    // Create splitters for interrupts to CPUs
+    for (i = 0; i < NUM_EXT_IRQ; i++) {
+        if (IRSPRC_reg[i]) {
+            g_autofree char *name = g_strdup_printf("irq-splitter-%d", i);
+            SplitIRQ *splitter = &sms->irq_splitter[i];
+            object_initialize_child(
+                OBJECT(sms), name,
+                splitter, TYPE_SPLIT_IRQ
+            );
+            object_property_set_int(OBJECT(splitter), "num-lines", MAX_CPU, &error_fatal);
+            if (!qdev_realize(DEVICE(splitter), NULL, &error_fatal)) {
+                error_report("Failed to realize splitter %d", i);
+                return;
+            }
+
+            // Connect splitter to CPUs according to IRSPRC
+            int cpu_i = 0;
+            for (int port = 0; port < MAX_CPU; port++)
+                if (IRSPRC_reg[i] & (1 << port)) {
+                    qdev_connect_gpio_out(
+                        DEVICE(splitter), port,
+                        qdev_get_gpio_in(
+                            DEVICE(&sms->armv7m[cpu_i]),
+                            i
+                        )
+                    );
+                    cpu_i++;
+                    if (cpu_i == ms->smp.cpus) break;
+                }
+        }
+    }
+
     // Get reference to first CPU for peripherals
     armv7m = DEVICE(&sms->armv7m[0]);
     
@@ -209,7 +250,7 @@ static void s32k3x8_init(MachineState *ms) {
             return;
         }
         sysbus_mmio_map(sbd, 0, timer_addr[i]);
-        sysbus_connect_irq(sbd, 0, qdev_get_gpio_in(armv7m, timer_irq[i]));//need to understand to what irq assign them
+        sysbus_connect_irq(sbd, 0, qdev_get_gpio_in(DEVICE(&sms->irq_splitter[timer_irq[i]]), 0));//need to understand to what irq assign them
     }
     //-------------------------------------------------
 
