@@ -144,15 +144,11 @@ static const RAMInfo an536_raminfo[] = {
         .flags = IS_ROM,
         .mrindex = 1,
     }, {
-        // Q:   BRAM is one of the boot options for the board
-        // as written on the application note AN536
         .name = "BRAM",
         .base = 0x10000000,
         .size = 0x00080000,
         .mrindex = 2,
     }, {
-        // Q:   System memory set here, which base is also 
-        // passed to arm_load_kernel
         .name = "DDR",
         .base = 0x20000000,
         .size = MPS3_DDR_SIZE,
@@ -316,7 +312,6 @@ static void create_gic(MPS3RMachineState *mms, MemoryRegion *sysmem)
                                     qdev_get_gpio_in(gicdev,
                                                      intidbase + VIRTUAL_PMU_IRQ));
 
-        // Q:   8 interrupt lines, odd for one and even for the other
         sysbus_connect_irq(gicsbd, i,
                            qdev_get_gpio_in(cpudev, ARM_CPU_IRQ));
         sysbus_connect_irq(gicsbd, i + machine->smp.cpus,
@@ -378,14 +373,6 @@ static void mps3r_common_init(MachineState *machine)
         g_autofree char *ramname = g_strdup_printf("cpu-%d-memory", i);
         g_autofree char *alias_name = g_strdup_printf("sysmem-alias-%d", i);
 
-        // Q:   Similar to mps2-tz, containers are used to create overlapping
-        // memory maps. The lower priority of sysmem_alias means that the
-        // sysmem in common is hidden by other higher priority regions.
-        //
-        // Q:   Here it does NOT use clusters, so maybe they are not needed
-        // even if the view of the memory is different (unless they are
-        // the exact same thanks to aliases)
-
         /*
          * Each CPU has some private RAM/peripherals, so create the container
          * which will house those, with the whole-machine system memory being
@@ -436,7 +423,6 @@ static void mps3r_common_init(MachineState *machine)
         qdev_connect_gpio_out(orgate, 0,
                               qdev_get_gpio_in(gicdev, intidbase + 19));
 
-        // Q:   First UART for both is at 0xe7c00000
         create_uart(mms, i, &mms->cpu_sysmem[i], 0xe7c00000,
                     qdev_get_gpio_in(gicdev, intidbase + 17), /* tx */
                     qdev_get_gpio_in(gicdev, intidbase + 16), /* rx */
@@ -444,8 +430,6 @@ static void mps3r_common_init(MachineState *machine)
                     qdev_get_gpio_in(orgate, 1), /* rxover */
                     qdev_get_gpio_in(gicdev, intidbase + 18) /* combined */);
     }
-
-    // Q:   Or gate with 2 x MPS3R_UART_MAX inputs
     /*
      * UARTs 2 to 5 are whole-system; all overflow IRQs are ORed
      * together into IRQ 17
@@ -458,7 +442,6 @@ static void mps3r_common_init(MachineState *machine)
     qdev_connect_gpio_out(DEVICE(&mms->uart_oflow), 0,
                           qdev_get_gpio_in(gicdev, 17));
 
-    // Q:   Dalla seconda UART in poi, l'indirizzo memoria e` comune a tutti i processori 
     for (int i = 0; i < MPS3R_UART_MAX; i++) {
         hwaddr baseaddr = 0xe0205000 + i * 0x1000;
         int rxirq = 5 + i * 2, txirq = 6 + i * 2, combirq = 13 + i;
@@ -573,8 +556,6 @@ static void mps3r_common_init(MachineState *machine)
 
     mms->bootinfo.ram_size = machine->ram_size;
     mms->bootinfo.board_id = -1;
-
-    // Q:   Pass location of kernel here
     mms->bootinfo.loader_start = mmc->loader_start;
     mms->bootinfo.write_secondary_boot = mps3r_write_secondary_boot;
     mms->bootinfo.secondary_cpu_reset_hook = mps3r_secondary_cpu_reset;
@@ -595,9 +576,6 @@ static void mps3r_set_default_ram_info(MPS3RMachineClass *mmc)
             /* Found the entry for "system memory" */
             mc->default_ram_size = p->size;
             mc->default_ram_id = p->name;
-
-            // Q:   Location of boot is (probably)
-            // set here, to the system memory 
             mmc->loader_start = p->base;
             return;
         }

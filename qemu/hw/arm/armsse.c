@@ -83,11 +83,6 @@ static const Property iotkit_properties[] = {
                      MemoryRegion *),
     DEFINE_PROP_UINT32("EXP_NUMIRQ", ARMSSE, exp_numirq, 64),
     DEFINE_PROP_UINT32("SRAM_ADDR_WIDTH", ARMSSE, sram_addr_width, 15),
-
-    // Q:   Here the init_svtor is set for both boards,
-    // used in the initialization of the board below
-    // Could potentially use init_svtor or init_nsvtor
-    // as defined in armv7m.c
     DEFINE_PROP_UINT32("init-svtor", ARMSSE, init_svtor, 0x10000000),
     DEFINE_PROP_BOOL("CPU0_FPU", ARMSSE, cpu_fpu[0], true),
     DEFINE_PROP_BOOL("CPU0_DSP", ARMSSE, cpu_dsp[0], true),
@@ -1315,10 +1310,6 @@ static void armsse_realize(DeviceState *dev, Error **errp)
 
             object_property_set_int(OBJECT(&s->sysctl), "sse-version",
                                     info->sse_version, &error_abort);
-            
-            // Q:   Set default configuration registers,
-            // including the location of the init vector table
-            // INITSVTOR0 and INITSVTOR1
             object_property_set_int(OBJECT(&s->sysctl), "CPUWAIT_RST",
                                     info->cpuwait_rst, &error_abort);
             object_property_set_int(OBJECT(&s->sysctl), "INITSVTOR0_RST",

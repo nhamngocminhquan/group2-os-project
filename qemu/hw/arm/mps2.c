@@ -96,7 +96,7 @@ struct MPS2MachineState {
 #define TYPE_MPS2_AN386_MACHINE MACHINE_TYPE_NAME("mps2-an386")
 #define TYPE_MPS2_AN500_MACHINE MACHINE_TYPE_NAME("mps2-an500")
 #define TYPE_MPS2_AN511_MACHINE MACHINE_TYPE_NAME("mps2-an511")
-// Q:   Macro used for DECLARE_OBJ_CHECKERS in Florian
+
 OBJECT_DECLARE_TYPE(MPS2MachineState, MPS2MachineClass, MPS2_MACHINE)
 
 /* Main SYSCLK frequency in Hz */
@@ -187,8 +187,6 @@ static void mps2_common_init(MachineState *machine)
      * This is of no use for QEMU so we don't implement it (as if
      * zbt_boot_ctrl is always zero).
      */
-    // Q:   Memory mappings used in loader file
-    //      All CPUs have different PSRAM base starts but same size
     memory_region_add_subregion(system_memory, mmc->psram_base, machine->ram);
 
     if (mmc->has_block_ram) {
@@ -205,7 +203,6 @@ static void mps2_common_init(MachineState *machine)
     case FPGA_AN385:
     case FPGA_AN386:
     case FPGA_AN500:
-        // Q:   Make RAM regions
         make_ram(&mms->ssram1, "mps.ssram1", 0x0, 0x400000);
         make_ram_alias(&mms->ssram1_m, "mps.ssram1_m", &mms->ssram1, 0x400000);
         make_ram(&mms->ssram23, "mps.ssram23", 0x20000000, 0x400000);
@@ -254,7 +251,6 @@ static void mps2_common_init(MachineState *machine)
      * some of them below (in which case the real device takes precedence
      * over the unimplemented-region mapping).
      */
-    // Q:   Each device gets created into the unimplemented area
     create_unimplemented_device("CMSDK APB peripheral region @0x40000000",
                                 0x40000000, 0x00010000);
     create_unimplemented_device("CMSDK AHB peripheral region @0x40010000",
@@ -266,7 +262,6 @@ static void mps2_common_init(MachineState *machine)
     create_unimplemented_device("VGA", 0x41000000, 0x0200000);
 
     switch (mmc->fpga_type) {
-    // Q:   Create UART addresses, the same for AN385-AN500
     case FPGA_AN385:
     case FPGA_AN386:
     case FPGA_AN500:

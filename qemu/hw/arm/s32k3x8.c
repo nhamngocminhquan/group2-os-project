@@ -284,14 +284,6 @@ static void s32k3x8_init(MachineState *ms) {
 
     }
     /*E: End UART */
-    // // Q:   Create placeholder unimplemented devices
-    // //      Each device gets created into the unimplemented area
-    // create_unimplemented_device("CMSDK APB peripheral region @0x40000000",
-    //                             0x40000000, 0x00010000);
-    // create_unimplemented_device("CMSDK AHB peripheral region @0x40010000",
-    //                             0x40010000, 0x00010000);
-    // create_unimplemented_device("Extra peripheral region @0x40020000",
-    //                             0x40020000, 0x00010000);
 
     // Q:   Load kernel for simulation, size argument means kernel cannot
     //      exceed this size? (probably cropped). We call it twice because
@@ -319,8 +311,6 @@ static void s32k3x8_machine_init(MachineClass *mc) {
     // Q:   IMPORTANT: ID is crucial, otherwise QEMU will not create RAM
     mc->default_ram_id = "s32k3x8.ram";
     mc->max_cpus = MAX_CPU;
-    // mc->default_cpu_type = POWERPC_CPU_TYPE_NAME("755_v2.8");
-    // mc->default_ram_size = CPIOM_MMAP_SDRAM_SIZE
 }
 
 // Q:   Macro used to automate creation of types

@@ -695,13 +695,3 @@ config S32K3X8
     select OR_IRQ
     select SPLIT_IRQ
     select UNIMP
-
-#    select ARMSSE
-#    select ARM_V7M
-#    select LAN9118
-#    select MPS2_FPGAIO
-#    select MPS2_SCC
-#    select PL022    # SPI
-#    select PL080    # DMA controller
-#    select CMSDK_APB_WATCHDOG
-#    select ARM_SBCON_I2C
