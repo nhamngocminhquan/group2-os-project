@@ -64,8 +64,8 @@ static int uart_can_receive(void *opaque)
          // set Receive Data Register Full Flag
          s->uartsr |= UART_SR_RDRF;
  
-         // TODO: trigger IRQ here
-         // qemu_set_irq(s->irq, 1);
+         //trigger IRQ here
+         qemu_set_irq(s->irq, 1);
      }
  }
  
