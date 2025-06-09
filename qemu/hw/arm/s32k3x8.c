@@ -146,8 +146,6 @@ static void s32k3x8_init(MachineState *ms) {
     }
 
     /* -------------- UART ----------------
-    * TODO: Implement UART interrupt handling
-    *       Currently, it is not connected to the CPU IRQ line.
     * TODO2: Add some funcionalities of UART.
     */
     {        
@@ -158,19 +156,12 @@ static void s32k3x8_init(MachineState *ms) {
             sbd = SYS_BUS_DEVICE(&sms->uart[i]);
             qdev_prop_set_chr(DEVICE(&sms->uart[i]), "chardev", serial_hd(i)); 
 
-            /* Connect clocks 
-            * TODO: When clocks are needed uncomment.
-            */
-            //qdev_connect_clock_in(DEVICE(&sms->uart[i]), "periph_clk", sms->sysclk);
-            //qdev_connect_clock_in(DEVICE(&sms->uart[i]), "ipg_clk", sms->refclk);
-
             /* Realize UART */
             sysbus_realize(sbd, &error_fatal);
 
             /* Map MMIO region */
             sysbus_mmio_map(sbd, 0, uart_addr[i]);
 
-            /* Hook its interrupt line which is not implemented yet.*/
             sysbus_connect_irq(sbd, 0, qdev_get_gpio_in(armv7m, uart_irq[i])); //armv7m is deviceState
 
         }
