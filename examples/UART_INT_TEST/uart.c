@@ -5,9 +5,14 @@
 
 void UART_init( void )
 {
-    UART0_BAUDDIV = 16;
-    UART0_CTRL = 1;
     UART0_CTRL = UART0_CTRL | 0x200000; //Enable Interrupt.
+    // These options are for testing the RX delay when the baud rate is low, 
+    // when the baud rate 95 is chose, the delay on the terminal is pretty appereant.
+
+    //For baud rate 115200
+    *(volatile uint32_t *)(UART0_ADDRESS + OFFSET_BDR) =   (0xF << 24) | 14;
+    //For baud rate 95.4
+    //*(volatile uint32_t *)(UART0_ADDRESS + OFFSET_BDR) = (0x1F << 24) | 0x1FFF;
 
     NVIC_SetPriority(UART0_IRQn, 10);  // Lower than timers
     // Enable interrupts in NVIC

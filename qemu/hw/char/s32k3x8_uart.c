@@ -2,8 +2,6 @@
  * s32k3x8_uart.c
  * Basic S32K3x8 UART-only driver (LINFlexD minimal UART mode)
  *
- * This file provides the minimal implementation to support UART
- * transmit (TX Only) Inspired by QEMU's pl011.c.
  */
 
  #include "qemu/osdep.h"               /* QEMU OS dependencies — always first */
@@ -20,7 +18,8 @@
 
  
  #include "chardev/char-serial.h"
- #include "trace.h"                     //trace_cmsdk_apb_uart_set_params()
+ #include "trace.h"                     // For trace_cmsdk_apb_uart_set_params()
+ #include "qemu/timer.h"                
 
  
 // Structure inspired from cmsdk-apb-uart.c
@@ -37,8 +36,8 @@ static void uart_update_parameters(S32K3X8UARTState *s ){
         ssp.data_bits = 8;
         ssp.parity = 'N';
         ssp.stop_bits = 1;
-        ssp.speed = s->pclk_frq / (((s->bdr & UART_BDR_OSR) + 1) * (s->bdr & UART_BDR_SBR));
-
+        ssp.speed = s->pclk_frq / ((((s->bdr & UART_BDR_OSR) >> 24) + 1) * (s->bdr & UART_BDR_SBR));
+        s->baud_rate = ssp.speed; //Will be used in the UART RX/TX timing.
         qemu_chr_fe_ioctl(&s->chr, CHR_IOCTL_SERIAL_SET_PARAMS, &ssp);
         trace_cmsdk_apb_uart_set_params(ssp.speed);
     }
@@ -63,14 +62,25 @@ static void uart_update_parameters(S32K3X8UARTState *s ){
     
     // Set TDRE = 1 (Transmit empty)
     s->uartsr  |= UART_SR_TDRE;
+
+    // Set default baud rate if not already set
+    if ((s->bdr & UART_BDR_SBR) == 0) {
+        // OSR = 15 (0xF), SBR = 14 for ~115200 (actually 111607) baud if pclk_frq = 25MHz
+        s->bdr = (0xF << 24) | 14;
+            uart_update_parameters(s);
+    }
+    timer_del(s->timer);
 }
 
-//uart can receive for uart_rx to work. 
-//Looks like qemu first needs function to return 1, before running uart_rx.
+//uart can receive. When this returns 1, the rx callback is being called.
 static int uart_can_receive(void *opaque)
 {
-    /* Always ready to accept one byte at a time */
-    return 1;
+    S32K3X8UARTState *s = opaque;
+
+    if(!(s->rx_busy)){
+        return 1;        
+    }
+    return 0;
 }
 
 
@@ -78,23 +88,29 @@ static int uart_can_receive(void *opaque)
  static void uart_rx(void *opaque, const uint8_t *buf, int size)
  {
      S32K3X8UARTState *s = opaque;
-     if (size > 0) {
+     if (size > 0 && !(s->rx_busy)) {
+        s->rx_temp = buf[0];   // Only 1 byte at a time
+        s->rx_busy = 1;
+        uint32_t byte_time_ns = (10 * 1e9) / s->baud_rate; // 10 bits per message(1byte payload) (start + 8 data + stop)
+        timer_mod(s->timer, qemu_clock_get_ns(QEMU_CLOCK_VIRTUAL) + byte_time_ns);
 
-         s->rx_buf = buf[0];   // Only 1 byte at a time
-         s->rx_ready = true;
- 
-         // set Receive Data Register Full Flag
-         s->uartsr |= UART_SR_RDRF;
- 
-         //trigger IRQ here
-         // Control Register 21.bit, Enables STAT[TDRE] to generate interrupt requests if STAT[TDRE] is 1. 
-         // From ref. 
-         if((s->uartcr & 0x200000) != 0 ){ 
-            qemu_set_irq(s->irq, 1);       
-         }
-         
      }
  }
+
+ //Timer callback
+ void s32k3x8_uart_rx_timer_cb(void *opaque) {
+    S32K3X8UARTState *s = opaque;
+    s->rx_buf = s->rx_temp;
+    s->rx_ready = true;
+    s->uartsr |= UART_SR_RDRF;
+    s->rx_busy = false;
+    //trigger IRQ here
+    // Checks, Control Register 21.bit, Receiver Interrupt Enable. 
+    // From ref. 
+    if((s->uartcr & UART_CR_RIE) != 0 ){ 
+    qemu_set_irq(s->irq, 1);       
+    }
+}
  
  /**
   * Read handler for MMIO reads
@@ -194,6 +210,8 @@ static int uart_can_receive(void *opaque)
  static void s32k3x8_uart_realize(DeviceState *dev, Error **errp)
 {
     S32K3X8UARTState *s = S32K3X8_UART(dev);
+
+    s->timer = timer_new_ns(QEMU_CLOCK_VIRTUAL, s32k3x8_uart_rx_timer_cb, s);
     /*
     *   the rx_uart function is gonna be called when there is these two happens,
     *   

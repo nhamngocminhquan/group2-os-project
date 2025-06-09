@@ -40,6 +40,7 @@
 #define UART_CR_RE      (1u << 18)  // Receiver Enable
 #define UART_BDR_SBR    (0x1FFFu << 0 ) // 13 bits Baud Rate Modulo Divisor
 #define UART_BDR_OSR    (0x1Fu << 24) // 5 bits Oversampling Ratio
+#define UART_CR_RIE    (0x1u << 21) //1 bit, Receiver Interrupt Enable
 
 #define CHR_IOCTL_SERIAL_SET_PARAMS   1
  
@@ -61,7 +62,13 @@
     uint8_t rx_buf;           // received byte
     bool rx_ready;            // Set to true when rx_buf is valid
 
+    //Baud Rate related
     uint32_t pclk_frq;
+    QEMUTimer *timer; 
+    uint32_t baud_rate;
+    bool rx_busy;
+    bool tx_busy;
+    uint8_t rx_temp;
 };
 
 

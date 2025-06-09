@@ -155,6 +155,8 @@ static void s32k3x8_init(MachineState *ms) {
             object_initialize_child(OBJECT(ms), name, &sms->uart[i], TYPE_S32K3X8_UART);
             sbd = SYS_BUS_DEVICE(&sms->uart[i]);
             qdev_prop_set_chr(DEVICE(&sms->uart[i]), "chardev", serial_hd(i)); 
+            //For calculating baud-rate. 
+            qdev_prop_set_uint32(DEVICE(&sms->uart[i]), "pclk-frq", clock_get_hz(sms->sysclk));
 
             /* Realize UART */
             sysbus_realize(sbd, &error_fatal);
