@@ -36,29 +36,17 @@
 
 #define UART_SR_RDRF    (1u << 21)   /* Receive Data Register Full */
 #define UART_SR_TDRE    (1u << 23)   /* Transmit Data Register Empty*/
+#define UART_CR_TE      (1u << 19)  // Transmitter Enable
+#define UART_CR_RE      (1u << 18)  // Receiver Enable
+#define UART_BDR_SBR    (0x1FFFu << 0 ) // 13 bits Baud Rate Modulo Divisor
+#define UART_BDR_OSR    (0x1Fu << 24) // 5 bits Oversampling Ratio
 
+#define CHR_IOCTL_SERIAL_SET_PARAMS   1
  
- /*
-  * Device type name must match the QEMU type registration.
-  * Convention: lowercase with dashes.
-  */
  #define TYPE_S32K3X8_UART "s32k3x8-uart"
  OBJECT_DECLARE_SIMPLE_TYPE(S32K3X8UARTState, S32K3X8_UART)
 
- /**
-  * S32K3X8UARTState:
-  *   Runtime state for the S32K3x8 minimal UART device.
-  *
-  * Fields:
-  *   parent_obj - base SysBusDevice
-  *   mmio       - memory region for register map
-  *   irq        - interrupt line
-  *   uartcr     - cached Control register
-  *   uartsr     - cached Status register
-  *   bdr        - cached Baud Rate Divider
-  *   udr        - last written Data register
-  *   chr        - QEMU character backend for console I/O
-  */
+ 
  struct S32K3X8UARTState {
     SysBusDevice parent_obj;
     MemoryRegion mmio;
@@ -69,22 +57,11 @@
     uint32_t udr;
     CharBackend chr;
 
-    /*
-        Clocks are needed for these operaitons,
-
-        Want to model real-time bit-timing (baud rate generation, framing errors, etc.).
-
-        Need peripheral-generated interrupts that fire on precise 
-        timer events (e.g. TX complete after N bit-times).
-    */ 
-
-    //Clock *periph_clk;
-    //Clock *ipg_clk;
-
     //RX stuff
     uint8_t rx_buf;           // received byte
     bool rx_ready;            // Set to true when rx_buf is valid
 
+    uint32_t pclk_frq;
 };
 
 

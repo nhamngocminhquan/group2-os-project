@@ -17,10 +17,32 @@
  #include "chardev/char-fe.h"          /* Character frontend (CharBackend) */
  #include "qemu/log.h"                 /* Logging macros */
  #include "qemu/module.h"              /* Module init macros */
- #include "hw/qdev-clock.h"             /* for DEFINE_PROP_CLK */
 
  
+ #include "chardev/char-serial.h"
+ #include "trace.h"                     //trace_cmsdk_apb_uart_set_params()
 
+ 
+// Structure inspired from cmsdk-apb-uart.c
+// Update Backedn Chardev Parameters.
+static void uart_update_parameters(S32K3X8UARTState *s ){
+    QEMUSerialSetParams ssp;
+    /*
+    If SBR is 1–8191, baud rate = baud clock ÷ ((OSR + 1) × SBR). You must update the 13-bit baud
+    rate setting [SBR12:SBR0] only when both the transmitter and receiver are disabled (both CTRL[RE]
+    and CTRL[TE] are 0).
+    */
+
+    if((s->uartcr & UART_CR_RE) || (s->uartcr & UART_CR_TE) ==0 ){
+        ssp.data_bits = 8;
+        ssp.parity = 'N';
+        ssp.stop_bits = 1;
+        ssp.speed = s->pclk_frq / (((s->bdr & UART_BDR_OSR) + 1) * (s->bdr & UART_BDR_SBR));
+
+        qemu_chr_fe_ioctl(&s->chr, CHR_IOCTL_SERIAL_SET_PARAMS, &ssp);
+        trace_cmsdk_apb_uart_set_params(ssp.speed);
+    }
+}
 
  
  /*
@@ -69,8 +91,6 @@ static int uart_can_receive(void *opaque)
          // From ref. 
          if((s->uartcr & 0x200000) != 0 ){ 
             qemu_set_irq(s->irq, 1);       
-            //TEST
-            //printf("INTERRUPPTT\n");
          }
          
      }
@@ -128,6 +148,10 @@ static int uart_can_receive(void *opaque)
          break;
      case OFFSET_BDR:
          s->bdr = (uint32_t)val;
+         if((s->bdr & UART_BDR_SBR) != 0){
+            uart_update_parameters(s);
+         } //If SBR(12-0) (Baud Rate Modulo Divisor) is zero, disabled.
+        
          break;
      case OFFSET_UDR: {
          uint8_t ch = val & 0xFF;
@@ -184,6 +208,7 @@ static int uart_can_receive(void *opaque)
 
  static const Property s32k3x8_uart_props[] = {
     DEFINE_PROP_CHR("chardev", S32K3X8UARTState, chr),  
+    DEFINE_PROP_UINT32("pclk-frq", S32K3X8UARTState, pclk_frq, 0),
 };
  
  /**
