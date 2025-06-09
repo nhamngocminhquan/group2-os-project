@@ -65,7 +65,14 @@ static int uart_can_receive(void *opaque)
          s->uartsr |= UART_SR_RDRF;
  
          //trigger IRQ here
-         qemu_set_irq(s->irq, 1);
+         // Control Register 21.bit, Enables STAT[TDRE] to generate interrupt requests if STAT[TDRE] is 1. 
+         // From ref. 
+         if((s->uartcr & 0x200000) != 0 ){ 
+            qemu_set_irq(s->irq, 1);       
+            //TEST
+            //printf("INTERRUPPTT\n");
+         }
+         
      }
  }
  
