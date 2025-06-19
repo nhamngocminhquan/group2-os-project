@@ -1,6 +1,6 @@
 # The directory that contains FreeRTOS source code
-FREERTOS_ROOT := /home/jacqui/FreeRTOS/FreeRTOS
-#FREERTOS_ROOT := ../FreeRTOS/FreeRTOS
+#FREERTOS_ROOT := /home/jacqui/FreeRTOS/FreeRTOS
+FREERTOS_ROOT := ../FreeRTOS/FreeRTOS
 
 # Demo code
 DEMO_PROJECT := .
@@ -26,6 +26,7 @@ MACHINE := S32K3X8
 #MACHINE := mps2-an500
 CPU := cortex-m7
 
+QEMU := ../qemu/build/qemu-system-arm
 
 # Use -s to connect to gdb port 1234 and -S to wait before executing
 QEMU_FLAGS_DBG = -s -S 
@@ -138,11 +139,11 @@ clean:
 	rm -rf $(ELF) $(MAP) $(OUTPUT_DIR)/*.o $(OUTPUT_DIR)
 
 qemu_start:
-	qemu-system-arm -machine $(MACHINE) -cpu $(CPU) -kernel \
+	$(QEMU) -machine $(MACHINE) -cpu $(CPU) -kernel \
 	$(ELF) -monitor none -nographic -serial stdio
 
 qemu_debug:
-	qemu-system-arm -machine $(MACHINE) -cpu $(CPU) -kernel \
+	$(QEMU) -machine $(MACHINE) -cpu $(CPU) -kernel \
 	$(ELF) -monitor none -nographic -serial stdio $(QEMU_FLAGS_DBG)
 gdb_start:
 	gdb-multiarch $(ELF)
