@@ -1,4 +1,7 @@
 // timer.c
+// The functions and explanations defined in this files where extracted from the
+// CMSIS standard library for ARM Cortex-M processors and the interrupts example from the class material.
+// The necesarry modifications were made to adapt the code to the S32K3X8 architecture.
 #include "timer.h"
 
 // Timer configuration
@@ -23,9 +26,12 @@ volatile uint32_t timer2_tick_count = 0;
 */
 static void NVIC_EnableIRQ(uint32_t irq_num) {
     // Enable interrupt in NVIC
-    // This is a simplified version - actual implementation depends on your MCU
-    volatile uint32_t *nvic_iser = (volatile uint32_t*)(0xE000E100UL);
-    nvic_iser[irq_num >> 5] = (1UL << (irq_num % 31));
+    // This is a simplified version - actual implementation depends on MCU
+    if ((int32_t)(irq_num) >= 0){ //added to avoid negative IRQ numbers
+        volatile uint32_t *nvic_iser = (volatile uint32_t*)(0xE000E100UL);
+        nvic_iser[irq_num >> 5] = (1UL << (irq_num & 0x1FUL)); 
+        //changed to and operation to match the CMSIS standard
+    }
 }
 
 /* NVIC_SetPriority: is an ARM CMSIS function that configures the priority of a specific interrupt 
@@ -33,9 +39,10 @@ static void NVIC_EnableIRQ(uint32_t irq_num) {
 * It takes two parameters: the interrupt number and the priority level to assign.*/
 static void NVIC_SetPriority(uint32_t irq_num, uint32_t priority) {
     // Set interrupt priority
-    // This is a simplified version - actual implementation depends on your MCU
+    // This is a simplified version - actual implementation depends on  MCU
     volatile uint8_t *nvic_ipr = (volatile uint8_t*)(0xE000E400UL);
-    nvic_ipr[irq_num] = (uint8_t) (priority << 4);
+    nvic_ipr[irq_num] = (uint8_t) (priority << 5); // Set priority (shifted to bits 5-7) for  8 priority levels (3bits)
+    //REF: https://developer.arm.com/documentation/107706/0100/Exceptions-and-interrupts-overview/NVIC-registers-for-interrupt-management
 }
 /****************************************************** */
 //       Start Timers with a specific frequency

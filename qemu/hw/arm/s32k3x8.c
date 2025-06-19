@@ -45,8 +45,8 @@ PIT_3 base address: 0x40300000 - 0x40303FFF --not used in S32K348
 
 static const uint32_t timer_addr[] = { 0x400B0000, 0x400B4000,
                                        0x402FC000 }; 
-//static const int    timer_irq[] = { 96, 97, 98 };
-static const int    timer_irq[] = { 8, 9, 10 };
+static const int    timer_irq[] = { 96, 97, 98 }; //IRQ numbers for PIT_0, PIT_1, PIT_2 respectively fpr S32K3X8
+//static const int    timer_irq[] = { 8, 9, 10 };// IRQ numbers for mps2 to start testing
 
 // Q:   From Airbus and mps2
 static void s32k3x8_init(MachineState *ms) {
