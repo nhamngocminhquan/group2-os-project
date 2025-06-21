@@ -3,3 +3,4 @@
 *.elf
 *.tmp
 .idea
+App/Output
