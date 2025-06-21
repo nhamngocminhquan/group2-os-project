@@ -29,7 +29,7 @@ CPU := cortex-m7
 QEMU := ../qemu/build/qemu-system-arm
 
 # Use -s to connect to gdb port 1234 and -S to wait before executing
-QEMU_FLAGS_DBG = -s -S 
+QEMU_FLAGS_DBG = -s -S
 
 INCLUDE_DIRS = -I$(KERNEL_DIR)/include -I$(KERNEL_PORT_DIR)
 INCLUDE_DIRS += -I$(DEMO_PROJECT)
@@ -63,7 +63,7 @@ CFLAGS += -Wshadow
 # Include debug information (-g) with maximum level of detail (3)
 CFLAGS += -g3
 
-# Optimize (-O) the size (s) of the generated executable 
+# Optimize (-O) the size (s) of the generated executable
 CFLAGS += -Os
 
 # Place each function in a dedicated section (see -gc-sections in LDFLAGS)
@@ -100,15 +100,20 @@ LDFLAGS += -mfpu=fpv5-sp-d16 -mfloat-abi=hard
 # Kernel files
 SOURCE_FILES += $(KERNEL_DIR)/list.c
 SOURCE_FILES += $(KERNEL_DIR)/tasks.c
+SOURCE_FILES += $(KERNEL_DIR)/queue.c
+# SOURCE_FILES += $(KERNEL_DIR)/event_groups.c
+# SOURCE_FILES += $(KERNEL_DIR)/stream_buffer.c
 SOURCE_FILES += $(KERNEL_DIR)/portable/MemMang/heap_4.c
 SOURCE_FILES += $(KERNEL_DIR)/portable/GCC/ARM_CM7/r0p1/port.c
 
 # Demo files
-SOURCE_FILES += $(DEMO_PROJECT)/main.c
+SOURCE_FILES += $(DEMO_PROJECT)/main2.c
 SOURCE_FILES += $(DEMO_PROJECT)/uart.c
+SOURCE_FILES += $(DEMO_PROJECT)/timer.c
+SOURCE_FILES += $(DEMO_PROJECT)/printf-stdarg.c
 
 # Start-up code
-SOURCE_FILES += ./startup.c
+SOURCE_FILES += ./startup2.c
 
 # Create list of object files with the same names of the sources
 OBJS = $(SOURCE_FILES:%.c=%.o)
