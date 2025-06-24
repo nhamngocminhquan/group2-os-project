@@ -113,7 +113,7 @@ SOURCE_FILES += $(DEMO_PROJECT)/timer.c
 SOURCE_FILES += $(DEMO_PROJECT)/printf-stdarg.c
 
 # Start-up code
-SOURCE_FILES += ./startup2.c
+SOURCE_FILES += ./startup.c
 
 # Create list of object files with the same names of the sources
 OBJS = $(SOURCE_FILES:%.c=%.o)

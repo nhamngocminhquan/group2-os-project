@@ -14,18 +14,24 @@
 #define mainTASK_PRIORITY    ( tskIDLE_PRIORITY + 2 )
 
 /* period expressed in seconds */
-#define tmrTIMER_0_PERIOD	( 1UL )
+#define tmrTIMER_0_PERIOD	( 5UL )
 #define tmrTIMER_1_PERIOD	( 2UL )
+#define tmrTIMER_2_PERIOD	( 9UL )
 
 // void slow_fibonacci(void *pvParameters);
 // void vTaskFunction2(void *pvParameters);
 
 // volatile uint32_t gBlinkCounter = 0;
 
-static int i, iter;
+static int i, iter, n;
 int reveal = 0;
 
 SemaphoreHandle_t dumpSemaphore;
+
+static void prvUARTInit(void) {
+    UART0_BAUDDIV = 16;
+    UART0_CTRL = 1;
+}
 
 struct context {
     int r[12];
@@ -35,13 +41,24 @@ struct context {
     int pc;
 };
 
-static void prvUARTInit(void) {
-    UART0_BAUDDIV = 16;
-    UART0_CTRL = 1;
+void dump_stack(void) {
+    uint32_t *sp;
+    asm volatile ("MOV %0, sp" : "=r" (sp));
+
+    printf("\n============ Stack Dump ============\n");
+    for (int i = 0; i < 4; i++) {
+        printf("0x%08x:", (unsigned int)(sp + i * 4));
+        for (int j = 0; j < 4; j++) {
+            uint32_t val = *(sp + i * 4 + j);
+            printf(" 0x%08x", val);
+        }
+        printf("\n");
+    }
+    printf("============ Dump End ==============\n\n");
 }
 
 void print_context(struct context *context) {
-    printf("============ Context saved on stack ============\n");
+    printf("\n============ Context saved on stack ============\n");
     for (int j = 0; j < 12; j++) {
         printf("r%d = 0x%08x\n",j,context->r[j]);
     }
@@ -52,7 +69,6 @@ void print_context(struct context *context) {
 }
 
 void store_context() {
-    // register int sp asm("sp");
     asm volatile (
 
         "SUB sp, sp, #64\t\n"
@@ -71,15 +87,9 @@ void store_context() {
         "STR ip, [sp, #48]\t\n"
         "STR sp, [sp, #52]\t\n"
         "STR lr, [sp, #56]\t\n"
-        // "STR pc, [sp, #60]\t\n"
 
-        // "MOV r0, r1\t\n"
         "MOV r0, sp\t\n"
-        // "MOV r1, pc\t\n"
         "BL print_context\t\n"
-
-        // ".global return_label"
-        // "return_label\t\n"
 
         "LDR r0, [sp, #0]\t\n"
         "LDR r1, [sp, #4]\t\n"
@@ -99,20 +109,28 @@ void store_context() {
     );
 }
 
+// TODO: see line 182; if we fix dump_content_choice then we need to update the
+//       demo introduction
 void welcome_message() {
     printf("S32K3x8 EVB FreeRTOS demo\n"
         "=========================\n\n"
         "This demo will show working UART and Timers implementation on an"
         "emulated S32K3x8 EVB with a simple FreeRTOS app executed trough"
         "qemu-system-arm\n\n"
-        "An invisible task will keep the CPU busy by computing Fibonacci\n\n"
-        "After starting the demo, a timer interrupt will occur each 5 seconds"
-        "pausing the computation and will allow the user to type a character"
-        "to decide what to print on screen:\n"
-        "c -> print register Context\n"
-        "s -> print Stack content\n"
-        "b -> print both\n"
-        "(if nothing is pressed) -> print nothing\n"
+        "An invisible task will keep the CPU busy by computing Fibonacci and "
+        "restarting everytime an overflow is imminent and incrementing the "
+        "computation iteration cound\n\n"
+        "After starting the demo, three timers will cause interrupt with a "
+        "different frequency each and causing different behaviour:\n"
+        "Timer 0 -> will print registers context on screen\n"
+        "Timer 1 -> will \"reveal\" the last computed Fibonacci number and iteration\n"
+        "Timer 2 -> will dump memory content on screen\n\n"
+        // "pausing the computation and will allow the user to type a character "
+        // "to decide what to print on screen:\n"
+        // "c -> print register Context\n"
+        // "s -> print Stack content\n"
+        // "b -> print both\n"
+        // "(if nothing is pressed) -> print nothing\n"
         "Press r if you're ready...\n");
     while (1) {
         unsigned int sr = UART0_STATE;
@@ -131,10 +149,11 @@ void welcome_message() {
 
 void slow_fibonacci(void *pvParameters) {
     (void) pvParameters;
-    printf("slow_fibonacci esegue\n");
-    srand(time(NULL));
+    struct timeval t1;
+    gettimeofday(&t1, NULL);
+    srand(t1.tv_usec * t1.tv_sec);
 
-    int a = 0, b = 1, n, r;
+    int a = 0, b = 1, r;
     volatile int spin;
     i = 1;
     iter = 1;
@@ -142,7 +161,7 @@ void slow_fibonacci(void *pvParameters) {
         if (a > INT_MAX - b) { // if next number would cause overflow
             a = 0;
             b = 1;
-            i = 0;
+            i = 1;
             iter++;
             printf("Fibonacci computation is causing overflow -> starting again"
                    "from 1st number of the series: iteration n°%d\n",iter);
@@ -150,17 +169,19 @@ void slow_fibonacci(void *pvParameters) {
             n = b + a;
             a = b;
             b = n;
-            i++;
             // if (reveal) {
-                printf("Fibonacci n°%2d at iteration n°%2d -> %d\n",i,iter,n);
-                // reveal--;
+            //     printf("Fibonacci n°%2d at iteration n°%2d -> %d\n",i,iter,n);
+            //     reveal--;
             // }
+            i++;
         }
-        r = rand() % 100 + 1;
+        r = rand() % 800 + 400;
         for (spin = 0; spin < INT_MAX/r; spin++);
     }
 }
 
+// TODO: fixing the following function if we want to include it in the demo,
+//       which is particularly needed but it could be nice
 void dump_content_choice(void *pvParameters) {
     (void) pvParameters;
     while (xSemaphoreTake(dumpSemaphore,portMAX_DELAY) == pdTRUE) {
@@ -198,13 +219,20 @@ void dump_content_choice(void *pvParameters) {
  */
 void timer0_user_callback() {
     printf("timer0_callback triggered\n");
-    xSemaphoreGive(dumpSemaphore);
+    // xSemaphoreGive(dumpSemaphore);
+    store_context();
 }
 
 /* timer int 0 gets the next computed fibonacci number revealed */
 void timer1_user_callback() {
     printf("timer1_callback triggered\n");
-    reveal = 1;
+    // reveal = 1;
+    printf("Fibonacci n°%2d at iteration n°%2d -> %d\n",i,iter,n);
+}
+
+void timer2_user_callback() {
+    printf("timer2_callback triggered\n");
+    dump_stack();
 }
 
 int main(int argc, char **argv){
@@ -216,11 +244,12 @@ int main(int argc, char **argv){
 
     welcome_message();
 
-    dumpSemaphore = xSemaphoreCreateCounting(1,0);
-    if (dumpSemaphore == NULL) {
-        printf("dumpSemaphore creation failed\n");
-        return 1;
-    }
+    // dumpSemaphore = xSemaphoreCreateCounting(1,0);
+    // if (dumpSemaphore == NULL) {
+    //     printf("dumpSemaphore creation failed\n");
+    //     return 1;
+    // }
+
 	xTaskCreate(
         slow_fibonacci,
         "slow_fibonacci",
@@ -230,21 +259,22 @@ int main(int argc, char **argv){
 		NULL
 	);
 
-    // xTaskCreate(
-    //     dump_content_choice,
-    //     "dump_content_choice",
-	// 	configMINIMAL_STACK_SIZE,
-	// 	NULL,
-    //     mainTASK_PRIORITY,
-	// 	NULL
-	// );
+    xTaskCreate(
+        dump_content_choice,
+        "dump_content_choice",
+		configMINIMAL_STACK_SIZE,
+		NULL,
+        mainTASK_PRIORITY,
+		NULL
+	);
 
-    // timer0_set_callback(timer0_user_callback);
-    // timer1_set_callback(timer1_user_callback);
-    //
-    // timer0_start(tmrTIMER_0_PERIOD);
-    // timer1_start(tmrTIMER_1_PERIOD);
-    // printf("timer callback assegnate ok\n");
+    timer0_set_callback(timer0_user_callback);
+    timer1_set_callback(timer1_user_callback);
+    timer2_set_callback(timer2_user_callback);
+
+    timer0_start(tmrTIMER_0_PERIOD);
+    timer1_start(tmrTIMER_1_PERIOD);
+    timer2_start(tmrTIMER_2_PERIOD);
 
 	vTaskStartScheduler();
 
