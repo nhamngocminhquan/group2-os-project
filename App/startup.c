@@ -26,25 +26,24 @@
 
  #include "uart.h"
  #include "stdint.h"
- #include "timer.h"
-
+ 
  // /* FreeRTOS interrupt handlers. */
  // extern void vPortSVCHandler( void );
  // extern void xPortPendSVHandler( void );
  // extern void xPortSysTickHandler( void );
-
+ 
  /* Exception handlers. */
  static void HardFault_Handler( void ) __attribute__( ( naked ) );
  static void Default_Handler( void ) __attribute__( ( naked ) );
  static void vPortSVCHandler( void ) __attribute__( ( naked ) );
  static void xPortPendSVHandler( void ) __attribute__( ( naked ) );
  static void xPortSysTickHandler( void ) __attribute__( ( naked ) );
-
+ 
  void Reset_Handler( void ) __attribute__( ( naked ) );
-
+ 
  extern int main( void );
  extern uint32_t _estack;
-
+ 
  /* Vector table. */
  const uint32_t* isr_vector[] __attribute__((section(".isr_vector"), used)) =
  {
@@ -59,11 +58,11 @@
      0, // reserved   -8
      0, // reserved   -7
      0, // reserved   -6
-     ( uint32_t * ) &vPortSVCHandler,       // SVC_Handler          -5
+     ( uint32_t * ) &vPortSVCHandler,       // SVC_Handler          -5  
      ( uint32_t * ) &Default_Handler,       // DebugMon_Handler     -4
      0, // reserved   -3
-     ( uint32_t * ) &xPortPendSVHandler,    // PendSV handler       -2
-     ( uint32_t * ) &xPortSysTickHandler,   // SysTick_Handler      -1
+     ( uint32_t * ) &xPortPendSVHandler,    // PendSV handler       -2  
+     ( uint32_t * ) &xPortSysTickHandler,   // SysTick_Handler      -1  
      0,
      0,
      0,
@@ -72,107 +71,19 @@
      0,
      0,
      0,
+     0, // Timer 0
+     0, // Timer 1
      0,
      0,
-     0, // 10
      0,
-     0,
-     0,
-     0,
-     0,
-     0,
-     0,
-     0,
-     0,
-     0, // 20
-     0,
-     0,
-     0,
-     0,
-     0,
-     0,
-     0,
-     0,
-     0,
-     0, // 30
-     0,
-     0,
-     0,
-     0,
-     0,
-     0,
-     0,
-     0,
-     0,
-     0, // 40
-     0,
-     0,
-     0,
-     0,
-     0,
-     0,
-     0,
-     0,
-     0,
-     0, // 50
-     0,
-     0,
-     0,
-     0,
-     0,
-     0,
-     0,
-     0,
-     0,
-     0, // 60
-     0,
-     0,
-     0,
-     0,
-     0,
-     0,
-     0,
-     0,
-     0,
-     0, // 70
-     0,
-     0,
-     0,
-     0,
-     0,
-     0,
-     0,
-     0,
-     0,
-     0, // 80
-     0,
-     0,
-     0,
-     0,
-     0,
-     0,
-     0,
-     0,
-     0,
-     0, // 90
-     0,
-     0,
-     0,
-     0,
-     0,
-     ( uint32_t * ) TIMER0_Handler,
-     ( uint32_t * ) TIMER1_Handler,
-     ( uint32_t * ) TIMER2_Handler,
-     0,
-     0, // 100
-
+     0, // Ethernet   13
  };
-
+ 
  void Reset_Handler( void )
  {
      main();
  }
-
+ 
  /* Variables used to store the value of registers at the time a hardfault
   * occurs.  These are volatile to try and prevent the compiler/linker optimizing
   * them away as the variables never actually get used. */
@@ -184,7 +95,7 @@
  volatile uint32_t lr; /* Link register. */
  volatile uint32_t pc; /* Program counter. */
  volatile uint32_t psr;/* Program status register. */
-
+ 
  /* Called from the hardfault handler to provide information on the processor
   * state at the time of the fault.
   */
@@ -194,20 +105,20 @@
      r1 = pulFaultStackAddress[ 1 ];
      r2 = pulFaultStackAddress[ 2 ];
      r3 = pulFaultStackAddress[ 3 ];
-
+ 
      r12 = pulFaultStackAddress[ 4 ];
      lr = pulFaultStackAddress[ 5 ];
      pc = pulFaultStackAddress[ 6 ];
      psr = pulFaultStackAddress[ 7 ];
-
+ 
      // UART_printf( "Calling prvGetRegistersFromStack() from fault handler" );
      //fflush( stdout );
-
+ 
      /* When the following line is hit, the variables contain the register values. */
      for( ;; );
  }
-
-
+ 
+ 
  void Default_Handler( void )
  {
      __asm volatile
@@ -221,7 +132,7 @@
          " .ltorg                                 \n"
      );
  }
-
+ 
  void HardFault_Handler( void )
  {
      __asm volatile
@@ -237,3 +148,4 @@
          " .ltorg                                                    \n"
      );
  }
+ 
