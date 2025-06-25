@@ -201,15 +201,6 @@ int main(int argc, char **argv){
 		NULL
 	);
 
-    xTaskCreate(
-        dump_content_choice,
-        "dump_content_choice",
-		configMINIMAL_STACK_SIZE,
-		NULL,
-        mainTASK_PRIORITY,
-		NULL
-	);
-
     timer0_set_callback(timer0_user_callback);
     timer1_set_callback(timer1_user_callback);
     timer2_set_callback(timer2_user_callback);

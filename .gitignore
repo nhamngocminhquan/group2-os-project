@@ -3,4 +3,4 @@
 *.elf
 *.tmp
 .idea
-App/Output/*
+App/Output/
