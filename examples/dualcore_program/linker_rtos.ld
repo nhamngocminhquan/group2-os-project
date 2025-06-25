@@ -1,0 +1,116 @@
+/*
+ * FreeRTOS V202212.00
+ * Copyright (C) 2020 Amazon.com, Inc. or its affiliates.  All Rights Reserved.
+ *
+ * Permission is hereby granted, free of charge, to any person obtaining a copy of
+ * this software and associated documentation files (the "Software"), to deal in
+ * the Software without restriction, including without limitation the rights to
+ * use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of
+ * the Software, and to permit persons to whom the Software is furnished to do so,
+ * subject to the following conditions:
+ *
+ * The above copyright notice and this permission notice shall be included in all
+ * copies or substantial portions of the Software.
+ *
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+ * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS
+ * FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR
+ * COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER
+ * IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
+ * CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+ *
+ * https://www.FreeRTOS.org
+ * https://github.com/FreeRTOS
+ *
+ */
+
+MEMORY
+{
+    PFLASH (xr) : ORIGIN = 0x00400000, LENGTH = 8M
+    DFLASH (xr) : ORIGIN = 0x10000000, LENGTH = 128K
+    RAM (rw)  : ORIGIN = 0x20400000, LENGTH = 768K
+    ITCM (rw)  : ORIGIN = 0x00000000, LENGTH = 64K
+    DTCM (rw)  : ORIGIN = 0x20000000, LENGTH = 128K
+}
+
+_Min_Heap_Size = 0x8 ;        /* Not used as building heap_4.c */
+_Min_Stack_Size = 0x400 ;       /* Required amount of stack.  Used by main(), then re-used as the interrupt stack after the kernel starts. */
+_estack = ORIGIN(RAM) + LENGTH(RAM);
+
+
+SECTIONS
+{
+    .boot_ivt :
+    {
+        /* __vector_table = .; */
+        . = ALIGN(128);      /* This is very important, see below */
+        KEEP(*(.boot_ivt))
+    } > PFLASH
+
+    /* The individual vector table must be 7-bit aligned in memory.
+     * Therefore, we need to add at least ALIGN(128) between every
+     * CPU's vector table. See also:
+     * https://developer.arm.com/documentation/dui0646/c/Cortex-M7-Peripherals/System-control-block/Vector-Table-Offset-Register?lang=en
+     */
+    .isr_vector_0 :
+    {
+        . = ALIGN(128);
+        KEEP(*(.isr_vector_0))
+    } > PFLASH
+
+    .isr_vector_1 :
+    {
+        . = ALIGN(128);
+        KEEP(*(.isr_vector_1))
+    } > PFLASH
+
+    .text :
+    {
+        *(.text)
+        *(.rodata*)
+        *(.constdata*)
+        _etext = .;
+        _sidata = .;
+    } > PFLASH
+
+    .data :
+    {
+        . = ALIGN(8);
+        _data = .;
+        _sdata = .;
+        *(vtable)
+        *(.data)
+        _edata = .;
+    } > DTCM
+
+    .bss :
+    {
+        . = ALIGN(8);
+        _bss = .;
+        _sbss = .;
+        *(.bss)
+        _ebss = .;
+    } > DTCM
+    
+    .heap :
+    {
+        . = ALIGN(8);
+        PROVIDE ( end = . );
+        PROVIDE ( _end = . );
+        _heap_bottom = .;
+        . = . + _Min_Heap_Size;
+        _heap_top = .;
+        . = . + _Min_Stack_Size;
+        . = ALIGN(8);
+   } > DTCM
+   
+   /* Set stack top to end of RAM, and stack limit move down by
+    * size of stack_dummy section */
+   stack_top = ORIGIN(DTCM) + LENGTH(DTCM);
+   __StackLimit = stack_top - _Min_Stack_Size;
+   PROVIDE(__stack = stack_top);
+     
+  /* Check if data + heap + stack exceeds RAM limit */
+  ASSERT(__StackLimit >= _heap_top, "region RAM overflowed with stack")
+  
+}
