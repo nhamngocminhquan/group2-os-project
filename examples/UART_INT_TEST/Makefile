@@ -1,3 +1,11 @@
+# Makefile for UART_INT_TEST
+# Copyright (C) 2025  
+#
+# Licensed under Creative Commons Attribution-NonCommercial 4.0
+# (CC BY-NC 4.0) — https://creativecommons.org/licenses/by-nc/4.0/
+#
+# See top-level LICENSE for the full text.
+
 QEMU := ../../qemu/build/qemu-system-arm
 MACHINE := S32K3X8
 CPU := cortex-m7
