@@ -1,4 +1,5 @@
 # The directory that contains FreeRTOS source code
+#FREERTOS_ROOT := /home/jacqui/FreeRTOS/FreeRTOS
 FREERTOS_ROOT := ../FreeRTOS/FreeRTOS
 
 # Demo code
@@ -21,10 +22,11 @@ LD := arm-none-eabi-gcc
 SIZE := arm-none-eabi-size
 
 # Target embedded board and CPU
-QEMU := ../qemu/build/qemu-system-arm
 MACHINE := S32K3X8
+
 CPU := cortex-m7
 
+QEMU := ../qemu/build/qemu-system-arm
 
 # Use -s to connect to gdb port 1234 and -S to wait before executing
 QEMU_FLAGS_DBG = -s -S
@@ -98,12 +100,17 @@ LDFLAGS += -mfpu=fpv5-sp-d16 -mfloat-abi=hard
 # Kernel files
 SOURCE_FILES += $(KERNEL_DIR)/list.c
 SOURCE_FILES += $(KERNEL_DIR)/tasks.c
+SOURCE_FILES += $(KERNEL_DIR)/queue.c
+# SOURCE_FILES += $(KERNEL_DIR)/event_groups.c
+# SOURCE_FILES += $(KERNEL_DIR)/stream_buffer.c
 SOURCE_FILES += $(KERNEL_DIR)/portable/MemMang/heap_4.c
 SOURCE_FILES += $(KERNEL_DIR)/portable/GCC/ARM_CM7/r0p1/port.c
 
 # Demo files
 SOURCE_FILES += $(DEMO_PROJECT)/main.c
 SOURCE_FILES += $(DEMO_PROJECT)/uart.c
+SOURCE_FILES += $(DEMO_PROJECT)/timer.c
+SOURCE_FILES += $(DEMO_PROJECT)/printf-stdarg.c
 
 # Start-up code
 SOURCE_FILES += ./startup.c

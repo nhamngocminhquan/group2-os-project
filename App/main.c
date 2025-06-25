@@ -7,7 +7,7 @@
 
 void vTaskFunction(void *pvParameters);
 
-volatile uint32_t gBlinkCounter = 0;   
+volatile uint32_t gBlinkCounter = 0;
 
 int main(int argc, char **argv){
 
@@ -44,7 +44,8 @@ void vTaskFunction(void *pvParameters) {
 
 	for( ;; )
     {
-        gBlinkCounter++;               /* increment every second   */
+        gBlinkCounter++;
+		UART_printf("testint uart\n");             /* increment every second   */
         vTaskDelay( pdMS_TO_TICKS( 1000 ) );
     }
 }
