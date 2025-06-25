@@ -1,1 +1,0 @@
-A simple test program, taken from Lab 1 and 3. As of writing both the simple and the `_rtos` linker + startup files work.
