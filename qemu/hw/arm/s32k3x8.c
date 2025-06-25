@@ -76,9 +76,25 @@ static const int    uart_irq[] = {141, 142, 143, 144, 145,
 // Route interrupt to enabled cores. 358 has cores
 // 0 and 2, so bits 0 and 2 are enabled
 static const uint8_t IRSPRC_reg[NUM_EXT_IRQ] = {
-    [8] = 0b0101,
-    [9] = 0b0101,
-    [10] = 0b0101,
+    [96] = 0b0101,
+    [97] = 0b0101,
+    [98] = 0b0101,
+    [141] = 0b0101,
+    [142] = 0b0101,
+    [143] = 0b0101,
+    [144] = 0b0101,
+    [145] = 0b0101,
+    [146] = 0b0101,
+    [147] = 0b0101,
+    [148] = 0b0101,
+    [149] = 0b0101,
+    [150] = 0b0101,
+    [151] = 0b0101,
+    [152] = 0b0101,
+    [153] = 0b0101,
+    [154] = 0b0101,
+    [155] = 0b0101,
+    [156] = 0b0101,
 };
 
 // Q:   From Airbus and mps2

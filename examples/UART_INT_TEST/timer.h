@@ -31,12 +31,12 @@ PIT_3 base address: 0x40300000 - 0x40303FFF --not used in S32K348
 #define TIMER_CTRL_IRQEN    (1UL << 3)  // Interrupt enable
 
 // IRQ numbers (need to match the defined in the s32k38.c file)
-#define TIMER0_IRQn         8
-#define TIMER1_IRQn         9
-#define TIMER2_IRQn         10
-// #define TIMER0_IRQn         96
-// #define TIMER1_IRQn         97
-// #define TIMER2_IRQn         98
+// #define TIMER0_IRQn         8
+// #define TIMER1_IRQn         9
+// #define TIMER2_IRQn         10
+#define TIMER0_IRQn         96
+#define TIMER1_IRQn         97
+#define TIMER2_IRQn         98
 
 // Function prototypes
 void NVIC_SetPriority(uint32_t irq_num, uint32_t priority);
