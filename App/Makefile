@@ -107,7 +107,7 @@ SOURCE_FILES += $(KERNEL_DIR)/portable/MemMang/heap_4.c
 SOURCE_FILES += $(KERNEL_DIR)/portable/GCC/ARM_CM7/r0p1/port.c
 
 # Demo files
-SOURCE_FILES += $(DEMO_PROJECT)/main2.c
+SOURCE_FILES += $(DEMO_PROJECT)/main.c
 SOURCE_FILES += $(DEMO_PROJECT)/uart.c
 SOURCE_FILES += $(DEMO_PROJECT)/timer.c
 SOURCE_FILES += $(DEMO_PROJECT)/printf-stdarg.c
