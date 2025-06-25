@@ -23,7 +23,7 @@ SIZE := arm-none-eabi-size
 
 # Target embedded board and CPU
 MACHINE := S32K3X8
-#MACHINE := mps2-an500
+
 CPU := cortex-m7
 
 QEMU := ../qemu/build/qemu-system-arm
