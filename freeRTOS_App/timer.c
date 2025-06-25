@@ -1,4 +1,11 @@
-// timer.c
+/*
+ * timer.c
+ * Copyright (C) 2025
+ *
+ * Licensed under Creative Commons Attribution-NonCommercial 4.0
+ * (CC BY-NC 4.0) — https://creativecommons.org/licenses/by-nc/4.0/
+ */
+
 // The functions and explanations defined in this files where extracted from the
 // CMSIS standard library for ARM Cortex-M processors and the interrupts example from the class material.
 // The necesarry modifications were made to adapt the code to the S32K3X8 architecture.

@@ -1,3 +1,11 @@
+# Makefile for FreeRTOS Demo app
+# Copyright (C) 2025
+#
+# Licensed under Creative Commons Attribution-NonCommercial 4.0
+# (CC BY-NC 4.0) — https://creativecommons.org/licenses/by-nc/4.0/
+#
+# See top-level LICENSE for the full text.
+
 # The directory that contains FreeRTOS source code
 #FREERTOS_ROOT := /home/jacqui/FreeRTOS/FreeRTOS
 FREERTOS_ROOT := ../FreeRTOS/FreeRTOS
