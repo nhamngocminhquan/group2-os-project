@@ -21,12 +21,13 @@ LD := arm-none-eabi-gcc
 SIZE := arm-none-eabi-size
 
 # Target embedded board and CPU
-MACHINE := mps2-an500
+QEMU := ../qemu/build/qemu-system-arm
+MACHINE := S32K3X8
 CPU := cortex-m7
 
 
 # Use -s to connect to gdb port 1234 and -S to wait before executing
-QEMU_FLAGS_DBG = -s -S 
+QEMU_FLAGS_DBG = -s -S
 
 INCLUDE_DIRS = -I$(KERNEL_DIR)/include -I$(KERNEL_PORT_DIR)
 INCLUDE_DIRS += -I$(DEMO_PROJECT)
@@ -60,7 +61,7 @@ CFLAGS += -Wshadow
 # Include debug information (-g) with maximum level of detail (3)
 CFLAGS += -g3
 
-# Optimize (-O) the size (s) of the generated executable 
+# Optimize (-O) the size (s) of the generated executable
 CFLAGS += -Os
 
 # Place each function in a dedicated section (see -gc-sections in LDFLAGS)
@@ -136,11 +137,11 @@ clean:
 	rm -rf $(ELF) $(MAP) $(OUTPUT_DIR)/*.o $(OUTPUT_DIR)
 
 qemu_start:
-	qemu-system-arm -machine $(MACHINE) -cpu $(CPU) -kernel \
+	$(QEMU) -machine $(MACHINE) -cpu $(CPU) -kernel \
 	$(ELF) -monitor none -nographic -serial stdio
 
 qemu_debug:
-	qemu-system-arm -machine $(MACHINE) -cpu $(CPU) -kernel \
+	$(QEMU) -machine $(MACHINE) -cpu $(CPU) -kernel \
 	$(ELF) -monitor none -nographic -serial stdio $(QEMU_FLAGS_DBG)
 gdb_start:
 	gdb-multiarch $(ELF)
