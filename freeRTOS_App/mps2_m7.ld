@@ -24,10 +24,12 @@
  *
  */
 
+/* Q:   Copied from Lab 3 */
+
 MEMORY
 {
-    FLASH (xr) : ORIGIN = 0x00000000, LENGTH = 4M /* to 0x00003FFF = 0x007FFFFF*/
-    RAM (rw)  : ORIGIN = 0x20000000, LENGTH = 4M /* to 0x21FFFFFF = 0xFFFFFF */
+    FLASH (xr) : ORIGIN = 0x00000000, LENGTH = 64K /* to 0x00003FFF = 0x007FFFFF*/
+    RAM (rw)  : ORIGIN = 0x20400000, LENGTH = 768K /* to 0x21FFFFFF = 0xFFFFFF */
 }
 ENTRY(Reset_Handler)
 
@@ -87,9 +89,9 @@ SECTIONS
    
    /* Set stack top to end of RAM, and stack limit move down by
     * size of stack_dummy section */
-   __StackTop = ORIGIN(RAM) + LENGTH(RAM);
-   __StackLimit = __StackTop - _Min_Stack_Size;
-   PROVIDE(__stack = __StackTop);
+   stack_top = ORIGIN(RAM) + LENGTH(RAM);
+   __StackLimit = stack_top - _Min_Stack_Size;
+   PROVIDE(__stack = stack_top);
      
   /* Check if data + heap + stack exceeds RAM limit */
   ASSERT(__StackLimit >= _heap_top, "region RAM overflowed with stack")

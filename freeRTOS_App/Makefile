@@ -1,96 +1,154 @@
-OUTPUT_DIR := ./output
-IMAGE := $(OUTPUT_DIR)/RTOSDemo.out
+# The directory that contains FreeRTOS source code
+#FREERTOS_ROOT := /home/jacqui/FreeRTOS/FreeRTOS
+FREERTOS_ROOT := ../FreeRTOS/FreeRTOS
 
-# The directory that contains the /source and /demo sub directories.
-FREERTOS_ROOT = ./../FreeRTOS/FreeRTOS
+# Demo code
+DEMO_PROJECT := .
 
-CC = arm-none-eabi-gcc
-LD = arm-none-eabi-gcc
-SIZE = arm-none-eabi-size
-MAKE = make
+# FreeRTOS kernel
+KERNEL_DIR := $(FREERTOS_ROOT)/Source
+KERNEL_PORT_DIR := $(KERNEL_DIR)/portable/GCC/ARM_CM7/r0p1
 
-CFLAGS += -ffreestanding -mthumb -mcpu=cortex-m3
-CFLAGS += -Wall -Wextra -Wshadow
-CFLAGS += -g3 -Os -ffunction-sections -fdata-sections
-CFLAGS += -MMD -MP -MF"$(@:%.o=%.d)" -MT $@
-#CFLAGS += -std=c99
-#CFLAGS += -Wpedantic -fanalyzer
-#CFLAGS += -flto
-CFLAGS += $(INCLUDE_DIRS)
+# Where to store all the generated files (objects, elf and map)
+OUTPUT_DIR := ./Output
 
-LDFLAGS = -T ./mps2_m3.ld
-LDFLAGS += -Xlinker -Map=$(OUTPUT_DIR)/RTOSDemo.map
-LDFLAGS += -Xlinker --gc-sections
-LDFLAGS += -nostartfiles
-LDFLAGS += -specs=nano.specs -specs=nosys.specs # -specs=rdimon.specs
+DEMO_NAME := demo
+ELF := $(OUTPUT_DIR)/$(DEMO_NAME).elf
+MAP := $(OUTPUT_DIR)/$(DEMO_NAME).map
 
-#
-# Kernel build.
-#
-KERNEL_DIR = $(FREERTOS_ROOT)/Source
-KERNEL_PORT_DIR += $(KERNEL_DIR)/portable/GCC/ARM_CM3
-INCLUDE_DIRS += -I$(KERNEL_DIR)/include \
-				-I$(KERNEL_PORT_DIR)
+# Compiler toolchain
+CC := arm-none-eabi-gcc
+LD := arm-none-eabi-gcc
+SIZE := arm-none-eabi-size
+
+# Target embedded board and CPU
+MACHINE := S32K3X8
+
+CPU := cortex-m7
+
+QEMU := ../qemu/build/qemu-system-arm
+
+# Use -s to connect to gdb port 1234 and -S to wait before executing
+QEMU_FLAGS_DBG = -s -S
+
+INCLUDE_DIRS = -I$(KERNEL_DIR)/include -I$(KERNEL_PORT_DIR)
+INCLUDE_DIRS += -I$(DEMO_PROJECT)
+
 VPATH += $(KERNEL_DIR) $(KERNEL_PORT_DIR) $(KERNEL_DIR)/portable/MemMang
-SOURCE_FILES += $(KERNEL_DIR)/tasks.c
-SOURCE_FILES += $(KERNEL_DIR)/list.c
-SOURCE_FILES += $(KERNEL_DIR)/queue.c
-SOURCE_FILES += $(KERNEL_DIR)/event_groups.c
-SOURCE_FILES += $(KERNEL_DIR)/stream_buffer.c
-SOURCE_FILES += $(KERNEL_DIR)/portable/MemMang/heap_4.c
-SOURCE_FILES += $(KERNEL_DIR)/portable/GCC/ARM_CM3/port.c
-
-
-#
-# Application entry point.  main_blinky is self contained.  main_full builds
-# the above common demo (and test) files too.
-#
-DEMO_PROJECT = .
 VPATH += $(DEMO_PROJECT)
-INCLUDE_DIRS += -I$(DEMO_PROJECT) -I$(DEMO_PROJECT)/CMSIS
-SOURCE_FILES += (DEMO_PROJECT)/main.c
-SOURCE_FILES += ./startup_gcc.c
-SOURCE_FILES += ./IntTimer.c
-# Lightweight print formatting to use in place of the heavier GCC equivalent.
-SOURCE_FILES += ./printf-stdarg.c
 
-#Create a list of object files with the desired output directory path.
+# Include paths. See INCLUDE_DIRS
+CFLAGS = $(INCLUDE_DIRS)
+
+# Don't include standard libraries
+CFLAGS += -ffreestanding
+
+# Target ARM cortex M7 processor
+CFLAGS += -mcpu=$(CPU)
+# Use the thumb 16 bits instruction set. Required for cortex-M
+CFLAGS += -mthumb
+
+# Enable FPU
+CFLAGS += -mfpu=fpv5-sp-d16 -mfloat-abi=hard
+
+# Print all the most common warnings
+CFLAGS += -Wall
+
+# Print extra warnings, not included in -Wall
+CFLAGS += -Wextra
+
+# Print warnings about variable shadowing (var name = outer scope var name)
+CFLAGS += -Wshadow
+
+# Include debug information (-g) with maximum level of detail (3)
+CFLAGS += -g3
+
+# Optimize (-O) the size (s) of the generated executable
+CFLAGS += -Os
+
+# Place each function in a dedicated section (see -gc-sections in LDFLAGS)
+CFLAGS += -ffunction-sections
+
+# Place each variable in a dedicated section (see -gc-sections in LDFLAGS)
+CFLAGS += -fdata-sections
+
+# Specify the linker script
+LDFLAGS = -T ./mps2_m7.ld
+
+# Don't use the standard start-up files
+LDFLAGS += -nostartfiles
+
+# Optimize compilation to reduce memory
+LDFLAGS += -specs=nano.specs
+
+# Optimize compilation targeting a system without any operating system
+LDFLAGS += -specs=nosys.specs
+
+# Generate map file with memory layout. Pass option to the linker (-Xlinker)
+LDFLAGS += -Xlinker -Map=$(MAP)
+
+# Remove unused sections. Used with -ffunction-sections and -fdata-sections
+# optimized memory. Pass option to the linker (-Xlinker)
+LDFLAGS += -Xlinker --gc-sections
+
+# Link specifically for cortex M3 and thumb instruction set
+LDFLAGS += -mcpu=$(CPU) -mthumb
+
+# Enable FPU
+LDFLAGS += -mfpu=fpv5-sp-d16 -mfloat-abi=hard
+
+# Kernel files
+SOURCE_FILES += $(KERNEL_DIR)/list.c
+SOURCE_FILES += $(KERNEL_DIR)/tasks.c
+SOURCE_FILES += $(KERNEL_DIR)/queue.c
+# SOURCE_FILES += $(KERNEL_DIR)/event_groups.c
+# SOURCE_FILES += $(KERNEL_DIR)/stream_buffer.c
+SOURCE_FILES += $(KERNEL_DIR)/portable/MemMang/heap_4.c
+SOURCE_FILES += $(KERNEL_DIR)/portable/GCC/ARM_CM7/r0p1/port.c
+
+# Demo files
+SOURCE_FILES += $(DEMO_PROJECT)/main.c
+SOURCE_FILES += $(DEMO_PROJECT)/uart.c
+SOURCE_FILES += $(DEMO_PROJECT)/timer.c
+SOURCE_FILES += $(DEMO_PROJECT)/printf-stdarg.c
+
+# Start-up code
+SOURCE_FILES += ./startup.c
+
+# Create list of object files with the same names of the sources
 OBJS = $(SOURCE_FILES:%.c=%.o)
-OBJS_NO_PATH = $(notdir $(OBJS))
-OBJS_OUTPUT = $(OBJS_NO_PATH:%.o=$(OUTPUT_DIR)/%.o)
 
-#Create a list of dependency files with the desired output directory path.
-DEP_FILES := $(SOURCE_FILES:%.c=$(OUTPUT_DIR)/%.d)
-DEP_FILES_NO_PATH = $(notdir $(DEP_FILES))
-DEP_OUTPUT = $(DEP_FILES_NO_PATH:%.d=$(OUTPUT_DIR)/%.d)
+# Remove path from object filename
+OBJS_NOPATH = $(notdir $(OBJS))
 
-all: $(IMAGE)
+# Prepend output dir to object filenames
+OBJS_OUTPUT = $(OBJS_NOPATH:%.o=$(OUTPUT_DIR)/%.o)
 
-%.o : %.c
-$(OUTPUT_DIR)/%.o : %.c $(OUTPUT_DIR)/%.d Makefile
+all: $(ELF)
+
+$(ELF): $(OBJS_OUTPUT) ./mps2_m7.ld Makefile
+	echo "\n\n--- Final linking ---\n"
+	$(LD) $(LDFLAGS) $(OBJS_OUTPUT) -o $(ELF)
+	$(SIZE) $(ELF)
+
+$(OUTPUT_DIR)/%.o : %.c  Makefile $(OUTPUT_DIR)
 	$(CC) $(CFLAGS) -c $< -o $@
 
-$(IMAGE): ./mps2_m3.ld $(OBJS_OUTPUT) Makefile
-	@echo ""
-	@echo ""
-	@echo "--- Final linking ---"
-	@echo ""
-	$(LD) $(CFLAGS) $(LDFLAGS) $(OBJS_OUTPUT) -o $(IMAGE)
-	$(SIZE) $(IMAGE)
+$(OUTPUT_DIR):
+	mkdir -p $(OUTPUT_DIR)
 
-$(DEP_OUTPUT):
-include $(wildcard $(DEP_OUTPUT))
+cleanobj:
+	rm -f $(OUTPUT_DIR)/*.o
 
 clean:
-	rm -f $(IMAGE) $(OUTPUT_DIR)/RTOSDemo.map $(OUTPUT_DIR)/*.o $(OUTPUT_DIR)/*.d
-
-#use "make print-[VARIABLE_NAME] to print the value of a variable generated by
-#this makefile.
-print-%  : ; @echo $* = $($*)
+	rm -rf $(ELF) $(MAP) $(OUTPUT_DIR)/*.o $(OUTPUT_DIR)
 
 qemu_start:
-	qemu-system-arm -machine mps2-an385 -cpu cortex-m3 -kernel output/RTOSDemo.out -monitor none -nographic -serial stdio
+	$(QEMU) -machine $(MACHINE) -cpu $(CPU) -kernel \
+	$(ELF) -monitor none -nographic -serial stdio
 
-.PHONY: all clean
-
-
+qemu_debug:
+	$(QEMU) -machine $(MACHINE) -cpu $(CPU) -kernel \
+	$(ELF) -monitor none -nographic -serial stdio $(QEMU_FLAGS_DBG)
+gdb_start:
+	gdb-multiarch $(ELF)

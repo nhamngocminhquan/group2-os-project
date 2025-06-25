@@ -103,6 +103,10 @@
 
 #define configKERNEL_INTERRUPT_PRIORITY           ( 255 )        /* All eight bits as QEMU doesn't model the priority bits. */
 
+#ifndef __IASMARM__ /* Prevent C code being included in IAR asm files. */
+	#define configASSERT( x ) if( ( x ) == 0 ) while(1);
+#endif
+
 
 /* !!!! configMAX_SYSCALL_INTERRUPT_PRIORITY must not be set to zero !!!!
  * See http://www.FreeRTOS.org/RTOS-Cortex-M3-M4.html. */
@@ -128,4 +132,3 @@
 #define configENABLE_BACKWARD_COMPATIBILITY 0
 
 #endif /* FREERTOS_CONFIG_H */
-
