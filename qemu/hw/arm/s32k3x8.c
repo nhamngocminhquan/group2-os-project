@@ -46,8 +46,31 @@ PIT_3 base address: 0x40300000 - 0x40303FFF --not used in S32K348
 
 static const uint32_t timer_addr[] = { 0x400B0000, 0x400B4000,
                                        0x402FC000 }; 
-//static const int    timer_irq[] = { 96, 97, 98 };
-static const int    timer_irq[] = { 8, 9, 10 };
+static const uint32_t uart_addr[] = {
+    LPUART0_BASE_ADDRESS,
+    LPUART1_BASE_ADDRESS,
+    LPUART2_BASE_ADDRESS,
+    LPUART3_BASE_ADDRESS,
+    LPUART4_BASE_ADDRESS,
+    LPUART5_BASE_ADDRESS,
+    LPUART6_BASE_ADDRESS,
+    LPUART7_BASE_ADDRESS,
+    LPUART8_BASE_ADDRESS,
+    LPUART9_BASE_ADDRESS,
+    LPUART10_BASE_ADDRESS,
+    LPUART11_BASE_ADDRESS,
+    LPUART12_BASE_ADDRESS,
+    LPUART13_BASE_ADDRESS,
+    LPUART14_BASE_ADDRESS,
+    LPUART15_BASE_ADDRESS
+};
+
+static const int    timer_irq[] = { 96, 97, 98 }; //IRQ numbers for PIT_0, PIT_1, PIT_2 respectively fpr S32K3X8
+//static const int    timer_irq[] = { 8, 9, 10 };// IRQ numbers for mps2 to start testing
+static const int    uart_irq[] = {141, 142, 143, 144, 145,
+                                146, 147, 148, 149, 150,
+                                151, 152, 153, 154, 155,
+                                156}; //Looks like rx and tx is connected to the same irq. Need to check.
 
 // Table to define peripheral interrupt routing
 // Route interrupt to enabled cores. 358 has cores
@@ -252,35 +275,29 @@ static void s32k3x8_init(MachineState *ms) {
         sysbus_mmio_map(sbd, 0, timer_addr[i]);
         sysbus_connect_irq(sbd, 0, qdev_get_gpio_in(DEVICE(&sms->irq_splitter[timer_irq[i]]), 0));//need to understand to what irq assign them
     }
-    //-------------------------------------------------
 
-    /* E:UART 
-    * TODO: Implement UART interrupt handling
-    *       Currently, it is not connected to the CPU IRQ line.
-    * 
-    * 
+    /* -------------- UART ----------------
+    * TODO2: Add some funcionalities of UART.
     */
-    {
-        /* Create child UART device */
-        object_initialize_child(OBJECT(ms), "lpuart0", &sms->uart0, TYPE_S32K3X8_UART);
-        
-        qdev_prop_set_chr(DEVICE(&sms->uart0), "chardev", qemu_chr_find("serial0"));
+    {        
+        for (i = 0; i < NUM_UARTS; i++){
+            SysBusDevice *sbd;
+            g_autofree char *name = g_strdup_printf("lpuart%d", i);
+            object_initialize_child(OBJECT(ms), name, &sms->uart[i], TYPE_S32K3X8_UART);
+            sbd = SYS_BUS_DEVICE(&sms->uart[i]);
+            qdev_prop_set_chr(DEVICE(&sms->uart[i]), "chardev", serial_hd(i)); 
+            //For calculating baud-rate. 
+            qdev_prop_set_uint32(DEVICE(&sms->uart[i]), "pclk-frq", clock_get_hz(sms->sysclk));
 
-        /* Connect clocks 
-        * TODO: When clocks are needed uncomment.
-        */
-        //qdev_connect_clock_in(DEVICE(&sms->uart0), "periph_clk", sms->sysclk);
-        //qdev_connect_clock_in(DEVICE(&sms->uart0), "ipg_clk", sms->refclk);
+            /* Realize UART */
+            sysbus_realize(sbd, &error_fatal);
 
-        /* Realize UART */
-        sysbus_realize(SYS_BUS_DEVICE(&sms->uart0), &error_fatal);
+            /* Map MMIO region */
+            sysbus_mmio_map(sbd, 0, uart_addr[i]);
 
-        /* Map MMIO region */
-        sysbus_mmio_map(SYS_BUS_DEVICE(&sms->uart0), 0,
-                        LPUART0_BASE_ADDRESS);
+            sysbus_connect_irq(sbd, 0, qdev_get_gpio_in(armv7m, uart_irq[i])); //armv7m is deviceState
 
-        /* Hook its interrupt line which is not implemented yet.*/
-        //sysbus_connect_irq(SYS_BUS_DEVICE(&sms->uart0), 0, sms->armv7m.cpu->irq[irq_LPUART0]);
+        }
 
     }
     /*E: End UART */

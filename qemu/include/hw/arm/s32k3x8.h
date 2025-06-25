@@ -52,6 +52,7 @@
 #define NUM_ITN_IRQ 16
 #define NUM_EXT_IRQ 240
 #define NUM_IRQ (NUM_ITN_IRQ + NUM_EXT_IRQ)
+#define NUM_UARTS 16
 
 struct S32K3X8MachineClass {
     MachineClass parent;
@@ -60,7 +61,6 @@ struct S32K3X8MachineClass {
 struct S32K3X8MachineState {
     MachineState parent;
     ARMv7MState armv7m[MAX_CPU];
-    S32K3X8UARTState uart0;
 
     // Local view of memory from each CPU
     MemoryRegion cpu_memory[MAX_CPU];
@@ -75,6 +75,7 @@ struct S32K3X8MachineState {
     MemoryRegion pflash;
     MemoryRegion dflash;
 
+    S32K3X8UARTState uart[NUM_UARTS];
     S32K3X8Timer timer[NUM_TIMERS];
     SplitIRQ irq_splitter[NUM_EXT_IRQ];
 };
