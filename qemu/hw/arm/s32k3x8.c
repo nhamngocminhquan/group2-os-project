@@ -13,29 +13,12 @@
 #include "hw/qdev-clock.h"
 #include "hw/misc/unimp.h"
 #include "hw/or-irq.h"
-#include "hw/char/s32k3x8_uart.h"  // UART definitions
 
-//      mps2 includes - may be important
+#include "hw/char/s32k3x8_uart.h"  // UART definitions
+#include "hw/timer/s32k3x8-timer.h"
+
 #include "qemu/error-report.h"  // For error reporting
 #include "qemu/cutils.h"        // For size_to_str
-// #include "hw/arm/boot.h"
-
-//      mps2 includes - unknowns
-// #include "hw/qdev-properties.h"
-// #include "net/net.h"
-// #include "qobject/qlist.h"
-
-//      mps2 includes - peripherals
-// #include "hw/char/cmsdk-apb-uart.h"
- //#include "hw/timer/cmsdk-apb-timer.h"
- #include "hw/timer/s32k3x8-timer.h"
-// #include "hw/timer/cmsdk-apb-dualtimer.h"
-// #include "hw/watchdog/cmsdk-apb-watchdog.h"
-// #include "hw/i2c/arm_sbcon_i2c.h"
-// #include "hw/misc/mps2-scc.h"
-// #include "hw/misc/mps2-fpgaio.h"
-// #include "hw/ssi/pl022.h"
-// #include "hw/net/lan9118.h"
 
 /*
 PIT_0 base address: 0x400B0000 - 0x400B3FFF
