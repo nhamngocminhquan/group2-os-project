@@ -239,7 +239,7 @@ static void s32k3x8_init(MachineState *ms) {
 
     // Create splitters for interrupts to CPUs
     for (i = 0; i < NUM_EXT_IRQ; i++) {
-        if (IRSPRC_reg[i]) {
+        // if (IRSPRC_reg[i]) {
             g_autofree char *name = g_strdup_printf("irq-splitter-%d", i);
             SplitIRQ *splitter = &sms->irq_splitter[i];
             object_initialize_child(
@@ -266,7 +266,7 @@ static void s32k3x8_init(MachineState *ms) {
                     cpu_i++;
                     if (cpu_i == ms->smp.cpus) break;
                 }
-        }
+        // }
     }
 
     // Get reference to first CPU for peripherals
@@ -311,7 +311,7 @@ static void s32k3x8_init(MachineState *ms) {
             /* Map MMIO region */
             sysbus_mmio_map(sbd, 0, uart_addr[i]);
 
-            sysbus_connect_irq(sbd, 0, qdev_get_gpio_in(armv7m, uart_irq[i])); //armv7m is deviceState
+            sysbus_connect_irq(sbd, 0, qdev_get_gpio_in(DEVICE(&sms->irq_splitter[uart_irq[i]]), 0));
 
         }
 
