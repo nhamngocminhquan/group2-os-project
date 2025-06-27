@@ -143,10 +143,11 @@ The tick function is triggered when the countdown reaches zero. This callback ch
 To create the timers needed on the board, it was necessary to edit the CPU code responsible for system integration. The first step in this implementation was to initialize each timer as a child object of the main system and assign a unique name to each one. The second loop then configured each timer by connecting it to the system clock. Activation and functionality of the timers are made possible through QEMU’s realization process (`sysbus_realize()`). Mapping is performed by assigning control registers to specific memory addresses that correspond to the real microcontroller's memory layout. Finally, each timer’s interrupt output is connected to an interrupt splitter, allowing them to generate interrupts upon expiration. This enables software emulation of interactions similar to those that would occur with actual hardware.
 
 ### Testing
-Talk about the example implementation
-Nvic and cmsis use
-Bare metal initialization
-The config file for the isrq list to handle the timers int
+The timer testing was done by implementing a basic functionality with a bare metal application for the functions that drive the timer. The idea was to set up three timers, each with its interrupt service routine running at different set timings. Every time a callback is done different variables are being updated and serial prints are done. The `main.c` configures the timers, enables the corresponding interrupts, and then enters an infinite loop. In the beginning, inline assembly was used to check in `gdb` if the individual peripheral timer was working correctly before incorporating it into the UART peripheral.
+
+In the timer.c and timer.h are described, the functions to initialize and run the timers. Usually, hardware abstraction layers like CMSIS are useful to implement the peripherals faster. As we are not emulating the whole board, it was decided to extract just the 2 basic functions related to interrupts, interrupt enabling (`NVIC_EnableIRQ`) and priority setting (`NVIC_SetPriority`). These functions are handled manually via direct register writes to the NVIC’s `ISER` and `IPR` registers.
+
+The interrupt configuration is handled in `startup.c`, which defines the vector table through a static array named `isr_vector`. This array maps system exception handlers and user-defined interrupt handlers in a fixed order. For the timers, entries such as `TIMER0_Handler`, `TIMER1_Handler`, and `TIMER2_Handler` are explicitly placed at their respective IRQ positions. This ensures each timer interrupt is correctly routed to its handler function when triggered.
 
 ### UARTs
 
