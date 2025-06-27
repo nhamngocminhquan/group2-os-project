@@ -117,6 +117,36 @@ If enabled, an ELF parser will parse the provided ELF file and look for the IVT 
 With SBAF enabled, the emulation works closer to the real board with each core having a separate vector table. However, the program's startup and linker files will need to be more complex. The linker needs to place the vector tables correctly. `examples/dualcore_program` is an example of this, with the two cores running different programs.
 
 ### Timers
+The target timer emulated from the board was the Periodic Interrupt Timer (PIT). The timer operates as follows: when enabled, it begins counting down from the initial start value that has been set. When the timer period expires, the PIT sets the timer interrupt flag. Then it is reloaded at the start value, and the process starts again. It is necessary to note that the behavior implemented was only related to the ability to generate interrupts, and that each timer has independent timeout periods. 
+
+### Implementation
+
+The PIT timer definition was based on the MPS2 simple general-purpose 32-bit timer. According to the reference manual, in the memory map file, the PIT timers are located at the following addresses:
+
+| Timer | Start address [Hex] | End address [Hex] |
+| --- | --- | --- |
+| PIT 0 | `0x400B0000` | `0x400B3FFF` |
+| PIT 1 | `0x400B4000` | `0x400B7FFF` |
+| PIT 2 | `0x402FC000` | `0x402FFFFF` |
+| PIT 3 | `0x40300000` | `0x40303FFF` |
+
+And driven by these interrupts (96, 97, 98, 99)  respectively. 
+
+To define the timer and its behavior, a new hardware definition was created in `hw/timers/s32k3x8_timer.c`, and it was necessary to utilize QEMU's ptimer subsystem. The implementation creates a countdown timer device that can be memory-mapped into a virtual system, providing four main registers accessible at specific memory offsets (CTRL , VALUE, RELOAD, and INTSTATUS, equivalent to the s32k3x8 names TCTRLx, CVALx, LDVALx, and TFLGx, respectively). 
+
+The primary functions defined are the following: `s32k3x8_timer_read()` `s32k3x8_timer_write()` `s32k3x8_timer_tick()`. The read function handles all memory-mapped register reads from the timer's registers. It decodes the memory offset to determine which register is being read and retrieves the appropriate value from either the timer's internal state or the underlying ptimer hardware, and returns it to the requesting software. 
+
+The write function manages all writes to memory-mapped registers, interpreting the data value and memory address to update the relevant timer register and initiate the relevant hardware action. Each register has the following purpose: `VALUE` writes directly set the current timer count; `RELOAD` writes update the current count and the reload value; `INTSTATUS` writes clear interrupt flags using write-1-to-clear semantics; and `CTRL` register writings start or stop the timer.
+
+The tick function is triggered when the countdown reaches zero. This callback checks if interrupts are enabled, sets the interrupt status flag, and triggers the actual interrupt to the CPU.
+
+To create the timers needed on the board, it was necessary to edit the CPU code responsible for system integration. The first step in this implementation was to initialize each timer as a child object of the main system and assign a unique name to each one. The second loop then configured each timer by connecting it to the system clock. Activation and functionality of the timers are made possible through QEMU’s realization process (`sysbus_realize()`). Mapping is performed by assigning control registers to specific memory addresses that correspond to the real microcontroller's memory layout. Finally, each timer’s interrupt output is connected to an interrupt splitter, allowing them to generate interrupts upon expiration. This enables software emulation of interactions similar to those that would occur with actual hardware.
+
+### Testing
+Talk about the example implementation
+Nvic and cmsis use
+Bare metal initialization
+The config file for the isrq list to handle the timers int
 
 ### UARTs
 
