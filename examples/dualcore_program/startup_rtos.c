@@ -25,8 +25,10 @@
  */
 
 #include "uart.h"
-#include "stdint.h"
+#include "timer.h"   
+#include "stdint.h"  
 
+#define OFFSET  16
 // /* FreeRTOS interrupt handlers. */
 // extern void vPortSVCHandler( void );
 // extern void xPortPendSVHandler( void );
@@ -45,8 +47,10 @@ extern uint32_t _estack;
 /* Individual objects */
 /* Exception handlers for CPU 0 */
 void Reset_Handler_0( void ) __attribute__( ( naked ) );
+extern void TIMER0_Handler(void);
 /* Exception handlers for CPU 1 */
 void Reset_Handler_1( void ) __attribute__( ( naked ) );
+extern void TIMER1_Handler(void);
 // Main programs for both CPUs
 extern int main_0( void ), main_1( void );
 
@@ -69,6 +73,11 @@ const uint32_t* isr_vector_0[] __attribute__((section(".isr_vector_0"), used)) =
     0, // reserved   -3
     ( uint32_t * ) &Default_Handler,    // PendSV handler       -2  // &xPortPendSVHandler
     ( uint32_t * ) &Default_Handler,    // SysTick_Handler      -1  // &xPortSysTickHandler
+    
+    // Timer interrupts
+    [TIMER0_IRQn + OFFSET] = (uint32_t*)TIMER0_Handler,        
+    [TIMER1_IRQn + OFFSET] = (uint32_t*)TIMER1_Handler,        
+    [TIMER2_IRQn + OFFSET] = (uint32_t*)TIMER2_Handler, 
 };
 
 /* Vector table for CPU 1 */
@@ -90,6 +99,11 @@ const uint32_t* isr_vector_1[] __attribute__((section(".isr_vector_1"), used)) =
     0, // reserved   -3
     ( uint32_t * ) &Default_Handler,    // PendSV handler       -2  // &xPortPendSVHandler
     ( uint32_t * ) &Default_Handler,    // SysTick_Handler      -1  // &xPortSysTickHandler
+
+    // Timer interrupts
+    [TIMER0_IRQn + OFFSET] = (uint32_t*)TIMER0_Handler,        
+    [TIMER1_IRQn + OFFSET] = (uint32_t*)TIMER1_Handler,        
+    [TIMER2_IRQn + OFFSET] = (uint32_t*)TIMER2_Handler, 
 };
 
 /* Boot vector table, for SBAF to find */

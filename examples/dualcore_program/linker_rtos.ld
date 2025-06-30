@@ -81,7 +81,7 @@ SECTIONS
         *(vtable)
         *(.data)
         _edata = .;
-    } > DTCM
+    } > RAM
 
     .bss :
     {
@@ -90,7 +90,7 @@ SECTIONS
         _sbss = .;
         *(.bss)
         _ebss = .;
-    } > DTCM
+    } > RAM
     
     .heap :
     {
