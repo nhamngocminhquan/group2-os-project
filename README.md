@@ -7,29 +7,40 @@
 This project implements the NXP board [S32K3X8EVB](https://www.nxp.com/design/design-center/development-boards-and-designs/S32K3X8EVB-Q289) in QEMU, running a simple real-time program with FreeRTOS. Aspects of the implementation include:
 
 - QEMU emulation: The default CPU S32K358 is implemented with a maximum of 2 cores. Implemented peripherals are 3 Periodic Interrupt Timers (PIT) and 16 Low-Power UART (LPUART), all with their respective interrupts as described in the reference manual. The CPU cores are based on the ARMv7M already existing in QEMU, with a simplified SBAF boot process and interrupt routing system.
-- FreeRTOS: 
-- Real-time program: 
+- FreeRTOS: based on the FreeRTOS port provided with the board, we further developed files to use it with the QEMU simulation.
+- Real-time program: as of now the program is a simple interface to read register values, using 2 timers and a LPUART line.
 
 # Installation & quickstart
 
 ## Installation
 
+Clone with all submodules:
 ```
-sudo apt install ABC
-git clone XYZ
-cd group2/qemu
-mkdir build && cd build
+git clone --recurse-submodules https://baltig.polito.it/eos2024/group2.git
+```
+
+Build QEMU:
+```
+cd qemu
+mkdir build
+cd build
 ../configure
 make
 ```
+After this is done, the executable `qemu-system-arm` is created in the `build` folder. To check if the machine was successfully created, do:
+```
+./qemu-system-arm -machine help | grep S32
+```
+and see if the S32K3X8 board is present.
 
 ## Running program
+```sh
+cd freeRTOS_App/
+make all
+make qemu_start
+```
 
-```
-cd examples/Program
-make build
-make run
-```
+The app will ask you for an input to start the demo, then you can stop it anytime with `Ctrl+C`.
 
 # Implementation details
 
@@ -243,14 +254,16 @@ This shift left-aligns the priority level `1` into the correct 8-bit format (`0x
 As at first we did not have implemented UART, we tried to run FreeRTOS with a simple application which just had one task incrementing a global variable every second. After we verified this version works, we proceeded with a more complex apps once we had all the peripherals implemented.
 
 ### Program
-Inside `App/` you can find a simple demo app running FreeRTOS to test the
-correct implementation of UART and Timers.<br>
+Inside `freeRTOS_App/` you can find a simple demo app running FreeRTOS to test the
+correct implementation of UART and Timers.
+
 The app is creating a simple task keeping the CPU busy. It computes
 numbers from Fibonacci series with an empty loop making sure the process keeps
 running without computing it too fast. Since the computation uses 32-bit values,
 we get overflow pretty fast. When an overflow is about to happen, the series
 computation restarts updating the occurred iteration count. This happens without
-any visual feedback.<br>
+any visual feedback.
+
 Here timer interrupts come into play. We set three different timers with
 different period triggering three different behaviours:
 - **Timer 0**: timer 0 causes an on-screen print of the context registers
@@ -265,7 +278,7 @@ git clone --recurse-submodules https://baltig.polito.it/eos2024/group2.git
 so that the full FreeRTOS source code is downloaded to your machine, then execute the following
 
 ```sh
-cd App/
+cd freeRTOS_App/
 make all
 make qemu_start
 ```

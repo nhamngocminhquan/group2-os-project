@@ -1,3 +1,11 @@
+/*
+ * timer.h
+ * Copyright (C) 2025
+ *
+ * Licensed under Creative Commons Attribution-NonCommercial 4.0
+ * (CC BY-NC 4.0) — https://creativecommons.org/licenses/by-nc/4.0/
+ */
+
 // timer.h
 #ifndef TIMER_H
 #define TIMER_H

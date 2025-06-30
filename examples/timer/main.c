@@ -1,3 +1,11 @@
+/*
+ * main.c
+ * Copyright (C) 2025
+ *
+ * Licensed under Creative Commons Attribution-NonCommercial 4.0
+ * (CC BY-NC 4.0) — https://creativecommons.org/licenses/by-nc/4.0/
+ */
+
 // main.c - Example of timer
 #include <stdbool.h>  // For boolean data type (bool, true, false)
 #include "timer.h"

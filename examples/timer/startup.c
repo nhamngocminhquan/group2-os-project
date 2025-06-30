@@ -1,4 +1,12 @@
 /*
+ * startup.c
+ * Copyright (C) 2025
+ *
+ * Licensed under Creative Commons Attribution-NonCommercial 4.0
+ * (CC BY-NC 4.0) — https://creativecommons.org/licenses/by-nc/4.0/
+ */
+
+/*
  * Bare Metal ARM Cortex-M Startup Code
  * Adapted from FreeRTOS startup code
  */

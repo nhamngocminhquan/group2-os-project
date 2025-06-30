@@ -1,12 +1,22 @@
 ## Introduction
 
-An extension of the `simple_program` for multiple CPUs. This program uses the SBAF emulation to provide different vector tables to the individual CPUs. To use this, you need to modify the `USE_SBAF` definition in [s32k3x8.h](../../qemu/include/hw/arm/s32k3x8.h) to 1:
+An extension of the examples for multiple CPUs. This program uses the SBAF emulation to provide different vector tables to the individual CPUs. To use this, you need to modify the `USE_SBAF` definition in [s32k3x8.h](../../qemu/include/hw/arm/s32k3x8.h) to 1:
 
-```
+```c
 #define USE_SBAF                    1
 ```
 
-and then `make` QEMU for the change to take effect. By default `USE_SBAF` is not enabled to work with single CPU programs. Then, after running:
+Additionally, since TIMER0 is routed only to CPU 0 and TIMER1 is routed only to CPU 2, the `IRSPRC_reg[NUM_EXT_IRQ]` in [s32k3x8.c](../../qemu/hw/arm/s32k3x8.c) needs to be changed accordingly:
+
+```c
+static const uint8_t IRSPRC_reg[NUM_EXT_IRQ] = {
+    [96] = 0b0001,
+    [97] = 0b0100,
+    [98] = 0b0101,
+    ...
+```
+
+and then `make` QEMU for the change to take effect. By default, `USE_SBAF` is not enabled to work with single CPU programs, and interrupts are routed to both cores. Then, after running:
 
 ```
 make build
@@ -23,6 +33,20 @@ the program can then be started. The cores can be checked in GDB with:
 
 ```
 info threads (or inf th for short)
+```
+
+Each CPU will have their own timer interrupt handler, but the mutex is rudimentary so they have the same frequency:
+
+```
+Hello 0
+Hello 1
+T0_CPU_0
+T1_CPU_1
+T0_CPU_0
+T1_CPU_1
+T0_CPU_0
+T1_CPU_1
+...
 ```
 
 CPU 0 will run the Fibonacci sequence, then store 144 and 89 at addresses 0x0 and 0x4. CPU 1 will run nothing, so there will be 1 and 1 at addresses 0x0 and 0x4. This can be checked with:

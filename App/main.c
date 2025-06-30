@@ -1,3 +1,11 @@
+/*
+ * main.c
+ * Copyright (C) 2025
+ *
+ * Licensed under Creative Commons Attribution-NonCommercial 4.0
+ * (CC BY-NC 4.0) — https://creativecommons.org/licenses/by-nc/4.0/
+ */
+
 #include "FreeRTOS.h"
 #include "task.h"
 
