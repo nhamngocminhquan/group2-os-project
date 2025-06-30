@@ -191,6 +191,57 @@ To test this UART, while runnning the qemu with the programs executable file (ma
 
 ### FreeRTOS
 
+As part of the project, FreeRTOS was successfully configured to run on the NXP S32K3X8 microcontroller, which is based on the Arm Cortex-M7 core. A central part of this process was creation of **Makefile**, which defined how the FreeRTOS kernel should be built and linked for our board. This file was crucial because it allowed precise control over the toolchain, architecture settings, memory layout, and build outputs, ensuring the resulting firmware could run both on real hardware and under QEMU emulation.
+
+The first major change in the Makefile was selecting the correct FreeRTOS port layer for the Cortex-M7 core. This was done by setting the port directory to `portable/GCC/ARM_CM7/r0p1`, which provides FreeRTOS with the appropriate context-switch code for M7-class devices. Unlike Cortex-M3, the M7 supports more advanced features such as a hardware floating-point unit (FPU). The necessary compiler flags were added to enable it: `-mfpu=fpv5-sp-d16 -mfloat-abi=hard`. These flags enable single-precision hardware floating point and trigger what’s known as lazy FPU register stacking, which improves performance by only saving FPU registers during context switches when needed.
+
+The Makefile also explicitly targets our silicon using the following configuration:
+
+```makefile
+MACHINE := S32K3X8  
+CPU     := cortex-m7
+```
+
+These variables ensure that both the compiler (`arm-none-eabi-gcc`) and the QEMU emulator are aligned with the hardware configuration of the S32K3 board. This avoids issues that could arise from compiling for a generic M-series target. Additionally, we used a custom linker scripts (`linker_rtos.ld` and `mps2_m7.ld`) tailored for the memory layout of the S32K3X8, including PFLASH, DFLASH, RAM, ITCM, and DTCM regions. Using a correct memory map is needed to avoid hard faults that often occur when firmware tries to access invalid or unmapped memory addresses.
+
+Given that the M7 core and FPU introduce more code overhead than the simpler M3, size optimizations were also integrated into the Makefile. Compiler options like `-Os` (optimize for size) and section-level optimizations (`-ffunction-sections -fdata-sections`) were combined with the linker flag `--gc-sections` to remove unused functions and variables. This helped keep the final firmware image within reasonable flash limits, despite the added complexity of the M7 support.
+
+To make testing possible, several helper targets were included in the Makefile. The `qemu_start` and `qemu_debug` targets allow launching the compiled `.elf` file in a QEMU environment emulating the S32K3X8 board, with the second target offering GDB debugging support. These additions made it easy to verify the build and behavior of the RTOS without needing immediate access to physical hardware. The `clean` target removes all build files from the output directory.
+
+Important step towards running FreeRTOS on our board was writing up a **linker file** too. Throughout our examples and freeRTOS apps 2 linker scripts can be seen (`linker_rtos.ld` and `mps2_m7.ld`). The first one is version of the linker file to run 2 core microprocessor, and the other one was for 1 core. In the next part, we are going to describe only the 2 core version. This script was written by following the official S32K3 Reference Manual, ensuring that memory regions match the hardware’s actual configuration.
+
+The script begins by defining the memory regions using the `MEMORY` block. Flash memory is mapped at address `0x00400000`, and SRAM starts at `0x20400000`, consistent with the S32K3X8 memory map. These values ensure that the `.text`, `.data`, and `.bss` sections are loaded into the correct physical addresses. A special note was taken to align the RAM size and start address to the reference manual so that FreeRTOS stacks and heaps are placed in valid, accessible memory.
+
+Next, the script defines the section layout under `SECTIONS`. The `.text` section is placed in flash, which includes all code and read-only data. The `.data` section is loaded to flash but relocated to RAM at runtime. The `.bss` and `.heap` are placed in SRAM, which is also where the FreeRTOS task stacks are allocated.
+
+Attention was also given to ensure alignment and proper initialization of symbols like `_end`, `_stack_start`, and `_heap_start`, which are important for the FreeRTOS memory allocator (`heap_4.c`) and general stack usage. These symbols help ensure that runtime components behave predictably and safely.
+
+The **startup file** is a crucial final piece in making FreeRTOS run correctly on the S32K3X8. It begins by defining the interrupt vector table for both CPUs, which maps all core exceptions and peripheral interrupts—including those used by FreeRTOS like PendSV, SysTick, and SVC—to their respective handlers. 
+
+### FreeRTOS Config
+
+As part of configuring FreeRTOS for the S32K3X8 (Cortex-M7), we encountered a problem where the system would halt during initialization, specifically at the assertion `configASSERT( ucMaxSysCallPriority )`. This pointed to a misconfiguration of interrupt priority masking. Initially, the project used a hardcoded value:
+
+```
+#define configMAX_SYSCALL_INTERRUPT_PRIORITY (4)  
+```
+
+The NVIC uses an 8-bit field where only the upper bits are implemented (in our case, 4 bits), and these must be **left-aligned**. Using the literal value `4` resulted in an incorrectly formatted priority (`0x04`) that did not properly set the BASEPRI register, which FreeRTOS relies on to mask interrupts during critical sections. This invalid configuration caused the assertion to fail, halting execution.
+
+To resolve this, we followed the CMSIS recommendation and redefined the configuration using proper shifting:
+
+```
+#define configPRIO_BITS 4  
+#define configLIBRARY_MAX_SYSCALL_INTERRUPT_PRIORITY 0b0001  
+#define configMAX_SYSCALL_INTERRUPT_PRIORITY (configLIBRARY_MAX_SYSCALL_INTERRUPT_PRIORITY << (8 - configPRIO_BITS))  
+```
+
+This shift left-aligns the priority level `1` into the correct 8-bit format (`0x10`), ensuring that BASEPRI is set correctly and that FreeRTOS can safely mask high-priority interrupts. After this change, the assertion passed and the system ran as expected. 
+
+### Simple App
+
+As at first we did not have implemented UART, we tried to run FreeRTOS with a simple application which just had one task incrementing a global variable every second. After we verified this version works, we proceeded with a more complex apps once we had all the peripherals implemented.
+
 ### Program
 Inside `App/` you can find a simple demo app running FreeRTOS to test the
 correct implementation of UART and Timers.<br>
