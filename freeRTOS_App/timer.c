@@ -31,7 +31,7 @@ volatile uint32_t timer2_tick_count = 0;
 * source. It configures the Nested Vectored Interrupt Controller (NVIC) to allow the processor
 * to respond to a particular interrupt.
 */
-static void NVIC_EnableIRQ(uint32_t irq_num) {
+void NVIC_EnableIRQ(uint32_t irq_num) {
     // Enable interrupt in NVIC
     // This is a simplified version - actual implementation depends on MCU
     if ((int32_t)(irq_num) >= 0){ //added to avoid negative IRQ numbers
@@ -44,7 +44,7 @@ static void NVIC_EnableIRQ(uint32_t irq_num) {
 /* NVIC_SetPriority: is an ARM CMSIS function that configures the priority of a specific interrupt
 * in the Nested Vectored Interrupt Controller (NVIC).
 * It takes two parameters: the interrupt number and the priority level to assign.*/
-static void NVIC_SetPriority(uint32_t irq_num, uint32_t priority) {
+void NVIC_SetPriority(uint32_t irq_num, uint32_t priority) {
     // Set interrupt priority
     // This is a simplified version - actual implementation depends on  MCU
     volatile uint8_t *nvic_ipr = (volatile uint8_t*)(0xE000E400UL);

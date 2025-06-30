@@ -81,7 +81,7 @@ CFLAGS += -ffunction-sections
 CFLAGS += -fdata-sections
 
 # Specify the linker script
-LDFLAGS = -T ./mps2_m7.ld
+LDFLAGS = -T ./s32k3x8_m7.ld
 
 # Don't use the standard start-up files
 LDFLAGS += -nostartfiles
@@ -109,6 +109,7 @@ LDFLAGS += -mfpu=fpv5-sp-d16 -mfloat-abi=hard
 SOURCE_FILES += $(KERNEL_DIR)/list.c
 SOURCE_FILES += $(KERNEL_DIR)/tasks.c
 SOURCE_FILES += $(KERNEL_DIR)/queue.c
+SOURCE_FILES += $(KERNEL_DIR)/timers.c
 SOURCE_FILES += $(KERNEL_DIR)/portable/MemMang/heap_4.c
 SOURCE_FILES += $(KERNEL_DIR)/portable/GCC/ARM_CM7/r0p1/port.c
 
@@ -132,7 +133,7 @@ OBJS_OUTPUT = $(OBJS_NOPATH:%.o=$(OUTPUT_DIR)/%.o)
 
 all: $(ELF)
 
-$(ELF): $(OBJS_OUTPUT) ./mps2_m7.ld Makefile
+$(ELF): $(OBJS_OUTPUT) ./s32k3x8_m7.ld Makefile
 	echo "\n\n--- Final linking ---\n"
 	$(LD) $(LDFLAGS) $(OBJS_OUTPUT) -o $(ELF)
 	$(SIZE) $(ELF)

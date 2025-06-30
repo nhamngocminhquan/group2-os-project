@@ -8,9 +8,10 @@
 
 #include "FreeRTOS.h"
 #include "task.h"
-#include "semphr.h"
+#include "queue.h"
+#include "timers.h" // FreeRTOS
 
-#include "timer.h"
+#include "timer.h" // S32K3x8 emulation
 #include "uart.h"
 
 #include <stdio.h>
@@ -25,11 +26,14 @@
 #define tmrTIMER_0_PERIOD	( 5UL )
 #define tmrTIMER_1_PERIOD	( 2UL )
 #define tmrTIMER_2_PERIOD	( 9UL )
+#define TIMER_COUNTDOWN 10000 // expressed in ms
 
 static int i, iter, n;
-int reveal = 0;
+int reveal = 0, use_soft_timer;
+char choice;
 
-SemaphoreHandle_t dumpSemaphore;
+TimerHandle_t one_shot_timer;
+TaskHandle_t slow_fib_task;
 
 static void prvUARTInit(void) {
     UART0_BAUDDIV = 16;
@@ -46,19 +50,20 @@ struct context {
 
 void dump_stack(void) {
     uint32_t *sp;
-    asm volatile ("MOV %0, sp" : "=r" (sp));
+    asm volatile ("mov %0, sp" : "=r" (sp));
 
     printf("\n============ Stack Dump ============\n");
-    for (int i = 0; i < 4; i++) {
-        printf("0x%08x:", (unsigned int)(sp + i * 4));
-        for (int j = 0; j < 4; j++) {
-            uint32_t val = *(sp + i * 4 + j);
-            printf(" 0x%08x", val);
+    for (int j = 0; j < 4; j++) {
+        printf("0x%08x:\t", (sp + j));
+        for (int k = 0; k < 4; k++) {
+            uint32_t val = *(sp+j*4+k);
+            printf(" 0x%08x\t", val);
         }
-        printf("\n");
+        UART_printf("\n");
     }
     printf("============ Dump End ==============\n\n");
 }
+
 
 void print_context(struct context *context) {
     printf("\n============ Context saved on stack ============\n");
@@ -126,20 +131,15 @@ void welcome_message() {
         "Timer 0 -> will print registers context on screen\n"
         "Timer 1 -> will \"reveal\" the last computed Fibonacci number and iteration\n"
         "Timer 2 -> will dump memory content on screen\n\n"
-        "Press r if you're ready...\n");
+        "Do you want the app to automatically stops after %d ms? (y/n)\n",TIMER_COUNTDOWN);
     while (1) {
-        unsigned int sr = UART0_STATE;
-        if(sr & (1 << 21) ) { // 21 is Data reg full flag
-            char c = (char)(UART0_DATA & 0xFF); // Taking the one byte data.
-            if (c == 'r') {
-                break;
-            } else {
-                printf("Please, press r\n");
-            }
+        UART_printf("\0");
+        if (use_soft_timer == 0 || use_soft_timer == 1) {
+            break;
         }
     }
-    printf("\n================\n"
-           "Starting demo...\n\n");
+    UART_printf("\n================\n"
+                "Starting demo...\n\n");
 }
 
 void slow_fibonacci(void *pvParameters) {
@@ -148,6 +148,9 @@ void slow_fibonacci(void *pvParameters) {
     gettimeofday(&t1, NULL);
     srand(t1.tv_usec * t1.tv_sec);
 
+    if (use_soft_timer) {
+        xTimerStart(one_shot_timer,portMAX_DELAY);
+    }
     int a = 0, b = 1, r;
     volatile int spin;
     i = 1;
@@ -159,7 +162,7 @@ void slow_fibonacci(void *pvParameters) {
             i = 1;
             iter++;
             printf("Fibonacci computation is causing overflow -> starting again"
-                   "from 1st number of the series: iteration n°%d\n",iter);
+                   " from 1st number of the series: iteration n°%d\n",iter);
         } else {
             n = b + a;
             a = b;
@@ -175,20 +178,46 @@ void slow_fibonacci(void *pvParameters) {
  * timer interrupt 0 gets register context dump printed on screen
  */
 void timer0_user_callback() {
-    printf("timer0_callback triggered\n");
+    UART_printf("timer0_callback triggered\n");
     store_context();
 }
 
 /* timer interrupt 1 gets the next computed fibonacci number revealed */
 void timer1_user_callback() {
-    printf("timer1_callback triggered\n");
-    printf("Fibonacci n°%2d at iteration n°%2d -> %d\n",i,iter,n);
+    printf("timer1_callback triggered\n"
+           "Fibonacci n°%2d at iteration n°%2d -> %d\n",i,iter,n);
 }
 
 /* timer interrupt 2 gets memory content printed on screen */
 void timer2_user_callback() {
-    printf("timer2_callback triggered\n");
+    UART_printf("timer2_callback triggered\n");
     dump_stack();
+}
+
+void uart0_user_callback(char pressed_key) {
+    if (pressed_key == 'y') {
+        UART_printf("\nTimer countdown will atuomatically stop the app\n");
+        use_soft_timer = 1;
+        choice = pressed_key;
+        uart0_stop();
+    } else if (pressed_key == 'n') {
+        UART_printf("\nStopping the app requires Ctrl+C\n");
+        use_soft_timer = 0;
+        choice = pressed_key;
+        uart0_stop();
+    } else {
+        UART_printf("Please, press y or n\n");
+    }
+}
+
+void softTimerCallback() {
+    vTaskDelete(slow_fib_task);
+    timer0_stop();
+    timer1_stop();
+    timer2_stop();
+
+    UART_printf("\n\nStopping simulation\n\n"
+                "Press Ctrl+C to return to shell\n");
 }
 
 int main(int argc, char **argv){
@@ -196,9 +225,23 @@ int main(int argc, char **argv){
 	(void) argc;
 	(void) argv;
 
-    prvUARTInit();
+    use_soft_timer = -1;
+
+    UART_init();
+
+    uart0_set_callback(uart0_user_callback);
 
     welcome_message();
+
+    if (use_soft_timer) {
+        one_shot_timer = xTimerCreate(
+            "One-shot timer",
+            pdMS_TO_TICKS(TIMER_COUNTDOWN),
+            pdFALSE,
+            (void *) 0,
+            softTimerCallback
+        );
+    }
 
 	xTaskCreate(
         slow_fibonacci,
@@ -206,12 +249,13 @@ int main(int argc, char **argv){
 		configMINIMAL_STACK_SIZE,
 		NULL,
 		mainTASK_PRIORITY,
-		NULL
+        &slow_fib_task
 	);
 
     timer0_set_callback(timer0_user_callback);
     timer1_set_callback(timer1_user_callback);
     timer2_set_callback(timer2_user_callback);
+
 
     timer0_start(tmrTIMER_0_PERIOD);
     timer1_start(tmrTIMER_1_PERIOD);

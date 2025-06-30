@@ -54,7 +54,7 @@ The QEMU’s GitLab repository is cloned into our repository, so that we can kee
 
 The CPU uses the ARMv7M core provided by QEMU. The initialization of the board is similar to other ARM boards. We created the files [`s32k3x8.c`](./qemu/hw/arm/s32k3x8.c) and [`s32k3x8.h`](./qemu/include/hw/arm/s32k3x8.h) for the basic initialization. The files `Kconfig` and `meson.build` files in [/arm](./qemu/hw/arm/) are also modified to build the board. For this part, we took as reference the implementations [stm32f405_soc.c](./qemu/hw/arm/stm32f405_soc.c) and [mps2.c](./qemu/hw/arm/mps2.c).
 
-The model for our following parts is the S32K358, which is the default CPU for the evaluation board. However, each part can easily be changed to model a different CPU with multiple cores, different memory layouts, different peripherals. 
+The model for our following parts is the S32K358, which is the default CPU for the evaluation board. However, each part can easily be changed to model a different CPU with multiple cores, different memory layouts, different peripherals.
 
 #### Multiple CPUs and memory
 
@@ -121,14 +121,14 @@ We implemented a simple emulation of the SBAF. Its use is enabled by the flag:
 
 in `s32k3x8.h`. If not enabled, the emulation will use the default vector table location of `0x00000000` for all cores. This means that, by default, all of the cores will run the same program if interrupts are set up the same way.
 
-If enabled, an ELF parser will parse the provided ELF file and look for the IVT at only the address `0x00400000`. If the first 4 bytes matches `0x5AA55AA5`, the configuration word is read and the cores are enabled accordingly. Each of the cores' vector table is set through QEMU with the Vector Table Offset Register (VTOR), which has to be [properly aligned to 7 bits](https://developer.arm.com/documentation/ddi0403/d/System-Level-Architecture/System-Address-Map/System-Control-Space--SCS-/Vector-Table-Offset-Register--VTOR?lang=en). 
+If enabled, an ELF parser will parse the provided ELF file and look for the IVT at only the address `0x00400000`. If the first 4 bytes matches `0x5AA55AA5`, the configuration word is read and the cores are enabled accordingly. Each of the cores' vector table is set through QEMU with the Vector Table Offset Register (VTOR), which has to be [properly aligned to 7 bits](https://developer.arm.com/documentation/ddi0403/d/System-Level-Architecture/System-Address-Map/System-Control-Space--SCS-/Vector-Table-Offset-Register--VTOR?lang=en).
 
 ![SBAF](./assets/sbaf.png)
 
 With SBAF enabled, the emulation works closer to the real board with each core having a separate vector table. However, the program's startup and linker files will need to be more complex. The linker needs to place the vector tables correctly. `examples/dualcore_program` is an example of this, with the two cores running different programs.
 
 ### Timers
-The target timer emulated from the board was the Periodic Interrupt Timer (PIT). The timer operates as follows: when enabled, it begins counting down from the initial start value that has been set. When the timer period expires, the PIT sets the timer interrupt flag. Then it is reloaded at the start value, and the process starts again. It is necessary to note that the behavior implemented was only related to the ability to generate interrupts, and that each timer has independent timeout periods. 
+The target timer emulated from the board was the Periodic Interrupt Timer (PIT). The timer operates as follows: when enabled, it begins counting down from the initial start value that has been set. When the timer period expires, the PIT sets the timer interrupt flag. Then it is reloaded at the start value, and the process starts again. It is necessary to note that the behavior implemented was only related to the ability to generate interrupts, and that each timer has independent timeout periods.
 
 ### Implementation
 
@@ -141,11 +141,11 @@ The PIT timer definition was based on the MPS2 simple general-purpose 32-bit tim
 | PIT 2 | `0x402FC000` | `0x402FFFFF` |
 | PIT 3 | `0x40300000` | `0x40303FFF` |
 
-And driven by these interrupts (96, 97, 98, 99)  respectively. 
+And driven by these interrupts (96, 97, 98, 99)  respectively.
 
-To define the timer and its behavior, a new hardware definition was created in `hw/timers/s32k3x8_timer.c`, and it was necessary to utilize QEMU's ptimer subsystem. The implementation creates a countdown timer device that can be memory-mapped into a virtual system, providing four main registers accessible at specific memory offsets (CTRL , VALUE, RELOAD, and INTSTATUS, equivalent to the s32k3x8 names TCTRLx, CVALx, LDVALx, and TFLGx, respectively). 
+To define the timer and its behavior, a new hardware definition was created in `hw/timers/s32k3x8_timer.c`, and it was necessary to utilize QEMU's ptimer subsystem. The implementation creates a countdown timer device that can be memory-mapped into a virtual system, providing four main registers accessible at specific memory offsets (CTRL , VALUE, RELOAD, and INTSTATUS, equivalent to the s32k3x8 names TCTRLx, CVALx, LDVALx, and TFLGx, respectively).
 
-The primary functions defined are the following: `s32k3x8_timer_read()` `s32k3x8_timer_write()` `s32k3x8_timer_tick()`. The read function handles all memory-mapped register reads from the timer's registers. It decodes the memory offset to determine which register is being read and retrieves the appropriate value from either the timer's internal state or the underlying ptimer hardware, and returns it to the requesting software. 
+The primary functions defined are the following: `s32k3x8_timer_read()` `s32k3x8_timer_write()` `s32k3x8_timer_tick()`. The read function handles all memory-mapped register reads from the timer's registers. It decodes the memory offset to determine which register is being read and retrieves the appropriate value from either the timer's internal state or the underlying ptimer hardware, and returns it to the requesting software.
 
 The write function manages all writes to memory-mapped registers, interpreting the data value and memory address to update the relevant timer register and initiate the relevant hardware action. Each register has the following purpose: `VALUE` writes directly set the current timer count; `RELOAD` writes update the current count and the reload value; `INTSTATUS` writes clear interrupt flags using write-1-to-clear semantics; and `CTRL` register writings start or stop the timer.
 
@@ -227,7 +227,7 @@ Next, the script defines the section layout under `SECTIONS`. The `.text` sectio
 
 Attention was also given to ensure alignment and proper initialization of symbols like `_end`, `_stack_start`, and `_heap_start`, which are important for the FreeRTOS memory allocator (`heap_4.c`) and general stack usage. These symbols help ensure that runtime components behave predictably and safely.
 
-The **startup file** is a crucial final piece in making FreeRTOS run correctly on the S32K3X8. It begins by defining the interrupt vector table for both CPUs, which maps all core exceptions and peripheral interrupts—including those used by FreeRTOS like PendSV, SysTick, and SVC—to their respective handlers. 
+The **startup file** is a crucial final piece in making FreeRTOS run correctly on the S32K3X8. It begins by defining the interrupt vector table for both CPUs, which maps all core exceptions and peripheral interrupts—including those used by FreeRTOS like PendSV, SysTick, and SVC—to their respective handlers.
 
 ### FreeRTOS Config
 
@@ -247,7 +247,7 @@ To resolve this, we followed the CMSIS recommendation and redefined the configur
 #define configMAX_SYSCALL_INTERRUPT_PRIORITY (configLIBRARY_MAX_SYSCALL_INTERRUPT_PRIORITY << (8 - configPRIO_BITS))  
 ```
 
-This shift left-aligns the priority level `1` into the correct 8-bit format (`0x10`), ensuring that BASEPRI is set correctly and that FreeRTOS can safely mask high-priority interrupts. After this change, the assertion passed and the system ran as expected. 
+This shift left-aligns the priority level `1` into the correct 8-bit format (`0x10`), ensuring that BASEPRI is set correctly and that FreeRTOS can safely mask high-priority interrupts. After this change, the assertion passed and the system ran as expected.
 
 ### Simple App
 
@@ -261,8 +261,14 @@ The app is creating a simple task keeping the CPU busy. It computes
 numbers from Fibonacci series with an empty loop making sure the process keeps
 running without computing it too fast. Since the computation uses 32-bit values,
 we get overflow pretty fast. When an overflow is about to happen, the series
-computation restarts updating the occurred iteration count. This happens without
-any visual feedback.
+computation restarts updating the occurred iterations count. Only visual feedbacks
+occur on the verge of overflows.
+
+First of all, **UART0 interrupt** is used to let the user decide if the application
+must automatically terminate the task and disabling the timers after a software
+timer countdown or if the user will have to explicitly stop the execution with
+Ctrl+C. This is decided through a keyboard input which will trigger a UART
+interrupt.
 
 Here timer interrupts come into play. We set three different timers with
 different period triggering three different behaviours:
@@ -271,11 +277,8 @@ different period triggering three different behaviours:
 number alongside with the iteration the task is currently in
 - **Timer 2**: timer 2 causes an on-screen print of the memory content
 
-To run the example make sure to have cloned this repository with
-```sh
-git clone --recurse-submodules https://baltig.polito.it/eos2024/group2.git
-```
-so that the full FreeRTOS source code is downloaded to your machine, then execute the following
+To run the example, simply run the following commands so that the included
+NXP FreeRTOS port for S32K3X8-EVB will be compiled and used.
 
 ```sh
 cd freeRTOS_App/
@@ -283,7 +286,7 @@ make all
 make qemu_start
 ```
 
-The app will ask you for an input to start the demo, then you can stop it anytime with `Ctrl+C`.
+The app will ask you for an input to start the demo, then you can stop it anytime with `Ctrl+C` or can just let it finish if you chose to activate a countdown.
 
 # License
 
