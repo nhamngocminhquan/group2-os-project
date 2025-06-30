@@ -1,0 +1,17 @@
+Histogram:
+
+========== IPA-profile speculative targets: ==========
+
+Summary for node vInitInterruptTable/1:
+
+
+vInitInterruptTable (int id, void * vector)
+{
+  <bb 2> [local count: 1073741824]:
+  # DEBUG BEGIN_STMT
+  __vector_table__[id_2(D)] = vector_3(D);
+  return;
+
+}
+
+

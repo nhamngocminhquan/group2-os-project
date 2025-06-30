@@ -1,0 +1,7194 @@
+vTaskResetState ()
+{
+  BaseType_t xCoreID;
+
+  <bb 2> :
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  pxCurrentTCB = 0B;
+  # DEBUG BEGIN_STMT
+  uxDeletedTasksWaitingCleanUp = 0;
+  # DEBUG BEGIN_STMT
+  uxCurrentNumberOfTasks = 0;
+  # DEBUG BEGIN_STMT
+  xTickCount = 0;
+  # DEBUG BEGIN_STMT
+  uxTopReadyPriority = 0;
+  # DEBUG BEGIN_STMT
+  xSchedulerRunning = 0;
+  # DEBUG BEGIN_STMT
+  xPendedTicks = 0;
+  # DEBUG BEGIN_STMT
+  xCoreID = 0;
+  goto <bb 4>; [INV]
+
+  <bb 3> :
+  # DEBUG BEGIN_STMT
+  xYieldPendings[xCoreID] = 0;
+  # DEBUG BEGIN_STMT
+  xCoreID = xCoreID + 1;
+
+  <bb 4> :
+  # DEBUG BEGIN_STMT
+  if (xCoreID <= 0)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 5>; [INV]
+
+  <bb 5> :
+  # DEBUG BEGIN_STMT
+  xNumOfOverflows = 0;
+  # DEBUG BEGIN_STMT
+  uxTaskNumber = 0;
+  # DEBUG BEGIN_STMT
+  xNextTaskUnblockTime = 0;
+  # DEBUG BEGIN_STMT
+  uxSchedulerSuspended = 0;
+  return;
+
+}
+
+
+prvAddCurrentTaskToDelayedList (TickType_t xTicksToWait, const BaseType_t xCanBlockIndefinitely)
+{
+  struct ListItem_t * const pxIndex;
+  struct List_t * const pxOverflowDelayedList;
+  struct List_t * const pxDelayedList;
+  const TickType_t xConstTickCount;
+  TickType_t xTimeToWake;
+
+  <bb 2> :
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  xConstTickCount = xTickCount;
+  # DEBUG BEGIN_STMT
+  pxDelayedList = pxDelayedTaskList;
+  # DEBUG BEGIN_STMT
+  pxOverflowDelayedList = pxOverflowDelayedTaskList;
+  # DEBUG BEGIN_STMT
+  pxCurrentTCB.25_1 = pxCurrentTCB;
+  pxCurrentTCB.25_1->ucDelayAborted = 0;
+  # DEBUG BEGIN_STMT
+  pxCurrentTCB.26_2 = pxCurrentTCB;
+  _3 = &pxCurrentTCB.26_2->xStateListItem;
+  _4 = uxListRemove (_3);
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  if (xTicksToWait == 4294967295)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 5>; [INV]
+
+  <bb 3> :
+  if (xCanBlockIndefinitely != 0)
+    goto <bb 4>; [INV]
+  else
+    goto <bb 5>; [INV]
+
+  <bb 4> :
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  pxIndex = xSuspendedTaskList.pxIndex;
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  pxCurrentTCB.27_5 = pxCurrentTCB;
+  pxCurrentTCB.27_5->xStateListItem.pxNext = pxIndex;
+  # DEBUG BEGIN_STMT
+  pxCurrentTCB.28_6 = pxCurrentTCB;
+  _7 = pxIndex->pxPrevious;
+  pxCurrentTCB.28_6->xStateListItem.pxPrevious = _7;
+  # DEBUG BEGIN_STMT
+  pxCurrentTCB.29_8 = pxCurrentTCB;
+  _9 = pxIndex->pxPrevious;
+  _10 = &pxCurrentTCB.29_8->xStateListItem;
+  _9->pxNext = _10;
+  # DEBUG BEGIN_STMT
+  pxCurrentTCB.30_11 = pxCurrentTCB;
+  _12 = &pxCurrentTCB.30_11->xStateListItem;
+  pxIndex->pxPrevious = _12;
+  # DEBUG BEGIN_STMT
+  pxCurrentTCB.31_13 = pxCurrentTCB;
+  pxCurrentTCB.31_13->xStateListItem.pvContainer = &xSuspendedTaskList;
+  # DEBUG BEGIN_STMT
+  _14 = xSuspendedTaskList.uxNumberOfItems;
+  _15 = _14 + 1;
+  xSuspendedTaskList.uxNumberOfItems = _15;
+  # DEBUG BEGIN_STMT
+  goto <bb 9>; [INV]
+
+  <bb 5> :
+  # DEBUG BEGIN_STMT
+  xTimeToWake = xConstTickCount + xTicksToWait;
+  # DEBUG BEGIN_STMT
+  pxCurrentTCB.32_16 = pxCurrentTCB;
+  pxCurrentTCB.32_16->xStateListItem.xItemValue = xTimeToWake;
+  # DEBUG BEGIN_STMT
+  if (xTimeToWake < xConstTickCount)
+    goto <bb 6>; [INV]
+  else
+    goto <bb 7>; [INV]
+
+  <bb 6> :
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  pxCurrentTCB.33_17 = pxCurrentTCB;
+  _18 = &pxCurrentTCB.33_17->xStateListItem;
+  vListInsert (pxOverflowDelayedList, _18);
+  goto <bb 9>; [INV]
+
+  <bb 7> :
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  pxCurrentTCB.34_19 = pxCurrentTCB;
+  _20 = &pxCurrentTCB.34_19->xStateListItem;
+  vListInsert (pxDelayedList, _20);
+  # DEBUG BEGIN_STMT
+  xNextTaskUnblockTime.35_21 = xNextTaskUnblockTime;
+  if (xTimeToWake < xNextTaskUnblockTime.35_21)
+    goto <bb 8>; [INV]
+  else
+    goto <bb 9>; [INV]
+
+  <bb 8> :
+  # DEBUG BEGIN_STMT
+  xNextTaskUnblockTime = xTimeToWake;
+
+  <bb 9> :
+  # DEBUG BEGIN_STMT
+  return;
+
+}
+
+
+ulTaskGenericNotifyValueClear (struct tskTaskControlBlock * xTask, UBaseType_t uxIndexToClear, uint32_t ulBitsToClear)
+{
+  uint32_t ulReturn;
+  struct TCB_t * pxTCB;
+  uint32_t D.8518;
+  struct TCB_t * iftmp.166;
+
+  <bb 2> :
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  if (uxIndexToClear != 0)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 5>; [INV]
+
+  <bb 3> :
+  # DEBUG BEGIN_STMT
+  __asm__ __volatile__(" cpsid i " :  :  : "memory");
+
+  <bb 4> :
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  goto <bb 4>; [INV]
+
+  <bb 5> :
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  if (xTask == 0B)
+    goto <bb 6>; [INV]
+  else
+    goto <bb 7>; [INV]
+
+  <bb 6> :
+  iftmp.166 = pxCurrentTCB;
+  goto <bb 8>; [INV]
+
+  <bb 7> :
+  iftmp.166 = xTask;
+
+  <bb 8> :
+  pxTCB = iftmp.166;
+  # DEBUG BEGIN_STMT
+  vPortEnterCritical ();
+  # DEBUG BEGIN_STMT
+  ulReturn = pxTCB->ulNotifiedValue[uxIndexToClear];
+  # DEBUG BEGIN_STMT
+  _1 = pxTCB->ulNotifiedValue[uxIndexToClear];
+  _2 = ~ulBitsToClear;
+  _3 = _1 & _2;
+  pxTCB->ulNotifiedValue[uxIndexToClear] = _3;
+  # DEBUG BEGIN_STMT
+  vPortExitCritical ();
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  D.8518 = ulReturn;
+  return D.8518;
+
+}
+
+
+xTaskGenericNotifyStateClear (struct tskTaskControlBlock * xTask, UBaseType_t uxIndexToClear)
+{
+  BaseType_t xReturn;
+  struct TCB_t * pxTCB;
+  BaseType_t D.8510;
+  struct TCB_t * iftmp.165;
+
+  <bb 2> :
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  if (uxIndexToClear != 0)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 5>; [INV]
+
+  <bb 3> :
+  # DEBUG BEGIN_STMT
+  __asm__ __volatile__(" cpsid i " :  :  : "memory");
+
+  <bb 4> :
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  goto <bb 4>; [INV]
+
+  <bb 5> :
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  if (xTask == 0B)
+    goto <bb 6>; [INV]
+  else
+    goto <bb 7>; [INV]
+
+  <bb 6> :
+  iftmp.165 = pxCurrentTCB;
+  goto <bb 8>; [INV]
+
+  <bb 7> :
+  iftmp.165 = xTask;
+
+  <bb 8> :
+  pxTCB = iftmp.165;
+  # DEBUG BEGIN_STMT
+  vPortEnterCritical ();
+  # DEBUG BEGIN_STMT
+  _1 = pxTCB->ucNotifyState[uxIndexToClear];
+  if (_1 == 2)
+    goto <bb 9>; [INV]
+  else
+    goto <bb 10>; [INV]
+
+  <bb 9> :
+  # DEBUG BEGIN_STMT
+  pxTCB->ucNotifyState[uxIndexToClear] = 0;
+  # DEBUG BEGIN_STMT
+  xReturn = 1;
+  goto <bb 11>; [INV]
+
+  <bb 10> :
+  # DEBUG BEGIN_STMT
+  xReturn = 0;
+
+  <bb 11> :
+  # DEBUG BEGIN_STMT
+  vPortExitCritical ();
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  D.8510 = xReturn;
+  return D.8510;
+
+}
+
+
+vTaskGenericNotifyGiveFromISR (struct tskTaskControlBlock * xTaskToNotify, UBaseType_t uxIndexToNotify, BaseType_t * pxHigherPriorityTaskWoken)
+{
+  struct ListItem_t * const pxIndex;
+  struct ListItem_t * const pxIndex;
+  struct List_t * const pxList;
+  UBaseType_t uxSavedInterruptStatus;
+  uint8_t ucOriginalNotifyState;
+  struct TCB_t * pxTCB;
+
+  <bb 2> :
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  if (xTaskToNotify == 0B)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 5>; [INV]
+
+  <bb 3> :
+  # DEBUG BEGIN_STMT
+  __asm__ __volatile__(" cpsid i " :  :  : "memory");
+
+  <bb 4> :
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  goto <bb 4>; [INV]
+
+  <bb 5> :
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  if (uxIndexToNotify != 0)
+    goto <bb 6>; [INV]
+  else
+    goto <bb 8>; [INV]
+
+  <bb 6> :
+  # DEBUG BEGIN_STMT
+  __asm__ __volatile__(" cpsid i " :  :  : "memory");
+
+  <bb 7> :
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  goto <bb 7>; [INV]
+
+  <bb 8> :
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  vPortValidateInterruptPriority ();
+  # DEBUG BEGIN_STMT
+  pxTCB = xTaskToNotify;
+  # DEBUG BEGIN_STMT
+  uxSavedInterruptStatus = ulPortRaiseBASEPRI ();
+  # DEBUG BEGIN_STMT
+  ucOriginalNotifyState = pxTCB->ucNotifyState[uxIndexToNotify];
+  # DEBUG BEGIN_STMT
+  pxTCB->ucNotifyState[uxIndexToNotify] = 2;
+  # DEBUG BEGIN_STMT
+  _1 = pxTCB->ulNotifiedValue[uxIndexToNotify];
+  _2 = _1 + 1;
+  pxTCB->ulNotifiedValue[uxIndexToNotify] = _2;
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  if (ucOriginalNotifyState == 1)
+    goto <bb 9>; [INV]
+  else
+    goto <bb 23>; [INV]
+
+  <bb 9> :
+  # DEBUG BEGIN_STMT
+  _3 = pxTCB->xEventListItem.pvContainer;
+  if (_3 != 0B)
+    goto <bb 10>; [INV]
+  else
+    goto <bb 12>; [INV]
+
+  <bb 10> :
+  # DEBUG BEGIN_STMT
+  __asm__ __volatile__(" cpsid i " :  :  : "memory");
+
+  <bb 11> :
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  goto <bb 11>; [INV]
+
+  <bb 12> :
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  uxSchedulerSuspended.162_4 = uxSchedulerSuspended;
+  if (uxSchedulerSuspended.162_4 == 0)
+    goto <bb 13>; [INV]
+  else
+    goto <bb 18>; [INV]
+
+  <bb 13> :
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  pxList = pxTCB->xStateListItem.pvContainer;
+  # DEBUG BEGIN_STMT
+  _5 = pxTCB->xStateListItem.pxNext;
+  _6 = pxTCB->xStateListItem.pxPrevious;
+  _5->pxPrevious = _6;
+  # DEBUG BEGIN_STMT
+  _7 = pxTCB->xStateListItem.pxPrevious;
+  _8 = pxTCB->xStateListItem.pxNext;
+  _7->pxNext = _8;
+  # DEBUG BEGIN_STMT
+  _9 = pxList->pxIndex;
+  _10 = &pxTCB->xStateListItem;
+  if (_9 == _10)
+    goto <bb 14>; [INV]
+  else
+    goto <bb 15>; [INV]
+
+  <bb 14> :
+  # DEBUG BEGIN_STMT
+  _11 = pxTCB->xStateListItem.pxPrevious;
+  pxList->pxIndex = _11;
+
+  <bb 15> :
+  # DEBUG BEGIN_STMT
+  pxTCB->xStateListItem.pvContainer = 0B;
+  # DEBUG BEGIN_STMT
+  _12 = pxList->uxNumberOfItems;
+  _13 = _12 + 4294967295;
+  pxList->uxNumberOfItems = _13;
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  _14 = pxTCB->uxPriority;
+  uxTopReadyPriority.163_15 = uxTopReadyPriority;
+  if (_14 > uxTopReadyPriority.163_15)
+    goto <bb 16>; [INV]
+  else
+    goto <bb 17>; [INV]
+
+  <bb 16> :
+  # DEBUG BEGIN_STMT
+  _16 = pxTCB->uxPriority;
+  uxTopReadyPriority = _16;
+
+  <bb 17> :
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  _17 = pxTCB->uxPriority;
+  pxIndex = pxReadyTasksLists[_17].pxIndex;
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  pxTCB->xStateListItem.pxNext = pxIndex;
+  # DEBUG BEGIN_STMT
+  _18 = pxIndex->pxPrevious;
+  pxTCB->xStateListItem.pxPrevious = _18;
+  # DEBUG BEGIN_STMT
+  _19 = pxIndex->pxPrevious;
+  _20 = &pxTCB->xStateListItem;
+  _19->pxNext = _20;
+  # DEBUG BEGIN_STMT
+  _21 = &pxTCB->xStateListItem;
+  pxIndex->pxPrevious = _21;
+  # DEBUG BEGIN_STMT
+  _22 = pxTCB->uxPriority;
+  _23 = &pxReadyTasksLists[_22];
+  pxTCB->xStateListItem.pvContainer = _23;
+  # DEBUG BEGIN_STMT
+  _24 = pxTCB->uxPriority;
+  _25 = pxReadyTasksLists[_24].uxNumberOfItems;
+  _26 = pxTCB->uxPriority;
+  _27 = _25 + 1;
+  pxReadyTasksLists[_26].uxNumberOfItems = _27;
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  goto <bb 19>; [INV]
+
+  <bb 18> :
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  pxIndex = xPendingReadyList.pxIndex;
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  pxTCB->xEventListItem.pxNext = pxIndex;
+  # DEBUG BEGIN_STMT
+  _28 = pxIndex->pxPrevious;
+  pxTCB->xEventListItem.pxPrevious = _28;
+  # DEBUG BEGIN_STMT
+  _29 = pxIndex->pxPrevious;
+  _30 = &pxTCB->xEventListItem;
+  _29->pxNext = _30;
+  # DEBUG BEGIN_STMT
+  _31 = &pxTCB->xEventListItem;
+  pxIndex->pxPrevious = _31;
+  # DEBUG BEGIN_STMT
+  pxTCB->xEventListItem.pvContainer = &xPendingReadyList;
+  # DEBUG BEGIN_STMT
+  _32 = xPendingReadyList.uxNumberOfItems;
+  _33 = _32 + 1;
+  xPendingReadyList.uxNumberOfItems = _33;
+
+  <bb 19> :
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  _34 = pxTCB->uxPriority;
+  pxCurrentTCB.164_35 = pxCurrentTCB;
+  _36 = pxCurrentTCB.164_35->uxPriority;
+  if (_34 > _36)
+    goto <bb 20>; [INV]
+  else
+    goto <bb 23>; [INV]
+
+  <bb 20> :
+  # DEBUG BEGIN_STMT
+  if (pxHigherPriorityTaskWoken != 0B)
+    goto <bb 21>; [INV]
+  else
+    goto <bb 22>; [INV]
+
+  <bb 21> :
+  # DEBUG BEGIN_STMT
+  *pxHigherPriorityTaskWoken = 1;
+
+  <bb 22> :
+  # DEBUG BEGIN_STMT
+  xYieldPendings[0] = 1;
+
+  <bb 23> :
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  vPortSetBASEPRI (uxSavedInterruptStatus);
+  # DEBUG BEGIN_STMT
+  return;
+
+}
+
+
+xTaskGenericNotifyFromISR (struct tskTaskControlBlock * xTaskToNotify, UBaseType_t uxIndexToNotify, uint32_t ulValue, eNotifyAction eAction, uint32_t * pulPreviousNotificationValue, BaseType_t * pxHigherPriorityTaskWoken)
+{
+  struct ListItem_t * const pxIndex;
+  struct ListItem_t * const pxIndex;
+  struct List_t * const pxList;
+  UBaseType_t uxSavedInterruptStatus;
+  BaseType_t xReturn;
+  uint8_t ucOriginalNotifyState;
+  struct TCB_t * pxTCB;
+  BaseType_t D.8478;
+
+  <bb 2> :
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  xReturn = 1;
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  if (xTaskToNotify == 0B)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 5>; [INV]
+
+  <bb 3> :
+  # DEBUG BEGIN_STMT
+  __asm__ __volatile__(" cpsid i " :  :  : "memory");
+
+  <bb 4> :
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  goto <bb 4>; [INV]
+
+  <bb 5> :
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  if (uxIndexToNotify != 0)
+    goto <bb 6>; [INV]
+  else
+    goto <bb 8>; [INV]
+
+  <bb 6> :
+  # DEBUG BEGIN_STMT
+  __asm__ __volatile__(" cpsid i " :  :  : "memory");
+
+  <bb 7> :
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  goto <bb 7>; [INV]
+
+  <bb 8> :
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  vPortValidateInterruptPriority ();
+  # DEBUG BEGIN_STMT
+  pxTCB = xTaskToNotify;
+  # DEBUG BEGIN_STMT
+  uxSavedInterruptStatus = ulPortRaiseBASEPRI ();
+  # DEBUG BEGIN_STMT
+  if (pulPreviousNotificationValue != 0B)
+    goto <bb 9>; [INV]
+  else
+    goto <bb 10>; [INV]
+
+  <bb 9> :
+  # DEBUG BEGIN_STMT
+  _1 = pxTCB->ulNotifiedValue[uxIndexToNotify];
+  *pulPreviousNotificationValue = _1;
+
+  <bb 10> :
+  # DEBUG BEGIN_STMT
+  ucOriginalNotifyState = pxTCB->ucNotifyState[uxIndexToNotify];
+  # DEBUG BEGIN_STMT
+  pxTCB->ucNotifyState[uxIndexToNotify] = 2;
+  # DEBUG BEGIN_STMT
+  _2 = (int) eAction;
+  switch (_2) <default: <L16> [INV], case 0: <L39> [INV], case 1: <L8> [INV], case 2: <L9> [INV], case 3: <L10> [INV], case 4: <L11> [INV]>
+
+  <bb 11> :
+<L8>:
+  # DEBUG BEGIN_STMT
+  _3 = pxTCB->ulNotifiedValue[uxIndexToNotify];
+  _4 = ulValue | _3;
+  pxTCB->ulNotifiedValue[uxIndexToNotify] = _4;
+  # DEBUG BEGIN_STMT
+  goto <bb 20>; [INV]
+
+  <bb 12> :
+<L9>:
+  # DEBUG BEGIN_STMT
+  _5 = pxTCB->ulNotifiedValue[uxIndexToNotify];
+  _6 = _5 + 1;
+  pxTCB->ulNotifiedValue[uxIndexToNotify] = _6;
+  # DEBUG BEGIN_STMT
+  goto <bb 20>; [INV]
+
+  <bb 13> :
+<L10>:
+  # DEBUG BEGIN_STMT
+  pxTCB->ulNotifiedValue[uxIndexToNotify] = ulValue;
+  # DEBUG BEGIN_STMT
+  goto <bb 20>; [INV]
+
+  <bb 14> :
+<L11>:
+  # DEBUG BEGIN_STMT
+  if (ucOriginalNotifyState != 2)
+    goto <bb 15>; [INV]
+  else
+    goto <bb 16>; [INV]
+
+  <bb 15> :
+  # DEBUG BEGIN_STMT
+  pxTCB->ulNotifiedValue[uxIndexToNotify] = ulValue;
+  goto <bb 20>; [INV]
+
+  <bb 16> :
+  # DEBUG BEGIN_STMT
+  xReturn = 0;
+  goto <bb 20>; [INV]
+
+  <bb 17> :
+<L16>:
+  # DEBUG BEGIN_STMT
+  xTickCount.158_7 = xTickCount;
+  if (xTickCount.158_7 != 0)
+    goto <bb 18>; [INV]
+  else
+    goto <bb 20>; [INV]
+
+  <bb 18> :
+  # DEBUG BEGIN_STMT
+  __asm__ __volatile__(" cpsid i " :  :  : "memory");
+
+  <bb 19> :
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  goto <bb 19>; [INV]
+
+  <bb 20> :
+<L39>:
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  if (ucOriginalNotifyState == 1)
+    goto <bb 21>; [INV]
+  else
+    goto <bb 35>; [INV]
+
+  <bb 21> :
+  # DEBUG BEGIN_STMT
+  _8 = pxTCB->xEventListItem.pvContainer;
+  if (_8 != 0B)
+    goto <bb 22>; [INV]
+  else
+    goto <bb 24>; [INV]
+
+  <bb 22> :
+  # DEBUG BEGIN_STMT
+  __asm__ __volatile__(" cpsid i " :  :  : "memory");
+
+  <bb 23> :
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  goto <bb 23>; [INV]
+
+  <bb 24> :
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  uxSchedulerSuspended.159_9 = uxSchedulerSuspended;
+  if (uxSchedulerSuspended.159_9 == 0)
+    goto <bb 25>; [INV]
+  else
+    goto <bb 30>; [INV]
+
+  <bb 25> :
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  pxList = pxTCB->xStateListItem.pvContainer;
+  # DEBUG BEGIN_STMT
+  _10 = pxTCB->xStateListItem.pxNext;
+  _11 = pxTCB->xStateListItem.pxPrevious;
+  _10->pxPrevious = _11;
+  # DEBUG BEGIN_STMT
+  _12 = pxTCB->xStateListItem.pxPrevious;
+  _13 = pxTCB->xStateListItem.pxNext;
+  _12->pxNext = _13;
+  # DEBUG BEGIN_STMT
+  _14 = pxList->pxIndex;
+  _15 = &pxTCB->xStateListItem;
+  if (_14 == _15)
+    goto <bb 26>; [INV]
+  else
+    goto <bb 27>; [INV]
+
+  <bb 26> :
+  # DEBUG BEGIN_STMT
+  _16 = pxTCB->xStateListItem.pxPrevious;
+  pxList->pxIndex = _16;
+
+  <bb 27> :
+  # DEBUG BEGIN_STMT
+  pxTCB->xStateListItem.pvContainer = 0B;
+  # DEBUG BEGIN_STMT
+  _17 = pxList->uxNumberOfItems;
+  _18 = _17 + 4294967295;
+  pxList->uxNumberOfItems = _18;
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  _19 = pxTCB->uxPriority;
+  uxTopReadyPriority.160_20 = uxTopReadyPriority;
+  if (_19 > uxTopReadyPriority.160_20)
+    goto <bb 28>; [INV]
+  else
+    goto <bb 29>; [INV]
+
+  <bb 28> :
+  # DEBUG BEGIN_STMT
+  _21 = pxTCB->uxPriority;
+  uxTopReadyPriority = _21;
+
+  <bb 29> :
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  _22 = pxTCB->uxPriority;
+  pxIndex = pxReadyTasksLists[_22].pxIndex;
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  pxTCB->xStateListItem.pxNext = pxIndex;
+  # DEBUG BEGIN_STMT
+  _23 = pxIndex->pxPrevious;
+  pxTCB->xStateListItem.pxPrevious = _23;
+  # DEBUG BEGIN_STMT
+  _24 = pxIndex->pxPrevious;
+  _25 = &pxTCB->xStateListItem;
+  _24->pxNext = _25;
+  # DEBUG BEGIN_STMT
+  _26 = &pxTCB->xStateListItem;
+  pxIndex->pxPrevious = _26;
+  # DEBUG BEGIN_STMT
+  _27 = pxTCB->uxPriority;
+  _28 = &pxReadyTasksLists[_27];
+  pxTCB->xStateListItem.pvContainer = _28;
+  # DEBUG BEGIN_STMT
+  _29 = pxTCB->uxPriority;
+  _30 = pxReadyTasksLists[_29].uxNumberOfItems;
+  _31 = pxTCB->uxPriority;
+  _32 = _30 + 1;
+  pxReadyTasksLists[_31].uxNumberOfItems = _32;
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  goto <bb 31>; [INV]
+
+  <bb 30> :
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  pxIndex = xPendingReadyList.pxIndex;
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  pxTCB->xEventListItem.pxNext = pxIndex;
+  # DEBUG BEGIN_STMT
+  _33 = pxIndex->pxPrevious;
+  pxTCB->xEventListItem.pxPrevious = _33;
+  # DEBUG BEGIN_STMT
+  _34 = pxIndex->pxPrevious;
+  _35 = &pxTCB->xEventListItem;
+  _34->pxNext = _35;
+  # DEBUG BEGIN_STMT
+  _36 = &pxTCB->xEventListItem;
+  pxIndex->pxPrevious = _36;
+  # DEBUG BEGIN_STMT
+  pxTCB->xEventListItem.pvContainer = &xPendingReadyList;
+  # DEBUG BEGIN_STMT
+  _37 = xPendingReadyList.uxNumberOfItems;
+  _38 = _37 + 1;
+  xPendingReadyList.uxNumberOfItems = _38;
+
+  <bb 31> :
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  _39 = pxTCB->uxPriority;
+  pxCurrentTCB.161_40 = pxCurrentTCB;
+  _41 = pxCurrentTCB.161_40->uxPriority;
+  if (_39 > _41)
+    goto <bb 32>; [INV]
+  else
+    goto <bb 35>; [INV]
+
+  <bb 32> :
+  # DEBUG BEGIN_STMT
+  if (pxHigherPriorityTaskWoken != 0B)
+    goto <bb 33>; [INV]
+  else
+    goto <bb 34>; [INV]
+
+  <bb 33> :
+  # DEBUG BEGIN_STMT
+  *pxHigherPriorityTaskWoken = 1;
+
+  <bb 34> :
+  # DEBUG BEGIN_STMT
+  xYieldPendings[0] = 1;
+
+  <bb 35> :
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  vPortSetBASEPRI (uxSavedInterruptStatus);
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  D.8478 = xReturn;
+  return D.8478;
+
+}
+
+
+xTaskGenericNotify (struct tskTaskControlBlock * xTaskToNotify, UBaseType_t uxIndexToNotify, uint32_t ulValue, eNotifyAction eAction, uint32_t * pulPreviousNotificationValue)
+{
+  struct ListItem_t * const pxIndex;
+  struct List_t * const pxList;
+  uint8_t ucOriginalNotifyState;
+  BaseType_t xReturn;
+  struct TCB_t * pxTCB;
+  BaseType_t D.8448;
+
+  <bb 2> :
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  xReturn = 1;
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  if (uxIndexToNotify != 0)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 5>; [INV]
+
+  <bb 3> :
+  # DEBUG BEGIN_STMT
+  __asm__ __volatile__(" cpsid i " :  :  : "memory");
+
+  <bb 4> :
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  goto <bb 4>; [INV]
+
+  <bb 5> :
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  if (xTaskToNotify == 0B)
+    goto <bb 6>; [INV]
+  else
+    goto <bb 8>; [INV]
+
+  <bb 6> :
+  # DEBUG BEGIN_STMT
+  __asm__ __volatile__(" cpsid i " :  :  : "memory");
+
+  <bb 7> :
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  goto <bb 7>; [INV]
+
+  <bb 8> :
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  pxTCB = xTaskToNotify;
+  # DEBUG BEGIN_STMT
+  vPortEnterCritical ();
+  # DEBUG BEGIN_STMT
+  if (pulPreviousNotificationValue != 0B)
+    goto <bb 9>; [INV]
+  else
+    goto <bb 10>; [INV]
+
+  <bb 9> :
+  # DEBUG BEGIN_STMT
+  _1 = pxTCB->ulNotifiedValue[uxIndexToNotify];
+  *pulPreviousNotificationValue = _1;
+
+  <bb 10> :
+  # DEBUG BEGIN_STMT
+  ucOriginalNotifyState = pxTCB->ucNotifyState[uxIndexToNotify];
+  # DEBUG BEGIN_STMT
+  pxTCB->ucNotifyState[uxIndexToNotify] = 2;
+  # DEBUG BEGIN_STMT
+  _2 = (int) eAction;
+  switch (_2) <default: <L16> [INV], case 0: <L35> [INV], case 1: <L8> [INV], case 2: <L9> [INV], case 3: <L10> [INV], case 4: <L11> [INV]>
+
+  <bb 11> :
+<L8>:
+  # DEBUG BEGIN_STMT
+  _3 = pxTCB->ulNotifiedValue[uxIndexToNotify];
+  _4 = ulValue | _3;
+  pxTCB->ulNotifiedValue[uxIndexToNotify] = _4;
+  # DEBUG BEGIN_STMT
+  goto <bb 20>; [INV]
+
+  <bb 12> :
+<L9>:
+  # DEBUG BEGIN_STMT
+  _5 = pxTCB->ulNotifiedValue[uxIndexToNotify];
+  _6 = _5 + 1;
+  pxTCB->ulNotifiedValue[uxIndexToNotify] = _6;
+  # DEBUG BEGIN_STMT
+  goto <bb 20>; [INV]
+
+  <bb 13> :
+<L10>:
+  # DEBUG BEGIN_STMT
+  pxTCB->ulNotifiedValue[uxIndexToNotify] = ulValue;
+  # DEBUG BEGIN_STMT
+  goto <bb 20>; [INV]
+
+  <bb 14> :
+<L11>:
+  # DEBUG BEGIN_STMT
+  if (ucOriginalNotifyState != 2)
+    goto <bb 15>; [INV]
+  else
+    goto <bb 16>; [INV]
+
+  <bb 15> :
+  # DEBUG BEGIN_STMT
+  pxTCB->ulNotifiedValue[uxIndexToNotify] = ulValue;
+  goto <bb 20>; [INV]
+
+  <bb 16> :
+  # DEBUG BEGIN_STMT
+  xReturn = 0;
+  goto <bb 20>; [INV]
+
+  <bb 17> :
+<L16>:
+  # DEBUG BEGIN_STMT
+  xTickCount.155_7 = xTickCount;
+  if (xTickCount.155_7 != 0)
+    goto <bb 18>; [INV]
+  else
+    goto <bb 20>; [INV]
+
+  <bb 18> :
+  # DEBUG BEGIN_STMT
+  __asm__ __volatile__(" cpsid i " :  :  : "memory");
+
+  <bb 19> :
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  goto <bb 19>; [INV]
+
+  <bb 20> :
+<L35>:
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  if (ucOriginalNotifyState == 1)
+    goto <bb 21>; [INV]
+  else
+    goto <bb 30>; [INV]
+
+  <bb 21> :
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  pxList = pxTCB->xStateListItem.pvContainer;
+  # DEBUG BEGIN_STMT
+  _8 = pxTCB->xStateListItem.pxNext;
+  _9 = pxTCB->xStateListItem.pxPrevious;
+  _8->pxPrevious = _9;
+  # DEBUG BEGIN_STMT
+  _10 = pxTCB->xStateListItem.pxPrevious;
+  _11 = pxTCB->xStateListItem.pxNext;
+  _10->pxNext = _11;
+  # DEBUG BEGIN_STMT
+  _12 = pxList->pxIndex;
+  _13 = &pxTCB->xStateListItem;
+  if (_12 == _13)
+    goto <bb 22>; [INV]
+  else
+    goto <bb 23>; [INV]
+
+  <bb 22> :
+  # DEBUG BEGIN_STMT
+  _14 = pxTCB->xStateListItem.pxPrevious;
+  pxList->pxIndex = _14;
+
+  <bb 23> :
+  # DEBUG BEGIN_STMT
+  pxTCB->xStateListItem.pvContainer = 0B;
+  # DEBUG BEGIN_STMT
+  _15 = pxList->uxNumberOfItems;
+  _16 = _15 + 4294967295;
+  pxList->uxNumberOfItems = _16;
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  _17 = pxTCB->uxPriority;
+  uxTopReadyPriority.156_18 = uxTopReadyPriority;
+  if (_17 > uxTopReadyPriority.156_18)
+    goto <bb 24>; [INV]
+  else
+    goto <bb 25>; [INV]
+
+  <bb 24> :
+  # DEBUG BEGIN_STMT
+  _19 = pxTCB->uxPriority;
+  uxTopReadyPriority = _19;
+
+  <bb 25> :
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  _20 = pxTCB->uxPriority;
+  pxIndex = pxReadyTasksLists[_20].pxIndex;
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  pxTCB->xStateListItem.pxNext = pxIndex;
+  # DEBUG BEGIN_STMT
+  _21 = pxIndex->pxPrevious;
+  pxTCB->xStateListItem.pxPrevious = _21;
+  # DEBUG BEGIN_STMT
+  _22 = pxIndex->pxPrevious;
+  _23 = &pxTCB->xStateListItem;
+  _22->pxNext = _23;
+  # DEBUG BEGIN_STMT
+  _24 = &pxTCB->xStateListItem;
+  pxIndex->pxPrevious = _24;
+  # DEBUG BEGIN_STMT
+  _25 = pxTCB->uxPriority;
+  _26 = &pxReadyTasksLists[_25];
+  pxTCB->xStateListItem.pvContainer = _26;
+  # DEBUG BEGIN_STMT
+  _27 = pxTCB->uxPriority;
+  _28 = pxReadyTasksLists[_27].uxNumberOfItems;
+  _29 = pxTCB->uxPriority;
+  _30 = _28 + 1;
+  pxReadyTasksLists[_29].uxNumberOfItems = _30;
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  _31 = pxTCB->xEventListItem.pvContainer;
+  if (_31 != 0B)
+    goto <bb 26>; [INV]
+  else
+    goto <bb 28>; [INV]
+
+  <bb 26> :
+  # DEBUG BEGIN_STMT
+  __asm__ __volatile__(" cpsid i " :  :  : "memory");
+
+  <bb 27> :
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  goto <bb 27>; [INV]
+
+  <bb 28> :
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  pxCurrentTCB.157_32 = pxCurrentTCB;
+  _33 = pxCurrentTCB.157_32->uxPriority;
+  _34 = pxTCB->uxPriority;
+  if (_33 < _34)
+    goto <bb 29>; [INV]
+  else
+    goto <bb 30>; [INV]
+
+  <bb 29> :
+  # DEBUG BEGIN_STMT
+  _35 = 3758157060B;
+  *_35 = 268435456;
+  # DEBUG BEGIN_STMT
+  __asm__ __volatile__("dsb" :  :  : "memory");
+  # DEBUG BEGIN_STMT
+  __asm__ __volatile__("isb");
+  # DEBUG BEGIN_STMT
+
+  <bb 30> :
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  vPortExitCritical ();
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  D.8448 = xReturn;
+  return D.8448;
+
+}
+
+
+xTaskGenericNotifyWait (UBaseType_t uxIndexToWaitOn, uint32_t ulBitsToClearOnEntry, uint32_t ulBitsToClearOnExit, uint32_t * pulNotificationValue, TickType_t xTicksToWait)
+{
+  BaseType_t xShouldBlock;
+  BaseType_t xAlreadyYielded;
+  BaseType_t xReturn;
+  BaseType_t D.8423;
+  struct TCB_t * pxCurrentTCB.153;
+  struct TCB_t * pxCurrentTCB.149;
+
+  <bb 2> :
+  # DEBUG BEGIN_STMT
+  xShouldBlock = 0;
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  if (uxIndexToWaitOn != 0)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 5>; [INV]
+
+  <bb 3> :
+  # DEBUG BEGIN_STMT
+  __asm__ __volatile__(" cpsid i " :  :  : "memory");
+
+  <bb 4> :
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  goto <bb 4>; [INV]
+
+  <bb 5> :
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  vTaskSuspendAll ();
+  # DEBUG BEGIN_STMT
+  vPortEnterCritical ();
+  # DEBUG BEGIN_STMT
+  pxCurrentTCB.148_1 = pxCurrentTCB;
+  _2 = pxCurrentTCB.148_1->ucNotifyState[uxIndexToWaitOn];
+  if (_2 != 2)
+    goto <bb 6>; [INV]
+  else
+    goto <bb 8>; [INV]
+
+  <bb 6> :
+  # DEBUG BEGIN_STMT
+  pxCurrentTCB.149 = pxCurrentTCB;
+  _3 = pxCurrentTCB.149->ulNotifiedValue[uxIndexToWaitOn];
+  _4 = ~ulBitsToClearOnEntry;
+  _5 = _3 & _4;
+  pxCurrentTCB.149->ulNotifiedValue[uxIndexToWaitOn] = _5;
+  # DEBUG BEGIN_STMT
+  pxCurrentTCB.150_6 = pxCurrentTCB;
+  pxCurrentTCB.150_6->ucNotifyState[uxIndexToWaitOn] = 1;
+  # DEBUG BEGIN_STMT
+  if (xTicksToWait != 0)
+    goto <bb 7>; [INV]
+  else
+    goto <bb 8>; [INV]
+
+  <bb 7> :
+  # DEBUG BEGIN_STMT
+  xShouldBlock = 1;
+
+  <bb 8> :
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  vPortExitCritical ();
+  # DEBUG BEGIN_STMT
+  if (xShouldBlock == 1)
+    goto <bb 9>; [INV]
+  else
+    goto <bb 10>; [INV]
+
+  <bb 9> :
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  prvAddCurrentTaskToDelayedList (xTicksToWait, 1);
+
+  <bb 10> :
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  xAlreadyYielded = xTaskResumeAll ();
+  # DEBUG BEGIN_STMT
+  if (xShouldBlock == 1)
+    goto <bb 11>; [INV]
+  else
+    goto <bb 13>; [INV]
+
+  <bb 11> :
+  if (xAlreadyYielded == 0)
+    goto <bb 12>; [INV]
+  else
+    goto <bb 13>; [INV]
+
+  <bb 12> :
+  # DEBUG BEGIN_STMT
+  _7 = 3758157060B;
+  *_7 = 268435456;
+  # DEBUG BEGIN_STMT
+  __asm__ __volatile__("dsb" :  :  : "memory");
+  # DEBUG BEGIN_STMT
+  __asm__ __volatile__("isb");
+  # DEBUG BEGIN_STMT
+
+  <bb 13> :
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  vPortEnterCritical ();
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  if (pulNotificationValue != 0B)
+    goto <bb 14>; [INV]
+  else
+    goto <bb 15>; [INV]
+
+  <bb 14> :
+  # DEBUG BEGIN_STMT
+  pxCurrentTCB.151_8 = pxCurrentTCB;
+  _9 = pxCurrentTCB.151_8->ulNotifiedValue[uxIndexToWaitOn];
+  *pulNotificationValue = _9;
+
+  <bb 15> :
+  # DEBUG BEGIN_STMT
+  pxCurrentTCB.152_10 = pxCurrentTCB;
+  _11 = pxCurrentTCB.152_10->ucNotifyState[uxIndexToWaitOn];
+  if (_11 != 2)
+    goto <bb 16>; [INV]
+  else
+    goto <bb 17>; [INV]
+
+  <bb 16> :
+  # DEBUG BEGIN_STMT
+  xReturn = 0;
+  goto <bb 18>; [INV]
+
+  <bb 17> :
+  # DEBUG BEGIN_STMT
+  pxCurrentTCB.153 = pxCurrentTCB;
+  _12 = pxCurrentTCB.153->ulNotifiedValue[uxIndexToWaitOn];
+  _13 = ~ulBitsToClearOnExit;
+  _14 = _12 & _13;
+  pxCurrentTCB.153->ulNotifiedValue[uxIndexToWaitOn] = _14;
+  # DEBUG BEGIN_STMT
+  xReturn = 1;
+
+  <bb 18> :
+  # DEBUG BEGIN_STMT
+  pxCurrentTCB.154_15 = pxCurrentTCB;
+  pxCurrentTCB.154_15->ucNotifyState[uxIndexToWaitOn] = 0;
+  # DEBUG BEGIN_STMT
+  vPortExitCritical ();
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  D.8423 = xReturn;
+  return D.8423;
+
+}
+
+
+ulTaskGenericNotifyTake (UBaseType_t uxIndexToWaitOn, BaseType_t xClearCountOnExit, TickType_t xTicksToWait)
+{
+  BaseType_t xShouldBlock;
+  BaseType_t xAlreadyYielded;
+  uint32_t ulReturn;
+  uint32_t D.8398;
+
+  <bb 2> :
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  xShouldBlock = 0;
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  if (uxIndexToWaitOn != 0)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 5>; [INV]
+
+  <bb 3> :
+  # DEBUG BEGIN_STMT
+  __asm__ __volatile__(" cpsid i " :  :  : "memory");
+
+  <bb 4> :
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  goto <bb 4>; [INV]
+
+  <bb 5> :
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  vTaskSuspendAll ();
+  # DEBUG BEGIN_STMT
+  vPortEnterCritical ();
+  # DEBUG BEGIN_STMT
+  pxCurrentTCB.142_1 = pxCurrentTCB;
+  _2 = pxCurrentTCB.142_1->ulNotifiedValue[uxIndexToWaitOn];
+  if (_2 == 0)
+    goto <bb 6>; [INV]
+  else
+    goto <bb 8>; [INV]
+
+  <bb 6> :
+  # DEBUG BEGIN_STMT
+  pxCurrentTCB.143_3 = pxCurrentTCB;
+  pxCurrentTCB.143_3->ucNotifyState[uxIndexToWaitOn] = 1;
+  # DEBUG BEGIN_STMT
+  if (xTicksToWait != 0)
+    goto <bb 7>; [INV]
+  else
+    goto <bb 8>; [INV]
+
+  <bb 7> :
+  # DEBUG BEGIN_STMT
+  xShouldBlock = 1;
+
+  <bb 8> :
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  vPortExitCritical ();
+  # DEBUG BEGIN_STMT
+  if (xShouldBlock == 1)
+    goto <bb 9>; [INV]
+  else
+    goto <bb 10>; [INV]
+
+  <bb 9> :
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  prvAddCurrentTaskToDelayedList (xTicksToWait, 1);
+
+  <bb 10> :
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  xAlreadyYielded = xTaskResumeAll ();
+  # DEBUG BEGIN_STMT
+  if (xShouldBlock == 1)
+    goto <bb 11>; [INV]
+  else
+    goto <bb 13>; [INV]
+
+  <bb 11> :
+  if (xAlreadyYielded == 0)
+    goto <bb 12>; [INV]
+  else
+    goto <bb 13>; [INV]
+
+  <bb 12> :
+  # DEBUG BEGIN_STMT
+  _4 = 3758157060B;
+  *_4 = 268435456;
+  # DEBUG BEGIN_STMT
+  __asm__ __volatile__("dsb" :  :  : "memory");
+  # DEBUG BEGIN_STMT
+  __asm__ __volatile__("isb");
+  # DEBUG BEGIN_STMT
+
+  <bb 13> :
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  vPortEnterCritical ();
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  pxCurrentTCB.144_5 = pxCurrentTCB;
+  ulReturn = pxCurrentTCB.144_5->ulNotifiedValue[uxIndexToWaitOn];
+  # DEBUG BEGIN_STMT
+  if (ulReturn != 0)
+    goto <bb 14>; [INV]
+  else
+    goto <bb 17>; [INV]
+
+  <bb 14> :
+  # DEBUG BEGIN_STMT
+  if (xClearCountOnExit != 0)
+    goto <bb 15>; [INV]
+  else
+    goto <bb 16>; [INV]
+
+  <bb 15> :
+  # DEBUG BEGIN_STMT
+  pxCurrentTCB.145_6 = pxCurrentTCB;
+  pxCurrentTCB.145_6->ulNotifiedValue[uxIndexToWaitOn] = 0;
+  goto <bb 17>; [INV]
+
+  <bb 16> :
+  # DEBUG BEGIN_STMT
+  pxCurrentTCB.146_7 = pxCurrentTCB;
+  _8 = ulReturn + 4294967295;
+  pxCurrentTCB.146_7->ulNotifiedValue[uxIndexToWaitOn] = _8;
+
+  <bb 17> :
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  pxCurrentTCB.147_9 = pxCurrentTCB;
+  pxCurrentTCB.147_9->ucNotifyState[uxIndexToWaitOn] = 0;
+  # DEBUG BEGIN_STMT
+  vPortExitCritical ();
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  D.8398 = ulReturn;
+  return D.8398;
+
+}
+
+
+pvTaskIncrementMutexHeldCount ()
+{
+  struct TCB_t * pxTCB;
+  struct tskTaskControlBlock * D.8374;
+
+  <bb 2> :
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  pxTCB = pxCurrentTCB;
+  # DEBUG BEGIN_STMT
+  if (pxTCB != 0B)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 4>; [INV]
+
+  <bb 3> :
+  # DEBUG BEGIN_STMT
+  _1 = pxTCB->uxMutexesHeld;
+  _2 = _1 + 1;
+  pxTCB->uxMutexesHeld = _2;
+
+  <bb 4> :
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  D.8374 = pxTCB;
+  return D.8374;
+
+}
+
+
+uxTaskResetEventItemValue ()
+{
+  TickType_t uxReturn;
+  TickType_t D.8370;
+
+  <bb 2> :
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  pxCurrentTCB.139_1 = pxCurrentTCB;
+  uxReturn = pxCurrentTCB.139_1->xEventListItem.xItemValue;
+  # DEBUG BEGIN_STMT
+  pxCurrentTCB.140_2 = pxCurrentTCB;
+  _3 = pxCurrentTCB.140_2->uxPriority;
+  pxCurrentTCB.141_4 = pxCurrentTCB;
+  _5 = 10 - _3;
+  pxCurrentTCB.141_4->xEventListItem.xItemValue = _5;
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  D.8370 = uxReturn;
+  return D.8370;
+
+}
+
+
+vTaskListTasks (char * pcWriteBuffer, size_t uxBufferLength)
+{
+  char cStatus;
+  UBaseType_t x;
+  UBaseType_t uxArraySize;
+  BaseType_t xOutputBufferFull;
+  int iSnprintfReturnValue;
+  size_t uxCharsWrittenBySnprintf;
+  size_t uxConsumedBufferLength;
+  struct TaskStatus_t * pxTaskStatusArray;
+
+  <bb 2> :
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  uxConsumedBufferLength = 0;
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  xOutputBufferFull = 0;
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  *pcWriteBuffer = 0;
+  # DEBUG BEGIN_STMT
+  uxArraySize = uxCurrentNumberOfTasks;
+  # DEBUG BEGIN_STMT
+  uxCurrentNumberOfTasks.137_1 = uxCurrentNumberOfTasks;
+  _2 = uxCurrentNumberOfTasks.137_1 * 36;
+  pxTaskStatusArray = pvPortMalloc (_2);
+  # DEBUG BEGIN_STMT
+  if (pxTaskStatusArray != 0B)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 20>; [INV]
+
+  <bb 3> :
+  # DEBUG BEGIN_STMT
+  uxArraySize = uxTaskGetSystemState (pxTaskStatusArray, uxArraySize, 0B);
+  # DEBUG BEGIN_STMT
+  x = 0;
+  goto <bb 18>; [INV]
+
+  <bb 4> :
+  # DEBUG BEGIN_STMT
+  _3 = x * 36;
+  _4 = pxTaskStatusArray + _3;
+  _5 = _4->eCurrentState;
+  _6 = (int) _5;
+  switch (_6) <default: <L7> [INV], case 0: <L2> [INV], case 1: <L3> [INV], case 2: <L4> [INV], case 3: <L5> [INV], case 4: <L6> [INV]>
+
+  <bb 5> :
+<L2>:
+  # DEBUG BEGIN_STMT
+  cStatus = 88;
+  # DEBUG BEGIN_STMT
+  goto <bb 11>; [INV]
+
+  <bb 6> :
+<L3>:
+  # DEBUG BEGIN_STMT
+  cStatus = 82;
+  # DEBUG BEGIN_STMT
+  goto <bb 11>; [INV]
+
+  <bb 7> :
+<L4>:
+  # DEBUG BEGIN_STMT
+  cStatus = 66;
+  # DEBUG BEGIN_STMT
+  goto <bb 11>; [INV]
+
+  <bb 8> :
+<L5>:
+  # DEBUG BEGIN_STMT
+  cStatus = 83;
+  # DEBUG BEGIN_STMT
+  goto <bb 11>; [INV]
+
+  <bb 9> :
+<L6>:
+  # DEBUG BEGIN_STMT
+  cStatus = 68;
+  # DEBUG BEGIN_STMT
+  goto <bb 11>; [INV]
+
+  <bb 10> :
+<L7>:
+  # DEBUG BEGIN_STMT
+  cStatus = 0;
+  # DEBUG BEGIN_STMT
+
+  <bb 11> :
+  # DEBUG BEGIN_STMT
+  _7 = uxConsumedBufferLength + 10;
+  if (uxBufferLength >= _7)
+    goto <bb 12>; [INV]
+  else
+    goto <bb 15>; [INV]
+
+  <bb 12> :
+  # DEBUG BEGIN_STMT
+  _8 = x * 36;
+  _9 = pxTaskStatusArray + _8;
+  _10 = _9->pcTaskName;
+  pcWriteBuffer = prvWriteNameToBuffer (pcWriteBuffer, _10);
+  # DEBUG BEGIN_STMT
+  uxConsumedBufferLength = uxConsumedBufferLength + 9;
+  # DEBUG BEGIN_STMT
+  _11 = uxBufferLength + 4294967295;
+  if (uxConsumedBufferLength < _11)
+    goto <bb 13>; [INV]
+  else
+    goto <bb 14>; [INV]
+
+  <bb 13> :
+  # DEBUG BEGIN_STMT
+  _12 = uxBufferLength - uxConsumedBufferLength;
+  _13 = (int) cStatus;
+  _14 = x * 36;
+  _15 = pxTaskStatusArray + _14;
+  _16 = _15->uxCurrentPriority;
+  _17 = x * 36;
+  _18 = pxTaskStatusArray + _17;
+  _19 = _18->usStackHighWaterMark;
+  _20 = x * 36;
+  _21 = pxTaskStatusArray + _20;
+  _22 = _21->xTaskNumber;
+  iSnprintfReturnValue = snprintf (pcWriteBuffer, _12, "\t%c\t%u\t%u\t%u\r\n", _13, _16, _19, _22);
+  # DEBUG BEGIN_STMT
+  _23 = uxBufferLength - uxConsumedBufferLength;
+  uxCharsWrittenBySnprintf = prvSnprintfReturnValueToCharsWritten (iSnprintfReturnValue, _23);
+  # DEBUG BEGIN_STMT
+  uxConsumedBufferLength = uxConsumedBufferLength + uxCharsWrittenBySnprintf;
+  # DEBUG BEGIN_STMT
+  pcWriteBuffer = pcWriteBuffer + uxCharsWrittenBySnprintf;
+  goto <bb 16>; [INV]
+
+  <bb 14> :
+  # DEBUG BEGIN_STMT
+  xOutputBufferFull = 1;
+  goto <bb 16>; [INV]
+
+  <bb 15> :
+  # DEBUG BEGIN_STMT
+  xOutputBufferFull = 1;
+
+  <bb 16> :
+  # DEBUG BEGIN_STMT
+  if (xOutputBufferFull == 1)
+    goto <bb 19>; [INV]
+  else
+    goto <bb 17>; [INV]
+
+  <bb 17> :
+  # DEBUG BEGIN_STMT
+  x = x + 1;
+
+  <bb 18> :
+  # DEBUG BEGIN_STMT
+  if (x < uxArraySize)
+    goto <bb 4>; [INV]
+  else
+    goto <bb 19>; [INV]
+
+  <bb 19> :
+  # DEBUG BEGIN_STMT
+  vPortFree (pxTaskStatusArray);
+
+  <bb 20> :
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  return;
+
+}
+
+
+prvWriteNameToBuffer (char * pcBuffer, const char * pcTaskName)
+{
+  size_t x;
+  char * D.8360;
+
+  <bb 2> :
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  strcpy (pcBuffer, pcTaskName);
+  # DEBUG BEGIN_STMT
+  x = strlen (pcBuffer);
+  goto <bb 4>; [INV]
+
+  <bb 3> :
+  # DEBUG BEGIN_STMT
+  _1 = pcBuffer + x;
+  *_1 = 32;
+  # DEBUG BEGIN_STMT
+  x = x + 1;
+
+  <bb 4> :
+  # DEBUG BEGIN_STMT
+  if (x <= 8)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 5>; [INV]
+
+  <bb 5> :
+  # DEBUG BEGIN_STMT
+  _2 = pcBuffer + x;
+  *_2 = 0;
+  # DEBUG BEGIN_STMT
+  D.8360 = pcBuffer + x;
+  return D.8360;
+
+}
+
+
+vTaskPriorityDisinheritAfterTimeout (struct tskTaskControlBlock * const pxMutexHolder, UBaseType_t uxHighestPriorityWaitingTask)
+{
+  struct ListItem_t * const pxIndex;
+  const UBaseType_t uxOnlyOneMutexHeld;
+  UBaseType_t uxPriorityToUse;
+  UBaseType_t uxPriorityUsedOnEntry;
+  struct TCB_t * const pxTCB;
+
+  <bb 2> :
+  # DEBUG BEGIN_STMT
+  pxTCB = pxMutexHolder;
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  uxOnlyOneMutexHeld = 1;
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  if (pxMutexHolder != 0B)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 20>; [INV]
+
+  <bb 3> :
+  # DEBUG BEGIN_STMT
+  _1 = pxTCB->uxMutexesHeld;
+  if (_1 == 0)
+    goto <bb 4>; [INV]
+  else
+    goto <bb 6>; [INV]
+
+  <bb 4> :
+  # DEBUG BEGIN_STMT
+  __asm__ __volatile__(" cpsid i " :  :  : "memory");
+
+  <bb 5> :
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  goto <bb 5>; [INV]
+
+  <bb 6> :
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  _2 = pxTCB->uxBasePriority;
+  if (uxHighestPriorityWaitingTask > _2)
+    goto <bb 7>; [INV]
+  else
+    goto <bb 8>; [INV]
+
+  <bb 7> :
+  # DEBUG BEGIN_STMT
+  uxPriorityToUse = uxHighestPriorityWaitingTask;
+  goto <bb 9>; [INV]
+
+  <bb 8> :
+  # DEBUG BEGIN_STMT
+  uxPriorityToUse = pxTCB->uxBasePriority;
+
+  <bb 9> :
+  # DEBUG BEGIN_STMT
+  _3 = pxTCB->uxPriority;
+  if (uxPriorityToUse != _3)
+    goto <bb 10>; [INV]
+  else
+    goto <bb 20>; [INV]
+
+  <bb 10> :
+  # DEBUG BEGIN_STMT
+  _4 = pxTCB->uxMutexesHeld;
+  if (_4 == 1)
+    goto <bb 11>; [INV]
+  else
+    goto <bb 20>; [INV]
+
+  <bb 11> :
+  # DEBUG BEGIN_STMT
+  pxCurrentTCB.135_5 = pxCurrentTCB;
+  if (pxTCB == pxCurrentTCB.135_5)
+    goto <bb 12>; [INV]
+  else
+    goto <bb 14>; [INV]
+
+  <bb 12> :
+  # DEBUG BEGIN_STMT
+  __asm__ __volatile__(" cpsid i " :  :  : "memory");
+
+  <bb 13> :
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  goto <bb 13>; [INV]
+
+  <bb 14> :
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  uxPriorityUsedOnEntry = pxTCB->uxPriority;
+  # DEBUG BEGIN_STMT
+  pxTCB->uxPriority = uxPriorityToUse;
+  # DEBUG BEGIN_STMT
+  _6 = pxTCB->xEventListItem.xItemValue;
+  _7 = (signed int) _6;
+  if (_7 >= 0)
+    goto <bb 15>; [INV]
+  else
+    goto <bb 16>; [INV]
+
+  <bb 15> :
+  # DEBUG BEGIN_STMT
+  _8 = 10 - uxPriorityToUse;
+  pxTCB->xEventListItem.xItemValue = _8;
+
+  <bb 16> :
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  _9 = pxTCB->xStateListItem.pvContainer;
+  _10 = &pxReadyTasksLists[uxPriorityUsedOnEntry];
+  if (_9 == _10)
+    goto <bb 17>; [INV]
+  else
+    goto <bb 20>; [INV]
+
+  <bb 17> :
+  # DEBUG BEGIN_STMT
+  _11 = &pxTCB->xStateListItem;
+  _12 = uxListRemove (_11);
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  _13 = pxTCB->uxPriority;
+  uxTopReadyPriority.136_14 = uxTopReadyPriority;
+  if (_13 > uxTopReadyPriority.136_14)
+    goto <bb 18>; [INV]
+  else
+    goto <bb 19>; [INV]
+
+  <bb 18> :
+  # DEBUG BEGIN_STMT
+  _15 = pxTCB->uxPriority;
+  uxTopReadyPriority = _15;
+
+  <bb 19> :
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  _16 = pxTCB->uxPriority;
+  pxIndex = pxReadyTasksLists[_16].pxIndex;
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  pxTCB->xStateListItem.pxNext = pxIndex;
+  # DEBUG BEGIN_STMT
+  _17 = pxIndex->pxPrevious;
+  pxTCB->xStateListItem.pxPrevious = _17;
+  # DEBUG BEGIN_STMT
+  _18 = pxIndex->pxPrevious;
+  _19 = &pxTCB->xStateListItem;
+  _18->pxNext = _19;
+  # DEBUG BEGIN_STMT
+  _20 = &pxTCB->xStateListItem;
+  pxIndex->pxPrevious = _20;
+  # DEBUG BEGIN_STMT
+  _21 = pxTCB->uxPriority;
+  _22 = &pxReadyTasksLists[_21];
+  pxTCB->xStateListItem.pvContainer = _22;
+  # DEBUG BEGIN_STMT
+  _23 = pxTCB->uxPriority;
+  _24 = pxReadyTasksLists[_23].uxNumberOfItems;
+  _25 = pxTCB->uxPriority;
+  _26 = _24 + 1;
+  pxReadyTasksLists[_25].uxNumberOfItems = _26;
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+
+  <bb 20> :
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  return;
+
+}
+
+
+xTaskPriorityDisinherit (struct tskTaskControlBlock * const pxMutexHolder)
+{
+  struct ListItem_t * const pxIndex;
+  BaseType_t xReturn;
+  struct TCB_t * const pxTCB;
+  BaseType_t D.8321;
+
+  <bb 2> :
+  # DEBUG BEGIN_STMT
+  pxTCB = pxMutexHolder;
+  # DEBUG BEGIN_STMT
+  xReturn = 0;
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  if (pxMutexHolder != 0B)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 14>; [INV]
+
+  <bb 3> :
+  # DEBUG BEGIN_STMT
+  pxCurrentTCB.133_1 = pxCurrentTCB;
+  if (pxTCB != pxCurrentTCB.133_1)
+    goto <bb 4>; [INV]
+  else
+    goto <bb 6>; [INV]
+
+  <bb 4> :
+  # DEBUG BEGIN_STMT
+  __asm__ __volatile__(" cpsid i " :  :  : "memory");
+
+  <bb 5> :
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  goto <bb 5>; [INV]
+
+  <bb 6> :
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  _2 = pxTCB->uxMutexesHeld;
+  if (_2 == 0)
+    goto <bb 7>; [INV]
+  else
+    goto <bb 9>; [INV]
+
+  <bb 7> :
+  # DEBUG BEGIN_STMT
+  __asm__ __volatile__(" cpsid i " :  :  : "memory");
+
+  <bb 8> :
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  goto <bb 8>; [INV]
+
+  <bb 9> :
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  _3 = pxTCB->uxMutexesHeld;
+  _4 = _3 + 4294967295;
+  pxTCB->uxMutexesHeld = _4;
+  # DEBUG BEGIN_STMT
+  _5 = pxTCB->uxPriority;
+  _6 = pxTCB->uxBasePriority;
+  if (_5 != _6)
+    goto <bb 10>; [INV]
+  else
+    goto <bb 14>; [INV]
+
+  <bb 10> :
+  # DEBUG BEGIN_STMT
+  _7 = pxTCB->uxMutexesHeld;
+  if (_7 == 0)
+    goto <bb 11>; [INV]
+  else
+    goto <bb 14>; [INV]
+
+  <bb 11> :
+  # DEBUG BEGIN_STMT
+  _8 = &pxTCB->xStateListItem;
+  _9 = uxListRemove (_8);
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  _10 = pxTCB->uxBasePriority;
+  pxTCB->uxPriority = _10;
+  # DEBUG BEGIN_STMT
+  _11 = pxTCB->uxPriority;
+  _12 = 10 - _11;
+  pxTCB->xEventListItem.xItemValue = _12;
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  _13 = pxTCB->uxPriority;
+  uxTopReadyPriority.134_14 = uxTopReadyPriority;
+  if (_13 > uxTopReadyPriority.134_14)
+    goto <bb 12>; [INV]
+  else
+    goto <bb 13>; [INV]
+
+  <bb 12> :
+  # DEBUG BEGIN_STMT
+  _15 = pxTCB->uxPriority;
+  uxTopReadyPriority = _15;
+
+  <bb 13> :
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  _16 = pxTCB->uxPriority;
+  pxIndex = pxReadyTasksLists[_16].pxIndex;
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  pxTCB->xStateListItem.pxNext = pxIndex;
+  # DEBUG BEGIN_STMT
+  _17 = pxIndex->pxPrevious;
+  pxTCB->xStateListItem.pxPrevious = _17;
+  # DEBUG BEGIN_STMT
+  _18 = pxIndex->pxPrevious;
+  _19 = &pxTCB->xStateListItem;
+  _18->pxNext = _19;
+  # DEBUG BEGIN_STMT
+  _20 = &pxTCB->xStateListItem;
+  pxIndex->pxPrevious = _20;
+  # DEBUG BEGIN_STMT
+  _21 = pxTCB->uxPriority;
+  _22 = &pxReadyTasksLists[_21];
+  pxTCB->xStateListItem.pvContainer = _22;
+  # DEBUG BEGIN_STMT
+  _23 = pxTCB->uxPriority;
+  _24 = pxReadyTasksLists[_23].uxNumberOfItems;
+  _25 = pxTCB->uxPriority;
+  _26 = _24 + 1;
+  pxReadyTasksLists[_25].uxNumberOfItems = _26;
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  xReturn = 1;
+
+  <bb 14> :
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  D.8321 = xReturn;
+  return D.8321;
+
+}
+
+
+xTaskPriorityInherit (struct tskTaskControlBlock * const pxMutexHolder)
+{
+  struct ListItem_t * const pxIndex;
+  BaseType_t xReturn;
+  struct TCB_t * const pxMutexHolderTCB;
+  BaseType_t D.8301;
+
+  <bb 2> :
+  # DEBUG BEGIN_STMT
+  pxMutexHolderTCB = pxMutexHolder;
+  # DEBUG BEGIN_STMT
+  xReturn = 0;
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  if (pxMutexHolder != 0B)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 14>; [INV]
+
+  <bb 3> :
+  # DEBUG BEGIN_STMT
+  _1 = pxMutexHolderTCB->uxPriority;
+  pxCurrentTCB.127_2 = pxCurrentTCB;
+  _3 = pxCurrentTCB.127_2->uxPriority;
+  if (_1 < _3)
+    goto <bb 4>; [INV]
+  else
+    goto <bb 12>; [INV]
+
+  <bb 4> :
+  # DEBUG BEGIN_STMT
+  _4 = pxMutexHolderTCB->xEventListItem.xItemValue;
+  _5 = (signed int) _4;
+  if (_5 >= 0)
+    goto <bb 5>; [INV]
+  else
+    goto <bb 6>; [INV]
+
+  <bb 5> :
+  # DEBUG BEGIN_STMT
+  pxCurrentTCB.128_6 = pxCurrentTCB;
+  _7 = pxCurrentTCB.128_6->uxPriority;
+  _8 = 10 - _7;
+  pxMutexHolderTCB->xEventListItem.xItemValue = _8;
+
+  <bb 6> :
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  _9 = pxMutexHolderTCB->xStateListItem.pvContainer;
+  _10 = pxMutexHolderTCB->uxPriority;
+  _11 = &pxReadyTasksLists[_10];
+  if (_9 == _11)
+    goto <bb 7>; [INV]
+  else
+    goto <bb 10>; [INV]
+
+  <bb 7> :
+  # DEBUG BEGIN_STMT
+  _12 = &pxMutexHolderTCB->xStateListItem;
+  _13 = uxListRemove (_12);
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  pxCurrentTCB.129_14 = pxCurrentTCB;
+  _15 = pxCurrentTCB.129_14->uxPriority;
+  pxMutexHolderTCB->uxPriority = _15;
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  _16 = pxMutexHolderTCB->uxPriority;
+  uxTopReadyPriority.130_17 = uxTopReadyPriority;
+  if (_16 > uxTopReadyPriority.130_17)
+    goto <bb 8>; [INV]
+  else
+    goto <bb 9>; [INV]
+
+  <bb 8> :
+  # DEBUG BEGIN_STMT
+  _18 = pxMutexHolderTCB->uxPriority;
+  uxTopReadyPriority = _18;
+
+  <bb 9> :
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  _19 = pxMutexHolderTCB->uxPriority;
+  pxIndex = pxReadyTasksLists[_19].pxIndex;
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  pxMutexHolderTCB->xStateListItem.pxNext = pxIndex;
+  # DEBUG BEGIN_STMT
+  _20 = pxIndex->pxPrevious;
+  pxMutexHolderTCB->xStateListItem.pxPrevious = _20;
+  # DEBUG BEGIN_STMT
+  _21 = pxIndex->pxPrevious;
+  _22 = &pxMutexHolderTCB->xStateListItem;
+  _21->pxNext = _22;
+  # DEBUG BEGIN_STMT
+  _23 = &pxMutexHolderTCB->xStateListItem;
+  pxIndex->pxPrevious = _23;
+  # DEBUG BEGIN_STMT
+  _24 = pxMutexHolderTCB->uxPriority;
+  _25 = &pxReadyTasksLists[_24];
+  pxMutexHolderTCB->xStateListItem.pvContainer = _25;
+  # DEBUG BEGIN_STMT
+  _26 = pxMutexHolderTCB->uxPriority;
+  _27 = pxReadyTasksLists[_26].uxNumberOfItems;
+  _28 = pxMutexHolderTCB->uxPriority;
+  _29 = _27 + 1;
+  pxReadyTasksLists[_28].uxNumberOfItems = _29;
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  goto <bb 11>; [INV]
+
+  <bb 10> :
+  # DEBUG BEGIN_STMT
+  pxCurrentTCB.131_30 = pxCurrentTCB;
+  _31 = pxCurrentTCB.131_30->uxPriority;
+  pxMutexHolderTCB->uxPriority = _31;
+
+  <bb 11> :
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  xReturn = 1;
+  goto <bb 14>; [INV]
+
+  <bb 12> :
+  # DEBUG BEGIN_STMT
+  _32 = pxMutexHolderTCB->uxBasePriority;
+  pxCurrentTCB.132_33 = pxCurrentTCB;
+  _34 = pxCurrentTCB.132_33->uxPriority;
+  if (_32 < _34)
+    goto <bb 13>; [INV]
+  else
+    goto <bb 14>; [INV]
+
+  <bb 13> :
+  # DEBUG BEGIN_STMT
+  xReturn = 1;
+
+  <bb 14> :
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  D.8301 = xReturn;
+  return D.8301;
+
+}
+
+
+xTaskGetSchedulerState ()
+{
+  BaseType_t xReturn;
+  BaseType_t D.8279;
+
+  <bb 2> :
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  xSchedulerRunning.125_1 = xSchedulerRunning;
+  if (xSchedulerRunning.125_1 == 0)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 4>; [INV]
+
+  <bb 3> :
+  # DEBUG BEGIN_STMT
+  xReturn = 1;
+  goto <bb 7>; [INV]
+
+  <bb 4> :
+  # DEBUG BEGIN_STMT
+  uxSchedulerSuspended.126_2 = uxSchedulerSuspended;
+  if (uxSchedulerSuspended.126_2 == 0)
+    goto <bb 5>; [INV]
+  else
+    goto <bb 6>; [INV]
+
+  <bb 5> :
+  # DEBUG BEGIN_STMT
+  xReturn = 2;
+  goto <bb 7>; [INV]
+
+  <bb 6> :
+  # DEBUG BEGIN_STMT
+  xReturn = 0;
+
+  <bb 7> :
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  D.8279 = xReturn;
+  return D.8279;
+
+}
+
+
+xTaskGetCurrentTaskHandleForCore (BaseType_t xCoreID)
+{
+  struct tskTaskControlBlock * xReturn;
+  struct tskTaskControlBlock * D.8271;
+
+  <bb 2> :
+  # DEBUG BEGIN_STMT
+  xReturn = 0B;
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  if (xCoreID == 0)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 4>; [INV]
+
+  <bb 3> :
+  # DEBUG BEGIN_STMT
+  xReturn = pxCurrentTCB;
+
+  <bb 4> :
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  D.8271 = xReturn;
+  return D.8271;
+
+}
+
+
+xTaskGetCurrentTaskHandle ()
+{
+  struct tskTaskControlBlock * xReturn;
+  struct tskTaskControlBlock * D.8267;
+
+  <bb 2> :
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  xReturn = pxCurrentTCB;
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  D.8267 = xReturn;
+  return D.8267;
+
+}
+
+
+prvResetNextTaskUnblockTime ()
+{
+  <bb 2> :
+  # DEBUG BEGIN_STMT
+  pxDelayedTaskList.22_1 = pxDelayedTaskList;
+  _2 = pxDelayedTaskList.22_1->uxNumberOfItems;
+  if (_2 == 0)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 4>; [INV]
+
+  <bb 3> :
+  # DEBUG BEGIN_STMT
+  xNextTaskUnblockTime = 4294967295;
+  goto <bb 5>; [INV]
+
+  <bb 4> :
+  # DEBUG BEGIN_STMT
+  pxDelayedTaskList.23_3 = pxDelayedTaskList;
+  _4 = pxDelayedTaskList.23_3->xListEnd.pxNext;
+  _5 = _4->xItemValue;
+  xNextTaskUnblockTime = _5;
+
+  <bb 5> :
+  return;
+
+}
+
+
+prvDeleteTCB (struct TCB_t * pxTCB)
+{
+  <bb 2> :
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  _1 = pxTCB->pxStack;
+  vPortFree (_1);
+  # DEBUG BEGIN_STMT
+  vPortFree (pxTCB);
+  return;
+
+}
+
+
+uxTaskGetStackHighWaterMark (struct tskTaskControlBlock * xTask)
+{
+  UBaseType_t uxReturn;
+  uint8_t * pucEndOfStack;
+  struct TCB_t * pxTCB;
+  UBaseType_t D.8265;
+  struct TCB_t * iftmp.124;
+
+  <bb 2> :
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  if (xTask == 0B)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 4>; [INV]
+
+  <bb 3> :
+  iftmp.124 = pxCurrentTCB;
+  goto <bb 5>; [INV]
+
+  <bb 4> :
+  iftmp.124 = xTask;
+
+  <bb 5> :
+  pxTCB = iftmp.124;
+  # DEBUG BEGIN_STMT
+  pucEndOfStack = pxTCB->pxStack;
+  # DEBUG BEGIN_STMT
+  uxReturn = prvTaskCheckFreeStackSpace (pucEndOfStack);
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  D.8265 = uxReturn;
+  return D.8265;
+
+}
+
+
+prvTaskCheckFreeStackSpace (const uint8_t * pucStackByte)
+{
+  StackType_t uxCount;
+  StackType_t D.8259;
+
+  <bb 2> :
+  # DEBUG BEGIN_STMT
+  uxCount = 0;
+  # DEBUG BEGIN_STMT
+  goto <bb 4>; [INV]
+
+  <bb 3> :
+  # DEBUG BEGIN_STMT
+  pucStackByte = pucStackByte + 1;
+  # DEBUG BEGIN_STMT
+  uxCount = uxCount + 1;
+
+  <bb 4> :
+  # DEBUG BEGIN_STMT
+  _1 = *pucStackByte;
+  if (_1 == 165)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 5>; [INV]
+
+  <bb 5> :
+  # DEBUG BEGIN_STMT
+  uxCount = uxCount / 4;
+  # DEBUG BEGIN_STMT
+  D.8259 = uxCount;
+  return D.8259;
+
+}
+
+
+prvListTasksWithinSingleList (struct TaskStatus_t * pxTaskStatusArray, struct List_t * pxList, eTaskState eState)
+{
+  struct TCB_t * pxTCB;
+  struct ListItem_t * pxIterator;
+  const struct ListItem_t * pxEndMarker;
+  UBaseType_t uxTask;
+  UBaseType_t D.8105;
+
+  <bb 2> :
+  # DEBUG BEGIN_STMT
+  uxTask = 0;
+  # DEBUG BEGIN_STMT
+  pxEndMarker = &pxList->xListEnd;
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  pxTCB = 0B;
+  # DEBUG BEGIN_STMT
+  _1 = pxList->uxNumberOfItems;
+  if (_1 != 0)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 6>; [INV]
+
+  <bb 3> :
+  # DEBUG BEGIN_STMT
+  pxIterator = pxList->xListEnd.pxNext;
+  goto <bb 5>; [INV]
+
+  <bb 4> :
+  # DEBUG BEGIN_STMT
+  pxTCB = pxIterator->pvOwner;
+  # DEBUG BEGIN_STMT
+  _2 = uxTask * 36;
+  _3 = pxTaskStatusArray + _2;
+  vTaskGetInfo (pxTCB, _3, 1, eState);
+  # DEBUG BEGIN_STMT
+  uxTask = uxTask + 1;
+  # DEBUG BEGIN_STMT
+  pxIterator = pxIterator->pxNext;
+
+  <bb 5> :
+  # DEBUG BEGIN_STMT
+  if (pxIterator != pxEndMarker)
+    goto <bb 4>; [INV]
+  else
+    goto <bb 6>; [INV]
+
+  <bb 6> :
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  D.8105 = uxTask;
+  return D.8105;
+
+}
+
+
+vTaskGetInfo (struct tskTaskControlBlock * xTask, struct TaskStatus_t * pxTaskStatus, BaseType_t xGetFreeStackSpace, eTaskState eState)
+{
+  BaseType_t x;
+  struct TCB_t * pxTCB;
+  struct TCB_t * iftmp.122;
+
+  <bb 2> :
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  if (xTask == 0B)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 4>; [INV]
+
+  <bb 3> :
+  iftmp.122 = pxCurrentTCB;
+  goto <bb 5>; [INV]
+
+  <bb 4> :
+  iftmp.122 = xTask;
+
+  <bb 5> :
+  pxTCB = iftmp.122;
+  # DEBUG BEGIN_STMT
+  pxTaskStatus->xHandle = pxTCB;
+  # DEBUG BEGIN_STMT
+  _1 = &pxTCB->pcTaskName[0];
+  pxTaskStatus->pcTaskName = _1;
+  # DEBUG BEGIN_STMT
+  _2 = pxTCB->uxPriority;
+  pxTaskStatus->uxCurrentPriority = _2;
+  # DEBUG BEGIN_STMT
+  _3 = pxTCB->pxStack;
+  pxTaskStatus->pxStackBase = _3;
+  # DEBUG BEGIN_STMT
+  _4 = pxTCB->uxTCBNumber;
+  pxTaskStatus->xTaskNumber = _4;
+  # DEBUG BEGIN_STMT
+  _5 = pxTCB->uxBasePriority;
+  pxTaskStatus->uxBasePriority = _5;
+  # DEBUG BEGIN_STMT
+  pxTaskStatus->ulRunTimeCounter = 0;
+  # DEBUG BEGIN_STMT
+  if (eState != 5)
+    goto <bb 6>; [INV]
+  else
+    goto <bb 20>; [INV]
+
+  <bb 6> :
+  # DEBUG BEGIN_STMT
+  pxCurrentTCB.123_6 = pxCurrentTCB;
+  if (pxTCB == pxCurrentTCB.123_6)
+    goto <bb 7>; [INV]
+  else
+    goto <bb 8>; [INV]
+
+  <bb 7> :
+  # DEBUG BEGIN_STMT
+  pxTaskStatus->eCurrentState = 0;
+  goto <bb 21>; [INV]
+
+  <bb 8> :
+  # DEBUG BEGIN_STMT
+  pxTaskStatus->eCurrentState = eState;
+  # DEBUG BEGIN_STMT
+  if (eState == 3)
+    goto <bb 9>; [INV]
+  else
+    goto <bb 17>; [INV]
+
+  <bb 9> :
+  # DEBUG BEGIN_STMT
+  vTaskSuspendAll ();
+  # DEBUG BEGIN_STMT
+  _7 = pxTCB->xEventListItem.pvContainer;
+  if (_7 != 0B)
+    goto <bb 10>; [INV]
+  else
+    goto <bb 11>; [INV]
+
+  <bb 10> :
+  # DEBUG BEGIN_STMT
+  pxTaskStatus->eCurrentState = 2;
+  goto <bb 16>; [INV]
+
+  <bb 11> :
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  x = 0;
+  goto <bb 15>; [INV]
+
+  <bb 12> :
+  # DEBUG BEGIN_STMT
+  _8 = pxTCB->ucNotifyState[x];
+  if (_8 == 1)
+    goto <bb 13>; [INV]
+  else
+    goto <bb 14>; [INV]
+
+  <bb 13> :
+  # DEBUG BEGIN_STMT
+  pxTaskStatus->eCurrentState = 2;
+  # DEBUG BEGIN_STMT
+  goto <bb 16>; [INV]
+
+  <bb 14> :
+  # DEBUG BEGIN_STMT
+  x = x + 1;
+
+  <bb 15> :
+  # DEBUG BEGIN_STMT
+  if (x <= 0)
+    goto <bb 12>; [INV]
+  else
+    goto <bb 16>; [INV]
+
+  <bb 16> :
+  # DEBUG BEGIN_STMT
+  xTaskResumeAll ();
+
+  <bb 17> :
+  # DEBUG BEGIN_STMT
+  vPortEnterCritical ();
+  # DEBUG BEGIN_STMT
+  _9 = pxTCB->xEventListItem.pvContainer;
+  if (_9 == &xPendingReadyList)
+    goto <bb 18>; [INV]
+  else
+    goto <bb 19>; [INV]
+
+  <bb 18> :
+  # DEBUG BEGIN_STMT
+  pxTaskStatus->eCurrentState = 1;
+
+  <bb 19> :
+  # DEBUG BEGIN_STMT
+  vPortExitCritical ();
+  goto <bb 21>; [INV]
+
+  <bb 20> :
+  # DEBUG BEGIN_STMT
+  _10 = eTaskGetState (pxTCB);
+  pxTaskStatus->eCurrentState = _10;
+
+  <bb 21> :
+  # DEBUG BEGIN_STMT
+  if (xGetFreeStackSpace != 0)
+    goto <bb 22>; [INV]
+  else
+    goto <bb 23>; [INV]
+
+  <bb 22> :
+  # DEBUG BEGIN_STMT
+  _11 = pxTCB->pxStack;
+  _12 = prvTaskCheckFreeStackSpace (_11);
+  pxTaskStatus->usStackHighWaterMark = _12;
+  goto <bb 24>; [INV]
+
+  <bb 23> :
+  # DEBUG BEGIN_STMT
+  pxTaskStatus->usStackHighWaterMark = 0;
+
+  <bb 24> :
+  # DEBUG BEGIN_STMT
+  return;
+
+}
+
+
+prvCheckTasksWaitingTermination ()
+{
+  struct TCB_t * pxTCB;
+
+  <bb 2> :
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  goto <bb 4>; [INV]
+
+  <bb 3> :
+  # DEBUG BEGIN_STMT
+  vPortEnterCritical ();
+  # DEBUG BEGIN_STMT
+  _1 = xTasksWaitingTermination.xListEnd.pxNext;
+  pxTCB = _1->pvOwner;
+  # DEBUG BEGIN_STMT
+  _2 = &pxTCB->xStateListItem;
+  uxListRemove (_2);
+  # DEBUG BEGIN_STMT
+  uxCurrentNumberOfTasks.60_3 = uxCurrentNumberOfTasks;
+  _4 = uxCurrentNumberOfTasks.60_3 + 4294967295;
+  uxCurrentNumberOfTasks = _4;
+  # DEBUG BEGIN_STMT
+  uxDeletedTasksWaitingCleanUp.61_5 = uxDeletedTasksWaitingCleanUp;
+  _6 = uxDeletedTasksWaitingCleanUp.61_5 + 4294967295;
+  uxDeletedTasksWaitingCleanUp = _6;
+  # DEBUG BEGIN_STMT
+  vPortExitCritical ();
+  # DEBUG BEGIN_STMT
+  prvDeleteTCB (pxTCB);
+
+  <bb 4> :
+  # DEBUG BEGIN_STMT
+  uxDeletedTasksWaitingCleanUp.62_7 = uxDeletedTasksWaitingCleanUp;
+  if (uxDeletedTasksWaitingCleanUp.62_7 != 0)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 5>; [INV]
+
+  <bb 5> :
+  return;
+
+}
+
+
+prvInitialiseTaskLists ()
+{
+  UBaseType_t uxPriority;
+
+  <bb 2> :
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  uxPriority = 0;
+  goto <bb 4>; [INV]
+
+  <bb 3> :
+  # DEBUG BEGIN_STMT
+  _1 = &pxReadyTasksLists[uxPriority];
+  vListInitialise (_1);
+  # DEBUG BEGIN_STMT
+  uxPriority = uxPriority + 1;
+
+  <bb 4> :
+  # DEBUG BEGIN_STMT
+  if (uxPriority <= 9)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 5>; [INV]
+
+  <bb 5> :
+  # DEBUG BEGIN_STMT
+  vListInitialise (&xDelayedTaskList1);
+  # DEBUG BEGIN_STMT
+  vListInitialise (&xDelayedTaskList2);
+  # DEBUG BEGIN_STMT
+  vListInitialise (&xPendingReadyList);
+  # DEBUG BEGIN_STMT
+  vListInitialise (&xTasksWaitingTermination);
+  # DEBUG BEGIN_STMT
+  vListInitialise (&xSuspendedTaskList);
+  # DEBUG BEGIN_STMT
+  pxDelayedTaskList = &xDelayedTaskList1;
+  # DEBUG BEGIN_STMT
+  pxOverflowDelayedTaskList = &xDelayedTaskList2;
+  return;
+
+}
+
+
+prvIdleTask (void * pvParameters)
+{
+  <bb 2> :
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  prvCheckTasksWaitingTermination ();
+  # DEBUG BEGIN_STMT
+  _1 = pxReadyTasksLists[0].uxNumberOfItems;
+  if (_1 > 1)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 2>; [INV]
+
+  <bb 3> :
+  # DEBUG BEGIN_STMT
+  _2 = 3758157060B;
+  *_2 = 268435456;
+  # DEBUG BEGIN_STMT
+  __asm__ __volatile__("dsb" :  :  : "memory");
+  # DEBUG BEGIN_STMT
+  __asm__ __volatile__("isb");
+  # DEBUG BEGIN_STMT
+  goto <bb 2>; [INV]
+
+}
+
+
+vTaskSetTaskNumber (struct tskTaskControlBlock * xTask, const UBaseType_t uxHandle)
+{
+  struct TCB_t * pxTCB;
+
+  <bb 2> :
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  if (xTask != 0B)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 4>; [INV]
+
+  <bb 3> :
+  # DEBUG BEGIN_STMT
+  pxTCB = xTask;
+  # DEBUG BEGIN_STMT
+  pxTCB->uxTaskNumber = uxHandle;
+
+  <bb 4> :
+  # DEBUG BEGIN_STMT
+  return;
+
+}
+
+
+uxTaskGetTaskNumber (struct tskTaskControlBlock * xTask)
+{
+  const struct TCB_t * pxTCB;
+  UBaseType_t uxReturn;
+  UBaseType_t D.8233;
+
+  <bb 2> :
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  if (xTask != 0B)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 4>; [INV]
+
+  <bb 3> :
+  # DEBUG BEGIN_STMT
+  pxTCB = xTask;
+  # DEBUG BEGIN_STMT
+  uxReturn = pxTCB->uxTaskNumber;
+  goto <bb 5>; [INV]
+
+  <bb 4> :
+  # DEBUG BEGIN_STMT
+  uxReturn = 0;
+
+  <bb 5> :
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  D.8233 = uxReturn;
+  return D.8233;
+
+}
+
+
+vTaskMissedYield ()
+{
+  <bb 2> :
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  xYieldPendings[0] = 1;
+  # DEBUG BEGIN_STMT
+  return;
+
+}
+
+
+xTaskCheckForTimeOut (struct TimeOut_t * const pxTimeOut, TickType_t * const pxTicksToWait)
+{
+  const TickType_t xElapsedTime;
+  const TickType_t xConstTickCount;
+  BaseType_t xReturn;
+  BaseType_t D.8228;
+
+  <bb 2> :
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  if (pxTimeOut == 0B)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 5>; [INV]
+
+  <bb 3> :
+  # DEBUG BEGIN_STMT
+  __asm__ __volatile__(" cpsid i " :  :  : "memory");
+
+  <bb 4> :
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  goto <bb 4>; [INV]
+
+  <bb 5> :
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  if (pxTicksToWait == 0B)
+    goto <bb 6>; [INV]
+  else
+    goto <bb 8>; [INV]
+
+  <bb 6> :
+  # DEBUG BEGIN_STMT
+  __asm__ __volatile__(" cpsid i " :  :  : "memory");
+
+  <bb 7> :
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  goto <bb 7>; [INV]
+
+  <bb 8> :
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  vPortEnterCritical ();
+  # DEBUG BEGIN_STMT
+  xConstTickCount = xTickCount;
+  # DEBUG BEGIN_STMT
+  _1 = pxTimeOut->xTimeOnEntering;
+  xElapsedTime = xConstTickCount - _1;
+  # DEBUG BEGIN_STMT
+  pxCurrentTCB.119_2 = pxCurrentTCB;
+  _3 = pxCurrentTCB.119_2->ucDelayAborted;
+  if (_3 != 0)
+    goto <bb 9>; [INV]
+  else
+    goto <bb 10>; [INV]
+
+  <bb 9> :
+  # DEBUG BEGIN_STMT
+  pxCurrentTCB.120_4 = pxCurrentTCB;
+  pxCurrentTCB.120_4->ucDelayAborted = 0;
+  # DEBUG BEGIN_STMT
+  xReturn = 1;
+  goto <bb 18>; [INV]
+
+  <bb 10> :
+  # DEBUG BEGIN_STMT
+  _5 = *pxTicksToWait;
+  if (_5 == 4294967295)
+    goto <bb 11>; [INV]
+  else
+    goto <bb 12>; [INV]
+
+  <bb 11> :
+  # DEBUG BEGIN_STMT
+  xReturn = 0;
+  goto <bb 18>; [INV]
+
+  <bb 12> :
+  # DEBUG BEGIN_STMT
+  _6 = pxTimeOut->xOverflowCount;
+  xNumOfOverflows.121_7 = xNumOfOverflows;
+  if (_6 != xNumOfOverflows.121_7)
+    goto <bb 13>; [INV]
+  else
+    goto <bb 15>; [INV]
+
+  <bb 13> :
+  _8 = pxTimeOut->xTimeOnEntering;
+  if (xConstTickCount >= _8)
+    goto <bb 14>; [INV]
+  else
+    goto <bb 15>; [INV]
+
+  <bb 14> :
+  # DEBUG BEGIN_STMT
+  xReturn = 1;
+  # DEBUG BEGIN_STMT
+  *pxTicksToWait = 0;
+  goto <bb 18>; [INV]
+
+  <bb 15> :
+  # DEBUG BEGIN_STMT
+  _9 = *pxTicksToWait;
+  if (xElapsedTime < _9)
+    goto <bb 16>; [INV]
+  else
+    goto <bb 17>; [INV]
+
+  <bb 16> :
+  # DEBUG BEGIN_STMT
+  _10 = *pxTicksToWait;
+  _11 = _10 - xElapsedTime;
+  *pxTicksToWait = _11;
+  # DEBUG BEGIN_STMT
+  vTaskInternalSetTimeOutState (pxTimeOut);
+  # DEBUG BEGIN_STMT
+  xReturn = 0;
+  goto <bb 18>; [INV]
+
+  <bb 17> :
+  # DEBUG BEGIN_STMT
+  *pxTicksToWait = 0;
+  # DEBUG BEGIN_STMT
+  xReturn = 1;
+
+  <bb 18> :
+  # DEBUG BEGIN_STMT
+  vPortExitCritical ();
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  D.8228 = xReturn;
+  return D.8228;
+
+}
+
+
+vTaskInternalSetTimeOutState (struct TimeOut_t * const pxTimeOut)
+{
+  <bb 2> :
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  xNumOfOverflows.117_1 = xNumOfOverflows;
+  pxTimeOut->xOverflowCount = xNumOfOverflows.117_1;
+  # DEBUG BEGIN_STMT
+  xTickCount.118_2 = xTickCount;
+  pxTimeOut->xTimeOnEntering = xTickCount.118_2;
+  # DEBUG BEGIN_STMT
+  return;
+
+}
+
+
+vTaskSetTimeOutState (struct TimeOut_t * const pxTimeOut)
+{
+  <bb 2> :
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  if (pxTimeOut == 0B)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 5>; [INV]
+
+  <bb 3> :
+  # DEBUG BEGIN_STMT
+  __asm__ __volatile__(" cpsid i " :  :  : "memory");
+
+  <bb 4> :
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  goto <bb 4>; [INV]
+
+  <bb 5> :
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  vPortEnterCritical ();
+  # DEBUG BEGIN_STMT
+  xNumOfOverflows.115_1 = xNumOfOverflows;
+  pxTimeOut->xOverflowCount = xNumOfOverflows.115_1;
+  # DEBUG BEGIN_STMT
+  xTickCount.116_2 = xTickCount;
+  pxTimeOut->xTimeOnEntering = xTickCount.116_2;
+  # DEBUG BEGIN_STMT
+  vPortExitCritical ();
+  # DEBUG BEGIN_STMT
+  return;
+
+}
+
+
+vTaskRemoveFromUnorderedEventList (struct ListItem_t * pxEventListItem, const TickType_t xItemValue)
+{
+  struct ListItem_t * const pxIndex;
+  struct List_t * const pxList;
+  struct List_t * const pxList;
+  struct TCB_t * pxUnblockedTCB;
+
+  <bb 2> :
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  uxSchedulerSuspended.112_1 = uxSchedulerSuspended;
+  if (uxSchedulerSuspended.112_1 == 0)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 5>; [INV]
+
+  <bb 3> :
+  # DEBUG BEGIN_STMT
+  __asm__ __volatile__(" cpsid i " :  :  : "memory");
+
+  <bb 4> :
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  goto <bb 4>; [INV]
+
+  <bb 5> :
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  _2 = xItemValue | 2147483648;
+  pxEventListItem->xItemValue = _2;
+  # DEBUG BEGIN_STMT
+  pxUnblockedTCB = pxEventListItem->pvOwner;
+  # DEBUG BEGIN_STMT
+  if (pxUnblockedTCB == 0B)
+    goto <bb 6>; [INV]
+  else
+    goto <bb 8>; [INV]
+
+  <bb 6> :
+  # DEBUG BEGIN_STMT
+  __asm__ __volatile__(" cpsid i " :  :  : "memory");
+
+  <bb 7> :
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  goto <bb 7>; [INV]
+
+  <bb 8> :
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  pxList = pxEventListItem->pvContainer;
+  # DEBUG BEGIN_STMT
+  _3 = pxEventListItem->pxNext;
+  _4 = pxEventListItem->pxPrevious;
+  _3->pxPrevious = _4;
+  # DEBUG BEGIN_STMT
+  _5 = pxEventListItem->pxPrevious;
+  _6 = pxEventListItem->pxNext;
+  _5->pxNext = _6;
+  # DEBUG BEGIN_STMT
+  _7 = pxList->pxIndex;
+  if (pxEventListItem == _7)
+    goto <bb 9>; [INV]
+  else
+    goto <bb 10>; [INV]
+
+  <bb 9> :
+  # DEBUG BEGIN_STMT
+  _8 = pxEventListItem->pxPrevious;
+  pxList->pxIndex = _8;
+
+  <bb 10> :
+  # DEBUG BEGIN_STMT
+  pxEventListItem->pvContainer = 0B;
+  # DEBUG BEGIN_STMT
+  _9 = pxList->uxNumberOfItems;
+  _10 = _9 + 4294967295;
+  pxList->uxNumberOfItems = _10;
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  pxList = pxUnblockedTCB->xStateListItem.pvContainer;
+  # DEBUG BEGIN_STMT
+  _11 = pxUnblockedTCB->xStateListItem.pxNext;
+  _12 = pxUnblockedTCB->xStateListItem.pxPrevious;
+  _11->pxPrevious = _12;
+  # DEBUG BEGIN_STMT
+  _13 = pxUnblockedTCB->xStateListItem.pxPrevious;
+  _14 = pxUnblockedTCB->xStateListItem.pxNext;
+  _13->pxNext = _14;
+  # DEBUG BEGIN_STMT
+  _15 = pxList->pxIndex;
+  _16 = &pxUnblockedTCB->xStateListItem;
+  if (_15 == _16)
+    goto <bb 11>; [INV]
+  else
+    goto <bb 12>; [INV]
+
+  <bb 11> :
+  # DEBUG BEGIN_STMT
+  _17 = pxUnblockedTCB->xStateListItem.pxPrevious;
+  pxList->pxIndex = _17;
+
+  <bb 12> :
+  # DEBUG BEGIN_STMT
+  pxUnblockedTCB->xStateListItem.pvContainer = 0B;
+  # DEBUG BEGIN_STMT
+  _18 = pxList->uxNumberOfItems;
+  _19 = _18 + 4294967295;
+  pxList->uxNumberOfItems = _19;
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  _20 = pxUnblockedTCB->uxPriority;
+  uxTopReadyPriority.113_21 = uxTopReadyPriority;
+  if (_20 > uxTopReadyPriority.113_21)
+    goto <bb 13>; [INV]
+  else
+    goto <bb 14>; [INV]
+
+  <bb 13> :
+  # DEBUG BEGIN_STMT
+  _22 = pxUnblockedTCB->uxPriority;
+  uxTopReadyPriority = _22;
+
+  <bb 14> :
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  _23 = pxUnblockedTCB->uxPriority;
+  pxIndex = pxReadyTasksLists[_23].pxIndex;
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  pxUnblockedTCB->xStateListItem.pxNext = pxIndex;
+  # DEBUG BEGIN_STMT
+  _24 = pxIndex->pxPrevious;
+  pxUnblockedTCB->xStateListItem.pxPrevious = _24;
+  # DEBUG BEGIN_STMT
+  _25 = pxIndex->pxPrevious;
+  _26 = &pxUnblockedTCB->xStateListItem;
+  _25->pxNext = _26;
+  # DEBUG BEGIN_STMT
+  _27 = &pxUnblockedTCB->xStateListItem;
+  pxIndex->pxPrevious = _27;
+  # DEBUG BEGIN_STMT
+  _28 = pxUnblockedTCB->uxPriority;
+  _29 = &pxReadyTasksLists[_28];
+  pxUnblockedTCB->xStateListItem.pvContainer = _29;
+  # DEBUG BEGIN_STMT
+  _30 = pxUnblockedTCB->uxPriority;
+  _31 = pxReadyTasksLists[_30].uxNumberOfItems;
+  _32 = pxUnblockedTCB->uxPriority;
+  _33 = _31 + 1;
+  pxReadyTasksLists[_32].uxNumberOfItems = _33;
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  _34 = pxUnblockedTCB->uxPriority;
+  pxCurrentTCB.114_35 = pxCurrentTCB;
+  _36 = pxCurrentTCB.114_35->uxPriority;
+  if (_34 > _36)
+    goto <bb 15>; [INV]
+  else
+    goto <bb 16>; [INV]
+
+  <bb 15> :
+  # DEBUG BEGIN_STMT
+  xYieldPendings[0] = 1;
+
+  <bb 16> :
+  # DEBUG BEGIN_STMT
+  return;
+
+}
+
+
+xTaskRemoveFromEventList (const struct List_t * const pxEventList)
+{
+  struct ListItem_t * const pxIndex;
+  struct ListItem_t * const pxIndex;
+  struct List_t * const pxList;
+  struct List_t * const pxList;
+  BaseType_t xReturn;
+  struct TCB_t * pxUnblockedTCB;
+  BaseType_t D.8195;
+
+  <bb 2> :
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  _1 = pxEventList->xListEnd.pxNext;
+  pxUnblockedTCB = _1->pvOwner;
+  # DEBUG BEGIN_STMT
+  if (pxUnblockedTCB == 0B)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 5>; [INV]
+
+  <bb 3> :
+  # DEBUG BEGIN_STMT
+  __asm__ __volatile__(" cpsid i " :  :  : "memory");
+
+  <bb 4> :
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  goto <bb 4>; [INV]
+
+  <bb 5> :
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  pxList = pxUnblockedTCB->xEventListItem.pvContainer;
+  # DEBUG BEGIN_STMT
+  _2 = pxUnblockedTCB->xEventListItem.pxNext;
+  _3 = pxUnblockedTCB->xEventListItem.pxPrevious;
+  _2->pxPrevious = _3;
+  # DEBUG BEGIN_STMT
+  _4 = pxUnblockedTCB->xEventListItem.pxPrevious;
+  _5 = pxUnblockedTCB->xEventListItem.pxNext;
+  _4->pxNext = _5;
+  # DEBUG BEGIN_STMT
+  _6 = pxList->pxIndex;
+  _7 = &pxUnblockedTCB->xEventListItem;
+  if (_6 == _7)
+    goto <bb 6>; [INV]
+  else
+    goto <bb 7>; [INV]
+
+  <bb 6> :
+  # DEBUG BEGIN_STMT
+  _8 = pxUnblockedTCB->xEventListItem.pxPrevious;
+  pxList->pxIndex = _8;
+
+  <bb 7> :
+  # DEBUG BEGIN_STMT
+  pxUnblockedTCB->xEventListItem.pvContainer = 0B;
+  # DEBUG BEGIN_STMT
+  _9 = pxList->uxNumberOfItems;
+  _10 = _9 + 4294967295;
+  pxList->uxNumberOfItems = _10;
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  uxSchedulerSuspended.109_11 = uxSchedulerSuspended;
+  if (uxSchedulerSuspended.109_11 == 0)
+    goto <bb 8>; [INV]
+  else
+    goto <bb 13>; [INV]
+
+  <bb 8> :
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  pxList = pxUnblockedTCB->xStateListItem.pvContainer;
+  # DEBUG BEGIN_STMT
+  _12 = pxUnblockedTCB->xStateListItem.pxNext;
+  _13 = pxUnblockedTCB->xStateListItem.pxPrevious;
+  _12->pxPrevious = _13;
+  # DEBUG BEGIN_STMT
+  _14 = pxUnblockedTCB->xStateListItem.pxPrevious;
+  _15 = pxUnblockedTCB->xStateListItem.pxNext;
+  _14->pxNext = _15;
+  # DEBUG BEGIN_STMT
+  _16 = pxList->pxIndex;
+  _17 = &pxUnblockedTCB->xStateListItem;
+  if (_16 == _17)
+    goto <bb 9>; [INV]
+  else
+    goto <bb 10>; [INV]
+
+  <bb 9> :
+  # DEBUG BEGIN_STMT
+  _18 = pxUnblockedTCB->xStateListItem.pxPrevious;
+  pxList->pxIndex = _18;
+
+  <bb 10> :
+  # DEBUG BEGIN_STMT
+  pxUnblockedTCB->xStateListItem.pvContainer = 0B;
+  # DEBUG BEGIN_STMT
+  _19 = pxList->uxNumberOfItems;
+  _20 = _19 + 4294967295;
+  pxList->uxNumberOfItems = _20;
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  _21 = pxUnblockedTCB->uxPriority;
+  uxTopReadyPriority.110_22 = uxTopReadyPriority;
+  if (_21 > uxTopReadyPriority.110_22)
+    goto <bb 11>; [INV]
+  else
+    goto <bb 12>; [INV]
+
+  <bb 11> :
+  # DEBUG BEGIN_STMT
+  _23 = pxUnblockedTCB->uxPriority;
+  uxTopReadyPriority = _23;
+
+  <bb 12> :
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  _24 = pxUnblockedTCB->uxPriority;
+  pxIndex = pxReadyTasksLists[_24].pxIndex;
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  pxUnblockedTCB->xStateListItem.pxNext = pxIndex;
+  # DEBUG BEGIN_STMT
+  _25 = pxIndex->pxPrevious;
+  pxUnblockedTCB->xStateListItem.pxPrevious = _25;
+  # DEBUG BEGIN_STMT
+  _26 = pxIndex->pxPrevious;
+  _27 = &pxUnblockedTCB->xStateListItem;
+  _26->pxNext = _27;
+  # DEBUG BEGIN_STMT
+  _28 = &pxUnblockedTCB->xStateListItem;
+  pxIndex->pxPrevious = _28;
+  # DEBUG BEGIN_STMT
+  _29 = pxUnblockedTCB->uxPriority;
+  _30 = &pxReadyTasksLists[_29];
+  pxUnblockedTCB->xStateListItem.pvContainer = _30;
+  # DEBUG BEGIN_STMT
+  _31 = pxUnblockedTCB->uxPriority;
+  _32 = pxReadyTasksLists[_31].uxNumberOfItems;
+  _33 = pxUnblockedTCB->uxPriority;
+  _34 = _32 + 1;
+  pxReadyTasksLists[_33].uxNumberOfItems = _34;
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  goto <bb 14>; [INV]
+
+  <bb 13> :
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  pxIndex = xPendingReadyList.pxIndex;
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  pxUnblockedTCB->xEventListItem.pxNext = pxIndex;
+  # DEBUG BEGIN_STMT
+  _35 = pxIndex->pxPrevious;
+  pxUnblockedTCB->xEventListItem.pxPrevious = _35;
+  # DEBUG BEGIN_STMT
+  _36 = pxIndex->pxPrevious;
+  _37 = &pxUnblockedTCB->xEventListItem;
+  _36->pxNext = _37;
+  # DEBUG BEGIN_STMT
+  _38 = &pxUnblockedTCB->xEventListItem;
+  pxIndex->pxPrevious = _38;
+  # DEBUG BEGIN_STMT
+  pxUnblockedTCB->xEventListItem.pvContainer = &xPendingReadyList;
+  # DEBUG BEGIN_STMT
+  _39 = xPendingReadyList.uxNumberOfItems;
+  _40 = _39 + 1;
+  xPendingReadyList.uxNumberOfItems = _40;
+
+  <bb 14> :
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  _41 = pxUnblockedTCB->uxPriority;
+  pxCurrentTCB.111_42 = pxCurrentTCB;
+  _43 = pxCurrentTCB.111_42->uxPriority;
+  if (_41 > _43)
+    goto <bb 15>; [INV]
+  else
+    goto <bb 16>; [INV]
+
+  <bb 15> :
+  # DEBUG BEGIN_STMT
+  xReturn = 1;
+  # DEBUG BEGIN_STMT
+  xYieldPendings[0] = 1;
+  goto <bb 17>; [INV]
+
+  <bb 16> :
+  # DEBUG BEGIN_STMT
+  xReturn = 0;
+
+  <bb 17> :
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  D.8195 = xReturn;
+  return D.8195;
+
+}
+
+
+vTaskPlaceOnEventListRestricted (struct List_t * const pxEventList, TickType_t xTicksToWait, const BaseType_t xWaitIndefinitely)
+{
+  struct ListItem_t * const pxIndex;
+
+  <bb 2> :
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  if (pxEventList == 0B)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 5>; [INV]
+
+  <bb 3> :
+  # DEBUG BEGIN_STMT
+  __asm__ __volatile__(" cpsid i " :  :  : "memory");
+
+  <bb 4> :
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  goto <bb 4>; [INV]
+
+  <bb 5> :
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  pxIndex = pxEventList->pxIndex;
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  pxCurrentTCB.104_1 = pxCurrentTCB;
+  pxCurrentTCB.104_1->xEventListItem.pxNext = pxIndex;
+  # DEBUG BEGIN_STMT
+  pxCurrentTCB.105_2 = pxCurrentTCB;
+  _3 = pxIndex->pxPrevious;
+  pxCurrentTCB.105_2->xEventListItem.pxPrevious = _3;
+  # DEBUG BEGIN_STMT
+  pxCurrentTCB.106_4 = pxCurrentTCB;
+  _5 = pxIndex->pxPrevious;
+  _6 = &pxCurrentTCB.106_4->xEventListItem;
+  _5->pxNext = _6;
+  # DEBUG BEGIN_STMT
+  pxCurrentTCB.107_7 = pxCurrentTCB;
+  _8 = &pxCurrentTCB.107_7->xEventListItem;
+  pxIndex->pxPrevious = _8;
+  # DEBUG BEGIN_STMT
+  pxCurrentTCB.108_9 = pxCurrentTCB;
+  pxCurrentTCB.108_9->xEventListItem.pvContainer = pxEventList;
+  # DEBUG BEGIN_STMT
+  _10 = pxEventList->uxNumberOfItems;
+  _11 = _10 + 1;
+  pxEventList->uxNumberOfItems = _11;
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  if (xWaitIndefinitely != 0)
+    goto <bb 6>; [INV]
+  else
+    goto <bb 7>; [INV]
+
+  <bb 6> :
+  # DEBUG BEGIN_STMT
+  xTicksToWait = 4294967295;
+
+  <bb 7> :
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  prvAddCurrentTaskToDelayedList (xTicksToWait, xWaitIndefinitely);
+  # DEBUG BEGIN_STMT
+  return;
+
+}
+
+
+vTaskPlaceOnUnorderedEventList (struct List_t * pxEventList, const TickType_t xItemValue, const TickType_t xTicksToWait)
+{
+  struct ListItem_t * const pxIndex;
+
+  <bb 2> :
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  if (pxEventList == 0B)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 5>; [INV]
+
+  <bb 3> :
+  # DEBUG BEGIN_STMT
+  __asm__ __volatile__(" cpsid i " :  :  : "memory");
+
+  <bb 4> :
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  goto <bb 4>; [INV]
+
+  <bb 5> :
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  uxSchedulerSuspended.97_1 = uxSchedulerSuspended;
+  if (uxSchedulerSuspended.97_1 == 0)
+    goto <bb 6>; [INV]
+  else
+    goto <bb 8>; [INV]
+
+  <bb 6> :
+  # DEBUG BEGIN_STMT
+  __asm__ __volatile__(" cpsid i " :  :  : "memory");
+
+  <bb 7> :
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  goto <bb 7>; [INV]
+
+  <bb 8> :
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  pxCurrentTCB.98_2 = pxCurrentTCB;
+  _3 = xItemValue | 2147483648;
+  pxCurrentTCB.98_2->xEventListItem.xItemValue = _3;
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  pxIndex = pxEventList->pxIndex;
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  pxCurrentTCB.99_4 = pxCurrentTCB;
+  pxCurrentTCB.99_4->xEventListItem.pxNext = pxIndex;
+  # DEBUG BEGIN_STMT
+  pxCurrentTCB.100_5 = pxCurrentTCB;
+  _6 = pxIndex->pxPrevious;
+  pxCurrentTCB.100_5->xEventListItem.pxPrevious = _6;
+  # DEBUG BEGIN_STMT
+  pxCurrentTCB.101_7 = pxCurrentTCB;
+  _8 = pxIndex->pxPrevious;
+  _9 = &pxCurrentTCB.101_7->xEventListItem;
+  _8->pxNext = _9;
+  # DEBUG BEGIN_STMT
+  pxCurrentTCB.102_10 = pxCurrentTCB;
+  _11 = &pxCurrentTCB.102_10->xEventListItem;
+  pxIndex->pxPrevious = _11;
+  # DEBUG BEGIN_STMT
+  pxCurrentTCB.103_12 = pxCurrentTCB;
+  pxCurrentTCB.103_12->xEventListItem.pvContainer = pxEventList;
+  # DEBUG BEGIN_STMT
+  _13 = pxEventList->uxNumberOfItems;
+  _14 = _13 + 1;
+  pxEventList->uxNumberOfItems = _14;
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  prvAddCurrentTaskToDelayedList (xTicksToWait, 1);
+  # DEBUG BEGIN_STMT
+  return;
+
+}
+
+
+vTaskPlaceOnEventList (struct List_t * const pxEventList, const TickType_t xTicksToWait)
+{
+  <bb 2> :
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  if (pxEventList == 0B)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 5>; [INV]
+
+  <bb 3> :
+  # DEBUG BEGIN_STMT
+  __asm__ __volatile__(" cpsid i " :  :  : "memory");
+
+  <bb 4> :
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  goto <bb 4>; [INV]
+
+  <bb 5> :
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  pxCurrentTCB.96_1 = pxCurrentTCB;
+  _2 = &pxCurrentTCB.96_1->xEventListItem;
+  vListInsert (pxEventList, _2);
+  # DEBUG BEGIN_STMT
+  prvAddCurrentTaskToDelayedList (xTicksToWait, 1);
+  # DEBUG BEGIN_STMT
+  return;
+
+}
+
+
+__attribute__((used))
+vTaskSwitchContext ()
+{
+  struct List_t * const pxConstList;
+  UBaseType_t uxTopPriority;
+  struct TCB_t * vol.95;
+
+  <bb 2> :
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  uxSchedulerSuspended.94_1 = uxSchedulerSuspended;
+  if (uxSchedulerSuspended.94_1 != 0)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 4>; [INV]
+
+  <bb 3> :
+  # DEBUG BEGIN_STMT
+  xYieldPendings[0] = 1;
+  goto <bb 13>; [INV]
+
+  <bb 4> :
+  # DEBUG BEGIN_STMT
+  xYieldPendings[0] = 0;
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  uxTopPriority = uxTopReadyPriority;
+  # DEBUG BEGIN_STMT
+  goto <bb 9>; [INV]
+
+  <bb 5> :
+  # DEBUG BEGIN_STMT
+  if (uxTopPriority == 0)
+    goto <bb 6>; [INV]
+  else
+    goto <bb 8>; [INV]
+
+  <bb 6> :
+  # DEBUG BEGIN_STMT
+  __asm__ __volatile__(" cpsid i " :  :  : "memory");
+
+  <bb 7> :
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  goto <bb 7>; [INV]
+
+  <bb 8> :
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  uxTopPriority = uxTopPriority + 4294967295;
+
+  <bb 9> :
+  # DEBUG BEGIN_STMT
+  _2 = pxReadyTasksLists[uxTopPriority].uxNumberOfItems;
+  if (_2 == 0)
+    goto <bb 5>; [INV]
+  else
+    goto <bb 10>; [INV]
+
+  <bb 10> :
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  pxConstList = &pxReadyTasksLists[uxTopPriority];
+  # DEBUG BEGIN_STMT
+  _3 = pxConstList->pxIndex;
+  _4 = _3->pxNext;
+  pxConstList->pxIndex = _4;
+  # DEBUG BEGIN_STMT
+  _5 = pxConstList->pxIndex;
+  _6 = &pxConstList->xListEnd;
+  if (_5 == _6)
+    goto <bb 11>; [INV]
+  else
+    goto <bb 12>; [INV]
+
+  <bb 11> :
+  # DEBUG BEGIN_STMT
+  _7 = pxConstList->xListEnd.pxNext;
+  pxConstList->pxIndex = _7;
+
+  <bb 12> :
+  # DEBUG BEGIN_STMT
+  _8 = pxConstList->pxIndex;
+  _9 = _8->pvOwner;
+  pxCurrentTCB = _9;
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  uxTopReadyPriority = uxTopPriority;
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  vol.95 = pxCurrentTCB;
+
+  <bb 13> :
+  # DEBUG BEGIN_STMT
+  return;
+
+}
+
+
+xTaskIncrementTick ()
+{
+  struct ListItem_t * const pxIndex;
+  struct List_t * const pxList;
+  struct List_t * const pxList;
+  struct List_t * pxTemp;
+  const TickType_t xConstTickCount;
+  BaseType_t xSwitchRequired;
+  TickType_t xItemValue;
+  struct TCB_t * pxTCB;
+  BaseType_t D.8161;
+
+  <bb 2> :
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  xSwitchRequired = 0;
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  uxSchedulerSuspended.81_1 = uxSchedulerSuspended;
+  if (uxSchedulerSuspended.81_1 == 0)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 29>; [INV]
+
+  <bb 3> :
+  # DEBUG BEGIN_STMT
+  xTickCount.82_2 = xTickCount;
+  xConstTickCount = xTickCount.82_2 + 1;
+  # DEBUG BEGIN_STMT
+  xTickCount = xConstTickCount;
+  # DEBUG BEGIN_STMT
+  if (xConstTickCount == 0)
+    goto <bb 4>; [INV]
+  else
+    goto <bb 8>; [INV]
+
+  <bb 4> :
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  pxDelayedTaskList.83_3 = pxDelayedTaskList;
+  _4 = pxDelayedTaskList.83_3->uxNumberOfItems;
+  if (_4 != 0)
+    goto <bb 5>; [INV]
+  else
+    goto <bb 7>; [INV]
+
+  <bb 5> :
+  # DEBUG BEGIN_STMT
+  __asm__ __volatile__(" cpsid i " :  :  : "memory");
+
+  <bb 6> :
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  goto <bb 6>; [INV]
+
+  <bb 7> :
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  pxTemp = pxDelayedTaskList;
+  # DEBUG BEGIN_STMT
+  pxOverflowDelayedTaskList.84_5 = pxOverflowDelayedTaskList;
+  pxDelayedTaskList = pxOverflowDelayedTaskList.84_5;
+  # DEBUG BEGIN_STMT
+  pxOverflowDelayedTaskList = pxTemp;
+  # DEBUG BEGIN_STMT
+  xNumOfOverflows.85_6 = xNumOfOverflows;
+  _7 = xNumOfOverflows.85_6 + 1;
+  xNumOfOverflows = _7;
+  # DEBUG BEGIN_STMT
+  prvResetNextTaskUnblockTime ();
+  # DEBUG BEGIN_STMT
+
+  <bb 8> :
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  xNextTaskUnblockTime.86_8 = xNextTaskUnblockTime;
+  if (xConstTickCount >= xNextTaskUnblockTime.86_8)
+    goto <bb 9>; [INV]
+  else
+    goto <bb 23>; [INV]
+
+  <bb 9> :
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  pxDelayedTaskList.87_9 = pxDelayedTaskList;
+  _10 = pxDelayedTaskList.87_9->uxNumberOfItems;
+  if (_10 == 0)
+    goto <bb 10>; [INV]
+  else
+    goto <bb 11>; [INV]
+
+  <bb 10> :
+  # DEBUG BEGIN_STMT
+  xNextTaskUnblockTime = 4294967295;
+  # DEBUG BEGIN_STMT
+  goto <bb 23>; [INV]
+
+  <bb 11> :
+  # DEBUG BEGIN_STMT
+  pxDelayedTaskList.88_11 = pxDelayedTaskList;
+  _12 = pxDelayedTaskList.88_11->xListEnd.pxNext;
+  pxTCB = _12->pvOwner;
+  # DEBUG BEGIN_STMT
+  xItemValue = pxTCB->xStateListItem.xItemValue;
+  # DEBUG BEGIN_STMT
+  if (xConstTickCount < xItemValue)
+    goto <bb 12>; [INV]
+  else
+    goto <bb 13>; [INV]
+
+  <bb 12> :
+  # DEBUG BEGIN_STMT
+  xNextTaskUnblockTime = xItemValue;
+  # DEBUG BEGIN_STMT
+  goto <bb 23>; [INV]
+
+  <bb 13> :
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  pxList = pxTCB->xStateListItem.pvContainer;
+  # DEBUG BEGIN_STMT
+  _13 = pxTCB->xStateListItem.pxNext;
+  _14 = pxTCB->xStateListItem.pxPrevious;
+  _13->pxPrevious = _14;
+  # DEBUG BEGIN_STMT
+  _15 = pxTCB->xStateListItem.pxPrevious;
+  _16 = pxTCB->xStateListItem.pxNext;
+  _15->pxNext = _16;
+  # DEBUG BEGIN_STMT
+  _17 = pxList->pxIndex;
+  _18 = &pxTCB->xStateListItem;
+  if (_17 == _18)
+    goto <bb 14>; [INV]
+  else
+    goto <bb 15>; [INV]
+
+  <bb 14> :
+  # DEBUG BEGIN_STMT
+  _19 = pxTCB->xStateListItem.pxPrevious;
+  pxList->pxIndex = _19;
+
+  <bb 15> :
+  # DEBUG BEGIN_STMT
+  pxTCB->xStateListItem.pvContainer = 0B;
+  # DEBUG BEGIN_STMT
+  _20 = pxList->uxNumberOfItems;
+  _21 = _20 + 4294967295;
+  pxList->uxNumberOfItems = _21;
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  _22 = pxTCB->xEventListItem.pvContainer;
+  if (_22 != 0B)
+    goto <bb 16>; [INV]
+  else
+    goto <bb 19>; [INV]
+
+  <bb 16> :
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  pxList = pxTCB->xEventListItem.pvContainer;
+  # DEBUG BEGIN_STMT
+  _23 = pxTCB->xEventListItem.pxNext;
+  _24 = pxTCB->xEventListItem.pxPrevious;
+  _23->pxPrevious = _24;
+  # DEBUG BEGIN_STMT
+  _25 = pxTCB->xEventListItem.pxPrevious;
+  _26 = pxTCB->xEventListItem.pxNext;
+  _25->pxNext = _26;
+  # DEBUG BEGIN_STMT
+  _27 = pxList->pxIndex;
+  _28 = &pxTCB->xEventListItem;
+  if (_27 == _28)
+    goto <bb 17>; [INV]
+  else
+    goto <bb 18>; [INV]
+
+  <bb 17> :
+  # DEBUG BEGIN_STMT
+  _29 = pxTCB->xEventListItem.pxPrevious;
+  pxList->pxIndex = _29;
+
+  <bb 18> :
+  # DEBUG BEGIN_STMT
+  pxTCB->xEventListItem.pvContainer = 0B;
+  # DEBUG BEGIN_STMT
+  _30 = pxList->uxNumberOfItems;
+  _31 = _30 + 4294967295;
+  pxList->uxNumberOfItems = _31;
+  # DEBUG BEGIN_STMT
+
+  <bb 19> :
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  _32 = pxTCB->uxPriority;
+  uxTopReadyPriority.89_33 = uxTopReadyPriority;
+  if (_32 > uxTopReadyPriority.89_33)
+    goto <bb 20>; [INV]
+  else
+    goto <bb 21>; [INV]
+
+  <bb 20> :
+  # DEBUG BEGIN_STMT
+  _34 = pxTCB->uxPriority;
+  uxTopReadyPriority = _34;
+
+  <bb 21> :
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  _35 = pxTCB->uxPriority;
+  pxIndex = pxReadyTasksLists[_35].pxIndex;
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  pxTCB->xStateListItem.pxNext = pxIndex;
+  # DEBUG BEGIN_STMT
+  _36 = pxIndex->pxPrevious;
+  pxTCB->xStateListItem.pxPrevious = _36;
+  # DEBUG BEGIN_STMT
+  _37 = pxIndex->pxPrevious;
+  _38 = &pxTCB->xStateListItem;
+  _37->pxNext = _38;
+  # DEBUG BEGIN_STMT
+  _39 = &pxTCB->xStateListItem;
+  pxIndex->pxPrevious = _39;
+  # DEBUG BEGIN_STMT
+  _40 = pxTCB->uxPriority;
+  _41 = &pxReadyTasksLists[_40];
+  pxTCB->xStateListItem.pvContainer = _41;
+  # DEBUG BEGIN_STMT
+  _42 = pxTCB->uxPriority;
+  _43 = pxReadyTasksLists[_42].uxNumberOfItems;
+  _44 = pxTCB->uxPriority;
+  _45 = _43 + 1;
+  pxReadyTasksLists[_44].uxNumberOfItems = _45;
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  _46 = pxTCB->uxPriority;
+  pxCurrentTCB.90_47 = pxCurrentTCB;
+  _48 = pxCurrentTCB.90_47->uxPriority;
+  if (_46 > _48)
+    goto <bb 22>; [INV]
+  else
+    goto <bb 9>; [INV]
+
+  <bb 22> :
+  # DEBUG BEGIN_STMT
+  xSwitchRequired = 1;
+  goto <bb 9>; [INV]
+
+  <bb 23> :
+  # DEBUG BEGIN_STMT
+  pxCurrentTCB.91_49 = pxCurrentTCB;
+  _50 = pxCurrentTCB.91_49->uxPriority;
+  _51 = pxReadyTasksLists[_50].uxNumberOfItems;
+  if (_51 > 1)
+    goto <bb 24>; [INV]
+  else
+    goto <bb 25>; [INV]
+
+  <bb 24> :
+  # DEBUG BEGIN_STMT
+  xSwitchRequired = 1;
+
+  <bb 25> :
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  xPendedTicks.92_52 = xPendedTicks;
+  if (xPendedTicks.92_52 == 0)
+    goto <bb 26>; [INV]
+  else
+    goto <bb 27>; [INV]
+
+  <bb 26> :
+  # DEBUG BEGIN_STMT
+  vApplicationTickHook ();
+
+  <bb 27> :
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  _53 = xYieldPendings[0];
+  if (_53 != 0)
+    goto <bb 28>; [INV]
+  else
+    goto <bb 30>; [INV]
+
+  <bb 28> :
+  # DEBUG BEGIN_STMT
+  xSwitchRequired = 1;
+  goto <bb 30>; [INV]
+
+  <bb 29> :
+  # DEBUG BEGIN_STMT
+  xPendedTicks.93_54 = xPendedTicks;
+  _55 = xPendedTicks.93_54 + 1;
+  xPendedTicks = _55;
+  # DEBUG BEGIN_STMT
+  vApplicationTickHook ();
+
+  <bb 30> :
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  D.8161 = xSwitchRequired;
+  return D.8161;
+
+}
+
+
+xTaskAbortDelay (struct tskTaskControlBlock * xTask)
+{
+  struct ListItem_t * const pxIndex;
+  BaseType_t xReturn;
+  struct TCB_t * pxTCB;
+  BaseType_t D.8124;
+
+  <bb 2> :
+  # DEBUG BEGIN_STMT
+  pxTCB = xTask;
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  if (pxTCB == 0B)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 5>; [INV]
+
+  <bb 3> :
+  # DEBUG BEGIN_STMT
+  __asm__ __volatile__(" cpsid i " :  :  : "memory");
+
+  <bb 4> :
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  goto <bb 4>; [INV]
+
+  <bb 5> :
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  vTaskSuspendAll ();
+  # DEBUG BEGIN_STMT
+  _1 = eTaskGetState (xTask);
+  if (_1 == 2)
+    goto <bb 6>; [INV]
+  else
+    goto <bb 12>; [INV]
+
+  <bb 6> :
+  # DEBUG BEGIN_STMT
+  xReturn = 1;
+  # DEBUG BEGIN_STMT
+  _2 = &pxTCB->xStateListItem;
+  uxListRemove (_2);
+  # DEBUG BEGIN_STMT
+  vPortEnterCritical ();
+  # DEBUG BEGIN_STMT
+  _3 = pxTCB->xEventListItem.pvContainer;
+  if (_3 != 0B)
+    goto <bb 7>; [INV]
+  else
+    goto <bb 8>; [INV]
+
+  <bb 7> :
+  # DEBUG BEGIN_STMT
+  _4 = &pxTCB->xEventListItem;
+  uxListRemove (_4);
+  # DEBUG BEGIN_STMT
+  pxTCB->ucDelayAborted = 1;
+
+  <bb 8> :
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  vPortExitCritical ();
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  _5 = pxTCB->uxPriority;
+  uxTopReadyPriority.79_6 = uxTopReadyPriority;
+  if (_5 > uxTopReadyPriority.79_6)
+    goto <bb 9>; [INV]
+  else
+    goto <bb 10>; [INV]
+
+  <bb 9> :
+  # DEBUG BEGIN_STMT
+  _7 = pxTCB->uxPriority;
+  uxTopReadyPriority = _7;
+
+  <bb 10> :
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  _8 = pxTCB->uxPriority;
+  pxIndex = pxReadyTasksLists[_8].pxIndex;
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  pxTCB->xStateListItem.pxNext = pxIndex;
+  # DEBUG BEGIN_STMT
+  _9 = pxIndex->pxPrevious;
+  pxTCB->xStateListItem.pxPrevious = _9;
+  # DEBUG BEGIN_STMT
+  _10 = pxIndex->pxPrevious;
+  _11 = &pxTCB->xStateListItem;
+  _10->pxNext = _11;
+  # DEBUG BEGIN_STMT
+  _12 = &pxTCB->xStateListItem;
+  pxIndex->pxPrevious = _12;
+  # DEBUG BEGIN_STMT
+  _13 = pxTCB->uxPriority;
+  _14 = &pxReadyTasksLists[_13];
+  pxTCB->xStateListItem.pvContainer = _14;
+  # DEBUG BEGIN_STMT
+  _15 = pxTCB->uxPriority;
+  _16 = pxReadyTasksLists[_15].uxNumberOfItems;
+  _17 = pxTCB->uxPriority;
+  _18 = _16 + 1;
+  pxReadyTasksLists[_17].uxNumberOfItems = _18;
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  _19 = pxTCB->uxPriority;
+  pxCurrentTCB.80_20 = pxCurrentTCB;
+  _21 = pxCurrentTCB.80_20->uxPriority;
+  if (_19 > _21)
+    goto <bb 11>; [INV]
+  else
+    goto <bb 13>; [INV]
+
+  <bb 11> :
+  # DEBUG BEGIN_STMT
+  xYieldPendings[0] = 1;
+  goto <bb 13>; [INV]
+
+  <bb 12> :
+  # DEBUG BEGIN_STMT
+  xReturn = 0;
+
+  <bb 13> :
+  # DEBUG BEGIN_STMT
+  xTaskResumeAll ();
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  D.8124 = xReturn;
+  return D.8124;
+
+}
+
+
+xTaskCatchUpTicks (TickType_t xTicksToCatchUp)
+{
+  BaseType_t xYieldOccurred;
+  BaseType_t D.8109;
+
+  <bb 2> :
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  uxSchedulerSuspended.77_1 = uxSchedulerSuspended;
+  if (uxSchedulerSuspended.77_1 != 0)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 5>; [INV]
+
+  <bb 3> :
+  # DEBUG BEGIN_STMT
+  __asm__ __volatile__(" cpsid i " :  :  : "memory");
+
+  <bb 4> :
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  goto <bb 4>; [INV]
+
+  <bb 5> :
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  vTaskSuspendAll ();
+  # DEBUG BEGIN_STMT
+  vPortEnterCritical ();
+  # DEBUG BEGIN_STMT
+  xPendedTicks.78_2 = xPendedTicks;
+  _3 = xTicksToCatchUp + xPendedTicks.78_2;
+  xPendedTicks = _3;
+  # DEBUG BEGIN_STMT
+  vPortExitCritical ();
+  # DEBUG BEGIN_STMT
+  xYieldOccurred = xTaskResumeAll ();
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  D.8109 = xYieldOccurred;
+  return D.8109;
+
+}
+
+
+uxTaskGetSystemState (struct TaskStatus_t * const pxTaskStatusArray, const UBaseType_t uxArraySize, uint32_t * const pulTotalRunTime)
+{
+  UBaseType_t uxQueue;
+  UBaseType_t uxTask;
+  UBaseType_t D.8100;
+
+  <bb 2> :
+  # DEBUG BEGIN_STMT
+  uxTask = 0;
+  uxQueue = 10;
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  vTaskSuspendAll ();
+  # DEBUG BEGIN_STMT
+  uxCurrentNumberOfTasks.74_1 = uxCurrentNumberOfTasks;
+  if (uxArraySize >= uxCurrentNumberOfTasks.74_1)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 6>; [INV]
+
+  <bb 3> :
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  uxQueue = uxQueue + 4294967295;
+  # DEBUG BEGIN_STMT
+  _2 = uxTask * 36;
+  _3 = pxTaskStatusArray + _2;
+  _4 = &pxReadyTasksLists[uxQueue];
+  _5 = prvListTasksWithinSingleList (_3, _4, 1);
+  uxTask = uxTask + _5;
+  # DEBUG BEGIN_STMT
+  if (uxQueue != 0)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 4>; [INV]
+
+  <bb 4> :
+  # DEBUG BEGIN_STMT
+  _6 = uxTask * 36;
+  _7 = pxTaskStatusArray + _6;
+  pxDelayedTaskList.75_8 = pxDelayedTaskList;
+  _9 = prvListTasksWithinSingleList (_7, pxDelayedTaskList.75_8, 2);
+  uxTask = uxTask + _9;
+  # DEBUG BEGIN_STMT
+  _10 = uxTask * 36;
+  _11 = pxTaskStatusArray + _10;
+  pxOverflowDelayedTaskList.76_12 = pxOverflowDelayedTaskList;
+  _13 = prvListTasksWithinSingleList (_11, pxOverflowDelayedTaskList.76_12, 2);
+  uxTask = uxTask + _13;
+  # DEBUG BEGIN_STMT
+  _14 = uxTask * 36;
+  _15 = pxTaskStatusArray + _14;
+  _16 = prvListTasksWithinSingleList (_15, &xTasksWaitingTermination, 4);
+  uxTask = uxTask + _16;
+  # DEBUG BEGIN_STMT
+  _17 = uxTask * 36;
+  _18 = pxTaskStatusArray + _17;
+  _19 = prvListTasksWithinSingleList (_18, &xSuspendedTaskList, 3);
+  uxTask = uxTask + _19;
+  # DEBUG BEGIN_STMT
+  if (pulTotalRunTime != 0B)
+    goto <bb 5>; [INV]
+  else
+    goto <bb 6>; [INV]
+
+  <bb 5> :
+  # DEBUG BEGIN_STMT
+  *pulTotalRunTime = 0;
+
+  <bb 6> :
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  xTaskResumeAll ();
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  D.8100 = uxTask;
+  return D.8100;
+
+}
+
+
+xTaskGetHandle (const char * pcNameToQuery)
+{
+  struct TCB_t * pxTCB;
+  UBaseType_t uxQueue;
+  struct tskTaskControlBlock * D.8080;
+
+  <bb 2> :
+  # DEBUG BEGIN_STMT
+  uxQueue = 10;
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  _1 = strlen (pcNameToQuery);
+  if (_1 > 9)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 5>; [INV]
+
+  <bb 3> :
+  # DEBUG BEGIN_STMT
+  __asm__ __volatile__(" cpsid i " :  :  : "memory");
+
+  <bb 4> :
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  goto <bb 4>; [INV]
+
+  <bb 5> :
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  vTaskSuspendAll ();
+
+  <bb 6> :
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  uxQueue = uxQueue + 4294967295;
+  # DEBUG BEGIN_STMT
+  _2 = &pxReadyTasksLists[uxQueue];
+  pxTCB = prvSearchForNameWithinSingleList (_2, pcNameToQuery);
+  # DEBUG BEGIN_STMT
+  if (pxTCB != 0B)
+    goto <bb 8>; [INV]
+  else
+    goto <bb 7>; [INV]
+
+  <bb 7> :
+  # DEBUG BEGIN_STMT
+  if (uxQueue != 0)
+    goto <bb 6>; [INV]
+  else
+    goto <bb 8>; [INV]
+
+  <bb 8> :
+  # DEBUG BEGIN_STMT
+  if (pxTCB == 0B)
+    goto <bb 9>; [INV]
+  else
+    goto <bb 10>; [INV]
+
+  <bb 9> :
+  # DEBUG BEGIN_STMT
+  pxDelayedTaskList.72_3 = pxDelayedTaskList;
+  pxTCB = prvSearchForNameWithinSingleList (pxDelayedTaskList.72_3, pcNameToQuery);
+
+  <bb 10> :
+  # DEBUG BEGIN_STMT
+  if (pxTCB == 0B)
+    goto <bb 11>; [INV]
+  else
+    goto <bb 12>; [INV]
+
+  <bb 11> :
+  # DEBUG BEGIN_STMT
+  pxOverflowDelayedTaskList.73_4 = pxOverflowDelayedTaskList;
+  pxTCB = prvSearchForNameWithinSingleList (pxOverflowDelayedTaskList.73_4, pcNameToQuery);
+
+  <bb 12> :
+  # DEBUG BEGIN_STMT
+  if (pxTCB == 0B)
+    goto <bb 13>; [INV]
+  else
+    goto <bb 14>; [INV]
+
+  <bb 13> :
+  # DEBUG BEGIN_STMT
+  pxTCB = prvSearchForNameWithinSingleList (&xSuspendedTaskList, pcNameToQuery);
+
+  <bb 14> :
+  # DEBUG BEGIN_STMT
+  if (pxTCB == 0B)
+    goto <bb 15>; [INV]
+  else
+    goto <bb 16>; [INV]
+
+  <bb 15> :
+  # DEBUG BEGIN_STMT
+  pxTCB = prvSearchForNameWithinSingleList (&xTasksWaitingTermination, pcNameToQuery);
+
+  <bb 16> :
+  # DEBUG BEGIN_STMT
+  xTaskResumeAll ();
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  D.8080 = pxTCB;
+  return D.8080;
+
+}
+
+
+prvSearchForNameWithinSingleList (struct List_t * pxList, const char * pcNameToQuery)
+{
+  struct ListItem_t * pxIterator;
+  const struct ListItem_t * pxEndMarker;
+  BaseType_t xBreakLoop;
+  char cNextChar;
+  UBaseType_t x;
+  struct TCB_t * pxTCB;
+  struct TCB_t * pxReturn;
+  struct TCB_t * D.8093;
+
+  <bb 2> :
+  # DEBUG BEGIN_STMT
+  pxReturn = 0B;
+  # DEBUG BEGIN_STMT
+  pxTCB = 0B;
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  pxEndMarker = &pxList->xListEnd;
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  _1 = pxList->uxNumberOfItems;
+  if (_1 != 0)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 15>; [INV]
+
+  <bb 3> :
+  # DEBUG BEGIN_STMT
+  pxIterator = pxList->xListEnd.pxNext;
+  goto <bb 14>; [INV]
+
+  <bb 4> :
+  # DEBUG BEGIN_STMT
+  pxTCB = pxIterator->pvOwner;
+  # DEBUG BEGIN_STMT
+  xBreakLoop = 0;
+  # DEBUG BEGIN_STMT
+  x = 0;
+  goto <bb 11>; [INV]
+
+  <bb 5> :
+  # DEBUG BEGIN_STMT
+  cNextChar = pxTCB->pcTaskName[x];
+  # DEBUG BEGIN_STMT
+  _2 = pcNameToQuery + x;
+  _3 = *_2;
+  if (cNextChar != _3)
+    goto <bb 6>; [INV]
+  else
+    goto <bb 7>; [INV]
+
+  <bb 6> :
+  # DEBUG BEGIN_STMT
+  xBreakLoop = 1;
+  goto <bb 9>; [INV]
+
+  <bb 7> :
+  # DEBUG BEGIN_STMT
+  if (cNextChar == 0)
+    goto <bb 8>; [INV]
+  else
+    goto <bb 9>; [INV]
+
+  <bb 8> :
+  # DEBUG BEGIN_STMT
+  pxReturn = pxTCB;
+  # DEBUG BEGIN_STMT
+  xBreakLoop = 1;
+
+  <bb 9> :
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  if (xBreakLoop != 0)
+    goto <bb 12>; [INV]
+  else
+    goto <bb 10>; [INV]
+
+  <bb 10> :
+  # DEBUG BEGIN_STMT
+  x = x + 1;
+
+  <bb 11> :
+  # DEBUG BEGIN_STMT
+  if (x <= 9)
+    goto <bb 5>; [INV]
+  else
+    goto <bb 12>; [INV]
+
+  <bb 12> :
+  # DEBUG BEGIN_STMT
+  if (pxReturn != 0B)
+    goto <bb 15>; [INV]
+  else
+    goto <bb 13>; [INV]
+
+  <bb 13> :
+  # DEBUG BEGIN_STMT
+  pxIterator = pxIterator->pxNext;
+
+  <bb 14> :
+  # DEBUG BEGIN_STMT
+  if (pxIterator != pxEndMarker)
+    goto <bb 4>; [INV]
+  else
+    goto <bb 15>; [INV]
+
+  <bb 15> :
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  D.8093 = pxReturn;
+  return D.8093;
+
+}
+
+
+pcTaskGetName (struct tskTaskControlBlock * xTaskToQuery)
+{
+  struct TCB_t * pxTCB;
+  char * D.8067;
+  struct TCB_t * iftmp.71;
+
+  <bb 2> :
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  if (xTaskToQuery == 0B)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 4>; [INV]
+
+  <bb 3> :
+  iftmp.71 = pxCurrentTCB;
+  goto <bb 5>; [INV]
+
+  <bb 4> :
+  iftmp.71 = xTaskToQuery;
+
+  <bb 5> :
+  pxTCB = iftmp.71;
+  # DEBUG BEGIN_STMT
+  if (pxTCB == 0B)
+    goto <bb 6>; [INV]
+  else
+    goto <bb 8>; [INV]
+
+  <bb 6> :
+  # DEBUG BEGIN_STMT
+  __asm__ __volatile__(" cpsid i " :  :  : "memory");
+
+  <bb 7> :
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  goto <bb 7>; [INV]
+
+  <bb 8> :
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  D.8067 = &pxTCB->pcTaskName[0];
+  return D.8067;
+
+}
+
+
+uxTaskGetNumberOfTasks ()
+{
+  UBaseType_t D.8059;
+
+  <bb 2> :
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  D.8059 = uxCurrentNumberOfTasks;
+  return D.8059;
+
+}
+
+
+xTaskGetTickCountFromISR ()
+{
+  UBaseType_t uxSavedInterruptStatus;
+  TickType_t xReturn;
+  TickType_t D.8057;
+
+  <bb 2> :
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  vPortValidateInterruptPriority ();
+  # DEBUG BEGIN_STMT
+  uxSavedInterruptStatus = 0;
+  # DEBUG BEGIN_STMT
+  xReturn = xTickCount;
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  D.8057 = xReturn;
+  return D.8057;
+
+}
+
+
+xTaskGetTickCount ()
+{
+  TickType_t xTicks;
+  TickType_t D.8055;
+
+  <bb 2> :
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  xTicks = xTickCount;
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  D.8055 = xTicks;
+  return D.8055;
+
+}
+
+
+xTaskResumeAll ()
+{
+  TickType_t xPendedCounts;
+  struct ListItem_t * const pxIndex;
+  struct List_t * const pxList;
+  struct List_t * const pxList;
+  BaseType_t xCoreID;
+  BaseType_t xAlreadyYielded;
+  struct TCB_t * pxTCB;
+  BaseType_t D.8053;
+  struct TCB_t * vol.70;
+
+  <bb 2> :
+  # DEBUG BEGIN_STMT
+  pxTCB = 0B;
+  # DEBUG BEGIN_STMT
+  xAlreadyYielded = 0;
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  vPortEnterCritical ();
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  xCoreID = 0;
+  # DEBUG BEGIN_STMT
+  uxSchedulerSuspended.64_1 = uxSchedulerSuspended;
+  if (uxSchedulerSuspended.64_1 == 0)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 5>; [INV]
+
+  <bb 3> :
+  # DEBUG BEGIN_STMT
+  __asm__ __volatile__(" cpsid i " :  :  : "memory");
+
+  <bb 4> :
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  goto <bb 4>; [INV]
+
+  <bb 5> :
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  uxSchedulerSuspended.65_2 = uxSchedulerSuspended;
+  _3 = uxSchedulerSuspended.65_2 + 4294967295;
+  uxSchedulerSuspended = _3;
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  uxSchedulerSuspended.66_4 = uxSchedulerSuspended;
+  if (uxSchedulerSuspended.66_4 == 0)
+    goto <bb 6>; [INV]
+  else
+    goto <bb 25>; [INV]
+
+  <bb 6> :
+  # DEBUG BEGIN_STMT
+  uxCurrentNumberOfTasks.67_5 = uxCurrentNumberOfTasks;
+  if (uxCurrentNumberOfTasks.67_5 != 0)
+    goto <bb 15>; [INV]
+  else
+    goto <bb 25>; [INV]
+
+  <bb 7> :
+  # DEBUG BEGIN_STMT
+  _6 = xPendingReadyList.xListEnd.pxNext;
+  pxTCB = _6->pvOwner;
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  pxList = pxTCB->xEventListItem.pvContainer;
+  # DEBUG BEGIN_STMT
+  _7 = pxTCB->xEventListItem.pxNext;
+  _8 = pxTCB->xEventListItem.pxPrevious;
+  _7->pxPrevious = _8;
+  # DEBUG BEGIN_STMT
+  _9 = pxTCB->xEventListItem.pxPrevious;
+  _10 = pxTCB->xEventListItem.pxNext;
+  _9->pxNext = _10;
+  # DEBUG BEGIN_STMT
+  _11 = pxList->pxIndex;
+  _12 = &pxTCB->xEventListItem;
+  if (_11 == _12)
+    goto <bb 8>; [INV]
+  else
+    goto <bb 9>; [INV]
+
+  <bb 8> :
+  # DEBUG BEGIN_STMT
+  _13 = pxTCB->xEventListItem.pxPrevious;
+  pxList->pxIndex = _13;
+
+  <bb 9> :
+  # DEBUG BEGIN_STMT
+  pxTCB->xEventListItem.pvContainer = 0B;
+  # DEBUG BEGIN_STMT
+  _14 = pxList->uxNumberOfItems;
+  _15 = _14 + 4294967295;
+  pxList->uxNumberOfItems = _15;
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  __asm__ __volatile__("" :  :  : "memory");
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  pxList = pxTCB->xStateListItem.pvContainer;
+  # DEBUG BEGIN_STMT
+  _16 = pxTCB->xStateListItem.pxNext;
+  _17 = pxTCB->xStateListItem.pxPrevious;
+  _16->pxPrevious = _17;
+  # DEBUG BEGIN_STMT
+  _18 = pxTCB->xStateListItem.pxPrevious;
+  _19 = pxTCB->xStateListItem.pxNext;
+  _18->pxNext = _19;
+  # DEBUG BEGIN_STMT
+  _20 = pxList->pxIndex;
+  _21 = &pxTCB->xStateListItem;
+  if (_20 == _21)
+    goto <bb 10>; [INV]
+  else
+    goto <bb 11>; [INV]
+
+  <bb 10> :
+  # DEBUG BEGIN_STMT
+  _22 = pxTCB->xStateListItem.pxPrevious;
+  pxList->pxIndex = _22;
+
+  <bb 11> :
+  # DEBUG BEGIN_STMT
+  pxTCB->xStateListItem.pvContainer = 0B;
+  # DEBUG BEGIN_STMT
+  _23 = pxList->uxNumberOfItems;
+  _24 = _23 + 4294967295;
+  pxList->uxNumberOfItems = _24;
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  _25 = pxTCB->uxPriority;
+  uxTopReadyPriority.68_26 = uxTopReadyPriority;
+  if (_25 > uxTopReadyPriority.68_26)
+    goto <bb 12>; [INV]
+  else
+    goto <bb 13>; [INV]
+
+  <bb 12> :
+  # DEBUG BEGIN_STMT
+  _27 = pxTCB->uxPriority;
+  uxTopReadyPriority = _27;
+
+  <bb 13> :
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  _28 = pxTCB->uxPriority;
+  pxIndex = pxReadyTasksLists[_28].pxIndex;
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  pxTCB->xStateListItem.pxNext = pxIndex;
+  # DEBUG BEGIN_STMT
+  _29 = pxIndex->pxPrevious;
+  pxTCB->xStateListItem.pxPrevious = _29;
+  # DEBUG BEGIN_STMT
+  _30 = pxIndex->pxPrevious;
+  _31 = &pxTCB->xStateListItem;
+  _30->pxNext = _31;
+  # DEBUG BEGIN_STMT
+  _32 = &pxTCB->xStateListItem;
+  pxIndex->pxPrevious = _32;
+  # DEBUG BEGIN_STMT
+  _33 = pxTCB->uxPriority;
+  _34 = &pxReadyTasksLists[_33];
+  pxTCB->xStateListItem.pvContainer = _34;
+  # DEBUG BEGIN_STMT
+  _35 = pxTCB->uxPriority;
+  _36 = pxReadyTasksLists[_35].uxNumberOfItems;
+  _37 = pxTCB->uxPriority;
+  _38 = _36 + 1;
+  pxReadyTasksLists[_37].uxNumberOfItems = _38;
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  _39 = pxTCB->uxPriority;
+  pxCurrentTCB.69_40 = pxCurrentTCB;
+  _41 = pxCurrentTCB.69_40->uxPriority;
+  if (_39 > _41)
+    goto <bb 14>; [INV]
+  else
+    goto <bb 15>; [INV]
+
+  <bb 14> :
+  # DEBUG BEGIN_STMT
+  xYieldPendings[xCoreID] = 1;
+
+  <bb 15> :
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  _42 = xPendingReadyList.uxNumberOfItems;
+  if (_42 != 0)
+    goto <bb 7>; [INV]
+  else
+    goto <bb 16>; [INV]
+
+  <bb 16> :
+  # DEBUG BEGIN_STMT
+  if (pxTCB != 0B)
+    goto <bb 17>; [INV]
+  else
+    goto <bb 18>; [INV]
+
+  <bb 17> :
+  # DEBUG BEGIN_STMT
+  prvResetNextTaskUnblockTime ();
+
+  <bb 18> :
+  # DEBUG BEGIN_STMT
+  xPendedCounts = xPendedTicks;
+  # DEBUG BEGIN_STMT
+  if (xPendedCounts != 0)
+    goto <bb 19>; [INV]
+  else
+    goto <bb 23>; [INV]
+
+  <bb 19> :
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  _43 = xTaskIncrementTick ();
+  if (_43 != 0)
+    goto <bb 20>; [INV]
+  else
+    goto <bb 21>; [INV]
+
+  <bb 20> :
+  # DEBUG BEGIN_STMT
+  xYieldPendings[xCoreID] = 1;
+
+  <bb 21> :
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  xPendedCounts = xPendedCounts + 4294967295;
+  # DEBUG BEGIN_STMT
+  if (xPendedCounts != 0)
+    goto <bb 19>; [INV]
+  else
+    goto <bb 22>; [INV]
+
+  <bb 22> :
+  # DEBUG BEGIN_STMT
+  xPendedTicks = 0;
+
+  <bb 23> :
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  _44 = xYieldPendings[xCoreID];
+  if (_44 != 0)
+    goto <bb 24>; [INV]
+  else
+    goto <bb 25>; [INV]
+
+  <bb 24> :
+  # DEBUG BEGIN_STMT
+  xAlreadyYielded = 1;
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  vol.70 = pxCurrentTCB;
+  # DEBUG BEGIN_STMT
+  _45 = 3758157060B;
+  *_45 = 268435456;
+  # DEBUG BEGIN_STMT
+  __asm__ __volatile__("dsb" :  :  : "memory");
+  # DEBUG BEGIN_STMT
+  __asm__ __volatile__("isb");
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+
+  <bb 25> :
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  vPortExitCritical ();
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  D.8053 = xAlreadyYielded;
+  return D.8053;
+
+}
+
+
+vTaskSuspendAll ()
+{
+  <bb 2> :
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  uxSchedulerSuspended.63_1 = uxSchedulerSuspended;
+  _2 = uxSchedulerSuspended.63_1 + 1;
+  uxSchedulerSuspended = _2;
+  # DEBUG BEGIN_STMT
+  __asm__ __volatile__("" :  :  : "memory");
+  # DEBUG BEGIN_STMT
+  return;
+
+}
+
+
+vTaskEndScheduler ()
+{
+  BaseType_t xCoreID;
+
+  <bb 2> :
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  _1 = xTimerGetTimerDaemonTaskHandle ();
+  vTaskDelete (_1);
+  # DEBUG BEGIN_STMT
+  xCoreID = 0;
+  goto <bb 4>; [INV]
+
+  <bb 3> :
+  # DEBUG BEGIN_STMT
+  _2 = xIdleTaskHandles[xCoreID];
+  vTaskDelete (_2);
+  # DEBUG BEGIN_STMT
+  xCoreID = xCoreID + 1;
+
+  <bb 4> :
+  # DEBUG BEGIN_STMT
+  if (xCoreID <= 0)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 5>; [INV]
+
+  <bb 5> :
+  # DEBUG BEGIN_STMT
+  prvCheckTasksWaitingTermination ();
+  # DEBUG BEGIN_STMT
+  vPortRaiseBASEPRI ();
+  # DEBUG BEGIN_STMT
+  xSchedulerRunning = 0;
+  # DEBUG BEGIN_STMT
+  vPortEndScheduler ();
+  # DEBUG BEGIN_STMT
+  return;
+
+}
+
+
+vTaskStartScheduler ()
+{
+  BaseType_t xReturn;
+  long unsigned int vol.59;
+
+  <bb 2> :
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  xReturn = prvCreateIdleTasks ();
+  # DEBUG BEGIN_STMT
+  if (xReturn == 1)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 4>; [INV]
+
+  <bb 3> :
+  # DEBUG BEGIN_STMT
+  xReturn = xTimerCreateTimerTask ();
+
+  <bb 4> :
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  if (xReturn == 1)
+    goto <bb 5>; [INV]
+  else
+    goto <bb 6>; [INV]
+
+  <bb 5> :
+  # DEBUG BEGIN_STMT
+  vPortRaiseBASEPRI ();
+  # DEBUG BEGIN_STMT
+  xNextTaskUnblockTime = 4294967295;
+  # DEBUG BEGIN_STMT
+  xSchedulerRunning = 1;
+  # DEBUG BEGIN_STMT
+  xTickCount = 0;
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  xPortStartScheduler ();
+  goto <bb 9>; [INV]
+
+  <bb 6> :
+  # DEBUG BEGIN_STMT
+  if (xReturn == -1)
+    goto <bb 7>; [INV]
+  else
+    goto <bb 9>; [INV]
+
+  <bb 7> :
+  # DEBUG BEGIN_STMT
+  __asm__ __volatile__(" cpsid i " :  :  : "memory");
+
+  <bb 8> :
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  goto <bb 8>; [INV]
+
+  <bb 9> :
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  vol.59 = uxTopUsedPriority;
+  # DEBUG BEGIN_STMT
+  return;
+
+}
+
+
+prvCreateIdleTasks ()
+{
+  BaseType_t xIdleTaskNameIndex;
+  void (*TaskFunction_t) (void *) pxIdleTaskFunction;
+  char cIdleName[10];
+  BaseType_t xCoreID;
+  BaseType_t xReturn;
+  BaseType_t D.8019;
+
+  <bb 2> :
+  # DEBUG BEGIN_STMT
+  xReturn = 1;
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  pxIdleTaskFunction = 0B;
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  xIdleTaskNameIndex = 0;
+  goto <bb 5>; [INV]
+
+  <bb 3> :
+  # DEBUG BEGIN_STMT
+  _1 = "IDLE"[xIdleTaskNameIndex];
+  cIdleName[xIdleTaskNameIndex] = _1;
+  # DEBUG BEGIN_STMT
+  _2 = cIdleName[xIdleTaskNameIndex];
+  if (_2 == 0)
+    goto <bb 6>; [INV]
+  else
+    goto <bb 4>; [INV]
+
+  <bb 4> :
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  xIdleTaskNameIndex = xIdleTaskNameIndex + 1;
+
+  <bb 5> :
+  # DEBUG BEGIN_STMT
+  if (xIdleTaskNameIndex <= 9)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 6>; [INV]
+
+  <bb 6> :
+  # DEBUG BEGIN_STMT
+  xCoreID = 0;
+  goto <bb 9>; [INV]
+
+  <bb 7> :
+  # DEBUG BEGIN_STMT
+  pxIdleTaskFunction = prvIdleTask;
+  # DEBUG BEGIN_STMT
+  _3 = &xIdleTaskHandles[xCoreID];
+  xReturn = xTaskCreate (pxIdleTaskFunction, &cIdleName, 90, 0B, 0, _3);
+  # DEBUG BEGIN_STMT
+  if (xReturn == 0)
+    goto <bb 10>; [INV]
+  else
+    goto <bb 8>; [INV]
+
+  <bb 8> :
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  xCoreID = xCoreID + 1;
+
+  <bb 9> :
+  # DEBUG BEGIN_STMT
+  if (xCoreID <= 0)
+    goto <bb 7>; [INV]
+  else
+    goto <bb 10>; [INV]
+
+  <bb 10> :
+  # DEBUG BEGIN_STMT
+  D.8019 = xReturn;
+  cIdleName = {CLOBBER};
+  return D.8019;
+
+}
+
+
+xTaskResumeFromISR (struct tskTaskControlBlock * xTaskToResume)
+{
+  struct ListItem_t * const pxIndex;
+  UBaseType_t uxSavedInterruptStatus;
+  struct TCB_t * const pxTCB;
+  BaseType_t xYieldRequired;
+  BaseType_t D.8006;
+
+  <bb 2> :
+  # DEBUG BEGIN_STMT
+  xYieldRequired = 0;
+  # DEBUG BEGIN_STMT
+  pxTCB = xTaskToResume;
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  if (xTaskToResume == 0B)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 5>; [INV]
+
+  <bb 3> :
+  # DEBUG BEGIN_STMT
+  __asm__ __volatile__(" cpsid i " :  :  : "memory");
+
+  <bb 4> :
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  goto <bb 4>; [INV]
+
+  <bb 5> :
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  vPortValidateInterruptPriority ();
+  # DEBUG BEGIN_STMT
+  uxSavedInterruptStatus = ulPortRaiseBASEPRI ();
+  # DEBUG BEGIN_STMT
+  _1 = prvTaskIsTaskSuspended (pxTCB);
+  if (_1 != 0)
+    goto <bb 6>; [INV]
+  else
+    goto <bb 13>; [INV]
+
+  <bb 6> :
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  uxSchedulerSuspended.56_2 = uxSchedulerSuspended;
+  if (uxSchedulerSuspended.56_2 == 0)
+    goto <bb 7>; [INV]
+  else
+    goto <bb 12>; [INV]
+
+  <bb 7> :
+  # DEBUG BEGIN_STMT
+  _3 = pxTCB->uxPriority;
+  pxCurrentTCB.57_4 = pxCurrentTCB;
+  _5 = pxCurrentTCB.57_4->uxPriority;
+  if (_3 > _5)
+    goto <bb 8>; [INV]
+  else
+    goto <bb 9>; [INV]
+
+  <bb 8> :
+  # DEBUG BEGIN_STMT
+  xYieldRequired = 1;
+  # DEBUG BEGIN_STMT
+  xYieldPendings[0] = 1;
+
+  <bb 9> :
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  _6 = &pxTCB->xStateListItem;
+  uxListRemove (_6);
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  _7 = pxTCB->uxPriority;
+  uxTopReadyPriority.58_8 = uxTopReadyPriority;
+  if (_7 > uxTopReadyPriority.58_8)
+    goto <bb 10>; [INV]
+  else
+    goto <bb 11>; [INV]
+
+  <bb 10> :
+  # DEBUG BEGIN_STMT
+  _9 = pxTCB->uxPriority;
+  uxTopReadyPriority = _9;
+
+  <bb 11> :
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  _10 = pxTCB->uxPriority;
+  pxIndex = pxReadyTasksLists[_10].pxIndex;
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  pxTCB->xStateListItem.pxNext = pxIndex;
+  # DEBUG BEGIN_STMT
+  _11 = pxIndex->pxPrevious;
+  pxTCB->xStateListItem.pxPrevious = _11;
+  # DEBUG BEGIN_STMT
+  _12 = pxIndex->pxPrevious;
+  _13 = &pxTCB->xStateListItem;
+  _12->pxNext = _13;
+  # DEBUG BEGIN_STMT
+  _14 = &pxTCB->xStateListItem;
+  pxIndex->pxPrevious = _14;
+  # DEBUG BEGIN_STMT
+  _15 = pxTCB->uxPriority;
+  _16 = &pxReadyTasksLists[_15];
+  pxTCB->xStateListItem.pvContainer = _16;
+  # DEBUG BEGIN_STMT
+  _17 = pxTCB->uxPriority;
+  _18 = pxReadyTasksLists[_17].uxNumberOfItems;
+  _19 = pxTCB->uxPriority;
+  _20 = _18 + 1;
+  pxReadyTasksLists[_19].uxNumberOfItems = _20;
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  goto <bb 13>; [INV]
+
+  <bb 12> :
+  # DEBUG BEGIN_STMT
+  _21 = &pxTCB->xEventListItem;
+  vListInsertEnd (&xPendingReadyList, _21);
+
+  <bb 13> :
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  vPortSetBASEPRI (uxSavedInterruptStatus);
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  D.8006 = xYieldRequired;
+  return D.8006;
+
+}
+
+
+vTaskResume (struct tskTaskControlBlock * xTaskToResume)
+{
+  struct ListItem_t * const pxIndex;
+  struct TCB_t * const pxTCB;
+
+  <bb 2> :
+  # DEBUG BEGIN_STMT
+  pxTCB = xTaskToResume;
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  if (xTaskToResume == 0B)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 5>; [INV]
+
+  <bb 3> :
+  # DEBUG BEGIN_STMT
+  __asm__ __volatile__(" cpsid i " :  :  : "memory");
+
+  <bb 4> :
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  goto <bb 4>; [INV]
+
+  <bb 5> :
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  pxCurrentTCB.53_1 = pxCurrentTCB;
+  if (pxTCB != pxCurrentTCB.53_1)
+    goto <bb 6>; [INV]
+  else
+    goto <bb 13>; [INV]
+
+  <bb 6> :
+  if (pxTCB != 0B)
+    goto <bb 7>; [INV]
+  else
+    goto <bb 13>; [INV]
+
+  <bb 7> :
+  # DEBUG BEGIN_STMT
+  vPortEnterCritical ();
+  # DEBUG BEGIN_STMT
+  _2 = prvTaskIsTaskSuspended (pxTCB);
+  if (_2 != 0)
+    goto <bb 8>; [INV]
+  else
+    goto <bb 12>; [INV]
+
+  <bb 8> :
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  _3 = &pxTCB->xStateListItem;
+  uxListRemove (_3);
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  _4 = pxTCB->uxPriority;
+  uxTopReadyPriority.54_5 = uxTopReadyPriority;
+  if (_4 > uxTopReadyPriority.54_5)
+    goto <bb 9>; [INV]
+  else
+    goto <bb 10>; [INV]
+
+  <bb 9> :
+  # DEBUG BEGIN_STMT
+  _6 = pxTCB->uxPriority;
+  uxTopReadyPriority = _6;
+
+  <bb 10> :
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  _7 = pxTCB->uxPriority;
+  pxIndex = pxReadyTasksLists[_7].pxIndex;
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  pxTCB->xStateListItem.pxNext = pxIndex;
+  # DEBUG BEGIN_STMT
+  _8 = pxIndex->pxPrevious;
+  pxTCB->xStateListItem.pxPrevious = _8;
+  # DEBUG BEGIN_STMT
+  _9 = pxIndex->pxPrevious;
+  _10 = &pxTCB->xStateListItem;
+  _9->pxNext = _10;
+  # DEBUG BEGIN_STMT
+  _11 = &pxTCB->xStateListItem;
+  pxIndex->pxPrevious = _11;
+  # DEBUG BEGIN_STMT
+  _12 = pxTCB->uxPriority;
+  _13 = &pxReadyTasksLists[_12];
+  pxTCB->xStateListItem.pvContainer = _13;
+  # DEBUG BEGIN_STMT
+  _14 = pxTCB->uxPriority;
+  _15 = pxReadyTasksLists[_14].uxNumberOfItems;
+  _16 = pxTCB->uxPriority;
+  _17 = _15 + 1;
+  pxReadyTasksLists[_16].uxNumberOfItems = _17;
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  pxCurrentTCB.55_18 = pxCurrentTCB;
+  _19 = pxCurrentTCB.55_18->uxPriority;
+  _20 = pxTCB->uxPriority;
+  if (_19 < _20)
+    goto <bb 11>; [INV]
+  else
+    goto <bb 12>; [INV]
+
+  <bb 11> :
+  # DEBUG BEGIN_STMT
+  _21 = 3758157060B;
+  *_21 = 268435456;
+  # DEBUG BEGIN_STMT
+  __asm__ __volatile__("dsb" :  :  : "memory");
+  # DEBUG BEGIN_STMT
+  __asm__ __volatile__("isb");
+  # DEBUG BEGIN_STMT
+
+  <bb 12> :
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  vPortExitCritical ();
+
+  <bb 13> :
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  return;
+
+}
+
+
+prvTaskIsTaskSuspended (struct tskTaskControlBlock * const xTask)
+{
+  BaseType_t x;
+  const struct TCB_t * const pxTCB;
+  BaseType_t xReturn;
+  BaseType_t D.7991;
+
+  <bb 2> :
+  # DEBUG BEGIN_STMT
+  xReturn = 0;
+  # DEBUG BEGIN_STMT
+  pxTCB = xTask;
+  # DEBUG BEGIN_STMT
+  if (xTask == 0B)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 5>; [INV]
+
+  <bb 3> :
+  # DEBUG BEGIN_STMT
+  __asm__ __volatile__(" cpsid i " :  :  : "memory");
+
+  <bb 4> :
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  goto <bb 4>; [INV]
+
+  <bb 5> :
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  _1 = pxTCB->xStateListItem.pvContainer;
+  if (_1 == &xSuspendedTaskList)
+    goto <bb 6>; [INV]
+  else
+    goto <bb 13>; [INV]
+
+  <bb 6> :
+  # DEBUG BEGIN_STMT
+  _2 = pxTCB->xEventListItem.pvContainer;
+  if (_2 != &xPendingReadyList)
+    goto <bb 7>; [INV]
+  else
+    goto <bb 13>; [INV]
+
+  <bb 7> :
+  # DEBUG BEGIN_STMT
+  _3 = pxTCB->xEventListItem.pvContainer;
+  if (_3 == 0B)
+    goto <bb 8>; [INV]
+  else
+    goto <bb 13>; [INV]
+
+  <bb 8> :
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  xReturn = 1;
+  # DEBUG BEGIN_STMT
+  x = 0;
+  goto <bb 12>; [INV]
+
+  <bb 9> :
+  # DEBUG BEGIN_STMT
+  _4 = pxTCB->ucNotifyState[x];
+  if (_4 == 1)
+    goto <bb 10>; [INV]
+  else
+    goto <bb 11>; [INV]
+
+  <bb 10> :
+  # DEBUG BEGIN_STMT
+  xReturn = 0;
+  # DEBUG BEGIN_STMT
+  goto <bb 13>; [INV]
+
+  <bb 11> :
+  # DEBUG BEGIN_STMT
+  x = x + 1;
+
+  <bb 12> :
+  # DEBUG BEGIN_STMT
+  if (x <= 0)
+    goto <bb 9>; [INV]
+  else
+    goto <bb 13>; [INV]
+
+  <bb 13> :
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  D.7991 = xReturn;
+  return D.7991;
+
+}
+
+
+vTaskSuspend (struct tskTaskControlBlock * xTaskToSuspend)
+{
+  UBaseType_t uxCurrentListLength;
+  BaseType_t x;
+  struct TCB_t * pxTCB;
+  struct TCB_t * iftmp.47;
+
+  <bb 2> :
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  vPortEnterCritical ();
+  # DEBUG BEGIN_STMT
+  if (xTaskToSuspend == 0B)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 4>; [INV]
+
+  <bb 3> :
+  iftmp.47 = pxCurrentTCB;
+  goto <bb 5>; [INV]
+
+  <bb 4> :
+  iftmp.47 = xTaskToSuspend;
+
+  <bb 5> :
+  pxTCB = iftmp.47;
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  _1 = &pxTCB->xStateListItem;
+  _2 = uxListRemove (_1);
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  _3 = pxTCB->xEventListItem.pvContainer;
+  if (_3 != 0B)
+    goto <bb 6>; [INV]
+  else
+    goto <bb 7>; [INV]
+
+  <bb 6> :
+  # DEBUG BEGIN_STMT
+  _4 = &pxTCB->xEventListItem;
+  uxListRemove (_4);
+
+  <bb 7> :
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  _5 = &pxTCB->xStateListItem;
+  vListInsertEnd (&xSuspendedTaskList, _5);
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  x = 0;
+  goto <bb 11>; [INV]
+
+  <bb 8> :
+  # DEBUG BEGIN_STMT
+  _6 = pxTCB->ucNotifyState[x];
+  if (_6 == 1)
+    goto <bb 9>; [INV]
+  else
+    goto <bb 10>; [INV]
+
+  <bb 9> :
+  # DEBUG BEGIN_STMT
+  pxTCB->ucNotifyState[x] = 0;
+
+  <bb 10> :
+  # DEBUG BEGIN_STMT
+  x = x + 1;
+
+  <bb 11> :
+  # DEBUG BEGIN_STMT
+  if (x <= 0)
+    goto <bb 8>; [INV]
+  else
+    goto <bb 12>; [INV]
+
+  <bb 12> :
+  # DEBUG BEGIN_STMT
+  vPortExitCritical ();
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  xSchedulerRunning.48_7 = xSchedulerRunning;
+  if (xSchedulerRunning.48_7 != 0)
+    goto <bb 13>; [INV]
+  else
+    goto <bb 14>; [INV]
+
+  <bb 13> :
+  # DEBUG BEGIN_STMT
+  vPortEnterCritical ();
+  # DEBUG BEGIN_STMT
+  prvResetNextTaskUnblockTime ();
+  # DEBUG BEGIN_STMT
+  vPortExitCritical ();
+
+  <bb 14> :
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  pxCurrentTCB.49_8 = pxCurrentTCB;
+  if (pxTCB == pxCurrentTCB.49_8)
+    goto <bb 15>; [INV]
+  else
+    goto <bb 23>; [INV]
+
+  <bb 15> :
+  # DEBUG BEGIN_STMT
+  xSchedulerRunning.50_9 = xSchedulerRunning;
+  if (xSchedulerRunning.50_9 != 0)
+    goto <bb 16>; [INV]
+  else
+    goto <bb 20>; [INV]
+
+  <bb 16> :
+  # DEBUG BEGIN_STMT
+  uxSchedulerSuspended.51_10 = uxSchedulerSuspended;
+  if (uxSchedulerSuspended.51_10 != 0)
+    goto <bb 17>; [INV]
+  else
+    goto <bb 19>; [INV]
+
+  <bb 17> :
+  # DEBUG BEGIN_STMT
+  __asm__ __volatile__(" cpsid i " :  :  : "memory");
+
+  <bb 18> :
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  goto <bb 18>; [INV]
+
+  <bb 19> :
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  _11 = 3758157060B;
+  *_11 = 268435456;
+  # DEBUG BEGIN_STMT
+  __asm__ __volatile__("dsb" :  :  : "memory");
+  # DEBUG BEGIN_STMT
+  __asm__ __volatile__("isb");
+  # DEBUG BEGIN_STMT
+  goto <bb 23>; [INV]
+
+  <bb 20> :
+  # DEBUG BEGIN_STMT
+  uxCurrentListLength = xSuspendedTaskList.uxNumberOfItems;
+  # DEBUG BEGIN_STMT
+  uxCurrentNumberOfTasks.52_12 = uxCurrentNumberOfTasks;
+  if (uxCurrentListLength == uxCurrentNumberOfTasks.52_12)
+    goto <bb 21>; [INV]
+  else
+    goto <bb 22>; [INV]
+
+  <bb 21> :
+  # DEBUG BEGIN_STMT
+  pxCurrentTCB = 0B;
+  goto <bb 23>; [INV]
+
+  <bb 22> :
+  # DEBUG BEGIN_STMT
+  vTaskSwitchContext ();
+
+  <bb 23> :
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  return;
+
+}
+
+
+vTaskPrioritySet (struct tskTaskControlBlock * xTask, UBaseType_t uxNewPriority)
+{
+  struct ListItem_t * const pxIndex;
+  BaseType_t xYieldRequired;
+  UBaseType_t uxPriorityUsedOnEntry;
+  UBaseType_t uxCurrentBasePriority;
+  struct TCB_t * pxTCB;
+  struct TCB_t * iftmp.42;
+
+  <bb 2> :
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  xYieldRequired = 0;
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  if (uxNewPriority > 9)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 5>; [INV]
+
+  <bb 3> :
+  # DEBUG BEGIN_STMT
+  __asm__ __volatile__(" cpsid i " :  :  : "memory");
+
+  <bb 4> :
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  goto <bb 4>; [INV]
+
+  <bb 5> :
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  if (uxNewPriority > 9)
+    goto <bb 6>; [INV]
+  else
+    goto <bb 7>; [INV]
+
+  <bb 6> :
+  # DEBUG BEGIN_STMT
+  uxNewPriority = 9;
+
+  <bb 7> :
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  vPortEnterCritical ();
+  # DEBUG BEGIN_STMT
+  if (xTask == 0B)
+    goto <bb 8>; [INV]
+  else
+    goto <bb 9>; [INV]
+
+  <bb 8> :
+  iftmp.42 = pxCurrentTCB;
+  goto <bb 10>; [INV]
+
+  <bb 9> :
+  iftmp.42 = xTask;
+
+  <bb 10> :
+  pxTCB = iftmp.42;
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  uxCurrentBasePriority = pxTCB->uxBasePriority;
+  # DEBUG BEGIN_STMT
+  if (uxCurrentBasePriority != uxNewPriority)
+    goto <bb 11>; [INV]
+  else
+    goto <bb 28>; [INV]
+
+  <bb 11> :
+  # DEBUG BEGIN_STMT
+  if (uxNewPriority > uxCurrentBasePriority)
+    goto <bb 12>; [INV]
+  else
+    goto <bb 15>; [INV]
+
+  <bb 12> :
+  # DEBUG BEGIN_STMT
+  pxCurrentTCB.43_1 = pxCurrentTCB;
+  if (pxTCB != pxCurrentTCB.43_1)
+    goto <bb 13>; [INV]
+  else
+    goto <bb 17>; [INV]
+
+  <bb 13> :
+  # DEBUG BEGIN_STMT
+  pxCurrentTCB.44_2 = pxCurrentTCB;
+  _3 = pxCurrentTCB.44_2->uxPriority;
+  if (uxNewPriority > _3)
+    goto <bb 14>; [INV]
+  else
+    goto <bb 17>; [INV]
+
+  <bb 14> :
+  # DEBUG BEGIN_STMT
+  xYieldRequired = 1;
+  goto <bb 17>; [INV]
+
+  <bb 15> :
+  # DEBUG BEGIN_STMT
+  pxCurrentTCB.45_4 = pxCurrentTCB;
+  if (pxTCB == pxCurrentTCB.45_4)
+    goto <bb 16>; [INV]
+  else
+    goto <bb 17>; [INV]
+
+  <bb 16> :
+  # DEBUG BEGIN_STMT
+  xYieldRequired = 1;
+
+  <bb 17> :
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  uxPriorityUsedOnEntry = pxTCB->uxPriority;
+  # DEBUG BEGIN_STMT
+  _5 = pxTCB->uxBasePriority;
+  _6 = pxTCB->uxPriority;
+  if (_5 == _6)
+    goto <bb 19>; [INV]
+  else
+    goto <bb 18>; [INV]
+
+  <bb 18> :
+  _7 = pxTCB->uxPriority;
+  if (uxNewPriority > _7)
+    goto <bb 19>; [INV]
+  else
+    goto <bb 20>; [INV]
+
+  <bb 19> :
+  # DEBUG BEGIN_STMT
+  pxTCB->uxPriority = uxNewPriority;
+
+  <bb 20> :
+  # DEBUG BEGIN_STMT
+  pxTCB->uxBasePriority = uxNewPriority;
+  # DEBUG BEGIN_STMT
+  _8 = pxTCB->xEventListItem.xItemValue;
+  _9 = (signed int) _8;
+  if (_9 >= 0)
+    goto <bb 21>; [INV]
+  else
+    goto <bb 22>; [INV]
+
+  <bb 21> :
+  # DEBUG BEGIN_STMT
+  _10 = 10 - uxNewPriority;
+  pxTCB->xEventListItem.xItemValue = _10;
+
+  <bb 22> :
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  _11 = pxTCB->xStateListItem.pvContainer;
+  _12 = &pxReadyTasksLists[uxPriorityUsedOnEntry];
+  if (_11 == _12)
+    goto <bb 23>; [INV]
+  else
+    goto <bb 26>; [INV]
+
+  <bb 23> :
+  # DEBUG BEGIN_STMT
+  _13 = &pxTCB->xStateListItem;
+  _14 = uxListRemove (_13);
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  _15 = pxTCB->uxPriority;
+  uxTopReadyPriority.46_16 = uxTopReadyPriority;
+  if (_15 > uxTopReadyPriority.46_16)
+    goto <bb 24>; [INV]
+  else
+    goto <bb 25>; [INV]
+
+  <bb 24> :
+  # DEBUG BEGIN_STMT
+  _17 = pxTCB->uxPriority;
+  uxTopReadyPriority = _17;
+
+  <bb 25> :
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  _18 = pxTCB->uxPriority;
+  pxIndex = pxReadyTasksLists[_18].pxIndex;
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  pxTCB->xStateListItem.pxNext = pxIndex;
+  # DEBUG BEGIN_STMT
+  _19 = pxIndex->pxPrevious;
+  pxTCB->xStateListItem.pxPrevious = _19;
+  # DEBUG BEGIN_STMT
+  _20 = pxIndex->pxPrevious;
+  _21 = &pxTCB->xStateListItem;
+  _20->pxNext = _21;
+  # DEBUG BEGIN_STMT
+  _22 = &pxTCB->xStateListItem;
+  pxIndex->pxPrevious = _22;
+  # DEBUG BEGIN_STMT
+  _23 = pxTCB->uxPriority;
+  _24 = &pxReadyTasksLists[_23];
+  pxTCB->xStateListItem.pvContainer = _24;
+  # DEBUG BEGIN_STMT
+  _25 = pxTCB->uxPriority;
+  _26 = pxReadyTasksLists[_25].uxNumberOfItems;
+  _27 = pxTCB->uxPriority;
+  _28 = _26 + 1;
+  pxReadyTasksLists[_27].uxNumberOfItems = _28;
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+
+  <bb 26> :
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  if (xYieldRequired != 0)
+    goto <bb 27>; [INV]
+  else
+    goto <bb 28>; [INV]
+
+  <bb 27> :
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  _29 = 3758157060B;
+  *_29 = 268435456;
+  # DEBUG BEGIN_STMT
+  __asm__ __volatile__("dsb" :  :  : "memory");
+  # DEBUG BEGIN_STMT
+  __asm__ __volatile__("isb");
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+
+  <bb 28> :
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  vPortExitCritical ();
+  # DEBUG BEGIN_STMT
+  return;
+
+}
+
+
+uxTaskBasePriorityGetFromISR (struct tskTaskControlBlock * const xTask)
+{
+  UBaseType_t uxSavedInterruptStatus;
+  UBaseType_t uxReturn;
+  const struct TCB_t * pxTCB;
+  UBaseType_t D.7895;
+  const struct TCB_t * iftmp.41;
+
+  <bb 2> :
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  vPortValidateInterruptPriority ();
+  # DEBUG BEGIN_STMT
+  uxSavedInterruptStatus = ulPortRaiseBASEPRI ();
+  # DEBUG BEGIN_STMT
+  if (xTask == 0B)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 4>; [INV]
+
+  <bb 3> :
+  iftmp.41 = pxCurrentTCB;
+  goto <bb 5>; [INV]
+
+  <bb 4> :
+  iftmp.41 = xTask;
+
+  <bb 5> :
+  pxTCB = iftmp.41;
+  # DEBUG BEGIN_STMT
+  uxReturn = pxTCB->uxBasePriority;
+  # DEBUG BEGIN_STMT
+  vPortSetBASEPRI (uxSavedInterruptStatus);
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  D.7895 = uxReturn;
+  return D.7895;
+
+}
+
+
+uxTaskBasePriorityGet (struct tskTaskControlBlock * const xTask)
+{
+  UBaseType_t uxReturn;
+  const struct TCB_t * pxTCB;
+  UBaseType_t D.7889;
+  const struct TCB_t * iftmp.40;
+
+  <bb 2> :
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  vPortEnterCritical ();
+  # DEBUG BEGIN_STMT
+  if (xTask == 0B)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 4>; [INV]
+
+  <bb 3> :
+  iftmp.40 = pxCurrentTCB;
+  goto <bb 5>; [INV]
+
+  <bb 4> :
+  iftmp.40 = xTask;
+
+  <bb 5> :
+  pxTCB = iftmp.40;
+  # DEBUG BEGIN_STMT
+  uxReturn = pxTCB->uxBasePriority;
+  # DEBUG BEGIN_STMT
+  vPortExitCritical ();
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  D.7889 = uxReturn;
+  return D.7889;
+
+}
+
+
+uxTaskPriorityGetFromISR (struct tskTaskControlBlock * const xTask)
+{
+  UBaseType_t uxSavedInterruptStatus;
+  UBaseType_t uxReturn;
+  const struct TCB_t * pxTCB;
+  UBaseType_t D.7881;
+  const struct TCB_t * iftmp.39;
+
+  <bb 2> :
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  vPortValidateInterruptPriority ();
+  # DEBUG BEGIN_STMT
+  uxSavedInterruptStatus = ulPortRaiseBASEPRI ();
+  # DEBUG BEGIN_STMT
+  if (xTask == 0B)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 4>; [INV]
+
+  <bb 3> :
+  iftmp.39 = pxCurrentTCB;
+  goto <bb 5>; [INV]
+
+  <bb 4> :
+  iftmp.39 = xTask;
+
+  <bb 5> :
+  pxTCB = iftmp.39;
+  # DEBUG BEGIN_STMT
+  uxReturn = pxTCB->uxPriority;
+  # DEBUG BEGIN_STMT
+  vPortSetBASEPRI (uxSavedInterruptStatus);
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  D.7881 = uxReturn;
+  return D.7881;
+
+}
+
+
+uxTaskPriorityGet (struct tskTaskControlBlock * const xTask)
+{
+  UBaseType_t uxReturn;
+  const struct TCB_t * pxTCB;
+  UBaseType_t D.7875;
+  const struct TCB_t * iftmp.38;
+
+  <bb 2> :
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  vPortEnterCritical ();
+  # DEBUG BEGIN_STMT
+  if (xTask == 0B)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 4>; [INV]
+
+  <bb 3> :
+  iftmp.38 = pxCurrentTCB;
+  goto <bb 5>; [INV]
+
+  <bb 4> :
+  iftmp.38 = xTask;
+
+  <bb 5> :
+  pxTCB = iftmp.38;
+  # DEBUG BEGIN_STMT
+  uxReturn = pxTCB->uxPriority;
+  # DEBUG BEGIN_STMT
+  vPortExitCritical ();
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  D.7875 = uxReturn;
+  return D.7875;
+
+}
+
+
+eTaskGetState (struct tskTaskControlBlock * xTask)
+{
+  BaseType_t x;
+  const struct TCB_t * const pxTCB;
+  const struct List_t * pxOverflowedDelayedList;
+  const struct List_t * pxDelayedList;
+  const struct List_t * pxEventList;
+  const struct List_t * pxStateList;
+  eTaskState eReturn;
+  eTaskState D.7869;
+
+  <bb 2> :
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  pxTCB = xTask;
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  if (pxTCB == 0B)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 5>; [INV]
+
+  <bb 3> :
+  # DEBUG BEGIN_STMT
+  __asm__ __volatile__(" cpsid i " :  :  : "memory");
+
+  <bb 4> :
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  goto <bb 4>; [INV]
+
+  <bb 5> :
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  pxCurrentTCB.37_1 = pxCurrentTCB;
+  if (pxTCB == pxCurrentTCB.37_1)
+    goto <bb 6>; [INV]
+  else
+    goto <bb 7>; [INV]
+
+  <bb 6> :
+  # DEBUG BEGIN_STMT
+  eReturn = 0;
+  goto <bb 24>; [INV]
+
+  <bb 7> :
+  # DEBUG BEGIN_STMT
+  vPortEnterCritical ();
+  # DEBUG BEGIN_STMT
+  pxStateList = pxTCB->xStateListItem.pvContainer;
+  # DEBUG BEGIN_STMT
+  pxEventList = pxTCB->xEventListItem.pvContainer;
+  # DEBUG BEGIN_STMT
+  pxDelayedList = pxDelayedTaskList;
+  # DEBUG BEGIN_STMT
+  pxOverflowedDelayedList = pxOverflowDelayedTaskList;
+  # DEBUG BEGIN_STMT
+  vPortExitCritical ();
+  # DEBUG BEGIN_STMT
+  if (pxEventList == &xPendingReadyList)
+    goto <bb 8>; [INV]
+  else
+    goto <bb 9>; [INV]
+
+  <bb 8> :
+  # DEBUG BEGIN_STMT
+  eReturn = 1;
+  goto <bb 24>; [INV]
+
+  <bb 9> :
+  # DEBUG BEGIN_STMT
+  if (pxStateList == pxDelayedList)
+    goto <bb 11>; [INV]
+  else
+    goto <bb 10>; [INV]
+
+  <bb 10> :
+  if (pxStateList == pxOverflowedDelayedList)
+    goto <bb 11>; [INV]
+  else
+    goto <bb 12>; [INV]
+
+  <bb 11> :
+  # DEBUG BEGIN_STMT
+  eReturn = 2;
+  goto <bb 24>; [INV]
+
+  <bb 12> :
+  # DEBUG BEGIN_STMT
+  if (pxStateList == &xSuspendedTaskList)
+    goto <bb 13>; [INV]
+  else
+    goto <bb 20>; [INV]
+
+  <bb 13> :
+  # DEBUG BEGIN_STMT
+  _2 = pxTCB->xEventListItem.pvContainer;
+  if (_2 == 0B)
+    goto <bb 14>; [INV]
+  else
+    goto <bb 19>; [INV]
+
+  <bb 14> :
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  eReturn = 3;
+  # DEBUG BEGIN_STMT
+  x = 0;
+  goto <bb 18>; [INV]
+
+  <bb 15> :
+  # DEBUG BEGIN_STMT
+  _3 = pxTCB->ucNotifyState[x];
+  if (_3 == 1)
+    goto <bb 16>; [INV]
+  else
+    goto <bb 17>; [INV]
+
+  <bb 16> :
+  # DEBUG BEGIN_STMT
+  eReturn = 2;
+  # DEBUG BEGIN_STMT
+  goto <bb 24>; [INV]
+
+  <bb 17> :
+  # DEBUG BEGIN_STMT
+  x = x + 1;
+
+  <bb 18> :
+  # DEBUG BEGIN_STMT
+  if (x <= 0)
+    goto <bb 15>; [INV]
+  else
+    goto <bb 24>; [INV]
+
+  <bb 19> :
+  # DEBUG BEGIN_STMT
+  eReturn = 2;
+  goto <bb 24>; [INV]
+
+  <bb 20> :
+  # DEBUG BEGIN_STMT
+  if (pxStateList == &xTasksWaitingTermination)
+    goto <bb 22>; [INV]
+  else
+    goto <bb 21>; [INV]
+
+  <bb 21> :
+  if (pxStateList == 0B)
+    goto <bb 22>; [INV]
+  else
+    goto <bb 23>; [INV]
+
+  <bb 22> :
+  # DEBUG BEGIN_STMT
+  eReturn = 4;
+  goto <bb 24>; [INV]
+
+  <bb 23> :
+  # DEBUG BEGIN_STMT
+  eReturn = 1;
+
+  <bb 24> :
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  D.7869 = eReturn;
+  return D.7869;
+
+}
+
+
+vTaskDelay (const TickType_t xTicksToDelay)
+{
+  BaseType_t xAlreadyYielded;
+
+  <bb 2> :
+  # DEBUG BEGIN_STMT
+  xAlreadyYielded = 0;
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  if (xTicksToDelay != 0)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 7>; [INV]
+
+  <bb 3> :
+  # DEBUG BEGIN_STMT
+  vTaskSuspendAll ();
+  # DEBUG BEGIN_STMT
+  uxSchedulerSuspended.36_1 = uxSchedulerSuspended;
+  if (uxSchedulerSuspended.36_1 != 1)
+    goto <bb 4>; [INV]
+  else
+    goto <bb 6>; [INV]
+
+  <bb 4> :
+  # DEBUG BEGIN_STMT
+  __asm__ __volatile__(" cpsid i " :  :  : "memory");
+
+  <bb 5> :
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  goto <bb 5>; [INV]
+
+  <bb 6> :
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  prvAddCurrentTaskToDelayedList (xTicksToDelay, 0);
+  # DEBUG BEGIN_STMT
+  xAlreadyYielded = xTaskResumeAll ();
+
+  <bb 7> :
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  if (xAlreadyYielded == 0)
+    goto <bb 8>; [INV]
+  else
+    goto <bb 9>; [INV]
+
+  <bb 8> :
+  # DEBUG BEGIN_STMT
+  _2 = 3758157060B;
+  *_2 = 268435456;
+  # DEBUG BEGIN_STMT
+  __asm__ __volatile__("dsb" :  :  : "memory");
+  # DEBUG BEGIN_STMT
+  __asm__ __volatile__("isb");
+  # DEBUG BEGIN_STMT
+
+  <bb 9> :
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  return;
+
+}
+
+
+xTaskDelayUntil (TickType_t * const pxPreviousWakeTime, const TickType_t xTimeIncrement)
+{
+  const TickType_t xConstTickCount;
+  BaseType_t xShouldDelay;
+  BaseType_t xAlreadyYielded;
+  TickType_t xTimeToWake;
+  BaseType_t D.7822;
+
+  <bb 2> :
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  xShouldDelay = 0;
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  if (pxPreviousWakeTime == 0B)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 5>; [INV]
+
+  <bb 3> :
+  # DEBUG BEGIN_STMT
+  __asm__ __volatile__(" cpsid i " :  :  : "memory");
+
+  <bb 4> :
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  goto <bb 4>; [INV]
+
+  <bb 5> :
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  if (xTimeIncrement == 0)
+    goto <bb 6>; [INV]
+  else
+    goto <bb 8>; [INV]
+
+  <bb 6> :
+  # DEBUG BEGIN_STMT
+  __asm__ __volatile__(" cpsid i " :  :  : "memory");
+
+  <bb 7> :
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  goto <bb 7>; [INV]
+
+  <bb 8> :
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  vTaskSuspendAll ();
+  # DEBUG BEGIN_STMT
+  xConstTickCount = xTickCount;
+  # DEBUG BEGIN_STMT
+  uxSchedulerSuspended.24_1 = uxSchedulerSuspended;
+  if (uxSchedulerSuspended.24_1 != 1)
+    goto <bb 9>; [INV]
+  else
+    goto <bb 11>; [INV]
+
+  <bb 9> :
+  # DEBUG BEGIN_STMT
+  __asm__ __volatile__(" cpsid i " :  :  : "memory");
+
+  <bb 10> :
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  goto <bb 10>; [INV]
+
+  <bb 11> :
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  _2 = *pxPreviousWakeTime;
+  xTimeToWake = xTimeIncrement + _2;
+  # DEBUG BEGIN_STMT
+  _3 = *pxPreviousWakeTime;
+  if (xConstTickCount < _3)
+    goto <bb 12>; [INV]
+  else
+    goto <bb 15>; [INV]
+
+  <bb 12> :
+  # DEBUG BEGIN_STMT
+  _4 = *pxPreviousWakeTime;
+  if (xTimeToWake < _4)
+    goto <bb 13>; [INV]
+  else
+    goto <bb 18>; [INV]
+
+  <bb 13> :
+  if (xTimeToWake > xConstTickCount)
+    goto <bb 14>; [INV]
+  else
+    goto <bb 18>; [INV]
+
+  <bb 14> :
+  # DEBUG BEGIN_STMT
+  xShouldDelay = 1;
+  goto <bb 18>; [INV]
+
+  <bb 15> :
+  # DEBUG BEGIN_STMT
+  _5 = *pxPreviousWakeTime;
+  if (xTimeToWake < _5)
+    goto <bb 17>; [INV]
+  else
+    goto <bb 16>; [INV]
+
+  <bb 16> :
+  if (xTimeToWake > xConstTickCount)
+    goto <bb 17>; [INV]
+  else
+    goto <bb 18>; [INV]
+
+  <bb 17> :
+  # DEBUG BEGIN_STMT
+  xShouldDelay = 1;
+
+  <bb 18> :
+  # DEBUG BEGIN_STMT
+  *pxPreviousWakeTime = xTimeToWake;
+  # DEBUG BEGIN_STMT
+  if (xShouldDelay != 0)
+    goto <bb 19>; [INV]
+  else
+    goto <bb 20>; [INV]
+
+  <bb 19> :
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  _6 = xTimeToWake - xConstTickCount;
+  prvAddCurrentTaskToDelayedList (_6, 0);
+
+  <bb 20> :
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  xAlreadyYielded = xTaskResumeAll ();
+  # DEBUG BEGIN_STMT
+  if (xAlreadyYielded == 0)
+    goto <bb 21>; [INV]
+  else
+    goto <bb 22>; [INV]
+
+  <bb 21> :
+  # DEBUG BEGIN_STMT
+  _7 = 3758157060B;
+  *_7 = 268435456;
+  # DEBUG BEGIN_STMT
+  __asm__ __volatile__("dsb" :  :  : "memory");
+  # DEBUG BEGIN_STMT
+  __asm__ __volatile__("isb");
+  # DEBUG BEGIN_STMT
+
+  <bb 22> :
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  D.7822 = xShouldDelay;
+  return D.7822;
+
+}
+
+
+vTaskDelete (struct tskTaskControlBlock * xTaskToDelete)
+{
+  BaseType_t xTaskIsRunningOrYielding;
+  BaseType_t xDeleteTCBInIdleTask;
+  struct TCB_t * pxTCB;
+  long int iftmp.14;
+  struct TCB_t * iftmp.12;
+
+  <bb 2> :
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  xDeleteTCBInIdleTask = 0;
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  vPortEnterCritical ();
+  # DEBUG BEGIN_STMT
+  if (xTaskToDelete == 0B)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 4>; [INV]
+
+  <bb 3> :
+  iftmp.12 = pxCurrentTCB;
+  goto <bb 5>; [INV]
+
+  <bb 4> :
+  iftmp.12 = xTaskToDelete;
+
+  <bb 5> :
+  pxTCB = iftmp.12;
+  # DEBUG BEGIN_STMT
+  _1 = &pxTCB->xStateListItem;
+  _2 = uxListRemove (_1);
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  _3 = pxTCB->xEventListItem.pvContainer;
+  if (_3 != 0B)
+    goto <bb 6>; [INV]
+  else
+    goto <bb 7>; [INV]
+
+  <bb 6> :
+  # DEBUG BEGIN_STMT
+  _4 = &pxTCB->xEventListItem;
+  uxListRemove (_4);
+
+  <bb 7> :
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  uxTaskNumber.13_5 = uxTaskNumber;
+  _6 = uxTaskNumber.13_5 + 1;
+  uxTaskNumber = _6;
+  # DEBUG BEGIN_STMT
+  pxCurrentTCB.15_7 = pxCurrentTCB;
+  if (pxTCB == pxCurrentTCB.15_7)
+    goto <bb 8>; [INV]
+  else
+    goto <bb 9>; [INV]
+
+  <bb 8> :
+  iftmp.14 = 1;
+  goto <bb 10>; [INV]
+
+  <bb 9> :
+  iftmp.14 = 0;
+
+  <bb 10> :
+  xTaskIsRunningOrYielding = iftmp.14;
+  # DEBUG BEGIN_STMT
+  xSchedulerRunning.16_8 = xSchedulerRunning;
+  if (xSchedulerRunning.16_8 != 0)
+    goto <bb 11>; [INV]
+  else
+    goto <bb 13>; [INV]
+
+  <bb 11> :
+  if (xTaskIsRunningOrYielding != 0)
+    goto <bb 12>; [INV]
+  else
+    goto <bb 13>; [INV]
+
+  <bb 12> :
+  # DEBUG BEGIN_STMT
+  _9 = &pxTCB->xStateListItem;
+  vListInsertEnd (&xTasksWaitingTermination, _9);
+  # DEBUG BEGIN_STMT
+  uxDeletedTasksWaitingCleanUp.17_10 = uxDeletedTasksWaitingCleanUp;
+  _11 = uxDeletedTasksWaitingCleanUp.17_10 + 1;
+  uxDeletedTasksWaitingCleanUp = _11;
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  xDeleteTCBInIdleTask = 1;
+  # DEBUG BEGIN_STMT
+  goto <bb 14>; [INV]
+
+  <bb 13> :
+  # DEBUG BEGIN_STMT
+  uxCurrentNumberOfTasks.18_12 = uxCurrentNumberOfTasks;
+  _13 = uxCurrentNumberOfTasks.18_12 + 4294967295;
+  uxCurrentNumberOfTasks = _13;
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  prvResetNextTaskUnblockTime ();
+
+  <bb 14> :
+  # DEBUG BEGIN_STMT
+  vPortExitCritical ();
+  # DEBUG BEGIN_STMT
+  if (xDeleteTCBInIdleTask != 1)
+    goto <bb 15>; [INV]
+  else
+    goto <bb 16>; [INV]
+
+  <bb 15> :
+  # DEBUG BEGIN_STMT
+  prvDeleteTCB (pxTCB);
+
+  <bb 16> :
+  # DEBUG BEGIN_STMT
+  xSchedulerRunning.19_14 = xSchedulerRunning;
+  if (xSchedulerRunning.19_14 != 0)
+    goto <bb 17>; [INV]
+  else
+    goto <bb 22>; [INV]
+
+  <bb 17> :
+  # DEBUG BEGIN_STMT
+  pxCurrentTCB.20_15 = pxCurrentTCB;
+  if (pxTCB == pxCurrentTCB.20_15)
+    goto <bb 18>; [INV]
+  else
+    goto <bb 22>; [INV]
+
+  <bb 18> :
+  # DEBUG BEGIN_STMT
+  uxSchedulerSuspended.21_16 = uxSchedulerSuspended;
+  if (uxSchedulerSuspended.21_16 != 0)
+    goto <bb 19>; [INV]
+  else
+    goto <bb 21>; [INV]
+
+  <bb 19> :
+  # DEBUG BEGIN_STMT
+  __asm__ __volatile__(" cpsid i " :  :  : "memory");
+
+  <bb 20> :
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  goto <bb 20>; [INV]
+
+  <bb 21> :
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  _17 = 3758157060B;
+  *_17 = 268435456;
+  # DEBUG BEGIN_STMT
+  __asm__ __volatile__("dsb" :  :  : "memory");
+  # DEBUG BEGIN_STMT
+  __asm__ __volatile__("isb");
+  # DEBUG BEGIN_STMT
+
+  <bb 22> :
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  return;
+
+}
+
+
+prvSnprintfReturnValueToCharsWritten (int iSnprintfReturnValue, size_t n)
+{
+  size_t uxCharsWritten;
+  size_t D.8368;
+
+  <bb 2> :
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  if (iSnprintfReturnValue < 0)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 4>; [INV]
+
+  <bb 3> :
+  # DEBUG BEGIN_STMT
+  uxCharsWritten = 0;
+  goto <bb 7>; [INV]
+
+  <bb 4> :
+  # DEBUG BEGIN_STMT
+  n.138_1 = (int) n;
+  if (iSnprintfReturnValue >= n.138_1)
+    goto <bb 5>; [INV]
+  else
+    goto <bb 6>; [INV]
+
+  <bb 5> :
+  # DEBUG BEGIN_STMT
+  uxCharsWritten = n + 4294967295;
+  goto <bb 7>; [INV]
+
+  <bb 6> :
+  # DEBUG BEGIN_STMT
+  uxCharsWritten = (size_t) iSnprintfReturnValue;
+
+  <bb 7> :
+  # DEBUG BEGIN_STMT
+  D.8368 = uxCharsWritten;
+  return D.8368;
+
+}
+
+
+prvAddNewTaskToReadyList (struct TCB_t * pxNewTCB)
+{
+  struct ListItem_t * const pxIndex;
+
+  <bb 2> :
+  # DEBUG BEGIN_STMT
+  vPortEnterCritical ();
+  # DEBUG BEGIN_STMT
+  uxCurrentNumberOfTasks.2_1 = uxCurrentNumberOfTasks;
+  _2 = uxCurrentNumberOfTasks.2_1 + 1;
+  uxCurrentNumberOfTasks = _2;
+  # DEBUG BEGIN_STMT
+  pxCurrentTCB.3_3 = pxCurrentTCB;
+  if (pxCurrentTCB.3_3 == 0B)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 5>; [INV]
+
+  <bb 3> :
+  # DEBUG BEGIN_STMT
+  pxCurrentTCB = pxNewTCB;
+  # DEBUG BEGIN_STMT
+  uxCurrentNumberOfTasks.4_4 = uxCurrentNumberOfTasks;
+  if (uxCurrentNumberOfTasks.4_4 == 1)
+    goto <bb 4>; [INV]
+  else
+    goto <bb 8>; [INV]
+
+  <bb 4> :
+  # DEBUG BEGIN_STMT
+  prvInitialiseTaskLists ();
+  goto <bb 8>; [INV]
+
+  <bb 5> :
+  # DEBUG BEGIN_STMT
+  xSchedulerRunning.5_5 = xSchedulerRunning;
+  if (xSchedulerRunning.5_5 == 0)
+    goto <bb 6>; [INV]
+  else
+    goto <bb 8>; [INV]
+
+  <bb 6> :
+  # DEBUG BEGIN_STMT
+  pxCurrentTCB.6_6 = pxCurrentTCB;
+  _7 = pxCurrentTCB.6_6->uxPriority;
+  _8 = pxNewTCB->uxPriority;
+  if (_7 <= _8)
+    goto <bb 7>; [INV]
+  else
+    goto <bb 8>; [INV]
+
+  <bb 7> :
+  # DEBUG BEGIN_STMT
+  pxCurrentTCB = pxNewTCB;
+
+  <bb 8> :
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  uxTaskNumber.7_9 = uxTaskNumber;
+  _10 = uxTaskNumber.7_9 + 1;
+  uxTaskNumber = _10;
+  # DEBUG BEGIN_STMT
+  uxTaskNumber.8_11 = uxTaskNumber;
+  pxNewTCB->uxTCBNumber = uxTaskNumber.8_11;
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  _12 = pxNewTCB->uxPriority;
+  uxTopReadyPriority.9_13 = uxTopReadyPriority;
+  if (_12 > uxTopReadyPriority.9_13)
+    goto <bb 9>; [INV]
+  else
+    goto <bb 10>; [INV]
+
+  <bb 9> :
+  # DEBUG BEGIN_STMT
+  _14 = pxNewTCB->uxPriority;
+  uxTopReadyPriority = _14;
+
+  <bb 10> :
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  _15 = pxNewTCB->uxPriority;
+  pxIndex = pxReadyTasksLists[_15].pxIndex;
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  pxNewTCB->xStateListItem.pxNext = pxIndex;
+  # DEBUG BEGIN_STMT
+  _16 = pxIndex->pxPrevious;
+  pxNewTCB->xStateListItem.pxPrevious = _16;
+  # DEBUG BEGIN_STMT
+  _17 = pxIndex->pxPrevious;
+  _18 = &pxNewTCB->xStateListItem;
+  _17->pxNext = _18;
+  # DEBUG BEGIN_STMT
+  _19 = &pxNewTCB->xStateListItem;
+  pxIndex->pxPrevious = _19;
+  # DEBUG BEGIN_STMT
+  _20 = pxNewTCB->uxPriority;
+  _21 = &pxReadyTasksLists[_20];
+  pxNewTCB->xStateListItem.pvContainer = _21;
+  # DEBUG BEGIN_STMT
+  _22 = pxNewTCB->uxPriority;
+  _23 = pxReadyTasksLists[_22].uxNumberOfItems;
+  _24 = pxNewTCB->uxPriority;
+  _25 = _23 + 1;
+  pxReadyTasksLists[_24].uxNumberOfItems = _25;
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  vPortExitCritical ();
+  # DEBUG BEGIN_STMT
+  xSchedulerRunning.10_26 = xSchedulerRunning;
+  if (xSchedulerRunning.10_26 != 0)
+    goto <bb 11>; [INV]
+  else
+    goto <bb 13>; [INV]
+
+  <bb 11> :
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  pxCurrentTCB.11_27 = pxCurrentTCB;
+  _28 = pxCurrentTCB.11_27->uxPriority;
+  _29 = pxNewTCB->uxPriority;
+  if (_28 < _29)
+    goto <bb 12>; [INV]
+  else
+    goto <bb 13>; [INV]
+
+  <bb 12> :
+  # DEBUG BEGIN_STMT
+  _30 = 3758157060B;
+  *_30 = 268435456;
+  # DEBUG BEGIN_STMT
+  __asm__ __volatile__("dsb" :  :  : "memory");
+  # DEBUG BEGIN_STMT
+  __asm__ __volatile__("isb");
+  # DEBUG BEGIN_STMT
+
+  <bb 13> :
+  # DEBUG BEGIN_STMT
+  return;
+
+}
+
+
+prvInitialiseNewTask (void (*TaskFunction_t) (void *) pxTaskCode, const char * const pcName, const StackType_t uxStackDepth, void * const pvParameters, UBaseType_t uxPriority, struct tskTaskControlBlock * * const pxCreatedTask, struct TCB_t * pxNewTCB, const struct MemoryRegion_t * const xRegions)
+{
+  UBaseType_t x;
+  StackType_t * pxTopOfStack;
+
+  <bb 2> :
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  _1 = pxNewTCB->pxStack;
+  _2 = uxStackDepth * 4;
+  memset (_1, 165, _2);
+  # DEBUG BEGIN_STMT
+  _3 = pxNewTCB->pxStack;
+  _4 = uxStackDepth + 1073741823;
+  _5 = _4 * 4;
+  pxTopOfStack = _3 + _5;
+  # DEBUG BEGIN_STMT
+  pxTopOfStack.0_6 = (long unsigned int) pxTopOfStack;
+  _7 = pxTopOfStack.0_6 & 4294967288;
+  pxTopOfStack = (StackType_t *) _7;
+  # DEBUG BEGIN_STMT
+  pxTopOfStack.1_8 = (long unsigned int) pxTopOfStack;
+  _9 = pxTopOfStack.1_8 & 7;
+  if (_9 != 0)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 5>; [INV]
+
+  <bb 3> :
+  # DEBUG BEGIN_STMT
+  __asm__ __volatile__(" cpsid i " :  :  : "memory");
+
+  <bb 4> :
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  goto <bb 4>; [INV]
+
+  <bb 5> :
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  if (pcName != 0B)
+    goto <bb 6>; [INV]
+  else
+    goto <bb 11>; [INV]
+
+  <bb 6> :
+  # DEBUG BEGIN_STMT
+  x = 0;
+  goto <bb 9>; [INV]
+
+  <bb 7> :
+  # DEBUG BEGIN_STMT
+  _10 = pcName + x;
+  _11 = *_10;
+  pxNewTCB->pcTaskName[x] = _11;
+  # DEBUG BEGIN_STMT
+  _12 = pcName + x;
+  _13 = *_12;
+  if (_13 == 0)
+    goto <bb 10>; [INV]
+  else
+    goto <bb 8>; [INV]
+
+  <bb 8> :
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  x = x + 1;
+
+  <bb 9> :
+  # DEBUG BEGIN_STMT
+  if (x <= 9)
+    goto <bb 7>; [INV]
+  else
+    goto <bb 10>; [INV]
+
+  <bb 10> :
+  # DEBUG BEGIN_STMT
+  pxNewTCB->pcTaskName[9] = 0;
+
+  <bb 11> :
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  if (uxPriority > 9)
+    goto <bb 12>; [INV]
+  else
+    goto <bb 14>; [INV]
+
+  <bb 12> :
+  # DEBUG BEGIN_STMT
+  __asm__ __volatile__(" cpsid i " :  :  : "memory");
+
+  <bb 13> :
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  goto <bb 13>; [INV]
+
+  <bb 14> :
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  if (uxPriority > 9)
+    goto <bb 15>; [INV]
+  else
+    goto <bb 16>; [INV]
+
+  <bb 15> :
+  # DEBUG BEGIN_STMT
+  uxPriority = 9;
+
+  <bb 16> :
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  pxNewTCB->uxPriority = uxPriority;
+  # DEBUG BEGIN_STMT
+  pxNewTCB->uxBasePriority = uxPriority;
+  # DEBUG BEGIN_STMT
+  _14 = &pxNewTCB->xStateListItem;
+  vListInitialiseItem (_14);
+  # DEBUG BEGIN_STMT
+  _15 = &pxNewTCB->xEventListItem;
+  vListInitialiseItem (_15);
+  # DEBUG BEGIN_STMT
+  pxNewTCB->xStateListItem.pvOwner = pxNewTCB;
+  # DEBUG BEGIN_STMT
+  _16 = 10 - uxPriority;
+  pxNewTCB->xEventListItem.xItemValue = _16;
+  # DEBUG BEGIN_STMT
+  pxNewTCB->xEventListItem.pvOwner = pxNewTCB;
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  _17 = pxPortInitialiseStack (pxTopOfStack, pxTaskCode, pvParameters);
+  pxNewTCB->pxTopOfStack = _17;
+  # DEBUG BEGIN_STMT
+  if (pxCreatedTask != 0B)
+    goto <bb 17>; [INV]
+  else
+    goto <bb 18>; [INV]
+
+  <bb 17> :
+  # DEBUG BEGIN_STMT
+  *pxCreatedTask = pxNewTCB;
+
+  <bb 18> :
+  # DEBUG BEGIN_STMT
+  return;
+
+}
+
+
+xTaskCreate (void (*TaskFunction_t) (void *) pxTaskCode, const char * const pcName, const StackType_t uxStackDepth, void * const pvParameters, UBaseType_t uxPriority, struct tskTaskControlBlock * * const pxCreatedTask)
+{
+  BaseType_t xReturn;
+  struct TCB_t * pxNewTCB;
+  BaseType_t D.7723;
+
+  <bb 2> :
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  pxNewTCB = prvCreateTask (pxTaskCode, pcName, uxStackDepth, pvParameters, uxPriority, pxCreatedTask);
+  # DEBUG BEGIN_STMT
+  if (pxNewTCB != 0B)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 4>; [INV]
+
+  <bb 3> :
+  # DEBUG BEGIN_STMT
+  prvAddNewTaskToReadyList (pxNewTCB);
+  # DEBUG BEGIN_STMT
+  xReturn = 1;
+  goto <bb 5>; [INV]
+
+  <bb 4> :
+  # DEBUG BEGIN_STMT
+  xReturn = -1;
+
+  <bb 5> :
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  D.7723 = xReturn;
+  return D.7723;
+
+}
+
+
+prvCreateTask (void (*TaskFunction_t) (void *) pxTaskCode, const char * const pcName, const StackType_t uxStackDepth, void * const pvParameters, UBaseType_t uxPriority, struct tskTaskControlBlock * * const pxCreatedTask)
+{
+  StackType_t * pxStack;
+  struct TCB_t * pxNewTCB;
+  struct TCB_t * D.7733;
+
+  <bb 2> :
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  _1 = uxStackDepth * 4;
+  pxStack = pvPortMalloc (_1);
+  # DEBUG BEGIN_STMT
+  if (pxStack != 0B)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 6>; [INV]
+
+  <bb 3> :
+  # DEBUG BEGIN_STMT
+  pxNewTCB = pvPortMalloc (88);
+  # DEBUG BEGIN_STMT
+  if (pxNewTCB != 0B)
+    goto <bb 4>; [INV]
+  else
+    goto <bb 5>; [INV]
+
+  <bb 4> :
+  # DEBUG BEGIN_STMT
+  memset (pxNewTCB, 0, 88);
+  # DEBUG BEGIN_STMT
+  pxNewTCB->pxStack = pxStack;
+  goto <bb 7>; [INV]
+
+  <bb 5> :
+  # DEBUG BEGIN_STMT
+  vPortFree (pxStack);
+  goto <bb 7>; [INV]
+
+  <bb 6> :
+  # DEBUG BEGIN_STMT
+  pxNewTCB = 0B;
+
+  <bb 7> :
+  # DEBUG BEGIN_STMT
+  if (pxNewTCB != 0B)
+    goto <bb 8>; [INV]
+  else
+    goto <bb 9>; [INV]
+
+  <bb 8> :
+  # DEBUG BEGIN_STMT
+  prvInitialiseNewTask (pxTaskCode, pcName, uxStackDepth, pvParameters, uxPriority, pxCreatedTask, pxNewTCB, 0B);
+
+  <bb 9> :
+  # DEBUG BEGIN_STMT
+  D.7733 = pxNewTCB;
+  return D.7733;
+
+}
+
+
+__attribute__((always_inline))
+vPortSetBASEPRI (uint32_t ulNewMaskValue)
+{
+  <bb 2> :
+  # DEBUG BEGIN_STMT
+  __asm__ __volatile__("   msr basepri, %0 " :  : "r" ulNewMaskValue : "memory");
+  return;
+
+}
+
+
+__attribute__((always_inline))
+ulPortRaiseBASEPRI ()
+{
+  uint32_t ulNewBASEPRI;
+  uint32_t ulOriginalBASEPRI;
+  uint32_t D.7883;
+
+  <bb 2> :
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  __asm__ __volatile__("   mrs %0, basepri                                         
+   mov %1, %2                                              
+   cpsid i                                                 
+   msr basepri, %1                                         
+   isb                                                     
+   dsb                                                     
+   cpsie i                                                 
+" : "=r" ulOriginalBASEPRI, "=r" ulNewBASEPRI : "i" 16 : "memory");
+  # DEBUG BEGIN_STMT
+  D.7883 = ulOriginalBASEPRI;
+  return D.7883;
+
+}
+
+
+__attribute__((always_inline))
+vPortRaiseBASEPRI ()
+{
+  uint32_t ulNewBASEPRI;
+
+  <bb 2> :
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  __asm__ __volatile__("   mov %0, %1                                              
+   cpsid i                                                 
+   msr basepri, %0                                         
+   isb                                                     
+   dsb                                                     
+   cpsie i                                                 
+" : "=r" ulNewBASEPRI : "i" 16 : "memory");
+  return;
+
+}
+
+

@@ -1,0 +1,370 @@
+Histogram:
+
+========== IPA-profile speculative targets: ==========
+
+Summary for node main/32:
+
+Summary for node PIT0_Handler/31:
+
+Summary for node timerDisable/30:
+
+Summary for node timerSetUp/29:
+
+Summary for node task2/28:
+
+Summary for node task1/27:
+
+Summary for node task0/26:
+
+Summary for node vApplicationMallocFailedHook/22:
+
+Summary for node vApplicationStackOverflowHook/21:
+
+Summary for node vAssertCalled/20:
+
+Summary for node vApplicationTickHook/19:
+
+
+main ()
+{
+  long unsigned int _1;
+  long unsigned int _2;
+  struct QueueDefinition * _3;
+  struct QueueDefinition * _4;
+  struct QueueDefinition * _5;
+  long int _6;
+  struct tskTaskControlBlock * _7;
+  long int _8;
+  struct tskTaskControlBlock * _9;
+  long int _10;
+  struct tskTaskControlBlock * _11;
+
+  <bb 2> [local count: 10631108]:
+  # DEBUG BEGIN_STMT
+  _1 ={v} MEM[(volatile uint32_t *)3758157076B];
+  _2 = _1 | 2;
+  MEM[(volatile uint32_t *)3758157076B] ={v} _2;
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  _3 = xQueueGenericCreate (1, 0, 3);
+  xSemaphore0 = _3;
+  # DEBUG BEGIN_STMT
+  _4 = xQueueGenericCreate (1, 0, 3);
+  xSemaphore1 = _4;
+  # DEBUG BEGIN_STMT
+  _5 = xQueueGenericCreate (1, 0, 3);
+  xSemaphore2 = _5;
+  # DEBUG BEGIN_STMT
+  _6 = xTaskCreate (task0, "task0", 90, 0B, 4, 0B);
+  _7 = (struct tskTaskControlBlock *) _6;
+  taskH0 = _7;
+  # DEBUG BEGIN_STMT
+  _8 = xTaskCreate (task1, "task1", 90, 1B, 3, 0B);
+  _9 = (struct tskTaskControlBlock *) _8;
+  taskH1 = _9;
+  # DEBUG BEGIN_STMT
+  _10 = xTaskCreate (task2, "task2", 90, 2B, 2, 0B);
+  _11 = (struct tskTaskControlBlock *) _10;
+  taskH2 = _11;
+  # DEBUG BEGIN_STMT
+  vTaskStartScheduler ();
+
+  <bb 3> [local count: 1073741824]:
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+
+  <bb 4> [local count: 1073741824]:
+  goto <bb 3>; [100.00%]
+
+}
+
+
+PIT0_Handler ()
+{
+  long unsigned int counter.9_1;
+  long unsigned int _2;
+
+  <bb 2> [local count: 1073741824]:
+  # DEBUG BEGIN_STMT
+  # DEBUG xHigherPriorityTaskWoken => 0
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  # DEBUG baseAddr => 1074462720
+  # DEBUG BEGIN_STMT
+  MEM[(volatile uint32_t *)1074463004B] ={v} 1;
+  # DEBUG BEGIN_STMT
+  counter.9_1 ={v} counter;
+  _2 = counter.9_1 + 1;
+  counter ={v} _2;
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  return;
+
+}
+
+
+timerDisable ()
+{
+  long unsigned int _1;
+  long unsigned int _2;
+
+  <bb 2> [local count: 1073741824]:
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  # DEBUG baseAddr => 1074462720
+  # DEBUG BEGIN_STMT
+  _1 ={v} MEM[(volatile uint32_t *)1074462720B];
+  _2 = _1 | 2;
+  MEM[(volatile uint32_t *)1074462720B] ={v} _2;
+  return;
+
+}
+
+
+timerSetUp ()
+{
+  long unsigned int _1;
+  long unsigned int _2;
+  long unsigned int _3;
+  long unsigned int _4;
+  long unsigned int _5;
+  long unsigned int _6;
+  long unsigned int _7;
+  long unsigned int _8;
+  long unsigned int _9;
+  long unsigned int _10;
+
+  <bb 2> [local count: 1073741824]:
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  # DEBUG baseAddr => 1074462720
+  # DEBUG BEGIN_STMT
+  _1 ={v} MEM[(volatile uint32_t *)1074462720B];
+  _2 = _1 | 2;
+  MEM[(volatile uint32_t *)1074462720B] ={v} _2;
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  # DEBUG baseAddr => 1074462720
+  # DEBUG BEGIN_STMT
+  _3 ={v} MEM[(volatile uint32_t *)1074463000B];
+  _4 = _3 & 4294967294;
+  MEM[(volatile uint32_t *)1074463000B] ={v} _4;
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  # DEBUG baseAddr => 1074462720
+  # DEBUG BEGIN_STMT
+  MEM[(volatile uint32_t *)1074462992B] ={v} 155072;
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  # DEBUG baseAddr => 1074462720
+  # DEBUG BEGIN_STMT
+  _5 ={v} MEM[(volatile uint32_t *)1074463000B];
+  _6 = _5 | 2;
+  MEM[(volatile uint32_t *)1074463000B] ={v} _6;
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  # DEBUG baseAddr => 1074462720
+  # DEBUG BEGIN_STMT
+  MEM[(volatile uint32_t *)1074462720B] ={v} 1;
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  # DEBUG baseAddr => 1074462720
+  # DEBUG BEGIN_STMT
+  _7 ={v} MEM[(volatile uint32_t *)1074463000B];
+  _8 = _7 | 1;
+  MEM[(volatile uint32_t *)1074463000B] ={v} _8;
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  # DEBUG baseAddr => 1074462720
+  # DEBUG BEGIN_STMT
+  _9 ={v} MEM[(volatile uint32_t *)1074462720B];
+  _10 = _9 & 4294967293;
+  MEM[(volatile uint32_t *)1074462720B] ={v} _10;
+  # DEBUG BEGIN_STMT
+  vInitInterruptTable (96, PIT0_Handler);
+  # DEBUG BEGIN_STMT
+  MEM[(volatile uint32_t *)3758153996B] ={v} 1;
+  # DEBUG BEGIN_STMT
+  MEM[(volatile uint8_t *)3758154848B] ={v} 192;
+  # DEBUG BEGIN_STMT
+  return;
+
+}
+
+
+task2 (void * p2)
+{
+  struct QueueDefinition * xSemaphore2.6_1;
+  long int _2;
+  long unsigned int task2_count.7_3;
+  long unsigned int _4;
+  struct QueueDefinition * xSemaphore1.8_5;
+
+  <bb 2> [local count: 10631108]:
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  timerSetUp ();
+
+  <bb 3> [local count: 1073741824]:
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  xSemaphore2.6_1 = xSemaphore2;
+  _2 = xQueueSemaphoreTake (xSemaphore2.6_1, 4294967295);
+  if (_2 == 1)
+    goto <bb 4>; [51.12%]
+  else
+    goto <bb 5>; [48.88%]
+
+  <bb 4> [local count: 548896825]:
+  # DEBUG BEGIN_STMT
+  task2_count.7_3 ={v} task2_count;
+  _4 = task2_count.7_3 + 1;
+  task2_count ={v} _4;
+
+  <bb 5> [local count: 1073741824]:
+  # DEBUG BEGIN_STMT
+  xSemaphore1.8_5 = xSemaphore1;
+  xQueueGenericSend (xSemaphore1.8_5, 0B, 0, 0);
+  # DEBUG BEGIN_STMT
+  goto <bb 3>; [100.00%]
+
+}
+
+
+task1 (void * p2)
+{
+  struct QueueDefinition * xSemaphore1.3_1;
+  long int _2;
+  long unsigned int task1_count.4_3;
+  long unsigned int _4;
+  struct QueueDefinition * xSemaphore0.5_5;
+
+  <bb 2> [local count: 10631108]:
+
+  <bb 3> [local count: 1073741824]:
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  xSemaphore1.3_1 = xSemaphore1;
+  _2 = xQueueSemaphoreTake (xSemaphore1.3_1, 4294967295);
+  if (_2 == 1)
+    goto <bb 4>; [51.12%]
+  else
+    goto <bb 5>; [48.88%]
+
+  <bb 4> [local count: 548896825]:
+  # DEBUG BEGIN_STMT
+  task1_count.4_3 ={v} task1_count;
+  _4 = task1_count.4_3 + 1;
+  task1_count ={v} _4;
+
+  <bb 5> [local count: 1073741824]:
+  # DEBUG BEGIN_STMT
+  xSemaphore0.5_5 = xSemaphore0;
+  xQueueGenericSend (xSemaphore0.5_5, 0B, 0, 0);
+  # DEBUG BEGIN_STMT
+  goto <bb 3>; [100.00%]
+
+}
+
+
+task0 (void * p1)
+{
+  struct QueueDefinition * xSemaphore0.1_1;
+  long int _2;
+  long unsigned int task0_count.2_3;
+  long unsigned int _4;
+
+  <bb 2> [local count: 3614577]:
+
+  <bb 3> [local count: 365072224]:
+
+  <bb 4> [local count: 1073741824]:
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  xSemaphore0.1_1 = xSemaphore0;
+  _2 = xQueueSemaphoreTake (xSemaphore0.1_1, 4294967295);
+  if (_2 == 1)
+    goto <bb 5>; [34.00%]
+  else
+    goto <bb 6>; [66.00%]
+
+  <bb 6> [local count: 708669601]:
+  goto <bb 4>; [100.00%]
+
+  <bb 5> [local count: 365072224]:
+  # DEBUG BEGIN_STMT
+  task0_count.2_3 ={v} task0_count;
+  _4 = task0_count.2_3 + 1;
+  task0_count ={v} _4;
+  goto <bb 3>; [100.00%]
+
+}
+
+
+vApplicationMallocFailedHook ()
+{
+  <bb 2> [local count: 1073741824]:
+  # DEBUG BEGIN_STMT
+  return;
+
+}
+
+
+vApplicationStackOverflowHook (struct tskTaskControlBlock * pxTask, char * pcTaskName)
+{
+  <bb 2> [local count: 1073741824]:
+  # DEBUG BEGIN_STMT
+  return;
+
+}
+
+
+vAssertCalled (uint32_t ulLine, const char * pcFile)
+{
+  <bb 2> [local count: 1073741824]:
+  # DEBUG BEGIN_STMT
+  return;
+
+}
+
+
+vApplicationTickHook ()
+{
+  long unsigned int ui32_ms_cnt.0_1;
+  long unsigned int _2;
+
+  <bb 2> [local count: 1073741824]:
+  # DEBUG BEGIN_STMT
+  ui32_ms_cnt.0_1 ={v} ui32_ms_cnt;
+  _2 = ui32_ms_cnt.0_1 + 1;
+  ui32_ms_cnt ={v} _2;
+  return;
+
+}
+
+

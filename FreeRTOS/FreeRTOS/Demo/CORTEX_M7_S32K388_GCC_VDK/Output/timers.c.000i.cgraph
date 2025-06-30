@@ -1,0 +1,2988 @@
+Trivially needed symbols: vTimerResetState/39 vTimerSetTimerNumber/38 uxTimerGetTimerNumber/37 xTimerPendFunctionCall/36 xTimerPendFunctionCallFromISR/35 vTimerSetTimerID/34 pvTimerGetTimerID/33 xTimerIsTimerActive/32 pcTimerGetName/21 xTimerGetExpiryTime/20 uxTimerGetReloadMode/19 xTimerGetReloadMode/18 vTimerSetReloadMode/17 xTimerGetPeriod/16 xTimerGetTimerDaemonTaskHandle/15 xTimerGenericCommandFromISR/14 xTimerGenericCommandFromTask/13 xTimerCreate/11 xTimerCreateTimerTask/10
+
+
+Initial Symbol table:
+
+xQueueGenericSendFromISR/59 (xQueueGenericSendFromISR) @06a2ad20
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags: optimize_size
+  Called by: xTimerPendFunctionCallFromISR/35 xTimerGenericCommandFromISR/14 
+  Calls: 
+xQueueGenericSend/58 (xQueueGenericSend) @06a2ab60
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags: optimize_size
+  Called by: xTimerPendFunctionCall/36 xTimerGenericCommandFromTask/13 xTimerGenericCommandFromTask/13 
+  Calls: 
+xTaskGetSchedulerState/57 (xTaskGetSchedulerState) @06a2aa80
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags: optimize_size
+  Called by: xTimerGenericCommandFromTask/13 
+  Calls: 
+vListInitialiseItem/56 (vListInitialiseItem) @06a2a8c0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags: optimize_size
+  Called by: prvInitialiseNewTimer/12 
+  Calls: 
+pvPortMalloc/55 (pvPortMalloc) @06a2a700
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags: optimize_size
+  Called by: xTimerCreate/11 
+  Calls: 
+vPortExitCritical/54 (vPortExitCritical) @06a2a540
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags: optimize_size
+  Called by: vTimerSetTimerID/34 pvTimerGetTimerID/33 xTimerIsTimerActive/32 xTimerGetReloadMode/18 vTimerSetReloadMode/17 prvCheckForValidListAndQueue/31 
+  Calls: 
+vQueueAddToRegistry/53 (vQueueAddToRegistry) @06a2a460
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags: optimize_size
+  Called by: prvCheckForValidListAndQueue/31 
+  Calls: 
+xQueueGenericCreate/52 (xQueueGenericCreate) @06a2a380
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags: optimize_size
+  Called by: prvCheckForValidListAndQueue/31 
+  Calls: 
+vListInitialise/51 (vListInitialise) @06a2a1c0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags: optimize_size
+  Called by: prvCheckForValidListAndQueue/31 prvCheckForValidListAndQueue/31 
+  Calls: 
+vPortEnterCritical/50 (vPortEnterCritical) @06a2a0e0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags: optimize_size
+  Called by: vTimerSetTimerID/34 pvTimerGetTimerID/33 xTimerIsTimerActive/32 xTimerGetReloadMode/18 vTimerSetReloadMode/17 prvCheckForValidListAndQueue/31 
+  Calls: 
+xQueueReceive/49 (xQueueReceive) @06a07ee0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags: optimize_size
+  Called by: prvProcessReceivedCommands/29 
+  Calls: 
+vPortFree/48 (vPortFree) @06a07e00
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags: optimize_size
+  Called by: prvProcessReceivedCommands/29 
+  Calls: 
+vListInsert/47 (vListInsert) @06a07a80
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags: optimize_size
+  Called by: prvInsertTimerInActiveList/28 prvInsertTimerInActiveList/28 
+  Calls: 
+uxListRemove/46 (uxListRemove) @06a077e0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags: optimize_size
+  Called by: prvProcessReceivedCommands/29 prvProcessExpiredTimer/23 
+  Calls: 
+xLastTime/45 (xLastTime) @06a1a708
+  Type: variable definition analyzed
+  Visibility:
+  Aux: @069ea0e0
+  References: 
+  Referring: prvSampleTimeNow/27 (read) prvSampleTimeNow/27 (write) 
+  Availability: not-ready
+  Varpool flags: initialized
+xTaskGetTickCount/44 (xTaskGetTickCount) @06a07460
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags: optimize_size
+  Called by: prvSampleTimeNow/27 
+  Calls: 
+vQueueWaitForMessageRestricted/43 (vQueueWaitForMessageRestricted) @06a072a0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags: optimize_size
+  Called by: prvProcessTimerOrBlockTask/25 
+  Calls: 
+xTaskResumeAll/42 (xTaskResumeAll) @06a071c0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags: optimize_size
+  Called by: prvProcessTimerOrBlockTask/25 prvProcessTimerOrBlockTask/25 prvProcessTimerOrBlockTask/25 
+  Calls: 
+vTaskSuspendAll/41 (vTaskSuspendAll) @06a070e0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags: optimize_size
+  Called by: prvProcessTimerOrBlockTask/25 
+  Calls: 
+xTaskCreate/40 (xTaskCreate) @06a00540
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags: optimize_size
+  Called by: xTimerCreateTimerTask/10 
+  Calls: 
+vTimerResetState/39 (vTimerResetState) @06a00c40
+  Type: function definition analyzed
+  Visibility: public
+  Aux: @01981040
+  References: xTimerQueue/8 (write) xTimerTaskHandle/9 (write) 
+  Referring: 
+  Function flags: body optimize_size
+  Called by: 
+  Calls: 
+vTimerSetTimerNumber/38 (vTimerSetTimerNumber) @06a009a0
+  Type: function definition analyzed
+  Visibility: public
+  Aux: @06a00c40
+  References: 
+  Referring: 
+  Function flags: body optimize_size
+  Called by: 
+  Calls: 
+uxTimerGetTimerNumber/37 (uxTimerGetTimerNumber) @06a00700
+  Type: function definition analyzed
+  Visibility: public
+  Aux: @06a009a0
+  References: 
+  Referring: 
+  Function flags: body optimize_size
+  Called by: 
+  Calls: 
+xTimerPendFunctionCall/36 (xTimerPendFunctionCall) @06a00460
+  Type: function definition analyzed
+  Visibility: public
+  Aux: @06a00700
+  References: xTimerQueue/8 (read) xTimerQueue/8 (read) 
+  Referring: 
+  Function flags: body optimize_size
+  Called by: 
+  Calls: xQueueGenericSend/58 
+xTimerPendFunctionCallFromISR/35 (xTimerPendFunctionCallFromISR) @06a00000
+  Type: function definition analyzed
+  Visibility: public
+  Aux: @06a00460
+  References: xTimerQueue/8 (read) 
+  Referring: 
+  Function flags: body optimize_size
+  Called by: 
+  Calls: xQueueGenericSendFromISR/59 
+vTimerSetTimerID/34 (vTimerSetTimerID) @069f67e0
+  Type: function definition analyzed
+  Visibility: public
+  Aux: @06a00000
+  References: 
+  Referring: 
+  Function flags: body optimize_size
+  Called by: 
+  Calls: vPortExitCritical/54 vPortEnterCritical/50 
+pvTimerGetTimerID/33 (pvTimerGetTimerID) @069f6e00
+  Type: function definition analyzed
+  Visibility: public
+  Aux: @069f67e0
+  References: 
+  Referring: 
+  Function flags: body optimize_size
+  Called by: 
+  Calls: vPortExitCritical/54 vPortEnterCritical/50 
+xTimerIsTimerActive/32 (xTimerIsTimerActive) @069f6a80
+  Type: function definition analyzed
+  Visibility: public
+  Aux: @069f6e00
+  References: 
+  Referring: 
+  Function flags: body optimize_size
+  Called by: 
+  Calls: vPortExitCritical/54 vPortEnterCritical/50 
+prvCheckForValidListAndQueue/31 (prvCheckForValidListAndQueue) @069f6700
+  Type: function definition analyzed
+  Visibility:
+  Aux: @069bd380
+  References: xTimerQueue/8 (read) xActiveTimerList1/4 (addr) xActiveTimerList2/5 (addr) pxCurrentTimerList/6 (write) xActiveTimerList1/4 (addr) pxOverflowTimerList/7 (write) xActiveTimerList2/5 (addr) xTimerQueue/8 (write) xTimerQueue/8 (read) xTimerQueue/8 (read) 
+  Referring: 
+  Function flags: body optimize_size
+  Called by: prvInitialiseNewTimer/12 xTimerCreateTimerTask/10 
+  Calls: vPortExitCritical/54 vQueueAddToRegistry/53 xQueueGenericCreate/52 vListInitialise/51 vListInitialise/51 vPortEnterCritical/50 
+prvSwitchTimerLists/30 (prvSwitchTimerLists) @069f6460
+  Type: function definition analyzed
+  Visibility:
+  Aux: @06a1a708
+  References: pxCurrentTimerList/6 (read) pxCurrentTimerList/6 (read) pxCurrentTimerList/6 (read) pxOverflowTimerList/7 (read) pxCurrentTimerList/6 (write) pxOverflowTimerList/7 (write) 
+  Referring: 
+  Function flags: body optimize_size
+  Called by: prvSampleTimeNow/27 
+  Calls: prvProcessExpiredTimer/23 
+prvProcessReceivedCommands/29 (prvProcessReceivedCommands) @069f60e0
+  Type: function definition analyzed
+  Visibility:
+  Aux: @069b2ca8
+  References: xTimerQueue/8 (read) 
+  Referring: 
+  Function flags: body optimize_size
+  Called by: prvTimerTask/24 
+  Calls: xQueueReceive/49 vPortFree/48 prvInsertTimerInActiveList/28 prvReloadTimer/22 prvInsertTimerInActiveList/28 prvSampleTimeNow/27 uxListRemove/46 
+   Indirect call Num speculative call targets: 0
+   Indirect call Num speculative call targets: 0
+prvInsertTimerInActiveList/28 (prvInsertTimerInActiveList) @069eac40
+  Type: function definition analyzed
+  Visibility:
+  Aux: @069f60e0
+  References: pxOverflowTimerList/7 (read) pxCurrentTimerList/6 (read) 
+  Referring: 
+  Function flags: body optimize_size
+  Called by: prvProcessReceivedCommands/29 prvProcessReceivedCommands/29 prvReloadTimer/22 
+  Calls: vListInsert/47 vListInsert/47 
+prvSampleTimeNow/27 (prvSampleTimeNow) @069eae00
+  Type: function definition analyzed
+  Visibility:
+  Aux: @069ea0e0
+  References: xLastTime/45 (read) xLastTime/45 (write) 
+  Referring: 
+  Function flags: body optimize_size
+  Called by: prvProcessReceivedCommands/29 prvProcessTimerOrBlockTask/25 
+  Calls: prvSwitchTimerLists/30 xTaskGetTickCount/44 
+prvGetNextExpireTime/26 (prvGetNextExpireTime) @069eab60
+  Type: function definition analyzed
+  Visibility:
+  Aux: @069ea7e0
+  References: pxCurrentTimerList/6 (read) pxCurrentTimerList/6 (read) 
+  Referring: 
+  Function flags: body optimize_size
+  Called by: prvTimerTask/24 
+  Calls: 
+prvProcessTimerOrBlockTask/25 (prvProcessTimerOrBlockTask) @069ea7e0
+  Type: function definition analyzed
+  Visibility:
+  Aux: @069f60e0
+  References: pxOverflowTimerList/7 (read) xTimerQueue/8 (read) 
+  Referring: 
+  Function flags: body optimize_size
+  Called by: prvTimerTask/24 
+  Calls: xTaskResumeAll/42 xTaskResumeAll/42 vQueueWaitForMessageRestricted/43 prvProcessExpiredTimer/23 xTaskResumeAll/42 prvSampleTimeNow/27 vTaskSuspendAll/41 
+prvTimerTask/24 (prvTimerTask) @069ea380
+  Type: function definition analyzed
+  Visibility:
+  Address is taken.
+  Aux: @069b2ca8
+  References: 
+  Referring: xTimerCreateTimerTask/10 (addr) 
+  Function flags: body optimize_size
+  Called by: 
+  Calls: prvProcessReceivedCommands/29 prvProcessTimerOrBlockTask/25 prvGetNextExpireTime/26 
+prvProcessExpiredTimer/23 (prvProcessExpiredTimer) @069ea0e0
+  Type: function definition analyzed
+  Visibility:
+  Aux: @069f60e0
+  References: pxCurrentTimerList/6 (read) 
+  Referring: 
+  Function flags: body optimize_size
+  Called by: prvSwitchTimerLists/30 prvProcessTimerOrBlockTask/25 
+  Calls: prvReloadTimer/22 uxListRemove/46 
+   Indirect call Num speculative call targets: 0
+prvReloadTimer/22 (prvReloadTimer) @069aaa80
+  Type: function definition analyzed
+  Visibility:
+  Aux: @069f60e0
+  References: 
+  Referring: 
+  Function flags: body optimize_size
+  Called by: prvProcessReceivedCommands/29 prvProcessExpiredTimer/23 
+  Calls: prvInsertTimerInActiveList/28 
+   Indirect call Num speculative call targets: 0
+pcTimerGetName/21 (pcTimerGetName) @069aa460
+  Type: function definition analyzed
+  Visibility: public
+  Aux: @069f6a80
+  References: 
+  Referring: 
+  Function flags: body optimize_size
+  Called by: 
+  Calls: 
+xTimerGetExpiryTime/20 (xTimerGetExpiryTime) @069aad20
+  Type: function definition analyzed
+  Visibility: public
+  Aux: @069aa460
+  References: 
+  Referring: 
+  Function flags: body optimize_size
+  Called by: 
+  Calls: 
+uxTimerGetReloadMode/19 (uxTimerGetReloadMode) @069aa9a0
+  Type: function definition analyzed
+  Visibility: public
+  Aux: @069aad20
+  References: 
+  Referring: 
+  Function flags: body optimize_size
+  Called by: 
+  Calls: xTimerGetReloadMode/18 
+xTimerGetReloadMode/18 (xTimerGetReloadMode) @069aa700
+  Type: function definition analyzed
+  Visibility: public
+  Aux: @069aa9a0
+  References: 
+  Referring: 
+  Function flags: body optimize_size
+  Called by: uxTimerGetReloadMode/19 
+  Calls: vPortExitCritical/54 vPortEnterCritical/50 
+vTimerSetReloadMode/17 (vTimerSetReloadMode) @069aa380
+  Type: function definition analyzed
+  Visibility: public
+  Aux: @069aa700
+  References: 
+  Referring: 
+  Function flags: body optimize_size
+  Called by: 
+  Calls: vPortExitCritical/54 vPortEnterCritical/50 
+xTimerGetPeriod/16 (xTimerGetPeriod) @069aa000
+  Type: function definition analyzed
+  Visibility: public
+  Aux: @069aa380
+  References: 
+  Referring: 
+  Function flags: body optimize_size
+  Called by: 
+  Calls: 
+xTimerGetTimerDaemonTaskHandle/15 (xTimerGetTimerDaemonTaskHandle) @069bd460
+  Type: function definition analyzed
+  Visibility: public
+  Aux: @069aa000
+  References: xTimerTaskHandle/9 (read) xTimerTaskHandle/9 (read) 
+  Referring: 
+  Function flags: body optimize_size
+  Called by: 
+  Calls: 
+xTimerGenericCommandFromISR/14 (xTimerGenericCommandFromISR) @069bdee0
+  Type: function definition analyzed
+  Visibility: public
+  Aux: @069bd460
+  References: xTimerQueue/8 (read) xTimerQueue/8 (read) 
+  Referring: 
+  Function flags: body optimize_size
+  Called by: 
+  Calls: xQueueGenericSendFromISR/59 
+xTimerGenericCommandFromTask/13 (xTimerGenericCommandFromTask) @069bda80
+  Type: function definition analyzed
+  Visibility: public
+  Aux: @069bdee0
+  References: xTimerQueue/8 (read) xTimerQueue/8 (read) xTimerQueue/8 (read) 
+  Referring: 
+  Function flags: body optimize_size
+  Called by: 
+  Calls: xQueueGenericSend/58 xQueueGenericSend/58 xTaskGetSchedulerState/57 
+prvInitialiseNewTimer/12 (prvInitialiseNewTimer) @069bd620
+  Type: function definition analyzed
+  Visibility:
+  Aux: @069bda80
+  References: 
+  Referring: 
+  Function flags: body optimize_size
+  Called by: xTimerCreate/11 
+  Calls: vListInitialiseItem/56 prvCheckForValidListAndQueue/31 
+xTimerCreate/11 (xTimerCreate) @069bd380
+  Type: function definition analyzed
+  Visibility: public
+  Aux: @069bda80
+  References: 
+  Referring: 
+  Function flags: body optimize_size
+  Called by: 
+  Calls: prvInitialiseNewTimer/12 pvPortMalloc/55 
+xTimerCreateTimerTask/10 (xTimerCreateTimerTask) @069bd0e0
+  Type: function definition analyzed
+  Visibility: public
+  Aux: @069bd380
+  References: xTimerQueue/8 (read) prvTimerTask/24 (addr) xTimerTaskHandle/9 (addr) 
+  Referring: 
+  Function flags: body optimize_size
+  Called by: 
+  Calls: xTaskCreate/40 prvCheckForValidListAndQueue/31 
+xTimerTaskHandle/9 (xTimerTaskHandle) @069b2cf0
+  Type: variable definition analyzed
+  Visibility:
+  Aux: @069ea380
+  References: 
+  Referring: xTimerCreateTimerTask/10 (addr) xTimerGetTimerDaemonTaskHandle/15 (read) xTimerGetTimerDaemonTaskHandle/15 (read) vTimerResetState/39 (write) 
+  Availability: not-ready
+  Varpool flags: initialized
+xTimerQueue/8 (xTimerQueue) @069b2ca8
+  Type: variable definition analyzed
+  Visibility:
+  Aux: @069f6700
+  References: 
+  Referring: xTimerCreateTimerTask/10 (read) prvProcessTimerOrBlockTask/25 (read) prvProcessReceivedCommands/29 (read) prvCheckForValidListAndQueue/31 (read) prvCheckForValidListAndQueue/31 (write) prvCheckForValidListAndQueue/31 (read) prvCheckForValidListAndQueue/31 (read) xTimerGenericCommandFromTask/13 (read) xTimerGenericCommandFromTask/13 (read) xTimerGenericCommandFromTask/13 (read) xTimerGenericCommandFromISR/14 (read) xTimerGenericCommandFromISR/14 (read) xTimerPendFunctionCallFromISR/35 (read) xTimerPendFunctionCall/36 (read) xTimerPendFunctionCall/36 (read) vTimerResetState/39 (write) 
+  Availability: not-ready
+  Varpool flags: initialized
+pxOverflowTimerList/7 (pxOverflowTimerList) @069b2c18
+  Type: variable definition analyzed
+  Visibility:
+  Aux: @069eae00
+  References: 
+  Referring: prvProcessTimerOrBlockTask/25 (read) prvSwitchTimerLists/30 (read) prvSwitchTimerLists/30 (write) prvInsertTimerInActiveList/28 (read) prvCheckForValidListAndQueue/31 (write) 
+  Availability: not-ready
+  Varpool flags:
+pxCurrentTimerList/6 (pxCurrentTimerList) @069b2b88
+  Type: variable definition analyzed
+  Visibility:
+  Aux: @069ea7e0
+  References: 
+  Referring: prvGetNextExpireTime/26 (read) prvGetNextExpireTime/26 (read) prvSwitchTimerLists/30 (read) prvSwitchTimerLists/30 (read) prvSwitchTimerLists/30 (read) prvSwitchTimerLists/30 (write) prvProcessExpiredTimer/23 (read) prvInsertTimerInActiveList/28 (read) prvCheckForValidListAndQueue/31 (write) 
+  Availability: not-ready
+  Varpool flags:
+xActiveTimerList2/5 (xActiveTimerList2) @069b2af8
+  Type: variable definition analyzed
+  Visibility:
+  Aux: @069b2a68
+  References: 
+  Referring: prvCheckForValidListAndQueue/31 (addr) prvCheckForValidListAndQueue/31 (addr) 
+  Availability: not-ready
+  Varpool flags:
+xActiveTimerList1/4 (xActiveTimerList1) @069b2a68
+  Type: variable definition analyzed
+  Visibility:
+  Aux: @069bd380
+  References: 
+  Referring: prvCheckForValidListAndQueue/31 (addr) prvCheckForValidListAndQueue/31 (addr) 
+  Availability: not-ready
+  Varpool flags:
+vPortSetBASEPRI/3 (vPortSetBASEPRI) @06910b60
+  Type: function definition
+  Visibility:
+  References: 
+  Referring: 
+  Function flags: optimize_size
+  Called by: 
+  Calls: 
+ulPortRaiseBASEPRI/2 (ulPortRaiseBASEPRI) @069108c0
+  Type: function definition
+  Visibility:
+  References: 
+  Referring: 
+  Function flags: optimize_size
+  Called by: 
+  Calls: 
+vPortRaiseBASEPRI/1 (vPortRaiseBASEPRI) @06910620
+  Type: function definition
+  Visibility:
+  References: 
+  Referring: 
+  Function flags: optimize_size
+  Called by: 
+  Calls: 
+xPortIsInsideInterrupt/0 (xPortIsInsideInterrupt) @06910380
+  Type: function definition
+  Visibility:
+  References: 
+  Referring: 
+  Function flags: optimize_size
+  Called by: 
+  Calls: 
+
+Removing unused symbols: vPortSetBASEPRI/3 ulPortRaiseBASEPRI/2 vPortRaiseBASEPRI/1 xPortIsInsideInterrupt/0
+
+Reclaimed Symbol table:
+
+xQueueGenericSendFromISR/59 (xQueueGenericSendFromISR) @06a2ad20
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags: optimize_size
+  Called by: xTimerPendFunctionCallFromISR/35 xTimerGenericCommandFromISR/14 
+  Calls: 
+xQueueGenericSend/58 (xQueueGenericSend) @06a2ab60
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags: optimize_size
+  Called by: xTimerPendFunctionCall/36 xTimerGenericCommandFromTask/13 xTimerGenericCommandFromTask/13 
+  Calls: 
+xTaskGetSchedulerState/57 (xTaskGetSchedulerState) @06a2aa80
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags: optimize_size
+  Called by: xTimerGenericCommandFromTask/13 
+  Calls: 
+vListInitialiseItem/56 (vListInitialiseItem) @06a2a8c0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags: optimize_size
+  Called by: prvInitialiseNewTimer/12 
+  Calls: 
+pvPortMalloc/55 (pvPortMalloc) @06a2a700
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags: optimize_size
+  Called by: xTimerCreate/11 
+  Calls: 
+vPortExitCritical/54 (vPortExitCritical) @06a2a540
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags: optimize_size
+  Called by: vTimerSetTimerID/34 pvTimerGetTimerID/33 xTimerIsTimerActive/32 xTimerGetReloadMode/18 vTimerSetReloadMode/17 prvCheckForValidListAndQueue/31 
+  Calls: 
+vQueueAddToRegistry/53 (vQueueAddToRegistry) @06a2a460
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags: optimize_size
+  Called by: prvCheckForValidListAndQueue/31 
+  Calls: 
+xQueueGenericCreate/52 (xQueueGenericCreate) @06a2a380
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags: optimize_size
+  Called by: prvCheckForValidListAndQueue/31 
+  Calls: 
+vListInitialise/51 (vListInitialise) @06a2a1c0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags: optimize_size
+  Called by: prvCheckForValidListAndQueue/31 prvCheckForValidListAndQueue/31 
+  Calls: 
+vPortEnterCritical/50 (vPortEnterCritical) @06a2a0e0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags: optimize_size
+  Called by: vTimerSetTimerID/34 pvTimerGetTimerID/33 xTimerIsTimerActive/32 xTimerGetReloadMode/18 vTimerSetReloadMode/17 prvCheckForValidListAndQueue/31 
+  Calls: 
+xQueueReceive/49 (xQueueReceive) @06a07ee0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags: optimize_size
+  Called by: prvProcessReceivedCommands/29 
+  Calls: 
+vPortFree/48 (vPortFree) @06a07e00
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags: optimize_size
+  Called by: prvProcessReceivedCommands/29 
+  Calls: 
+vListInsert/47 (vListInsert) @06a07a80
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags: optimize_size
+  Called by: prvInsertTimerInActiveList/28 prvInsertTimerInActiveList/28 
+  Calls: 
+uxListRemove/46 (uxListRemove) @06a077e0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags: optimize_size
+  Called by: prvProcessReceivedCommands/29 prvProcessExpiredTimer/23 
+  Calls: 
+xLastTime/45 (xLastTime) @06a1a708
+  Type: variable definition analyzed
+  Visibility:
+  References: 
+  Referring: prvSampleTimeNow/27 (read) prvSampleTimeNow/27 (write) 
+  Availability: not-ready
+  Varpool flags: initialized
+xTaskGetTickCount/44 (xTaskGetTickCount) @06a07460
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags: optimize_size
+  Called by: prvSampleTimeNow/27 
+  Calls: 
+vQueueWaitForMessageRestricted/43 (vQueueWaitForMessageRestricted) @06a072a0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags: optimize_size
+  Called by: prvProcessTimerOrBlockTask/25 
+  Calls: 
+xTaskResumeAll/42 (xTaskResumeAll) @06a071c0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags: optimize_size
+  Called by: prvProcessTimerOrBlockTask/25 prvProcessTimerOrBlockTask/25 prvProcessTimerOrBlockTask/25 
+  Calls: 
+vTaskSuspendAll/41 (vTaskSuspendAll) @06a070e0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags: optimize_size
+  Called by: prvProcessTimerOrBlockTask/25 
+  Calls: 
+xTaskCreate/40 (xTaskCreate) @06a00540
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags: optimize_size
+  Called by: xTimerCreateTimerTask/10 
+  Calls: 
+vTimerResetState/39 (vTimerResetState) @06a00c40
+  Type: function definition analyzed
+  Visibility: public
+  References: xTimerQueue/8 (write) xTimerTaskHandle/9 (write) 
+  Referring: 
+  Function flags: body optimize_size
+  Called by: 
+  Calls: 
+vTimerSetTimerNumber/38 (vTimerSetTimerNumber) @06a009a0
+  Type: function definition analyzed
+  Visibility: public
+  References: 
+  Referring: 
+  Function flags: body optimize_size
+  Called by: 
+  Calls: 
+uxTimerGetTimerNumber/37 (uxTimerGetTimerNumber) @06a00700
+  Type: function definition analyzed
+  Visibility: public
+  References: 
+  Referring: 
+  Function flags: body optimize_size
+  Called by: 
+  Calls: 
+xTimerPendFunctionCall/36 (xTimerPendFunctionCall) @06a00460
+  Type: function definition analyzed
+  Visibility: public
+  References: xTimerQueue/8 (read) xTimerQueue/8 (read) 
+  Referring: 
+  Function flags: body optimize_size
+  Called by: 
+  Calls: xQueueGenericSend/58 
+xTimerPendFunctionCallFromISR/35 (xTimerPendFunctionCallFromISR) @06a00000
+  Type: function definition analyzed
+  Visibility: public
+  References: xTimerQueue/8 (read) 
+  Referring: 
+  Function flags: body optimize_size
+  Called by: 
+  Calls: xQueueGenericSendFromISR/59 
+vTimerSetTimerID/34 (vTimerSetTimerID) @069f67e0
+  Type: function definition analyzed
+  Visibility: public
+  References: 
+  Referring: 
+  Function flags: body optimize_size
+  Called by: 
+  Calls: vPortExitCritical/54 vPortEnterCritical/50 
+pvTimerGetTimerID/33 (pvTimerGetTimerID) @069f6e00
+  Type: function definition analyzed
+  Visibility: public
+  References: 
+  Referring: 
+  Function flags: body optimize_size
+  Called by: 
+  Calls: vPortExitCritical/54 vPortEnterCritical/50 
+xTimerIsTimerActive/32 (xTimerIsTimerActive) @069f6a80
+  Type: function definition analyzed
+  Visibility: public
+  References: 
+  Referring: 
+  Function flags: body optimize_size
+  Called by: 
+  Calls: vPortExitCritical/54 vPortEnterCritical/50 
+prvCheckForValidListAndQueue/31 (prvCheckForValidListAndQueue) @069f6700
+  Type: function definition analyzed
+  Visibility:
+  References: xTimerQueue/8 (read) xActiveTimerList1/4 (addr) xActiveTimerList2/5 (addr) pxCurrentTimerList/6 (write) xActiveTimerList1/4 (addr) pxOverflowTimerList/7 (write) xActiveTimerList2/5 (addr) xTimerQueue/8 (write) xTimerQueue/8 (read) xTimerQueue/8 (read) 
+  Referring: 
+  Function flags: body optimize_size
+  Called by: prvInitialiseNewTimer/12 xTimerCreateTimerTask/10 
+  Calls: vPortExitCritical/54 vQueueAddToRegistry/53 xQueueGenericCreate/52 vListInitialise/51 vListInitialise/51 vPortEnterCritical/50 
+prvSwitchTimerLists/30 (prvSwitchTimerLists) @069f6460
+  Type: function definition analyzed
+  Visibility:
+  References: pxCurrentTimerList/6 (read) pxCurrentTimerList/6 (read) pxCurrentTimerList/6 (read) pxOverflowTimerList/7 (read) pxCurrentTimerList/6 (write) pxOverflowTimerList/7 (write) 
+  Referring: 
+  Function flags: body optimize_size
+  Called by: prvSampleTimeNow/27 
+  Calls: prvProcessExpiredTimer/23 
+prvProcessReceivedCommands/29 (prvProcessReceivedCommands) @069f60e0
+  Type: function definition analyzed
+  Visibility:
+  References: xTimerQueue/8 (read) 
+  Referring: 
+  Function flags: body optimize_size
+  Called by: prvTimerTask/24 
+  Calls: xQueueReceive/49 vPortFree/48 prvInsertTimerInActiveList/28 prvReloadTimer/22 prvInsertTimerInActiveList/28 prvSampleTimeNow/27 uxListRemove/46 
+   Indirect call Num speculative call targets: 0
+   Indirect call Num speculative call targets: 0
+prvInsertTimerInActiveList/28 (prvInsertTimerInActiveList) @069eac40
+  Type: function definition analyzed
+  Visibility:
+  References: pxOverflowTimerList/7 (read) pxCurrentTimerList/6 (read) 
+  Referring: 
+  Function flags: body optimize_size
+  Called by: prvProcessReceivedCommands/29 prvProcessReceivedCommands/29 prvReloadTimer/22 
+  Calls: vListInsert/47 vListInsert/47 
+prvSampleTimeNow/27 (prvSampleTimeNow) @069eae00
+  Type: function definition analyzed
+  Visibility:
+  References: xLastTime/45 (read) xLastTime/45 (write) 
+  Referring: 
+  Function flags: body optimize_size
+  Called by: prvProcessReceivedCommands/29 prvProcessTimerOrBlockTask/25 
+  Calls: prvSwitchTimerLists/30 xTaskGetTickCount/44 
+prvGetNextExpireTime/26 (prvGetNextExpireTime) @069eab60
+  Type: function definition analyzed
+  Visibility:
+  References: pxCurrentTimerList/6 (read) pxCurrentTimerList/6 (read) 
+  Referring: 
+  Function flags: body optimize_size
+  Called by: prvTimerTask/24 
+  Calls: 
+prvProcessTimerOrBlockTask/25 (prvProcessTimerOrBlockTask) @069ea7e0
+  Type: function definition analyzed
+  Visibility:
+  References: pxOverflowTimerList/7 (read) xTimerQueue/8 (read) 
+  Referring: 
+  Function flags: body optimize_size
+  Called by: prvTimerTask/24 
+  Calls: xTaskResumeAll/42 xTaskResumeAll/42 vQueueWaitForMessageRestricted/43 prvProcessExpiredTimer/23 xTaskResumeAll/42 prvSampleTimeNow/27 vTaskSuspendAll/41 
+prvTimerTask/24 (prvTimerTask) @069ea380
+  Type: function definition analyzed
+  Visibility:
+  Address is taken.
+  References: 
+  Referring: xTimerCreateTimerTask/10 (addr) 
+  Function flags: body optimize_size
+  Called by: 
+  Calls: prvProcessReceivedCommands/29 prvProcessTimerOrBlockTask/25 prvGetNextExpireTime/26 
+prvProcessExpiredTimer/23 (prvProcessExpiredTimer) @069ea0e0
+  Type: function definition analyzed
+  Visibility:
+  References: pxCurrentTimerList/6 (read) 
+  Referring: 
+  Function flags: body optimize_size
+  Called by: prvSwitchTimerLists/30 prvProcessTimerOrBlockTask/25 
+  Calls: prvReloadTimer/22 uxListRemove/46 
+   Indirect call Num speculative call targets: 0
+prvReloadTimer/22 (prvReloadTimer) @069aaa80
+  Type: function definition analyzed
+  Visibility:
+  References: 
+  Referring: 
+  Function flags: body optimize_size
+  Called by: prvProcessReceivedCommands/29 prvProcessExpiredTimer/23 
+  Calls: prvInsertTimerInActiveList/28 
+   Indirect call Num speculative call targets: 0
+pcTimerGetName/21 (pcTimerGetName) @069aa460
+  Type: function definition analyzed
+  Visibility: public
+  References: 
+  Referring: 
+  Function flags: body optimize_size
+  Called by: 
+  Calls: 
+xTimerGetExpiryTime/20 (xTimerGetExpiryTime) @069aad20
+  Type: function definition analyzed
+  Visibility: public
+  References: 
+  Referring: 
+  Function flags: body optimize_size
+  Called by: 
+  Calls: 
+uxTimerGetReloadMode/19 (uxTimerGetReloadMode) @069aa9a0
+  Type: function definition analyzed
+  Visibility: public
+  References: 
+  Referring: 
+  Function flags: body optimize_size
+  Called by: 
+  Calls: xTimerGetReloadMode/18 
+xTimerGetReloadMode/18 (xTimerGetReloadMode) @069aa700
+  Type: function definition analyzed
+  Visibility: public
+  References: 
+  Referring: 
+  Function flags: body optimize_size
+  Called by: uxTimerGetReloadMode/19 
+  Calls: vPortExitCritical/54 vPortEnterCritical/50 
+vTimerSetReloadMode/17 (vTimerSetReloadMode) @069aa380
+  Type: function definition analyzed
+  Visibility: public
+  References: 
+  Referring: 
+  Function flags: body optimize_size
+  Called by: 
+  Calls: vPortExitCritical/54 vPortEnterCritical/50 
+xTimerGetPeriod/16 (xTimerGetPeriod) @069aa000
+  Type: function definition analyzed
+  Visibility: public
+  References: 
+  Referring: 
+  Function flags: body optimize_size
+  Called by: 
+  Calls: 
+xTimerGetTimerDaemonTaskHandle/15 (xTimerGetTimerDaemonTaskHandle) @069bd460
+  Type: function definition analyzed
+  Visibility: public
+  References: xTimerTaskHandle/9 (read) xTimerTaskHandle/9 (read) 
+  Referring: 
+  Function flags: body optimize_size
+  Called by: 
+  Calls: 
+xTimerGenericCommandFromISR/14 (xTimerGenericCommandFromISR) @069bdee0
+  Type: function definition analyzed
+  Visibility: public
+  References: xTimerQueue/8 (read) xTimerQueue/8 (read) 
+  Referring: 
+  Function flags: body optimize_size
+  Called by: 
+  Calls: xQueueGenericSendFromISR/59 
+xTimerGenericCommandFromTask/13 (xTimerGenericCommandFromTask) @069bda80
+  Type: function definition analyzed
+  Visibility: public
+  References: xTimerQueue/8 (read) xTimerQueue/8 (read) xTimerQueue/8 (read) 
+  Referring: 
+  Function flags: body optimize_size
+  Called by: 
+  Calls: xQueueGenericSend/58 xQueueGenericSend/58 xTaskGetSchedulerState/57 
+prvInitialiseNewTimer/12 (prvInitialiseNewTimer) @069bd620
+  Type: function definition analyzed
+  Visibility:
+  References: 
+  Referring: 
+  Function flags: body optimize_size
+  Called by: xTimerCreate/11 
+  Calls: vListInitialiseItem/56 prvCheckForValidListAndQueue/31 
+xTimerCreate/11 (xTimerCreate) @069bd380
+  Type: function definition analyzed
+  Visibility: public
+  References: 
+  Referring: 
+  Function flags: body optimize_size
+  Called by: 
+  Calls: prvInitialiseNewTimer/12 pvPortMalloc/55 
+xTimerCreateTimerTask/10 (xTimerCreateTimerTask) @069bd0e0
+  Type: function definition analyzed
+  Visibility: public
+  References: xTimerQueue/8 (read) prvTimerTask/24 (addr) xTimerTaskHandle/9 (addr) 
+  Referring: 
+  Function flags: body optimize_size
+  Called by: 
+  Calls: xTaskCreate/40 prvCheckForValidListAndQueue/31 
+xTimerTaskHandle/9 (xTimerTaskHandle) @069b2cf0
+  Type: variable definition analyzed
+  Visibility:
+  References: 
+  Referring: xTimerCreateTimerTask/10 (addr) xTimerGetTimerDaemonTaskHandle/15 (read) xTimerGetTimerDaemonTaskHandle/15 (read) vTimerResetState/39 (write) 
+  Availability: not-ready
+  Varpool flags: initialized
+xTimerQueue/8 (xTimerQueue) @069b2ca8
+  Type: variable definition analyzed
+  Visibility:
+  References: 
+  Referring: xTimerCreateTimerTask/10 (read) prvProcessTimerOrBlockTask/25 (read) prvProcessReceivedCommands/29 (read) prvCheckForValidListAndQueue/31 (read) prvCheckForValidListAndQueue/31 (write) prvCheckForValidListAndQueue/31 (read) prvCheckForValidListAndQueue/31 (read) xTimerGenericCommandFromTask/13 (read) xTimerGenericCommandFromTask/13 (read) xTimerGenericCommandFromTask/13 (read) xTimerGenericCommandFromISR/14 (read) xTimerGenericCommandFromISR/14 (read) xTimerPendFunctionCallFromISR/35 (read) xTimerPendFunctionCall/36 (read) xTimerPendFunctionCall/36 (read) vTimerResetState/39 (write) 
+  Availability: not-ready
+  Varpool flags: initialized
+pxOverflowTimerList/7 (pxOverflowTimerList) @069b2c18
+  Type: variable definition analyzed
+  Visibility:
+  References: 
+  Referring: prvProcessTimerOrBlockTask/25 (read) prvSwitchTimerLists/30 (read) prvSwitchTimerLists/30 (write) prvInsertTimerInActiveList/28 (read) prvCheckForValidListAndQueue/31 (write) 
+  Availability: not-ready
+  Varpool flags:
+pxCurrentTimerList/6 (pxCurrentTimerList) @069b2b88
+  Type: variable definition analyzed
+  Visibility:
+  References: 
+  Referring: prvGetNextExpireTime/26 (read) prvGetNextExpireTime/26 (read) prvSwitchTimerLists/30 (read) prvSwitchTimerLists/30 (read) prvSwitchTimerLists/30 (read) prvSwitchTimerLists/30 (write) prvProcessExpiredTimer/23 (read) prvInsertTimerInActiveList/28 (read) prvCheckForValidListAndQueue/31 (write) 
+  Availability: not-ready
+  Varpool flags:
+xActiveTimerList2/5 (xActiveTimerList2) @069b2af8
+  Type: variable definition analyzed
+  Visibility:
+  References: 
+  Referring: prvCheckForValidListAndQueue/31 (addr) prvCheckForValidListAndQueue/31 (addr) 
+  Availability: not-ready
+  Varpool flags:
+xActiveTimerList1/4 (xActiveTimerList1) @069b2a68
+  Type: variable definition analyzed
+  Visibility:
+  References: 
+  Referring: prvCheckForValidListAndQueue/31 (addr) prvCheckForValidListAndQueue/31 (addr) 
+  Availability: not-ready
+  Varpool flags:
+
+
+Initial Symbol table:
+
+xQueueGenericSendFromISR/59 (xQueueGenericSendFromISR) @06a2ad20
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags: optimize_size
+  Called by: xTimerPendFunctionCallFromISR/35 xTimerGenericCommandFromISR/14 
+  Calls: 
+xQueueGenericSend/58 (xQueueGenericSend) @06a2ab60
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags: optimize_size
+  Called by: xTimerPendFunctionCall/36 xTimerGenericCommandFromTask/13 xTimerGenericCommandFromTask/13 
+  Calls: 
+xTaskGetSchedulerState/57 (xTaskGetSchedulerState) @06a2aa80
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags: optimize_size
+  Called by: xTimerGenericCommandFromTask/13 
+  Calls: 
+vListInitialiseItem/56 (vListInitialiseItem) @06a2a8c0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags: optimize_size
+  Called by: prvInitialiseNewTimer/12 
+  Calls: 
+pvPortMalloc/55 (pvPortMalloc) @06a2a700
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags: optimize_size
+  Called by: xTimerCreate/11 
+  Calls: 
+vPortExitCritical/54 (vPortExitCritical) @06a2a540
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags: optimize_size
+  Called by: vTimerSetTimerID/34 pvTimerGetTimerID/33 xTimerIsTimerActive/32 xTimerGetReloadMode/18 vTimerSetReloadMode/17 prvCheckForValidListAndQueue/31 
+  Calls: 
+vQueueAddToRegistry/53 (vQueueAddToRegistry) @06a2a460
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags: optimize_size
+  Called by: prvCheckForValidListAndQueue/31 
+  Calls: 
+xQueueGenericCreate/52 (xQueueGenericCreate) @06a2a380
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags: optimize_size
+  Called by: prvCheckForValidListAndQueue/31 
+  Calls: 
+vListInitialise/51 (vListInitialise) @06a2a1c0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags: optimize_size
+  Called by: prvCheckForValidListAndQueue/31 prvCheckForValidListAndQueue/31 
+  Calls: 
+vPortEnterCritical/50 (vPortEnterCritical) @06a2a0e0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags: optimize_size
+  Called by: vTimerSetTimerID/34 pvTimerGetTimerID/33 xTimerIsTimerActive/32 xTimerGetReloadMode/18 vTimerSetReloadMode/17 prvCheckForValidListAndQueue/31 
+  Calls: 
+xQueueReceive/49 (xQueueReceive) @06a07ee0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags: optimize_size
+  Called by: prvProcessReceivedCommands/29 
+  Calls: 
+vPortFree/48 (vPortFree) @06a07e00
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags: optimize_size
+  Called by: prvProcessReceivedCommands/29 
+  Calls: 
+vListInsert/47 (vListInsert) @06a07a80
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags: optimize_size
+  Called by: prvInsertTimerInActiveList/28 prvInsertTimerInActiveList/28 
+  Calls: 
+uxListRemove/46 (uxListRemove) @06a077e0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags: optimize_size
+  Called by: prvProcessReceivedCommands/29 prvProcessExpiredTimer/23 
+  Calls: 
+xLastTime.0/45 (xLastTime) @06a1a708
+  Type: variable definition analyzed
+  Visibility:
+  References: 
+  Referring: prvSampleTimeNow/27 (read) prvSampleTimeNow/27 (write) 
+  Availability: not-ready
+  Varpool flags: initialized
+xTaskGetTickCount/44 (xTaskGetTickCount) @06a07460
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags: optimize_size
+  Called by: prvSampleTimeNow/27 
+  Calls: 
+vQueueWaitForMessageRestricted/43 (vQueueWaitForMessageRestricted) @06a072a0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags: optimize_size
+  Called by: prvProcessTimerOrBlockTask/25 
+  Calls: 
+xTaskResumeAll/42 (xTaskResumeAll) @06a071c0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags: optimize_size
+  Called by: prvProcessTimerOrBlockTask/25 prvProcessTimerOrBlockTask/25 prvProcessTimerOrBlockTask/25 
+  Calls: 
+vTaskSuspendAll/41 (vTaskSuspendAll) @06a070e0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags: optimize_size
+  Called by: prvProcessTimerOrBlockTask/25 
+  Calls: 
+xTaskCreate/40 (xTaskCreate) @06a00540
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags: optimize_size
+  Called by: xTimerCreateTimerTask/10 
+  Calls: 
+vTimerResetState/39 (vTimerResetState) @06a00c40
+  Type: function definition analyzed
+  Visibility: public
+  References: xTimerQueue/8 (write) xTimerTaskHandle/9 (write) 
+  Referring: 
+  Function flags: body optimize_size
+  Called by: 
+  Calls: 
+vTimerSetTimerNumber/38 (vTimerSetTimerNumber) @06a009a0
+  Type: function definition analyzed
+  Visibility: public
+  References: 
+  Referring: 
+  Function flags: body optimize_size
+  Called by: 
+  Calls: 
+uxTimerGetTimerNumber/37 (uxTimerGetTimerNumber) @06a00700
+  Type: function definition analyzed
+  Visibility: public
+  References: 
+  Referring: 
+  Function flags: body optimize_size
+  Called by: 
+  Calls: 
+xTimerPendFunctionCall/36 (xTimerPendFunctionCall) @06a00460
+  Type: function definition analyzed
+  Visibility: public
+  References: xTimerQueue/8 (read) xTimerQueue/8 (read) 
+  Referring: 
+  Function flags: body optimize_size
+  Called by: 
+  Calls: xQueueGenericSend/58 
+xTimerPendFunctionCallFromISR/35 (xTimerPendFunctionCallFromISR) @06a00000
+  Type: function definition analyzed
+  Visibility: public
+  References: xTimerQueue/8 (read) 
+  Referring: 
+  Function flags: body optimize_size
+  Called by: 
+  Calls: xQueueGenericSendFromISR/59 
+vTimerSetTimerID/34 (vTimerSetTimerID) @069f67e0
+  Type: function definition analyzed
+  Visibility: public
+  References: 
+  Referring: 
+  Function flags: body optimize_size
+  Called by: 
+  Calls: vPortExitCritical/54 vPortEnterCritical/50 
+pvTimerGetTimerID/33 (pvTimerGetTimerID) @069f6e00
+  Type: function definition analyzed
+  Visibility: public
+  References: 
+  Referring: 
+  Function flags: body optimize_size
+  Called by: 
+  Calls: vPortExitCritical/54 vPortEnterCritical/50 
+xTimerIsTimerActive/32 (xTimerIsTimerActive) @069f6a80
+  Type: function definition analyzed
+  Visibility: public
+  References: 
+  Referring: 
+  Function flags: body optimize_size
+  Called by: 
+  Calls: vPortExitCritical/54 vPortEnterCritical/50 
+prvCheckForValidListAndQueue/31 (prvCheckForValidListAndQueue) @069f6700
+  Type: function definition analyzed
+  Visibility:
+  References: xTimerQueue/8 (read) xActiveTimerList1/4 (addr) xActiveTimerList2/5 (addr) pxCurrentTimerList/6 (write) xActiveTimerList1/4 (addr) pxOverflowTimerList/7 (write) xActiveTimerList2/5 (addr) xTimerQueue/8 (write) xTimerQueue/8 (read) xTimerQueue/8 (read) 
+  Referring: 
+  Function flags: body optimize_size
+  Called by: prvInitialiseNewTimer/12 xTimerCreateTimerTask/10 
+  Calls: vPortExitCritical/54 vQueueAddToRegistry/53 xQueueGenericCreate/52 vListInitialise/51 vListInitialise/51 vPortEnterCritical/50 
+prvSwitchTimerLists/30 (prvSwitchTimerLists) @069f6460
+  Type: function definition analyzed
+  Visibility:
+  References: pxCurrentTimerList/6 (read) pxCurrentTimerList/6 (read) pxCurrentTimerList/6 (read) pxOverflowTimerList/7 (read) pxCurrentTimerList/6 (write) pxOverflowTimerList/7 (write) 
+  Referring: 
+  Function flags: body optimize_size
+  Called by: prvSampleTimeNow/27 
+  Calls: prvProcessExpiredTimer/23 
+prvProcessReceivedCommands/29 (prvProcessReceivedCommands) @069f60e0
+  Type: function definition analyzed
+  Visibility:
+  References: xTimerQueue/8 (read) 
+  Referring: 
+  Function flags: body optimize_size
+  Called by: prvTimerTask/24 
+  Calls: xQueueReceive/49 vPortFree/48 prvInsertTimerInActiveList/28 prvReloadTimer/22 prvInsertTimerInActiveList/28 prvSampleTimeNow/27 uxListRemove/46 
+   Indirect call Num speculative call targets: 0
+   Indirect call Num speculative call targets: 0
+prvInsertTimerInActiveList/28 (prvInsertTimerInActiveList) @069eac40
+  Type: function definition analyzed
+  Visibility:
+  References: pxOverflowTimerList/7 (read) pxCurrentTimerList/6 (read) 
+  Referring: 
+  Function flags: body optimize_size
+  Called by: prvProcessReceivedCommands/29 prvProcessReceivedCommands/29 prvReloadTimer/22 
+  Calls: vListInsert/47 vListInsert/47 
+prvSampleTimeNow/27 (prvSampleTimeNow) @069eae00
+  Type: function definition analyzed
+  Visibility:
+  References: xLastTime.0/45 (read) xLastTime.0/45 (write) 
+  Referring: 
+  Function flags: body optimize_size
+  Called by: prvProcessReceivedCommands/29 prvProcessTimerOrBlockTask/25 
+  Calls: prvSwitchTimerLists/30 xTaskGetTickCount/44 
+prvGetNextExpireTime/26 (prvGetNextExpireTime) @069eab60
+  Type: function definition analyzed
+  Visibility:
+  References: pxCurrentTimerList/6 (read) pxCurrentTimerList/6 (read) 
+  Referring: 
+  Function flags: body optimize_size
+  Called by: prvTimerTask/24 
+  Calls: 
+prvProcessTimerOrBlockTask/25 (prvProcessTimerOrBlockTask) @069ea7e0
+  Type: function definition analyzed
+  Visibility:
+  References: pxOverflowTimerList/7 (read) xTimerQueue/8 (read) 
+  Referring: 
+  Function flags: body optimize_size
+  Called by: prvTimerTask/24 
+  Calls: xTaskResumeAll/42 xTaskResumeAll/42 vQueueWaitForMessageRestricted/43 prvProcessExpiredTimer/23 xTaskResumeAll/42 prvSampleTimeNow/27 vTaskSuspendAll/41 
+prvTimerTask/24 (prvTimerTask) @069ea380
+  Type: function definition analyzed
+  Visibility:
+  Address is taken.
+  References: 
+  Referring: xTimerCreateTimerTask/10 (addr) 
+  Function flags: body optimize_size
+  Called by: 
+  Calls: prvProcessReceivedCommands/29 prvProcessTimerOrBlockTask/25 prvGetNextExpireTime/26 
+prvProcessExpiredTimer/23 (prvProcessExpiredTimer) @069ea0e0
+  Type: function definition analyzed
+  Visibility:
+  References: pxCurrentTimerList/6 (read) 
+  Referring: 
+  Function flags: body optimize_size
+  Called by: prvSwitchTimerLists/30 prvProcessTimerOrBlockTask/25 
+  Calls: prvReloadTimer/22 uxListRemove/46 
+   Indirect call Num speculative call targets: 0
+prvReloadTimer/22 (prvReloadTimer) @069aaa80
+  Type: function definition analyzed
+  Visibility:
+  References: 
+  Referring: 
+  Function flags: body optimize_size
+  Called by: prvProcessReceivedCommands/29 prvProcessExpiredTimer/23 
+  Calls: prvInsertTimerInActiveList/28 
+   Indirect call Num speculative call targets: 0
+pcTimerGetName/21 (pcTimerGetName) @069aa460
+  Type: function definition analyzed
+  Visibility: public
+  References: 
+  Referring: 
+  Function flags: body optimize_size
+  Called by: 
+  Calls: 
+xTimerGetExpiryTime/20 (xTimerGetExpiryTime) @069aad20
+  Type: function definition analyzed
+  Visibility: public
+  References: 
+  Referring: 
+  Function flags: body optimize_size
+  Called by: 
+  Calls: 
+uxTimerGetReloadMode/19 (uxTimerGetReloadMode) @069aa9a0
+  Type: function definition analyzed
+  Visibility: public
+  References: 
+  Referring: 
+  Function flags: body optimize_size
+  Called by: 
+  Calls: xTimerGetReloadMode/18 
+xTimerGetReloadMode/18 (xTimerGetReloadMode) @069aa700
+  Type: function definition analyzed
+  Visibility: public
+  References: 
+  Referring: 
+  Function flags: body optimize_size
+  Called by: uxTimerGetReloadMode/19 
+  Calls: vPortExitCritical/54 vPortEnterCritical/50 
+vTimerSetReloadMode/17 (vTimerSetReloadMode) @069aa380
+  Type: function definition analyzed
+  Visibility: public
+  References: 
+  Referring: 
+  Function flags: body optimize_size
+  Called by: 
+  Calls: vPortExitCritical/54 vPortEnterCritical/50 
+xTimerGetPeriod/16 (xTimerGetPeriod) @069aa000
+  Type: function definition analyzed
+  Visibility: public
+  References: 
+  Referring: 
+  Function flags: body optimize_size
+  Called by: 
+  Calls: 
+xTimerGetTimerDaemonTaskHandle/15 (xTimerGetTimerDaemonTaskHandle) @069bd460
+  Type: function definition analyzed
+  Visibility: public
+  References: xTimerTaskHandle/9 (read) xTimerTaskHandle/9 (read) 
+  Referring: 
+  Function flags: body optimize_size
+  Called by: 
+  Calls: 
+xTimerGenericCommandFromISR/14 (xTimerGenericCommandFromISR) @069bdee0
+  Type: function definition analyzed
+  Visibility: public
+  References: xTimerQueue/8 (read) xTimerQueue/8 (read) 
+  Referring: 
+  Function flags: body optimize_size
+  Called by: 
+  Calls: xQueueGenericSendFromISR/59 
+xTimerGenericCommandFromTask/13 (xTimerGenericCommandFromTask) @069bda80
+  Type: function definition analyzed
+  Visibility: public
+  References: xTimerQueue/8 (read) xTimerQueue/8 (read) xTimerQueue/8 (read) 
+  Referring: 
+  Function flags: body optimize_size
+  Called by: 
+  Calls: xQueueGenericSend/58 xQueueGenericSend/58 xTaskGetSchedulerState/57 
+prvInitialiseNewTimer/12 (prvInitialiseNewTimer) @069bd620
+  Type: function definition analyzed
+  Visibility:
+  References: 
+  Referring: 
+  Function flags: body optimize_size
+  Called by: xTimerCreate/11 
+  Calls: vListInitialiseItem/56 prvCheckForValidListAndQueue/31 
+xTimerCreate/11 (xTimerCreate) @069bd380
+  Type: function definition analyzed
+  Visibility: public
+  References: 
+  Referring: 
+  Function flags: body optimize_size
+  Called by: 
+  Calls: prvInitialiseNewTimer/12 pvPortMalloc/55 
+xTimerCreateTimerTask/10 (xTimerCreateTimerTask) @069bd0e0
+  Type: function definition analyzed
+  Visibility: public
+  References: xTimerQueue/8 (read) prvTimerTask/24 (addr) xTimerTaskHandle/9 (addr) 
+  Referring: 
+  Function flags: body optimize_size
+  Called by: 
+  Calls: xTaskCreate/40 prvCheckForValidListAndQueue/31 
+xTimerTaskHandle/9 (xTimerTaskHandle) @069b2cf0
+  Type: variable definition analyzed
+  Visibility:
+  References: 
+  Referring: xTimerCreateTimerTask/10 (addr) xTimerGetTimerDaemonTaskHandle/15 (read) xTimerGetTimerDaemonTaskHandle/15 (read) vTimerResetState/39 (write) 
+  Availability: not-ready
+  Varpool flags: initialized
+xTimerQueue/8 (xTimerQueue) @069b2ca8
+  Type: variable definition analyzed
+  Visibility:
+  References: 
+  Referring: xTimerCreateTimerTask/10 (read) prvProcessTimerOrBlockTask/25 (read) prvProcessReceivedCommands/29 (read) prvCheckForValidListAndQueue/31 (read) prvCheckForValidListAndQueue/31 (write) prvCheckForValidListAndQueue/31 (read) prvCheckForValidListAndQueue/31 (read) xTimerGenericCommandFromTask/13 (read) xTimerGenericCommandFromTask/13 (read) xTimerGenericCommandFromTask/13 (read) xTimerGenericCommandFromISR/14 (read) xTimerGenericCommandFromISR/14 (read) xTimerPendFunctionCallFromISR/35 (read) xTimerPendFunctionCall/36 (read) xTimerPendFunctionCall/36 (read) vTimerResetState/39 (write) 
+  Availability: not-ready
+  Varpool flags: initialized
+pxOverflowTimerList/7 (pxOverflowTimerList) @069b2c18
+  Type: variable definition analyzed
+  Visibility:
+  References: 
+  Referring: prvProcessTimerOrBlockTask/25 (read) prvSwitchTimerLists/30 (read) prvSwitchTimerLists/30 (write) prvInsertTimerInActiveList/28 (read) prvCheckForValidListAndQueue/31 (write) 
+  Availability: not-ready
+  Varpool flags:
+pxCurrentTimerList/6 (pxCurrentTimerList) @069b2b88
+  Type: variable definition analyzed
+  Visibility:
+  References: 
+  Referring: prvGetNextExpireTime/26 (read) prvGetNextExpireTime/26 (read) prvSwitchTimerLists/30 (read) prvSwitchTimerLists/30 (read) prvSwitchTimerLists/30 (read) prvSwitchTimerLists/30 (write) prvProcessExpiredTimer/23 (read) prvInsertTimerInActiveList/28 (read) prvCheckForValidListAndQueue/31 (write) 
+  Availability: not-ready
+  Varpool flags:
+xActiveTimerList2/5 (xActiveTimerList2) @069b2af8
+  Type: variable definition analyzed
+  Visibility:
+  References: 
+  Referring: prvCheckForValidListAndQueue/31 (addr) prvCheckForValidListAndQueue/31 (addr) 
+  Availability: not-ready
+  Varpool flags:
+xActiveTimerList1/4 (xActiveTimerList1) @069b2a68
+  Type: variable definition analyzed
+  Visibility:
+  References: 
+  Referring: prvCheckForValidListAndQueue/31 (addr) prvCheckForValidListAndQueue/31 (addr) 
+  Availability: not-ready
+  Varpool flags:
+
+Removing unused symbols:
+
+Reclaimed Symbol table:
+
+xQueueGenericSendFromISR/59 (xQueueGenericSendFromISR) @06a2ad20
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags: optimize_size
+  Called by: xTimerPendFunctionCallFromISR/35 xTimerGenericCommandFromISR/14 
+  Calls: 
+xQueueGenericSend/58 (xQueueGenericSend) @06a2ab60
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags: optimize_size
+  Called by: xTimerPendFunctionCall/36 xTimerGenericCommandFromTask/13 xTimerGenericCommandFromTask/13 
+  Calls: 
+xTaskGetSchedulerState/57 (xTaskGetSchedulerState) @06a2aa80
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags: optimize_size
+  Called by: xTimerGenericCommandFromTask/13 
+  Calls: 
+vListInitialiseItem/56 (vListInitialiseItem) @06a2a8c0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags: optimize_size
+  Called by: prvInitialiseNewTimer/12 
+  Calls: 
+pvPortMalloc/55 (pvPortMalloc) @06a2a700
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags: optimize_size
+  Called by: xTimerCreate/11 
+  Calls: 
+vPortExitCritical/54 (vPortExitCritical) @06a2a540
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags: optimize_size
+  Called by: vTimerSetTimerID/34 pvTimerGetTimerID/33 xTimerIsTimerActive/32 xTimerGetReloadMode/18 vTimerSetReloadMode/17 prvCheckForValidListAndQueue/31 
+  Calls: 
+vQueueAddToRegistry/53 (vQueueAddToRegistry) @06a2a460
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags: optimize_size
+  Called by: prvCheckForValidListAndQueue/31 
+  Calls: 
+xQueueGenericCreate/52 (xQueueGenericCreate) @06a2a380
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags: optimize_size
+  Called by: prvCheckForValidListAndQueue/31 
+  Calls: 
+vListInitialise/51 (vListInitialise) @06a2a1c0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags: optimize_size
+  Called by: prvCheckForValidListAndQueue/31 prvCheckForValidListAndQueue/31 
+  Calls: 
+vPortEnterCritical/50 (vPortEnterCritical) @06a2a0e0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags: optimize_size
+  Called by: vTimerSetTimerID/34 pvTimerGetTimerID/33 xTimerIsTimerActive/32 xTimerGetReloadMode/18 vTimerSetReloadMode/17 prvCheckForValidListAndQueue/31 
+  Calls: 
+xQueueReceive/49 (xQueueReceive) @06a07ee0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags: optimize_size
+  Called by: prvProcessReceivedCommands/29 
+  Calls: 
+vPortFree/48 (vPortFree) @06a07e00
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags: optimize_size
+  Called by: prvProcessReceivedCommands/29 
+  Calls: 
+vListInsert/47 (vListInsert) @06a07a80
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags: optimize_size
+  Called by: prvInsertTimerInActiveList/28 prvInsertTimerInActiveList/28 
+  Calls: 
+uxListRemove/46 (uxListRemove) @06a077e0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags: optimize_size
+  Called by: prvProcessReceivedCommands/29 prvProcessExpiredTimer/23 
+  Calls: 
+xLastTime.0/45 (xLastTime) @06a1a708
+  Type: variable definition analyzed
+  Visibility:
+  References: 
+  Referring: prvSampleTimeNow/27 (read) prvSampleTimeNow/27 (write) 
+  Availability: not-ready
+  Varpool flags: initialized
+xTaskGetTickCount/44 (xTaskGetTickCount) @06a07460
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags: optimize_size
+  Called by: prvSampleTimeNow/27 
+  Calls: 
+vQueueWaitForMessageRestricted/43 (vQueueWaitForMessageRestricted) @06a072a0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags: optimize_size
+  Called by: prvProcessTimerOrBlockTask/25 
+  Calls: 
+xTaskResumeAll/42 (xTaskResumeAll) @06a071c0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags: optimize_size
+  Called by: prvProcessTimerOrBlockTask/25 prvProcessTimerOrBlockTask/25 prvProcessTimerOrBlockTask/25 
+  Calls: 
+vTaskSuspendAll/41 (vTaskSuspendAll) @06a070e0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags: optimize_size
+  Called by: prvProcessTimerOrBlockTask/25 
+  Calls: 
+xTaskCreate/40 (xTaskCreate) @06a00540
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags: optimize_size
+  Called by: xTimerCreateTimerTask/10 
+  Calls: 
+vTimerResetState/39 (vTimerResetState) @06a00c40
+  Type: function definition analyzed
+  Visibility: public
+  References: xTimerQueue/8 (write) xTimerTaskHandle/9 (write) 
+  Referring: 
+  Function flags: body optimize_size
+  Called by: 
+  Calls: 
+vTimerSetTimerNumber/38 (vTimerSetTimerNumber) @06a009a0
+  Type: function definition analyzed
+  Visibility: public
+  References: 
+  Referring: 
+  Function flags: body optimize_size
+  Called by: 
+  Calls: 
+uxTimerGetTimerNumber/37 (uxTimerGetTimerNumber) @06a00700
+  Type: function definition analyzed
+  Visibility: public
+  References: 
+  Referring: 
+  Function flags: body optimize_size
+  Called by: 
+  Calls: 
+xTimerPendFunctionCall/36 (xTimerPendFunctionCall) @06a00460
+  Type: function definition analyzed
+  Visibility: public
+  References: xTimerQueue/8 (read) xTimerQueue/8 (read) 
+  Referring: 
+  Function flags: body optimize_size
+  Called by: 
+  Calls: xQueueGenericSend/58 
+xTimerPendFunctionCallFromISR/35 (xTimerPendFunctionCallFromISR) @06a00000
+  Type: function definition analyzed
+  Visibility: public
+  References: xTimerQueue/8 (read) 
+  Referring: 
+  Function flags: body optimize_size
+  Called by: 
+  Calls: xQueueGenericSendFromISR/59 
+vTimerSetTimerID/34 (vTimerSetTimerID) @069f67e0
+  Type: function definition analyzed
+  Visibility: public
+  References: 
+  Referring: 
+  Function flags: body optimize_size
+  Called by: 
+  Calls: vPortExitCritical/54 vPortEnterCritical/50 
+pvTimerGetTimerID/33 (pvTimerGetTimerID) @069f6e00
+  Type: function definition analyzed
+  Visibility: public
+  References: 
+  Referring: 
+  Function flags: body optimize_size
+  Called by: 
+  Calls: vPortExitCritical/54 vPortEnterCritical/50 
+xTimerIsTimerActive/32 (xTimerIsTimerActive) @069f6a80
+  Type: function definition analyzed
+  Visibility: public
+  References: 
+  Referring: 
+  Function flags: body optimize_size
+  Called by: 
+  Calls: vPortExitCritical/54 vPortEnterCritical/50 
+prvCheckForValidListAndQueue/31 (prvCheckForValidListAndQueue) @069f6700
+  Type: function definition analyzed
+  Visibility:
+  References: xTimerQueue/8 (read) xActiveTimerList1/4 (addr) xActiveTimerList2/5 (addr) pxCurrentTimerList/6 (write) xActiveTimerList1/4 (addr) pxOverflowTimerList/7 (write) xActiveTimerList2/5 (addr) xTimerQueue/8 (write) xTimerQueue/8 (read) xTimerQueue/8 (read) 
+  Referring: 
+  Function flags: body optimize_size
+  Called by: prvInitialiseNewTimer/12 xTimerCreateTimerTask/10 
+  Calls: vPortExitCritical/54 vQueueAddToRegistry/53 xQueueGenericCreate/52 vListInitialise/51 vListInitialise/51 vPortEnterCritical/50 
+prvSwitchTimerLists/30 (prvSwitchTimerLists) @069f6460
+  Type: function definition analyzed
+  Visibility:
+  References: pxCurrentTimerList/6 (read) pxCurrentTimerList/6 (read) pxCurrentTimerList/6 (read) pxOverflowTimerList/7 (read) pxCurrentTimerList/6 (write) pxOverflowTimerList/7 (write) 
+  Referring: 
+  Function flags: body optimize_size
+  Called by: prvSampleTimeNow/27 
+  Calls: prvProcessExpiredTimer/23 
+prvProcessReceivedCommands/29 (prvProcessReceivedCommands) @069f60e0
+  Type: function definition analyzed
+  Visibility:
+  References: xTimerQueue/8 (read) 
+  Referring: 
+  Function flags: body optimize_size
+  Called by: prvTimerTask/24 
+  Calls: xQueueReceive/49 vPortFree/48 prvInsertTimerInActiveList/28 prvReloadTimer/22 prvInsertTimerInActiveList/28 prvSampleTimeNow/27 uxListRemove/46 
+   Indirect call Num speculative call targets: 0
+   Indirect call Num speculative call targets: 0
+prvInsertTimerInActiveList/28 (prvInsertTimerInActiveList) @069eac40
+  Type: function definition analyzed
+  Visibility:
+  References: pxOverflowTimerList/7 (read) pxCurrentTimerList/6 (read) 
+  Referring: 
+  Function flags: body optimize_size
+  Called by: prvProcessReceivedCommands/29 prvProcessReceivedCommands/29 prvReloadTimer/22 
+  Calls: vListInsert/47 vListInsert/47 
+prvSampleTimeNow/27 (prvSampleTimeNow) @069eae00
+  Type: function definition analyzed
+  Visibility:
+  References: xLastTime.0/45 (read) xLastTime.0/45 (write) 
+  Referring: 
+  Function flags: body optimize_size
+  Called by: prvProcessReceivedCommands/29 prvProcessTimerOrBlockTask/25 
+  Calls: prvSwitchTimerLists/30 xTaskGetTickCount/44 
+prvGetNextExpireTime/26 (prvGetNextExpireTime) @069eab60
+  Type: function definition analyzed
+  Visibility:
+  References: pxCurrentTimerList/6 (read) pxCurrentTimerList/6 (read) 
+  Referring: 
+  Function flags: body optimize_size
+  Called by: prvTimerTask/24 
+  Calls: 
+prvProcessTimerOrBlockTask/25 (prvProcessTimerOrBlockTask) @069ea7e0
+  Type: function definition analyzed
+  Visibility:
+  References: pxOverflowTimerList/7 (read) xTimerQueue/8 (read) 
+  Referring: 
+  Function flags: body optimize_size
+  Called by: prvTimerTask/24 
+  Calls: xTaskResumeAll/42 xTaskResumeAll/42 vQueueWaitForMessageRestricted/43 prvProcessExpiredTimer/23 xTaskResumeAll/42 prvSampleTimeNow/27 vTaskSuspendAll/41 
+prvTimerTask/24 (prvTimerTask) @069ea380
+  Type: function definition analyzed
+  Visibility:
+  Address is taken.
+  References: 
+  Referring: xTimerCreateTimerTask/10 (addr) 
+  Function flags: body optimize_size
+  Called by: 
+  Calls: prvProcessReceivedCommands/29 prvProcessTimerOrBlockTask/25 prvGetNextExpireTime/26 
+prvProcessExpiredTimer/23 (prvProcessExpiredTimer) @069ea0e0
+  Type: function definition analyzed
+  Visibility:
+  References: pxCurrentTimerList/6 (read) 
+  Referring: 
+  Function flags: body optimize_size
+  Called by: prvSwitchTimerLists/30 prvProcessTimerOrBlockTask/25 
+  Calls: prvReloadTimer/22 uxListRemove/46 
+   Indirect call Num speculative call targets: 0
+prvReloadTimer/22 (prvReloadTimer) @069aaa80
+  Type: function definition analyzed
+  Visibility:
+  References: 
+  Referring: 
+  Function flags: body optimize_size
+  Called by: prvProcessReceivedCommands/29 prvProcessExpiredTimer/23 
+  Calls: prvInsertTimerInActiveList/28 
+   Indirect call Num speculative call targets: 0
+pcTimerGetName/21 (pcTimerGetName) @069aa460
+  Type: function definition analyzed
+  Visibility: public
+  References: 
+  Referring: 
+  Function flags: body optimize_size
+  Called by: 
+  Calls: 
+xTimerGetExpiryTime/20 (xTimerGetExpiryTime) @069aad20
+  Type: function definition analyzed
+  Visibility: public
+  References: 
+  Referring: 
+  Function flags: body optimize_size
+  Called by: 
+  Calls: 
+uxTimerGetReloadMode/19 (uxTimerGetReloadMode) @069aa9a0
+  Type: function definition analyzed
+  Visibility: public
+  References: 
+  Referring: 
+  Function flags: body optimize_size
+  Called by: 
+  Calls: xTimerGetReloadMode/18 
+xTimerGetReloadMode/18 (xTimerGetReloadMode) @069aa700
+  Type: function definition analyzed
+  Visibility: public
+  References: 
+  Referring: 
+  Function flags: body optimize_size
+  Called by: uxTimerGetReloadMode/19 
+  Calls: vPortExitCritical/54 vPortEnterCritical/50 
+vTimerSetReloadMode/17 (vTimerSetReloadMode) @069aa380
+  Type: function definition analyzed
+  Visibility: public
+  References: 
+  Referring: 
+  Function flags: body optimize_size
+  Called by: 
+  Calls: vPortExitCritical/54 vPortEnterCritical/50 
+xTimerGetPeriod/16 (xTimerGetPeriod) @069aa000
+  Type: function definition analyzed
+  Visibility: public
+  References: 
+  Referring: 
+  Function flags: body optimize_size
+  Called by: 
+  Calls: 
+xTimerGetTimerDaemonTaskHandle/15 (xTimerGetTimerDaemonTaskHandle) @069bd460
+  Type: function definition analyzed
+  Visibility: public
+  References: xTimerTaskHandle/9 (read) xTimerTaskHandle/9 (read) 
+  Referring: 
+  Function flags: body optimize_size
+  Called by: 
+  Calls: 
+xTimerGenericCommandFromISR/14 (xTimerGenericCommandFromISR) @069bdee0
+  Type: function definition analyzed
+  Visibility: public
+  References: xTimerQueue/8 (read) xTimerQueue/8 (read) 
+  Referring: 
+  Function flags: body optimize_size
+  Called by: 
+  Calls: xQueueGenericSendFromISR/59 
+xTimerGenericCommandFromTask/13 (xTimerGenericCommandFromTask) @069bda80
+  Type: function definition analyzed
+  Visibility: public
+  References: xTimerQueue/8 (read) xTimerQueue/8 (read) xTimerQueue/8 (read) 
+  Referring: 
+  Function flags: body optimize_size
+  Called by: 
+  Calls: xQueueGenericSend/58 xQueueGenericSend/58 xTaskGetSchedulerState/57 
+prvInitialiseNewTimer/12 (prvInitialiseNewTimer) @069bd620
+  Type: function definition analyzed
+  Visibility:
+  References: 
+  Referring: 
+  Function flags: body optimize_size
+  Called by: xTimerCreate/11 
+  Calls: vListInitialiseItem/56 prvCheckForValidListAndQueue/31 
+xTimerCreate/11 (xTimerCreate) @069bd380
+  Type: function definition analyzed
+  Visibility: public
+  References: 
+  Referring: 
+  Function flags: body optimize_size
+  Called by: 
+  Calls: prvInitialiseNewTimer/12 pvPortMalloc/55 
+xTimerCreateTimerTask/10 (xTimerCreateTimerTask) @069bd0e0
+  Type: function definition analyzed
+  Visibility: public
+  References: xTimerQueue/8 (read) prvTimerTask/24 (addr) xTimerTaskHandle/9 (addr) 
+  Referring: 
+  Function flags: body optimize_size
+  Called by: 
+  Calls: xTaskCreate/40 prvCheckForValidListAndQueue/31 
+xTimerTaskHandle/9 (xTimerTaskHandle) @069b2cf0
+  Type: variable definition analyzed
+  Visibility:
+  References: 
+  Referring: xTimerCreateTimerTask/10 (addr) xTimerGetTimerDaemonTaskHandle/15 (read) xTimerGetTimerDaemonTaskHandle/15 (read) vTimerResetState/39 (write) 
+  Availability: not-ready
+  Varpool flags: initialized
+xTimerQueue/8 (xTimerQueue) @069b2ca8
+  Type: variable definition analyzed
+  Visibility:
+  References: 
+  Referring: xTimerCreateTimerTask/10 (read) prvProcessTimerOrBlockTask/25 (read) prvProcessReceivedCommands/29 (read) prvCheckForValidListAndQueue/31 (read) prvCheckForValidListAndQueue/31 (write) prvCheckForValidListAndQueue/31 (read) prvCheckForValidListAndQueue/31 (read) xTimerGenericCommandFromTask/13 (read) xTimerGenericCommandFromTask/13 (read) xTimerGenericCommandFromTask/13 (read) xTimerGenericCommandFromISR/14 (read) xTimerGenericCommandFromISR/14 (read) xTimerPendFunctionCallFromISR/35 (read) xTimerPendFunctionCall/36 (read) xTimerPendFunctionCall/36 (read) vTimerResetState/39 (write) 
+  Availability: not-ready
+  Varpool flags: initialized
+pxOverflowTimerList/7 (pxOverflowTimerList) @069b2c18
+  Type: variable definition analyzed
+  Visibility:
+  References: 
+  Referring: prvProcessTimerOrBlockTask/25 (read) prvSwitchTimerLists/30 (read) prvSwitchTimerLists/30 (write) prvInsertTimerInActiveList/28 (read) prvCheckForValidListAndQueue/31 (write) 
+  Availability: not-ready
+  Varpool flags:
+pxCurrentTimerList/6 (pxCurrentTimerList) @069b2b88
+  Type: variable definition analyzed
+  Visibility:
+  References: 
+  Referring: prvGetNextExpireTime/26 (read) prvGetNextExpireTime/26 (read) prvSwitchTimerLists/30 (read) prvSwitchTimerLists/30 (read) prvSwitchTimerLists/30 (read) prvSwitchTimerLists/30 (write) prvProcessExpiredTimer/23 (read) prvInsertTimerInActiveList/28 (read) prvCheckForValidListAndQueue/31 (write) 
+  Availability: not-ready
+  Varpool flags:
+xActiveTimerList2/5 (xActiveTimerList2) @069b2af8
+  Type: variable definition analyzed
+  Visibility:
+  References: 
+  Referring: prvCheckForValidListAndQueue/31 (addr) prvCheckForValidListAndQueue/31 (addr) 
+  Availability: not-ready
+  Varpool flags:
+xActiveTimerList1/4 (xActiveTimerList1) @069b2a68
+  Type: variable definition analyzed
+  Visibility:
+  References: 
+  Referring: prvCheckForValidListAndQueue/31 (addr) prvCheckForValidListAndQueue/31 (addr) 
+  Availability: not-ready
+  Varpool flags:
+
+Reclaiming functions:
+Reclaiming variables:
+Clearing address taken flags:
+Optimized Symbol table:
+
+prvInitialiseNewTimer.constprop.0/62 (prvInitialiseNewTimer.constprop) @06a67d20
+  Type: function definition analyzed
+  Visibility:
+  References: 
+  Referring: 
+  Function prvInitialiseNewTimer.constprop/62 is inline copy in xTimerCreate/11
+  Clone of prvInitialiseNewTimer/12
+  Availability: local
+  Function flags: count:574129753 (estimated locally) local optimize_size
+  Called by: xTimerCreate/11 (inlined) (574129753 (estimated locally),0.53 per call) 
+  Calls: prvCheckForValidListAndQueue/31 (189462809 (estimated locally),0.18 per call) vListInitialiseItem/56 (189462809 (estimated locally),0.18 per call) 
+xTimerGetReloadMode.part.0/61 (xTimerGetReloadMode.part.0) @06a67ee0
+  Type: function definition analyzed
+  Visibility: prevailing_def_ironly artificial
+  References: 
+  Referring: 
+  Function xTimerGetReloadMode.part.0/61 is inline copy in xTimerGetReloadMode/18
+  Availability: local
+  Function flags: count:12216749 (estimated locally) body local split_part optimize_size
+  Called by: xTimerGetReloadMode/18 (inlined) (12216749 (estimated locally),0.53 per call) 
+  Calls: vPortEnterCritical/50 (12216749 (estimated locally),0.53 per call) vPortExitCritical/54 (12216749 (estimated locally),0.53 per call) 
+prvInsertTimerInActiveList.part.0/60 (prvInsertTimerInActiveList.part.0) @06a67540
+  Type: function definition analyzed
+  Visibility: prevailing_def_ironly artificial
+  References: pxOverflowTimerList/7 (read) 
+  Referring: 
+  Function prvInsertTimerInActiveList.part.0/60 is inline copy in prvInsertTimerInActiveList/28
+  Availability: local
+  Function flags: count:177167400 (estimated locally) body local split_part optimize_size
+  Called by: prvInsertTimerInActiveList/28 (inlined) (177167400 (estimated locally),0.16 per call) 
+  Calls: vListInsert/47 (177167400 (estimated locally),0.16 per call) 
+xQueueGenericSendFromISR/59 (xQueueGenericSendFromISR) @06a2ad20
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags: optimize_size
+  Called by: xTimerPendFunctionCallFromISR/35 (1073741824 (estimated locally),1.00 per call) xTimerGenericCommandFromISR/14 (5236217 (estimated locally),0.16 per call) 
+  Calls: 
+xQueueGenericSend/58 (xQueueGenericSend) @06a2ab60
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags: optimize_size
+  Called by: xTimerPendFunctionCall/36 (12216749 (estimated locally),0.53 per call) xTimerGenericCommandFromTask/13 (3455903 (estimated locally),0.11 per call) xTimerGenericCommandFromTask/13 (1780314 (estimated locally),0.05 per call) 
+  Calls: 
+xTaskGetSchedulerState/57 (xTaskGetSchedulerState) @06a2aa80
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags: optimize_size
+  Called by: xTimerGenericCommandFromTask/13 (5236217 (estimated locally),0.16 per call) 
+  Calls: 
+vListInitialiseItem/56 (vListInitialiseItem) @06a2a8c0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags: optimize_size
+  Called by: prvInitialiseNewTimer.constprop.0/62 (189462809 (estimated locally),0.18 per call) 
+  Calls: 
+pvPortMalloc/55 (pvPortMalloc) @06a2a700
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags: optimize_size
+  Called by: xTimerCreate/11 (1073741824 (estimated locally),1.00 per call) 
+  Calls: 
+vPortExitCritical/54 (vPortExitCritical) @06a2a540
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags: optimize_size
+  Called by: vTimerSetTimerID/34 (12216749 (estimated locally),0.53 per call) pvTimerGetTimerID/33 (12216749 (estimated locally),0.53 per call) xTimerIsTimerActive/32 (12216749 (estimated locally),0.53 per call) xTimerGetReloadMode.part.0/61 (12216749 (estimated locally),0.53 per call) vTimerSetReloadMode/17 (12216749 (estimated locally),0.53 per call) prvCheckForValidListAndQueue/31 (1073741824 (estimated locally),1.00 per call) 
+  Calls: 
+vQueueAddToRegistry/53 (vQueueAddToRegistry) @06a2a460
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags: optimize_size
+  Called by: prvCheckForValidListAndQueue/31 (100070816 (estimated locally),0.09 per call) 
+  Calls: 
+xQueueGenericCreate/52 (xQueueGenericCreate) @06a2a380
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags: optimize_size
+  Called by: prvCheckForValidListAndQueue/31 (187153200 (estimated locally),0.17 per call) 
+  Calls: 
+vListInitialise/51 (vListInitialise) @06a2a1c0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags: optimize_size
+  Called by: prvCheckForValidListAndQueue/31 (187153200 (estimated locally),0.17 per call) prvCheckForValidListAndQueue/31 (187153200 (estimated locally),0.17 per call) 
+  Calls: 
+vPortEnterCritical/50 (vPortEnterCritical) @06a2a0e0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags: optimize_size
+  Called by: vTimerSetTimerID/34 (12216749 (estimated locally),0.53 per call) pvTimerGetTimerID/33 (12216749 (estimated locally),0.53 per call) xTimerIsTimerActive/32 (12216749 (estimated locally),0.53 per call) xTimerGetReloadMode.part.0/61 (12216749 (estimated locally),0.53 per call) vTimerSetReloadMode/17 (12216749 (estimated locally),0.53 per call) prvCheckForValidListAndQueue/31 (1073741824 (estimated locally),1.00 per call) 
+  Calls: 
+xQueueReceive/49 (xQueueReceive) @06a07ee0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags: optimize_size
+  Called by: prvProcessReceivedCommands/29 (19321730008 (estimated locally),1817.47 per call) 
+  Calls: 
+vPortFree/48 (vPortFree) @06a07e00
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags: optimize_size
+  Called by: prvProcessReceivedCommands/29 (66280292 (estimated locally),6.23 per call) 
+  Calls: 
+vListInsert/47 (vListInsert) @06a07a80
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags: optimize_size
+  Called by: prvInsertTimerInActiveList/28 (357019156 (estimated locally),0.33 per call) prvInsertTimerInActiveList.part.0/60 (177167400 (estimated locally),0.16 per call) 
+  Calls: 
+uxListRemove/46 (uxListRemove) @06a077e0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags: optimize_size
+  Called by: prvProcessReceivedCommands/29 (536970828 (estimated locally),50.51 per call) prvProcessExpiredTimer/23 (1073741824 (estimated locally),1.00 per call) 
+  Calls: 
+xLastTime.0/45 (xLastTime) @06a1a708
+  Type: variable definition analyzed
+  Visibility: prevailing_def_ironly
+  References: 
+  Referring: prvSampleTimeNow/27 (read) prvSampleTimeNow/27 (write) 
+  Availability: available
+  Varpool flags: initialized used-by-single-function
+xTaskGetTickCount/44 (xTaskGetTickCount) @06a07460
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags: optimize_size
+  Called by: prvSampleTimeNow/27 (1073741824 (estimated locally),1.00 per call) 
+  Calls: 
+vQueueWaitForMessageRestricted/43 (vQueueWaitForMessageRestricted) @06a072a0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags: optimize_size
+  Called by: prvProcessTimerOrBlockTask/25 (600704867 (estimated locally),56.50 per call) 
+  Calls: 
+xTaskResumeAll/42 (xTaskResumeAll) @06a071c0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags: optimize_size
+  Called by: prvProcessTimerOrBlockTask/25 (354334800 (estimated locally),33.33 per call) prvProcessTimerOrBlockTask/25 (600704867 (estimated locally),56.50 per call) prvProcessTimerOrBlockTask/25 (118702158 (estimated locally),11.17 per call) 
+  Calls: 
+vTaskSuspendAll/41 (vTaskSuspendAll) @06a070e0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags: optimize_size
+  Called by: prvProcessTimerOrBlockTask/25 (1073741824 (estimated locally),101.00 per call) 
+  Calls: 
+xTaskCreate/40 (xTaskCreate) @06a00540
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags: optimize_size
+  Called by: xTimerCreateTimerTask/10 (7758757 (estimated locally),0.53 per call) 
+  Calls: 
+vTimerResetState/39 (vTimerResetState) @06a00c40
+  Type: function definition analyzed
+  Visibility: externally_visible public
+  References: xTimerQueue/8 (write) xTimerTaskHandle/9 (write) 
+  Referring: 
+  Availability: available
+  Function flags: count:1073741824 (estimated locally) body nonfreeing_fn optimize_size
+  Called by: 
+  Calls: 
+vTimerSetTimerNumber/38 (vTimerSetTimerNumber) @06a009a0
+  Type: function definition analyzed
+  Visibility: externally_visible public
+  References: 
+  Referring: 
+  Availability: available
+  Function flags: count:1073741824 (estimated locally) body nonfreeing_fn optimize_size
+  Called by: 
+  Calls: 
+uxTimerGetTimerNumber/37 (uxTimerGetTimerNumber) @06a00700
+  Type: function definition analyzed
+  Visibility: externally_visible public
+  References: 
+  Referring: 
+  Availability: available
+  Function flags: count:1073741824 (estimated locally) body nonfreeing_fn optimize_size
+  Called by: 
+  Calls: 
+xTimerPendFunctionCall/36 (xTimerPendFunctionCall) @06a00460
+  Type: function definition analyzed
+  Visibility: externally_visible public
+  References: xTimerQueue/8 (read) 
+  Referring: 
+  Availability: available
+  Function flags: count:22847857 (estimated locally) body optimize_size
+  Called by: 
+  Calls: xQueueGenericSend/58 (12216749 (estimated locally),0.53 per call) 
+xTimerPendFunctionCallFromISR/35 (xTimerPendFunctionCallFromISR) @06a00000
+  Type: function definition analyzed
+  Visibility: externally_visible public
+  References: xTimerQueue/8 (read) 
+  Referring: 
+  Availability: available
+  Function flags: count:1073741824 (estimated locally) body optimize_size
+  Called by: 
+  Calls: xQueueGenericSendFromISR/59 (1073741824 (estimated locally),1.00 per call) 
+vTimerSetTimerID/34 (vTimerSetTimerID) @069f67e0
+  Type: function definition analyzed
+  Visibility: externally_visible public
+  References: 
+  Referring: 
+  Availability: available
+  Function flags: count:22847857 (estimated locally) body optimize_size
+  Called by: 
+  Calls: vPortExitCritical/54 (12216749 (estimated locally),0.53 per call) vPortEnterCritical/50 (12216749 (estimated locally),0.53 per call) 
+pvTimerGetTimerID/33 (pvTimerGetTimerID) @069f6e00
+  Type: function definition analyzed
+  Visibility: externally_visible public
+  References: 
+  Referring: 
+  Availability: available
+  Function flags: count:22847857 (estimated locally) body optimize_size
+  Called by: 
+  Calls: vPortExitCritical/54 (12216749 (estimated locally),0.53 per call) vPortEnterCritical/50 (12216749 (estimated locally),0.53 per call) 
+xTimerIsTimerActive/32 (xTimerIsTimerActive) @069f6a80
+  Type: function definition analyzed
+  Visibility: externally_visible public
+  References: 
+  Referring: 
+  Availability: available
+  Function flags: count:22847857 (estimated locally) body optimize_size
+  Called by: 
+  Calls: vPortExitCritical/54 (12216749 (estimated locally),0.53 per call) vPortEnterCritical/50 (12216749 (estimated locally),0.53 per call) 
+prvCheckForValidListAndQueue/31 (prvCheckForValidListAndQueue) @069f6700
+  Type: function definition analyzed
+  Visibility: prevailing_def_ironly
+  References: xTimerQueue/8 (read) xActiveTimerList1/4 (addr) xActiveTimerList2/5 (addr) pxCurrentTimerList/6 (write) xActiveTimerList1/4 (addr) pxOverflowTimerList/7 (write) xActiveTimerList2/5 (addr) xTimerQueue/8 (write) 
+  Referring: 
+  Availability: local
+  Function flags: count:1073741824 (estimated locally) body local optimize_size
+  Called by: prvInitialiseNewTimer.constprop.0/62 (189462809 (estimated locally),0.18 per call) xTimerCreateTimerTask/10 (14510487 (estimated locally),1.00 per call) 
+  Calls: vPortExitCritical/54 (1073741824 (estimated locally),1.00 per call) vQueueAddToRegistry/53 (100070816 (estimated locally),0.09 per call) xQueueGenericCreate/52 (187153200 (estimated locally),0.17 per call) vListInitialise/51 (187153200 (estimated locally),0.17 per call) vListInitialise/51 (187153200 (estimated locally),0.17 per call) vPortEnterCritical/50 (1073741824 (estimated locally),1.00 per call) 
+prvSwitchTimerLists/30 (prvSwitchTimerLists) @069f6460
+  Type: function definition analyzed
+  Visibility: prevailing_def_ironly
+  References: pxCurrentTimerList/6 (read) pxOverflowTimerList/7 (read) pxCurrentTimerList/6 (write) pxOverflowTimerList/7 (write) 
+  Referring: 
+  Function prvSwitchTimerLists/30 is inline copy in prvSampleTimeNow/27
+  Availability: local
+  Function flags: count:354334800 (estimated locally) body local optimize_size
+  Called by: prvSampleTimeNow/27 (inlined) (354334800 (estimated locally),0.33 per call) 
+  Calls: prvProcessExpiredTimer/23 (2866890675 (estimated locally),2.67 per call) 
+prvProcessReceivedCommands/29 (prvProcessReceivedCommands) @069f60e0
+  Type: function definition analyzed
+  Visibility: prevailing_def_ironly
+  References: xTimerQueue/8 (read) 
+  Referring: 
+  Function prvProcessReceivedCommands/29 is inline copy in prvTimerTask/24
+  Availability: local
+  Function flags: count:1073741824 (estimated locally) body local optimize_size
+  Called by: prvTimerTask/24 (inlined) (1073741824 (estimated locally),101.00 per call) 
+  Calls: xQueueReceive/49 (19321730008 (estimated locally),1817.47 per call) vPortFree/48 (66280292 (estimated locally),6.23 per call) prvInsertTimerInActiveList/28 (189802663 (estimated locally),17.85 per call) prvReloadTimer/22 (33140146 (estimated locally),3.12 per call) prvInsertTimerInActiveList/28 (200849379 (estimated locally),18.89 per call) prvSampleTimeNow/27 (1004246912 (estimated locally),94.46 per call) uxListRemove/46 (536970828 (estimated locally),50.51 per call) 
+   Indirect call(100424689 (estimated locally),9.45 per call)  Num speculative call targets: 0
+   Indirect call(7486204243 (estimated locally),704.18 per call)  Num speculative call targets: 0
+prvInsertTimerInActiveList/28 (prvInsertTimerInActiveList) @069eac40
+  Type: function definition analyzed
+  Visibility: prevailing_def_ironly
+  References: pxCurrentTimerList/6 (read) 
+  Referring: 
+  Availability: local
+  Function flags: count:1073741824 (estimated locally) body local optimize_size
+  Called by: prvProcessReceivedCommands/29 (189802663 (estimated locally),17.85 per call) prvProcessReceivedCommands/29 (200849379 (estimated locally),18.89 per call) prvReloadTimer/22 (1073741824 (estimated locally),9.09 per call) 
+  Calls: vListInsert/47 (357019156 (estimated locally),0.33 per call) prvInsertTimerInActiveList.part.0/60 (inlined) (177167400 (estimated locally),0.16 per call) 
+prvSampleTimeNow/27 (prvSampleTimeNow) @069eae00
+  Type: function definition analyzed
+  Visibility: prevailing_def_ironly
+  References: xLastTime.0/45 (read) xLastTime.0/45 (write) 
+  Referring: 
+  Availability: local
+  Function flags: count:1073741824 (estimated locally) body local optimize_size
+  Called by: prvProcessReceivedCommands/29 (1004246912 (estimated locally),94.46 per call) prvProcessTimerOrBlockTask/25 (1073741824 (estimated locally),101.00 per call) 
+  Calls: prvSwitchTimerLists/30 (inlined) (354334800 (estimated locally),0.33 per call) xTaskGetTickCount/44 (1073741824 (estimated locally),1.00 per call) 
+prvGetNextExpireTime/26 (prvGetNextExpireTime) @069eab60
+  Type: function definition analyzed
+  Visibility: prevailing_def_ironly
+  References: pxCurrentTimerList/6 (read) 
+  Referring: 
+  Function prvGetNextExpireTime/26 is inline copy in prvTimerTask/24
+  Availability: local
+  Function flags: count:1073741824 (estimated locally) body local nonfreeing_fn optimize_size
+  Called by: prvTimerTask/24 (inlined) (1073741824 (estimated locally),101.00 per call) 
+  Calls: 
+prvProcessTimerOrBlockTask/25 (prvProcessTimerOrBlockTask) @069ea7e0
+  Type: function definition analyzed
+  Visibility: prevailing_def_ironly
+  References: pxOverflowTimerList/7 (read) xTimerQueue/8 (read) 
+  Referring: 
+  Function prvProcessTimerOrBlockTask/25 is inline copy in prvTimerTask/24
+  Availability: local
+  Function flags: count:1073741824 (estimated locally) body local optimize_size
+  Called by: prvTimerTask/24 (inlined) (1073741824 (estimated locally),101.00 per call) 
+  Calls: xTaskResumeAll/42 (354334800 (estimated locally),33.33 per call) xTaskResumeAll/42 (600704867 (estimated locally),56.50 per call) vQueueWaitForMessageRestricted/43 (600704867 (estimated locally),56.50 per call) prvProcessExpiredTimer/23 (118702158 (estimated locally),11.17 per call) xTaskResumeAll/42 (118702158 (estimated locally),11.17 per call) prvSampleTimeNow/27 (1073741824 (estimated locally),101.00 per call) vTaskSuspendAll/41 (1073741824 (estimated locally),101.00 per call) 
+prvTimerTask/24 (prvTimerTask) @069ea380
+  Type: function definition analyzed
+  Visibility: prevailing_def_ironly
+  Address is taken.
+  References: 
+  Referring: xTimerCreateTimerTask/10 (addr) 
+  Availability: available
+  Function flags: count:10631108 (estimated locally) body executed_once optimize_size
+  Called by: 
+  Calls: prvProcessReceivedCommands/29 (inlined) (1073741824 (estimated locally),101.00 per call) prvProcessTimerOrBlockTask/25 (inlined) (1073741824 (estimated locally),101.00 per call) prvGetNextExpireTime/26 (inlined) (1073741824 (estimated locally),101.00 per call) 
+prvProcessExpiredTimer/23 (prvProcessExpiredTimer) @069ea0e0
+  Type: function definition analyzed
+  Visibility: prevailing_def_ironly
+  References: pxCurrentTimerList/6 (read) 
+  Referring: 
+  Availability: local
+  Function flags: count:1073741824 (estimated locally) body local optimize_size
+  Called by: prvProcessTimerOrBlockTask/25 (118702158 (estimated locally),11.17 per call) prvSwitchTimerLists/30 (2866890675 (estimated locally),2.67 per call) 
+  Calls: prvReloadTimer/22 (354334800 (estimated locally),0.33 per call) uxListRemove/46 (1073741824 (estimated locally),1.00 per call) 
+   Indirect call(1073741824 (estimated locally),1.00 per call)  Num speculative call targets: 0
+prvReloadTimer/22 (prvReloadTimer) @069aaa80
+  Type: function definition analyzed
+  Visibility: prevailing_def_ironly
+  References: 
+  Referring: 
+  Availability: local
+  Function flags: count:118111600 (estimated locally) body local optimize_size
+  Called by: prvProcessReceivedCommands/29 (33140146 (estimated locally),3.12 per call) prvProcessExpiredTimer/23 (354334800 (estimated locally),0.33 per call) 
+  Calls: prvInsertTimerInActiveList/28 (1073741824 (estimated locally),9.09 per call) 
+   Indirect call(955630225 (estimated locally),8.09 per call)  of param:0 loaded from aggregate passed by reference at offset 256 (vptr maybe changed) Num speculative call targets: 0
+pcTimerGetName/21 (pcTimerGetName) @069aa460
+  Type: function definition analyzed
+  Visibility: externally_visible public
+  References: 
+  Referring: 
+  Availability: available
+  Function flags: count:35437027 (estimated locally) body optimize_size
+  Called by: 
+  Calls: 
+xTimerGetExpiryTime/20 (xTimerGetExpiryTime) @069aad20
+  Type: function definition analyzed
+  Visibility: externally_visible public
+  References: 
+  Referring: 
+  Availability: available
+  Function flags: count:35437027 (estimated locally) body optimize_size
+  Called by: 
+  Calls: 
+uxTimerGetReloadMode/19 (uxTimerGetReloadMode) @069aa9a0
+  Type: function definition analyzed
+  Visibility: externally_visible public
+  References: 
+  Referring: 
+  Availability: available
+  Function flags: count:1073741824 (estimated locally) body optimize_size
+  Called by: 
+  Calls: xTimerGetReloadMode/18 (1073741824 (estimated locally),1.00 per call) 
+xTimerGetReloadMode/18 (xTimerGetReloadMode) @069aa700
+  Type: function definition analyzed
+  Visibility: externally_visible public
+  References: 
+  Referring: 
+  Availability: available
+  Function flags: count:22847857 (estimated locally) body optimize_size
+  Called by: uxTimerGetReloadMode/19 (1073741824 (estimated locally),1.00 per call) 
+  Calls: xTimerGetReloadMode.part.0/61 (inlined) (12216749 (estimated locally),0.53 per call) 
+vTimerSetReloadMode/17 (vTimerSetReloadMode) @069aa380
+  Type: function definition analyzed
+  Visibility: externally_visible public
+  References: 
+  Referring: 
+  Availability: available
+  Function flags: count:22847857 (estimated locally) body optimize_size
+  Called by: 
+  Calls: vPortExitCritical/54 (12216749 (estimated locally),0.53 per call) vPortEnterCritical/50 (12216749 (estimated locally),0.53 per call) 
+xTimerGetPeriod/16 (xTimerGetPeriod) @069aa000
+  Type: function definition analyzed
+  Visibility: externally_visible public
+  References: 
+  Referring: 
+  Availability: available
+  Function flags: count:35437027 (estimated locally) body optimize_size
+  Called by: 
+  Calls: 
+xTimerGetTimerDaemonTaskHandle/15 (xTimerGetTimerDaemonTaskHandle) @069bd460
+  Type: function definition analyzed
+  Visibility: externally_visible public
+  References: xTimerTaskHandle/9 (read) 
+  Referring: 
+  Availability: available
+  Function flags: count:35437027 (estimated locally) body optimize_size
+  Called by: 
+  Calls: 
+xTimerGenericCommandFromISR/14 (xTimerGenericCommandFromISR) @069bdee0
+  Type: function definition analyzed
+  Visibility: externally_visible public
+  References: xTimerQueue/8 (read) 
+  Referring: 
+  Availability: available
+  Function flags: count:32382296 (estimated locally) body optimize_size
+  Called by: 
+  Calls: xQueueGenericSendFromISR/59 (5236217 (estimated locally),0.16 per call) 
+xTimerGenericCommandFromTask/13 (xTimerGenericCommandFromTask) @069bda80
+  Type: function definition analyzed
+  Visibility: externally_visible public
+  References: xTimerQueue/8 (read) xTimerQueue/8 (read) xTimerQueue/8 (read) 
+  Referring: 
+  Availability: available
+  Function flags: count:32382296 (estimated locally) body optimize_size
+  Called by: 
+  Calls: xQueueGenericSend/58 (3455903 (estimated locally),0.11 per call) xQueueGenericSend/58 (1780314 (estimated locally),0.05 per call) xTaskGetSchedulerState/57 (5236217 (estimated locally),0.16 per call) 
+prvInitialiseNewTimer/12 (prvInitialiseNewTimer) @069bd620
+  Type: function
+  Body removed by symtab_remove_unreachable_nodes
+  Visibility: prevailing_def_ironly
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags: count:15867325 (estimated locally) body optimize_size
+  Called by: 
+  Calls: 
+xTimerCreate/11 (xTimerCreate) @069bd380
+  Type: function definition analyzed
+  Visibility: externally_visible public
+  References: 
+  Referring: 
+  Availability: available
+  Function flags: count:1073741824 (estimated locally) body optimize_size
+  Called by: 
+  Calls: prvInitialiseNewTimer.constprop.0/62 (inlined) (574129753 (estimated locally),0.53 per call) pvPortMalloc/55 (1073741824 (estimated locally),1.00 per call) 
+xTimerCreateTimerTask/10 (xTimerCreateTimerTask) @069bd0e0
+  Type: function definition analyzed
+  Visibility: externally_visible public
+  References: xTimerQueue/8 (read) prvTimerTask/24 (addr) xTimerTaskHandle/9 (addr) 
+  Referring: 
+  Availability: available
+  Function flags: count:14510487 (estimated locally) body optimize_size
+  Called by: 
+  Calls: xTaskCreate/40 (7758757 (estimated locally),0.53 per call) prvCheckForValidListAndQueue/31 (14510487 (estimated locally),1.00 per call) 
+xTimerTaskHandle/9 (xTimerTaskHandle) @069b2cf0
+  Type: variable definition analyzed
+  Visibility: prevailing_def_ironly
+  References: 
+  Referring: xTimerCreateTimerTask/10 (addr) xTimerGetTimerDaemonTaskHandle/15 (read) vTimerResetState/39 (write) 
+  Availability: available
+  Varpool flags: initialized
+xTimerQueue/8 (xTimerQueue) @069b2ca8
+  Type: variable definition analyzed
+  Visibility: prevailing_def_ironly
+  References: 
+  Referring: prvProcessReceivedCommands/29 (read) xTimerPendFunctionCallFromISR/35 (read) xTimerPendFunctionCall/36 (read) xTimerGenericCommandFromTask/13 (read) xTimerGenericCommandFromTask/13 (read) xTimerGenericCommandFromISR/14 (read) prvProcessTimerOrBlockTask/25 (read) xTimerCreateTimerTask/10 (read) xTimerGenericCommandFromTask/13 (read) prvCheckForValidListAndQueue/31 (write) prvCheckForValidListAndQueue/31 (read) vTimerResetState/39 (write) 
+  Availability: available
+  Varpool flags: initialized
+pxOverflowTimerList/7 (pxOverflowTimerList) @069b2c18
+  Type: variable definition analyzed
+  Visibility: prevailing_def_ironly
+  References: 
+  Referring: prvInsertTimerInActiveList.part.0/60 (read) prvSwitchTimerLists/30 (write) prvProcessTimerOrBlockTask/25 (read) prvSwitchTimerLists/30 (read) prvCheckForValidListAndQueue/31 (write) 
+  Availability: available
+  Varpool flags:
+pxCurrentTimerList/6 (pxCurrentTimerList) @069b2b88
+  Type: variable definition analyzed
+  Visibility: prevailing_def_ironly
+  References: 
+  Referring: prvSwitchTimerLists/30 (write) prvProcessExpiredTimer/23 (read) prvInsertTimerInActiveList/28 (read) prvGetNextExpireTime/26 (read) prvSwitchTimerLists/30 (read) prvCheckForValidListAndQueue/31 (write) 
+  Availability: available
+  Varpool flags:
+xActiveTimerList2/5 (xActiveTimerList2) @069b2af8
+  Type: variable definition analyzed
+  Visibility: prevailing_def_ironly
+  References: 
+  Referring: prvCheckForValidListAndQueue/31 (addr) prvCheckForValidListAndQueue/31 (addr) 
+  Availability: available
+  Varpool flags: used-by-single-function
+xActiveTimerList1/4 (xActiveTimerList1) @069b2a68
+  Type: variable definition analyzed
+  Visibility: prevailing_def_ironly
+  References: 
+  Referring: prvCheckForValidListAndQueue/31 (addr) prvCheckForValidListAndQueue/31 (addr) 
+  Availability: available
+  Varpool flags: used-by-single-function
+Materializing clones
+cloning prvInitialiseNewTimer/12 to prvInitialiseNewTimer.constprop/62
+prvInitialiseNewTimer (const char * const pcTimerName, const TickType_t xTimerPeriodInTicks, const BaseType_t xAutoReload, void * const pvTimerID, void (*TimerCallbackFunction_t) (struct tmrTimerControl *) pxCallbackFunction, struct Timer_t * pxNewTimer)
+{
+  <bb 2> [local count: 15867325]:
+  # DEBUG BEGIN_STMT
+  if (xTimerPeriodInTicks_5(D) == 0)
+    goto <bb 3>; [67.00%]
+  else
+    goto <bb 5>; [33.00%]
+
+  <bb 3> [local count: 10631108]:
+  # DEBUG BEGIN_STMT
+  __asm__ __volatile__(" cpsid i " :  :  : "memory");
+
+  <bb 4> [local count: 1073741824]:
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+
+  <bb 8> [local count: 1073741824]:
+  goto <bb 4>; [100.00%]
+
+  <bb 5> [local count: 5236217]:
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  prvCheckForValidListAndQueue ();
+  # DEBUG BEGIN_STMT
+  pxNewTimer_8(D)->pcTimerName = pcTimerName_9(D);
+  # DEBUG BEGIN_STMT
+  pxNewTimer_8(D)->xTimerPeriodInTicks = xTimerPeriodInTicks_5(D);
+  # DEBUG BEGIN_STMT
+  pxNewTimer_8(D)->pvTimerID = pvTimerID_12(D);
+  # DEBUG BEGIN_STMT
+  pxNewTimer_8(D)->pxCallbackFunction = pxCallbackFunction_14(D);
+  # DEBUG BEGIN_STMT
+  _1 = &pxNewTimer_8(D)->xTimerListItem;
+  vListInitialiseItem (_1);
+  # DEBUG BEGIN_STMT
+  if (xAutoReload_17(D) != 0)
+    goto <bb 6>; [50.00%]
+  else
+    goto <bb 7>; [50.00%]
+
+  <bb 6> [local count: 2618109]:
+  # DEBUG BEGIN_STMT
+  _2 = pxNewTimer_8(D)->ucStatus;
+  _3 = _2 | 4;
+  pxNewTimer_8(D)->ucStatus = _3;
+
+  <bb 7> [local count: 5236217]:
+  # DEBUG BEGIN_STMT
+  return;
+
+}
+
+
+prvInitialiseNewTimer.constprop (const char * const pcTimerName, const TickType_t xTimerPeriodInTicks, const BaseType_t xAutoReload, void * const pvTimerID, void (*TimerCallbackFunction_t) (struct tmrTimerControl *) pxCallbackFunction, struct Timer_t * pxNewTimer)
+{
+  <bb 9> [local count: 15867325]:
+
+  <bb 2> [local count: 15867325]:
+  # DEBUG BEGIN_STMT
+  if (xTimerPeriodInTicks_1(D) == 0)
+    goto <bb 3>; [67.00%]
+  else
+    goto <bb 6>; [33.00%]
+
+  <bb 3> [local count: 10631108]:
+  # DEBUG BEGIN_STMT
+  __asm__ __volatile__(" cpsid i " :  :  : "memory");
+
+  <bb 4> [local count: 1073741824]:
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+
+  <bb 5> [local count: 1073741824]:
+  goto <bb 4>; [100.00%]
+
+  <bb 6> [local count: 5236217]:
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  prvCheckForValidListAndQueue ();
+  # DEBUG BEGIN_STMT
+  pxNewTimer_3(D)->pcTimerName = pcTimerName_2(D);
+  # DEBUG BEGIN_STMT
+  pxNewTimer_3(D)->xTimerPeriodInTicks = xTimerPeriodInTicks_1(D);
+  # DEBUG BEGIN_STMT
+  pxNewTimer_3(D)->pvTimerID = pvTimerID_4(D);
+  # DEBUG BEGIN_STMT
+  pxNewTimer_3(D)->pxCallbackFunction = pxCallbackFunction_5(D);
+  # DEBUG BEGIN_STMT
+  _6 = &pxNewTimer_3(D)->xTimerListItem;
+  vListInitialiseItem (_6);
+  # DEBUG BEGIN_STMT
+  if (xAutoReload_7(D) != 0)
+    goto <bb 7>; [50.00%]
+  else
+    goto <bb 8>; [50.00%]
+
+  <bb 7> [local count: 2618109]:
+  # DEBUG BEGIN_STMT
+  _8 = pxNewTimer_3(D)->ucStatus;
+  _9 = _8 | 4;
+  pxNewTimer_3(D)->ucStatus = _9;
+
+  <bb 8> [local count: 5236217]:
+  # DEBUG BEGIN_STMT
+  return;
+
+}
+
+
+Materialization Call site updates done.
+
+Reclaiming functions: prvInitialiseNewTimer/12
+Reclaiming variables:
+Clearing address taken flags:
+updating call of xTimerCreate/11 -> prvInitialiseNewTimer.constprop/62: prvInitialiseNewTimer (pcTimerName_6(D), xTimerPeriodInTicks_7(D), xAutoReload_8(D), pvTimerID_9(D), pxCallbackFunction_10(D), pxNewTimer_4);
+  updated to:prvInitialiseNewTimer.constprop (pcTimerName_6(D), xTimerPeriodInTicks_7(D), xAutoReload_8(D), pvTimerID_9(D), pxCallbackFunction_10(D), pxNewTimer_4);
+Trivially needed variables: xLastTime.0/45 xTimerTaskHandle/9 xTimerQueue/8 pxOverflowTimerList/7 pxCurrentTimerList/6 xActiveTimerList2/5 xActiveTimerList1/4
+Removing variables:
+
+Final Symbol table:
+
+xQueueGenericSendFromISR/59 (xQueueGenericSendFromISR) @06a2ad20
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags: optimize_size
+  Called by: 
+  Calls: 
+xQueueGenericSend/58 (xQueueGenericSend) @06a2ab60
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags: optimize_size
+  Called by: 
+  Calls: 
+xTaskGetSchedulerState/57 (xTaskGetSchedulerState) @06a2aa80
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags: optimize_size
+  Called by: 
+  Calls: 
+vListInitialiseItem/56 (vListInitialiseItem) @06a2a8c0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags: optimize_size
+  Called by: 
+  Calls: 
+pvPortMalloc/55 (pvPortMalloc) @06a2a700
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags: optimize_size
+  Called by: 
+  Calls: 
+vPortExitCritical/54 (vPortExitCritical) @06a2a540
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags: optimize_size
+  Called by: 
+  Calls: 
+vQueueAddToRegistry/53 (vQueueAddToRegistry) @06a2a460
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags: optimize_size
+  Called by: 
+  Calls: 
+xQueueGenericCreate/52 (xQueueGenericCreate) @06a2a380
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags: optimize_size
+  Called by: 
+  Calls: 
+vListInitialise/51 (vListInitialise) @06a2a1c0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags: optimize_size
+  Called by: 
+  Calls: 
+vPortEnterCritical/50 (vPortEnterCritical) @06a2a0e0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags: optimize_size
+  Called by: 
+  Calls: 
+xQueueReceive/49 (xQueueReceive) @06a07ee0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags: optimize_size
+  Called by: 
+  Calls: 
+vPortFree/48 (vPortFree) @06a07e00
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags: optimize_size
+  Called by: 
+  Calls: 
+vListInsert/47 (vListInsert) @06a07a80
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags: optimize_size
+  Called by: 
+  Calls: 
+uxListRemove/46 (uxListRemove) @06a077e0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags: optimize_size
+  Called by: 
+  Calls: 
+xLastTime.0/45 (xLastTime) @06a1a708
+  Type: variable definition analyzed
+  Visibility: prevailing_def_ironly asm_written
+  Aux: @00000001
+  References: 
+  Referring: 
+  Availability: available
+  Varpool flags: initialized used-by-single-function
+xTaskGetTickCount/44 (xTaskGetTickCount) @06a07460
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags: optimize_size
+  Called by: 
+  Calls: 
+vQueueWaitForMessageRestricted/43 (vQueueWaitForMessageRestricted) @06a072a0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags: optimize_size
+  Called by: 
+  Calls: 
+xTaskResumeAll/42 (xTaskResumeAll) @06a071c0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags: optimize_size
+  Called by: 
+  Calls: 
+vTaskSuspendAll/41 (vTaskSuspendAll) @06a070e0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags: optimize_size
+  Called by: 
+  Calls: 
+xTaskCreate/40 (xTaskCreate) @06a00540
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags: optimize_size
+  Called by: 
+  Calls: 
+vTimerResetState/39 (vTimerResetState) @06a00c40
+  Type: function definition analyzed
+  Visibility: externally_visible asm_written public
+  References: 
+  Referring: 
+  Availability: available
+  Function flags: count:1073741824 (estimated locally) nonfreeing_fn optimize_size
+  Called by: 
+  Calls: 
+vTimerSetTimerNumber/38 (vTimerSetTimerNumber) @06a009a0
+  Type: function definition analyzed
+  Visibility: externally_visible asm_written public
+  References: 
+  Referring: 
+  Availability: available
+  Function flags: count:1073741824 (estimated locally) nonfreeing_fn optimize_size
+  Called by: 
+  Calls: 
+uxTimerGetTimerNumber/37 (uxTimerGetTimerNumber) @06a00700
+  Type: function definition analyzed
+  Visibility: externally_visible asm_written public
+  References: 
+  Referring: 
+  Availability: available
+  Function flags: count:1073741824 (estimated locally) nonfreeing_fn optimize_size
+  Called by: 
+  Calls: 
+xTimerPendFunctionCall/36 (xTimerPendFunctionCall) @06a00460
+  Type: function definition analyzed
+  Visibility: externally_visible asm_written public
+  References: 
+  Referring: 
+  Availability: available
+  Function flags: count:22847857 (estimated locally) optimize_size
+  Called by: 
+  Calls: 
+xTimerPendFunctionCallFromISR/35 (xTimerPendFunctionCallFromISR) @06a00000
+  Type: function definition analyzed
+  Visibility: externally_visible asm_written public
+  References: 
+  Referring: 
+  Availability: available
+  Function flags: count:1073741824 (estimated locally) optimize_size
+  Called by: 
+  Calls: 
+vTimerSetTimerID/34 (vTimerSetTimerID) @069f67e0
+  Type: function definition analyzed
+  Visibility: externally_visible asm_written public
+  References: 
+  Referring: 
+  Availability: available
+  Function flags: count:22847857 (estimated locally) optimize_size
+  Called by: 
+  Calls: 
+pvTimerGetTimerID/33 (pvTimerGetTimerID) @069f6e00
+  Type: function definition analyzed
+  Visibility: externally_visible asm_written public
+  References: 
+  Referring: 
+  Availability: available
+  Function flags: count:22847857 (estimated locally) optimize_size
+  Called by: 
+  Calls: 
+xTimerIsTimerActive/32 (xTimerIsTimerActive) @069f6a80
+  Type: function definition analyzed
+  Visibility: externally_visible asm_written public
+  References: 
+  Referring: 
+  Availability: available
+  Function flags: count:22847857 (estimated locally) optimize_size
+  Called by: 
+  Calls: 
+prvCheckForValidListAndQueue/31 (prvCheckForValidListAndQueue) @069f6700
+  Type: function definition analyzed
+  Visibility: prevailing_def_ironly asm_written
+  References: 
+  Referring: 
+  Availability: local
+  Function flags: count:1073741824 (estimated locally) local optimize_size
+  Called by: 
+  Calls: 
+prvInsertTimerInActiveList/28 (prvInsertTimerInActiveList) @069eac40
+  Type: function definition analyzed
+  Visibility: prevailing_def_ironly asm_written
+  References: 
+  Referring: 
+  Availability: local
+  Function flags: count:1073741824 (estimated locally) local optimize_size
+  Called by: 
+  Calls: 
+prvSampleTimeNow/27 (prvSampleTimeNow) @069eae00
+  Type: function definition analyzed
+  Visibility: prevailing_def_ironly asm_written
+  References: 
+  Referring: 
+  Availability: local
+  Function flags: count:1073741824 (estimated locally) local optimize_size
+  Called by: 
+  Calls: 
+prvTimerTask/24 (prvTimerTask) @069ea380
+  Type: function definition analyzed
+  Visibility: prevailing_def_ironly asm_written
+  Address is taken.
+  References: 
+  Referring: 
+  Availability: available
+  Function flags: count:10631108 (estimated locally) executed_once optimize_size
+  Called by: 
+  Calls: 
+prvProcessExpiredTimer/23 (prvProcessExpiredTimer) @069ea0e0
+  Type: function definition analyzed
+  Visibility: prevailing_def_ironly asm_written
+  References: 
+  Referring: 
+  Availability: local
+  Function flags: count:1073741824 (estimated locally) local optimize_size
+  Called by: 
+  Calls: 
+prvReloadTimer/22 (prvReloadTimer) @069aaa80
+  Type: function definition analyzed
+  Visibility: prevailing_def_ironly asm_written
+  References: 
+  Referring: 
+  Availability: local
+  Function flags: count:118111600 (estimated locally) local optimize_size
+  Called by: 
+  Calls: 
+pcTimerGetName/21 (pcTimerGetName) @069aa460
+  Type: function definition analyzed
+  Visibility: externally_visible asm_written public
+  References: 
+  Referring: 
+  Availability: available
+  Function flags: count:35437027 (estimated locally) optimize_size
+  Called by: 
+  Calls: 
+xTimerGetExpiryTime/20 (xTimerGetExpiryTime) @069aad20
+  Type: function definition analyzed
+  Visibility: externally_visible asm_written public
+  References: 
+  Referring: 
+  Availability: available
+  Function flags: count:35437027 (estimated locally) optimize_size
+  Called by: 
+  Calls: 
+uxTimerGetReloadMode/19 (uxTimerGetReloadMode) @069aa9a0
+  Type: function definition analyzed
+  Visibility: externally_visible asm_written public
+  References: 
+  Referring: 
+  Availability: available
+  Function flags: count:1073741824 (estimated locally) optimize_size
+  Called by: 
+  Calls: 
+xTimerGetReloadMode/18 (xTimerGetReloadMode) @069aa700
+  Type: function definition analyzed
+  Visibility: externally_visible asm_written public
+  References: 
+  Referring: 
+  Availability: available
+  Function flags: count:22847857 (estimated locally) optimize_size
+  Called by: 
+  Calls: 
+vTimerSetReloadMode/17 (vTimerSetReloadMode) @069aa380
+  Type: function definition analyzed
+  Visibility: externally_visible asm_written public
+  References: 
+  Referring: 
+  Availability: available
+  Function flags: count:22847857 (estimated locally) optimize_size
+  Called by: 
+  Calls: 
+xTimerGetPeriod/16 (xTimerGetPeriod) @069aa000
+  Type: function definition analyzed
+  Visibility: externally_visible asm_written public
+  References: 
+  Referring: 
+  Availability: available
+  Function flags: count:35437027 (estimated locally) optimize_size
+  Called by: 
+  Calls: 
+xTimerGetTimerDaemonTaskHandle/15 (xTimerGetTimerDaemonTaskHandle) @069bd460
+  Type: function definition analyzed
+  Visibility: externally_visible asm_written public
+  References: 
+  Referring: 
+  Availability: available
+  Function flags: count:35437027 (estimated locally) optimize_size
+  Called by: 
+  Calls: 
+xTimerGenericCommandFromISR/14 (xTimerGenericCommandFromISR) @069bdee0
+  Type: function definition analyzed
+  Visibility: externally_visible asm_written public
+  References: 
+  Referring: 
+  Availability: available
+  Function flags: count:32382296 (estimated locally) optimize_size
+  Called by: 
+  Calls: 
+xTimerGenericCommandFromTask/13 (xTimerGenericCommandFromTask) @069bda80
+  Type: function definition analyzed
+  Visibility: externally_visible asm_written public
+  References: 
+  Referring: 
+  Availability: available
+  Function flags: count:32382296 (estimated locally) optimize_size
+  Called by: 
+  Calls: 
+xTimerCreate/11 (xTimerCreate) @069bd380
+  Type: function definition analyzed
+  Visibility: externally_visible asm_written public
+  References: 
+  Referring: 
+  Availability: available
+  Function flags: count:1073741824 (estimated locally) optimize_size
+  Called by: 
+  Calls: 
+xTimerCreateTimerTask/10 (xTimerCreateTimerTask) @069bd0e0
+  Type: function definition analyzed
+  Visibility: externally_visible asm_written public
+  References: 
+  Referring: 
+  Availability: available
+  Function flags: count:14510487 (estimated locally) optimize_size
+  Called by: 
+  Calls: 
+xTimerTaskHandle/9 (xTimerTaskHandle) @069b2cf0
+  Type: variable definition analyzed
+  Visibility: prevailing_def_ironly asm_written
+  Aux: @06a1a708
+  References: 
+  Referring: 
+  Availability: available
+  Varpool flags: initialized
+xTimerQueue/8 (xTimerQueue) @069b2ca8
+  Type: variable definition analyzed
+  Visibility: prevailing_def_ironly asm_written
+  Aux: @069b2cf0
+  References: 
+  Referring: 
+  Availability: available
+  Varpool flags: initialized
+pxOverflowTimerList/7 (pxOverflowTimerList) @069b2c18
+  Type: variable definition analyzed
+  Visibility: prevailing_def_ironly asm_written
+  Aux: @069b2ca8
+  References: 
+  Referring: 
+  Availability: available
+  Varpool flags:
+pxCurrentTimerList/6 (pxCurrentTimerList) @069b2b88
+  Type: variable definition analyzed
+  Visibility: prevailing_def_ironly asm_written
+  Aux: @069b2c18
+  References: 
+  Referring: 
+  Availability: available
+  Varpool flags:
+xActiveTimerList2/5 (xActiveTimerList2) @069b2af8
+  Type: variable definition analyzed
+  Visibility: prevailing_def_ironly asm_written
+  Aux: @069b2b88
+  References: 
+  Referring: 
+  Availability: available
+  Varpool flags: used-by-single-function
+xActiveTimerList1/4 (xActiveTimerList1) @069b2a68
+  Type: variable definition analyzed
+  Visibility: prevailing_def_ironly asm_written
+  Aux: @069b2af8
+  References: 
+  Referring: 
+  Availability: available
+  Varpool flags: used-by-single-function

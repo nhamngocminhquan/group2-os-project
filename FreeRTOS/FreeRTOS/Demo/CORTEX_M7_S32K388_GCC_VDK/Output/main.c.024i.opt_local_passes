@@ -1,0 +1,458 @@
+main ()
+{
+  volatile uint32_t * _1;
+  long unsigned int _2;
+  volatile uint32_t * _3;
+  long unsigned int _4;
+  struct QueueDefinition * _5;
+  struct QueueDefinition * _6;
+  struct QueueDefinition * _7;
+  long int _8;
+  struct tskTaskControlBlock * _9;
+  long int _10;
+  struct tskTaskControlBlock * _11;
+  long int _12;
+  struct tskTaskControlBlock * _13;
+
+  <bb 2> :
+  # DEBUG BEGIN_STMT
+  _1 = 3758157076B;
+  _2 ={v} *_1;
+  _3 = 3758157076B;
+  _4 = _2 | 2;
+  *_3 ={v} _4;
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  _5 = xQueueGenericCreate (1, 0, 3);
+  xSemaphore0 = _5;
+  # DEBUG BEGIN_STMT
+  _6 = xQueueGenericCreate (1, 0, 3);
+  xSemaphore1 = _6;
+  # DEBUG BEGIN_STMT
+  _7 = xQueueGenericCreate (1, 0, 3);
+  xSemaphore2 = _7;
+  # DEBUG BEGIN_STMT
+  _8 = xTaskCreate (task0, "task0", 90, 0B, 4, 0B);
+  _9 = (struct tskTaskControlBlock *) _8;
+  taskH0 = _9;
+  # DEBUG BEGIN_STMT
+  _10 = xTaskCreate (task1, "task1", 90, 1B, 3, 0B);
+  _11 = (struct tskTaskControlBlock *) _10;
+  taskH1 = _11;
+  # DEBUG BEGIN_STMT
+  _12 = xTaskCreate (task2, "task2", 90, 2B, 2, 0B);
+  _13 = (struct tskTaskControlBlock *) _12;
+  taskH2 = _13;
+  # DEBUG BEGIN_STMT
+  vTaskStartScheduler ();
+
+  <bb 3> :
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  goto <bb 3>; [INV]
+
+}
+
+
+PIT0_Handler ()
+{
+  unsigned int baseAddr;
+  BaseType_t xHigherPriorityTaskWoken;
+  unsigned int _1;
+  volatile uint32_t * _2;
+  long unsigned int counter.9_3;
+  long unsigned int _4;
+  volatile uint32_t * _5;
+  unsigned int _9;
+
+  <bb 2> :
+  # DEBUG BEGIN_STMT
+  xHigherPriorityTaskWoken_7 = 0;
+  # DEBUG xHigherPriorityTaskWoken => xHigherPriorityTaskWoken_7
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  baseAddr_8 = 1074462720;
+  # DEBUG baseAddr => baseAddr_8
+  # DEBUG BEGIN_STMT
+  _9 = baseAddr_8;
+  _1 = _9 + 284;
+  _2 = (volatile uint32_t *) _1;
+  *_2 ={v} 1;
+  # DEBUG BEGIN_STMT
+  counter.9_3 ={v} counter;
+  _4 = counter.9_3 + 1;
+  counter ={v} _4;
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  if (xHigherPriorityTaskWoken_7 != 0)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 4>; [INV]
+
+  <bb 3> :
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  _5 = 3758157060B;
+  *_5 ={v} 268435456;
+  # DEBUG BEGIN_STMT
+  __asm__ __volatile__("dsb" :  :  : "memory");
+  # DEBUG BEGIN_STMT
+  __asm__ __volatile__("isb");
+  # DEBUG BEGIN_STMT
+
+  <bb 4> :
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  return;
+
+}
+
+
+timerDisable ()
+{
+  unsigned int baseAddr;
+  volatile uint32_t * _1;
+  long unsigned int _2;
+  volatile uint32_t * _3;
+  long unsigned int _4;
+  unsigned int _6;
+  unsigned int _7;
+
+  <bb 2> :
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  baseAddr_5 = 1074462720;
+  # DEBUG baseAddr => baseAddr_5
+  # DEBUG BEGIN_STMT
+  _6 = baseAddr_5;
+  _7 = _6;
+  _1 = (volatile uint32_t *) _7;
+  _2 ={v} *_1;
+  _3 = (volatile uint32_t *) _7;
+  _4 = _2 | 2;
+  *_3 ={v} _4;
+  return;
+
+}
+
+
+timerSetUp ()
+{
+  unsigned int baseAddr;
+  unsigned int baseAddr;
+  unsigned int baseAddr;
+  unsigned int baseAddr;
+  unsigned int baseAddr;
+  unsigned int baseAddr;
+  unsigned int baseAddr;
+  volatile uint32_t * _1;
+  long unsigned int _2;
+  volatile uint32_t * _3;
+  long unsigned int _4;
+  unsigned int _5;
+  volatile uint32_t * _6;
+  long unsigned int _7;
+  unsigned int _8;
+  volatile uint32_t * _9;
+  long unsigned int _10;
+  unsigned int _11;
+  volatile uint32_t * _12;
+  unsigned int _13;
+  volatile uint32_t * _14;
+  long unsigned int _15;
+  unsigned int _16;
+  volatile uint32_t * _17;
+  long unsigned int _18;
+  volatile uint32_t * _19;
+  long unsigned int _20;
+  unsigned int _21;
+  volatile uint32_t * _22;
+  long unsigned int _23;
+  unsigned int _24;
+  volatile uint32_t * _25;
+  long unsigned int _26;
+  volatile uint32_t * _27;
+  long unsigned int _28;
+  volatile uint32_t * _29;
+  long unsigned int _30;
+  volatile uint32_t * _31;
+  volatile uint8_t * _32;
+  unsigned int _34;
+  unsigned int _35;
+  unsigned int _39;
+  unsigned int _40;
+  unsigned int _43;
+  unsigned int _46;
+  unsigned int _47;
+  unsigned int _50;
+  volatile uint32_t _52;
+  unsigned int _54;
+  unsigned int _55;
+  unsigned int _58;
+  unsigned int _59;
+
+  <bb 2> :
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  baseAddr_33 = 1074462720;
+  # DEBUG baseAddr => baseAddr_33
+  # DEBUG BEGIN_STMT
+  _34 = baseAddr_33;
+  _35 = _34;
+  _1 = (volatile uint32_t *) _35;
+  _2 ={v} *_1;
+  _3 = (volatile uint32_t *) _35;
+  _4 = _2 | 2;
+  *_3 ={v} _4;
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  baseAddr_38 = 1074462720;
+  # DEBUG baseAddr => baseAddr_38
+  # DEBUG BEGIN_STMT
+  _39 = baseAddr_38;
+  _40 = _39;
+  _5 = _40 + 280;
+  _6 = (volatile uint32_t *) _5;
+  _7 ={v} *_6;
+  _8 = _40 + 280;
+  _9 = (volatile uint32_t *) _8;
+  _10 = _7 & 4294967294;
+  *_9 ={v} _10;
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  baseAddr_42 = 1074462720;
+  # DEBUG baseAddr => baseAddr_42
+  # DEBUG BEGIN_STMT
+  _43 = baseAddr_42;
+  _11 = _43 + 272;
+  _12 = (volatile uint32_t *) _11;
+  *_12 ={v} 155072;
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  baseAddr_45 = 1074462720;
+  # DEBUG baseAddr => baseAddr_45
+  # DEBUG BEGIN_STMT
+  _46 = baseAddr_45;
+  _47 = _46;
+  _13 = _47 + 280;
+  _14 = (volatile uint32_t *) _13;
+  _15 ={v} *_14;
+  _16 = _47 + 280;
+  _17 = (volatile uint32_t *) _16;
+  _18 = _15 | 2;
+  *_17 ={v} _18;
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  baseAddr_49 = 1074462720;
+  # DEBUG baseAddr => baseAddr_49
+  # DEBUG BEGIN_STMT
+  _50 = baseAddr_49;
+  _19 = (volatile uint32_t *) _50;
+  _20 = 1;
+  *_19 ={v} _20;
+  _52 = _20;
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  baseAddr_53 = 1074462720;
+  # DEBUG baseAddr => baseAddr_53
+  # DEBUG BEGIN_STMT
+  _54 = baseAddr_53;
+  _55 = _54;
+  _21 = _55 + 280;
+  _22 = (volatile uint32_t *) _21;
+  _23 ={v} *_22;
+  _24 = _55 + 280;
+  _25 = (volatile uint32_t *) _24;
+  _26 = _23 | 1;
+  *_25 ={v} _26;
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  baseAddr_57 = 1074462720;
+  # DEBUG baseAddr => baseAddr_57
+  # DEBUG BEGIN_STMT
+  _58 = baseAddr_57;
+  _59 = _58;
+  _27 = (volatile uint32_t *) _59;
+  _28 ={v} *_27;
+  _29 = (volatile uint32_t *) _59;
+  _30 = _28 & 4294967293;
+  *_29 ={v} _30;
+  # DEBUG BEGIN_STMT
+  vInitInterruptTable (96, PIT0_Handler);
+  # DEBUG BEGIN_STMT
+  _31 = 3758153996B;
+  *_31 ={v} 1;
+  # DEBUG BEGIN_STMT
+  _32 = 3758154848B;
+  *_32 ={v} 192;
+  # DEBUG BEGIN_STMT
+  return;
+
+}
+
+
+task2 (void * p2)
+{
+  struct QueueDefinition * xSemaphore2.6_1;
+  long int _2;
+  long unsigned int task2_count.7_3;
+  long unsigned int _4;
+  struct QueueDefinition * xSemaphore1.8_5;
+
+  <bb 2> :
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  timerSetUp ();
+
+  <bb 3> :
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  xSemaphore2.6_1 = xSemaphore2;
+  _2 = xQueueSemaphoreTake (xSemaphore2.6_1, 4294967295);
+  if (_2 == 1)
+    goto <bb 4>; [INV]
+  else
+    goto <bb 5>; [INV]
+
+  <bb 4> :
+  # DEBUG BEGIN_STMT
+  task2_count.7_3 ={v} task2_count;
+  _4 = task2_count.7_3 + 1;
+  task2_count ={v} _4;
+
+  <bb 5> :
+  # DEBUG BEGIN_STMT
+  xSemaphore1.8_5 = xSemaphore1;
+  xQueueGenericSend (xSemaphore1.8_5, 0B, 0, 0);
+  # DEBUG BEGIN_STMT
+  goto <bb 3>; [INV]
+
+}
+
+
+task1 (void * p2)
+{
+  struct QueueDefinition * xSemaphore1.3_1;
+  long int _2;
+  long unsigned int task1_count.4_3;
+  long unsigned int _4;
+  struct QueueDefinition * xSemaphore0.5_5;
+
+  <bb 2> :
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  xSemaphore1.3_1 = xSemaphore1;
+  _2 = xQueueSemaphoreTake (xSemaphore1.3_1, 4294967295);
+  if (_2 == 1)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 4>; [INV]
+
+  <bb 3> :
+  # DEBUG BEGIN_STMT
+  task1_count.4_3 ={v} task1_count;
+  _4 = task1_count.4_3 + 1;
+  task1_count ={v} _4;
+
+  <bb 4> :
+  # DEBUG BEGIN_STMT
+  xSemaphore0.5_5 = xSemaphore0;
+  xQueueGenericSend (xSemaphore0.5_5, 0B, 0, 0);
+  # DEBUG BEGIN_STMT
+  goto <bb 2>; [INV]
+
+}
+
+
+task0 (void * p1)
+{
+  struct QueueDefinition * xSemaphore0.1_1;
+  long int _2;
+  long unsigned int task0_count.2_3;
+  long unsigned int _4;
+
+  <bb 2> :
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  xSemaphore0.1_1 = xSemaphore0;
+  _2 = xQueueSemaphoreTake (xSemaphore0.1_1, 4294967295);
+  if (_2 == 1)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 2>; [INV]
+
+  <bb 3> :
+  # DEBUG BEGIN_STMT
+  task0_count.2_3 ={v} task0_count;
+  _4 = task0_count.2_3 + 1;
+  task0_count ={v} _4;
+  goto <bb 2>; [INV]
+
+}
+
+
+vApplicationMallocFailedHook ()
+{
+  <bb 2> :
+  # DEBUG BEGIN_STMT
+  return;
+
+}
+
+
+vApplicationStackOverflowHook (struct tskTaskControlBlock * pxTask, char * pcTaskName)
+{
+  <bb 2> :
+  # DEBUG BEGIN_STMT
+  return;
+
+}
+
+
+vAssertCalled (uint32_t ulLine, const char * pcFile)
+{
+  <bb 2> :
+  # DEBUG BEGIN_STMT
+  return;
+
+}
+
+
+vApplicationTickHook ()
+{
+  long unsigned int ui32_ms_cnt.0_1;
+  long unsigned int _2;
+
+  <bb 2> :
+  # DEBUG BEGIN_STMT
+  ui32_ms_cnt.0_1 ={v} ui32_ms_cnt;
+  _2 = ui32_ms_cnt.0_1 + 1;
+  ui32_ms_cnt ={v} _2;
+  return;
+
+}
+
+

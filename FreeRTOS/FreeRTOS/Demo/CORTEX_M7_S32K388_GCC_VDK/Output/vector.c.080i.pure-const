@@ -1,0 +1,77 @@
+
+
+ local analysis of vInitInterruptTable/1
+   scanning: __vector_table__[id_2(D)] = vector_3(D);
+  scanning: return;
+Function is locally const.
+callgraph:
+
+vInitInterruptTable/1 (vInitInterruptTable) @0683b8c0
+  Type: function definition analyzed
+  Visibility: externally_visible public
+  Aux: @065fa868
+  References: __vector_table__/0 (write) 
+  Referring: 
+  Availability: available
+  Function flags: count:1073741824 (estimated locally) body optimize_size
+  Called by: 
+  Calls: 
+
+
+ ordered call graph: reduced for nothrow
+vInitInterruptTable/1 (vInitInterruptTable) @0683b8c0
+  Type: function definition analyzed
+  Visibility: externally_visible public
+  Aux: @065fa868
+  References: __vector_table__/0 (write) 
+  Referring: 
+  Availability: available
+  Function flags: count:1073741824 (estimated locally) body optimize_size
+  Called by: 
+  Calls: 
+
+
+
+MALLOC LATTICE Initial:
+vInitInterruptTable/1: malloc_bottom
+
+
+MALLOC LATTICE after propagation:
+vInitInterruptTable/1: malloc_bottom
+callgraph:
+
+vInitInterruptTable/1 (vInitInterruptTable) @0683b8c0
+  Type: function definition analyzed
+  Visibility: externally_visible public
+  Aux: @065fa768
+  References: __vector_table__/0 (write) 
+  Referring: 
+  Availability: available
+  Function flags: count:1073741824 (estimated locally) body optimize_size
+  Called by: 
+  Calls: 
+
+
+ ordered call graph: reduced
+vInitInterruptTable/1 (vInitInterruptTable) @0683b8c0
+  Type: function definition analyzed
+  Visibility: externally_visible public
+  Aux: @065fa768
+  References: __vector_table__/0 (write) 
+  Referring: 
+  Availability: available
+  Function flags: count:1073741824 (estimated locally) body optimize_size
+  Called by: 
+  Calls: 
+
+Function found not to call free: vInitInterruptTable/1
+vInitInterruptTable (int id, void * vector)
+{
+  <bb 2> [local count: 1073741824]:
+  # DEBUG BEGIN_STMT
+  __vector_table__[id_2(D)] = vector_3(D);
+  return;
+
+}
+
+

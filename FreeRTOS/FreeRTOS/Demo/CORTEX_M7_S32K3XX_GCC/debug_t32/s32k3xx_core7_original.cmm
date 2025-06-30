@@ -1,0 +1,164 @@
+;
+; Copyright 2018, 2020, 2022 NXP
+;
+
+LOCAL &elf_file
+LOCAL &platform
+LOCAL &core
+ENTRY &elf_file &platform
+
+IF (VERSION.BUILD.BASE()<152557.)
+(
+    PRINT %ERROR "Trace32 version might be not supported for current version chip, please update it."
+    ENDDO
+)
+
+&platform="S32K344" ;Config platform (EX: S32K344, S32K358)
+&core="0x0"         ;Config core (EX: 0x0, 0x1, 0x2)
+&elf_file="D:\Gitwork\freertos-git.freescale.com\FreeRTOS\Demo\CORTEX_M7_S32K3XX_GCC\Output\image.elf"
+
+SYStem.Reset
+Break.RESet
+SYStem.CPU &platform-M7
+;CORE.ASSIGN 1.
+SYStem.Config debugporttype JTAG
+SYStem.Option TRST OFF
+SYStem.Option ResBreak OFF      ; On "CVB-257BGA DC", nTRST is connected to nSRST => ResBreak MUST be OFF
+SYStem.Option WaitReset 100us   ; Wait 100us (min 50us) between the nSRST/nTRST deassertion and the first JTAG activity
+SYStem.JTAGclock 10MHz
+SYStem.MemAccess AHB
+SYStem.Option DUALPORT ON
+trace.DISABLE
+ETM.OFF
+ITM.OFF
+HTM.OFF
+GOSUB Config_Flash
+
+SYStem.Up
+
+;SWT_0 Disable
+D.S SD:0x40270010 %LE %Long 0xC520
+D.S SD:0x40270010 %LE %Long 0xD928
+D.S SD:0x40270000 %LE %Long 0xFF000000
+
+IF "&platform"=="S32K338"
+(
+    PRINT %ERROR "S32K338 only supported on core0."
+    &core="0x0"
+)
+IF "&core"=="0x1"
+(
+    ; Create a temporary vector table with a while(1)
+    D.S 0x20427000 %Long 0x20428000
+    D.S 0x20427004 %Long 0x20428005
+    Data.Assemble 0x20428004 b 0x20428004
+    Data.Set SD:0x402DC160 %LE %Long 0x00000001        ; Partition 0 Core 1 Process Configuration Register (PRTN0_CORE1_PCONF)
+    Data.Set SD:0x402DC164 %LE %Long 0x00000001        ; Partition 0 Core 1 Process Update Register (PRTN0_CORE1_PUPD)
+    Data.Set SD:0x402DC16C %LE %Long 0x20427000        ; Partition 0 Core 1 Address Register (PRTN0_CORE1_ADDR)
+    Data.Set SD:0x402DC000 %LE %Long 0x00005AF0        ; MC_ME.CTL_KEY
+    Data.Set SD:0x402DC000 %LE %Long 0x0000A50F        ; MC_ME.CTL_KEY
+    While ((Data.Long(SD:0x402DC168)&0x00000001)==0x0) ; Partition 0 Core 1 Status Register (PRTN0_CORE1_STAT)
+    (
+        ; Wait for core clock to be enabled
+    )
+    SYStem.CPU &platform-M7-1
+    SYStem.Attach
+    break
+    TrOnchip.Set MMERR OFF
+)
+ELSE IF "&core"=="0x2"
+(
+    ; Create a temporary vector table with a while(1)
+    D.S 0x20427000 %Long 0x20428000
+    D.S 0x20427004 %Long 0x20428005
+    Data.Assemble 0x20428004 b 0x20428004
+    Data.Set SD:0x402DC1C0 %LE %Long 0x00000001        ; Partition 0 Core 4 Process Configuration Register (PRTN0_CORE4_PCONF)
+    Data.Set SD:0x402DC1C4 %LE %Long 0x00000001        ; Partition 0 Core 4 Process Update Register (PRTN0_CORE4_PUPD)
+    Data.Set SD:0x402DC1CC %LE %Long 0x20427000        ; Partition 0 Core 4 Address Register (PRTN0_CORE4_ADDR)
+    Data.Set SD:0x402DC000 %LE %Long 0x00005AF0        ; MC_ME.CTL_KEY
+    Data.Set SD:0x402DC000 %LE %Long 0x0000A50F        ; MC_ME.CTL_KEY
+    While ((Data.Long(SD:0x402DC1C8)&0x00000001)==0x0) ; Partition 0 Core 4 Status Register (PRTN0_CORE4_STAT)
+    (
+        ; Wait for core clock to be enabled
+    )
+    SYStem.CPU &platform-M7-2
+    SYStem.Attach
+    break
+    TrOnchip.Set MMERR OFF
+)
+ELSE
+(
+    ;Enable Partition 1
+    D.S SD:0x402DC300 %LE %LONG 0x00000001  ;  MC_ME.PRTN1_PCONF
+    D.S SD:0x402DC304 %LE %LONG 0x00000001  ;  MC_ME.PRTN1_PUPD
+    D.S SD:0x402DC000 %LE %LONG 0x00005AF0  ;  MC_ME.MC_ME_CTL_KEY
+    D.S SD:0x402DC000 %LE %LONG 0x0000A50F  ;  MC_ME.MC_ME_CTL_KEY
+    WAIT (Data.Long(SD:0x402DC308)&0x00000001)==0x1  ; MC_ME.PRTN1_STAT[PCS]
+    (
+        ; wait for partition 1 clock to be active
+    )
+)
+
+PRIVATE &cofb_reg
+
+;Enable DMAMUX_0 Clock
+&cofb_reg=Data.Long(SD:0x402DC334)
+&cofb_reg=&cofb_reg|0x00000001
+D.S SD:0x402DC334 %LE %LONG &cofb_reg   ;  MC_ME.MC_ME_PRTN1_COFB1_CLKEN
+D.S SD:0x402DC304 %LE %LONG 0x00000001  ;  MC_ME.PRTN1_PUPD
+D.S SD:0x402DC000 %LE %LONG 0x00005AF0  ;  MC_ME.MC_ME_CTL_KEY.R
+D.S SD:0x402DC000 %LE %LONG 0x0000A50F  ;  MC_ME.MC_ME_CTL_KEY.R
+WAIT (Data.Long(SD:0x402DC314)==&cofb_reg)  ; MC_ME.PRTN1_COFB1_STAT[REQ32]
+(
+    ; wait for DMAMUX_0 clock to be active
+)
+
+;Enable eDMA_TCD_0 Clock
+&cofb_reg=Data.Long(SD:0x402DC330)
+&cofb_reg=&cofb_reg|0x00000018
+D.S SD:0x402DC330 %LE %LONG &cofb_reg   ;  MC_ME.MC_ME_PRTN1_COFB0_CLKEN
+D.S SD:0x402DC304 %LE %LONG 0x00000001  ;  MC_ME.PRTN1_PUPD
+D.S SD:0x402DC000 %LE %LONG 0x00005AF0  ;  MC_ME.MC_ME_CTL_KEY.R
+D.S SD:0x402DC000 %LE %LONG 0x0000A50F  ;  MC_ME.MC_ME_CTL_KEY.R
+WAIT (Data.Long(SD:0x402DC310)==&cofb_reg)  ; MC_ME.PRTN1_COFB0_STAT[REQ4]
+(
+    ; wait for eDMA_TCD_0 clock to be active
+)
+
+;DMA SRAM Init
+D.S SD:0x40280003 %LE %BYTE 0x80	    ; Channel 0 Enable
+
+D.S SD:0x40210020 %LE %LONG 0x00400000	; SADDR
+D.S SD:0x40210024 %LE %LONG 0x03030000	; SSIZE 3, DSIZE 3, SOFF 0
+D.S SD:0x40210028 %LE %LONG 0x00044000	; Nbytes
+D.S SD:0x4021002C %LE %LONG 0x00000000	; SLAST
+D.S SD:0x40210030 %LE %LONG 0x20400000	; DADDR
+D.S SD:0x40210034 %LE %LONG 0x00010008	; CITER 1, DOFF 8
+D.S SD:0x40210038 %LE %LONG 0xFFFB0000	; DLASTSGA = -NBYTES
+D.S SD:0x4021003C %LE %LONG 0x00000001	; Start
+
+WAIT ((data.long(SD:0x40210000)&0x40000000)==0x40000000)
+(
+    ; wait for DMA DONE bit to be set
+)
+
+Data.Load.Elf &elf_file /GLOBTYPES /GT /MW /BUGFIX
+; Enable MSCM Clock
+&cofb_reg=Data.Long(SD:0x402DC330)
+&cofb_reg=&cofb_reg|0x01000000
+D.S SD:0x402DC330 %LE %LONG &cofb_reg   ;  MC_ME.MC_ME_PRTN1_COFB0_CLKEN
+D.S SD:0x402DC304 %LE %LONG 0x00000001  ;  MC_ME.PRTN1_PUPD
+D.S SD:0x402DC000 %LE %LONG 0x00005AF0  ;  MC_ME.MC_ME_CTL_KEY.R
+D.S SD:0x402DC000 %LE %LONG 0x0000A50F  ;  MC_ME.MC_ME_CTL_KEY.R
+WAIT (Data.Long(SD:0x402DC310)==&cofb_reg)  ; MC_ME.PRTN1_COFB0_STAT[REQ24]
+(
+    ; wait for MSCM clock to be active
+)
+
+List.auto
+v.w ui32_ms_cnt task_1 task_2
+Register.Set PC Reset_Handler
+TASK.CONFIG ~~/demo/arm/kernel/freertos/freertos.t32       ; load FreeRTOS awareness
+MENU.ReProgram ~~/demo/arm/kernel/freertos/freertos.men    ; load FreeRTOS menu
+go main
+ENDDO

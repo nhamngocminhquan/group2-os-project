@@ -1,0 +1,726 @@
+callgraph:
+
+vTaskStartScheduler/38 (vTaskStartScheduler) @069aeee0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags: optimize_size
+  Called by: main/32 (10631108 (estimated locally),1.00 per call) 
+  Calls: 
+xTaskCreate/37 (xTaskCreate) @069aee00
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags: optimize_size
+  Called by: main/32 (10631108 (estimated locally),1.00 per call) main/32 (10631108 (estimated locally),1.00 per call) main/32 (10631108 (estimated locally),1.00 per call) 
+  Calls: 
+xQueueGenericCreate/36 (xQueueGenericCreate) @069aed20
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags: optimize_size
+  Called by: main/32 (10631108 (estimated locally),1.00 per call) main/32 (10631108 (estimated locally),1.00 per call) main/32 (10631108 (estimated locally),1.00 per call) 
+  Calls: 
+vInitInterruptTable/35 (vInitInterruptTable) @069ae9a0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags: optimize_size
+  Called by: timerSetUp/29 (1073741824 (estimated locally),1.00 per call) 
+  Calls: 
+xQueueGenericSend/34 (xQueueGenericSend) @069ae540
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags: optimize_size
+  Called by: task2/28 (1073741824 (estimated locally),101.00 per call) task1/27 (1073741824 (estimated locally),101.00 per call) 
+  Calls: 
+xQueueSemaphoreTake/33 (xQueueSemaphoreTake) @069ae380
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags: optimize_size
+  Called by: task2/28 (1073741824 (estimated locally),101.00 per call) task1/27 (1073741824 (estimated locally),101.00 per call) task0/26 (1073741824 (estimated locally),297.06 per call) 
+  Calls: 
+main/32 (main) @06a14d20
+  Type: function definition analyzed
+  Visibility: externally_visible public
+  References: xSemaphore0/8 (write) xSemaphore1/9 (write) xSemaphore2/10 (write) task0/26 (addr) taskH0/11 (write) task1/27 (addr) taskH1/12 (write) task2/28 (addr) taskH2/13 (write) 
+  Referring: 
+  Availability: available
+  Function flags: count:10631108 (estimated locally) body only_called_at_startup executed_once optimize_size
+  Called by: 
+  Calls: vTaskStartScheduler/38 (10631108 (estimated locally),1.00 per call) xTaskCreate/37 (10631108 (estimated locally),1.00 per call) xTaskCreate/37 (10631108 (estimated locally),1.00 per call) xTaskCreate/37 (10631108 (estimated locally),1.00 per call) xQueueGenericCreate/36 (10631108 (estimated locally),1.00 per call) xQueueGenericCreate/36 (10631108 (estimated locally),1.00 per call) xQueueGenericCreate/36 (10631108 (estimated locally),1.00 per call) 
+PIT0_Handler/31 (PIT0_Handler) @06a149a0
+  Type: function definition analyzed
+  Visibility: externally_visible public
+  Address is taken.
+  References: counter/17 (read) counter/17 (write) 
+  Referring: timerSetUp/29 (addr) 
+  Availability: available
+  Function flags: count:1073741824 (estimated locally) body nonfreeing_fn optimize_size
+  Called by: 
+  Calls: 
+timerDisable/30 (timerDisable) @06a14540
+  Type: function definition analyzed
+  Visibility: externally_visible public
+  References: 
+  Referring: 
+  Availability: available
+  Function flags: count:1073741824 (estimated locally) body nonfreeing_fn optimize_size
+  Called by: 
+  Calls: 
+timerSetUp/29 (timerSetUp) @06a142a0
+  Type: function definition analyzed
+  Visibility: externally_visible public
+  References: PIT0_Handler/31 (addr) 
+  Referring: 
+  Availability: available
+  Function flags: count:1073741824 (estimated locally) body optimize_size
+  Called by: task2/28 (10631108 (estimated locally),1.00 per call) 
+  Calls: vInitInterruptTable/35 (1073741824 (estimated locally),1.00 per call) 
+task2/28 (task2) @06a08c40
+  Type: function definition analyzed
+  Visibility: externally_visible public
+  Address is taken.
+  References: xSemaphore2/10 (read) task2_count/25 (read) task2_count/25 (write) xSemaphore1/9 (read) 
+  Referring: main/32 (addr) 
+  Availability: available
+  Function flags: count:10631108 (estimated locally) body executed_once optimize_size
+  Called by: 
+  Calls: xQueueGenericSend/34 (1073741824 (estimated locally),101.00 per call) xQueueSemaphoreTake/33 (1073741824 (estimated locally),101.00 per call) timerSetUp/29 (10631108 (estimated locally),1.00 per call) 
+task1/27 (task1) @06a087e0
+  Type: function definition analyzed
+  Visibility: externally_visible public
+  Address is taken.
+  References: xSemaphore1/9 (read) task1_count/24 (read) task1_count/24 (write) xSemaphore0/8 (read) 
+  Referring: main/32 (addr) 
+  Availability: available
+  Function flags: count:10631108 (estimated locally) body executed_once optimize_size
+  Called by: 
+  Calls: xQueueGenericSend/34 (1073741824 (estimated locally),101.00 per call) xQueueSemaphoreTake/33 (1073741824 (estimated locally),101.00 per call) 
+task0/26 (task0) @06a08380
+  Type: function definition analyzed
+  Visibility: externally_visible public
+  Address is taken.
+  References: xSemaphore0/8 (read) task0_count/23 (read) task0_count/23 (write) 
+  Referring: main/32 (addr) 
+  Availability: available
+  Function flags: count:3614577 (estimated locally) body executed_once optimize_size
+  Called by: 
+  Calls: xQueueSemaphoreTake/33 (1073741824 (estimated locally),297.06 per call) 
+vApplicationMallocFailedHook/22 (vApplicationMallocFailedHook) @06a042a0
+  Type: function definition analyzed
+  Visibility: externally_visible public
+  References: 
+  Referring: 
+  Availability: available
+  Function flags: count:1073741824 (estimated locally) body nonfreeing_fn optimize_size
+  Called by: 
+  Calls: 
+vApplicationStackOverflowHook/21 (vApplicationStackOverflowHook) @06a04d20
+  Type: function definition analyzed
+  Visibility: externally_visible public
+  References: 
+  Referring: 
+  Availability: available
+  Function flags: count:1073741824 (estimated locally) body nonfreeing_fn optimize_size
+  Called by: 
+  Calls: 
+vAssertCalled/20 (vAssertCalled) @06a04a80
+  Type: function definition analyzed
+  Visibility: externally_visible public
+  References: 
+  Referring: 
+  Availability: available
+  Function flags: count:1073741824 (estimated locally) body nonfreeing_fn optimize_size
+  Called by: 
+  Calls: 
+vApplicationTickHook/19 (vApplicationTickHook) @06a047e0
+  Type: function definition analyzed
+  Visibility: externally_visible public
+  References: ui32_ms_cnt/15 (read) ui32_ms_cnt/15 (write) 
+  Referring: 
+  Availability: available
+  Function flags: count:1073741824 (estimated locally) body nonfreeing_fn optimize_size
+  Called by: 
+  Calls: 
+Clearing variable flags:
+
+Promotable global:taskH0 (uid=0)
+
+Promotable global:taskH1 (uid=1)
+
+Promotable global:taskH2 (uid=2)
+
+Function name:main/32:
+  locals read: 
+  locals written: 
+Function name:PIT0_Handler/31:
+  locals read: 
+  locals written: 
+Function name:timerDisable/30:
+  locals read: 
+  locals written: 
+Function name:timerSetUp/29:
+  locals read: 
+  locals written: 
+Function name:task2/28:
+  locals read: 
+  locals written: 
+Function name:task1/27:
+  locals read: 
+  locals written: 
+Function name:task0/26:
+  locals read: 
+  locals written: 
+Function name:vApplicationMallocFailedHook/22:
+  locals read: 
+  locals written: 
+Function name:vApplicationStackOverflowHook/21:
+  locals read: 
+  locals written: 
+Function name:vAssertCalled/20:
+  locals read: 
+  locals written: 
+Function name:vApplicationTickHook/19:
+  locals read: 
+  locals written: 
+
+ ordered call graph: reduced
+main/32 (main) @06a14d20
+  Type: function definition analyzed
+  Visibility: externally_visible public
+  Aux: @065bbde0
+  References: xSemaphore0/8 (write) xSemaphore1/9 (write) xSemaphore2/10 (write) task0/26 (addr) taskH0/11 (write) task1/27 (addr) taskH1/12 (write) task2/28 (addr) taskH2/13 (write) 
+  Referring: 
+  Availability: available
+  Function flags: count:10631108 (estimated locally) body only_called_at_startup executed_once optimize_size
+  Called by: 
+  Calls: vTaskStartScheduler/38 (10631108 (estimated locally),1.00 per call) xTaskCreate/37 (10631108 (estimated locally),1.00 per call) xTaskCreate/37 (10631108 (estimated locally),1.00 per call) xTaskCreate/37 (10631108 (estimated locally),1.00 per call) xQueueGenericCreate/36 (10631108 (estimated locally),1.00 per call) xQueueGenericCreate/36 (10631108 (estimated locally),1.00 per call) xQueueGenericCreate/36 (10631108 (estimated locally),1.00 per call) 
+PIT0_Handler/31 (PIT0_Handler) @06a149a0
+  Type: function definition analyzed
+  Visibility: externally_visible public
+  Address is taken.
+  Aux: @065bbe60
+  References: counter/17 (read) counter/17 (write) 
+  Referring: timerSetUp/29 (addr) 
+  Availability: available
+  Function flags: count:1073741824 (estimated locally) body nonfreeing_fn optimize_size
+  Called by: 
+  Calls: 
+timerDisable/30 (timerDisable) @06a14540
+  Type: function definition analyzed
+  Visibility: externally_visible public
+  Aux: @065bc080
+  References: 
+  Referring: 
+  Availability: available
+  Function flags: count:1073741824 (estimated locally) body nonfreeing_fn optimize_size
+  Called by: 
+  Calls: 
+task2/28 (task2) @06a08c40
+  Type: function definition analyzed
+  Visibility: externally_visible public
+  Address is taken.
+  Aux: @065bc0e0
+  References: xSemaphore2/10 (read) task2_count/25 (read) task2_count/25 (write) xSemaphore1/9 (read) 
+  Referring: main/32 (addr) 
+  Availability: available
+  Function flags: count:10631108 (estimated locally) body executed_once optimize_size
+  Called by: 
+  Calls: xQueueGenericSend/34 (1073741824 (estimated locally),101.00 per call) xQueueSemaphoreTake/33 (1073741824 (estimated locally),101.00 per call) timerSetUp/29 (10631108 (estimated locally),1.00 per call) 
+timerSetUp/29 (timerSetUp) @06a142a0
+  Type: function definition analyzed
+  Visibility: externally_visible public
+  Aux: @065bbe80
+  References: PIT0_Handler/31 (addr) 
+  Referring: 
+  Availability: available
+  Function flags: count:1073741824 (estimated locally) body optimize_size
+  Called by: task2/28 (10631108 (estimated locally),1.00 per call) 
+  Calls: vInitInterruptTable/35 (1073741824 (estimated locally),1.00 per call) 
+task1/27 (task1) @06a087e0
+  Type: function definition analyzed
+  Visibility: externally_visible public
+  Address is taken.
+  Aux: @065bbee0
+  References: xSemaphore1/9 (read) task1_count/24 (read) task1_count/24 (write) xSemaphore0/8 (read) 
+  Referring: main/32 (addr) 
+  Availability: available
+  Function flags: count:10631108 (estimated locally) body executed_once optimize_size
+  Called by: 
+  Calls: xQueueGenericSend/34 (1073741824 (estimated locally),101.00 per call) xQueueSemaphoreTake/33 (1073741824 (estimated locally),101.00 per call) 
+task0/26 (task0) @06a08380
+  Type: function definition analyzed
+  Visibility: externally_visible public
+  Address is taken.
+  Aux: @065bbf20
+  References: xSemaphore0/8 (read) task0_count/23 (read) task0_count/23 (write) 
+  Referring: main/32 (addr) 
+  Availability: available
+  Function flags: count:3614577 (estimated locally) body executed_once optimize_size
+  Called by: 
+  Calls: xQueueSemaphoreTake/33 (1073741824 (estimated locally),297.06 per call) 
+vApplicationMallocFailedHook/22 (vApplicationMallocFailedHook) @06a042a0
+  Type: function definition analyzed
+  Visibility: externally_visible public
+  Aux: @065bbf40
+  References: 
+  Referring: 
+  Availability: available
+  Function flags: count:1073741824 (estimated locally) body nonfreeing_fn optimize_size
+  Called by: 
+  Calls: 
+vApplicationStackOverflowHook/21 (vApplicationStackOverflowHook) @06a04d20
+  Type: function definition analyzed
+  Visibility: externally_visible public
+  Aux: @065bbf60
+  References: 
+  Referring: 
+  Availability: available
+  Function flags: count:1073741824 (estimated locally) body nonfreeing_fn optimize_size
+  Called by: 
+  Calls: 
+vAssertCalled/20 (vAssertCalled) @06a04a80
+  Type: function definition analyzed
+  Visibility: externally_visible public
+  Aux: @065bc360
+  References: 
+  Referring: 
+  Availability: available
+  Function flags: count:1073741824 (estimated locally) body nonfreeing_fn optimize_size
+  Called by: 
+  Calls: 
+vApplicationTickHook/19 (vApplicationTickHook) @06a047e0
+  Type: function definition analyzed
+  Visibility: externally_visible public
+  Aux: @065bc280
+  References: ui32_ms_cnt/15 (read) ui32_ms_cnt/15 (write) 
+  Referring: 
+  Availability: available
+  Function flags: count:1073741824 (estimated locally) body nonfreeing_fn optimize_size
+  Called by: 
+  Calls: 
+
+
+Function name:vApplicationTickHook/19:
+    locals read: 
+    locals written: 
+  globals read: 
+  globals written: 
+
+Function name:vAssertCalled/20:
+    locals read: 
+    locals written: 
+  globals read: 
+  globals written: 
+
+Function name:vApplicationStackOverflowHook/21:
+    locals read: 
+    locals written: 
+  globals read: 
+  globals written: 
+
+Function name:vApplicationMallocFailedHook/22:
+    locals read: 
+    locals written: 
+  globals read: 
+  globals written: 
+
+Function name:task0/26:
+    locals read: 
+    locals written: 
+  globals read: ALL
+  globals written: ALL
+
+Function name:task1/27:
+    locals read: 
+    locals written: 
+  globals read: ALL
+  globals written: ALL
+
+Function name:timerSetUp/29:
+    locals read: 
+    locals written: 
+  globals read: ALL
+  globals written: ALL
+
+Function name:task2/28:
+    locals read: 
+    locals written: 
+  globals read: ALL
+  globals written: ALL
+
+Function name:timerDisable/30:
+    locals read: 
+    locals written: 
+  globals read: 
+  globals written: 
+
+Function name:PIT0_Handler/31:
+    locals read: 
+    locals written: 
+  globals read: 
+  globals written: 
+
+Function name:main/32:
+    locals read: 
+    locals written: 
+  globals read: ALL
+  globals written: ALL
+main ()
+{
+  long unsigned int _1;
+  long unsigned int _2;
+  struct QueueDefinition * _3;
+  struct QueueDefinition * _4;
+  struct QueueDefinition * _5;
+  long int _6;
+  struct tskTaskControlBlock * _7;
+  long int _8;
+  struct tskTaskControlBlock * _9;
+  long int _10;
+  struct tskTaskControlBlock * _11;
+
+  <bb 2> [local count: 10631108]:
+  # DEBUG BEGIN_STMT
+  _1 ={v} MEM[(volatile uint32_t *)3758157076B];
+  _2 = _1 | 2;
+  MEM[(volatile uint32_t *)3758157076B] ={v} _2;
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  _3 = xQueueGenericCreate (1, 0, 3);
+  xSemaphore0 = _3;
+  # DEBUG BEGIN_STMT
+  _4 = xQueueGenericCreate (1, 0, 3);
+  xSemaphore1 = _4;
+  # DEBUG BEGIN_STMT
+  _5 = xQueueGenericCreate (1, 0, 3);
+  xSemaphore2 = _5;
+  # DEBUG BEGIN_STMT
+  _6 = xTaskCreate (task0, "task0", 90, 0B, 4, 0B);
+  _7 = (struct tskTaskControlBlock *) _6;
+  taskH0 = _7;
+  # DEBUG BEGIN_STMT
+  _8 = xTaskCreate (task1, "task1", 90, 1B, 3, 0B);
+  _9 = (struct tskTaskControlBlock *) _8;
+  taskH1 = _9;
+  # DEBUG BEGIN_STMT
+  _10 = xTaskCreate (task2, "task2", 90, 2B, 2, 0B);
+  _11 = (struct tskTaskControlBlock *) _10;
+  taskH2 = _11;
+  # DEBUG BEGIN_STMT
+  vTaskStartScheduler ();
+
+  <bb 3> [local count: 1073741824]:
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+
+  <bb 4> [local count: 1073741824]:
+  goto <bb 3>; [100.00%]
+
+}
+
+
+PIT0_Handler ()
+{
+  long unsigned int counter.9_1;
+  long unsigned int _2;
+
+  <bb 2> [local count: 1073741824]:
+  # DEBUG BEGIN_STMT
+  # DEBUG xHigherPriorityTaskWoken => 0
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  # DEBUG baseAddr => 1074462720
+  # DEBUG BEGIN_STMT
+  MEM[(volatile uint32_t *)1074463004B] ={v} 1;
+  # DEBUG BEGIN_STMT
+  counter.9_1 ={v} counter;
+  _2 = counter.9_1 + 1;
+  counter ={v} _2;
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  return;
+
+}
+
+
+timerDisable ()
+{
+  long unsigned int _1;
+  long unsigned int _2;
+
+  <bb 2> [local count: 1073741824]:
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  # DEBUG baseAddr => 1074462720
+  # DEBUG BEGIN_STMT
+  _1 ={v} MEM[(volatile uint32_t *)1074462720B];
+  _2 = _1 | 2;
+  MEM[(volatile uint32_t *)1074462720B] ={v} _2;
+  return;
+
+}
+
+
+timerSetUp ()
+{
+  long unsigned int _1;
+  long unsigned int _2;
+  long unsigned int _3;
+  long unsigned int _4;
+  long unsigned int _5;
+  long unsigned int _6;
+  long unsigned int _7;
+  long unsigned int _8;
+  long unsigned int _9;
+  long unsigned int _10;
+
+  <bb 2> [local count: 1073741824]:
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  # DEBUG baseAddr => 1074462720
+  # DEBUG BEGIN_STMT
+  _1 ={v} MEM[(volatile uint32_t *)1074462720B];
+  _2 = _1 | 2;
+  MEM[(volatile uint32_t *)1074462720B] ={v} _2;
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  # DEBUG baseAddr => 1074462720
+  # DEBUG BEGIN_STMT
+  _3 ={v} MEM[(volatile uint32_t *)1074463000B];
+  _4 = _3 & 4294967294;
+  MEM[(volatile uint32_t *)1074463000B] ={v} _4;
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  # DEBUG baseAddr => 1074462720
+  # DEBUG BEGIN_STMT
+  MEM[(volatile uint32_t *)1074462992B] ={v} 155072;
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  # DEBUG baseAddr => 1074462720
+  # DEBUG BEGIN_STMT
+  _5 ={v} MEM[(volatile uint32_t *)1074463000B];
+  _6 = _5 | 2;
+  MEM[(volatile uint32_t *)1074463000B] ={v} _6;
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  # DEBUG baseAddr => 1074462720
+  # DEBUG BEGIN_STMT
+  MEM[(volatile uint32_t *)1074462720B] ={v} 1;
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  # DEBUG baseAddr => 1074462720
+  # DEBUG BEGIN_STMT
+  _7 ={v} MEM[(volatile uint32_t *)1074463000B];
+  _8 = _7 | 1;
+  MEM[(volatile uint32_t *)1074463000B] ={v} _8;
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  # DEBUG baseAddr => 1074462720
+  # DEBUG BEGIN_STMT
+  _9 ={v} MEM[(volatile uint32_t *)1074462720B];
+  _10 = _9 & 4294967293;
+  MEM[(volatile uint32_t *)1074462720B] ={v} _10;
+  # DEBUG BEGIN_STMT
+  vInitInterruptTable (96, PIT0_Handler);
+  # DEBUG BEGIN_STMT
+  MEM[(volatile uint32_t *)3758153996B] ={v} 1;
+  # DEBUG BEGIN_STMT
+  MEM[(volatile uint8_t *)3758154848B] ={v} 192;
+  # DEBUG BEGIN_STMT
+  return;
+
+}
+
+
+task2 (void * p2)
+{
+  struct QueueDefinition * xSemaphore2.6_1;
+  long int _2;
+  long unsigned int task2_count.7_3;
+  long unsigned int _4;
+  struct QueueDefinition * xSemaphore1.8_5;
+
+  <bb 2> [local count: 10631108]:
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  timerSetUp ();
+
+  <bb 3> [local count: 1073741824]:
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  xSemaphore2.6_1 = xSemaphore2;
+  _2 = xQueueSemaphoreTake (xSemaphore2.6_1, 4294967295);
+  if (_2 == 1)
+    goto <bb 4>; [51.12%]
+  else
+    goto <bb 5>; [48.88%]
+
+  <bb 4> [local count: 548896825]:
+  # DEBUG BEGIN_STMT
+  task2_count.7_3 ={v} task2_count;
+  _4 = task2_count.7_3 + 1;
+  task2_count ={v} _4;
+
+  <bb 5> [local count: 1073741824]:
+  # DEBUG BEGIN_STMT
+  xSemaphore1.8_5 = xSemaphore1;
+  xQueueGenericSend (xSemaphore1.8_5, 0B, 0, 0);
+  # DEBUG BEGIN_STMT
+  goto <bb 3>; [100.00%]
+
+}
+
+
+task1 (void * p2)
+{
+  struct QueueDefinition * xSemaphore1.3_1;
+  long int _2;
+  long unsigned int task1_count.4_3;
+  long unsigned int _4;
+  struct QueueDefinition * xSemaphore0.5_5;
+
+  <bb 2> [local count: 10631108]:
+
+  <bb 3> [local count: 1073741824]:
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  xSemaphore1.3_1 = xSemaphore1;
+  _2 = xQueueSemaphoreTake (xSemaphore1.3_1, 4294967295);
+  if (_2 == 1)
+    goto <bb 4>; [51.12%]
+  else
+    goto <bb 5>; [48.88%]
+
+  <bb 4> [local count: 548896825]:
+  # DEBUG BEGIN_STMT
+  task1_count.4_3 ={v} task1_count;
+  _4 = task1_count.4_3 + 1;
+  task1_count ={v} _4;
+
+  <bb 5> [local count: 1073741824]:
+  # DEBUG BEGIN_STMT
+  xSemaphore0.5_5 = xSemaphore0;
+  xQueueGenericSend (xSemaphore0.5_5, 0B, 0, 0);
+  # DEBUG BEGIN_STMT
+  goto <bb 3>; [100.00%]
+
+}
+
+
+task0 (void * p1)
+{
+  struct QueueDefinition * xSemaphore0.1_1;
+  long int _2;
+  long unsigned int task0_count.2_3;
+  long unsigned int _4;
+
+  <bb 2> [local count: 3614577]:
+
+  <bb 3> [local count: 365072224]:
+
+  <bb 4> [local count: 1073741824]:
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  xSemaphore0.1_1 = xSemaphore0;
+  _2 = xQueueSemaphoreTake (xSemaphore0.1_1, 4294967295);
+  if (_2 == 1)
+    goto <bb 5>; [34.00%]
+  else
+    goto <bb 6>; [66.00%]
+
+  <bb 6> [local count: 708669601]:
+  goto <bb 4>; [100.00%]
+
+  <bb 5> [local count: 365072224]:
+  # DEBUG BEGIN_STMT
+  task0_count.2_3 ={v} task0_count;
+  _4 = task0_count.2_3 + 1;
+  task0_count ={v} _4;
+  goto <bb 3>; [100.00%]
+
+}
+
+
+vApplicationMallocFailedHook ()
+{
+  <bb 2> [local count: 1073741824]:
+  # DEBUG BEGIN_STMT
+  return;
+
+}
+
+
+vApplicationStackOverflowHook (struct tskTaskControlBlock * pxTask, char * pcTaskName)
+{
+  <bb 2> [local count: 1073741824]:
+  # DEBUG BEGIN_STMT
+  return;
+
+}
+
+
+vAssertCalled (uint32_t ulLine, const char * pcFile)
+{
+  <bb 2> [local count: 1073741824]:
+  # DEBUG BEGIN_STMT
+  return;
+
+}
+
+
+vApplicationTickHook ()
+{
+  long unsigned int ui32_ms_cnt.0_1;
+  long unsigned int _2;
+
+  <bb 2> [local count: 1073741824]:
+  # DEBUG BEGIN_STMT
+  ui32_ms_cnt.0_1 ={v} ui32_ms_cnt;
+  _2 = ui32_ms_cnt.0_1 + 1;
+  ui32_ms_cnt ={v} _2;
+  return;
+
+}
+
+

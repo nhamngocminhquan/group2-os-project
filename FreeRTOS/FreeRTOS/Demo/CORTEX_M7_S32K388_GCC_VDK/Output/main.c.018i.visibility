@@ -1,0 +1,645 @@
+
+Marking local functions:
+
+
+Marking externally visible functions: main/32 PIT0_Handler/31 timerDisable/30 timerSetUp/29 task2/28 task1/27 task0/26 vApplicationMallocFailedHook/22 vApplicationStackOverflowHook/21 vAssertCalled/20 vApplicationTickHook/19
+
+
+Marking externally visible variables: task2_count/25 task1_count/24 task0_count/23 handlerFlag/18 counter/17 ui32_get_ID_core2/16 ui32_ms_cnt/15 svcCnt/14 xSemaphore2/10 xSemaphore1/9 xSemaphore0/8
+
+
+Reclaiming functions:
+Reclaiming variables:
+Clearing address taken flags:
+Symbol table:
+
+vTaskStartScheduler/38 (vTaskStartScheduler) @069aeee0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags: optimize_size
+  Called by: main/32 
+  Calls: 
+xTaskCreate/37 (xTaskCreate) @069aee00
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags: optimize_size
+  Called by: main/32 main/32 main/32 
+  Calls: 
+xQueueGenericCreate/36 (xQueueGenericCreate) @069aed20
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags: optimize_size
+  Called by: main/32 main/32 main/32 
+  Calls: 
+vInitInterruptTable/35 (vInitInterruptTable) @069ae9a0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags: optimize_size
+  Called by: timerSetUp/29 
+  Calls: 
+xQueueGenericSend/34 (xQueueGenericSend) @069ae540
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags: optimize_size
+  Called by: task2/28 task1/27 
+  Calls: 
+xQueueSemaphoreTake/33 (xQueueSemaphoreTake) @069ae380
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags: optimize_size
+  Called by: task2/28 task1/27 task0/26 
+  Calls: 
+main/32 (main) @06a14d20
+  Type: function definition analyzed
+  Visibility: externally_visible public
+  References: xSemaphore0/8 (write) xSemaphore1/9 (write) xSemaphore2/10 (write) task0/26 (addr) taskH0/11 (write) task1/27 (addr) taskH1/12 (write) task2/28 (addr) taskH2/13 (write) 
+  Referring: 
+  Availability: available
+  Function flags: body optimize_size
+  Called by: 
+  Calls: vTaskStartScheduler/38 xTaskCreate/37 xTaskCreate/37 xTaskCreate/37 xQueueGenericCreate/36 xQueueGenericCreate/36 xQueueGenericCreate/36 
+PIT0_Handler/31 (PIT0_Handler) @06a149a0
+  Type: function definition analyzed
+  Visibility: externally_visible public
+  Address is taken.
+  References: counter/17 (read) counter/17 (write) 
+  Referring: timerSetUp/29 (addr) 
+  Availability: available
+  Function flags: body optimize_size
+  Called by: 
+  Calls: 
+timerDisable/30 (timerDisable) @06a14540
+  Type: function definition analyzed
+  Visibility: externally_visible public
+  References: 
+  Referring: 
+  Availability: available
+  Function flags: body optimize_size
+  Called by: 
+  Calls: 
+timerSetUp/29 (timerSetUp) @06a142a0
+  Type: function definition analyzed
+  Visibility: externally_visible public
+  References: PIT0_Handler/31 (addr) 
+  Referring: 
+  Availability: available
+  Function flags: body optimize_size
+  Called by: task2/28 
+  Calls: vInitInterruptTable/35 
+task2/28 (task2) @06a08c40
+  Type: function definition analyzed
+  Visibility: externally_visible public
+  Address is taken.
+  References: xSemaphore2/10 (read) task2_count/25 (read) task2_count/25 (write) xSemaphore1/9 (read) 
+  Referring: main/32 (addr) 
+  Availability: available
+  Function flags: body optimize_size
+  Called by: 
+  Calls: xQueueGenericSend/34 xQueueSemaphoreTake/33 timerSetUp/29 
+task1/27 (task1) @06a087e0
+  Type: function definition analyzed
+  Visibility: externally_visible public
+  Address is taken.
+  References: xSemaphore1/9 (read) task1_count/24 (read) task1_count/24 (write) xSemaphore0/8 (read) 
+  Referring: main/32 (addr) 
+  Availability: available
+  Function flags: body optimize_size
+  Called by: 
+  Calls: xQueueGenericSend/34 xQueueSemaphoreTake/33 
+task0/26 (task0) @06a08380
+  Type: function definition analyzed
+  Visibility: externally_visible public
+  Address is taken.
+  References: xSemaphore0/8 (read) task0_count/23 (read) task0_count/23 (write) 
+  Referring: main/32 (addr) 
+  Availability: available
+  Function flags: body optimize_size
+  Called by: 
+  Calls: xQueueSemaphoreTake/33 
+task2_count/25 (task2_count) @06a026c0
+  Type: variable definition analyzed
+  Visibility: force_output externally_visible public
+  References: 
+  Referring: task2/28 (read) task2/28 (write) 
+  Availability: available
+  Varpool flags: initialized
+task1_count/24 (task1_count) @06a02630
+  Type: variable definition analyzed
+  Visibility: force_output externally_visible public
+  References: 
+  Referring: task1/27 (read) task1/27 (write) 
+  Availability: available
+  Varpool flags: initialized
+task0_count/23 (task0_count) @06a025a0
+  Type: variable definition analyzed
+  Visibility: force_output externally_visible public
+  References: 
+  Referring: task0/26 (read) task0/26 (write) 
+  Availability: available
+  Varpool flags: initialized
+vApplicationMallocFailedHook/22 (vApplicationMallocFailedHook) @06a042a0
+  Type: function definition analyzed
+  Visibility: externally_visible public
+  References: 
+  Referring: 
+  Availability: available
+  Function flags: body optimize_size
+  Called by: 
+  Calls: 
+vApplicationStackOverflowHook/21 (vApplicationStackOverflowHook) @06a04d20
+  Type: function definition analyzed
+  Visibility: externally_visible public
+  References: 
+  Referring: 
+  Availability: available
+  Function flags: body optimize_size
+  Called by: 
+  Calls: 
+vAssertCalled/20 (vAssertCalled) @06a04a80
+  Type: function definition analyzed
+  Visibility: externally_visible public
+  References: 
+  Referring: 
+  Availability: available
+  Function flags: body optimize_size
+  Called by: 
+  Calls: 
+vApplicationTickHook/19 (vApplicationTickHook) @06a047e0
+  Type: function definition analyzed
+  Visibility: externally_visible public
+  References: ui32_ms_cnt/15 (read) ui32_ms_cnt/15 (write) 
+  Referring: 
+  Availability: available
+  Function flags: body optimize_size
+  Called by: 
+  Calls: 
+handlerFlag/18 (handlerFlag) @06a02240
+  Type: variable definition analyzed
+  Visibility: force_output externally_visible public
+  References: 
+  Referring: 
+  Availability: available
+  Varpool flags: initialized
+counter/17 (counter) @06a021b0
+  Type: variable definition analyzed
+  Visibility: force_output externally_visible public
+  References: 
+  Referring: PIT0_Handler/31 (read) PIT0_Handler/31 (write) 
+  Availability: available
+  Varpool flags: initialized
+ui32_get_ID_core2/16 (ui32_get_ID_core2) @06a02168
+  Type: variable definition analyzed
+  Visibility: force_output externally_visible public section:privileged_data
+  References: 
+  Referring: 
+  Availability: available
+  Varpool flags: initialized
+ui32_ms_cnt/15 (ui32_ms_cnt) @06a020d8
+  Type: variable definition analyzed
+  Visibility: force_output externally_visible public section:privileged_data
+  References: 
+  Referring: vApplicationTickHook/19 (read) vApplicationTickHook/19 (write) 
+  Availability: available
+  Varpool flags: initialized
+svcCnt/14 (svcCnt) @06a02048
+  Type: variable definition analyzed
+  Visibility: externally_visible public
+  References: 
+  Referring: 
+  Availability: available
+  Varpool flags: initialized
+taskH2/13 (taskH2) @069fcf78
+  Type: variable definition analyzed
+  Visibility: prevailing_def_ironly
+  References: 
+  Referring: main/32 (write) 
+  Availability: available
+  Varpool flags:
+taskH1/12 (taskH1) @069fcee8
+  Type: variable definition analyzed
+  Visibility: prevailing_def_ironly
+  References: 
+  Referring: main/32 (write) 
+  Availability: available
+  Varpool flags:
+taskH0/11 (taskH0) @069fce58
+  Type: variable definition analyzed
+  Visibility: prevailing_def_ironly
+  References: 
+  Referring: main/32 (write) 
+  Availability: available
+  Varpool flags:
+xSemaphore2/10 (xSemaphore2) @069fcdc8
+  Type: variable definition analyzed
+  Visibility: externally_visible public
+  References: 
+  Referring: task2/28 (read) main/32 (write) 
+  Availability: available
+  Varpool flags:
+xSemaphore1/9 (xSemaphore1) @069fcd38
+  Type: variable definition analyzed
+  Visibility: externally_visible public
+  References: 
+  Referring: task1/27 (read) task2/28 (read) main/32 (write) 
+  Availability: available
+  Varpool flags:
+xSemaphore0/8 (xSemaphore0) @069fcca8
+  Type: variable definition analyzed
+  Visibility: externally_visible public
+  References: 
+  Referring: task0/26 (read) task1/27 (read) main/32 (write) 
+  Availability: available
+  Varpool flags:
+main ()
+{
+  int D.7207;
+
+  <bb 2> :
+  # DEBUG BEGIN_STMT
+  _1 = 3758157076B;
+  _2 = *_1;
+  _3 = 3758157076B;
+  _4 = _2 | 2;
+  *_3 = _4;
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  _5 = xQueueGenericCreate (1, 0, 3);
+  xSemaphore0 = _5;
+  # DEBUG BEGIN_STMT
+  _6 = xQueueGenericCreate (1, 0, 3);
+  xSemaphore1 = _6;
+  # DEBUG BEGIN_STMT
+  _7 = xQueueGenericCreate (1, 0, 3);
+  xSemaphore2 = _7;
+  # DEBUG BEGIN_STMT
+  _8 = xTaskCreate (task0, "task0", 90, 0B, 4, 0B);
+  _9 = (struct tskTaskControlBlock *) _8;
+  taskH0 = _9;
+  # DEBUG BEGIN_STMT
+  _10 = xTaskCreate (task1, "task1", 90, 1B, 3, 0B);
+  _11 = (struct tskTaskControlBlock *) _10;
+  taskH1 = _11;
+  # DEBUG BEGIN_STMT
+  _12 = xTaskCreate (task2, "task2", 90, 2B, 2, 0B);
+  _13 = (struct tskTaskControlBlock *) _12;
+  taskH2 = _13;
+  # DEBUG BEGIN_STMT
+  vTaskStartScheduler ();
+
+  <bb 3> :
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  goto <bb 3>; [INV]
+
+}
+
+
+PIT0_Handler ()
+{
+  unsigned int baseAddr;
+  BaseType_t xHigherPriorityTaskWoken;
+  unsigned int D.7137;
+
+  <bb 2> :
+  # DEBUG BEGIN_STMT
+  xHigherPriorityTaskWoken = 0;
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  baseAddr = 1074462720;
+  # DEBUG BEGIN_STMT
+  D.7137 = baseAddr;
+  _1 = D.7137 + 284;
+  _2 = (volatile uint32_t *) _1;
+  *_2 = 1;
+  # DEBUG BEGIN_STMT
+  counter.9_3 = counter;
+  _4 = counter.9_3 + 1;
+  counter = _4;
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  if (xHigherPriorityTaskWoken != 0)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 4>; [INV]
+
+  <bb 3> :
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  _5 = 3758157060B;
+  *_5 = 268435456;
+  # DEBUG BEGIN_STMT
+  __asm__ __volatile__("dsb" :  :  : "memory");
+  # DEBUG BEGIN_STMT
+  __asm__ __volatile__("isb");
+  # DEBUG BEGIN_STMT
+
+  <bb 4> :
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  return;
+
+}
+
+
+timerDisable ()
+{
+  unsigned int baseAddr;
+  unsigned int D.7197;
+  unsigned int D.7132;
+
+  <bb 2> :
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  baseAddr = 1074462720;
+  # DEBUG BEGIN_STMT
+  D.7132 = baseAddr;
+  D.7197 = D.7132;
+  _1 = (volatile uint32_t *) D.7197;
+  _2 = *_1;
+  _3 = (volatile uint32_t *) D.7197;
+  _4 = _2 | 2;
+  *_3 = _4;
+  return;
+
+}
+
+
+timerSetUp ()
+{
+  unsigned int baseAddr;
+  unsigned int baseAddr;
+  unsigned int baseAddr;
+  unsigned int baseAddr;
+  unsigned int baseAddr;
+  unsigned int baseAddr;
+  unsigned int baseAddr;
+  unsigned int D.7191;
+  unsigned int D.7128;
+  unsigned int D.7185;
+  unsigned int D.7126;
+  unsigned int D.7123;
+  unsigned int D.7174;
+  unsigned int D.7121;
+  volatile uint32_t D.7124;
+  unsigned int D.7119;
+  unsigned int D.7163;
+  unsigned int D.7117;
+  unsigned int D.7157;
+  unsigned int D.7115;
+
+  <bb 2> :
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  baseAddr = 1074462720;
+  # DEBUG BEGIN_STMT
+  D.7115 = baseAddr;
+  D.7157 = D.7115;
+  _1 = (volatile uint32_t *) D.7157;
+  _2 = *_1;
+  _3 = (volatile uint32_t *) D.7157;
+  _4 = _2 | 2;
+  *_3 = _4;
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  baseAddr = 1074462720;
+  # DEBUG BEGIN_STMT
+  D.7117 = baseAddr;
+  D.7163 = D.7117;
+  _5 = D.7163 + 280;
+  _6 = (volatile uint32_t *) _5;
+  _7 = *_6;
+  _8 = D.7163 + 280;
+  _9 = (volatile uint32_t *) _8;
+  _10 = _7 & 4294967294;
+  *_9 = _10;
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  baseAddr = 1074462720;
+  # DEBUG BEGIN_STMT
+  D.7119 = baseAddr;
+  _11 = D.7119 + 272;
+  _12 = (volatile uint32_t *) _11;
+  *_12 = 155072;
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  baseAddr = 1074462720;
+  # DEBUG BEGIN_STMT
+  D.7121 = baseAddr;
+  D.7174 = D.7121;
+  _13 = D.7174 + 280;
+  _14 = (volatile uint32_t *) _13;
+  _15 = *_14;
+  _16 = D.7174 + 280;
+  _17 = (volatile uint32_t *) _16;
+  _18 = _15 | 2;
+  *_17 = _18;
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  baseAddr = 1074462720;
+  # DEBUG BEGIN_STMT
+  D.7123 = baseAddr;
+  _19 = (volatile uint32_t *) D.7123;
+  _20 = 1;
+  *_19 = _20;
+  D.7124 = _20;
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  baseAddr = 1074462720;
+  # DEBUG BEGIN_STMT
+  D.7126 = baseAddr;
+  D.7185 = D.7126;
+  _21 = D.7185 + 280;
+  _22 = (volatile uint32_t *) _21;
+  _23 = *_22;
+  _24 = D.7185 + 280;
+  _25 = (volatile uint32_t *) _24;
+  _26 = _23 | 1;
+  *_25 = _26;
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  baseAddr = 1074462720;
+  # DEBUG BEGIN_STMT
+  D.7128 = baseAddr;
+  D.7191 = D.7128;
+  _27 = (volatile uint32_t *) D.7191;
+  _28 = *_27;
+  _29 = (volatile uint32_t *) D.7191;
+  _30 = _28 & 4294967293;
+  *_29 = _30;
+  # DEBUG BEGIN_STMT
+  vInitInterruptTable (96, PIT0_Handler);
+  # DEBUG BEGIN_STMT
+  _31 = 3758153996B;
+  *_31 = 1;
+  # DEBUG BEGIN_STMT
+  _32 = 3758154848B;
+  *_32 = 192;
+  # DEBUG BEGIN_STMT
+  return;
+
+}
+
+
+task2 (void * p2)
+{
+  <bb 2> :
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  timerSetUp ();
+
+  <bb 3> :
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  xSemaphore2.6_1 = xSemaphore2;
+  _2 = xQueueSemaphoreTake (xSemaphore2.6_1, 4294967295);
+  if (_2 == 1)
+    goto <bb 4>; [INV]
+  else
+    goto <bb 5>; [INV]
+
+  <bb 4> :
+  # DEBUG BEGIN_STMT
+  task2_count.7_3 = task2_count;
+  _4 = task2_count.7_3 + 1;
+  task2_count = _4;
+
+  <bb 5> :
+  # DEBUG BEGIN_STMT
+  xSemaphore1.8_5 = xSemaphore1;
+  xQueueGenericSend (xSemaphore1.8_5, 0B, 0, 0);
+  # DEBUG BEGIN_STMT
+  goto <bb 3>; [INV]
+
+}
+
+
+task1 (void * p2)
+{
+  <bb 2> :
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  xSemaphore1.3_1 = xSemaphore1;
+  _2 = xQueueSemaphoreTake (xSemaphore1.3_1, 4294967295);
+  if (_2 == 1)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 4>; [INV]
+
+  <bb 3> :
+  # DEBUG BEGIN_STMT
+  task1_count.4_3 = task1_count;
+  _4 = task1_count.4_3 + 1;
+  task1_count = _4;
+
+  <bb 4> :
+  # DEBUG BEGIN_STMT
+  xSemaphore0.5_5 = xSemaphore0;
+  xQueueGenericSend (xSemaphore0.5_5, 0B, 0, 0);
+  # DEBUG BEGIN_STMT
+  goto <bb 2>; [INV]
+
+}
+
+
+task0 (void * p1)
+{
+  <bb 2> :
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  xSemaphore0.1_1 = xSemaphore0;
+  _2 = xQueueSemaphoreTake (xSemaphore0.1_1, 4294967295);
+  if (_2 == 1)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 2>; [INV]
+
+  <bb 3> :
+  # DEBUG BEGIN_STMT
+  task0_count.2_3 = task0_count;
+  _4 = task0_count.2_3 + 1;
+  task0_count = _4;
+  goto <bb 2>; [INV]
+
+}
+
+
+vApplicationMallocFailedHook ()
+{
+  <bb 2> :
+  # DEBUG BEGIN_STMT
+  return;
+
+}
+
+
+vApplicationStackOverflowHook (struct tskTaskControlBlock * pxTask, char * pcTaskName)
+{
+  <bb 2> :
+  # DEBUG BEGIN_STMT
+  return;
+
+}
+
+
+vAssertCalled (uint32_t ulLine, const char * pcFile)
+{
+  <bb 2> :
+  # DEBUG BEGIN_STMT
+  return;
+
+}
+
+
+vApplicationTickHook ()
+{
+  <bb 2> :
+  # DEBUG BEGIN_STMT
+  ui32_ms_cnt.0_1 = ui32_ms_cnt;
+  _2 = ui32_ms_cnt.0_1 + 1;
+  ui32_ms_cnt = _2;
+  return;
+
+}
+
+

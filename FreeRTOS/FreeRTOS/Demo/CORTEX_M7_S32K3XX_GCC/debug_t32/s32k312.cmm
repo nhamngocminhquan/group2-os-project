@@ -1,0 +1,303 @@
+;   Copyright 2020 - 2023 NXP
+;
+;   NXP Confidential. This software is owned or controlled by NXP and may only be
+;   used strictly in accordance with the applicable license terms. By expressly
+;   accepting such terms or by downloading, installing, activating and/or otherwise
+;   using the software, you are agreeing that you have read, and that you agree to
+;   comply with and are bound by, such license terms. If you do not agree to be
+;   bound by the applicable license terms, then you may not retain, install,
+;   activate or otherwise use the software.
+;=================================================================================================*/
+
+;  This file contains sample code only. It is not part of the production code deliverables.
+
+LOCAL &load_to
+LOCAL &elf_file
+LOCAL &load_params
+LOCAL &core_no
+LOCAL &multicore
+LOCAL &core_list
+LOCAL &hse_available
+
+ENTRY &elf_file &load_to &load_params &core_no &multicore &core_list &custom_param
+
+&hse_available=0
+&load_to = "ram"
+&core_no="0"         ;Config core (EX: 0x0, 0x1, 0x2)
+&elf_file="..\Output\image.elf" 
+
+
+;Winclear
+system.down
+SYStem.Reset
+symbol.sourcepath.reset
+Break.RESet
+SYStem.CPU S32K312-M7
+;SYStem.Config.core 1. 1.
+SYStem.Config debugporttype JTAG
+SYStem.Option TRST ON
+SYStem.Option ResBreak OFF      ;  nTRST is connected to nSRST => ResBreak MUST be OFF
+SYStem.Option WaitReset 100us
+sys.Option DisMode THUMB
+SYStem.JTAGclock 10MHz
+SYStem.MemAccess AHB
+SYStem.Option DUALPORT ON
+trace.DISABLE
+;ETM.OFF
+;ITM.OFF
+;HTM.OFF
+GOSUB Config_Flash
+
+
+sys.up
+Break
+
+GOSUB InitSramViaDma
+
+LOCAL &core0 &core1
+&core0="undefined"
+&core1="undefined"
+
+IF "&multicore"!="ON"
+(
+  &core0="0x0"
+)
+ELSE
+(
+  PRINT %ERROR "This derivative does not support multicore test."
+  ENDDO
+)
+
+;current core,master.
+IF ("&core0"!="undefined")
+(
+    IF "&core0"=="0x0"
+    (
+        GOSUB LoadImage
+    )
+)
+;Enable MSCM Clock
+&cofb_reg=Data.Long(SD:0x402DC330)
+&cofb_reg=&cofb_reg|0x01000000
+D.S SD:0x402DC330 %LE %LONG &cofb_reg   ;  MC_ME.MC_ME_PRTN1_COFB0_CLKEN
+D.S SD:0x402DC304 %LE %LONG 0x00000001  ;  MC_ME.PRTN1_PUPD
+D.S SD:0x402DC000 %LE %LONG 0x00005AF0  ;  MC_ME.MC_ME_CTL_KEY.R
+D.S SD:0x402DC000 %LE %LONG 0x0000A50F  ;  MC_ME.MC_ME_CTL_KEY.R
+WAIT (Data.Long(SD:0x402DC310)==&cofb_reg)  ; MC_ME.PRTN1_COFB0_STAT[REQ24]
+(
+    ; wait for MSCM clock to be active
+)
+
+; Get chip version
+GOSUB LogChipVersion
+List.auto
+v.w ui32_ms_cnt task_1 task_2 testResult
+Register.Set PC Reset_Handler
+TASK.CONFIG ~~/demo/arm/kernel/freertos/freertos.t32       ; load FreeRTOS awareness
+MENU.ReProgram ~~/demo/arm/kernel/freertos/freertos.men    ; load FreeRTOS menu
+go main
+ENDDO
+
+InitSramViaDma:
+(
+    ;Enable Partition 1
+    D.S SD:0x402DC300 %LE %LONG 0x00000001  ;  MC_ME.PRTN1_PCONF
+    D.S SD:0x402DC304 %LE %LONG 0x00000001  ;  MC_ME.PRTN1_PUPD
+    D.S SD:0x402DC000 %LE %LONG 0x00005AF0  ;  MC_ME.MC_ME_CTL_KEY
+    D.S SD:0x402DC000 %LE %LONG 0x0000A50F  ;  MC_ME.MC_ME_CTL_KEY
+    WAIT (Data.Long(SD:0x402DC308)&0x00000001)==0x1  ; MC_ME.PRTN1_STAT[PCS]
+    (
+        ; wait for partition 1 clock to be active
+    )
+
+    PRIVATE &cofb_reg
+
+    ;Enable DMAMUX_0 Clock
+    &cofb_reg=Data.Long(SD:0x402DC334)
+    &cofb_reg=&cofb_reg|0x00000001
+    D.S SD:0x402DC334 %LE %LONG &cofb_reg   ;  MC_ME.MC_ME_PRTN1_COFB1_CLKEN
+    D.S SD:0x402DC304 %LE %LONG 0x00000001  ;  MC_ME.PRTN1_PUPD
+    D.S SD:0x402DC000 %LE %LONG 0x00005AF0  ;  MC_ME.MC_ME_CTL_KEY.R
+    D.S SD:0x402DC000 %LE %LONG 0x0000A50F  ;  MC_ME.MC_ME_CTL_KEY.R
+    WAIT (Data.Long(SD:0x402DC314)==&cofb_reg)  ; MC_ME.PRTN1_COFB1_STAT[REQ32]
+    (
+        ; wait for DMAMUX_0 clock to be active
+    )
+
+    ;Enable eDMA_TCD_0 Clock
+    &cofb_reg=Data.Long(SD:0x402DC330)
+    &cofb_reg=&cofb_reg|0x00000018
+    D.S SD:0x402DC330 %LE %LONG &cofb_reg   ;  MC_ME.MC_ME_PRTN1_COFB0_CLKEN
+    D.S SD:0x402DC304 %LE %LONG 0x00000001  ;  MC_ME.PRTN1_PUPD
+    D.S SD:0x402DC000 %LE %LONG 0x00005AF0  ;  MC_ME.MC_ME_CTL_KEY.R
+    D.S SD:0x402DC000 %LE %LONG 0x0000A50F  ;  MC_ME.MC_ME_CTL_KEY.R
+    WAIT (Data.Long(SD:0x402DC310)==&cofb_reg)  ; MC_ME.PRTN1_COFB0_STAT[REQ4]
+    (
+        ; wait for eDMA_TCD_0 clock to be active
+    )
+
+    ;DMA SRAM Init
+    D.S SD:0x40280003 %LE %BYTE 0x80	    ; Channel 0 Enable
+
+    D.S SD:0x40210020 %LE %LONG 0x00400000	; SADDR
+    D.S SD:0x40210024 %LE %LONG 0x03030000	; SSIZE 3, DSIZE 3, SOFF 0
+    D.S SD:0x40210028 %LE %LONG 0x00018000	; Nbytes
+    D.S SD:0x4021002C %LE %LONG 0x00000000	; SLAST
+    D.S SD:0x40210030 %LE %LONG 0x20400000	; DADDR
+    D.S SD:0x40210034 %LE %LONG 0x00010008	; CITER 1, DOFF 8
+    D.S SD:0x40210038 %LE %LONG 0xFFFE8000	; DLASTSGA = -NBYTES
+    D.S SD:0x4021003C %LE %LONG 0x00000001	; Start
+    WAIT ((data.long(SD:0x40210000)&0x40000000)==0x40000000)
+    (
+        ; wait for DMA DONE bit to be set
+    )
+
+    ; Initialize internal SRAM
+    IF CPUIS(S32K312*)
+    (
+        Data.Set A:0X20400000--0X20417FFF  %Quad 0
+    )
+    ELSE IF CPUIS(S32K311*)
+    (
+        Data.Set A:0X20400000--0X20407FFF  %Quad 0
+    )
+    ELSE IF CPUIS(S32K314*)
+    (
+        Data.Set A:0x20400000--0x20427FFF  %Quad 0
+        Data.Set A:0x20428000--0x20442CFF  %Quad 0
+    )
+    ELSE IF CPUIS(S32K324*)
+    (
+        Data.Set A:0x20400000--0x20427FFF  %Quad 0
+        Data.Set A:0x20428000--0x20442CFF  %Quad 0
+    )
+    ELSE IF CPUIS(S32K344*)
+    (
+        Data.Set A:0x20400000--0x20427FFF  %Quad 0
+        Data.Set A:0x20428000--0x20442CFF  %Quad 0
+    )
+     ELSE
+    (
+        PRINT %ERROR "RAM size of CPU type is not supported by the script"
+        ENDDO
+    )
+
+    RETURN
+)
+
+LoadImage:
+(
+    IF ("&load_to"=="FLASH")||("&load_to"=="flash")
+    (
+        ;ON.ERROR.continue       ;Disable error handler temporarily
+        ;FLASH.ERASE 1.
+        ; Check if sector is erased, and there was no error. (due to flash trimming inconsistencies on this blind assembled chips)
+        ;IF ((Data.Long(SD:0x00400000))!=0xFFFFFFFF)
+        ;(
+          ; Erase failed, try again one more time
+        ;  FLASH.ERASE 1.
+        ;)
+        ;on.ERROR.DEFault    ;Enable the error handler
+
+        FLASH.ReProgram ALL /Erase
+        Data.Load.Elf &elf_file /GLOBTYPES
+        FLASH.ReProgram OFF
+        
+        wait 10ms
+        sys.up
+        ; Load only debug symbols
+        Data.Load.Elf &elf_file /GLOBTYPES /NoCODE /AnySym
+    )
+    ELSE
+    (
+        ON.ERROR.continue
+        IF ((Data.Long(SD:0x00400000))==0x5AA55AA5)
+        (
+            PRINT "Boot header is stored at 0x00400000 address"
+        )
+        ELSE IF ((Data.Long(SD:0x00500000))==0x5AA55AA5)
+        (
+            PRINT "Boot header is stored at 0x00500000 address"
+        )
+        ELSE IF ((Data.Long(SD:0x10000000))==0x5AA55AA5)
+        (
+            PRINT "Boot header is stored at 0x10000000 address"
+        )
+        ELSE
+        (
+            PRINT %WARNING "Cortex M7 core start address is invalid in testing environment, please initialize the value of the boot header area"
+        )
+        on.ERROR.DEFault
+        Data.Load.Elf &elf_file /GLOBTYPES
+    )
+    RETURN
+)
+
+Config_Flash:
+(
+        PRIVATE &CodeFlashSize &DataFlashSize
+
+        IF CPUIS(S32K3?1*)
+        (	
+          &CodeFlashSize=0x100000
+          &DataFlashSize=0x10000
+        )
+        ELSE IF CPUIS(S32K3?2*)
+        (
+          &CodeFlashSize=0x200000
+          &DataFlashSize=0x20000
+        )
+        ELSE IF CPUIS(S32K3?4*)
+        (
+          &CodeFlashSize=0x400000
+          &DataFlashSize=0x20000
+        )
+        ELSE IF CPUIS(S32K3?8*)
+        (
+          &CodeFlashSize=0x800000
+          &DataFlashSize=0x20000
+        )
+        ELSE
+        (
+          PRINT %ERROR "CFLASH size of CPU type is not supported by the script"
+          ENDDO
+        )
+
+        ; Code Flash Size used by HSE FW is 128 KB + 48 KB = 176 KB
+        &HseCodeFlashSize=0x2C000
+        
+        ; Data Flash Size used by HSE FW is 40 KB
+        &HseDataFlashSize=0xA000
+
+        FLASH.RESet
+        FLASH.Create 1. 0x00400000++(&CodeFlashSize-&HseCodeFlashSize-1) 0x2000 TARGET long
+        FLASH.Create 2. 0x10000000++(&DataFlashSize-&HseDataFlashSize-1) 0x2000 TARGET long
+        FLASH.Create 3. 0x1B000000++0x1FFF                     0x2000 TARGET long /OTP /INFO "UTEST sector"
+        FLASH.TARGET E:0x20400000 E:0x20401000 0x1000 ~~/demo/arm/flash/long/s32k3x2.bin /DualPort
+        RETURN
+)
+
+LogChipVersion:
+(
+    &path_to_siliconversion_logfile=""
+    &path_to_siliconversion_logdir=""
+    &siliconversion=""
+
+    ; Returns the name of the directory where the current PRACTICE program came from as a string.
+    &path_to_siliconversion_logdir=OS.PPD()
+    &path_to_siliconversion_logfile="&path_to_siliconversion_logdir"+"\"+"siliconversion.log"
+
+    ; Read SIUL2 MIDR1 register
+    &SIUL2_MIDR1_REG=Data.Long(SD:0x40290004)
+
+    &SIUL2_MIDR1_Major_Value=FORMAT.Decimal(1,((&SIUL2_MIDR1_REG&0x000000F0)>>4)+1)
+    &SIUL2_MIDR1_Minor_Value=FORMAT.Decimal(1,(&SIUL2_MIDR1_REG&0x0000000F))
+    &siliconversion="&SIUL2_MIDR1_Major_Value"+"."+"&SIUL2_MIDR1_Minor_Value"
+
+    ; Open Trace Param Log to append the system params
+    OPEN  #5  &path_to_siliconversion_logfile /Create
+    WRITE #5  "&siliconversion"
+    CLOSE #5
+
+    RETURN
+)

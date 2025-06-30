@@ -1,0 +1,3239 @@
+Trivially needed symbols: vQueueWaitForMessageRestricted/43 vQueueUnregisterQueue/42 pcQueueGetName/41 vQueueAddToRegistry/40 xQueueIsQueueFullFromISR/39 xQueueIsQueueEmptyFromISR/37 uxQueueGetQueueLength/31 uxQueueGetQueueItemSize/30 ucQueueGetQueueType/29 vQueueSetQueueNumber/28 uxQueueGetQueueNumber/27 vQueueDelete/26 uxQueueMessagesWaitingFromISR/25 uxQueueSpacesAvailable/24 uxQueueMessagesWaiting/23 xQueuePeekFromISR/22 xQueueReceiveFromISR/21 xQueuePeek/20 xQueueSemaphoreTake/19 xQueueReceive/18 xQueueGiveFromISR/17 xQueueGenericSendFromISR/16 xQueueGenericSend/15 xQueueCreateCountingSemaphore/14 xQueueTakeMutexRecursive/13 xQueueGiveMutexRecursive/12 xQueueGetMutexHolderFromISR/11 xQueueGetMutexHolder/10 xQueueCreateMutex/9 xQueueGenericCreate/6 xQueueGenericReset/5 xQueueRegistry/4
+
+
+Initial Symbol table:
+
+vTaskPlaceOnEventListRestricted/65 (vTaskPlaceOnEventListRestricted) @06a4f1c0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags: optimize_size
+  Called by: vQueueWaitForMessageRestricted/43 
+  Calls: 
+vPortFree/64 (vPortFree) @06a367e0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags: optimize_size
+  Called by: vQueueDelete/26 
+  Calls: 
+vTaskPriorityDisinheritAfterTimeout/63 (vTaskPriorityDisinheritAfterTimeout) @06a09e00
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags: optimize_size
+  Called by: xQueueSemaphoreTake/19 
+  Calls: 
+xTaskPriorityInherit/62 (xTaskPriorityInherit) @06a09d20
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags: optimize_size
+  Called by: xQueueSemaphoreTake/19 
+  Calls: 
+pvTaskIncrementMutexHeldCount/61 (pvTaskIncrementMutexHeldCount) @06a09c40
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags: optimize_size
+  Called by: xQueueSemaphoreTake/19 
+  Calls: 
+uxTaskGetNumberOfTasks/60 (uxTaskGetNumberOfTasks) @06a09000
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags: optimize_size
+  Called by: xQueueReceiveFromISR/21 xQueueGiveFromISR/17 xQueueGenericSendFromISR/16 
+  Calls: 
+vPortValidateInterruptPriority/59 (vPortValidateInterruptPriority) @064ca1c0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags: optimize_size
+  Called by: xQueuePeekFromISR/22 xQueueReceiveFromISR/21 xQueueGiveFromISR/17 xQueueGenericSendFromISR/16 
+  Calls: 
+vTaskMissedYield/58 (vTaskMissedYield) @064cad20
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags: optimize_size
+  Called by: prvUnlockQueue/35 prvUnlockQueue/35 
+  Calls: 
+memcpy/57 (memcpy) @064caa80
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags: optimize_size
+  Called by: prvCopyDataFromQueue/34 prvCopyDataToQueue/33 prvCopyDataToQueue/33 
+  Calls: 
+xTaskPriorityDisinherit/56 (xTaskPriorityDisinherit) @064ca9a0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags: optimize_size
+  Called by: prvCopyDataToQueue/33 
+  Calls: 
+xTaskResumeAll/55 (xTaskResumeAll) @064ca700
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags: optimize_size
+  Called by: xQueuePeek/20 xQueuePeek/20 xQueuePeek/20 xQueueSemaphoreTake/19 xQueueSemaphoreTake/19 xQueueSemaphoreTake/19 xQueueReceive/18 xQueueReceive/18 xQueueReceive/18 xQueueGenericSend/15 xQueueGenericSend/15 xQueueGenericSend/15 
+  Calls: 
+vTaskPlaceOnEventList/54 (vTaskPlaceOnEventList) @064ca620
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags: optimize_size
+  Called by: xQueuePeek/20 xQueueSemaphoreTake/19 xQueueReceive/18 xQueueGenericSend/15 
+  Calls: 
+xTaskCheckForTimeOut/53 (xTaskCheckForTimeOut) @064ca540
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags: optimize_size
+  Called by: xQueuePeek/20 xQueueSemaphoreTake/19 xQueueReceive/18 xQueueGenericSend/15 
+  Calls: 
+vTaskSuspendAll/52 (vTaskSuspendAll) @064ca460
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags: optimize_size
+  Called by: xQueuePeek/20 xQueueSemaphoreTake/19 xQueueReceive/18 xQueueGenericSend/15 
+  Calls: 
+vTaskInternalSetTimeOutState/51 (vTaskInternalSetTimeOutState) @064ca380
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags: optimize_size
+  Called by: xQueuePeek/20 xQueueSemaphoreTake/19 xQueueReceive/18 xQueueGenericSend/15 
+  Calls: 
+xTaskGetSchedulerState/50 (xTaskGetSchedulerState) @064ca2a0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags: optimize_size
+  Called by: xQueuePeek/20 xQueueSemaphoreTake/19 xQueueReceive/18 xQueueGenericSend/15 
+  Calls: 
+xTaskGetCurrentTaskHandle/49 (xTaskGetCurrentTaskHandle) @069ecd20
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags: optimize_size
+  Called by: xQueueTakeMutexRecursive/13 xQueueGiveMutexRecursive/12 
+  Calls: 
+pvPortMalloc/48 (pvPortMalloc) @069ec700
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags: optimize_size
+  Called by: xQueueGenericCreate/6 
+  Calls: 
+vPortExitCritical/47 (vPortExitCritical) @069ec540
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags: optimize_size
+  Called by: vQueueWaitForMessageRestricted/43 uxQueueSpacesAvailable/24 uxQueueMessagesWaiting/23 xQueuePeek/20 xQueuePeek/20 xQueuePeek/20 xQueuePeek/20 xQueueSemaphoreTake/19 xQueueSemaphoreTake/19 xQueueSemaphoreTake/19 xQueueSemaphoreTake/19 xQueueSemaphoreTake/19 xQueueSemaphoreTake/19 prvIsQueueEmpty/36 xQueueReceive/18 xQueueReceive/18 xQueueReceive/18 xQueueReceive/18 prvUnlockQueue/35 prvUnlockQueue/35 prvIsQueueFull/38 xQueueGenericSend/15 xQueueGenericSend/15 xQueueGenericSend/15 xQueueGenericSend/15 xQueueGetMutexHolder/10 xQueueGenericReset/5 
+  Calls: 
+vListInitialise/46 (vListInitialise) @069ec460
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags: optimize_size
+  Called by: xQueueGenericReset/5 xQueueGenericReset/5 
+  Calls: 
+xTaskRemoveFromEventList/45 (xTaskRemoveFromEventList) @069ec380
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags: optimize_size
+  Called by: xQueueReceiveFromISR/21 xQueuePeek/20 xQueueSemaphoreTake/19 xQueueReceive/18 xQueueGiveFromISR/17 xQueueGenericSendFromISR/16 prvUnlockQueue/35 prvUnlockQueue/35 xQueueGenericSend/15 xQueueGenericReset/5 
+  Calls: 
+vPortEnterCritical/44 (vPortEnterCritical) @069ec2a0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags: optimize_size
+  Called by: vQueueWaitForMessageRestricted/43 uxQueueSpacesAvailable/24 uxQueueMessagesWaiting/23 xQueuePeek/20 xQueuePeek/20 xQueueSemaphoreTake/19 xQueueSemaphoreTake/19 xQueueSemaphoreTake/19 xQueueSemaphoreTake/19 prvIsQueueEmpty/36 xQueueReceive/18 xQueueReceive/18 prvUnlockQueue/35 prvUnlockQueue/35 prvIsQueueFull/38 xQueueGenericSend/15 xQueueGenericSend/15 xQueueGetMutexHolder/10 xQueueGenericReset/5 
+  Calls: 
+vQueueWaitForMessageRestricted/43 (vQueueWaitForMessageRestricted) @06999620
+  Type: function definition analyzed
+  Visibility: public
+  Aux: @01981040
+  References: 
+  Referring: 
+  Function flags: body optimize_size
+  Called by: 
+  Calls: prvUnlockQueue/35 vTaskPlaceOnEventListRestricted/65 vPortExitCritical/47 vPortEnterCritical/44 
+vQueueUnregisterQueue/42 (vQueueUnregisterQueue) @06999000
+  Type: function definition analyzed
+  Visibility: public
+  Aux: @06999620
+  References: xQueueRegistry/4 (read) xQueueRegistry/4 (write) xQueueRegistry/4 (write) 
+  Referring: 
+  Function flags: body optimize_size
+  Called by: vQueueDelete/26 
+  Calls: 
+pcQueueGetName/41 (pcQueueGetName) @06999c40
+  Type: function definition analyzed
+  Visibility: public
+  Aux: @06999000
+  References: xQueueRegistry/4 (read) xQueueRegistry/4 (read) 
+  Referring: 
+  Function flags: body optimize_size
+  Called by: 
+  Calls: 
+vQueueAddToRegistry/40 (vQueueAddToRegistry) @069998c0
+  Type: function definition analyzed
+  Visibility: public
+  Aux: @06999c40
+  References: xQueueRegistry/4 (read) xQueueRegistry/4 (addr) xQueueRegistry/4 (read) xQueueRegistry/4 (addr) 
+  Referring: 
+  Function flags: body optimize_size
+  Called by: 
+  Calls: 
+xQueueIsQueueFullFromISR/39 (xQueueIsQueueFullFromISR) @06999540
+  Type: function definition analyzed
+  Visibility: public
+  Aux: @069998c0
+  References: 
+  Referring: 
+  Function flags: body optimize_size
+  Called by: 
+  Calls: 
+prvIsQueueFull/38 (prvIsQueueFull) @069991c0
+  Type: function definition analyzed
+  Visibility:
+  Aux: @0698eee0
+  References: 
+  Referring: 
+  Function flags: body optimize_size
+  Called by: xQueueGenericSend/15 
+  Calls: vPortExitCritical/47 vPortEnterCritical/44 
+xQueueIsQueueEmptyFromISR/37 (xQueueIsQueueEmptyFromISR) @0698eb60
+  Type: function definition analyzed
+  Visibility: public
+  Aux: @06999540
+  References: 
+  Referring: 
+  Function flags: body optimize_size
+  Called by: 
+  Calls: 
+prvIsQueueEmpty/36 (prvIsQueueEmpty) @0698e2a0
+  Type: function definition analyzed
+  Visibility:
+  Aux: @069772a0
+  References: 
+  Referring: 
+  Function flags: body optimize_size
+  Called by: xQueuePeek/20 xQueuePeek/20 xQueueSemaphoreTake/19 xQueueSemaphoreTake/19 xQueueReceive/18 xQueueReceive/18 
+  Calls: vPortExitCritical/47 vPortEnterCritical/44 
+prvUnlockQueue/35 (prvUnlockQueue) @0698eee0
+  Type: function definition analyzed
+  Visibility:
+  Aux: @0695f700
+  References: 
+  Referring: 
+  Function flags: body optimize_size
+  Called by: vQueueWaitForMessageRestricted/43 xQueuePeek/20 xQueuePeek/20 xQueuePeek/20 xQueueSemaphoreTake/19 xQueueSemaphoreTake/19 xQueueSemaphoreTake/19 xQueueReceive/18 xQueueReceive/18 xQueueReceive/18 xQueueGenericSend/15 xQueueGenericSend/15 xQueueGenericSend/15 
+  Calls: vPortExitCritical/47 vTaskMissedYield/58 xTaskRemoveFromEventList/45 vPortEnterCritical/44 vPortExitCritical/47 vTaskMissedYield/58 xTaskRemoveFromEventList/45 vPortEnterCritical/44 
+prvCopyDataFromQueue/34 (prvCopyDataFromQueue) @0698ea80
+  Type: function definition analyzed
+  Visibility:
+  Aux: @0698e2a0
+  References: 
+  Referring: 
+  Function flags: body optimize_size
+  Called by: xQueuePeekFromISR/22 xQueueReceiveFromISR/21 xQueuePeek/20 xQueueReceive/18 
+  Calls: memcpy/57 
+prvCopyDataToQueue/33 (prvCopyDataToQueue) @0698e7e0
+  Type: function definition analyzed
+  Visibility:
+  Aux: @069991c0
+  References: 
+  Referring: 
+  Function flags: body optimize_size
+  Called by: xQueueGenericSendFromISR/16 xQueueGenericSend/15 
+  Calls: memcpy/57 memcpy/57 xTaskPriorityDisinherit/56 
+prvGetDisinheritPriorityAfterTimeout/32 (prvGetDisinheritPriorityAfterTimeout) @0698e540
+  Type: function definition analyzed
+  Visibility:
+  Aux: @069777e0
+  References: 
+  Referring: 
+  Function flags: body optimize_size
+  Called by: xQueueSemaphoreTake/19 
+  Calls: 
+uxQueueGetQueueLength/31 (uxQueueGetQueueLength) @0698e1c0
+  Type: function definition analyzed
+  Visibility: public
+  Aux: @0698eb60
+  References: 
+  Referring: 
+  Function flags: body optimize_size
+  Called by: 
+  Calls: 
+uxQueueGetQueueItemSize/30 (uxQueueGetQueueItemSize) @0698ae00
+  Type: function definition analyzed
+  Visibility: public
+  Aux: @0698e1c0
+  References: 
+  Referring: 
+  Function flags: body optimize_size
+  Called by: 
+  Calls: 
+ucQueueGetQueueType/29 (ucQueueGetQueueType) @0698a7e0
+  Type: function definition analyzed
+  Visibility: public
+  Aux: @0698ae00
+  References: 
+  Referring: 
+  Function flags: body optimize_size
+  Called by: 
+  Calls: 
+vQueueSetQueueNumber/28 (vQueueSetQueueNumber) @0698a0e0
+  Type: function definition analyzed
+  Visibility: public
+  Aux: @0698a7e0
+  References: 
+  Referring: 
+  Function flags: body optimize_size
+  Called by: 
+  Calls: 
+uxQueueGetQueueNumber/27 (uxQueueGetQueueNumber) @0698ad20
+  Type: function definition analyzed
+  Visibility: public
+  Aux: @0698a0e0
+  References: 
+  Referring: 
+  Function flags: body optimize_size
+  Called by: 
+  Calls: 
+vQueueDelete/26 (vQueueDelete) @0698aa80
+  Type: function definition analyzed
+  Visibility: public
+  Aux: @0698ad20
+  References: 
+  Referring: 
+  Function flags: body optimize_size
+  Called by: 
+  Calls: vPortFree/64 vQueueUnregisterQueue/42 
+uxQueueMessagesWaitingFromISR/25 (uxQueueMessagesWaitingFromISR) @0698a700
+  Type: function definition analyzed
+  Visibility: public
+  Aux: @0698aa80
+  References: 
+  Referring: 
+  Function flags: body optimize_size
+  Called by: 
+  Calls: 
+uxQueueSpacesAvailable/24 (uxQueueSpacesAvailable) @0698a380
+  Type: function definition analyzed
+  Visibility: public
+  Aux: @0698a700
+  References: 
+  Referring: 
+  Function flags: body optimize_size
+  Called by: 
+  Calls: vPortExitCritical/47 vPortEnterCritical/44 
+uxQueueMessagesWaiting/23 (uxQueueMessagesWaiting) @0698a000
+  Type: function definition analyzed
+  Visibility: public
+  Aux: @0698a380
+  References: 
+  Referring: 
+  Function flags: body optimize_size
+  Called by: 
+  Calls: vPortExitCritical/47 vPortEnterCritical/44 
+xQueuePeekFromISR/22 (xQueuePeekFromISR) @06977380
+  Type: function definition analyzed
+  Visibility: public
+  Aux: @0698a000
+  References: 
+  Referring: 
+  Function flags: body optimize_size
+  Called by: 
+  Calls: vPortSetBASEPRI/3 prvCopyDataFromQueue/34 ulPortRaiseBASEPRI/2 vPortValidateInterruptPriority/59 
+xQueueReceiveFromISR/21 (xQueueReceiveFromISR) @06977c40
+  Type: function definition analyzed
+  Visibility: public
+  Aux: @06977380
+  References: 
+  Referring: 
+  Function flags: body optimize_size
+  Called by: 
+  Calls: vPortSetBASEPRI/3 uxTaskGetNumberOfTasks/60 xTaskRemoveFromEventList/45 prvCopyDataFromQueue/34 ulPortRaiseBASEPRI/2 vPortValidateInterruptPriority/59 
+xQueuePeek/20 (xQueuePeek) @069777e0
+  Type: function definition analyzed
+  Visibility: public
+  Aux: @06977c40
+  References: 
+  Referring: 
+  Function flags: body optimize_size
+  Called by: 
+  Calls: prvIsQueueEmpty/36 xTaskResumeAll/55 prvUnlockQueue/35 xTaskResumeAll/55 prvUnlockQueue/35 xTaskResumeAll/55 prvUnlockQueue/35 vTaskPlaceOnEventList/54 prvIsQueueEmpty/36 xTaskCheckForTimeOut/53 vPortExitCritical/47 vPortEnterCritical/44 vTaskSuspendAll/52 vPortExitCritical/47 vTaskInternalSetTimeOutState/51 vPortExitCritical/47 vPortExitCritical/47 xTaskRemoveFromEventList/45 prvCopyDataFromQueue/34 vPortEnterCritical/44 xTaskGetSchedulerState/50 
+xQueueSemaphoreTake/19 (xQueueSemaphoreTake) @069772a0
+  Type: function definition analyzed
+  Visibility: public
+  Aux: @069777e0
+  References: 
+  Referring: 
+  Function flags: body optimize_size
+  Called by: xQueueTakeMutexRecursive/13 
+  Calls: vPortExitCritical/47 vTaskPriorityDisinheritAfterTimeout/63 prvGetDisinheritPriorityAfterTimeout/32 vPortEnterCritical/44 prvIsQueueEmpty/36 xTaskResumeAll/55 prvUnlockQueue/35 xTaskResumeAll/55 prvUnlockQueue/35 xTaskResumeAll/55 prvUnlockQueue/35 vTaskPlaceOnEventList/54 vPortExitCritical/47 xTaskPriorityInherit/62 vPortEnterCritical/44 prvIsQueueEmpty/36 xTaskCheckForTimeOut/53 vPortExitCritical/47 vPortEnterCritical/44 vTaskSuspendAll/52 vPortExitCritical/47 vTaskInternalSetTimeOutState/51 vPortExitCritical/47 vPortExitCritical/47 xTaskRemoveFromEventList/45 pvTaskIncrementMutexHeldCount/61 vPortEnterCritical/44 xTaskGetSchedulerState/50 
+xQueueReceive/18 (xQueueReceive) @0695f7e0
+  Type: function definition analyzed
+  Visibility: public
+  Aux: @069772a0
+  References: 
+  Referring: 
+  Function flags: body optimize_size
+  Called by: 
+  Calls: prvIsQueueEmpty/36 xTaskResumeAll/55 prvUnlockQueue/35 xTaskResumeAll/55 prvUnlockQueue/35 xTaskResumeAll/55 prvUnlockQueue/35 vTaskPlaceOnEventList/54 prvIsQueueEmpty/36 xTaskCheckForTimeOut/53 vPortExitCritical/47 vPortEnterCritical/44 vTaskSuspendAll/52 vPortExitCritical/47 vTaskInternalSetTimeOutState/51 vPortExitCritical/47 vPortExitCritical/47 xTaskRemoveFromEventList/45 prvCopyDataFromQueue/34 vPortEnterCritical/44 xTaskGetSchedulerState/50 
+xQueueGiveFromISR/17 (xQueueGiveFromISR) @0695fb60
+  Type: function definition analyzed
+  Visibility: public
+  Aux: @0695f7e0
+  References: 
+  Referring: 
+  Function flags: body optimize_size
+  Called by: 
+  Calls: vPortSetBASEPRI/3 uxTaskGetNumberOfTasks/60 xTaskRemoveFromEventList/45 ulPortRaiseBASEPRI/2 vPortValidateInterruptPriority/59 
+xQueueGenericSendFromISR/16 (xQueueGenericSendFromISR) @0695f700
+  Type: function definition analyzed
+  Visibility: public
+  Aux: @0695fb60
+  References: 
+  Referring: 
+  Function flags: body optimize_size
+  Called by: 
+  Calls: vPortSetBASEPRI/3 uxTaskGetNumberOfTasks/60 xTaskRemoveFromEventList/45 prvCopyDataToQueue/33 ulPortRaiseBASEPRI/2 vPortValidateInterruptPriority/59 
+xQueueGenericSend/15 (xQueueGenericSend) @0695f2a0
+  Type: function definition analyzed
+  Visibility: public
+  Aux: @0695f700
+  References: 
+  Referring: 
+  Function flags: body optimize_size
+  Called by: xQueueGiveMutexRecursive/12 prvInitialiseMutex/8 
+  Calls: xTaskResumeAll/55 prvUnlockQueue/35 xTaskResumeAll/55 prvUnlockQueue/35 xTaskResumeAll/55 prvUnlockQueue/35 vTaskPlaceOnEventList/54 prvIsQueueFull/38 xTaskCheckForTimeOut/53 vPortExitCritical/47 vPortEnterCritical/44 vTaskSuspendAll/52 vPortExitCritical/47 vTaskInternalSetTimeOutState/51 vPortExitCritical/47 vPortExitCritical/47 xTaskRemoveFromEventList/45 prvCopyDataToQueue/33 vPortEnterCritical/44 xTaskGetSchedulerState/50 
+xQueueCreateCountingSemaphore/14 (xQueueCreateCountingSemaphore) @0692a380
+  Type: function definition analyzed
+  Visibility: public
+  Aux: @0695f2a0
+  References: 
+  Referring: 
+  Function flags: body optimize_size
+  Called by: 
+  Calls: xQueueGenericCreate/6 
+xQueueTakeMutexRecursive/13 (xQueueTakeMutexRecursive) @0692ad20
+  Type: function definition analyzed
+  Visibility: public
+  Aux: @0692a380
+  References: 
+  Referring: 
+  Function flags: body optimize_size
+  Called by: 
+  Calls: xQueueSemaphoreTake/19 xTaskGetCurrentTaskHandle/49 
+xQueueGiveMutexRecursive/12 (xQueueGiveMutexRecursive) @0692a9a0
+  Type: function definition analyzed
+  Visibility: public
+  Aux: @0692ad20
+  References: 
+  Referring: 
+  Function flags: body optimize_size
+  Called by: 
+  Calls: xQueueGenericSend/15 xTaskGetCurrentTaskHandle/49 
+xQueueGetMutexHolderFromISR/11 (xQueueGetMutexHolderFromISR) @0692a620
+  Type: function definition analyzed
+  Visibility: public
+  Aux: @0692a9a0
+  References: 
+  Referring: 
+  Function flags: body optimize_size
+  Called by: 
+  Calls: 
+xQueueGetMutexHolder/10 (xQueueGetMutexHolder) @0692a2a0
+  Type: function definition analyzed
+  Visibility: public
+  Aux: @0692a620
+  References: 
+  Referring: 
+  Function flags: body optimize_size
+  Called by: 
+  Calls: vPortExitCritical/47 vPortEnterCritical/44 
+xQueueCreateMutex/9 (xQueueCreateMutex) @0693dee0
+  Type: function definition analyzed
+  Visibility: public
+  Aux: @0692a2a0
+  References: 
+  Referring: 
+  Function flags: body optimize_size
+  Called by: 
+  Calls: prvInitialiseMutex/8 xQueueGenericCreate/6 
+prvInitialiseMutex/8 (prvInitialiseMutex) @0693d8c0
+  Type: function definition analyzed
+  Visibility:
+  Aux: @0692a2a0
+  References: 
+  Referring: 
+  Function flags: body optimize_size
+  Called by: xQueueCreateMutex/9 
+  Calls: xQueueGenericSend/15 
+prvInitialiseNewQueue/7 (prvInitialiseNewQueue) @0693de00
+  Type: function definition analyzed
+  Visibility:
+  Aux: @0693dee0
+  References: 
+  Referring: 
+  Function flags: body optimize_size
+  Called by: xQueueGenericCreate/6 
+  Calls: xQueueGenericReset/5 
+xQueueGenericCreate/6 (xQueueGenericCreate) @0693db60
+  Type: function definition analyzed
+  Visibility: public
+  Aux: @0693dee0
+  References: 
+  Referring: 
+  Function flags: body optimize_size
+  Called by: xQueueCreateCountingSemaphore/14 xQueueCreateMutex/9 
+  Calls: prvInitialiseNewQueue/7 pvPortMalloc/48 
+xQueueGenericReset/5 (xQueueGenericReset) @0693d7e0
+  Type: function definition analyzed
+  Visibility: public
+  Aux: @0693db60
+  References: 
+  Referring: 
+  Function flags: body optimize_size
+  Called by: prvInitialiseNewQueue/7 
+  Calls: vPortExitCritical/47 vListInitialise/46 vListInitialise/46 xTaskRemoveFromEventList/45 vPortEnterCritical/44 
+xQueueRegistry/4 (xQueueRegistry) @06959cf0
+  Type: variable definition analyzed
+  Visibility: public
+  Aux: @0693d7e0
+  References: 
+  Referring: vQueueAddToRegistry/40 (read) vQueueAddToRegistry/40 (addr) vQueueAddToRegistry/40 (read) vQueueAddToRegistry/40 (addr) pcQueueGetName/41 (read) pcQueueGetName/41 (read) vQueueUnregisterQueue/42 (read) vQueueUnregisterQueue/42 (write) vQueueUnregisterQueue/42 (write) 
+  Availability: not-ready
+  Varpool flags:
+vPortSetBASEPRI/3 (vPortSetBASEPRI) @06894380
+  Type: function definition analyzed
+  Visibility:
+  Aux: @0695fb60
+  References: 
+  Referring: 
+  Function flags: body optimize_size
+  Called by: xQueuePeekFromISR/22 xQueueReceiveFromISR/21 xQueueGiveFromISR/17 xQueueGenericSendFromISR/16 
+  Calls: 
+ulPortRaiseBASEPRI/2 (ulPortRaiseBASEPRI) @068940e0
+  Type: function definition analyzed
+  Visibility:
+  Aux: @06894380
+  References: 
+  Referring: 
+  Function flags: body optimize_size
+  Called by: xQueuePeekFromISR/22 xQueueReceiveFromISR/21 xQueueGiveFromISR/17 xQueueGenericSendFromISR/16 
+  Calls: 
+vPortRaiseBASEPRI/1 (vPortRaiseBASEPRI) @0688de00
+  Type: function definition
+  Visibility:
+  References: 
+  Referring: 
+  Function flags: optimize_size
+  Called by: 
+  Calls: 
+xPortIsInsideInterrupt/0 (xPortIsInsideInterrupt) @0688db60
+  Type: function definition
+  Visibility:
+  References: 
+  Referring: 
+  Function flags: optimize_size
+  Called by: 
+  Calls: 
+
+Removing unused symbols: vPortRaiseBASEPRI/1 xPortIsInsideInterrupt/0
+
+Reclaimed Symbol table:
+
+vTaskPlaceOnEventListRestricted/65 (vTaskPlaceOnEventListRestricted) @06a4f1c0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags: optimize_size
+  Called by: vQueueWaitForMessageRestricted/43 
+  Calls: 
+vPortFree/64 (vPortFree) @06a367e0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags: optimize_size
+  Called by: vQueueDelete/26 
+  Calls: 
+vTaskPriorityDisinheritAfterTimeout/63 (vTaskPriorityDisinheritAfterTimeout) @06a09e00
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags: optimize_size
+  Called by: xQueueSemaphoreTake/19 
+  Calls: 
+xTaskPriorityInherit/62 (xTaskPriorityInherit) @06a09d20
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags: optimize_size
+  Called by: xQueueSemaphoreTake/19 
+  Calls: 
+pvTaskIncrementMutexHeldCount/61 (pvTaskIncrementMutexHeldCount) @06a09c40
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags: optimize_size
+  Called by: xQueueSemaphoreTake/19 
+  Calls: 
+uxTaskGetNumberOfTasks/60 (uxTaskGetNumberOfTasks) @06a09000
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags: optimize_size
+  Called by: xQueueReceiveFromISR/21 xQueueGiveFromISR/17 xQueueGenericSendFromISR/16 
+  Calls: 
+vPortValidateInterruptPriority/59 (vPortValidateInterruptPriority) @064ca1c0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags: optimize_size
+  Called by: xQueuePeekFromISR/22 xQueueReceiveFromISR/21 xQueueGiveFromISR/17 xQueueGenericSendFromISR/16 
+  Calls: 
+vTaskMissedYield/58 (vTaskMissedYield) @064cad20
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags: optimize_size
+  Called by: prvUnlockQueue/35 prvUnlockQueue/35 
+  Calls: 
+memcpy/57 (memcpy) @064caa80
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags: optimize_size
+  Called by: prvCopyDataFromQueue/34 prvCopyDataToQueue/33 prvCopyDataToQueue/33 
+  Calls: 
+xTaskPriorityDisinherit/56 (xTaskPriorityDisinherit) @064ca9a0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags: optimize_size
+  Called by: prvCopyDataToQueue/33 
+  Calls: 
+xTaskResumeAll/55 (xTaskResumeAll) @064ca700
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags: optimize_size
+  Called by: xQueuePeek/20 xQueuePeek/20 xQueuePeek/20 xQueueSemaphoreTake/19 xQueueSemaphoreTake/19 xQueueSemaphoreTake/19 xQueueReceive/18 xQueueReceive/18 xQueueReceive/18 xQueueGenericSend/15 xQueueGenericSend/15 xQueueGenericSend/15 
+  Calls: 
+vTaskPlaceOnEventList/54 (vTaskPlaceOnEventList) @064ca620
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags: optimize_size
+  Called by: xQueuePeek/20 xQueueSemaphoreTake/19 xQueueReceive/18 xQueueGenericSend/15 
+  Calls: 
+xTaskCheckForTimeOut/53 (xTaskCheckForTimeOut) @064ca540
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags: optimize_size
+  Called by: xQueuePeek/20 xQueueSemaphoreTake/19 xQueueReceive/18 xQueueGenericSend/15 
+  Calls: 
+vTaskSuspendAll/52 (vTaskSuspendAll) @064ca460
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags: optimize_size
+  Called by: xQueuePeek/20 xQueueSemaphoreTake/19 xQueueReceive/18 xQueueGenericSend/15 
+  Calls: 
+vTaskInternalSetTimeOutState/51 (vTaskInternalSetTimeOutState) @064ca380
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags: optimize_size
+  Called by: xQueuePeek/20 xQueueSemaphoreTake/19 xQueueReceive/18 xQueueGenericSend/15 
+  Calls: 
+xTaskGetSchedulerState/50 (xTaskGetSchedulerState) @064ca2a0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags: optimize_size
+  Called by: xQueuePeek/20 xQueueSemaphoreTake/19 xQueueReceive/18 xQueueGenericSend/15 
+  Calls: 
+xTaskGetCurrentTaskHandle/49 (xTaskGetCurrentTaskHandle) @069ecd20
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags: optimize_size
+  Called by: xQueueTakeMutexRecursive/13 xQueueGiveMutexRecursive/12 
+  Calls: 
+pvPortMalloc/48 (pvPortMalloc) @069ec700
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags: optimize_size
+  Called by: xQueueGenericCreate/6 
+  Calls: 
+vPortExitCritical/47 (vPortExitCritical) @069ec540
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags: optimize_size
+  Called by: vQueueWaitForMessageRestricted/43 uxQueueSpacesAvailable/24 uxQueueMessagesWaiting/23 xQueuePeek/20 xQueuePeek/20 xQueuePeek/20 xQueuePeek/20 xQueueSemaphoreTake/19 xQueueSemaphoreTake/19 xQueueSemaphoreTake/19 xQueueSemaphoreTake/19 xQueueSemaphoreTake/19 xQueueSemaphoreTake/19 prvIsQueueEmpty/36 xQueueReceive/18 xQueueReceive/18 xQueueReceive/18 xQueueReceive/18 prvUnlockQueue/35 prvUnlockQueue/35 prvIsQueueFull/38 xQueueGenericSend/15 xQueueGenericSend/15 xQueueGenericSend/15 xQueueGenericSend/15 xQueueGetMutexHolder/10 xQueueGenericReset/5 
+  Calls: 
+vListInitialise/46 (vListInitialise) @069ec460
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags: optimize_size
+  Called by: xQueueGenericReset/5 xQueueGenericReset/5 
+  Calls: 
+xTaskRemoveFromEventList/45 (xTaskRemoveFromEventList) @069ec380
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags: optimize_size
+  Called by: xQueueReceiveFromISR/21 xQueuePeek/20 xQueueSemaphoreTake/19 xQueueReceive/18 xQueueGiveFromISR/17 xQueueGenericSendFromISR/16 prvUnlockQueue/35 prvUnlockQueue/35 xQueueGenericSend/15 xQueueGenericReset/5 
+  Calls: 
+vPortEnterCritical/44 (vPortEnterCritical) @069ec2a0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags: optimize_size
+  Called by: vQueueWaitForMessageRestricted/43 uxQueueSpacesAvailable/24 uxQueueMessagesWaiting/23 xQueuePeek/20 xQueuePeek/20 xQueueSemaphoreTake/19 xQueueSemaphoreTake/19 xQueueSemaphoreTake/19 xQueueSemaphoreTake/19 prvIsQueueEmpty/36 xQueueReceive/18 xQueueReceive/18 prvUnlockQueue/35 prvUnlockQueue/35 prvIsQueueFull/38 xQueueGenericSend/15 xQueueGenericSend/15 xQueueGetMutexHolder/10 xQueueGenericReset/5 
+  Calls: 
+vQueueWaitForMessageRestricted/43 (vQueueWaitForMessageRestricted) @06999620
+  Type: function definition analyzed
+  Visibility: public
+  References: 
+  Referring: 
+  Function flags: body optimize_size
+  Called by: 
+  Calls: prvUnlockQueue/35 vTaskPlaceOnEventListRestricted/65 vPortExitCritical/47 vPortEnterCritical/44 
+vQueueUnregisterQueue/42 (vQueueUnregisterQueue) @06999000
+  Type: function definition analyzed
+  Visibility: public
+  References: xQueueRegistry/4 (read) xQueueRegistry/4 (write) xQueueRegistry/4 (write) 
+  Referring: 
+  Function flags: body optimize_size
+  Called by: vQueueDelete/26 
+  Calls: 
+pcQueueGetName/41 (pcQueueGetName) @06999c40
+  Type: function definition analyzed
+  Visibility: public
+  References: xQueueRegistry/4 (read) xQueueRegistry/4 (read) 
+  Referring: 
+  Function flags: body optimize_size
+  Called by: 
+  Calls: 
+vQueueAddToRegistry/40 (vQueueAddToRegistry) @069998c0
+  Type: function definition analyzed
+  Visibility: public
+  References: xQueueRegistry/4 (read) xQueueRegistry/4 (addr) xQueueRegistry/4 (read) xQueueRegistry/4 (addr) 
+  Referring: 
+  Function flags: body optimize_size
+  Called by: 
+  Calls: 
+xQueueIsQueueFullFromISR/39 (xQueueIsQueueFullFromISR) @06999540
+  Type: function definition analyzed
+  Visibility: public
+  References: 
+  Referring: 
+  Function flags: body optimize_size
+  Called by: 
+  Calls: 
+prvIsQueueFull/38 (prvIsQueueFull) @069991c0
+  Type: function definition analyzed
+  Visibility:
+  References: 
+  Referring: 
+  Function flags: body optimize_size
+  Called by: xQueueGenericSend/15 
+  Calls: vPortExitCritical/47 vPortEnterCritical/44 
+xQueueIsQueueEmptyFromISR/37 (xQueueIsQueueEmptyFromISR) @0698eb60
+  Type: function definition analyzed
+  Visibility: public
+  References: 
+  Referring: 
+  Function flags: body optimize_size
+  Called by: 
+  Calls: 
+prvIsQueueEmpty/36 (prvIsQueueEmpty) @0698e2a0
+  Type: function definition analyzed
+  Visibility:
+  References: 
+  Referring: 
+  Function flags: body optimize_size
+  Called by: xQueuePeek/20 xQueuePeek/20 xQueueSemaphoreTake/19 xQueueSemaphoreTake/19 xQueueReceive/18 xQueueReceive/18 
+  Calls: vPortExitCritical/47 vPortEnterCritical/44 
+prvUnlockQueue/35 (prvUnlockQueue) @0698eee0
+  Type: function definition analyzed
+  Visibility:
+  References: 
+  Referring: 
+  Function flags: body optimize_size
+  Called by: vQueueWaitForMessageRestricted/43 xQueuePeek/20 xQueuePeek/20 xQueuePeek/20 xQueueSemaphoreTake/19 xQueueSemaphoreTake/19 xQueueSemaphoreTake/19 xQueueReceive/18 xQueueReceive/18 xQueueReceive/18 xQueueGenericSend/15 xQueueGenericSend/15 xQueueGenericSend/15 
+  Calls: vPortExitCritical/47 vTaskMissedYield/58 xTaskRemoveFromEventList/45 vPortEnterCritical/44 vPortExitCritical/47 vTaskMissedYield/58 xTaskRemoveFromEventList/45 vPortEnterCritical/44 
+prvCopyDataFromQueue/34 (prvCopyDataFromQueue) @0698ea80
+  Type: function definition analyzed
+  Visibility:
+  References: 
+  Referring: 
+  Function flags: body optimize_size
+  Called by: xQueuePeekFromISR/22 xQueueReceiveFromISR/21 xQueuePeek/20 xQueueReceive/18 
+  Calls: memcpy/57 
+prvCopyDataToQueue/33 (prvCopyDataToQueue) @0698e7e0
+  Type: function definition analyzed
+  Visibility:
+  References: 
+  Referring: 
+  Function flags: body optimize_size
+  Called by: xQueueGenericSendFromISR/16 xQueueGenericSend/15 
+  Calls: memcpy/57 memcpy/57 xTaskPriorityDisinherit/56 
+prvGetDisinheritPriorityAfterTimeout/32 (prvGetDisinheritPriorityAfterTimeout) @0698e540
+  Type: function definition analyzed
+  Visibility:
+  References: 
+  Referring: 
+  Function flags: body optimize_size
+  Called by: xQueueSemaphoreTake/19 
+  Calls: 
+uxQueueGetQueueLength/31 (uxQueueGetQueueLength) @0698e1c0
+  Type: function definition analyzed
+  Visibility: public
+  References: 
+  Referring: 
+  Function flags: body optimize_size
+  Called by: 
+  Calls: 
+uxQueueGetQueueItemSize/30 (uxQueueGetQueueItemSize) @0698ae00
+  Type: function definition analyzed
+  Visibility: public
+  References: 
+  Referring: 
+  Function flags: body optimize_size
+  Called by: 
+  Calls: 
+ucQueueGetQueueType/29 (ucQueueGetQueueType) @0698a7e0
+  Type: function definition analyzed
+  Visibility: public
+  References: 
+  Referring: 
+  Function flags: body optimize_size
+  Called by: 
+  Calls: 
+vQueueSetQueueNumber/28 (vQueueSetQueueNumber) @0698a0e0
+  Type: function definition analyzed
+  Visibility: public
+  References: 
+  Referring: 
+  Function flags: body optimize_size
+  Called by: 
+  Calls: 
+uxQueueGetQueueNumber/27 (uxQueueGetQueueNumber) @0698ad20
+  Type: function definition analyzed
+  Visibility: public
+  References: 
+  Referring: 
+  Function flags: body optimize_size
+  Called by: 
+  Calls: 
+vQueueDelete/26 (vQueueDelete) @0698aa80
+  Type: function definition analyzed
+  Visibility: public
+  References: 
+  Referring: 
+  Function flags: body optimize_size
+  Called by: 
+  Calls: vPortFree/64 vQueueUnregisterQueue/42 
+uxQueueMessagesWaitingFromISR/25 (uxQueueMessagesWaitingFromISR) @0698a700
+  Type: function definition analyzed
+  Visibility: public
+  References: 
+  Referring: 
+  Function flags: body optimize_size
+  Called by: 
+  Calls: 
+uxQueueSpacesAvailable/24 (uxQueueSpacesAvailable) @0698a380
+  Type: function definition analyzed
+  Visibility: public
+  References: 
+  Referring: 
+  Function flags: body optimize_size
+  Called by: 
+  Calls: vPortExitCritical/47 vPortEnterCritical/44 
+uxQueueMessagesWaiting/23 (uxQueueMessagesWaiting) @0698a000
+  Type: function definition analyzed
+  Visibility: public
+  References: 
+  Referring: 
+  Function flags: body optimize_size
+  Called by: 
+  Calls: vPortExitCritical/47 vPortEnterCritical/44 
+xQueuePeekFromISR/22 (xQueuePeekFromISR) @06977380
+  Type: function definition analyzed
+  Visibility: public
+  References: 
+  Referring: 
+  Function flags: body optimize_size
+  Called by: 
+  Calls: vPortSetBASEPRI/3 prvCopyDataFromQueue/34 ulPortRaiseBASEPRI/2 vPortValidateInterruptPriority/59 
+xQueueReceiveFromISR/21 (xQueueReceiveFromISR) @06977c40
+  Type: function definition analyzed
+  Visibility: public
+  References: 
+  Referring: 
+  Function flags: body optimize_size
+  Called by: 
+  Calls: vPortSetBASEPRI/3 uxTaskGetNumberOfTasks/60 xTaskRemoveFromEventList/45 prvCopyDataFromQueue/34 ulPortRaiseBASEPRI/2 vPortValidateInterruptPriority/59 
+xQueuePeek/20 (xQueuePeek) @069777e0
+  Type: function definition analyzed
+  Visibility: public
+  References: 
+  Referring: 
+  Function flags: body optimize_size
+  Called by: 
+  Calls: prvIsQueueEmpty/36 xTaskResumeAll/55 prvUnlockQueue/35 xTaskResumeAll/55 prvUnlockQueue/35 xTaskResumeAll/55 prvUnlockQueue/35 vTaskPlaceOnEventList/54 prvIsQueueEmpty/36 xTaskCheckForTimeOut/53 vPortExitCritical/47 vPortEnterCritical/44 vTaskSuspendAll/52 vPortExitCritical/47 vTaskInternalSetTimeOutState/51 vPortExitCritical/47 vPortExitCritical/47 xTaskRemoveFromEventList/45 prvCopyDataFromQueue/34 vPortEnterCritical/44 xTaskGetSchedulerState/50 
+xQueueSemaphoreTake/19 (xQueueSemaphoreTake) @069772a0
+  Type: function definition analyzed
+  Visibility: public
+  References: 
+  Referring: 
+  Function flags: body optimize_size
+  Called by: xQueueTakeMutexRecursive/13 
+  Calls: vPortExitCritical/47 vTaskPriorityDisinheritAfterTimeout/63 prvGetDisinheritPriorityAfterTimeout/32 vPortEnterCritical/44 prvIsQueueEmpty/36 xTaskResumeAll/55 prvUnlockQueue/35 xTaskResumeAll/55 prvUnlockQueue/35 xTaskResumeAll/55 prvUnlockQueue/35 vTaskPlaceOnEventList/54 vPortExitCritical/47 xTaskPriorityInherit/62 vPortEnterCritical/44 prvIsQueueEmpty/36 xTaskCheckForTimeOut/53 vPortExitCritical/47 vPortEnterCritical/44 vTaskSuspendAll/52 vPortExitCritical/47 vTaskInternalSetTimeOutState/51 vPortExitCritical/47 vPortExitCritical/47 xTaskRemoveFromEventList/45 pvTaskIncrementMutexHeldCount/61 vPortEnterCritical/44 xTaskGetSchedulerState/50 
+xQueueReceive/18 (xQueueReceive) @0695f7e0
+  Type: function definition analyzed
+  Visibility: public
+  References: 
+  Referring: 
+  Function flags: body optimize_size
+  Called by: 
+  Calls: prvIsQueueEmpty/36 xTaskResumeAll/55 prvUnlockQueue/35 xTaskResumeAll/55 prvUnlockQueue/35 xTaskResumeAll/55 prvUnlockQueue/35 vTaskPlaceOnEventList/54 prvIsQueueEmpty/36 xTaskCheckForTimeOut/53 vPortExitCritical/47 vPortEnterCritical/44 vTaskSuspendAll/52 vPortExitCritical/47 vTaskInternalSetTimeOutState/51 vPortExitCritical/47 vPortExitCritical/47 xTaskRemoveFromEventList/45 prvCopyDataFromQueue/34 vPortEnterCritical/44 xTaskGetSchedulerState/50 
+xQueueGiveFromISR/17 (xQueueGiveFromISR) @0695fb60
+  Type: function definition analyzed
+  Visibility: public
+  References: 
+  Referring: 
+  Function flags: body optimize_size
+  Called by: 
+  Calls: vPortSetBASEPRI/3 uxTaskGetNumberOfTasks/60 xTaskRemoveFromEventList/45 ulPortRaiseBASEPRI/2 vPortValidateInterruptPriority/59 
+xQueueGenericSendFromISR/16 (xQueueGenericSendFromISR) @0695f700
+  Type: function definition analyzed
+  Visibility: public
+  References: 
+  Referring: 
+  Function flags: body optimize_size
+  Called by: 
+  Calls: vPortSetBASEPRI/3 uxTaskGetNumberOfTasks/60 xTaskRemoveFromEventList/45 prvCopyDataToQueue/33 ulPortRaiseBASEPRI/2 vPortValidateInterruptPriority/59 
+xQueueGenericSend/15 (xQueueGenericSend) @0695f2a0
+  Type: function definition analyzed
+  Visibility: public
+  References: 
+  Referring: 
+  Function flags: body optimize_size
+  Called by: xQueueGiveMutexRecursive/12 prvInitialiseMutex/8 
+  Calls: xTaskResumeAll/55 prvUnlockQueue/35 xTaskResumeAll/55 prvUnlockQueue/35 xTaskResumeAll/55 prvUnlockQueue/35 vTaskPlaceOnEventList/54 prvIsQueueFull/38 xTaskCheckForTimeOut/53 vPortExitCritical/47 vPortEnterCritical/44 vTaskSuspendAll/52 vPortExitCritical/47 vTaskInternalSetTimeOutState/51 vPortExitCritical/47 vPortExitCritical/47 xTaskRemoveFromEventList/45 prvCopyDataToQueue/33 vPortEnterCritical/44 xTaskGetSchedulerState/50 
+xQueueCreateCountingSemaphore/14 (xQueueCreateCountingSemaphore) @0692a380
+  Type: function definition analyzed
+  Visibility: public
+  References: 
+  Referring: 
+  Function flags: body optimize_size
+  Called by: 
+  Calls: xQueueGenericCreate/6 
+xQueueTakeMutexRecursive/13 (xQueueTakeMutexRecursive) @0692ad20
+  Type: function definition analyzed
+  Visibility: public
+  References: 
+  Referring: 
+  Function flags: body optimize_size
+  Called by: 
+  Calls: xQueueSemaphoreTake/19 xTaskGetCurrentTaskHandle/49 
+xQueueGiveMutexRecursive/12 (xQueueGiveMutexRecursive) @0692a9a0
+  Type: function definition analyzed
+  Visibility: public
+  References: 
+  Referring: 
+  Function flags: body optimize_size
+  Called by: 
+  Calls: xQueueGenericSend/15 xTaskGetCurrentTaskHandle/49 
+xQueueGetMutexHolderFromISR/11 (xQueueGetMutexHolderFromISR) @0692a620
+  Type: function definition analyzed
+  Visibility: public
+  References: 
+  Referring: 
+  Function flags: body optimize_size
+  Called by: 
+  Calls: 
+xQueueGetMutexHolder/10 (xQueueGetMutexHolder) @0692a2a0
+  Type: function definition analyzed
+  Visibility: public
+  References: 
+  Referring: 
+  Function flags: body optimize_size
+  Called by: 
+  Calls: vPortExitCritical/47 vPortEnterCritical/44 
+xQueueCreateMutex/9 (xQueueCreateMutex) @0693dee0
+  Type: function definition analyzed
+  Visibility: public
+  References: 
+  Referring: 
+  Function flags: body optimize_size
+  Called by: 
+  Calls: prvInitialiseMutex/8 xQueueGenericCreate/6 
+prvInitialiseMutex/8 (prvInitialiseMutex) @0693d8c0
+  Type: function definition analyzed
+  Visibility:
+  References: 
+  Referring: 
+  Function flags: body optimize_size
+  Called by: xQueueCreateMutex/9 
+  Calls: xQueueGenericSend/15 
+prvInitialiseNewQueue/7 (prvInitialiseNewQueue) @0693de00
+  Type: function definition analyzed
+  Visibility:
+  References: 
+  Referring: 
+  Function flags: body optimize_size
+  Called by: xQueueGenericCreate/6 
+  Calls: xQueueGenericReset/5 
+xQueueGenericCreate/6 (xQueueGenericCreate) @0693db60
+  Type: function definition analyzed
+  Visibility: public
+  References: 
+  Referring: 
+  Function flags: body optimize_size
+  Called by: xQueueCreateCountingSemaphore/14 xQueueCreateMutex/9 
+  Calls: prvInitialiseNewQueue/7 pvPortMalloc/48 
+xQueueGenericReset/5 (xQueueGenericReset) @0693d7e0
+  Type: function definition analyzed
+  Visibility: public
+  References: 
+  Referring: 
+  Function flags: body optimize_size
+  Called by: prvInitialiseNewQueue/7 
+  Calls: vPortExitCritical/47 vListInitialise/46 vListInitialise/46 xTaskRemoveFromEventList/45 vPortEnterCritical/44 
+xQueueRegistry/4 (xQueueRegistry) @06959cf0
+  Type: variable definition analyzed
+  Visibility: public
+  References: 
+  Referring: vQueueAddToRegistry/40 (read) vQueueAddToRegistry/40 (addr) vQueueAddToRegistry/40 (read) vQueueAddToRegistry/40 (addr) pcQueueGetName/41 (read) pcQueueGetName/41 (read) vQueueUnregisterQueue/42 (read) vQueueUnregisterQueue/42 (write) vQueueUnregisterQueue/42 (write) 
+  Availability: not-ready
+  Varpool flags:
+vPortSetBASEPRI/3 (vPortSetBASEPRI) @06894380
+  Type: function definition analyzed
+  Visibility:
+  References: 
+  Referring: 
+  Function flags: body optimize_size
+  Called by: xQueuePeekFromISR/22 xQueueReceiveFromISR/21 xQueueGiveFromISR/17 xQueueGenericSendFromISR/16 
+  Calls: 
+ulPortRaiseBASEPRI/2 (ulPortRaiseBASEPRI) @068940e0
+  Type: function definition analyzed
+  Visibility:
+  References: 
+  Referring: 
+  Function flags: body optimize_size
+  Called by: xQueuePeekFromISR/22 xQueueReceiveFromISR/21 xQueueGiveFromISR/17 xQueueGenericSendFromISR/16 
+  Calls: 
+
+
+Initial Symbol table:
+
+vTaskPlaceOnEventListRestricted/65 (vTaskPlaceOnEventListRestricted) @06a4f1c0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags: optimize_size
+  Called by: vQueueWaitForMessageRestricted/43 
+  Calls: 
+vPortFree/64 (vPortFree) @06a367e0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags: optimize_size
+  Called by: vQueueDelete/26 
+  Calls: 
+vTaskPriorityDisinheritAfterTimeout/63 (vTaskPriorityDisinheritAfterTimeout) @06a09e00
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags: optimize_size
+  Called by: xQueueSemaphoreTake/19 
+  Calls: 
+xTaskPriorityInherit/62 (xTaskPriorityInherit) @06a09d20
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags: optimize_size
+  Called by: xQueueSemaphoreTake/19 
+  Calls: 
+pvTaskIncrementMutexHeldCount/61 (pvTaskIncrementMutexHeldCount) @06a09c40
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags: optimize_size
+  Called by: xQueueSemaphoreTake/19 
+  Calls: 
+uxTaskGetNumberOfTasks/60 (uxTaskGetNumberOfTasks) @06a09000
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags: optimize_size
+  Called by: xQueueReceiveFromISR/21 xQueueGiveFromISR/17 xQueueGenericSendFromISR/16 
+  Calls: 
+vPortValidateInterruptPriority/59 (vPortValidateInterruptPriority) @064ca1c0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags: optimize_size
+  Called by: xQueuePeekFromISR/22 xQueueReceiveFromISR/21 xQueueGiveFromISR/17 xQueueGenericSendFromISR/16 
+  Calls: 
+vTaskMissedYield/58 (vTaskMissedYield) @064cad20
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags: optimize_size
+  Called by: prvUnlockQueue/35 prvUnlockQueue/35 
+  Calls: 
+memcpy/57 (memcpy) @064caa80
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags: optimize_size
+  Called by: prvCopyDataFromQueue/34 prvCopyDataToQueue/33 prvCopyDataToQueue/33 
+  Calls: 
+xTaskPriorityDisinherit/56 (xTaskPriorityDisinherit) @064ca9a0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags: optimize_size
+  Called by: prvCopyDataToQueue/33 
+  Calls: 
+xTaskResumeAll/55 (xTaskResumeAll) @064ca700
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags: optimize_size
+  Called by: xQueuePeek/20 xQueuePeek/20 xQueuePeek/20 xQueueSemaphoreTake/19 xQueueSemaphoreTake/19 xQueueSemaphoreTake/19 xQueueReceive/18 xQueueReceive/18 xQueueReceive/18 xQueueGenericSend/15 xQueueGenericSend/15 xQueueGenericSend/15 
+  Calls: 
+vTaskPlaceOnEventList/54 (vTaskPlaceOnEventList) @064ca620
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags: optimize_size
+  Called by: xQueuePeek/20 xQueueSemaphoreTake/19 xQueueReceive/18 xQueueGenericSend/15 
+  Calls: 
+xTaskCheckForTimeOut/53 (xTaskCheckForTimeOut) @064ca540
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags: optimize_size
+  Called by: xQueuePeek/20 xQueueSemaphoreTake/19 xQueueReceive/18 xQueueGenericSend/15 
+  Calls: 
+vTaskSuspendAll/52 (vTaskSuspendAll) @064ca460
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags: optimize_size
+  Called by: xQueuePeek/20 xQueueSemaphoreTake/19 xQueueReceive/18 xQueueGenericSend/15 
+  Calls: 
+vTaskInternalSetTimeOutState/51 (vTaskInternalSetTimeOutState) @064ca380
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags: optimize_size
+  Called by: xQueuePeek/20 xQueueSemaphoreTake/19 xQueueReceive/18 xQueueGenericSend/15 
+  Calls: 
+xTaskGetSchedulerState/50 (xTaskGetSchedulerState) @064ca2a0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags: optimize_size
+  Called by: xQueuePeek/20 xQueueSemaphoreTake/19 xQueueReceive/18 xQueueGenericSend/15 
+  Calls: 
+xTaskGetCurrentTaskHandle/49 (xTaskGetCurrentTaskHandle) @069ecd20
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags: optimize_size
+  Called by: xQueueTakeMutexRecursive/13 xQueueGiveMutexRecursive/12 
+  Calls: 
+pvPortMalloc/48 (pvPortMalloc) @069ec700
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags: optimize_size
+  Called by: xQueueGenericCreate/6 
+  Calls: 
+vPortExitCritical/47 (vPortExitCritical) @069ec540
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags: optimize_size
+  Called by: vQueueWaitForMessageRestricted/43 uxQueueSpacesAvailable/24 uxQueueMessagesWaiting/23 xQueuePeek/20 xQueuePeek/20 xQueuePeek/20 xQueuePeek/20 xQueueSemaphoreTake/19 xQueueSemaphoreTake/19 xQueueSemaphoreTake/19 xQueueSemaphoreTake/19 xQueueSemaphoreTake/19 xQueueSemaphoreTake/19 prvIsQueueEmpty/36 xQueueReceive/18 xQueueReceive/18 xQueueReceive/18 xQueueReceive/18 prvUnlockQueue/35 prvUnlockQueue/35 prvIsQueueFull/38 xQueueGenericSend/15 xQueueGenericSend/15 xQueueGenericSend/15 xQueueGenericSend/15 xQueueGetMutexHolder/10 xQueueGenericReset/5 
+  Calls: 
+vListInitialise/46 (vListInitialise) @069ec460
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags: optimize_size
+  Called by: xQueueGenericReset/5 xQueueGenericReset/5 
+  Calls: 
+xTaskRemoveFromEventList/45 (xTaskRemoveFromEventList) @069ec380
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags: optimize_size
+  Called by: xQueueReceiveFromISR/21 xQueuePeek/20 xQueueSemaphoreTake/19 xQueueReceive/18 xQueueGiveFromISR/17 xQueueGenericSendFromISR/16 prvUnlockQueue/35 prvUnlockQueue/35 xQueueGenericSend/15 xQueueGenericReset/5 
+  Calls: 
+vPortEnterCritical/44 (vPortEnterCritical) @069ec2a0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags: optimize_size
+  Called by: vQueueWaitForMessageRestricted/43 uxQueueSpacesAvailable/24 uxQueueMessagesWaiting/23 xQueuePeek/20 xQueuePeek/20 xQueueSemaphoreTake/19 xQueueSemaphoreTake/19 xQueueSemaphoreTake/19 xQueueSemaphoreTake/19 prvIsQueueEmpty/36 xQueueReceive/18 xQueueReceive/18 prvUnlockQueue/35 prvUnlockQueue/35 prvIsQueueFull/38 xQueueGenericSend/15 xQueueGenericSend/15 xQueueGetMutexHolder/10 xQueueGenericReset/5 
+  Calls: 
+vQueueWaitForMessageRestricted/43 (vQueueWaitForMessageRestricted) @06999620
+  Type: function definition analyzed
+  Visibility: public
+  References: 
+  Referring: 
+  Function flags: body optimize_size
+  Called by: 
+  Calls: prvUnlockQueue/35 vTaskPlaceOnEventListRestricted/65 vPortExitCritical/47 vPortEnterCritical/44 
+vQueueUnregisterQueue/42 (vQueueUnregisterQueue) @06999000
+  Type: function definition analyzed
+  Visibility: public
+  References: xQueueRegistry/4 (read) xQueueRegistry/4 (write) xQueueRegistry/4 (write) 
+  Referring: 
+  Function flags: body optimize_size
+  Called by: vQueueDelete/26 
+  Calls: 
+pcQueueGetName/41 (pcQueueGetName) @06999c40
+  Type: function definition analyzed
+  Visibility: public
+  References: xQueueRegistry/4 (read) xQueueRegistry/4 (read) 
+  Referring: 
+  Function flags: body optimize_size
+  Called by: 
+  Calls: 
+vQueueAddToRegistry/40 (vQueueAddToRegistry) @069998c0
+  Type: function definition analyzed
+  Visibility: public
+  References: xQueueRegistry/4 (read) xQueueRegistry/4 (addr) xQueueRegistry/4 (read) xQueueRegistry/4 (addr) 
+  Referring: 
+  Function flags: body optimize_size
+  Called by: 
+  Calls: 
+xQueueIsQueueFullFromISR/39 (xQueueIsQueueFullFromISR) @06999540
+  Type: function definition analyzed
+  Visibility: public
+  References: 
+  Referring: 
+  Function flags: body optimize_size
+  Called by: 
+  Calls: 
+prvIsQueueFull/38 (prvIsQueueFull) @069991c0
+  Type: function definition analyzed
+  Visibility:
+  References: 
+  Referring: 
+  Function flags: body optimize_size
+  Called by: xQueueGenericSend/15 
+  Calls: vPortExitCritical/47 vPortEnterCritical/44 
+xQueueIsQueueEmptyFromISR/37 (xQueueIsQueueEmptyFromISR) @0698eb60
+  Type: function definition analyzed
+  Visibility: public
+  References: 
+  Referring: 
+  Function flags: body optimize_size
+  Called by: 
+  Calls: 
+prvIsQueueEmpty/36 (prvIsQueueEmpty) @0698e2a0
+  Type: function definition analyzed
+  Visibility:
+  References: 
+  Referring: 
+  Function flags: body optimize_size
+  Called by: xQueuePeek/20 xQueuePeek/20 xQueueSemaphoreTake/19 xQueueSemaphoreTake/19 xQueueReceive/18 xQueueReceive/18 
+  Calls: vPortExitCritical/47 vPortEnterCritical/44 
+prvUnlockQueue/35 (prvUnlockQueue) @0698eee0
+  Type: function definition analyzed
+  Visibility:
+  References: 
+  Referring: 
+  Function flags: body optimize_size
+  Called by: vQueueWaitForMessageRestricted/43 xQueuePeek/20 xQueuePeek/20 xQueuePeek/20 xQueueSemaphoreTake/19 xQueueSemaphoreTake/19 xQueueSemaphoreTake/19 xQueueReceive/18 xQueueReceive/18 xQueueReceive/18 xQueueGenericSend/15 xQueueGenericSend/15 xQueueGenericSend/15 
+  Calls: vPortExitCritical/47 vTaskMissedYield/58 xTaskRemoveFromEventList/45 vPortEnterCritical/44 vPortExitCritical/47 vTaskMissedYield/58 xTaskRemoveFromEventList/45 vPortEnterCritical/44 
+prvCopyDataFromQueue/34 (prvCopyDataFromQueue) @0698ea80
+  Type: function definition analyzed
+  Visibility:
+  References: 
+  Referring: 
+  Function flags: body optimize_size
+  Called by: xQueuePeekFromISR/22 xQueueReceiveFromISR/21 xQueuePeek/20 xQueueReceive/18 
+  Calls: memcpy/57 
+prvCopyDataToQueue/33 (prvCopyDataToQueue) @0698e7e0
+  Type: function definition analyzed
+  Visibility:
+  References: 
+  Referring: 
+  Function flags: body optimize_size
+  Called by: xQueueGenericSendFromISR/16 xQueueGenericSend/15 
+  Calls: memcpy/57 memcpy/57 xTaskPriorityDisinherit/56 
+prvGetDisinheritPriorityAfterTimeout/32 (prvGetDisinheritPriorityAfterTimeout) @0698e540
+  Type: function definition analyzed
+  Visibility:
+  References: 
+  Referring: 
+  Function flags: body optimize_size
+  Called by: xQueueSemaphoreTake/19 
+  Calls: 
+uxQueueGetQueueLength/31 (uxQueueGetQueueLength) @0698e1c0
+  Type: function definition analyzed
+  Visibility: public
+  References: 
+  Referring: 
+  Function flags: body optimize_size
+  Called by: 
+  Calls: 
+uxQueueGetQueueItemSize/30 (uxQueueGetQueueItemSize) @0698ae00
+  Type: function definition analyzed
+  Visibility: public
+  References: 
+  Referring: 
+  Function flags: body optimize_size
+  Called by: 
+  Calls: 
+ucQueueGetQueueType/29 (ucQueueGetQueueType) @0698a7e0
+  Type: function definition analyzed
+  Visibility: public
+  References: 
+  Referring: 
+  Function flags: body optimize_size
+  Called by: 
+  Calls: 
+vQueueSetQueueNumber/28 (vQueueSetQueueNumber) @0698a0e0
+  Type: function definition analyzed
+  Visibility: public
+  References: 
+  Referring: 
+  Function flags: body optimize_size
+  Called by: 
+  Calls: 
+uxQueueGetQueueNumber/27 (uxQueueGetQueueNumber) @0698ad20
+  Type: function definition analyzed
+  Visibility: public
+  References: 
+  Referring: 
+  Function flags: body optimize_size
+  Called by: 
+  Calls: 
+vQueueDelete/26 (vQueueDelete) @0698aa80
+  Type: function definition analyzed
+  Visibility: public
+  References: 
+  Referring: 
+  Function flags: body optimize_size
+  Called by: 
+  Calls: vPortFree/64 vQueueUnregisterQueue/42 
+uxQueueMessagesWaitingFromISR/25 (uxQueueMessagesWaitingFromISR) @0698a700
+  Type: function definition analyzed
+  Visibility: public
+  References: 
+  Referring: 
+  Function flags: body optimize_size
+  Called by: 
+  Calls: 
+uxQueueSpacesAvailable/24 (uxQueueSpacesAvailable) @0698a380
+  Type: function definition analyzed
+  Visibility: public
+  References: 
+  Referring: 
+  Function flags: body optimize_size
+  Called by: 
+  Calls: vPortExitCritical/47 vPortEnterCritical/44 
+uxQueueMessagesWaiting/23 (uxQueueMessagesWaiting) @0698a000
+  Type: function definition analyzed
+  Visibility: public
+  References: 
+  Referring: 
+  Function flags: body optimize_size
+  Called by: 
+  Calls: vPortExitCritical/47 vPortEnterCritical/44 
+xQueuePeekFromISR/22 (xQueuePeekFromISR) @06977380
+  Type: function definition analyzed
+  Visibility: public
+  References: 
+  Referring: 
+  Function flags: body optimize_size
+  Called by: 
+  Calls: vPortSetBASEPRI/3 prvCopyDataFromQueue/34 ulPortRaiseBASEPRI/2 vPortValidateInterruptPriority/59 
+xQueueReceiveFromISR/21 (xQueueReceiveFromISR) @06977c40
+  Type: function definition analyzed
+  Visibility: public
+  References: 
+  Referring: 
+  Function flags: body optimize_size
+  Called by: 
+  Calls: vPortSetBASEPRI/3 uxTaskGetNumberOfTasks/60 xTaskRemoveFromEventList/45 prvCopyDataFromQueue/34 ulPortRaiseBASEPRI/2 vPortValidateInterruptPriority/59 
+xQueuePeek/20 (xQueuePeek) @069777e0
+  Type: function definition analyzed
+  Visibility: public
+  References: 
+  Referring: 
+  Function flags: body optimize_size
+  Called by: 
+  Calls: prvIsQueueEmpty/36 xTaskResumeAll/55 prvUnlockQueue/35 xTaskResumeAll/55 prvUnlockQueue/35 xTaskResumeAll/55 prvUnlockQueue/35 vTaskPlaceOnEventList/54 prvIsQueueEmpty/36 xTaskCheckForTimeOut/53 vPortExitCritical/47 vPortEnterCritical/44 vTaskSuspendAll/52 vPortExitCritical/47 vTaskInternalSetTimeOutState/51 vPortExitCritical/47 vPortExitCritical/47 xTaskRemoveFromEventList/45 prvCopyDataFromQueue/34 vPortEnterCritical/44 xTaskGetSchedulerState/50 
+xQueueSemaphoreTake/19 (xQueueSemaphoreTake) @069772a0
+  Type: function definition analyzed
+  Visibility: public
+  References: 
+  Referring: 
+  Function flags: body optimize_size
+  Called by: xQueueTakeMutexRecursive/13 
+  Calls: vPortExitCritical/47 vTaskPriorityDisinheritAfterTimeout/63 prvGetDisinheritPriorityAfterTimeout/32 vPortEnterCritical/44 prvIsQueueEmpty/36 xTaskResumeAll/55 prvUnlockQueue/35 xTaskResumeAll/55 prvUnlockQueue/35 xTaskResumeAll/55 prvUnlockQueue/35 vTaskPlaceOnEventList/54 vPortExitCritical/47 xTaskPriorityInherit/62 vPortEnterCritical/44 prvIsQueueEmpty/36 xTaskCheckForTimeOut/53 vPortExitCritical/47 vPortEnterCritical/44 vTaskSuspendAll/52 vPortExitCritical/47 vTaskInternalSetTimeOutState/51 vPortExitCritical/47 vPortExitCritical/47 xTaskRemoveFromEventList/45 pvTaskIncrementMutexHeldCount/61 vPortEnterCritical/44 xTaskGetSchedulerState/50 
+xQueueReceive/18 (xQueueReceive) @0695f7e0
+  Type: function definition analyzed
+  Visibility: public
+  References: 
+  Referring: 
+  Function flags: body optimize_size
+  Called by: 
+  Calls: prvIsQueueEmpty/36 xTaskResumeAll/55 prvUnlockQueue/35 xTaskResumeAll/55 prvUnlockQueue/35 xTaskResumeAll/55 prvUnlockQueue/35 vTaskPlaceOnEventList/54 prvIsQueueEmpty/36 xTaskCheckForTimeOut/53 vPortExitCritical/47 vPortEnterCritical/44 vTaskSuspendAll/52 vPortExitCritical/47 vTaskInternalSetTimeOutState/51 vPortExitCritical/47 vPortExitCritical/47 xTaskRemoveFromEventList/45 prvCopyDataFromQueue/34 vPortEnterCritical/44 xTaskGetSchedulerState/50 
+xQueueGiveFromISR/17 (xQueueGiveFromISR) @0695fb60
+  Type: function definition analyzed
+  Visibility: public
+  References: 
+  Referring: 
+  Function flags: body optimize_size
+  Called by: 
+  Calls: vPortSetBASEPRI/3 uxTaskGetNumberOfTasks/60 xTaskRemoveFromEventList/45 ulPortRaiseBASEPRI/2 vPortValidateInterruptPriority/59 
+xQueueGenericSendFromISR/16 (xQueueGenericSendFromISR) @0695f700
+  Type: function definition analyzed
+  Visibility: public
+  References: 
+  Referring: 
+  Function flags: body optimize_size
+  Called by: 
+  Calls: vPortSetBASEPRI/3 uxTaskGetNumberOfTasks/60 xTaskRemoveFromEventList/45 prvCopyDataToQueue/33 ulPortRaiseBASEPRI/2 vPortValidateInterruptPriority/59 
+xQueueGenericSend/15 (xQueueGenericSend) @0695f2a0
+  Type: function definition analyzed
+  Visibility: public
+  References: 
+  Referring: 
+  Function flags: body optimize_size
+  Called by: xQueueGiveMutexRecursive/12 prvInitialiseMutex/8 
+  Calls: xTaskResumeAll/55 prvUnlockQueue/35 xTaskResumeAll/55 prvUnlockQueue/35 xTaskResumeAll/55 prvUnlockQueue/35 vTaskPlaceOnEventList/54 prvIsQueueFull/38 xTaskCheckForTimeOut/53 vPortExitCritical/47 vPortEnterCritical/44 vTaskSuspendAll/52 vPortExitCritical/47 vTaskInternalSetTimeOutState/51 vPortExitCritical/47 vPortExitCritical/47 xTaskRemoveFromEventList/45 prvCopyDataToQueue/33 vPortEnterCritical/44 xTaskGetSchedulerState/50 
+xQueueCreateCountingSemaphore/14 (xQueueCreateCountingSemaphore) @0692a380
+  Type: function definition analyzed
+  Visibility: public
+  References: 
+  Referring: 
+  Function flags: body optimize_size
+  Called by: 
+  Calls: xQueueGenericCreate/6 
+xQueueTakeMutexRecursive/13 (xQueueTakeMutexRecursive) @0692ad20
+  Type: function definition analyzed
+  Visibility: public
+  References: 
+  Referring: 
+  Function flags: body optimize_size
+  Called by: 
+  Calls: xQueueSemaphoreTake/19 xTaskGetCurrentTaskHandle/49 
+xQueueGiveMutexRecursive/12 (xQueueGiveMutexRecursive) @0692a9a0
+  Type: function definition analyzed
+  Visibility: public
+  References: 
+  Referring: 
+  Function flags: body optimize_size
+  Called by: 
+  Calls: xQueueGenericSend/15 xTaskGetCurrentTaskHandle/49 
+xQueueGetMutexHolderFromISR/11 (xQueueGetMutexHolderFromISR) @0692a620
+  Type: function definition analyzed
+  Visibility: public
+  References: 
+  Referring: 
+  Function flags: body optimize_size
+  Called by: 
+  Calls: 
+xQueueGetMutexHolder/10 (xQueueGetMutexHolder) @0692a2a0
+  Type: function definition analyzed
+  Visibility: public
+  References: 
+  Referring: 
+  Function flags: body optimize_size
+  Called by: 
+  Calls: vPortExitCritical/47 vPortEnterCritical/44 
+xQueueCreateMutex/9 (xQueueCreateMutex) @0693dee0
+  Type: function definition analyzed
+  Visibility: public
+  References: 
+  Referring: 
+  Function flags: body optimize_size
+  Called by: 
+  Calls: prvInitialiseMutex/8 xQueueGenericCreate/6 
+prvInitialiseMutex/8 (prvInitialiseMutex) @0693d8c0
+  Type: function definition analyzed
+  Visibility:
+  References: 
+  Referring: 
+  Function flags: body optimize_size
+  Called by: xQueueCreateMutex/9 
+  Calls: xQueueGenericSend/15 
+prvInitialiseNewQueue/7 (prvInitialiseNewQueue) @0693de00
+  Type: function definition analyzed
+  Visibility:
+  References: 
+  Referring: 
+  Function flags: body optimize_size
+  Called by: xQueueGenericCreate/6 
+  Calls: xQueueGenericReset/5 
+xQueueGenericCreate/6 (xQueueGenericCreate) @0693db60
+  Type: function definition analyzed
+  Visibility: public
+  References: 
+  Referring: 
+  Function flags: body optimize_size
+  Called by: xQueueCreateCountingSemaphore/14 xQueueCreateMutex/9 
+  Calls: prvInitialiseNewQueue/7 pvPortMalloc/48 
+xQueueGenericReset/5 (xQueueGenericReset) @0693d7e0
+  Type: function definition analyzed
+  Visibility: public
+  References: 
+  Referring: 
+  Function flags: body optimize_size
+  Called by: prvInitialiseNewQueue/7 
+  Calls: vPortExitCritical/47 vListInitialise/46 vListInitialise/46 xTaskRemoveFromEventList/45 vPortEnterCritical/44 
+xQueueRegistry/4 (xQueueRegistry) @06959cf0
+  Type: variable definition analyzed
+  Visibility: public
+  References: 
+  Referring: vQueueAddToRegistry/40 (read) vQueueAddToRegistry/40 (addr) vQueueAddToRegistry/40 (read) vQueueAddToRegistry/40 (addr) pcQueueGetName/41 (read) pcQueueGetName/41 (read) vQueueUnregisterQueue/42 (read) vQueueUnregisterQueue/42 (write) vQueueUnregisterQueue/42 (write) 
+  Availability: not-ready
+  Varpool flags:
+vPortSetBASEPRI/3 (vPortSetBASEPRI) @06894380
+  Type: function definition analyzed
+  Visibility:
+  References: 
+  Referring: 
+  Function flags: body optimize_size
+  Called by: xQueuePeekFromISR/22 xQueueReceiveFromISR/21 xQueueGiveFromISR/17 xQueueGenericSendFromISR/16 
+  Calls: 
+ulPortRaiseBASEPRI/2 (ulPortRaiseBASEPRI) @068940e0
+  Type: function definition analyzed
+  Visibility:
+  References: 
+  Referring: 
+  Function flags: body optimize_size
+  Called by: xQueuePeekFromISR/22 xQueueReceiveFromISR/21 xQueueGiveFromISR/17 xQueueGenericSendFromISR/16 
+  Calls: 
+
+Removing unused symbols:
+
+Reclaimed Symbol table:
+
+vTaskPlaceOnEventListRestricted/65 (vTaskPlaceOnEventListRestricted) @06a4f1c0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags: optimize_size
+  Called by: vQueueWaitForMessageRestricted/43 
+  Calls: 
+vPortFree/64 (vPortFree) @06a367e0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags: optimize_size
+  Called by: vQueueDelete/26 
+  Calls: 
+vTaskPriorityDisinheritAfterTimeout/63 (vTaskPriorityDisinheritAfterTimeout) @06a09e00
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags: optimize_size
+  Called by: xQueueSemaphoreTake/19 
+  Calls: 
+xTaskPriorityInherit/62 (xTaskPriorityInherit) @06a09d20
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags: optimize_size
+  Called by: xQueueSemaphoreTake/19 
+  Calls: 
+pvTaskIncrementMutexHeldCount/61 (pvTaskIncrementMutexHeldCount) @06a09c40
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags: optimize_size
+  Called by: xQueueSemaphoreTake/19 
+  Calls: 
+uxTaskGetNumberOfTasks/60 (uxTaskGetNumberOfTasks) @06a09000
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags: optimize_size
+  Called by: xQueueReceiveFromISR/21 xQueueGiveFromISR/17 xQueueGenericSendFromISR/16 
+  Calls: 
+vPortValidateInterruptPriority/59 (vPortValidateInterruptPriority) @064ca1c0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags: optimize_size
+  Called by: xQueuePeekFromISR/22 xQueueReceiveFromISR/21 xQueueGiveFromISR/17 xQueueGenericSendFromISR/16 
+  Calls: 
+vTaskMissedYield/58 (vTaskMissedYield) @064cad20
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags: optimize_size
+  Called by: prvUnlockQueue/35 prvUnlockQueue/35 
+  Calls: 
+memcpy/57 (memcpy) @064caa80
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags: optimize_size
+  Called by: prvCopyDataFromQueue/34 prvCopyDataToQueue/33 prvCopyDataToQueue/33 
+  Calls: 
+xTaskPriorityDisinherit/56 (xTaskPriorityDisinherit) @064ca9a0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags: optimize_size
+  Called by: prvCopyDataToQueue/33 
+  Calls: 
+xTaskResumeAll/55 (xTaskResumeAll) @064ca700
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags: optimize_size
+  Called by: xQueuePeek/20 xQueuePeek/20 xQueuePeek/20 xQueueSemaphoreTake/19 xQueueSemaphoreTake/19 xQueueSemaphoreTake/19 xQueueReceive/18 xQueueReceive/18 xQueueReceive/18 xQueueGenericSend/15 xQueueGenericSend/15 xQueueGenericSend/15 
+  Calls: 
+vTaskPlaceOnEventList/54 (vTaskPlaceOnEventList) @064ca620
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags: optimize_size
+  Called by: xQueuePeek/20 xQueueSemaphoreTake/19 xQueueReceive/18 xQueueGenericSend/15 
+  Calls: 
+xTaskCheckForTimeOut/53 (xTaskCheckForTimeOut) @064ca540
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags: optimize_size
+  Called by: xQueuePeek/20 xQueueSemaphoreTake/19 xQueueReceive/18 xQueueGenericSend/15 
+  Calls: 
+vTaskSuspendAll/52 (vTaskSuspendAll) @064ca460
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags: optimize_size
+  Called by: xQueuePeek/20 xQueueSemaphoreTake/19 xQueueReceive/18 xQueueGenericSend/15 
+  Calls: 
+vTaskInternalSetTimeOutState/51 (vTaskInternalSetTimeOutState) @064ca380
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags: optimize_size
+  Called by: xQueuePeek/20 xQueueSemaphoreTake/19 xQueueReceive/18 xQueueGenericSend/15 
+  Calls: 
+xTaskGetSchedulerState/50 (xTaskGetSchedulerState) @064ca2a0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags: optimize_size
+  Called by: xQueuePeek/20 xQueueSemaphoreTake/19 xQueueReceive/18 xQueueGenericSend/15 
+  Calls: 
+xTaskGetCurrentTaskHandle/49 (xTaskGetCurrentTaskHandle) @069ecd20
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags: optimize_size
+  Called by: xQueueTakeMutexRecursive/13 xQueueGiveMutexRecursive/12 
+  Calls: 
+pvPortMalloc/48 (pvPortMalloc) @069ec700
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags: optimize_size
+  Called by: xQueueGenericCreate/6 
+  Calls: 
+vPortExitCritical/47 (vPortExitCritical) @069ec540
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags: optimize_size
+  Called by: vQueueWaitForMessageRestricted/43 uxQueueSpacesAvailable/24 uxQueueMessagesWaiting/23 xQueuePeek/20 xQueuePeek/20 xQueuePeek/20 xQueuePeek/20 xQueueSemaphoreTake/19 xQueueSemaphoreTake/19 xQueueSemaphoreTake/19 xQueueSemaphoreTake/19 xQueueSemaphoreTake/19 xQueueSemaphoreTake/19 prvIsQueueEmpty/36 xQueueReceive/18 xQueueReceive/18 xQueueReceive/18 xQueueReceive/18 prvUnlockQueue/35 prvUnlockQueue/35 prvIsQueueFull/38 xQueueGenericSend/15 xQueueGenericSend/15 xQueueGenericSend/15 xQueueGenericSend/15 xQueueGetMutexHolder/10 xQueueGenericReset/5 
+  Calls: 
+vListInitialise/46 (vListInitialise) @069ec460
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags: optimize_size
+  Called by: xQueueGenericReset/5 xQueueGenericReset/5 
+  Calls: 
+xTaskRemoveFromEventList/45 (xTaskRemoveFromEventList) @069ec380
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags: optimize_size
+  Called by: xQueueReceiveFromISR/21 xQueuePeek/20 xQueueSemaphoreTake/19 xQueueReceive/18 xQueueGiveFromISR/17 xQueueGenericSendFromISR/16 prvUnlockQueue/35 prvUnlockQueue/35 xQueueGenericSend/15 xQueueGenericReset/5 
+  Calls: 
+vPortEnterCritical/44 (vPortEnterCritical) @069ec2a0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags: optimize_size
+  Called by: vQueueWaitForMessageRestricted/43 uxQueueSpacesAvailable/24 uxQueueMessagesWaiting/23 xQueuePeek/20 xQueuePeek/20 xQueueSemaphoreTake/19 xQueueSemaphoreTake/19 xQueueSemaphoreTake/19 xQueueSemaphoreTake/19 prvIsQueueEmpty/36 xQueueReceive/18 xQueueReceive/18 prvUnlockQueue/35 prvUnlockQueue/35 prvIsQueueFull/38 xQueueGenericSend/15 xQueueGenericSend/15 xQueueGetMutexHolder/10 xQueueGenericReset/5 
+  Calls: 
+vQueueWaitForMessageRestricted/43 (vQueueWaitForMessageRestricted) @06999620
+  Type: function definition analyzed
+  Visibility: public
+  References: 
+  Referring: 
+  Function flags: body optimize_size
+  Called by: 
+  Calls: prvUnlockQueue/35 vTaskPlaceOnEventListRestricted/65 vPortExitCritical/47 vPortEnterCritical/44 
+vQueueUnregisterQueue/42 (vQueueUnregisterQueue) @06999000
+  Type: function definition analyzed
+  Visibility: public
+  References: xQueueRegistry/4 (read) xQueueRegistry/4 (write) xQueueRegistry/4 (write) 
+  Referring: 
+  Function flags: body optimize_size
+  Called by: vQueueDelete/26 
+  Calls: 
+pcQueueGetName/41 (pcQueueGetName) @06999c40
+  Type: function definition analyzed
+  Visibility: public
+  References: xQueueRegistry/4 (read) xQueueRegistry/4 (read) 
+  Referring: 
+  Function flags: body optimize_size
+  Called by: 
+  Calls: 
+vQueueAddToRegistry/40 (vQueueAddToRegistry) @069998c0
+  Type: function definition analyzed
+  Visibility: public
+  References: xQueueRegistry/4 (read) xQueueRegistry/4 (addr) xQueueRegistry/4 (read) xQueueRegistry/4 (addr) 
+  Referring: 
+  Function flags: body optimize_size
+  Called by: 
+  Calls: 
+xQueueIsQueueFullFromISR/39 (xQueueIsQueueFullFromISR) @06999540
+  Type: function definition analyzed
+  Visibility: public
+  References: 
+  Referring: 
+  Function flags: body optimize_size
+  Called by: 
+  Calls: 
+prvIsQueueFull/38 (prvIsQueueFull) @069991c0
+  Type: function definition analyzed
+  Visibility:
+  References: 
+  Referring: 
+  Function flags: body optimize_size
+  Called by: xQueueGenericSend/15 
+  Calls: vPortExitCritical/47 vPortEnterCritical/44 
+xQueueIsQueueEmptyFromISR/37 (xQueueIsQueueEmptyFromISR) @0698eb60
+  Type: function definition analyzed
+  Visibility: public
+  References: 
+  Referring: 
+  Function flags: body optimize_size
+  Called by: 
+  Calls: 
+prvIsQueueEmpty/36 (prvIsQueueEmpty) @0698e2a0
+  Type: function definition analyzed
+  Visibility:
+  References: 
+  Referring: 
+  Function flags: body optimize_size
+  Called by: xQueuePeek/20 xQueuePeek/20 xQueueSemaphoreTake/19 xQueueSemaphoreTake/19 xQueueReceive/18 xQueueReceive/18 
+  Calls: vPortExitCritical/47 vPortEnterCritical/44 
+prvUnlockQueue/35 (prvUnlockQueue) @0698eee0
+  Type: function definition analyzed
+  Visibility:
+  References: 
+  Referring: 
+  Function flags: body optimize_size
+  Called by: vQueueWaitForMessageRestricted/43 xQueuePeek/20 xQueuePeek/20 xQueuePeek/20 xQueueSemaphoreTake/19 xQueueSemaphoreTake/19 xQueueSemaphoreTake/19 xQueueReceive/18 xQueueReceive/18 xQueueReceive/18 xQueueGenericSend/15 xQueueGenericSend/15 xQueueGenericSend/15 
+  Calls: vPortExitCritical/47 vTaskMissedYield/58 xTaskRemoveFromEventList/45 vPortEnterCritical/44 vPortExitCritical/47 vTaskMissedYield/58 xTaskRemoveFromEventList/45 vPortEnterCritical/44 
+prvCopyDataFromQueue/34 (prvCopyDataFromQueue) @0698ea80
+  Type: function definition analyzed
+  Visibility:
+  References: 
+  Referring: 
+  Function flags: body optimize_size
+  Called by: xQueuePeekFromISR/22 xQueueReceiveFromISR/21 xQueuePeek/20 xQueueReceive/18 
+  Calls: memcpy/57 
+prvCopyDataToQueue/33 (prvCopyDataToQueue) @0698e7e0
+  Type: function definition analyzed
+  Visibility:
+  References: 
+  Referring: 
+  Function flags: body optimize_size
+  Called by: xQueueGenericSendFromISR/16 xQueueGenericSend/15 
+  Calls: memcpy/57 memcpy/57 xTaskPriorityDisinherit/56 
+prvGetDisinheritPriorityAfterTimeout/32 (prvGetDisinheritPriorityAfterTimeout) @0698e540
+  Type: function definition analyzed
+  Visibility:
+  References: 
+  Referring: 
+  Function flags: body optimize_size
+  Called by: xQueueSemaphoreTake/19 
+  Calls: 
+uxQueueGetQueueLength/31 (uxQueueGetQueueLength) @0698e1c0
+  Type: function definition analyzed
+  Visibility: public
+  References: 
+  Referring: 
+  Function flags: body optimize_size
+  Called by: 
+  Calls: 
+uxQueueGetQueueItemSize/30 (uxQueueGetQueueItemSize) @0698ae00
+  Type: function definition analyzed
+  Visibility: public
+  References: 
+  Referring: 
+  Function flags: body optimize_size
+  Called by: 
+  Calls: 
+ucQueueGetQueueType/29 (ucQueueGetQueueType) @0698a7e0
+  Type: function definition analyzed
+  Visibility: public
+  References: 
+  Referring: 
+  Function flags: body optimize_size
+  Called by: 
+  Calls: 
+vQueueSetQueueNumber/28 (vQueueSetQueueNumber) @0698a0e0
+  Type: function definition analyzed
+  Visibility: public
+  References: 
+  Referring: 
+  Function flags: body optimize_size
+  Called by: 
+  Calls: 
+uxQueueGetQueueNumber/27 (uxQueueGetQueueNumber) @0698ad20
+  Type: function definition analyzed
+  Visibility: public
+  References: 
+  Referring: 
+  Function flags: body optimize_size
+  Called by: 
+  Calls: 
+vQueueDelete/26 (vQueueDelete) @0698aa80
+  Type: function definition analyzed
+  Visibility: public
+  References: 
+  Referring: 
+  Function flags: body optimize_size
+  Called by: 
+  Calls: vPortFree/64 vQueueUnregisterQueue/42 
+uxQueueMessagesWaitingFromISR/25 (uxQueueMessagesWaitingFromISR) @0698a700
+  Type: function definition analyzed
+  Visibility: public
+  References: 
+  Referring: 
+  Function flags: body optimize_size
+  Called by: 
+  Calls: 
+uxQueueSpacesAvailable/24 (uxQueueSpacesAvailable) @0698a380
+  Type: function definition analyzed
+  Visibility: public
+  References: 
+  Referring: 
+  Function flags: body optimize_size
+  Called by: 
+  Calls: vPortExitCritical/47 vPortEnterCritical/44 
+uxQueueMessagesWaiting/23 (uxQueueMessagesWaiting) @0698a000
+  Type: function definition analyzed
+  Visibility: public
+  References: 
+  Referring: 
+  Function flags: body optimize_size
+  Called by: 
+  Calls: vPortExitCritical/47 vPortEnterCritical/44 
+xQueuePeekFromISR/22 (xQueuePeekFromISR) @06977380
+  Type: function definition analyzed
+  Visibility: public
+  References: 
+  Referring: 
+  Function flags: body optimize_size
+  Called by: 
+  Calls: vPortSetBASEPRI/3 prvCopyDataFromQueue/34 ulPortRaiseBASEPRI/2 vPortValidateInterruptPriority/59 
+xQueueReceiveFromISR/21 (xQueueReceiveFromISR) @06977c40
+  Type: function definition analyzed
+  Visibility: public
+  References: 
+  Referring: 
+  Function flags: body optimize_size
+  Called by: 
+  Calls: vPortSetBASEPRI/3 uxTaskGetNumberOfTasks/60 xTaskRemoveFromEventList/45 prvCopyDataFromQueue/34 ulPortRaiseBASEPRI/2 vPortValidateInterruptPriority/59 
+xQueuePeek/20 (xQueuePeek) @069777e0
+  Type: function definition analyzed
+  Visibility: public
+  References: 
+  Referring: 
+  Function flags: body optimize_size
+  Called by: 
+  Calls: prvIsQueueEmpty/36 xTaskResumeAll/55 prvUnlockQueue/35 xTaskResumeAll/55 prvUnlockQueue/35 xTaskResumeAll/55 prvUnlockQueue/35 vTaskPlaceOnEventList/54 prvIsQueueEmpty/36 xTaskCheckForTimeOut/53 vPortExitCritical/47 vPortEnterCritical/44 vTaskSuspendAll/52 vPortExitCritical/47 vTaskInternalSetTimeOutState/51 vPortExitCritical/47 vPortExitCritical/47 xTaskRemoveFromEventList/45 prvCopyDataFromQueue/34 vPortEnterCritical/44 xTaskGetSchedulerState/50 
+xQueueSemaphoreTake/19 (xQueueSemaphoreTake) @069772a0
+  Type: function definition analyzed
+  Visibility: public
+  References: 
+  Referring: 
+  Function flags: body optimize_size
+  Called by: xQueueTakeMutexRecursive/13 
+  Calls: vPortExitCritical/47 vTaskPriorityDisinheritAfterTimeout/63 prvGetDisinheritPriorityAfterTimeout/32 vPortEnterCritical/44 prvIsQueueEmpty/36 xTaskResumeAll/55 prvUnlockQueue/35 xTaskResumeAll/55 prvUnlockQueue/35 xTaskResumeAll/55 prvUnlockQueue/35 vTaskPlaceOnEventList/54 vPortExitCritical/47 xTaskPriorityInherit/62 vPortEnterCritical/44 prvIsQueueEmpty/36 xTaskCheckForTimeOut/53 vPortExitCritical/47 vPortEnterCritical/44 vTaskSuspendAll/52 vPortExitCritical/47 vTaskInternalSetTimeOutState/51 vPortExitCritical/47 vPortExitCritical/47 xTaskRemoveFromEventList/45 pvTaskIncrementMutexHeldCount/61 vPortEnterCritical/44 xTaskGetSchedulerState/50 
+xQueueReceive/18 (xQueueReceive) @0695f7e0
+  Type: function definition analyzed
+  Visibility: public
+  References: 
+  Referring: 
+  Function flags: body optimize_size
+  Called by: 
+  Calls: prvIsQueueEmpty/36 xTaskResumeAll/55 prvUnlockQueue/35 xTaskResumeAll/55 prvUnlockQueue/35 xTaskResumeAll/55 prvUnlockQueue/35 vTaskPlaceOnEventList/54 prvIsQueueEmpty/36 xTaskCheckForTimeOut/53 vPortExitCritical/47 vPortEnterCritical/44 vTaskSuspendAll/52 vPortExitCritical/47 vTaskInternalSetTimeOutState/51 vPortExitCritical/47 vPortExitCritical/47 xTaskRemoveFromEventList/45 prvCopyDataFromQueue/34 vPortEnterCritical/44 xTaskGetSchedulerState/50 
+xQueueGiveFromISR/17 (xQueueGiveFromISR) @0695fb60
+  Type: function definition analyzed
+  Visibility: public
+  References: 
+  Referring: 
+  Function flags: body optimize_size
+  Called by: 
+  Calls: vPortSetBASEPRI/3 uxTaskGetNumberOfTasks/60 xTaskRemoveFromEventList/45 ulPortRaiseBASEPRI/2 vPortValidateInterruptPriority/59 
+xQueueGenericSendFromISR/16 (xQueueGenericSendFromISR) @0695f700
+  Type: function definition analyzed
+  Visibility: public
+  References: 
+  Referring: 
+  Function flags: body optimize_size
+  Called by: 
+  Calls: vPortSetBASEPRI/3 uxTaskGetNumberOfTasks/60 xTaskRemoveFromEventList/45 prvCopyDataToQueue/33 ulPortRaiseBASEPRI/2 vPortValidateInterruptPriority/59 
+xQueueGenericSend/15 (xQueueGenericSend) @0695f2a0
+  Type: function definition analyzed
+  Visibility: public
+  References: 
+  Referring: 
+  Function flags: body optimize_size
+  Called by: xQueueGiveMutexRecursive/12 prvInitialiseMutex/8 
+  Calls: xTaskResumeAll/55 prvUnlockQueue/35 xTaskResumeAll/55 prvUnlockQueue/35 xTaskResumeAll/55 prvUnlockQueue/35 vTaskPlaceOnEventList/54 prvIsQueueFull/38 xTaskCheckForTimeOut/53 vPortExitCritical/47 vPortEnterCritical/44 vTaskSuspendAll/52 vPortExitCritical/47 vTaskInternalSetTimeOutState/51 vPortExitCritical/47 vPortExitCritical/47 xTaskRemoveFromEventList/45 prvCopyDataToQueue/33 vPortEnterCritical/44 xTaskGetSchedulerState/50 
+xQueueCreateCountingSemaphore/14 (xQueueCreateCountingSemaphore) @0692a380
+  Type: function definition analyzed
+  Visibility: public
+  References: 
+  Referring: 
+  Function flags: body optimize_size
+  Called by: 
+  Calls: xQueueGenericCreate/6 
+xQueueTakeMutexRecursive/13 (xQueueTakeMutexRecursive) @0692ad20
+  Type: function definition analyzed
+  Visibility: public
+  References: 
+  Referring: 
+  Function flags: body optimize_size
+  Called by: 
+  Calls: xQueueSemaphoreTake/19 xTaskGetCurrentTaskHandle/49 
+xQueueGiveMutexRecursive/12 (xQueueGiveMutexRecursive) @0692a9a0
+  Type: function definition analyzed
+  Visibility: public
+  References: 
+  Referring: 
+  Function flags: body optimize_size
+  Called by: 
+  Calls: xQueueGenericSend/15 xTaskGetCurrentTaskHandle/49 
+xQueueGetMutexHolderFromISR/11 (xQueueGetMutexHolderFromISR) @0692a620
+  Type: function definition analyzed
+  Visibility: public
+  References: 
+  Referring: 
+  Function flags: body optimize_size
+  Called by: 
+  Calls: 
+xQueueGetMutexHolder/10 (xQueueGetMutexHolder) @0692a2a0
+  Type: function definition analyzed
+  Visibility: public
+  References: 
+  Referring: 
+  Function flags: body optimize_size
+  Called by: 
+  Calls: vPortExitCritical/47 vPortEnterCritical/44 
+xQueueCreateMutex/9 (xQueueCreateMutex) @0693dee0
+  Type: function definition analyzed
+  Visibility: public
+  References: 
+  Referring: 
+  Function flags: body optimize_size
+  Called by: 
+  Calls: prvInitialiseMutex/8 xQueueGenericCreate/6 
+prvInitialiseMutex/8 (prvInitialiseMutex) @0693d8c0
+  Type: function definition analyzed
+  Visibility:
+  References: 
+  Referring: 
+  Function flags: body optimize_size
+  Called by: xQueueCreateMutex/9 
+  Calls: xQueueGenericSend/15 
+prvInitialiseNewQueue/7 (prvInitialiseNewQueue) @0693de00
+  Type: function definition analyzed
+  Visibility:
+  References: 
+  Referring: 
+  Function flags: body optimize_size
+  Called by: xQueueGenericCreate/6 
+  Calls: xQueueGenericReset/5 
+xQueueGenericCreate/6 (xQueueGenericCreate) @0693db60
+  Type: function definition analyzed
+  Visibility: public
+  References: 
+  Referring: 
+  Function flags: body optimize_size
+  Called by: xQueueCreateCountingSemaphore/14 xQueueCreateMutex/9 
+  Calls: prvInitialiseNewQueue/7 pvPortMalloc/48 
+xQueueGenericReset/5 (xQueueGenericReset) @0693d7e0
+  Type: function definition analyzed
+  Visibility: public
+  References: 
+  Referring: 
+  Function flags: body optimize_size
+  Called by: prvInitialiseNewQueue/7 
+  Calls: vPortExitCritical/47 vListInitialise/46 vListInitialise/46 xTaskRemoveFromEventList/45 vPortEnterCritical/44 
+xQueueRegistry/4 (xQueueRegistry) @06959cf0
+  Type: variable definition analyzed
+  Visibility: public
+  References: 
+  Referring: vQueueAddToRegistry/40 (read) vQueueAddToRegistry/40 (addr) vQueueAddToRegistry/40 (read) vQueueAddToRegistry/40 (addr) pcQueueGetName/41 (read) pcQueueGetName/41 (read) vQueueUnregisterQueue/42 (read) vQueueUnregisterQueue/42 (write) vQueueUnregisterQueue/42 (write) 
+  Availability: not-ready
+  Varpool flags:
+vPortSetBASEPRI/3 (vPortSetBASEPRI) @06894380
+  Type: function definition analyzed
+  Visibility:
+  References: 
+  Referring: 
+  Function flags: body optimize_size
+  Called by: xQueuePeekFromISR/22 xQueueReceiveFromISR/21 xQueueGiveFromISR/17 xQueueGenericSendFromISR/16 
+  Calls: 
+ulPortRaiseBASEPRI/2 (ulPortRaiseBASEPRI) @068940e0
+  Type: function definition analyzed
+  Visibility:
+  References: 
+  Referring: 
+  Function flags: body optimize_size
+  Called by: xQueuePeekFromISR/22 xQueueReceiveFromISR/21 xQueueGiveFromISR/17 xQueueGenericSendFromISR/16 
+  Calls: 
+
+Reclaiming functions:
+Reclaiming variables:
+Clearing address taken flags:
+Optimized Symbol table:
+
+vQueueUnregisterQueue.part.0/73 (vQueueUnregisterQueue.part.0) @06bc4620
+  Type: function definition analyzed
+  Visibility: prevailing_def_ironly artificial
+  References: xQueueRegistry/4 (read) xQueueRegistry/4 (write) xQueueRegistry/4 (write) 
+  Referring: 
+  Function vQueueUnregisterQueue.part.0/73 is inline copy in vQueueUnregisterQueue/42
+  Availability: local
+  Function flags: count:24805919 (estimated locally) body local split_part nonfreeing_fn optimize_size
+  Called by: vQueueUnregisterQueue/42 (inlined) (24805919 (estimated locally),0.70 per call) 
+  Calls: 
+xQueueGenericReset.part.0/66 (xQueueGenericReset.part.0) @06a76540
+  Type: function definition analyzed
+  Visibility: prevailing_def_ironly artificial
+  References: 
+  Referring: 
+  Function xQueueGenericReset.part.0/66 is inline copy in xQueueGenericReset/5
+  Availability: local
+  Function flags: count:2100758 (estimated locally) body local split_part optimize_size
+  Called by: xQueueGenericReset/5 (inlined) (2100758 (estimated locally),0.12 per call) 
+  Calls: vPortEnterCritical/44 (2100758 (estimated locally),0.12 per call) xTaskRemoveFromEventList/45 (464478 (estimated locally),0.03 per call) vListInitialise/46 (693250 (estimated locally),0.04 per call) vListInitialise/46 (693250 (estimated locally),0.04 per call) vPortExitCritical/47 (2100758 (estimated locally),0.12 per call) 
+vTaskPlaceOnEventListRestricted/65 (vTaskPlaceOnEventListRestricted) @06a4f1c0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags: optimize_size
+  Called by: vQueueWaitForMessageRestricted/43 (354334800 (estimated locally),0.33 per call) 
+  Calls: 
+vPortFree/64 (vPortFree) @06a367e0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags: optimize_size
+  Called by: vQueueDelete/26 (12216749 (estimated locally),0.53 per call) 
+  Calls: 
+vTaskPriorityDisinheritAfterTimeout/63 (vTaskPriorityDisinheritAfterTimeout) @06a09e00
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags: optimize_size
+  Called by: xQueueSemaphoreTake/19 (247755 (estimated locally),0.01 per call) 
+  Calls: 
+xTaskPriorityInherit/62 (xTaskPriorityInherit) @06a09d20
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags: optimize_size
+  Called by: xQueueSemaphoreTake/19 (2395518 (estimated locally),0.11 per call) 
+  Calls: 
+pvTaskIncrementMutexHeldCount/61 (pvTaskIncrementMutexHeldCount) @06a09c40
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags: optimize_size
+  Called by: xQueueSemaphoreTake/19 (281983 (estimated locally),0.01 per call) 
+  Calls: 
+uxTaskGetNumberOfTasks/60 (uxTaskGetNumberOfTasks) @06a09000
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags: optimize_size
+  Called by: xQueueReceiveFromISR/21 (3070393 (estimated locally),0.09 per call) xQueueGiveFromISR/17 (1751969 (estimated locally),0.06 per call) xQueueGenericSendFromISR/16 (3809260 (estimated locally),0.11 per call) 
+  Calls: 
+vPortValidateInterruptPriority/59 (vPortValidateInterruptPriority) @064ca1c0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags: optimize_size
+  Called by: xQueuePeekFromISR/22 (5236217 (estimated locally),0.20 per call) xQueueReceiveFromISR/21 (19034822 (estimated locally),0.54 per call) xQueueGiveFromISR/17 (7168450 (estimated locally),0.24 per call) xQueueGenericSendFromISR/16 (13971110 (estimated locally),0.39 per call) 
+  Calls: 
+vTaskMissedYield/58 (vTaskMissedYield) @064cad20
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags: optimize_size
+  Called by: prvUnlockQueue/35 (316429835 (estimated locally),2.75 per call) prvUnlockQueue/35 (316429832 (estimated locally),2.75 per call) 
+  Calls: 
+memcpy/57 (memcpy) @064caa80
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags: optimize_size
+  Called by: prvCopyDataFromQueue/34 (536870913 (estimated locally),0.50 per call) prvCopyDataToQueue/33 (268435456 (estimated locally),0.25 per call) prvCopyDataToQueue/33 (268435456 (estimated locally),0.25 per call) 
+  Calls: 
+xTaskPriorityDisinherit/56 (xTaskPriorityDisinherit) @064ca9a0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags: optimize_size
+  Called by: prvCopyDataToQueue/33 (93576600 (estimated locally),0.09 per call) 
+  Calls: 
+xTaskResumeAll/55 (xTaskResumeAll) @064ca700
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags: optimize_size
+  Called by: xQueuePeek/20 (74569022 (estimated locally),2.10 per call) xQueuePeek/20 (37284511 (estimated locally),1.05 per call) xQueuePeek/20 (37284511 (estimated locally),1.05 per call) xQueueSemaphoreTake/19 (20512911 (estimated locally),0.90 per call) xQueueSemaphoreTake/19 (6769261 (estimated locally),0.30 per call) xQueueSemaphoreTake/19 (13743650 (estimated locally),0.61 per call) xQueueReceive/18 (74569022 (estimated locally),2.10 per call) xQueueReceive/18 (37284511 (estimated locally),1.05 per call) xQueueReceive/18 (37284511 (estimated locally),1.05 per call) xQueueGenericSend/15 (2511051 (estimated locally),0.07 per call) xQueueGenericSend/15 (44399945 (estimated locally),1.25 per call) xQueueGenericSend/15 (44399945 (estimated locally),1.25 per call) 
+  Calls: 
+vTaskPlaceOnEventList/54 (vTaskPlaceOnEventList) @064ca620
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags: optimize_size
+  Called by: xQueuePeek/20 (37284511 (estimated locally),1.05 per call) xQueueSemaphoreTake/19 (13743650 (estimated locally),0.61 per call) xQueueReceive/18 (37284511 (estimated locally),1.05 per call) xQueueGenericSend/15 (44399945 (estimated locally),1.25 per call) 
+  Calls: 
+xTaskCheckForTimeOut/53 (xTaskCheckForTimeOut) @064ca540
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags: optimize_size
+  Called by: xQueuePeek/20 (149138045 (estimated locally),4.21 per call) xQueueSemaphoreTake/19 (41025822 (estimated locally),1.81 per call) xQueueReceive/18 (149138045 (estimated locally),4.21 per call) xQueueGenericSend/15 (91310940 (estimated locally),2.58 per call) 
+  Calls: 
+vTaskSuspendAll/52 (vTaskSuspendAll) @064ca460
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags: optimize_size
+  Called by: xQueuePeek/20 (149138045 (estimated locally),4.21 per call) xQueueSemaphoreTake/19 (41025822 (estimated locally),1.81 per call) xQueueReceive/18 (149138045 (estimated locally),4.21 per call) xQueueGenericSend/15 (91310940 (estimated locally),2.58 per call) 
+  Calls: 
+vTaskInternalSetTimeOutState/51 (vTaskInternalSetTimeOutState) @064ca380
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags: optimize_size
+  Called by: xQueuePeek/20 (49215554 (estimated locally),1.39 per call) xQueueSemaphoreTake/19 (13538521 (estimated locally),0.60 per call) xQueueReceive/18 (49215554 (estimated locally),1.39 per call) xQueueGenericSend/15 (30132610 (estimated locally),0.85 per call) 
+  Calls: 
+xTaskGetSchedulerState/50 (xTaskGetSchedulerState) @064ca2a0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags: optimize_size
+  Called by: xQueuePeek/20 (19034822 (estimated locally),0.54 per call) xQueueSemaphoreTake/19 (5236217 (estimated locally),0.23 per call) xQueueReceive/18 (19034822 (estimated locally),0.54 per call) xQueueGenericSend/15 (13971110 (estimated locally),0.39 per call) 
+  Calls: 
+xTaskGetCurrentTaskHandle/49 (xTaskGetCurrentTaskHandle) @069ecd20
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags: optimize_size
+  Called by: xQueueTakeMutexRecursive/13 (12216749 (estimated locally),0.53 per call) xQueueGiveMutexRecursive/12 (12216749 (estimated locally),0.53 per call) 
+  Calls: 
+pvPortMalloc/48 (pvPortMalloc) @069ec700
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags: optimize_size
+  Called by: xQueueGenericCreate/6 (955931 (estimated locally),0.08 per call) 
+  Calls: 
+vPortExitCritical/47 (vPortExitCritical) @069ec540
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags: optimize_size
+  Called by: vQueueWaitForMessageRestricted/43 (1073741824 (estimated locally),1.00 per call) uxQueueSpacesAvailable/24 (12216749 (estimated locally),0.53 per call) uxQueueMessagesWaiting/23 (12216749 (estimated locally),0.53 per call) xQueuePeek/20 (149138045 (estimated locally),4.21 per call) xQueuePeek/20 (149138045 (estimated locally),4.21 per call) xQueuePeek/20 (5665822 (estimated locally),0.16 per call) xQueuePeek/20 (5881069 (estimated locally),0.17 per call) xQueueSemaphoreTake/19 (247755 (estimated locally),0.01 per call) xQueueSemaphoreTake/19 (2395518 (estimated locally),0.11 per call) xQueueSemaphoreTake/19 (41025822 (estimated locally),1.81 per call) xQueueSemaphoreTake/19 (41025822 (estimated locally),1.81 per call) xQueueSemaphoreTake/19 (1558590 (estimated locally),0.07 per call) xQueueSemaphoreTake/19 (1617801 (estimated locally),0.07 per call) xQueueReceive/18 (149138045 (estimated locally),4.21 per call) xQueueReceive/18 (149138045 (estimated locally),4.21 per call) xQueueReceive/18 (5665822 (estimated locally),0.16 per call) xQueueReceive/18 (5881069 (estimated locally),0.17 per call) xQueueGenericSend/15 (91310940 (estimated locally),2.58 per call) xQueueGenericSend/15 (91310940 (estimated locally),2.58 per call) xQueueGenericSend/15 (2582058 (estimated locally),0.07 per call) xQueueGenericSend/15 (5385224 (estimated locally),0.15 per call) xQueueGetMutexHolder/10 (12216749 (estimated locally),0.53 per call) xQueueGenericReset.part.0/66 (2100758 (estimated locally),0.12 per call) prvUnlockQueue/35 (114863531 (estimated locally),1.00 per call) prvUnlockQueue/35 (114863530 (estimated locally),1.00 per call) prvIsQueueEmpty/36 (1073741824 (estimated locally),1.00 per call) prvIsQueueFull/38 (88799889 (estimated locally),2.51 per call) 
+  Calls: 
+vListInitialise/46 (vListInitialise) @069ec460
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags: optimize_size
+  Called by: xQueueGenericReset.part.0/66 (693250 (estimated locally),0.04 per call) xQueueGenericReset.part.0/66 (693250 (estimated locally),0.04 per call) 
+  Calls: 
+xTaskRemoveFromEventList/45 (xTaskRemoveFromEventList) @069ec380
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags: optimize_size
+  Called by: xQueueReceiveFromISR/21 (1059662 (estimated locally),0.03 per call) xQueuePeek/20 (1940753 (estimated locally),0.05 per call) xQueueSemaphoreTake/19 (533874 (estimated locally),0.02 per call) xQueueReceive/18 (1940753 (estimated locally),0.05 per call) xQueueGiveFromISR/17 (604644 (estimated locally),0.02 per call) xQueueGenericSendFromISR/16 (1314662 (estimated locally),0.04 per call) xQueueGenericSend/15 (1777124 (estimated locally),0.05 per call) xQueueGenericReset.part.0/66 (464478 (estimated locally),0.03 per call) prvUnlockQueue/35 (958878293 (estimated locally),8.35 per call) prvUnlockQueue/35 (958878284 (estimated locally),8.35 per call) 
+  Calls: 
+vPortEnterCritical/44 (vPortEnterCritical) @069ec2a0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags: optimize_size
+  Called by: vQueueWaitForMessageRestricted/43 (1073741824 (estimated locally),1.00 per call) uxQueueSpacesAvailable/24 (12216749 (estimated locally),0.53 per call) uxQueueMessagesWaiting/23 (12216749 (estimated locally),0.53 per call) xQueuePeek/20 (149138045 (estimated locally),4.21 per call) xQueuePeek/20 (160684935 (estimated locally),4.53 per call) xQueueSemaphoreTake/19 (247755 (estimated locally),0.01 per call) xQueueSemaphoreTake/19 (2395518 (estimated locally),0.11 per call) xQueueSemaphoreTake/19 (41025822 (estimated locally),1.81 per call) xQueueSemaphoreTake/19 (44202212 (estimated locally),1.95 per call) xQueueReceive/18 (149138045 (estimated locally),4.21 per call) xQueueReceive/18 (160684935 (estimated locally),4.53 per call) xQueueGenericSend/15 (91310940 (estimated locally),2.58 per call) xQueueGenericSend/15 (99278222 (estimated locally),2.80 per call) xQueueGetMutexHolder/10 (12216749 (estimated locally),0.53 per call) xQueueGenericReset.part.0/66 (2100758 (estimated locally),0.12 per call) prvUnlockQueue/35 (114863530 (estimated locally),1.00 per call) prvUnlockQueue/35 (114863529 (estimated locally),1.00 per call) prvIsQueueEmpty/36 (1073741824 (estimated locally),1.00 per call) prvIsQueueFull/38 (88799889 (estimated locally),2.51 per call) 
+  Calls: 
+vQueueWaitForMessageRestricted/43 (vQueueWaitForMessageRestricted) @06999620
+  Type: function definition analyzed
+  Visibility: externally_visible public
+  References: 
+  Referring: 
+  Availability: available
+  Function flags: count:1073741824 (estimated locally) body optimize_size
+  Called by: 
+  Calls: prvUnlockQueue/35 (1073741824 (estimated locally),1.00 per call) vTaskPlaceOnEventListRestricted/65 (354334800 (estimated locally),0.33 per call) vPortExitCritical/47 (1073741824 (estimated locally),1.00 per call) vPortEnterCritical/44 (1073741824 (estimated locally),1.00 per call) 
+vQueueUnregisterQueue/42 (vQueueUnregisterQueue) @06999000
+  Type: function definition analyzed
+  Visibility: externally_visible public
+  References: 
+  Referring: 
+  Availability: available
+  Function flags: count:35437027 (estimated locally) body optimize_size
+  Called by: vQueueDelete/26 (12216749 (estimated locally),0.53 per call) 
+  Calls: vQueueUnregisterQueue.part.0/73 (inlined) (24805919 (estimated locally),0.70 per call) 
+pcQueueGetName/41 (pcQueueGetName) @06999c40
+  Type: function definition analyzed
+  Visibility: externally_visible public
+  References: xQueueRegistry/4 (read) xQueueRegistry/4 (read) 
+  Referring: 
+  Availability: available
+  Function flags: count:35437027 (estimated locally) body optimize_size
+  Called by: 
+  Calls: 
+vQueueAddToRegistry/40 (vQueueAddToRegistry) @069998c0
+  Type: function definition analyzed
+  Visibility: externally_visible public
+  References: xQueueRegistry/4 (read) xQueueRegistry/4 (addr) xQueueRegistry/4 (read) xQueueRegistry/4 (addr) 
+  Referring: 
+  Availability: available
+  Function flags: count:35437027 (estimated locally) body optimize_size
+  Called by: 
+  Calls: 
+xQueueIsQueueFullFromISR/39 (xQueueIsQueueFullFromISR) @06999540
+  Type: function definition analyzed
+  Visibility: externally_visible public
+  References: 
+  Referring: 
+  Availability: available
+  Function flags: count:35437027 (estimated locally) body optimize_size
+  Called by: 
+  Calls: 
+prvIsQueueFull/38 (prvIsQueueFull) @069991c0
+  Type: function definition analyzed
+  Visibility: prevailing_def_ironly
+  References: 
+  Referring: 
+  Function prvIsQueueFull/38 is inline copy in xQueueGenericSend/15
+  Availability: local
+  Function flags: count:88799889 (estimated locally) body local optimize_size
+  Called by: xQueueGenericSend/15 (inlined) (88799889 (estimated locally),2.51 per call) 
+  Calls: vPortExitCritical/47 (88799889 (estimated locally),2.51 per call) vPortEnterCritical/44 (88799889 (estimated locally),2.51 per call) 
+xQueueIsQueueEmptyFromISR/37 (xQueueIsQueueEmptyFromISR) @0698eb60
+  Type: function definition analyzed
+  Visibility: externally_visible public
+  References: 
+  Referring: 
+  Availability: available
+  Function flags: count:35437027 (estimated locally) body optimize_size
+  Called by: 
+  Calls: 
+prvIsQueueEmpty/36 (prvIsQueueEmpty) @0698e2a0
+  Type: function definition analyzed
+  Visibility: prevailing_def_ironly
+  References: 
+  Referring: 
+  Availability: local
+  Function flags: count:1073741824 (estimated locally) body local optimize_size
+  Called by: xQueuePeek/20 (74569022 (estimated locally),2.10 per call) xQueuePeek/20 (74569022 (estimated locally),2.10 per call) xQueueSemaphoreTake/19 (20512911 (estimated locally),0.90 per call) xQueueSemaphoreTake/19 (20512911 (estimated locally),0.90 per call) xQueueReceive/18 (74569022 (estimated locally),2.10 per call) xQueueReceive/18 (74569022 (estimated locally),2.10 per call) 
+  Calls: vPortExitCritical/47 (1073741824 (estimated locally),1.00 per call) vPortEnterCritical/44 (1073741824 (estimated locally),1.00 per call) 
+prvUnlockQueue/35 (prvUnlockQueue) @0698eee0
+  Type: function definition analyzed
+  Visibility: prevailing_def_ironly
+  References: 
+  Referring: 
+  Availability: local
+  Function flags: count:114863529 (estimated locally) body local optimize_size
+  Called by: vQueueWaitForMessageRestricted/43 (1073741824 (estimated locally),1.00 per call) xQueuePeek/20 (74569022 (estimated locally),2.10 per call) xQueuePeek/20 (37284511 (estimated locally),1.05 per call) xQueuePeek/20 (37284511 (estimated locally),1.05 per call) xQueueSemaphoreTake/19 (20512911 (estimated locally),0.90 per call) xQueueSemaphoreTake/19 (6769261 (estimated locally),0.30 per call) xQueueSemaphoreTake/19 (13743650 (estimated locally),0.61 per call) xQueueReceive/18 (74569022 (estimated locally),2.10 per call) xQueueReceive/18 (37284511 (estimated locally),1.05 per call) xQueueReceive/18 (37284511 (estimated locally),1.05 per call) xQueueGenericSend/15 (2511051 (estimated locally),0.07 per call) xQueueGenericSend/15 (44399945 (estimated locally),1.25 per call) xQueueGenericSend/15 (44399945 (estimated locally),1.25 per call) 
+  Calls: vPortExitCritical/47 (114863531 (estimated locally),1.00 per call) vTaskMissedYield/58 (316429835 (estimated locally),2.75 per call) xTaskRemoveFromEventList/45 (958878293 (estimated locally),8.35 per call) vPortEnterCritical/44 (114863530 (estimated locally),1.00 per call) vPortExitCritical/47 (114863530 (estimated locally),1.00 per call) vTaskMissedYield/58 (316429832 (estimated locally),2.75 per call) xTaskRemoveFromEventList/45 (958878284 (estimated locally),8.35 per call) vPortEnterCritical/44 (114863529 (estimated locally),1.00 per call) 
+prvCopyDataFromQueue/34 (prvCopyDataFromQueue) @0698ea80
+  Type: function definition analyzed
+  Visibility: prevailing_def_ironly
+  References: 
+  Referring: 
+  Availability: local
+  Function flags: count:1073741824 (estimated locally) body local optimize_size
+  Called by: xQueuePeekFromISR/22 (1727952 (estimated locally),0.06 per call) xQueueReceiveFromISR/21 (6281491 (estimated locally),0.18 per call) xQueuePeek/20 (5881069 (estimated locally),0.17 per call) xQueueReceive/18 (5881069 (estimated locally),0.17 per call) 
+  Calls: memcpy/57 (536870913 (estimated locally),0.50 per call) 
+prvCopyDataToQueue/33 (prvCopyDataToQueue) @0698e7e0
+  Type: function definition analyzed
+  Visibility: prevailing_def_ironly
+  References: 
+  Referring: 
+  Availability: local
+  Function flags: count:1073741824 (estimated locally) body local optimize_size
+  Called by: xQueueGenericSendFromISR/16 (7793085 (estimated locally),0.22 per call) xQueueGenericSend/15 (5385224 (estimated locally),0.15 per call) 
+  Calls: memcpy/57 (268435456 (estimated locally),0.25 per call) memcpy/57 (268435456 (estimated locally),0.25 per call) xTaskPriorityDisinherit/56 (93576600 (estimated locally),0.09 per call) 
+prvGetDisinheritPriorityAfterTimeout/32 (prvGetDisinheritPriorityAfterTimeout) @0698e540
+  Type: function definition analyzed
+  Visibility: prevailing_def_ironly
+  References: 
+  Referring: 
+  Function prvGetDisinheritPriorityAfterTimeout/32 is inline copy in xQueueSemaphoreTake/19
+  Availability: local
+  Function flags: count:247755 (estimated locally) body local nonfreeing_fn optimize_size
+  Called by: xQueueSemaphoreTake/19 (inlined) (247755 (estimated locally),0.01 per call) 
+  Calls: 
+uxQueueGetQueueLength/31 (uxQueueGetQueueLength) @0698e1c0
+  Type: function definition analyzed
+  Visibility: externally_visible public
+  References: 
+  Referring: 
+  Availability: available
+  Function flags: count:1073741824 (estimated locally) body nonfreeing_fn optimize_size
+  Called by: 
+  Calls: 
+uxQueueGetQueueItemSize/30 (uxQueueGetQueueItemSize) @0698ae00
+  Type: function definition analyzed
+  Visibility: externally_visible public
+  References: 
+  Referring: 
+  Availability: available
+  Function flags: count:1073741824 (estimated locally) body nonfreeing_fn optimize_size
+  Called by: 
+  Calls: 
+ucQueueGetQueueType/29 (ucQueueGetQueueType) @0698a7e0
+  Type: function definition analyzed
+  Visibility: externally_visible public
+  References: 
+  Referring: 
+  Availability: available
+  Function flags: count:1073741824 (estimated locally) body nonfreeing_fn optimize_size
+  Called by: 
+  Calls: 
+vQueueSetQueueNumber/28 (vQueueSetQueueNumber) @0698a0e0
+  Type: function definition analyzed
+  Visibility: externally_visible public
+  References: 
+  Referring: 
+  Availability: available
+  Function flags: count:1073741824 (estimated locally) body nonfreeing_fn optimize_size
+  Called by: 
+  Calls: 
+uxQueueGetQueueNumber/27 (uxQueueGetQueueNumber) @0698ad20
+  Type: function definition analyzed
+  Visibility: externally_visible public
+  References: 
+  Referring: 
+  Availability: available
+  Function flags: count:1073741824 (estimated locally) body nonfreeing_fn optimize_size
+  Called by: 
+  Calls: 
+vQueueDelete/26 (vQueueDelete) @0698aa80
+  Type: function definition analyzed
+  Visibility: externally_visible public
+  References: 
+  Referring: 
+  Availability: available
+  Function flags: count:22847857 (estimated locally) body optimize_size
+  Called by: 
+  Calls: vPortFree/64 (12216749 (estimated locally),0.53 per call) vQueueUnregisterQueue/42 (12216749 (estimated locally),0.53 per call) 
+uxQueueMessagesWaitingFromISR/25 (uxQueueMessagesWaitingFromISR) @0698a700
+  Type: function definition analyzed
+  Visibility: externally_visible public
+  References: 
+  Referring: 
+  Availability: available
+  Function flags: count:35437027 (estimated locally) body optimize_size
+  Called by: 
+  Calls: 
+uxQueueSpacesAvailable/24 (uxQueueSpacesAvailable) @0698a380
+  Type: function definition analyzed
+  Visibility: externally_visible public
+  References: 
+  Referring: 
+  Availability: available
+  Function flags: count:22847857 (estimated locally) body optimize_size
+  Called by: 
+  Calls: vPortExitCritical/47 (12216749 (estimated locally),0.53 per call) vPortEnterCritical/44 (12216749 (estimated locally),0.53 per call) 
+uxQueueMessagesWaiting/23 (uxQueueMessagesWaiting) @0698a000
+  Type: function definition analyzed
+  Visibility: externally_visible public
+  References: 
+  Referring: 
+  Availability: available
+  Function flags: count:22847857 (estimated locally) body optimize_size
+  Called by: 
+  Calls: vPortExitCritical/47 (12216749 (estimated locally),0.53 per call) vPortEnterCritical/44 (12216749 (estimated locally),0.53 per call) 
+xQueuePeekFromISR/22 (xQueuePeekFromISR) @06977380
+  Type: function definition analyzed
+  Visibility: externally_visible public
+  References: 
+  Referring: 
+  Availability: available
+  Function flags: count:26667774 (estimated locally) body optimize_size
+  Called by: 
+  Calls: prvCopyDataFromQueue/34 (1727952 (estimated locally),0.06 per call) vPortValidateInterruptPriority/59 (5236217 (estimated locally),0.20 per call) 
+xQueueReceiveFromISR/21 (xQueueReceiveFromISR) @06977c40
+  Type: function definition analyzed
+  Visibility: externally_visible public
+  References: 
+  Referring: 
+  Availability: available
+  Function flags: count:35437027 (estimated locally) body optimize_size
+  Called by: 
+  Calls: uxTaskGetNumberOfTasks/60 (3070393 (estimated locally),0.09 per call) xTaskRemoveFromEventList/45 (1059662 (estimated locally),0.03 per call) prvCopyDataFromQueue/34 (6281491 (estimated locally),0.18 per call) vPortValidateInterruptPriority/59 (19034822 (estimated locally),0.54 per call) 
+xQueuePeek/20 (xQueuePeek) @069777e0
+  Type: function definition analyzed
+  Visibility: externally_visible public
+  References: 
+  Referring: 
+  Availability: available
+  Function flags: count:35437027 (estimated locally) body optimize_size
+  Called by: 
+  Calls: prvIsQueueEmpty/36 (74569022 (estimated locally),2.10 per call) xTaskResumeAll/55 (74569022 (estimated locally),2.10 per call) prvUnlockQueue/35 (74569022 (estimated locally),2.10 per call) xTaskResumeAll/55 (37284511 (estimated locally),1.05 per call) prvUnlockQueue/35 (37284511 (estimated locally),1.05 per call) xTaskResumeAll/55 (37284511 (estimated locally),1.05 per call) prvUnlockQueue/35 (37284511 (estimated locally),1.05 per call) vTaskPlaceOnEventList/54 (37284511 (estimated locally),1.05 per call) prvIsQueueEmpty/36 (74569022 (estimated locally),2.10 per call) xTaskCheckForTimeOut/53 (149138045 (estimated locally),4.21 per call) vPortExitCritical/47 (149138045 (estimated locally),4.21 per call) vPortEnterCritical/44 (149138045 (estimated locally),4.21 per call) vTaskSuspendAll/52 (149138045 (estimated locally),4.21 per call) vPortExitCritical/47 (149138045 (estimated locally),4.21 per call) vTaskInternalSetTimeOutState/51 (49215554 (estimated locally),1.39 per call) vPortExitCritical/47 (5665822 (estimated locally),0.16 per call) vPortExitCritical/47 (5881069 (estimated locally),0.17 per call) xTaskRemoveFromEventList/45 (1940753 (estimated locally),0.05 per call) prvCopyDataFromQueue/34 (5881069 (estimated locally),0.17 per call) vPortEnterCritical/44 (160684935 (estimated locally),4.53 per call) xTaskGetSchedulerState/50 (19034822 (estimated locally),0.54 per call) 
+xQueueSemaphoreTake/19 (xQueueSemaphoreTake) @069772a0
+  Type: function definition analyzed
+  Visibility: externally_visible public
+  References: 
+  Referring: 
+  Availability: available
+  Function flags: count:22667608 (estimated locally) body optimize_size
+  Called by: xQueueTakeMutexRecursive/13 (6532296 (estimated locally),0.29 per call) 
+  Calls: vPortExitCritical/47 (247755 (estimated locally),0.01 per call) vTaskPriorityDisinheritAfterTimeout/63 (247755 (estimated locally),0.01 per call) prvGetDisinheritPriorityAfterTimeout/32 (inlined) (247755 (estimated locally),0.01 per call) vPortEnterCritical/44 (247755 (estimated locally),0.01 per call) prvIsQueueEmpty/36 (20512911 (estimated locally),0.90 per call) xTaskResumeAll/55 (20512911 (estimated locally),0.90 per call) prvUnlockQueue/35 (20512911 (estimated locally),0.90 per call) xTaskResumeAll/55 (6769261 (estimated locally),0.30 per call) prvUnlockQueue/35 (6769261 (estimated locally),0.30 per call) xTaskResumeAll/55 (13743650 (estimated locally),0.61 per call) prvUnlockQueue/35 (13743650 (estimated locally),0.61 per call) vTaskPlaceOnEventList/54 (13743650 (estimated locally),0.61 per call) vPortExitCritical/47 (2395518 (estimated locally),0.11 per call) xTaskPriorityInherit/62 (2395518 (estimated locally),0.11 per call) vPortEnterCritical/44 (2395518 (estimated locally),0.11 per call) prvIsQueueEmpty/36 (20512911 (estimated locally),0.90 per call) xTaskCheckForTimeOut/53 (41025822 (estimated locally),1.81 per call) vPortExitCritical/47 (41025822 (estimated locally),1.81 per call) vPortEnterCritical/44 (41025822 (estimated locally),1.81 per call) vTaskSuspendAll/52 (41025822 (estimated locally),1.81 per call) vPortExitCritical/47 (41025822 (estimated locally),1.81 per call) vTaskInternalSetTimeOutState/51 (13538521 (estimated locally),0.60 per call) vPortExitCritical/47 (1558590 (estimated locally),0.07 per call) vPortExitCritical/47 (1617801 (estimated locally),0.07 per call) xTaskRemoveFromEventList/45 (533874 (estimated locally),0.02 per call) pvTaskIncrementMutexHeldCount/61 (281983 (estimated locally),0.01 per call) vPortEnterCritical/44 (44202212 (estimated locally),1.95 per call) xTaskGetSchedulerState/50 (5236217 (estimated locally),0.23 per call) 
+xQueueReceive/18 (xQueueReceive) @0695f7e0
+  Type: function definition analyzed
+  Visibility: externally_visible public
+  References: 
+  Referring: 
+  Availability: available
+  Function flags: count:35437027 (estimated locally) body optimize_size
+  Called by: 
+  Calls: prvIsQueueEmpty/36 (74569022 (estimated locally),2.10 per call) xTaskResumeAll/55 (74569022 (estimated locally),2.10 per call) prvUnlockQueue/35 (74569022 (estimated locally),2.10 per call) xTaskResumeAll/55 (37284511 (estimated locally),1.05 per call) prvUnlockQueue/35 (37284511 (estimated locally),1.05 per call) xTaskResumeAll/55 (37284511 (estimated locally),1.05 per call) prvUnlockQueue/35 (37284511 (estimated locally),1.05 per call) vTaskPlaceOnEventList/54 (37284511 (estimated locally),1.05 per call) prvIsQueueEmpty/36 (74569022 (estimated locally),2.10 per call) xTaskCheckForTimeOut/53 (149138045 (estimated locally),4.21 per call) vPortExitCritical/47 (149138045 (estimated locally),4.21 per call) vPortEnterCritical/44 (149138045 (estimated locally),4.21 per call) vTaskSuspendAll/52 (149138045 (estimated locally),4.21 per call) vPortExitCritical/47 (149138045 (estimated locally),4.21 per call) vTaskInternalSetTimeOutState/51 (49215554 (estimated locally),1.39 per call) vPortExitCritical/47 (5665822 (estimated locally),0.16 per call) vPortExitCritical/47 (5881069 (estimated locally),0.17 per call) xTaskRemoveFromEventList/45 (1940753 (estimated locally),0.05 per call) prvCopyDataFromQueue/34 (5881069 (estimated locally),0.17 per call) vPortEnterCritical/44 (160684935 (estimated locally),4.53 per call) xTaskGetSchedulerState/50 (19034822 (estimated locally),0.54 per call) 
+xQueueGiveFromISR/17 (xQueueGiveFromISR) @0695fb60
+  Type: function definition analyzed
+  Visibility: externally_visible public
+  References: 
+  Referring: 
+  Availability: available
+  Function flags: count:30374594 (estimated locally) body optimize_size
+  Called by: 
+  Calls: uxTaskGetNumberOfTasks/60 (1751969 (estimated locally),0.06 per call) xTaskRemoveFromEventList/45 (604644 (estimated locally),0.02 per call) vPortValidateInterruptPriority/59 (7168450 (estimated locally),0.24 per call) 
+xQueueGenericSendFromISR/16 (xQueueGenericSendFromISR) @0695f700
+  Type: function definition analyzed
+  Visibility: externally_visible public
+  References: 
+  Referring: 
+  Availability: available
+  Function flags: count:35437027 (estimated locally) body optimize_size
+  Called by: 
+  Calls: uxTaskGetNumberOfTasks/60 (3809260 (estimated locally),0.11 per call) xTaskRemoveFromEventList/45 (1314662 (estimated locally),0.04 per call) prvCopyDataToQueue/33 (7793085 (estimated locally),0.22 per call) vPortValidateInterruptPriority/59 (13971110 (estimated locally),0.39 per call) 
+xQueueGenericSend/15 (xQueueGenericSend) @0695f2a0
+  Type: function definition analyzed
+  Visibility: externally_visible public
+  References: 
+  Referring: 
+  Availability: available
+  Function flags: count:35437027 (estimated locally) body optimize_size
+  Called by: xQueueGiveMutexRecursive/12 (1209458 (estimated locally),0.05 per call) prvInitialiseMutex/8 (574129753 (estimated locally),0.53 per call) 
+  Calls: xTaskResumeAll/55 (2511051 (estimated locally),0.07 per call) prvUnlockQueue/35 (2511051 (estimated locally),0.07 per call) xTaskResumeAll/55 (44399945 (estimated locally),1.25 per call) prvUnlockQueue/35 (44399945 (estimated locally),1.25 per call) xTaskResumeAll/55 (44399945 (estimated locally),1.25 per call) prvUnlockQueue/35 (44399945 (estimated locally),1.25 per call) vTaskPlaceOnEventList/54 (44399945 (estimated locally),1.25 per call) prvIsQueueFull/38 (inlined) (88799889 (estimated locally),2.51 per call) xTaskCheckForTimeOut/53 (91310940 (estimated locally),2.58 per call) vPortExitCritical/47 (91310940 (estimated locally),2.58 per call) vPortEnterCritical/44 (91310940 (estimated locally),2.58 per call) vTaskSuspendAll/52 (91310940 (estimated locally),2.58 per call) vPortExitCritical/47 (91310940 (estimated locally),2.58 per call) vTaskInternalSetTimeOutState/51 (30132610 (estimated locally),0.85 per call) vPortExitCritical/47 (2582058 (estimated locally),0.07 per call) vPortExitCritical/47 (5385224 (estimated locally),0.15 per call) xTaskRemoveFromEventList/45 (1777124 (estimated locally),0.05 per call) prvCopyDataToQueue/33 (5385224 (estimated locally),0.15 per call) vPortEnterCritical/44 (99278222 (estimated locally),2.80 per call) xTaskGetSchedulerState/50 (13971110 (estimated locally),0.39 per call) 
+xQueueCreateCountingSemaphore/14 (xQueueCreateCountingSemaphore) @0692a380
+  Type: function definition analyzed
+  Visibility: externally_visible public
+  References: 
+  Referring: 
+  Availability: available
+  Function flags: count:12731866 (estimated locally) body optimize_size
+  Called by: 
+  Calls: xQueueGenericCreate/6 (2100758 (estimated locally),0.17 per call) 
+xQueueTakeMutexRecursive/13 (xQueueTakeMutexRecursive) @0692ad20
+  Type: function definition analyzed
+  Visibility: externally_visible public
+  References: 
+  Referring: 
+  Availability: available
+  Function flags: count:22847857 (estimated locally) body optimize_size
+  Called by: 
+  Calls: xQueueSemaphoreTake/19 (6532296 (estimated locally),0.29 per call) xTaskGetCurrentTaskHandle/49 (12216749 (estimated locally),0.53 per call) 
+xQueueGiveMutexRecursive/12 (xQueueGiveMutexRecursive) @0692a9a0
+  Type: function definition analyzed
+  Visibility: externally_visible public
+  References: 
+  Referring: 
+  Availability: available
+  Function flags: count:22847857 (estimated locally) body optimize_size
+  Called by: 
+  Calls: xQueueGenericSend/15 (1209458 (estimated locally),0.05 per call) xTaskGetCurrentTaskHandle/49 (12216749 (estimated locally),0.53 per call) 
+xQueueGetMutexHolderFromISR/11 (xQueueGetMutexHolderFromISR) @0692a620
+  Type: function definition analyzed
+  Visibility: externally_visible public
+  References: 
+  Referring: 
+  Availability: available
+  Function flags: count:35437027 (estimated locally) body optimize_size
+  Called by: 
+  Calls: 
+xQueueGetMutexHolder/10 (xQueueGetMutexHolder) @0692a2a0
+  Type: function definition analyzed
+  Visibility: externally_visible public
+  References: 
+  Referring: 
+  Availability: available
+  Function flags: count:22847857 (estimated locally) body optimize_size
+  Called by: 
+  Calls: vPortExitCritical/47 (12216749 (estimated locally),0.53 per call) vPortEnterCritical/44 (12216749 (estimated locally),0.53 per call) 
+xQueueCreateMutex/9 (xQueueCreateMutex) @0693dee0
+  Type: function definition analyzed
+  Visibility: externally_visible public
+  References: 
+  Referring: 
+  Availability: available
+  Function flags: count:1073741824 (estimated locally) body optimize_size
+  Called by: 
+  Calls: prvInitialiseMutex/8 (inlined) (1073741824 (estimated locally),1.00 per call) xQueueGenericCreate/6 (1073741824 (estimated locally),1.00 per call) 
+prvInitialiseMutex/8 (prvInitialiseMutex) @0693d8c0
+  Type: function definition analyzed
+  Visibility: prevailing_def_ironly
+  References: 
+  Referring: 
+  Function prvInitialiseMutex/8 is inline copy in xQueueCreateMutex/9
+  Availability: local
+  Function flags: count:1073741824 (estimated locally) body local optimize_size
+  Called by: xQueueCreateMutex/9 (inlined) (1073741824 (estimated locally),1.00 per call) 
+  Calls: xQueueGenericSend/15 (574129753 (estimated locally),0.53 per call) 
+prvInitialiseNewQueue/7 (prvInitialiseNewQueue) @0693de00
+  Type: function definition analyzed
+  Visibility: prevailing_def_ironly
+  References: 
+  Referring: 
+  Function prvInitialiseNewQueue/7 is inline copy in xQueueGenericCreate/6
+  Availability: local
+  Function flags: count:511136 (estimated locally) body local optimize_size
+  Called by: xQueueGenericCreate/6 (inlined) (511136 (estimated locally),0.04 per call) 
+  Calls: xQueueGenericReset/5 (511136 (estimated locally),0.04 per call) 
+xQueueGenericCreate/6 (xQueueGenericCreate) @0693db60
+  Type: function definition analyzed
+  Visibility: externally_visible public
+  References: 
+  Referring: 
+  Availability: available
+  Function flags: count:11587039 (estimated locally) body optimize_size
+  Called by: xQueueCreateMutex/9 (1073741824 (estimated locally),1.00 per call) xQueueCreateCountingSemaphore/14 (2100758 (estimated locally),0.17 per call) 
+  Calls: prvInitialiseNewQueue/7 (inlined) (511136 (estimated locally),0.04 per call) pvPortMalloc/48 (955931 (estimated locally),0.08 per call) 
+xQueueGenericReset/5 (xQueueGenericReset) @0693d7e0
+  Type: function definition analyzed
+  Visibility: externally_visible public
+  References: 
+  Referring: 
+  Availability: available
+  Function flags: count:18188380 (estimated locally) body optimize_size
+  Called by: prvInitialiseNewQueue/7 (511136 (estimated locally),0.04 per call) 
+  Calls: xQueueGenericReset.part.0/66 (inlined) (2100758 (estimated locally),0.12 per call) 
+xQueueRegistry/4 (xQueueRegistry) @06959cf0
+  Type: variable definition analyzed
+  Visibility: externally_visible public
+  References: 
+  Referring: pcQueueGetName/41 (read) vQueueAddToRegistry/40 (addr) vQueueAddToRegistry/40 (read) vQueueAddToRegistry/40 (addr) pcQueueGetName/41 (read) vQueueAddToRegistry/40 (read) vQueueUnregisterQueue.part.0/73 (read) vQueueUnregisterQueue.part.0/73 (write) vQueueUnregisterQueue.part.0/73 (write) 
+  Availability: available
+  Varpool flags:
+Materializing clones
+Materialization Call site updates done.
+
+Reclaiming functions:
+Reclaiming variables:
+Clearing address taken flags:
+Trivially needed variables: xQueueRegistry/4
+Removing variables:
+
+Final Symbol table:
+
+vTaskPlaceOnEventListRestricted/65 (vTaskPlaceOnEventListRestricted) @06a4f1c0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags: optimize_size
+  Called by: 
+  Calls: 
+vPortFree/64 (vPortFree) @06a367e0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags: optimize_size
+  Called by: 
+  Calls: 
+vTaskPriorityDisinheritAfterTimeout/63 (vTaskPriorityDisinheritAfterTimeout) @06a09e00
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags: optimize_size
+  Called by: 
+  Calls: 
+xTaskPriorityInherit/62 (xTaskPriorityInherit) @06a09d20
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags: optimize_size
+  Called by: 
+  Calls: 
+pvTaskIncrementMutexHeldCount/61 (pvTaskIncrementMutexHeldCount) @06a09c40
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags: optimize_size
+  Called by: 
+  Calls: 
+uxTaskGetNumberOfTasks/60 (uxTaskGetNumberOfTasks) @06a09000
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags: optimize_size
+  Called by: 
+  Calls: 
+vPortValidateInterruptPriority/59 (vPortValidateInterruptPriority) @064ca1c0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags: optimize_size
+  Called by: 
+  Calls: 
+vTaskMissedYield/58 (vTaskMissedYield) @064cad20
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags: optimize_size
+  Called by: 
+  Calls: 
+memcpy/57 (memcpy) @064caa80
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags: optimize_size
+  Called by: 
+  Calls: 
+xTaskPriorityDisinherit/56 (xTaskPriorityDisinherit) @064ca9a0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags: optimize_size
+  Called by: 
+  Calls: 
+xTaskResumeAll/55 (xTaskResumeAll) @064ca700
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags: optimize_size
+  Called by: 
+  Calls: 
+vTaskPlaceOnEventList/54 (vTaskPlaceOnEventList) @064ca620
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags: optimize_size
+  Called by: 
+  Calls: 
+xTaskCheckForTimeOut/53 (xTaskCheckForTimeOut) @064ca540
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags: optimize_size
+  Called by: 
+  Calls: 
+vTaskSuspendAll/52 (vTaskSuspendAll) @064ca460
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags: optimize_size
+  Called by: 
+  Calls: 
+vTaskInternalSetTimeOutState/51 (vTaskInternalSetTimeOutState) @064ca380
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags: optimize_size
+  Called by: 
+  Calls: 
+xTaskGetSchedulerState/50 (xTaskGetSchedulerState) @064ca2a0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags: optimize_size
+  Called by: 
+  Calls: 
+xTaskGetCurrentTaskHandle/49 (xTaskGetCurrentTaskHandle) @069ecd20
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags: optimize_size
+  Called by: 
+  Calls: 
+pvPortMalloc/48 (pvPortMalloc) @069ec700
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags: optimize_size
+  Called by: 
+  Calls: 
+vPortExitCritical/47 (vPortExitCritical) @069ec540
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags: optimize_size
+  Called by: 
+  Calls: 
+vListInitialise/46 (vListInitialise) @069ec460
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags: optimize_size
+  Called by: 
+  Calls: 
+xTaskRemoveFromEventList/45 (xTaskRemoveFromEventList) @069ec380
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags: optimize_size
+  Called by: 
+  Calls: 
+vPortEnterCritical/44 (vPortEnterCritical) @069ec2a0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags: optimize_size
+  Called by: 
+  Calls: 
+vQueueWaitForMessageRestricted/43 (vQueueWaitForMessageRestricted) @06999620
+  Type: function definition analyzed
+  Visibility: externally_visible asm_written public
+  References: 
+  Referring: 
+  Availability: available
+  Function flags: count:1073741824 (estimated locally) optimize_size
+  Called by: 
+  Calls: 
+vQueueUnregisterQueue/42 (vQueueUnregisterQueue) @06999000
+  Type: function definition analyzed
+  Visibility: externally_visible asm_written public
+  References: 
+  Referring: 
+  Availability: available
+  Function flags: count:35437027 (estimated locally) optimize_size
+  Called by: 
+  Calls: 
+pcQueueGetName/41 (pcQueueGetName) @06999c40
+  Type: function definition analyzed
+  Visibility: externally_visible asm_written public
+  References: 
+  Referring: 
+  Availability: available
+  Function flags: count:35437027 (estimated locally) optimize_size
+  Called by: 
+  Calls: 
+vQueueAddToRegistry/40 (vQueueAddToRegistry) @069998c0
+  Type: function definition analyzed
+  Visibility: externally_visible asm_written public
+  References: 
+  Referring: 
+  Availability: available
+  Function flags: count:35437027 (estimated locally) optimize_size
+  Called by: 
+  Calls: 
+xQueueIsQueueFullFromISR/39 (xQueueIsQueueFullFromISR) @06999540
+  Type: function definition analyzed
+  Visibility: externally_visible asm_written public
+  References: 
+  Referring: 
+  Availability: available
+  Function flags: count:35437027 (estimated locally) optimize_size
+  Called by: 
+  Calls: 
+xQueueIsQueueEmptyFromISR/37 (xQueueIsQueueEmptyFromISR) @0698eb60
+  Type: function definition analyzed
+  Visibility: externally_visible asm_written public
+  References: 
+  Referring: 
+  Availability: available
+  Function flags: count:35437027 (estimated locally) optimize_size
+  Called by: 
+  Calls: 
+prvIsQueueEmpty/36 (prvIsQueueEmpty) @0698e2a0
+  Type: function definition analyzed
+  Visibility: prevailing_def_ironly asm_written
+  References: 
+  Referring: 
+  Availability: local
+  Function flags: count:1073741824 (estimated locally) local optimize_size
+  Called by: 
+  Calls: 
+prvUnlockQueue/35 (prvUnlockQueue) @0698eee0
+  Type: function definition analyzed
+  Visibility: prevailing_def_ironly asm_written
+  References: 
+  Referring: 
+  Availability: local
+  Function flags: count:114863529 (estimated locally) local optimize_size
+  Called by: 
+  Calls: 
+prvCopyDataFromQueue/34 (prvCopyDataFromQueue) @0698ea80
+  Type: function definition analyzed
+  Visibility: prevailing_def_ironly asm_written
+  References: 
+  Referring: 
+  Availability: local
+  Function flags: count:1073741824 (estimated locally) local optimize_size
+  Called by: 
+  Calls: 
+prvCopyDataToQueue/33 (prvCopyDataToQueue) @0698e7e0
+  Type: function definition analyzed
+  Visibility: prevailing_def_ironly asm_written
+  References: 
+  Referring: 
+  Availability: local
+  Function flags: count:1073741824 (estimated locally) local optimize_size
+  Called by: 
+  Calls: 
+uxQueueGetQueueLength/31 (uxQueueGetQueueLength) @0698e1c0
+  Type: function definition analyzed
+  Visibility: externally_visible asm_written public
+  References: 
+  Referring: 
+  Availability: available
+  Function flags: count:1073741824 (estimated locally) nonfreeing_fn optimize_size
+  Called by: 
+  Calls: 
+uxQueueGetQueueItemSize/30 (uxQueueGetQueueItemSize) @0698ae00
+  Type: function definition analyzed
+  Visibility: externally_visible asm_written public
+  References: 
+  Referring: 
+  Availability: available
+  Function flags: count:1073741824 (estimated locally) nonfreeing_fn optimize_size
+  Called by: 
+  Calls: 
+ucQueueGetQueueType/29 (ucQueueGetQueueType) @0698a7e0
+  Type: function definition analyzed
+  Visibility: externally_visible asm_written public
+  References: 
+  Referring: 
+  Availability: available
+  Function flags: count:1073741824 (estimated locally) nonfreeing_fn optimize_size
+  Called by: 
+  Calls: 
+vQueueSetQueueNumber/28 (vQueueSetQueueNumber) @0698a0e0
+  Type: function definition analyzed
+  Visibility: externally_visible asm_written public
+  References: 
+  Referring: 
+  Availability: available
+  Function flags: count:1073741824 (estimated locally) nonfreeing_fn optimize_size
+  Called by: 
+  Calls: 
+uxQueueGetQueueNumber/27 (uxQueueGetQueueNumber) @0698ad20
+  Type: function definition analyzed
+  Visibility: externally_visible asm_written public
+  References: 
+  Referring: 
+  Availability: available
+  Function flags: count:1073741824 (estimated locally) nonfreeing_fn optimize_size
+  Called by: 
+  Calls: 
+vQueueDelete/26 (vQueueDelete) @0698aa80
+  Type: function definition analyzed
+  Visibility: externally_visible asm_written public
+  References: 
+  Referring: 
+  Availability: available
+  Function flags: count:22847857 (estimated locally) optimize_size
+  Called by: 
+  Calls: 
+uxQueueMessagesWaitingFromISR/25 (uxQueueMessagesWaitingFromISR) @0698a700
+  Type: function definition analyzed
+  Visibility: externally_visible asm_written public
+  References: 
+  Referring: 
+  Availability: available
+  Function flags: count:35437027 (estimated locally) optimize_size
+  Called by: 
+  Calls: 
+uxQueueSpacesAvailable/24 (uxQueueSpacesAvailable) @0698a380
+  Type: function definition analyzed
+  Visibility: externally_visible asm_written public
+  References: 
+  Referring: 
+  Availability: available
+  Function flags: count:22847857 (estimated locally) optimize_size
+  Called by: 
+  Calls: 
+uxQueueMessagesWaiting/23 (uxQueueMessagesWaiting) @0698a000
+  Type: function definition analyzed
+  Visibility: externally_visible asm_written public
+  References: 
+  Referring: 
+  Availability: available
+  Function flags: count:22847857 (estimated locally) optimize_size
+  Called by: 
+  Calls: 
+xQueuePeekFromISR/22 (xQueuePeekFromISR) @06977380
+  Type: function definition analyzed
+  Visibility: externally_visible asm_written public
+  References: 
+  Referring: 
+  Availability: available
+  Function flags: count:26667774 (estimated locally) optimize_size
+  Called by: 
+  Calls: 
+xQueueReceiveFromISR/21 (xQueueReceiveFromISR) @06977c40
+  Type: function definition analyzed
+  Visibility: externally_visible asm_written public
+  References: 
+  Referring: 
+  Availability: available
+  Function flags: count:35437027 (estimated locally) optimize_size
+  Called by: 
+  Calls: 
+xQueuePeek/20 (xQueuePeek) @069777e0
+  Type: function definition analyzed
+  Visibility: externally_visible asm_written public
+  References: 
+  Referring: 
+  Availability: available
+  Function flags: count:35437027 (estimated locally) optimize_size
+  Called by: 
+  Calls: 
+xQueueSemaphoreTake/19 (xQueueSemaphoreTake) @069772a0
+  Type: function definition analyzed
+  Visibility: externally_visible asm_written public
+  References: 
+  Referring: 
+  Availability: available
+  Function flags: count:22667608 (estimated locally) optimize_size
+  Called by: 
+  Calls: 
+xQueueReceive/18 (xQueueReceive) @0695f7e0
+  Type: function definition analyzed
+  Visibility: externally_visible asm_written public
+  References: 
+  Referring: 
+  Availability: available
+  Function flags: count:35437027 (estimated locally) optimize_size
+  Called by: 
+  Calls: 
+xQueueGiveFromISR/17 (xQueueGiveFromISR) @0695fb60
+  Type: function definition analyzed
+  Visibility: externally_visible asm_written public
+  References: 
+  Referring: 
+  Availability: available
+  Function flags: count:30374594 (estimated locally) optimize_size
+  Called by: 
+  Calls: 
+xQueueGenericSendFromISR/16 (xQueueGenericSendFromISR) @0695f700
+  Type: function definition analyzed
+  Visibility: externally_visible asm_written public
+  References: 
+  Referring: 
+  Availability: available
+  Function flags: count:35437027 (estimated locally) optimize_size
+  Called by: 
+  Calls: 
+xQueueGenericSend/15 (xQueueGenericSend) @0695f2a0
+  Type: function definition analyzed
+  Visibility: externally_visible asm_written public
+  References: 
+  Referring: 
+  Availability: available
+  Function flags: count:35437027 (estimated locally) optimize_size
+  Called by: 
+  Calls: 
+xQueueCreateCountingSemaphore/14 (xQueueCreateCountingSemaphore) @0692a380
+  Type: function definition analyzed
+  Visibility: externally_visible asm_written public
+  References: 
+  Referring: 
+  Availability: available
+  Function flags: count:12731866 (estimated locally) optimize_size
+  Called by: 
+  Calls: 
+xQueueTakeMutexRecursive/13 (xQueueTakeMutexRecursive) @0692ad20
+  Type: function definition analyzed
+  Visibility: externally_visible asm_written public
+  References: 
+  Referring: 
+  Availability: available
+  Function flags: count:22847857 (estimated locally) optimize_size
+  Called by: 
+  Calls: 
+xQueueGiveMutexRecursive/12 (xQueueGiveMutexRecursive) @0692a9a0
+  Type: function definition analyzed
+  Visibility: externally_visible asm_written public
+  References: 
+  Referring: 
+  Availability: available
+  Function flags: count:22847857 (estimated locally) optimize_size
+  Called by: 
+  Calls: 
+xQueueGetMutexHolderFromISR/11 (xQueueGetMutexHolderFromISR) @0692a620
+  Type: function definition analyzed
+  Visibility: externally_visible asm_written public
+  References: 
+  Referring: 
+  Availability: available
+  Function flags: count:35437027 (estimated locally) optimize_size
+  Called by: 
+  Calls: 
+xQueueGetMutexHolder/10 (xQueueGetMutexHolder) @0692a2a0
+  Type: function definition analyzed
+  Visibility: externally_visible asm_written public
+  References: 
+  Referring: 
+  Availability: available
+  Function flags: count:22847857 (estimated locally) optimize_size
+  Called by: 
+  Calls: 
+xQueueCreateMutex/9 (xQueueCreateMutex) @0693dee0
+  Type: function definition analyzed
+  Visibility: externally_visible asm_written public
+  References: 
+  Referring: 
+  Availability: available
+  Function flags: count:1073741824 (estimated locally) optimize_size
+  Called by: 
+  Calls: 
+xQueueGenericCreate/6 (xQueueGenericCreate) @0693db60
+  Type: function definition analyzed
+  Visibility: externally_visible asm_written public
+  References: 
+  Referring: 
+  Availability: available
+  Function flags: count:11587039 (estimated locally) optimize_size
+  Called by: 
+  Calls: 
+xQueueGenericReset/5 (xQueueGenericReset) @0693d7e0
+  Type: function definition analyzed
+  Visibility: externally_visible asm_written public
+  References: 
+  Referring: 
+  Availability: available
+  Function flags: count:18188380 (estimated locally) optimize_size
+  Called by: 
+  Calls: 
+xQueueRegistry/4 (xQueueRegistry) @06959cf0
+  Type: variable definition analyzed
+  Visibility: externally_visible asm_written public
+  Aux: @00000001
+  References: 
+  Referring: 
+  Availability: available
+  Varpool flags:

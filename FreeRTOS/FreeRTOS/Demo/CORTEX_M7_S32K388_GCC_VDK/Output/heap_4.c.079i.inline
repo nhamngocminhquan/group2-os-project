@@ -1,0 +1,1685 @@
+IPA function summary for vPortHeapResetState/21 inlinable
+  global time:     7.000000
+  self size:       8
+  global size:     8
+  min size:       5
+  self stack:      0
+  global stack:    0
+    size:5.000000, time:5.000000
+    size:3.000000, time:2.000000,  executed if:(not inlined)
+  calls:
+
+IPA function summary for vPortGetHeapStats/20 inlinable
+  global time:     103.409091
+  self size:       29
+  global size:     29
+  min size:       23
+  self stack:      0
+  global stack:    0
+    size:18.500000, time:57.909091
+    size:6.500000, time:5.500000,  executed if:(not inlined)
+  calls:
+    vPortExitCritical/27 function body not available
+      freq:1.00 loop depth: 0 size: 1 time: 10
+    vPortEnterCritical/26 function body not available
+      freq:1.00 loop depth: 0 size: 1 time: 10
+    xTaskResumeAll/23 function body not available
+      freq:1.00 loop depth: 0 size: 1 time: 10
+    vTaskSuspendAll/22 function body not available
+      freq:1.00 loop depth: 0 size: 1 time: 10
+
+IPA function summary for prvInsertBlockIntoFreeList/19 inlinable
+  global time:     39.659228
+  self size:       37
+  global size:     37
+  min size:       33
+  self stack:      0
+  global stack:    0
+    size:33.000000, time:38.566728
+    size:3.000000, time:0.950000,  executed if:(not inlined)
+    size:0.500000, time:0.071250,  executed if:(not inlined),  nonconst if:(op0[ref offset: 32] changed) && (not inlined)
+    size:0.500000, time:0.071250,  nonconst if:(op0[ref offset: 32] changed)
+  calls:
+
+IPA function summary for prvHeapInit/18 inlinable
+  global time:     11.000000
+  self size:       12
+  global size:     12
+  min size:       9
+  self stack:      0
+  global stack:    0
+    size:9.000000, time:9.000000
+    size:3.000000, time:2.000000,  executed if:(not inlined)
+  calls:
+
+IPA function summary for pvPortCalloc/17 inlinable
+  global time:     23.026001
+  self size:       17
+  global size:     17
+  min size:       9
+  self stack:      0
+  global stack:    0
+    size:2.000000, time:1.611400
+    size:3.000000, time:2.000000,  executed if:(not inlined)
+    size:2.000000, time:2.000000,  nonconst if:(op0 changed)
+    size:2.000000, time:1.340000,  executed if:(op0 != 0),  nonconst if:(op0 changed || op1 changed) && (op0 != 0)
+    size:1.000000, time:0.805700,  nonconst if:(op0 changed || op1 changed)
+  calls:
+    memset/25 function body not available
+      freq:0.43 loop depth: 0 size: 4 time: 13
+       op1 is compile time invariant
+    pvPortMalloc/12 function not considered for inlining
+      freq:0.81 loop depth: 0 size: 3 time: 12 callee size:47 stack: 0
+
+IPA function summary for vPortInitialiseBlocks/16 inlinable
+  global time:     2.000000
+  self size:       3
+  global size:     3
+  min size:       0
+  self stack:      0
+  global stack:    0
+    size:0.000000, time:0.000000
+    size:3.000000, time:2.000000,  executed if:(not inlined)
+  calls:
+
+IPA function summary for xPortGetMinimumEverFreeHeapSize/15 inlinable
+  global time:     3.000000
+  self size:       4
+  global size:     4
+  min size:       1
+  self stack:      0
+  global stack:    0
+    size:1.000000, time:1.000000
+    size:3.000000, time:2.000000,  executed if:(not inlined)
+  calls:
+
+IPA function summary for xPortGetFreeHeapSize/14 inlinable
+  global time:     3.000000
+  self size:       4
+  global size:     4
+  min size:       1
+  self stack:      0
+  global stack:    0
+    size:1.000000, time:1.000000
+    size:3.000000, time:2.000000,  executed if:(not inlined)
+  calls:
+
+IPA function summary for vPortFree/13 inlinable
+  global time:     7.352998
+  self size:       32
+  global size:     32
+  min size:       0
+  self stack:      0
+  global stack:    0
+    size:0.000000, time:0.000000
+    size:2.000000, time:0.000000,  executed if:(not inlined)
+    size:2.000000, time:2.000000,  nonconst if:(op0 changed)
+    size:3.000000, time:2.100000,  executed if:(op0 != 0B),  nonconst if:(op0 changed) && (op0 != 0B)
+    size:2.000000, time:0.700000,  executed if:(op0,(# + 4294967288) >= &ucHeap[0]) && (op0 != 0B),  nonconst if:(op0 changed) && (op0,(# + 4294967288) >= &ucHeap[0]) && (op0 != 0B)
+    size:1.000000, time:0.525000,  executed if:(op0,(# + 4294967288) < &ucHeap[0] || op0,(# + 4294967288) > &ucHeap[8191]) && (op0 != 0B)
+    size:2.000000, time:0.135881,  executed if:(op0,(# + 4294967288) <= &ucHeap[8191]) && (op0,(# + 4294967288) >= &ucHeap[0]) && (op0 != 0B) && (not inlined)
+    size:15.000000, time:0.879417,  executed if:(op0,(# + 4294967288) <= &ucHeap[8191]) && (op0,(# + 4294967288) >= &ucHeap[0]) && (op0 != 0B)
+    size:1.000000, time:0.625012,  executed if:(op0 == 0B || op0,(# + 4294967288) <= &ucHeap[8191]) && (op0 == 0B || op0,(# + 4294967288) >= &ucHeap[0]) && (not inlined)
+  calls:
+    xTaskResumeAll/23 function body not available
+      freq:0.01 loop depth: 0 size: 1 time: 10 predicate: (op0,(# + 4294967288) <= &ucHeap[8191]) && (op0,(# + 4294967288) >= &ucHeap[0]) && (op0 != 0B)
+    prvInsertBlockIntoFreeList/19 function not considered for inlining
+      freq:0.01 loop depth: 0 size: 2 time: 11 callee size:18 stack: 0 predicate: (op0,(# + 4294967288) <= &ucHeap[8191]) && (op0,(# + 4294967288) >= &ucHeap[0]) && (op0 != 0B)
+    vTaskSuspendAll/22 function body not available
+      freq:0.01 loop depth: 0 size: 1 time: 10 predicate: (op0,(# + 4294967288) <= &ucHeap[8191]) && (op0,(# + 4294967288) >= &ucHeap[0]) && (op0 != 0B)
+
+IPA function summary for pvPortMalloc/12 inlinable
+  global time:     52.831321
+  self size:       95
+  global size:     95
+  min size:       79
+  self stack:      0
+  global stack:    0
+    size:71.000000, time:28.089780
+    size:3.000000, time:0.404927,  executed if:(not inlined)
+    size:2.000000, time:2.000000,  nonconst if:(op0 changed)
+    size:2.000000, time:1.000000,  executed if:(op0 != 0),  nonconst if:(op0 changed) && (op0 != 0)
+    size:4.000000, time:1.000000,  executed if:(op0 <= 4294967287) && (op0 != 0),  nonconst if:(op0 changed) && (op0 <= 4294967287) && (op0 != 0)
+    size:5.000000, time:0.562500,  executed if:(op0,(# + 8),(# & 7) != 0) && (op0 <= 4294967287) && (op0 != 0),  nonconst if:(op0 changed) && (op0,(# + 8),(# & 7) != 0) && (op0 <= 4294967287) && (op0 != 0)
+  calls:
+    vApplicationMallocFailedHook/24 function body not available
+      freq:0.40 loop depth: 0 size: 1 time: 10
+    xTaskResumeAll/23 function body not available
+      freq:0.01 loop depth: 0 size: 1 time: 10
+    xTaskResumeAll/23 function body not available
+      freq:0.01 loop depth: 0 size: 1 time: 10
+    xTaskResumeAll/23 function body not available
+      freq:0.12 loop depth: 0 size: 1 time: 10
+    xTaskResumeAll/23 function body not available
+      freq:0.15 loop depth: 0 size: 1 time: 10
+    xTaskResumeAll/23 function body not available
+      freq:0.12 loop depth: 0 size: 1 time: 10
+    prvHeapInit/18 function not considered for inlining
+      freq:0.17 loop depth: 0 size: 1 time: 10 callee size: 6 stack: 0
+    vTaskSuspendAll/22 function body not available
+      freq:1.00 loop depth: 0 size: 1 time: 10
+
+
+Flattening functions:
+Overall time estimate: 252.278640 weighted by profile: 0.000000
+
+Deciding on inlining of small functions.  Starting with size 0.
+Enqueueing calls in vPortHeapResetState/21.
+Enqueueing calls in vPortGetHeapStats/20.
+Enqueueing calls in prvInsertBlockIntoFreeList/19.
+Enqueueing calls in prvHeapInit/18.
+Enqueueing calls in pvPortCalloc/17.
+Enqueueing calls in vPortInitialiseBlocks/16.
+Enqueueing calls in xPortGetMinimumEverFreeHeapSize/15.
+Enqueueing calls in xPortGetFreeHeapSize/14.
+Enqueueing calls in vPortFree/13.
+Enqueueing calls in pvPortMalloc/12.
+
+Considering prvHeapInit/18 with 12 size
+ to be inlined into pvPortMalloc/12 in D:/Gitwork/freertos-git.freescale.com/FreeRTOS/Source/portable/MemMang/heap_4.c:226
+ Estimated badness is -0.010153, frequency 0.17.
+node context cache: 0 hits, 0 misses, 1 initializations
+
+Reclaiming functions:
+Reclaiming variables:
+Clearing address taken flags:
+
+Deciding on functions to be inlined into all callers and removing useless speculations:
+
+Inlining prvInsertBlockIntoFreeList/19 size 37.
+ Called once from vPortFree/13 32 insns.
+ Inlined into vPortFree/13 which now has 64 size
+Overall time estimate: 201.790754 weighted by profile: 0.000000
+
+Why inlining failed?
+function body not available                       :       14 calls, 6.258931 freq, 0 count
+--param max-inline-insns-auto limit reached       :        1 calls, 0.805700 freq, 0 count
+IPA function summary for vPortHeapResetState/21 inlinable
+  global time:     7.000000
+  self size:       8
+  global size:     8
+  min size:       5
+  self stack:      0
+  global stack:    0
+    size:5.000000, time:5.000000
+    size:3.000000, time:2.000000,  executed if:(not inlined)
+  calls:
+
+IPA function summary for vPortGetHeapStats/20 inlinable
+  global time:     103.409091
+  self size:       29
+  global size:     29
+  min size:       23
+  self stack:      0
+  global stack:    0
+    size:18.500000, time:57.909091
+    size:6.500000, time:5.500000,  executed if:(not inlined)
+  calls:
+    vPortExitCritical/27 function body not available
+      freq:1.00 loop depth: 0 size: 1 time: 10
+    vPortEnterCritical/26 function body not available
+      freq:1.00 loop depth: 0 size: 1 time: 10
+    xTaskResumeAll/23 function body not available
+      freq:1.00 loop depth: 0 size: 1 time: 10
+    vTaskSuspendAll/22 function body not available
+      freq:1.00 loop depth: 0 size: 1 time: 10
+
+IPA function summary for pvPortCalloc/17 inlinable
+  global time:     23.026001
+  self size:       17
+  global size:     17
+  min size:       9
+  self stack:      0
+  global stack:    0
+    size:2.000000, time:1.611400
+    size:3.000000, time:2.000000,  executed if:(not inlined)
+    size:2.000000, time:2.000000,  nonconst if:(op0 changed)
+    size:2.000000, time:1.340000,  executed if:(op0 != 0),  nonconst if:(op0 changed || op1 changed) && (op0 != 0)
+    size:1.000000, time:0.805700,  nonconst if:(op0 changed || op1 changed)
+  calls:
+    memset/25 function body not available
+      freq:0.43 loop depth: 0 size: 4 time: 13
+       op1 is compile time invariant
+    pvPortMalloc/12 --param max-inline-insns-auto limit reached
+      freq:0.81 loop depth: 0 size: 3 time: 12 callee size:51 stack: 0
+
+IPA function summary for vPortInitialiseBlocks/16 inlinable
+  global time:     2.000000
+  self size:       3
+  global size:     3
+  min size:       0
+  self stack:      0
+  global stack:    0
+    size:0.000000, time:0.000000
+    size:3.000000, time:2.000000,  executed if:(not inlined)
+  calls:
+
+IPA function summary for xPortGetMinimumEverFreeHeapSize/15 inlinable
+  global time:     3.000000
+  self size:       4
+  global size:     4
+  min size:       1
+  self stack:      0
+  global stack:    0
+    size:1.000000, time:1.000000
+    size:3.000000, time:2.000000,  executed if:(not inlined)
+  calls:
+
+IPA function summary for xPortGetFreeHeapSize/14 inlinable
+  global time:     3.000000
+  self size:       4
+  global size:     4
+  min size:       1
+  self stack:      0
+  global stack:    0
+    size:1.000000, time:1.000000
+    size:3.000000, time:2.000000,  executed if:(not inlined)
+  calls:
+
+IPA function summary for vPortFree/13 inlinable
+  global time:     7.698640
+  self size:       32
+  global size:     64
+  min size:       0
+  self stack:      0
+  global stack:    0
+    size:0.000000, time:0.000000
+    size:2.000000, time:0.000000,  executed if:(not inlined)
+    size:2.000000, time:2.000000,  nonconst if:(op0 changed)
+    size:3.000000, time:2.100000,  executed if:(op0 != 0B),  nonconst if:(op0 changed) && (op0 != 0B)
+    size:2.000000, time:0.700000,  executed if:(op0,(# + 4294967288) >= &ucHeap[0]) && (op0 != 0B),  nonconst if:(op0 changed) && (op0,(# + 4294967288) >= &ucHeap[0]) && (op0 != 0B)
+    size:1.000000, time:0.525000,  executed if:(op0,(# + 4294967288) < &ucHeap[0] || op0,(# + 4294967288) > &ucHeap[8191]) && (op0 != 0B)
+    size:2.000000, time:0.135881,  executed if:(op0,(# + 4294967288) <= &ucHeap[8191]) && (op0,(# + 4294967288) >= &ucHeap[0]) && (op0 != 0B) && (not inlined)
+    size:48.500000, time:1.362626,  executed if:(op0,(# + 4294967288) <= &ucHeap[8191]) && (op0,(# + 4294967288) >= &ucHeap[0]) && (op0 != 0B)
+    size:1.000000, time:0.625012,  executed if:(op0 == 0B || op0,(# + 4294967288) <= &ucHeap[8191]) && (op0 == 0B || op0,(# + 4294967288) >= &ucHeap[0]) && (not inlined)
+  calls:
+    xTaskResumeAll/23 function body not available
+      freq:0.01 loop depth: 0 size: 1 time: 10 predicate: (op0,(# + 4294967288) <= &ucHeap[8191]) && (op0,(# + 4294967288) >= &ucHeap[0]) && (op0 != 0B)
+    prvInsertBlockIntoFreeList/19 inlined
+      freq:0.01
+      Stack frame offset 0, callee self size 0
+    vTaskSuspendAll/22 function body not available
+      freq:0.01 loop depth: 0 size: 1 time: 10 predicate: (op0,(# + 4294967288) <= &ucHeap[8191]) && (op0,(# + 4294967288) >= &ucHeap[0]) && (op0 != 0B)
+
+IPA function summary for pvPortMalloc/12 inlinable
+  global time:     52.657021
+  self size:       95
+  global size:     103
+  min size:       87
+  self stack:      0
+  global stack:    0
+  estimated growth:89
+    size:80.000000, time:29.658480
+    size:3.000000, time:0.404927,  executed if:(not inlined)
+    size:2.000000, time:2.000000,  nonconst if:(op0 changed)
+    size:2.000000, time:1.000000,  executed if:(op0 != 0),  nonconst if:(op0 changed) && (op0 != 0)
+    size:4.000000, time:1.000000,  executed if:(op0 <= 4294967287) && (op0 != 0),  nonconst if:(op0 changed) && (op0 <= 4294967287) && (op0 != 0)
+    size:5.000000, time:0.562500,  executed if:(op0,(# + 8),(# & 7) != 0) && (op0 <= 4294967287) && (op0 != 0),  nonconst if:(op0 changed) && (op0,(# + 8),(# & 7) != 0) && (op0 <= 4294967287) && (op0 != 0)
+  calls:
+    vApplicationMallocFailedHook/24 function body not available
+      freq:0.40 loop depth: 0 size: 1 time: 10
+    xTaskResumeAll/23 function body not available
+      freq:0.01 loop depth: 0 size: 1 time: 10
+    xTaskResumeAll/23 function body not available
+      freq:0.01 loop depth: 0 size: 1 time: 10
+    xTaskResumeAll/23 function body not available
+      freq:0.12 loop depth: 0 size: 1 time: 10
+    xTaskResumeAll/23 function body not available
+      freq:0.15 loop depth: 0 size: 1 time: 10
+    xTaskResumeAll/23 function body not available
+      freq:0.12 loop depth: 0 size: 1 time: 10
+    prvHeapInit/18 inlined
+      freq:0.17
+      Stack frame offset 0, callee self size 0
+    vTaskSuspendAll/22 function body not available
+      freq:1.00 loop depth: 0 size: 1 time: 10
+
+
+Reclaiming functions:
+Reclaiming variables:
+Clearing address taken flags:
+Symbol table:
+
+vPortExitCritical/27 (vPortExitCritical) @069c8700
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags: optimize_size
+  Called by: vPortGetHeapStats/20 (168730857 (estimated locally),1.00 per call) 
+  Calls: 
+vPortEnterCritical/26 (vPortEnterCritical) @069c8540
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags: optimize_size
+  Called by: vPortGetHeapStats/20 (168730857 (estimated locally),1.00 per call) 
+  Calls: 
+memset/25 (memset) @069c8380
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags: optimize_size
+  Called by: pvPortCalloc/17 (462576341 (estimated locally),0.43 per call) 
+  Calls: 
+vApplicationMallocFailedHook/24 (vApplicationMallocFailedHook) @06999d20
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags: optimize_size
+  Called by: pvPortMalloc/12 (9282930 (estimated locally),0.40 per call) 
+  Calls: 
+xTaskResumeAll/23 (xTaskResumeAll) @06999c40
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags: optimize_size
+  Called by: vPortGetHeapStats/20 (168730857 (estimated locally),1.00 per call) vPortFree/13 (253244 (estimated locally),0.01 per call) pvPortMalloc/12 (157185 (estimated locally),0.01 per call) pvPortMalloc/12 (144607 (estimated locally),0.01 per call) pvPortMalloc/12 (2851989 (estimated locally),0.12 per call) pvPortMalloc/12 (3425812 (estimated locally),0.15 per call) pvPortMalloc/12 (2860521 (estimated locally),0.12 per call) 
+  Calls: 
+vTaskSuspendAll/22 (vTaskSuspendAll) @06999a80
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags: optimize_size
+  Called by: vPortGetHeapStats/20 (168730857 (estimated locally),1.00 per call) vPortFree/13 (253244 (estimated locally),0.01 per call) pvPortMalloc/12 (23313133 (estimated locally),1.00 per call) 
+  Calls: 
+vPortHeapResetState/21 (vPortHeapResetState) @06999460
+  Type: function definition analyzed
+  Visibility: externally_visible public
+  References: pxEnd/7 (write) xFreeBytesRemaining/8 (write) xMinimumEverFreeBytesRemaining/9 (write) xNumberOfSuccessfulAllocations/10 (write) xNumberOfSuccessfulFrees/11 (write) 
+  Referring: 
+  Availability: available
+  Function flags: count:1073741824 (estimated locally) body optimize_size
+  Called by: 
+  Calls: 
+vPortGetHeapStats/20 (vPortGetHeapStats) @069991c0
+  Type: function definition analyzed
+  Visibility: externally_visible public
+  References: xStart/6 (read) pxEnd/7 (read) xFreeBytesRemaining/8 (read) xNumberOfSuccessfulAllocations/10 (read) xNumberOfSuccessfulFrees/11 (read) xMinimumEverFreeBytesRemaining/9 (read) 
+  Referring: 
+  Availability: available
+  Function flags: count:168730857 (estimated locally) body optimize_size
+  Called by: 
+  Calls: vPortExitCritical/27 (168730857 (estimated locally),1.00 per call) vPortEnterCritical/26 (168730857 (estimated locally),1.00 per call) xTaskResumeAll/23 (168730857 (estimated locally),1.00 per call) vTaskSuspendAll/22 (168730857 (estimated locally),1.00 per call) 
+prvInsertBlockIntoFreeList/19 (prvInsertBlockIntoFreeList) @0698be00
+  Type: function definition analyzed
+  Visibility: prevailing_def_ironly
+  References: xStart/6 (addr) xStart/6 (addr) ucHeap/4 (addr) ucHeap/4 (addr) pxEnd/7 (read) 
+  Referring: 
+  Function prvInsertBlockIntoFreeList/19 is inline copy in vPortFree/13
+  Availability: local
+  Function flags: count:253244 (estimated locally) body local optimize_size
+  Called by: vPortFree/13 (inlined) (253244 (estimated locally),0.01 per call) 
+  Calls: 
+prvHeapInit/18 (prvHeapInit) @0698b8c0
+  Type: function definition analyzed
+  Visibility: prevailing_def_ironly
+  References: ucHeap/4 (addr) xStart/6 (write) xStart/6 (write) pxEnd/7 (write) xMinimumEverFreeBytesRemaining/9 (write) xFreeBytesRemaining/8 (write) 
+  Referring: 
+  Function prvHeapInit/18 is inline copy in pvPortMalloc/12
+  Availability: local
+  Function flags: count:4063479 (estimated locally) body local optimize_size
+  Called by: pvPortMalloc/12 (inlined) (4063479 (estimated locally),0.17 per call) 
+  Calls: 
+pvPortCalloc/17 (pvPortCalloc) @0698b0e0
+  Type: function definition analyzed
+  Visibility: externally_visible public
+  References: 
+  Referring: 
+  Availability: available
+  Function flags: count:1073741823 (estimated locally) body optimize_size
+  Called by: 
+  Calls: memset/25 (462576341 (estimated locally),0.43 per call) pvPortMalloc/12 (865113787 (estimated locally),0.81 per call) 
+vPortInitialiseBlocks/16 (vPortInitialiseBlocks) @0698bd20
+  Type: function definition analyzed
+  Visibility: externally_visible public
+  References: 
+  Referring: 
+  Availability: available
+  Function flags: count:1073741824 (estimated locally) body optimize_size
+  Called by: 
+  Calls: 
+xPortGetMinimumEverFreeHeapSize/15 (xPortGetMinimumEverFreeHeapSize) @0698ba80
+  Type: function definition analyzed
+  Visibility: externally_visible public
+  References: xMinimumEverFreeBytesRemaining/9 (read) 
+  Referring: 
+  Availability: available
+  Function flags: count:1073741824 (estimated locally) body optimize_size
+  Called by: 
+  Calls: 
+xPortGetFreeHeapSize/14 (xPortGetFreeHeapSize) @0698b7e0
+  Type: function definition analyzed
+  Visibility: externally_visible public
+  References: xFreeBytesRemaining/8 (read) 
+  Referring: 
+  Availability: available
+  Function flags: count:1073741824 (estimated locally) body optimize_size
+  Called by: 
+  Calls: 
+vPortFree/13 (vPortFree) @0698b540
+  Type: function definition analyzed
+  Visibility: externally_visible public
+  References: ucHeap/4 (addr) ucHeap/4 (addr) xFreeBytesRemaining/8 (read) xFreeBytesRemaining/8 (write) xNumberOfSuccessfulFrees/11 (read) xNumberOfSuccessfulFrees/11 (write) 
+  Referring: 
+  Availability: available
+  Function flags: count:20249729 (estimated locally) body optimize_size
+  Called by: 
+  Calls: xTaskResumeAll/23 (253244 (estimated locally),0.01 per call) prvInsertBlockIntoFreeList/19 (inlined) (253244 (estimated locally),0.01 per call) vTaskSuspendAll/22 (253244 (estimated locally),0.01 per call) 
+pvPortMalloc/12 (pvPortMalloc) @0698b000
+  Type: function definition analyzed
+  Visibility: externally_visible public
+  References: pxEnd/7 (read) xFreeBytesRemaining/8 (read) xStart/6 (read) ucHeap/4 (addr) ucHeap/4 (addr) ucHeap/4 (addr) ucHeap/4 (addr) xStart/6 (addr) pxEnd/7 (read) ucHeap/4 (addr) ucHeap/4 (addr) xFreeBytesRemaining/8 (write) xMinimumEverFreeBytesRemaining/9 (read) xMinimumEverFreeBytesRemaining/9 (write) xNumberOfSuccessfulAllocations/10 (read) xNumberOfSuccessfulAllocations/10 (write) 
+  Referring: 
+  Availability: available
+  Function flags: count:23313133 (estimated locally) body optimize_size
+  Called by: pvPortCalloc/17 (865113787 (estimated locally),0.81 per call) 
+  Calls: vApplicationMallocFailedHook/24 (9282930 (estimated locally),0.40 per call) xTaskResumeAll/23 (157185 (estimated locally),0.01 per call) xTaskResumeAll/23 (144607 (estimated locally),0.01 per call) xTaskResumeAll/23 (2851989 (estimated locally),0.12 per call) xTaskResumeAll/23 (3425812 (estimated locally),0.15 per call) xTaskResumeAll/23 (2860521 (estimated locally),0.12 per call) prvHeapInit/18 (inlined) (4063479 (estimated locally),0.17 per call) vTaskSuspendAll/22 (23313133 (estimated locally),1.00 per call) 
+xNumberOfSuccessfulFrees/11 (xNumberOfSuccessfulFrees) @069b8438
+  Type: variable definition analyzed
+  Visibility: prevailing_def_ironly
+  References: 
+  Referring: vPortGetHeapStats/20 (read) vPortFree/13 (write) vPortFree/13 (read) vPortHeapResetState/21 (write) 
+  Availability: available
+  Varpool flags: initialized
+xNumberOfSuccessfulAllocations/10 (xNumberOfSuccessfulAllocations) @069b83f0
+  Type: variable definition analyzed
+  Visibility: prevailing_def_ironly
+  References: 
+  Referring: vPortGetHeapStats/20 (read) pvPortMalloc/12 (write) pvPortMalloc/12 (read) vPortHeapResetState/21 (write) 
+  Availability: available
+  Varpool flags: initialized
+xMinimumEverFreeBytesRemaining/9 (xMinimumEverFreeBytesRemaining) @069b83a8
+  Type: variable definition analyzed
+  Visibility: prevailing_def_ironly
+  References: 
+  Referring: pvPortMalloc/12 (write) vPortGetHeapStats/20 (read) xPortGetMinimumEverFreeHeapSize/15 (read) prvHeapInit/18 (write) pvPortMalloc/12 (read) vPortHeapResetState/21 (write) 
+  Availability: available
+  Varpool flags: initialized
+xFreeBytesRemaining/8 (xFreeBytesRemaining) @069b8360
+  Type: variable definition analyzed
+  Visibility: prevailing_def_ironly
+  References: 
+  Referring: pvPortMalloc/12 (read) prvHeapInit/18 (write) pvPortMalloc/12 (write) vPortFree/13 (write) vPortGetHeapStats/20 (read) xPortGetFreeHeapSize/14 (read) vPortFree/13 (read) vPortHeapResetState/21 (write) 
+  Availability: available
+  Varpool flags: initialized
+pxEnd/7 (pxEnd) @069b82d0
+  Type: variable definition analyzed
+  Visibility: prevailing_def_ironly
+  References: 
+  Referring: pvPortMalloc/12 (read) prvHeapInit/18 (write) prvInsertBlockIntoFreeList/19 (read) vPortGetHeapStats/20 (read) pvPortMalloc/12 (read) vPortHeapResetState/21 (write) 
+  Availability: available
+  Varpool flags: initialized
+xStart/6 (xStart) @069b8240
+  Type: variable definition analyzed
+  Visibility: prevailing_def_ironly
+  References: 
+  Referring: prvHeapInit/18 (write) prvHeapInit/18 (write) pvPortMalloc/12 (addr) prvInsertBlockIntoFreeList/19 (addr) prvInsertBlockIntoFreeList/19 (addr) pvPortMalloc/12 (read) vPortGetHeapStats/20 (read) 
+  Availability: available
+  Varpool flags:
+ucHeap/4 (ucHeap) @069b1dc8
+  Type: variable definition analyzed
+  Visibility: prevailing_def_ironly
+  References: 
+  Referring: pvPortMalloc/12 (addr) pvPortMalloc/12 (addr) prvInsertBlockIntoFreeList/19 (addr) prvInsertBlockIntoFreeList/19 (addr) prvHeapInit/18 (addr) pvPortMalloc/12 (addr) pvPortMalloc/12 (addr) pvPortMalloc/12 (addr) pvPortMalloc/12 (addr) vPortFree/13 (addr) vPortFree/13 (addr) 
+  Availability: available
+  Varpool flags:
+
+;; Function pvPortMalloc (pvPortMalloc, funcdef_no=4, decl_uid=6096, cgraph_uid=5, symbol_order=12)
+
+
+Symbols to be put in SSA form
+{ D.6635 }
+Incremental SSA update started at block: 0
+Number of blocks in CFG: 59
+Number of blocks to update: 58 ( 98%)
+
+
+Removing basic block 8
+Merging blocks 18 and 54
+Merging blocks 22 and 48
+Merging blocks 31 and 52
+Merging blocks 33 and 49
+Merging blocks 37 and 50
+Merging blocks 45 and 51
+Removing basic block 47
+Removing basic block 53
+Removing basic block 55
+;; 9 loops found
+;;
+;; Loop 0
+;;  header 0, latch 1
+;;  depth 0, outer -1
+;;  nodes: 0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47 48
+;;
+;; Loop 6
+;;  header 24, latch 24
+;;  depth 1, outer 0
+;;  nodes: 24
+;;
+;; Loop 4
+;;  header 35, latch 35
+;;  depth 1, outer 0
+;;  nodes: 35
+;;
+;; Loop 3
+;;  header 39, latch 39
+;;  depth 1, outer 0
+;;  nodes: 39
+;;
+;; Loop 2
+;;  header 47, latch 47
+;;  depth 1, outer 0
+;;  nodes: 47
+;;
+;; Loop 5
+;;  header 33, latch 33
+;;  depth 1, outer 0
+;;  nodes: 33
+;;
+;; Loop 8
+;;  header 25, latch 22
+;;  depth 1, outer 0
+;;  nodes: 25 22 21 26
+;;
+;; Loop 7
+;;  header 20, latch 20
+;;  depth 1, outer 0
+;;  nodes: 20
+;; 2 succs { 3 7 }
+;; 3 succs { 4 7 }
+;; 4 succs { 5 7 }
+;; 5 succs { 6 7 }
+;; 6 succs { 7 }
+;; 7 succs { 8 11 }
+;; 8 succs { 9 10 }
+;; 9 succs { 10 }
+;; 10 succs { 11 }
+;; 11 succs { 13 12 }
+;; 12 succs { 44 }
+;; 13 succs { 15 14 }
+;; 14 succs { 44 }
+;; 15 succs { 17 16 }
+;; 16 succs { 44 }
+;; 17 succs { 18 19 }
+;; 18 succs { 25 19 }
+;; 19 succs { 20 }
+;; 20 succs { 20 }
+;; 21 succs { 22 23 }
+;; 22 succs { 25 23 }
+;; 23 succs { 24 }
+;; 24 succs { 24 }
+;; 25 succs { 26 27 }
+;; 26 succs { 21 27 }
+;; 27 succs { 29 28 }
+;; 28 succs { 44 }
+;; 29 succs { 30 31 }
+;; 30 succs { 32 31 }
+;; 31 succs { 33 }
+;; 32 succs { 34 36 }
+;; 33 succs { 33 }
+;; 34 succs { 35 }
+;; 35 succs { 35 }
+;; 36 succs { 37 41 }
+;; 37 succs { 38 40 }
+;; 38 succs { 39 }
+;; 39 succs { 39 }
+;; 40 succs { 41 }
+;; 41 succs { 42 43 }
+;; 42 succs { 43 }
+;; 43 succs { 45 }
+;; 44 succs { 45 }
+;; 45 succs { 46 48 }
+;; 46 succs { 47 }
+;; 47 succs { 47 }
+;; 48 succs { 1 }
+cyclic probability of bb 25 is 0.894455; turning freq 0.152005 to 1.440185
+cyclic probability of bb 20 is 1.000000 (capped to 0.990099); turning freq 0.456014 to 46.057379
+cyclic probability of bb 24 is 1.000000 (capped to 0.990099); turning freq 0.073883 to 7.462232
+cyclic probability of bb 33 is 1.000000 (capped to 0.990099); turning freq 0.053939 to 5.447808
+cyclic probability of bb 35 is 1.000000 (capped to 0.990099); turning freq 0.008990 to 0.907968
+cyclic probability of bb 39 is 1.000000 (capped to 0.990099); turning freq 0.002247 to 0.226992
+cyclic probability of bb 47 is 1.000000 (capped to 0.990099); turning freq 0.202463 to 20.448807
+pvPortMalloc (size_t xWantedSize)
+{
+  uint32_t uxStartAddress;
+  uint32_t uxEndAddress;
+  size_t xTotalHeapSize;
+  size_t xAdditionalRequiredSize;
+  void * pvReturn;
+  struct BlockLink_t * pxNewBlockLink;
+  struct BlockLink_t * pxPreviousBlock;
+  struct BlockLink_t * pxBlock;
+  unsigned int _1;
+  unsigned int _2;
+  unsigned int _3;
+  struct BlockLink_t * pxEnd.0_4;
+  signed int xWantedSize.1_5;
+  unsigned int xFreeBytesRemaining.2_6;
+  unsigned int _7;
+  struct A_BLOCK_LINK * _8;
+  struct BlockLink_t * pxEnd.5_9;
+  struct A_BLOCK_LINK * _10;
+  struct A_BLOCK_LINK * _11;
+  unsigned int _12;
+  unsigned int pxNewBlockLink.7_13;
+  unsigned int _14;
+  unsigned int _15;
+  unsigned int _16;
+  unsigned int xMinimumEverFreeBytesRemaining.10_17;
+  unsigned int _18;
+  unsigned int xNumberOfSuccessfulAllocations.12_19;
+  unsigned int _20;
+  unsigned int pvReturn.13_21;
+  unsigned int _22;
+  long unsigned int _67;
+  unsigned int _70;
+  struct A_BLOCK_LINK * uxStartAddress.15_73;
+  struct BlockLink_t * uxEndAddress.16_78;
+  long unsigned int _79;
+
+  <bb 2> [local count: 23313133]:
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  # DEBUG pvReturn => 0B
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  if (xWantedSize_30(D) != 0)
+    goto <bb 3>; [50.00%]
+  else
+    goto <bb 7>; [50.00%]
+
+  <bb 3> [local count: 11656567]:
+  # DEBUG BEGIN_STMT
+  if (xWantedSize_30(D) <= 4294967287)
+    goto <bb 4>; [50.00%]
+  else
+    goto <bb 7>; [50.00%]
+
+  <bb 4> [local count: 5828283]:
+  # DEBUG BEGIN_STMT
+  xWantedSize_31 = xWantedSize_30(D) + 8;
+  # DEBUG xWantedSize => xWantedSize_31
+  # DEBUG BEGIN_STMT
+  _1 = xWantedSize_31 & 7;
+  if (_1 != 0)
+    goto <bb 5>; [50.00%]
+  else
+    goto <bb 7>; [50.00%]
+
+  <bb 5> [local count: 2914142]:
+  # DEBUG BEGIN_STMT
+  xAdditionalRequiredSize_32 = 8 - _1;
+  # DEBUG xAdditionalRequiredSize => xAdditionalRequiredSize_32
+  # DEBUG BEGIN_STMT
+  _3 = ~xAdditionalRequiredSize_32;
+  if (_3 >= xWantedSize_31)
+    goto <bb 6>; [50.00%]
+  else
+    goto <bb 7>; [50.00%]
+
+  <bb 6> [local count: 1457071]:
+  # DEBUG BEGIN_STMT
+  xWantedSize_34 = xWantedSize_31 + xAdditionalRequiredSize_32;
+  # DEBUG xWantedSize => xWantedSize_34
+
+  <bb 7> [local count: 23313133]:
+  # xWantedSize_23 = PHI <xWantedSize_30(D)(2), 0(3), 0(5), xWantedSize_34(6), xWantedSize_31(4)>
+  # DEBUG xWantedSize => xWantedSize_23
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  vTaskSuspendAll ();
+  # DEBUG BEGIN_STMT
+  pxEnd.0_4 = pxEnd;
+  if (pxEnd.0_4 == 0B)
+    goto <bb 8>; [17.43%]
+  else
+    goto <bb 11>; [82.57%]
+
+  <bb 8> [local count: 4063479]:
+  # DEBUG BEGIN_STMT
+  # DEBUG INLINE_ENTRY prvHeapInit
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  # DEBUG xTotalHeapSize => 8192
+  # DEBUG BEGIN_STMT
+  uxStartAddress_66 = (uint32_t) &ucHeap;
+  # DEBUG uxStartAddress => uxStartAddress_66
+  # DEBUG BEGIN_STMT
+  _67 = uxStartAddress_66 & 7;
+  if (_67 != 0)
+    goto <bb 9>; [50.00%]
+  else
+    goto <bb 10>; [50.00%]
+
+  <bb 9> [local count: 2031740]:
+  # DEBUG BEGIN_STMT
+  uxStartAddress_68 = uxStartAddress_66 + 7;
+  # DEBUG uxStartAddress => uxStartAddress_68
+  # DEBUG BEGIN_STMT
+  uxStartAddress_69 = uxStartAddress_68 & 4294967288;
+  # DEBUG uxStartAddress => uxStartAddress_69
+  # DEBUG BEGIN_STMT
+  _70 = 8192 - uxStartAddress_69;
+  xTotalHeapSize_71 = uxStartAddress_66 + _70;
+  # DEBUG xTotalHeapSize => xTotalHeapSize_71
+
+  <bb 10> [local count: 4063479]:
+  # uxStartAddress_72 = PHI <uxStartAddress_66(8), uxStartAddress_69(9)>
+  # xTotalHeapSize_74 = PHI <8192(8), xTotalHeapSize_71(9)>
+  # DEBUG xTotalHeapSize => xTotalHeapSize_74
+  # DEBUG uxStartAddress => uxStartAddress_72
+  # DEBUG BEGIN_STMT
+  uxStartAddress.15_73 = (struct A_BLOCK_LINK *) uxStartAddress_72;
+  xStart.pxNextFreeBlock = uxStartAddress.15_73;
+  # DEBUG BEGIN_STMT
+  xStart.xBlockSize = 0;
+  # DEBUG BEGIN_STMT
+  uxEndAddress_75 = uxStartAddress_72 + xTotalHeapSize_74;
+  # DEBUG uxEndAddress => uxEndAddress_75
+  # DEBUG BEGIN_STMT
+  uxEndAddress_76 = uxEndAddress_75 + 4294967288;
+  # DEBUG uxEndAddress => uxEndAddress_76
+  # DEBUG BEGIN_STMT
+  uxEndAddress_77 = uxEndAddress_76 & 4294967288;
+  # DEBUG uxEndAddress => uxEndAddress_77
+  # DEBUG BEGIN_STMT
+  uxEndAddress.16_78 = (struct BlockLink_t *) uxEndAddress_77;
+  pxEnd = uxEndAddress.16_78;
+  # DEBUG BEGIN_STMT
+  uxEndAddress.16_78->xBlockSize = 0;
+  # DEBUG BEGIN_STMT
+  uxEndAddress.16_78->pxNextFreeBlock = 0B;
+  # DEBUG BEGIN_STMT
+  # DEBUG pxFirstFreeBlock => uxStartAddress.15_73
+  # DEBUG BEGIN_STMT
+  _79 = uxEndAddress_77 - uxStartAddress_72;
+  MEM[(struct BlockLink_t *)uxStartAddress.15_73].xBlockSize = _79;
+  # DEBUG BEGIN_STMT
+  MEM[(struct BlockLink_t *)uxStartAddress.15_73].pxNextFreeBlock = uxEndAddress.16_78;
+  # DEBUG BEGIN_STMT
+  xMinimumEverFreeBytesRemaining = _79;
+  # DEBUG BEGIN_STMT
+  xFreeBytesRemaining = _79;
+
+  <bb 11> [local count: 23313133]:
+  # DEBUG xTotalHeapSize => NULL
+  # DEBUG uxEndAddress => NULL
+  # DEBUG uxStartAddress => NULL
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  xWantedSize.1_5 = (signed int) xWantedSize_23;
+  if (xWantedSize.1_5 >= 0)
+    goto <bb 13>; [87.73%]
+  else
+    goto <bb 12>; [12.27%]
+
+  <bb 12> [local count: 2860521]:
+  # DEBUG pvReturn => 0B
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  xTaskResumeAll ();
+  # DEBUG BEGIN_STMT
+  goto <bb 44>; [100.00%]
+
+  <bb 13> [local count: 20452612]:
+  # DEBUG BEGIN_STMT
+  if (xWantedSize_23 != 0)
+    goto <bb 15>; [83.25%]
+  else
+    goto <bb 14>; [16.75%]
+
+  <bb 14> [local count: 3425812]:
+  # DEBUG pvReturn => 0B
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  xTaskResumeAll ();
+  # DEBUG BEGIN_STMT
+  goto <bb 44>; [100.00%]
+
+  <bb 15> [local count: 17026800]:
+  xFreeBytesRemaining.2_6 = xFreeBytesRemaining;
+  if (xFreeBytesRemaining.2_6 >= xWantedSize_23)
+    goto <bb 17>; [83.25%]
+  else
+    goto <bb 16>; [16.75%]
+
+  <bb 16> [local count: 2851989]:
+  # DEBUG pvReturn => 0B
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  xTaskResumeAll ();
+  # DEBUG BEGIN_STMT
+  goto <bb 44>; [100.00%]
+
+  <bb 17> [local count: 14174811]:
+  # DEBUG BEGIN_STMT
+  # DEBUG pxPreviousBlock => &xStart
+  # DEBUG BEGIN_STMT
+  pxBlock_39 = xStart.pxNextFreeBlock;
+  # DEBUG pxBlock => pxBlock_39
+  # DEBUG BEGIN_STMT
+  if (pxBlock_39 >= &ucHeap[0])
+    goto <bb 18>; [50.00%]
+  else
+    goto <bb 19>; [50.00%]
+
+  <bb 18> [local count: 7087405]:
+  if (pxBlock_39 <= &ucHeap[8191])
+    goto <bb 25>; [50.00%]
+  else
+    goto <bb 19>; [50.00%]
+
+  <bb 19> [local count: 10631108]:
+  # DEBUG BEGIN_STMT
+  __asm__ __volatile__(" cpsid i " :  :  : "memory");
+
+  <bb 20> [local count: 1073741824]:
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  goto <bb 20>; [100.00%]
+
+  <bb 21> [local count: 31753989]:
+  # DEBUG BEGIN_STMT
+  # DEBUG pxPreviousBlock => pxBlock_24
+  # DEBUG BEGIN_STMT
+  # DEBUG pxBlock => _8
+  # DEBUG BEGIN_STMT
+  if (_8 >= &ucHeap[0])
+    goto <bb 22>; [97.25%]
+  else
+    goto <bb 23>; [2.75%]
+
+  <bb 22> [local count: 30880755]:
+  if (_8 <= &ucHeap[8191])
+    goto <bb 25>; [97.25%]
+  else
+    goto <bb 23>; [2.75%]
+
+  <bb 23> [local count: 1722456]:
+  # DEBUG BEGIN_STMT
+  __asm__ __volatile__(" cpsid i " :  :  : "memory");
+
+  <bb 24> [local count: 173968010]:
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  goto <bb 24>; [100.00%]
+
+  <bb 25> [local count: 33575236]:
+  # pxBlock_24 = PHI <pxBlock_39(18), _8(22)>
+  # pxPreviousBlock_25 = PHI <&xStart(18), pxBlock_24(22)>
+  # DEBUG pxPreviousBlock => pxPreviousBlock_25
+  # DEBUG pxBlock => pxBlock_24
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  _7 = pxBlock_24->xBlockSize;
+  if (_7 < xWantedSize_23)
+    goto <bb 26>; [97.25%]
+  else
+    goto <bb 27>; [2.75%]
+
+  <bb 26> [local count: 32651917]:
+  _8 = pxBlock_24->pxNextFreeBlock;
+  if (_8 != 0B)
+    goto <bb 21>; [97.25%]
+  else
+    goto <bb 27>; [2.75%]
+
+  <bb 27> [local count: 1821247]:
+  # _2 = PHI <_7(25), _7(26)>
+  # pxBlock_44 = PHI <pxBlock_24(25), pxBlock_24(26)>
+  # pxPreviousBlock_38 = PHI <pxPreviousBlock_25(25), pxPreviousBlock_25(26)>
+  # DEBUG BEGIN_STMT
+  pxEnd.5_9 = pxEnd;
+  if (pxEnd.5_9 != pxBlock_44)
+    goto <bb 29>; [92.06%]
+  else
+    goto <bb 28>; [7.94%]
+
+  <bb 28> [local count: 144607]:
+  # DEBUG pvReturn => 0B
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  xTaskResumeAll ();
+  # DEBUG BEGIN_STMT
+  goto <bb 44>; [100.00%]
+
+  <bb 29> [local count: 1676640]:
+  # DEBUG BEGIN_STMT
+  _10 = pxPreviousBlock_38->pxNextFreeBlock;
+  pvReturn_42 = _10 + 8;
+  # DEBUG pvReturn => pvReturn_42
+  # DEBUG BEGIN_STMT
+  if (pvReturn_42 >= &ucHeap[0])
+    goto <bb 30>; [50.00%]
+  else
+    goto <bb 31>; [50.00%]
+
+  <bb 30> [local count: 838320]:
+  if (pvReturn_42 <= &ucHeap[8191])
+    goto <bb 32>; [50.00%]
+  else
+    goto <bb 31>; [50.00%]
+
+  <bb 31> [local count: 1257480]:
+  # DEBUG BEGIN_STMT
+  __asm__ __volatile__(" cpsid i " :  :  : "memory");
+  goto <bb 33>; [100.00%]
+
+  <bb 32> [local count: 419160]:
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  _11 = pxBlock_44->pxNextFreeBlock;
+  pxPreviousBlock_38->pxNextFreeBlock = _11;
+  # DEBUG BEGIN_STMT
+  if (_2 < xWantedSize_23)
+    goto <bb 34>; [50.00%]
+  else
+    goto <bb 36>; [50.00%]
+
+  <bb 33> [local count: 127005466]:
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  goto <bb 33>; [100.00%]
+
+  <bb 34> [local count: 209580]:
+  # DEBUG BEGIN_STMT
+  __asm__ __volatile__(" cpsid i " :  :  : "memory");
+
+  <bb 35> [local count: 21167578]:
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  goto <bb 35>; [100.00%]
+
+  <bb 36> [local count: 209580]:
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  _12 = _2 - xWantedSize_23;
+  if (_12 > 16)
+    goto <bb 37>; [50.00%]
+  else
+    goto <bb 41>; [50.00%]
+
+  <bb 37> [local count: 104790]:
+  # DEBUG BEGIN_STMT
+  pxNewBlockLink_46 = pxBlock_44 + xWantedSize_23;
+  # DEBUG pxNewBlockLink => pxNewBlockLink_46
+  # DEBUG BEGIN_STMT
+  pxNewBlockLink.7_13 = (unsigned int) pxNewBlockLink_46;
+  _14 = pxNewBlockLink.7_13 & 7;
+  if (_14 != 0)
+    goto <bb 38>; [50.00%]
+  else
+    goto <bb 40>; [50.00%]
+
+  <bb 38> [local count: 52395]:
+  # DEBUG BEGIN_STMT
+  __asm__ __volatile__(" cpsid i " :  :  : "memory");
+
+  <bb 39> [local count: 5291894]:
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  goto <bb 39>; [100.00%]
+
+  <bb 40> [local count: 52395]:
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  pxNewBlockLink_46->xBlockSize = _12;
+  # DEBUG BEGIN_STMT
+  pxBlock_44->xBlockSize = xWantedSize_23;
+  # DEBUG BEGIN_STMT
+  pxNewBlockLink_46->pxNextFreeBlock = _11;
+  # DEBUG BEGIN_STMT
+  pxPreviousBlock_38->pxNextFreeBlock = pxNewBlockLink_46;
+
+  <bb 41> [local count: 157185]:
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  _15 = pxBlock_44->xBlockSize;
+  _16 = xFreeBytesRemaining.2_6 - _15;
+  xFreeBytesRemaining = _16;
+  # DEBUG BEGIN_STMT
+  xMinimumEverFreeBytesRemaining.10_17 = xMinimumEverFreeBytesRemaining;
+  if (_16 < xMinimumEverFreeBytesRemaining.10_17)
+    goto <bb 42>; [50.00%]
+  else
+    goto <bb 43>; [50.00%]
+
+  <bb 42> [local count: 78592]:
+  # DEBUG BEGIN_STMT
+  xMinimumEverFreeBytesRemaining = _16;
+
+  <bb 43> [local count: 157185]:
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  _18 = _15 | 2147483648;
+  pxBlock_44->xBlockSize = _18;
+  # DEBUG BEGIN_STMT
+  pxBlock_44->pxNextFreeBlock = 0B;
+  # DEBUG BEGIN_STMT
+  xNumberOfSuccessfulAllocations.12_19 = xNumberOfSuccessfulAllocations;
+  _20 = xNumberOfSuccessfulAllocations.12_19 + 1;
+  xNumberOfSuccessfulAllocations = _20;
+  # DEBUG pvReturn => pvReturn_42
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  xTaskResumeAll ();
+  # DEBUG BEGIN_STMT
+  goto <bb 45>; [100.00%]
+
+  <bb 44> [local count: 9282930]:
+  # DEBUG BEGIN_STMT
+  vApplicationMallocFailedHook ();
+
+  <bb 45> [local count: 9440115]:
+  # pvReturn_64 = PHI <pvReturn_42(43), 0B(44)>
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  pvReturn.13_21 = (unsigned int) pvReturn_64;
+  _22 = pvReturn.13_21 & 7;
+  if (_22 != 0)
+    goto <bb 46>; [50.00%]
+  else
+    goto <bb 48>; [50.00%]
+
+  <bb 46> [local count: 4720057]:
+  # DEBUG BEGIN_STMT
+  __asm__ __volatile__(" cpsid i " :  :  : "memory");
+
+  <bb 47> [local count: 476725758]:
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  goto <bb 47>; [100.00%]
+
+  <bb 48> [local count: 4720057]:
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  return pvReturn_64;
+
+}
+
+
+
+;; Function vPortFree (vPortFree, funcdef_no=5, decl_uid=6101, cgraph_uid=6, symbol_order=13)
+
+
+Symbols to be put in SSA form
+{ D.6636 }
+Incremental SSA update started at block: 0
+Number of blocks in CFG: 38
+Number of blocks to update: 37 ( 97%)
+
+
+Merging blocks 7 and 17
+Merging blocks 9 and 15
+Merging blocks 12 and 16
+Merging blocks 13 and 19
+Removing basic block 21
+Merging blocks 26 and 27
+Merging blocks 37 and 18
+;; 6 loops found
+;;
+;; Loop 0
+;;  header 0, latch 1
+;;  depth 0, outer -1
+;;  nodes: 0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30
+;;
+;; Loop 2
+;;  header 9, latch 9
+;;  depth 1, outer 0
+;;  nodes: 9
+;;
+;; Loop 1
+;;  header 12, latch 12
+;;  depth 1, outer 0
+;;  nodes: 12
+;;
+;; Loop 4
+;;  header 19, latch 19
+;;  depth 1, outer 0
+;;  nodes: 19
+;;
+;; Loop 5
+;;  header 14, latch 14
+;;  depth 1, outer 0
+;;  nodes: 14
+;;
+;; Loop 3
+;;  header 7, latch 7
+;;  depth 1, outer 0
+;;  nodes: 7
+;; 2 succs { 3 30 }
+;; 3 succs { 4 6 }
+;; 4 succs { 5 6 }
+;; 5 succs { 8 10 }
+;; 6 succs { 7 }
+;; 7 succs { 7 }
+;; 8 succs { 9 }
+;; 9 succs { 9 }
+;; 10 succs { 11 13 }
+;; 11 succs { 12 }
+;; 12 succs { 12 }
+;; 13 succs { 14 }
+;; 14 succs { 14 15 }
+;; 15 succs { 16 20 }
+;; 16 succs { 17 18 }
+;; 17 succs { 20 18 }
+;; 18 succs { 19 }
+;; 19 succs { 19 }
+;; 20 succs { 21 22 }
+;; 21 succs { 22 }
+;; 22 succs { 23 26 }
+;; 23 succs { 24 25 }
+;; 24 succs { 27 }
+;; 25 succs { 27 }
+;; 26 succs { 27 }
+;; 27 succs { 28 29 }
+;; 28 succs { 29 }
+;; 29 succs { 30 }
+;; 30 succs { 1 }
+cyclic probability of bb 7 is 1.000000 (capped to 0.990099); turning freq 0.525000 to 53.024996
+cyclic probability of bb 9 is 1.000000 (capped to 0.990099); turning freq 0.103250 to 10.428249
+cyclic probability of bb 12 is 1.000000 (capped to 0.990099); turning freq 0.059244 to 5.983641
+cyclic probability of bb 14 is 0.890000; turning freq 0.012506 to 0.113691
+cyclic probability of bb 19 is 1.000000 (capped to 0.990099); turning freq 0.006566 to 0.663132
+vPortFree (void * pv)
+{
+  struct BlockLink_t * pxIterator;
+  struct BlockLink_t * pxBlockToInsert;
+  uint8_t * puc;
+  unsigned int _1;
+  signed int _2;
+  struct A_BLOCK_LINK * _3;
+  unsigned int _4;
+  unsigned int _5;
+  unsigned int xFreeBytesRemaining.22_6;
+  unsigned int _7;
+  unsigned int xNumberOfSuccessfulFrees.23_8;
+  unsigned int _9;
+  struct A_BLOCK_LINK * _24;
+  unsigned int _26;
+  uint8_t * _27;
+  unsigned int _28;
+  unsigned int _29;
+  unsigned int _31;
+  uint8_t * _32;
+  struct A_BLOCK_LINK * _33;
+  struct BlockLink_t * pxEnd.25_34;
+  unsigned int _35;
+  unsigned int _36;
+  struct A_BLOCK_LINK * _37;
+
+  <bb 2> [local count: 20249729]:
+  # DEBUG BEGIN_STMT
+  # DEBUG puc => pv_11(D)
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  if (pv_11(D) != 0B)
+    goto <bb 3>; [70.00%]
+  else
+    goto <bb 30>; [30.00%]
+
+  <bb 3> [local count: 14174811]:
+  # DEBUG BEGIN_STMT
+  puc_13 = pv_11(D) + 4294967288;
+  # DEBUG puc => puc_13
+  # DEBUG BEGIN_STMT
+  # DEBUG pxLink => puc_13
+  # DEBUG BEGIN_STMT
+  if (puc_13 >= &ucHeap[0])
+    goto <bb 4>; [50.00%]
+  else
+    goto <bb 6>; [50.00%]
+
+  <bb 4> [local count: 7087405]:
+  if (puc_13 <= &ucHeap[8191])
+    goto <bb 5>; [50.00%]
+  else
+    goto <bb 6>; [50.00%]
+
+  <bb 5> [local count: 3543703]:
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  _1 = MEM[(struct BlockLink_t *)pv_11(D) + 4294967288B].xBlockSize;
+  _2 = (signed int) _1;
+  if (_2 >= 0)
+    goto <bb 8>; [59.00%]
+  else
+    goto <bb 10>; [41.00%]
+
+  <bb 6> [local count: 10631108]:
+  # DEBUG BEGIN_STMT
+  __asm__ __volatile__(" cpsid i " :  :  : "memory");
+
+  <bb 7> [local count: 1073741824]:
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  goto <bb 7>; [100.00%]
+
+  <bb 8> [local count: 2090785]:
+  # DEBUG BEGIN_STMT
+  __asm__ __volatile__(" cpsid i " :  :  : "memory");
+
+  <bb 9> [local count: 211169227]:
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  goto <bb 9>; [100.00%]
+
+  <bb 10> [local count: 1452918]:
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  _3 = MEM[(struct BlockLink_t *)pv_11(D) + 4294967288B].pxNextFreeBlock;
+  if (_3 != 0B)
+    goto <bb 11>; [82.57%]
+  else
+    goto <bb 13>; [17.43%]
+
+  <bb 11> [local count: 1199674]:
+  # DEBUG BEGIN_STMT
+  __asm__ __volatile__(" cpsid i " :  :  : "memory");
+
+  <bb 12> [local count: 121167111]:
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  goto <bb 12>; [100.00%]
+
+  <bb 13> [local count: 253244]:
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  _4 = _1 & 2147483647;
+  MEM[(struct BlockLink_t *)pv_11(D) + 4294967288B].xBlockSize = _4;
+  # DEBUG BEGIN_STMT
+  vTaskSuspendAll ();
+  # DEBUG BEGIN_STMT
+  _5 = MEM[(struct BlockLink_t *)pv_11(D) + 4294967288B].xBlockSize;
+  xFreeBytesRemaining.22_6 = xFreeBytesRemaining;
+  _7 = _5 + xFreeBytesRemaining.22_6;
+  xFreeBytesRemaining = _7;
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  # DEBUG pxBlockToInsert => puc_13
+  # DEBUG INLINE_ENTRY prvInsertBlockIntoFreeList
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  # DEBUG pxIterator => &xStart
+
+  <bb 14> [local count: 2302215]:
+  # pxIterator_23 = PHI <&xStart(13), _24(14)>
+  # DEBUG pxIterator => pxIterator_23
+  # DEBUG BEGIN_STMT
+  _24 = pxIterator_23->pxNextFreeBlock;
+  if (puc_13 > _24)
+    goto <bb 14>; [89.00%]
+  else
+    goto <bb 15>; [11.00%]
+
+  <bb 15> [local count: 253244]:
+  # _33 = PHI <_24(14)>
+  # pxIterator_25 = PHI <pxIterator_23(14)>
+  # DEBUG BEGIN_STMT
+  if (pxIterator_25 != &xStart)
+    goto <bb 16>; [70.00%]
+  else
+    goto <bb 20>; [30.00%]
+
+  <bb 16> [local count: 177271]:
+  # DEBUG BEGIN_STMT
+  if (pxIterator_25 >= &ucHeap[0])
+    goto <bb 17>; [50.00%]
+  else
+    goto <bb 18>; [50.00%]
+
+  <bb 17> [local count: 88635]:
+  if (pxIterator_25 <= &ucHeap[8191])
+    goto <bb 20>; [50.00%]
+  else
+    goto <bb 18>; [50.00%]
+
+  <bb 18> [local count: 132953]:
+  # DEBUG BEGIN_STMT
+  __asm__ __volatile__(" cpsid i " :  :  : "memory");
+
+  <bb 19> [local count: 13428242]:
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  goto <bb 19>; [100.00%]
+
+  <bb 20> [local count: 120291]:
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  # DEBUG puc => pxIterator_25
+  # DEBUG BEGIN_STMT
+  _26 = pxIterator_25->xBlockSize;
+  _27 = pxIterator_25 + _26;
+  if (puc_13 == _27)
+    goto <bb 21>; [30.00%]
+  else
+    goto <bb 22>; [70.00%]
+
+  <bb 21> [local count: 36087]:
+  # DEBUG BEGIN_STMT
+  _28 = MEM[(struct BlockLink_t *)puc_13].xBlockSize;
+  _29 = _26 + _28;
+  pxIterator_25->xBlockSize = _29;
+  # DEBUG BEGIN_STMT
+  # DEBUG pxBlockToInsert => pxIterator_25
+
+  <bb 22> [local count: 120291]:
+  # pxBlockToInsert_30 = PHI <puc_13(20), pxIterator_25(21)>
+  # DEBUG pxBlockToInsert => pxBlockToInsert_30
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  # DEBUG puc => pxBlockToInsert_30
+  # DEBUG BEGIN_STMT
+  _31 = pxBlockToInsert_30->xBlockSize;
+  _32 = pxBlockToInsert_30 + _31;
+  if (_32 == _33)
+    goto <bb 23>; [30.00%]
+  else
+    goto <bb 26>; [70.00%]
+
+  <bb 23> [local count: 36087]:
+  # DEBUG BEGIN_STMT
+  pxEnd.25_34 = pxEnd;
+  if (_33 != pxEnd.25_34)
+    goto <bb 24>; [70.00%]
+  else
+    goto <bb 25>; [30.00%]
+
+  <bb 24> [local count: 25261]:
+  # DEBUG BEGIN_STMT
+  _35 = _33->xBlockSize;
+  _36 = _31 + _35;
+  pxBlockToInsert_30->xBlockSize = _36;
+  # DEBUG BEGIN_STMT
+  _37 = _33->pxNextFreeBlock;
+  pxBlockToInsert_30->pxNextFreeBlock = _37;
+  goto <bb 27>; [100.00%]
+
+  <bb 25> [local count: 10826]:
+  # DEBUG BEGIN_STMT
+  pxBlockToInsert_30->pxNextFreeBlock = pxEnd.25_34;
+  goto <bb 27>; [100.00%]
+
+  <bb 26> [local count: 84204]:
+  # DEBUG BEGIN_STMT
+  pxBlockToInsert_30->pxNextFreeBlock = _33;
+
+  <bb 27> [local count: 120291]:
+  # DEBUG BEGIN_STMT
+  if (pxIterator_25 != pxBlockToInsert_30)
+    goto <bb 28>; [70.00%]
+  else
+    goto <bb 29>; [30.00%]
+
+  <bb 28> [local count: 84204]:
+  # DEBUG BEGIN_STMT
+  pxIterator_25->pxNextFreeBlock = pxBlockToInsert_30;
+
+  <bb 29> [local count: 120291]:
+  # DEBUG BEGIN_STMT
+  # DEBUG pxBlockToInsert => NULL
+  # DEBUG pxIterator => NULL
+  # DEBUG BEGIN_STMT
+  xNumberOfSuccessfulFrees.23_8 = xNumberOfSuccessfulFrees;
+  _9 = xNumberOfSuccessfulFrees.23_8 + 1;
+  xNumberOfSuccessfulFrees = _9;
+  # DEBUG BEGIN_STMT
+  xTaskResumeAll ();
+
+  <bb 30> [local count: 6195209]:
+  # DEBUG BEGIN_STMT
+  return;
+
+}
+
+
+
+;; Function xPortGetFreeHeapSize (xPortGetFreeHeapSize, funcdef_no=6, decl_uid=6105, cgraph_uid=7, symbol_order=14)
+
+xPortGetFreeHeapSize ()
+{
+  size_t _2;
+
+  <bb 2> [local count: 1073741824]:
+  # DEBUG BEGIN_STMT
+  _2 = xFreeBytesRemaining;
+  return _2;
+
+}
+
+
+
+;; Function xPortGetMinimumEverFreeHeapSize (xPortGetMinimumEverFreeHeapSize, funcdef_no=7, decl_uid=6107, cgraph_uid=8, symbol_order=15)
+
+xPortGetMinimumEverFreeHeapSize ()
+{
+  size_t _2;
+
+  <bb 2> [local count: 1073741824]:
+  # DEBUG BEGIN_STMT
+  _2 = xMinimumEverFreeBytesRemaining;
+  return _2;
+
+}
+
+
+
+;; Function vPortInitialiseBlocks (vPortInitialiseBlocks, funcdef_no=8, decl_uid=6103, cgraph_uid=9, symbol_order=16)
+
+vPortInitialiseBlocks ()
+{
+  <bb 2> [local count: 1073741824]:
+  # DEBUG BEGIN_STMT
+  return;
+
+}
+
+
+
+;; Function pvPortCalloc (pvPortCalloc, funcdef_no=9, decl_uid=6099, cgraph_uid=10, symbol_order=17)
+
+pvPortCalloc (size_t xNum, size_t xSize)
+{
+  void * pv;
+  unsigned int _1;
+  __complex__ unsigned int _4;
+  unsigned int _7;
+
+  <bb 2> [local count: 1073741823]:
+  # DEBUG BEGIN_STMT
+  # DEBUG pv => 0B
+  # DEBUG BEGIN_STMT
+  if (xNum_5(D) != 0)
+    goto <bb 3>; [67.00%]
+  else
+    goto <bb 4>; [33.00%]
+
+  <bb 3> [local count: 719407024]:
+  _4 = .MUL_OVERFLOW (xSize_6(D), xNum_5(D));
+  _7 = IMAGPART_EXPR <_4>;
+  if (_7 != 0)
+    goto <bb 6>; [29.00%]
+  else
+    goto <bb 4>; [71.00%]
+
+  <bb 4> [local count: 865113787]:
+  # DEBUG BEGIN_STMT
+  _1 = xNum_5(D) * xSize_6(D);
+  pv_10 = pvPortMalloc (_1);
+  # DEBUG pv => pv_10
+  # DEBUG BEGIN_STMT
+  if (pv_10 != 0B)
+    goto <bb 5>; [53.47%]
+  else
+    goto <bb 6>; [46.53%]
+
+  <bb 5> [local count: 462576341]:
+  # DEBUG BEGIN_STMT
+  memset (pv_10, 0, _1);
+
+  <bb 6> [local count: 1073741824]:
+  # pv_2 = PHI <0B(3), pv_10(4), pv_10(5)>
+  # DEBUG pv => pv_2
+  # DEBUG BEGIN_STMT
+  return pv_2;
+
+}
+
+
+
+;; Function vPortGetHeapStats (vPortGetHeapStats, funcdef_no=12, decl_uid=6094, cgraph_uid=13, symbol_order=20)
+
+vPortGetHeapStats (struct HeapStats_t * pxHeapStats)
+{
+  size_t xMinSize;
+  size_t xMaxSize;
+  size_t xBlocks;
+  struct BlockLink_t * pxBlock;
+  unsigned int _1;
+  struct BlockLink_t * pxEnd.28_3;
+  unsigned int xFreeBytesRemaining.29_4;
+  unsigned int xNumberOfSuccessfulAllocations.30_5;
+  unsigned int xNumberOfSuccessfulFrees.31_6;
+  unsigned int xMinimumEverFreeBytesRemaining.32_7;
+
+  <bb 2> [local count: 168730857]:
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  # DEBUG xBlocks => 0
+  # DEBUG xMaxSize => 0
+  # DEBUG xMinSize => 4294967295
+  # DEBUG BEGIN_STMT
+  vTaskSuspendAll ();
+  # DEBUG BEGIN_STMT
+  pxBlock_17 = xStart.pxNextFreeBlock;
+  # DEBUG pxBlock => pxBlock_17
+  # DEBUG BEGIN_STMT
+  if (pxBlock_17 != 0B)
+    goto <bb 6>; [70.00%]
+  else
+    goto <bb 5>; [30.00%]
+
+  <bb 6> [local count: 118111600]:
+  goto <bb 4>; [100.00%]
+
+  <bb 3> [local count: 955630226]:
+  # DEBUG BEGIN_STMT
+  xBlocks_18 = xBlocks_9 + 1;
+  # DEBUG xBlocks => xBlocks_18
+  # DEBUG BEGIN_STMT
+  _1 = pxBlock_8->xBlockSize;
+  xMaxSize_2 = MAX_EXPR <_1, xMaxSize_11>;
+  # DEBUG xMaxSize => xMaxSize_2
+  # DEBUG BEGIN_STMT
+  xMinSize_19 = MIN_EXPR <_1, xMinSize_13>;
+  # DEBUG xMinSize => xMinSize_19
+  # DEBUG BEGIN_STMT
+  pxBlock_20 = pxBlock_8->pxNextFreeBlock;
+  # DEBUG pxBlock => pxBlock_20
+
+  <bb 4> [local count: 1073741824]:
+  # pxBlock_8 = PHI <pxBlock_20(3), pxBlock_17(6)>
+  # xBlocks_9 = PHI <xBlocks_18(3), 0(6)>
+  # xMaxSize_11 = PHI <xMaxSize_2(3), 0(6)>
+  # xMinSize_13 = PHI <xMinSize_19(3), 4294967295(6)>
+  # DEBUG xMinSize => xMinSize_13
+  # DEBUG xMaxSize => xMaxSize_11
+  # DEBUG xBlocks => xBlocks_9
+  # DEBUG pxBlock => pxBlock_8
+  # DEBUG BEGIN_STMT
+  pxEnd.28_3 = pxEnd;
+  if (pxEnd.28_3 != pxBlock_8)
+    goto <bb 3>; [89.00%]
+  else
+    goto <bb 5>; [11.00%]
+
+  <bb 5> [local count: 168730857]:
+  # xBlocks_10 = PHI <0(2), xBlocks_9(4)>
+  # xMaxSize_12 = PHI <0(2), xMaxSize_11(4)>
+  # xMinSize_14 = PHI <4294967295(2), xMinSize_13(4)>
+  # DEBUG xMinSize => xMinSize_14
+  # DEBUG xMaxSize => xMaxSize_12
+  # DEBUG xBlocks => xBlocks_10
+  # DEBUG BEGIN_STMT
+  xTaskResumeAll ();
+  # DEBUG BEGIN_STMT
+  pxHeapStats_22(D)->xSizeOfLargestFreeBlockInBytes = xMaxSize_12;
+  # DEBUG BEGIN_STMT
+  pxHeapStats_22(D)->xSizeOfSmallestFreeBlockInBytes = xMinSize_14;
+  # DEBUG BEGIN_STMT
+  pxHeapStats_22(D)->xNumberOfFreeBlocks = xBlocks_10;
+  # DEBUG BEGIN_STMT
+  vPortEnterCritical ();
+  # DEBUG BEGIN_STMT
+  xFreeBytesRemaining.29_4 = xFreeBytesRemaining;
+  pxHeapStats_22(D)->xAvailableHeapSpaceInBytes = xFreeBytesRemaining.29_4;
+  # DEBUG BEGIN_STMT
+  xNumberOfSuccessfulAllocations.30_5 = xNumberOfSuccessfulAllocations;
+  pxHeapStats_22(D)->xNumberOfSuccessfulAllocations = xNumberOfSuccessfulAllocations.30_5;
+  # DEBUG BEGIN_STMT
+  xNumberOfSuccessfulFrees.31_6 = xNumberOfSuccessfulFrees;
+  pxHeapStats_22(D)->xNumberOfSuccessfulFrees = xNumberOfSuccessfulFrees.31_6;
+  # DEBUG BEGIN_STMT
+  xMinimumEverFreeBytesRemaining.32_7 = xMinimumEverFreeBytesRemaining;
+  pxHeapStats_22(D)->xMinimumEverFreeBytesRemaining = xMinimumEverFreeBytesRemaining.32_7;
+  # DEBUG BEGIN_STMT
+  vPortExitCritical ();
+  return;
+
+}
+
+
+
+;; Function vPortHeapResetState (vPortHeapResetState, funcdef_no=13, decl_uid=6109, cgraph_uid=14, symbol_order=21)
+
+vPortHeapResetState ()
+{
+  <bb 2> [local count: 1073741824]:
+  # DEBUG BEGIN_STMT
+  pxEnd = 0B;
+  # DEBUG BEGIN_STMT
+  xFreeBytesRemaining = 0;
+  # DEBUG BEGIN_STMT
+  xMinimumEverFreeBytesRemaining = 0;
+  # DEBUG BEGIN_STMT
+  xNumberOfSuccessfulAllocations = 0;
+  # DEBUG BEGIN_STMT
+  xNumberOfSuccessfulFrees = 0;
+  return;
+
+}
+
+

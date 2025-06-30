@@ -1,0 +1,1169 @@
+
+Marking local functions: prvInsertBlockIntoFreeList/19 prvHeapInit/18
+
+
+Marking externally visible functions: vPortHeapResetState/21 vPortGetHeapStats/20 pvPortCalloc/17 vPortInitialiseBlocks/16 xPortGetMinimumEverFreeHeapSize/15 xPortGetFreeHeapSize/14 vPortFree/13 pvPortMalloc/12
+
+
+Marking externally visible variables:
+
+
+Reclaiming functions:
+Reclaiming variables:
+Clearing address taken flags:
+Symbol table:
+
+vPortExitCritical/27 (vPortExitCritical) @069c8700
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags: optimize_size
+  Called by: vPortGetHeapStats/20 
+  Calls: 
+vPortEnterCritical/26 (vPortEnterCritical) @069c8540
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags: optimize_size
+  Called by: vPortGetHeapStats/20 
+  Calls: 
+memset/25 (memset) @069c8380
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags: optimize_size
+  Called by: pvPortCalloc/17 
+  Calls: 
+vApplicationMallocFailedHook/24 (vApplicationMallocFailedHook) @06999d20
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags: optimize_size
+  Called by: pvPortMalloc/12 
+  Calls: 
+xTaskResumeAll/23 (xTaskResumeAll) @06999c40
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags: optimize_size
+  Called by: vPortGetHeapStats/20 vPortFree/13 pvPortMalloc/12 
+  Calls: 
+vTaskSuspendAll/22 (vTaskSuspendAll) @06999a80
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags: optimize_size
+  Called by: vPortGetHeapStats/20 vPortFree/13 pvPortMalloc/12 
+  Calls: 
+vPortHeapResetState/21 (vPortHeapResetState) @06999460
+  Type: function definition analyzed
+  Visibility: externally_visible public
+  References: pxEnd/7 (write) xFreeBytesRemaining/8 (write) xMinimumEverFreeBytesRemaining/9 (write) xNumberOfSuccessfulAllocations/10 (write) xNumberOfSuccessfulFrees/11 (write) 
+  Referring: 
+  Availability: available
+  Function flags: body optimize_size
+  Called by: 
+  Calls: 
+vPortGetHeapStats/20 (vPortGetHeapStats) @069991c0
+  Type: function definition analyzed
+  Visibility: externally_visible public
+  References: xStart/6 (read) pxEnd/7 (read) xFreeBytesRemaining/8 (read) xNumberOfSuccessfulAllocations/10 (read) xNumberOfSuccessfulFrees/11 (read) xMinimumEverFreeBytesRemaining/9 (read) 
+  Referring: 
+  Availability: available
+  Function flags: body optimize_size
+  Called by: 
+  Calls: vPortExitCritical/27 vPortEnterCritical/26 xTaskResumeAll/23 vTaskSuspendAll/22 
+prvInsertBlockIntoFreeList/19 (prvInsertBlockIntoFreeList) @0698be00
+  Type: function definition analyzed
+  Visibility: prevailing_def_ironly
+  References: xStart/6 (addr) xStart/6 (addr) ucHeap/4 (addr) ucHeap/4 (addr) pxEnd/7 (read) pxEnd/7 (read) 
+  Referring: 
+  Availability: local
+  Function flags: body local optimize_size
+  Called by: vPortFree/13 
+  Calls: 
+prvHeapInit/18 (prvHeapInit) @0698b8c0
+  Type: function definition analyzed
+  Visibility: prevailing_def_ironly
+  References: ucHeap/4 (addr) ucHeap/4 (addr) xStart/6 (write) xStart/6 (write) pxEnd/7 (write) pxEnd/7 (read) pxEnd/7 (read) pxEnd/7 (read) xMinimumEverFreeBytesRemaining/9 (write) xFreeBytesRemaining/8 (write) 
+  Referring: 
+  Availability: local
+  Function flags: body local optimize_size
+  Called by: pvPortMalloc/12 
+  Calls: 
+pvPortCalloc/17 (pvPortCalloc) @0698b0e0
+  Type: function definition analyzed
+  Visibility: externally_visible public
+  References: 
+  Referring: 
+  Availability: available
+  Function flags: body optimize_size
+  Called by: 
+  Calls: memset/25 pvPortMalloc/12 
+vPortInitialiseBlocks/16 (vPortInitialiseBlocks) @0698bd20
+  Type: function definition analyzed
+  Visibility: externally_visible public
+  References: 
+  Referring: 
+  Availability: available
+  Function flags: body optimize_size
+  Called by: 
+  Calls: 
+xPortGetMinimumEverFreeHeapSize/15 (xPortGetMinimumEverFreeHeapSize) @0698ba80
+  Type: function definition analyzed
+  Visibility: externally_visible public
+  References: xMinimumEverFreeBytesRemaining/9 (read) 
+  Referring: 
+  Availability: available
+  Function flags: body optimize_size
+  Called by: 
+  Calls: 
+xPortGetFreeHeapSize/14 (xPortGetFreeHeapSize) @0698b7e0
+  Type: function definition analyzed
+  Visibility: externally_visible public
+  References: xFreeBytesRemaining/8 (read) 
+  Referring: 
+  Availability: available
+  Function flags: body optimize_size
+  Called by: 
+  Calls: 
+vPortFree/13 (vPortFree) @0698b540
+  Type: function definition analyzed
+  Visibility: externally_visible public
+  References: ucHeap/4 (addr) ucHeap/4 (addr) xFreeBytesRemaining/8 (read) xFreeBytesRemaining/8 (write) xNumberOfSuccessfulFrees/11 (read) xNumberOfSuccessfulFrees/11 (write) 
+  Referring: 
+  Availability: available
+  Function flags: body optimize_size
+  Called by: 
+  Calls: xTaskResumeAll/23 prvInsertBlockIntoFreeList/19 vTaskSuspendAll/22 
+pvPortMalloc/12 (pvPortMalloc) @0698b000
+  Type: function definition analyzed
+  Visibility: externally_visible public
+  References: pxEnd/7 (read) xFreeBytesRemaining/8 (read) xStart/6 (addr) xStart/6 (read) ucHeap/4 (addr) ucHeap/4 (addr) ucHeap/4 (addr) ucHeap/4 (addr) pxEnd/7 (read) ucHeap/4 (addr) ucHeap/4 (addr) xFreeBytesRemaining/8 (read) xFreeBytesRemaining/8 (write) xFreeBytesRemaining/8 (read) xMinimumEverFreeBytesRemaining/9 (read) xFreeBytesRemaining/8 (read) xMinimumEverFreeBytesRemaining/9 (write) xNumberOfSuccessfulAllocations/10 (read) xNumberOfSuccessfulAllocations/10 (write) 
+  Referring: 
+  Availability: available
+  Function flags: body optimize_size
+  Called by: pvPortCalloc/17 
+  Calls: vApplicationMallocFailedHook/24 xTaskResumeAll/23 prvHeapInit/18 vTaskSuspendAll/22 
+xNumberOfSuccessfulFrees/11 (xNumberOfSuccessfulFrees) @069b8438
+  Type: variable definition analyzed
+  Visibility: prevailing_def_ironly
+  References: 
+  Referring: vPortFree/13 (read) vPortFree/13 (write) vPortGetHeapStats/20 (read) vPortHeapResetState/21 (write) 
+  Availability: available
+  Varpool flags: initialized
+xNumberOfSuccessfulAllocations/10 (xNumberOfSuccessfulAllocations) @069b83f0
+  Type: variable definition analyzed
+  Visibility: prevailing_def_ironly
+  References: 
+  Referring: pvPortMalloc/12 (read) pvPortMalloc/12 (write) vPortGetHeapStats/20 (read) vPortHeapResetState/21 (write) 
+  Availability: available
+  Varpool flags: initialized
+xMinimumEverFreeBytesRemaining/9 (xMinimumEverFreeBytesRemaining) @069b83a8
+  Type: variable definition analyzed
+  Visibility: prevailing_def_ironly
+  References: 
+  Referring: pvPortMalloc/12 (read) pvPortMalloc/12 (write) prvHeapInit/18 (write) xPortGetMinimumEverFreeHeapSize/15 (read) vPortGetHeapStats/20 (read) vPortHeapResetState/21 (write) 
+  Availability: available
+  Varpool flags: initialized
+xFreeBytesRemaining/8 (xFreeBytesRemaining) @069b8360
+  Type: variable definition analyzed
+  Visibility: prevailing_def_ironly
+  References: 
+  Referring: pvPortMalloc/12 (read) pvPortMalloc/12 (read) pvPortMalloc/12 (write) pvPortMalloc/12 (read) pvPortMalloc/12 (read) prvHeapInit/18 (write) vPortFree/13 (read) vPortFree/13 (write) xPortGetFreeHeapSize/14 (read) vPortGetHeapStats/20 (read) vPortHeapResetState/21 (write) 
+  Availability: available
+  Varpool flags: initialized
+pxEnd/7 (pxEnd) @069b82d0
+  Type: variable definition analyzed
+  Visibility: prevailing_def_ironly
+  References: 
+  Referring: pvPortMalloc/12 (read) pvPortMalloc/12 (read) prvHeapInit/18 (write) prvHeapInit/18 (read) prvHeapInit/18 (read) prvHeapInit/18 (read) prvInsertBlockIntoFreeList/19 (read) prvInsertBlockIntoFreeList/19 (read) vPortGetHeapStats/20 (read) vPortHeapResetState/21 (write) 
+  Availability: available
+  Varpool flags: initialized
+xStart/6 (xStart) @069b8240
+  Type: variable definition analyzed
+  Visibility: prevailing_def_ironly
+  References: 
+  Referring: pvPortMalloc/12 (addr) pvPortMalloc/12 (read) prvHeapInit/18 (write) prvHeapInit/18 (write) prvInsertBlockIntoFreeList/19 (addr) prvInsertBlockIntoFreeList/19 (addr) vPortGetHeapStats/20 (read) 
+  Availability: available
+  Varpool flags:
+ucHeap/4 (ucHeap) @069b1dc8
+  Type: variable definition analyzed
+  Visibility: prevailing_def_ironly
+  References: 
+  Referring: pvPortMalloc/12 (addr) pvPortMalloc/12 (addr) pvPortMalloc/12 (addr) pvPortMalloc/12 (addr) pvPortMalloc/12 (addr) pvPortMalloc/12 (addr) prvHeapInit/18 (addr) prvHeapInit/18 (addr) vPortFree/13 (addr) vPortFree/13 (addr) prvInsertBlockIntoFreeList/19 (addr) prvInsertBlockIntoFreeList/19 (addr) 
+  Availability: available
+  Varpool flags:
+vPortHeapResetState ()
+{
+  <bb 2> :
+  # DEBUG BEGIN_STMT
+  pxEnd = 0B;
+  # DEBUG BEGIN_STMT
+  xFreeBytesRemaining = 0;
+  # DEBUG BEGIN_STMT
+  xMinimumEverFreeBytesRemaining = 0;
+  # DEBUG BEGIN_STMT
+  xNumberOfSuccessfulAllocations = 0;
+  # DEBUG BEGIN_STMT
+  xNumberOfSuccessfulFrees = 0;
+  return;
+
+}
+
+
+vPortGetHeapStats (struct HeapStats_t * pxHeapStats)
+{
+  size_t xMinSize;
+  size_t xMaxSize;
+  size_t xBlocks;
+  struct BlockLink_t * pxBlock;
+
+  <bb 2> :
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  xBlocks = 0;
+  xMaxSize = 0;
+  xMinSize = 4294967295;
+  # DEBUG BEGIN_STMT
+  vTaskSuspendAll ();
+  # DEBUG BEGIN_STMT
+  pxBlock = xStart.pxNextFreeBlock;
+  # DEBUG BEGIN_STMT
+  if (pxBlock != 0B)
+    goto <bb 8>; [INV]
+  else
+    goto <bb 9>; [INV]
+
+  <bb 3> :
+  # DEBUG BEGIN_STMT
+  xBlocks = xBlocks + 1;
+  # DEBUG BEGIN_STMT
+  _1 = pxBlock->xBlockSize;
+  if (xMaxSize < _1)
+    goto <bb 4>; [INV]
+  else
+    goto <bb 5>; [INV]
+
+  <bb 4> :
+  # DEBUG BEGIN_STMT
+  xMaxSize = pxBlock->xBlockSize;
+
+  <bb 5> :
+  # DEBUG BEGIN_STMT
+  _2 = pxBlock->xBlockSize;
+  if (xMinSize > _2)
+    goto <bb 6>; [INV]
+  else
+    goto <bb 7>; [INV]
+
+  <bb 6> :
+  # DEBUG BEGIN_STMT
+  xMinSize = pxBlock->xBlockSize;
+
+  <bb 7> :
+  # DEBUG BEGIN_STMT
+  pxBlock = pxBlock->pxNextFreeBlock;
+
+  <bb 8> :
+  # DEBUG BEGIN_STMT
+  pxEnd.28_3 = pxEnd;
+  if (pxBlock != pxEnd.28_3)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 9>; [INV]
+
+  <bb 9> :
+  # DEBUG BEGIN_STMT
+  xTaskResumeAll ();
+  # DEBUG BEGIN_STMT
+  pxHeapStats->xSizeOfLargestFreeBlockInBytes = xMaxSize;
+  # DEBUG BEGIN_STMT
+  pxHeapStats->xSizeOfSmallestFreeBlockInBytes = xMinSize;
+  # DEBUG BEGIN_STMT
+  pxHeapStats->xNumberOfFreeBlocks = xBlocks;
+  # DEBUG BEGIN_STMT
+  vPortEnterCritical ();
+  # DEBUG BEGIN_STMT
+  xFreeBytesRemaining.29_4 = xFreeBytesRemaining;
+  pxHeapStats->xAvailableHeapSpaceInBytes = xFreeBytesRemaining.29_4;
+  # DEBUG BEGIN_STMT
+  xNumberOfSuccessfulAllocations.30_5 = xNumberOfSuccessfulAllocations;
+  pxHeapStats->xNumberOfSuccessfulAllocations = xNumberOfSuccessfulAllocations.30_5;
+  # DEBUG BEGIN_STMT
+  xNumberOfSuccessfulFrees.31_6 = xNumberOfSuccessfulFrees;
+  pxHeapStats->xNumberOfSuccessfulFrees = xNumberOfSuccessfulFrees.31_6;
+  # DEBUG BEGIN_STMT
+  xMinimumEverFreeBytesRemaining.32_7 = xMinimumEverFreeBytesRemaining;
+  pxHeapStats->xMinimumEverFreeBytesRemaining = xMinimumEverFreeBytesRemaining.32_7;
+  # DEBUG BEGIN_STMT
+  vPortExitCritical ();
+  return;
+
+}
+
+
+prvInsertBlockIntoFreeList (struct BlockLink_t * pxBlockToInsert)
+{
+  uint8_t * puc;
+  struct BlockLink_t * pxIterator;
+  int iftmp.24;
+
+  <bb 2> :
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  pxIterator = &xStart;
+  goto <bb 4>; [INV]
+
+  <bb 3> :
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  pxIterator = pxIterator->pxNextFreeBlock;
+
+  <bb 4> :
+  # DEBUG BEGIN_STMT
+  _1 = pxIterator->pxNextFreeBlock;
+  if (pxBlockToInsert > _1)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 5>; [INV]
+
+  <bb 5> :
+  # DEBUG BEGIN_STMT
+  if (pxIterator != &xStart)
+    goto <bb 6>; [INV]
+  else
+    goto <bb 13>; [INV]
+
+  <bb 6> :
+  # DEBUG BEGIN_STMT
+  if (pxIterator >= &ucHeap[0])
+    goto <bb 7>; [INV]
+  else
+    goto <bb 9>; [INV]
+
+  <bb 7> :
+  if (pxIterator <= &ucHeap[8191])
+    goto <bb 8>; [INV]
+  else
+    goto <bb 9>; [INV]
+
+  <bb 8> :
+  iftmp.24 = 1;
+  goto <bb 10>; [INV]
+
+  <bb 9> :
+  iftmp.24 = 0;
+
+  <bb 10> :
+  if (iftmp.24 == 0)
+    goto <bb 11>; [INV]
+  else
+    goto <bb 13>; [INV]
+
+  <bb 11> :
+  # DEBUG BEGIN_STMT
+  __asm__ __volatile__(" cpsid i " :  :  : "memory");
+
+  <bb 12> :
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  goto <bb 12>; [INV]
+
+  <bb 13> :
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  puc = pxIterator;
+  # DEBUG BEGIN_STMT
+  _2 = pxIterator->xBlockSize;
+  _3 = puc + _2;
+  if (pxBlockToInsert == _3)
+    goto <bb 14>; [INV]
+  else
+    goto <bb 15>; [INV]
+
+  <bb 14> :
+  # DEBUG BEGIN_STMT
+  _4 = pxIterator->xBlockSize;
+  _5 = pxBlockToInsert->xBlockSize;
+  _6 = _4 + _5;
+  pxIterator->xBlockSize = _6;
+  # DEBUG BEGIN_STMT
+  pxBlockToInsert = pxIterator;
+
+  <bb 15> :
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  puc = pxBlockToInsert;
+  # DEBUG BEGIN_STMT
+  _7 = pxBlockToInsert->xBlockSize;
+  _8 = puc + _7;
+  _9 = pxIterator->pxNextFreeBlock;
+  if (_8 == _9)
+    goto <bb 16>; [INV]
+  else
+    goto <bb 19>; [INV]
+
+  <bb 16> :
+  # DEBUG BEGIN_STMT
+  _10 = pxIterator->pxNextFreeBlock;
+  pxEnd.25_11 = pxEnd;
+  if (_10 != pxEnd.25_11)
+    goto <bb 17>; [INV]
+  else
+    goto <bb 18>; [INV]
+
+  <bb 17> :
+  # DEBUG BEGIN_STMT
+  _12 = pxBlockToInsert->xBlockSize;
+  _13 = pxIterator->pxNextFreeBlock;
+  _14 = _13->xBlockSize;
+  _15 = _12 + _14;
+  pxBlockToInsert->xBlockSize = _15;
+  # DEBUG BEGIN_STMT
+  _16 = pxIterator->pxNextFreeBlock;
+  _17 = _16->pxNextFreeBlock;
+  pxBlockToInsert->pxNextFreeBlock = _17;
+  goto <bb 20>; [INV]
+
+  <bb 18> :
+  # DEBUG BEGIN_STMT
+  pxEnd.26_18 = pxEnd;
+  pxBlockToInsert->pxNextFreeBlock = pxEnd.26_18;
+  goto <bb 20>; [INV]
+
+  <bb 19> :
+  # DEBUG BEGIN_STMT
+  _19 = pxIterator->pxNextFreeBlock;
+  pxBlockToInsert->pxNextFreeBlock = _19;
+
+  <bb 20> :
+  # DEBUG BEGIN_STMT
+  if (pxIterator != pxBlockToInsert)
+    goto <bb 21>; [INV]
+  else
+    goto <bb 22>; [INV]
+
+  <bb 21> :
+  # DEBUG BEGIN_STMT
+  pxIterator->pxNextFreeBlock = pxBlockToInsert;
+
+  <bb 22> :
+  # DEBUG BEGIN_STMT
+  return;
+
+}
+
+
+prvHeapInit ()
+{
+  size_t xTotalHeapSize;
+  uint32_t uxEndAddress;
+  uint32_t uxStartAddress;
+  struct BlockLink_t * pxFirstFreeBlock;
+
+  <bb 2> :
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  xTotalHeapSize = 8192;
+  # DEBUG BEGIN_STMT
+  uxStartAddress = (uint32_t) &ucHeap;
+  # DEBUG BEGIN_STMT
+  _1 = uxStartAddress & 7;
+  if (_1 != 0)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 4>; [INV]
+
+  <bb 3> :
+  # DEBUG BEGIN_STMT
+  uxStartAddress = uxStartAddress + 7;
+  # DEBUG BEGIN_STMT
+  uxStartAddress = uxStartAddress & 4294967288;
+  # DEBUG BEGIN_STMT
+  _2 = xTotalHeapSize - uxStartAddress;
+  ucHeap.14_3 = (unsigned int) &ucHeap;
+  xTotalHeapSize = _2 + ucHeap.14_3;
+
+  <bb 4> :
+  # DEBUG BEGIN_STMT
+  uxStartAddress.15_4 = (struct A_BLOCK_LINK *) uxStartAddress;
+  xStart.pxNextFreeBlock = uxStartAddress.15_4;
+  # DEBUG BEGIN_STMT
+  xStart.xBlockSize = 0;
+  # DEBUG BEGIN_STMT
+  uxEndAddress = uxStartAddress + xTotalHeapSize;
+  # DEBUG BEGIN_STMT
+  uxEndAddress = uxEndAddress + 4294967288;
+  # DEBUG BEGIN_STMT
+  uxEndAddress = uxEndAddress & 4294967288;
+  # DEBUG BEGIN_STMT
+  uxEndAddress.16_5 = (struct BlockLink_t *) uxEndAddress;
+  pxEnd = uxEndAddress.16_5;
+  # DEBUG BEGIN_STMT
+  pxEnd.17_6 = pxEnd;
+  pxEnd.17_6->xBlockSize = 0;
+  # DEBUG BEGIN_STMT
+  pxEnd.18_7 = pxEnd;
+  pxEnd.18_7->pxNextFreeBlock = 0B;
+  # DEBUG BEGIN_STMT
+  pxFirstFreeBlock = (struct BlockLink_t *) uxStartAddress;
+  # DEBUG BEGIN_STMT
+  pxFirstFreeBlock.19_8 = (long unsigned int) pxFirstFreeBlock;
+  _9 = uxEndAddress - pxFirstFreeBlock.19_8;
+  pxFirstFreeBlock->xBlockSize = _9;
+  # DEBUG BEGIN_STMT
+  pxEnd.20_10 = pxEnd;
+  pxFirstFreeBlock->pxNextFreeBlock = pxEnd.20_10;
+  # DEBUG BEGIN_STMT
+  _11 = pxFirstFreeBlock->xBlockSize;
+  xMinimumEverFreeBytesRemaining = _11;
+  # DEBUG BEGIN_STMT
+  _12 = pxFirstFreeBlock->xBlockSize;
+  xFreeBytesRemaining = _12;
+  return;
+
+}
+
+
+pvPortCalloc (size_t xNum, size_t xSize)
+{
+  void * pv;
+  void * D.6625;
+  int iftmp.27;
+
+  <bb 2> :
+  # DEBUG BEGIN_STMT
+  pv = 0B;
+  # DEBUG BEGIN_STMT
+  if (xNum != 0)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 5>; [INV]
+
+  <bb 3> :
+  _1 = 4294967295 / xNum;
+  if (xSize > _1)
+    goto <bb 4>; [INV]
+  else
+    goto <bb 5>; [INV]
+
+  <bb 4> :
+  iftmp.27 = 1;
+  goto <bb 6>; [INV]
+
+  <bb 5> :
+  iftmp.27 = 0;
+
+  <bb 6> :
+  if (iftmp.27 == 0)
+    goto <bb 7>; [INV]
+  else
+    goto <bb 9>; [INV]
+
+  <bb 7> :
+  # DEBUG BEGIN_STMT
+  _2 = xNum * xSize;
+  pv = pvPortMalloc (_2);
+  # DEBUG BEGIN_STMT
+  if (pv != 0B)
+    goto <bb 8>; [INV]
+  else
+    goto <bb 9>; [INV]
+
+  <bb 8> :
+  # DEBUG BEGIN_STMT
+  _3 = xNum * xSize;
+  memset (pv, 0, _3);
+
+  <bb 9> :
+  # DEBUG BEGIN_STMT
+  D.6625 = pv;
+  return D.6625;
+
+}
+
+
+vPortInitialiseBlocks ()
+{
+  <bb 2> :
+  # DEBUG BEGIN_STMT
+  return;
+
+}
+
+
+xPortGetMinimumEverFreeHeapSize ()
+{
+  size_t D.6614;
+
+  <bb 2> :
+  # DEBUG BEGIN_STMT
+  D.6614 = xMinimumEverFreeBytesRemaining;
+  return D.6614;
+
+}
+
+
+xPortGetFreeHeapSize ()
+{
+  size_t D.6612;
+
+  <bb 2> :
+  # DEBUG BEGIN_STMT
+  D.6612 = xFreeBytesRemaining;
+  return D.6612;
+
+}
+
+
+vPortFree (void * pv)
+{
+  struct BlockLink_t * pxLink;
+  uint8_t * puc;
+  int iftmp.21;
+
+  <bb 2> :
+  # DEBUG BEGIN_STMT
+  puc = pv;
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  if (pv != 0B)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 19>; [INV]
+
+  <bb 3> :
+  # DEBUG BEGIN_STMT
+  puc = puc + 4294967288;
+  # DEBUG BEGIN_STMT
+  pxLink = puc;
+  # DEBUG BEGIN_STMT
+  if (pxLink >= &ucHeap[0])
+    goto <bb 4>; [INV]
+  else
+    goto <bb 6>; [INV]
+
+  <bb 4> :
+  if (pxLink <= &ucHeap[8191])
+    goto <bb 5>; [INV]
+  else
+    goto <bb 6>; [INV]
+
+  <bb 5> :
+  iftmp.21 = 1;
+  goto <bb 7>; [INV]
+
+  <bb 6> :
+  iftmp.21 = 0;
+
+  <bb 7> :
+  if (iftmp.21 == 0)
+    goto <bb 8>; [INV]
+  else
+    goto <bb 10>; [INV]
+
+  <bb 8> :
+  # DEBUG BEGIN_STMT
+  __asm__ __volatile__(" cpsid i " :  :  : "memory");
+
+  <bb 9> :
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  goto <bb 9>; [INV]
+
+  <bb 10> :
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  _1 = pxLink->xBlockSize;
+  _2 = (signed int) _1;
+  if (_2 >= 0)
+    goto <bb 11>; [INV]
+  else
+    goto <bb 13>; [INV]
+
+  <bb 11> :
+  # DEBUG BEGIN_STMT
+  __asm__ __volatile__(" cpsid i " :  :  : "memory");
+
+  <bb 12> :
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  goto <bb 12>; [INV]
+
+  <bb 13> :
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  _3 = pxLink->pxNextFreeBlock;
+  if (_3 != 0B)
+    goto <bb 14>; [INV]
+  else
+    goto <bb 16>; [INV]
+
+  <bb 14> :
+  # DEBUG BEGIN_STMT
+  __asm__ __volatile__(" cpsid i " :  :  : "memory");
+
+  <bb 15> :
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  goto <bb 15>; [INV]
+
+  <bb 16> :
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  _4 = pxLink->xBlockSize;
+  _5 = _4 >> 31;
+  _6 = (_Bool) _5;
+  if (_6 != 0)
+    goto <bb 17>; [INV]
+  else
+    goto <bb 19>; [INV]
+
+  <bb 17> :
+  # DEBUG BEGIN_STMT
+  _7 = pxLink->pxNextFreeBlock;
+  if (_7 == 0B)
+    goto <bb 18>; [INV]
+  else
+    goto <bb 19>; [INV]
+
+  <bb 18> :
+  # DEBUG BEGIN_STMT
+  _8 = pxLink->xBlockSize;
+  _9 = _8 & 2147483647;
+  pxLink->xBlockSize = _9;
+  # DEBUG BEGIN_STMT
+  vTaskSuspendAll ();
+  # DEBUG BEGIN_STMT
+  _10 = pxLink->xBlockSize;
+  xFreeBytesRemaining.22_11 = xFreeBytesRemaining;
+  _12 = _10 + xFreeBytesRemaining.22_11;
+  xFreeBytesRemaining = _12;
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  prvInsertBlockIntoFreeList (pxLink);
+  # DEBUG BEGIN_STMT
+  xNumberOfSuccessfulFrees.23_13 = xNumberOfSuccessfulFrees;
+  _14 = xNumberOfSuccessfulFrees.23_13 + 1;
+  xNumberOfSuccessfulFrees = _14;
+  # DEBUG BEGIN_STMT
+  xTaskResumeAll ();
+
+  <bb 19> :
+  # DEBUG BEGIN_STMT
+  return;
+
+}
+
+
+pvPortMalloc (size_t xWantedSize)
+{
+  size_t xAdditionalRequiredSize;
+  void * pvReturn;
+  struct BlockLink_t * pxNewBlockLink;
+  struct BlockLink_t * pxPreviousBlock;
+  struct BlockLink_t * pxBlock;
+  void * D.6568;
+  int iftmp.6;
+  int iftmp.4;
+  int iftmp.3;
+
+  <bb 2> :
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  pvReturn = 0B;
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  if (xWantedSize != 0)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 9>; [INV]
+
+  <bb 3> :
+  # DEBUG BEGIN_STMT
+  if (xWantedSize <= 4294967287)
+    goto <bb 4>; [INV]
+  else
+    goto <bb 8>; [INV]
+
+  <bb 4> :
+  # DEBUG BEGIN_STMT
+  xWantedSize = xWantedSize + 8;
+  # DEBUG BEGIN_STMT
+  _1 = xWantedSize & 7;
+  if (_1 != 0)
+    goto <bb 5>; [INV]
+  else
+    goto <bb 9>; [INV]
+
+  <bb 5> :
+  # DEBUG BEGIN_STMT
+  _2 = xWantedSize & 7;
+  xAdditionalRequiredSize = 8 - _2;
+  # DEBUG BEGIN_STMT
+  _3 = ~xAdditionalRequiredSize;
+  if (xWantedSize <= _3)
+    goto <bb 6>; [INV]
+  else
+    goto <bb 7>; [INV]
+
+  <bb 6> :
+  # DEBUG BEGIN_STMT
+  xWantedSize = xWantedSize + xAdditionalRequiredSize;
+  goto <bb 9>; [INV]
+
+  <bb 7> :
+  # DEBUG BEGIN_STMT
+  xWantedSize = 0;
+  goto <bb 9>; [INV]
+
+  <bb 8> :
+  # DEBUG BEGIN_STMT
+  xWantedSize = 0;
+
+  <bb 9> :
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  vTaskSuspendAll ();
+  # DEBUG BEGIN_STMT
+  pxEnd.0_4 = pxEnd;
+  if (pxEnd.0_4 == 0B)
+    goto <bb 10>; [INV]
+  else
+    goto <bb 11>; [INV]
+
+  <bb 10> :
+  # DEBUG BEGIN_STMT
+  prvHeapInit ();
+
+  <bb 11> :
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  xWantedSize.1_5 = (signed int) xWantedSize;
+  if (xWantedSize.1_5 >= 0)
+    goto <bb 12>; [INV]
+  else
+    goto <bb 49>; [INV]
+
+  <bb 12> :
+  # DEBUG BEGIN_STMT
+  if (xWantedSize != 0)
+    goto <bb 13>; [INV]
+  else
+    goto <bb 49>; [INV]
+
+  <bb 13> :
+  xFreeBytesRemaining.2_6 = xFreeBytesRemaining;
+  if (xWantedSize <= xFreeBytesRemaining.2_6)
+    goto <bb 14>; [INV]
+  else
+    goto <bb 49>; [INV]
+
+  <bb 14> :
+  # DEBUG BEGIN_STMT
+  pxPreviousBlock = &xStart;
+  # DEBUG BEGIN_STMT
+  pxBlock = xStart.pxNextFreeBlock;
+  # DEBUG BEGIN_STMT
+  if (pxBlock >= &ucHeap[0])
+    goto <bb 15>; [INV]
+  else
+    goto <bb 17>; [INV]
+
+  <bb 15> :
+  if (pxBlock <= &ucHeap[8191])
+    goto <bb 16>; [INV]
+  else
+    goto <bb 17>; [INV]
+
+  <bb 16> :
+  iftmp.3 = 1;
+  goto <bb 18>; [INV]
+
+  <bb 17> :
+  iftmp.3 = 0;
+
+  <bb 18> :
+  if (iftmp.3 == 0)
+    goto <bb 19>; [INV]
+  else
+    goto <bb 28>; [INV]
+
+  <bb 19> :
+  # DEBUG BEGIN_STMT
+  __asm__ __volatile__(" cpsid i " :  :  : "memory");
+
+  <bb 20> :
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  goto <bb 20>; [INV]
+
+  <bb 21> :
+  # DEBUG BEGIN_STMT
+  pxPreviousBlock = pxBlock;
+  # DEBUG BEGIN_STMT
+  pxBlock = pxBlock->pxNextFreeBlock;
+  # DEBUG BEGIN_STMT
+  if (pxBlock >= &ucHeap[0])
+    goto <bb 22>; [INV]
+  else
+    goto <bb 24>; [INV]
+
+  <bb 22> :
+  if (pxBlock <= &ucHeap[8191])
+    goto <bb 23>; [INV]
+  else
+    goto <bb 24>; [INV]
+
+  <bb 23> :
+  iftmp.4 = 1;
+  goto <bb 25>; [INV]
+
+  <bb 24> :
+  iftmp.4 = 0;
+
+  <bb 25> :
+  if (iftmp.4 == 0)
+    goto <bb 26>; [INV]
+  else
+    goto <bb 28>; [INV]
+
+  <bb 26> :
+  # DEBUG BEGIN_STMT
+  __asm__ __volatile__(" cpsid i " :  :  : "memory");
+
+  <bb 27> :
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  goto <bb 27>; [INV]
+
+  <bb 28> :
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  _7 = pxBlock->xBlockSize;
+  if (xWantedSize > _7)
+    goto <bb 29>; [INV]
+  else
+    goto <bb 30>; [INV]
+
+  <bb 29> :
+  _8 = pxBlock->pxNextFreeBlock;
+  if (_8 != 0B)
+    goto <bb 21>; [INV]
+  else
+    goto <bb 30>; [INV]
+
+  <bb 30> :
+  # DEBUG BEGIN_STMT
+  pxEnd.5_9 = pxEnd;
+  if (pxBlock != pxEnd.5_9)
+    goto <bb 31>; [INV]
+  else
+    goto <bb 49>; [INV]
+
+  <bb 31> :
+  # DEBUG BEGIN_STMT
+  _10 = pxPreviousBlock->pxNextFreeBlock;
+  pvReturn = _10 + 8;
+  # DEBUG BEGIN_STMT
+  if (pvReturn >= &ucHeap[0])
+    goto <bb 32>; [INV]
+  else
+    goto <bb 34>; [INV]
+
+  <bb 32> :
+  if (pvReturn <= &ucHeap[8191])
+    goto <bb 33>; [INV]
+  else
+    goto <bb 34>; [INV]
+
+  <bb 33> :
+  iftmp.6 = 1;
+  goto <bb 35>; [INV]
+
+  <bb 34> :
+  iftmp.6 = 0;
+
+  <bb 35> :
+  if (iftmp.6 == 0)
+    goto <bb 36>; [INV]
+  else
+    goto <bb 38>; [INV]
+
+  <bb 36> :
+  # DEBUG BEGIN_STMT
+  __asm__ __volatile__(" cpsid i " :  :  : "memory");
+
+  <bb 37> :
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  goto <bb 37>; [INV]
+
+  <bb 38> :
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  _11 = pxBlock->pxNextFreeBlock;
+  pxPreviousBlock->pxNextFreeBlock = _11;
+  # DEBUG BEGIN_STMT
+  _12 = pxBlock->xBlockSize;
+  if (xWantedSize > _12)
+    goto <bb 39>; [INV]
+  else
+    goto <bb 41>; [INV]
+
+  <bb 39> :
+  # DEBUG BEGIN_STMT
+  __asm__ __volatile__(" cpsid i " :  :  : "memory");
+
+  <bb 40> :
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  goto <bb 40>; [INV]
+
+  <bb 41> :
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  _13 = pxBlock->xBlockSize;
+  _14 = _13 - xWantedSize;
+  if (_14 > 16)
+    goto <bb 42>; [INV]
+  else
+    goto <bb 46>; [INV]
+
+  <bb 42> :
+  # DEBUG BEGIN_STMT
+  pxNewBlockLink = pxBlock + xWantedSize;
+  # DEBUG BEGIN_STMT
+  pxNewBlockLink.7_15 = (unsigned int) pxNewBlockLink;
+  _16 = pxNewBlockLink.7_15 & 7;
+  if (_16 != 0)
+    goto <bb 43>; [INV]
+  else
+    goto <bb 45>; [INV]
+
+  <bb 43> :
+  # DEBUG BEGIN_STMT
+  __asm__ __volatile__(" cpsid i " :  :  : "memory");
+
+  <bb 44> :
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  goto <bb 44>; [INV]
+
+  <bb 45> :
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  _17 = pxBlock->xBlockSize;
+  _18 = _17 - xWantedSize;
+  pxNewBlockLink->xBlockSize = _18;
+  # DEBUG BEGIN_STMT
+  pxBlock->xBlockSize = xWantedSize;
+  # DEBUG BEGIN_STMT
+  _19 = pxPreviousBlock->pxNextFreeBlock;
+  pxNewBlockLink->pxNextFreeBlock = _19;
+  # DEBUG BEGIN_STMT
+  pxPreviousBlock->pxNextFreeBlock = pxNewBlockLink;
+
+  <bb 46> :
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  xFreeBytesRemaining.8_20 = xFreeBytesRemaining;
+  _21 = pxBlock->xBlockSize;
+  _22 = xFreeBytesRemaining.8_20 - _21;
+  xFreeBytesRemaining = _22;
+  # DEBUG BEGIN_STMT
+  xFreeBytesRemaining.9_23 = xFreeBytesRemaining;
+  xMinimumEverFreeBytesRemaining.10_24 = xMinimumEverFreeBytesRemaining;
+  if (xFreeBytesRemaining.9_23 < xMinimumEverFreeBytesRemaining.10_24)
+    goto <bb 47>; [INV]
+  else
+    goto <bb 48>; [INV]
+
+  <bb 47> :
+  # DEBUG BEGIN_STMT
+  xFreeBytesRemaining.11_25 = xFreeBytesRemaining;
+  xMinimumEverFreeBytesRemaining = xFreeBytesRemaining.11_25;
+
+  <bb 48> :
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  _26 = pxBlock->xBlockSize;
+  _27 = _26 | 2147483648;
+  pxBlock->xBlockSize = _27;
+  # DEBUG BEGIN_STMT
+  pxBlock->pxNextFreeBlock = 0B;
+  # DEBUG BEGIN_STMT
+  xNumberOfSuccessfulAllocations.12_28 = xNumberOfSuccessfulAllocations;
+  _29 = xNumberOfSuccessfulAllocations.12_28 + 1;
+  xNumberOfSuccessfulAllocations = _29;
+
+  <bb 49> :
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  xTaskResumeAll ();
+  # DEBUG BEGIN_STMT
+  if (pvReturn == 0B)
+    goto <bb 50>; [INV]
+  else
+    goto <bb 51>; [INV]
+
+  <bb 50> :
+  # DEBUG BEGIN_STMT
+  vApplicationMallocFailedHook ();
+
+  <bb 51> :
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  pvReturn.13_30 = (unsigned int) pvReturn;
+  _31 = pvReturn.13_30 & 7;
+  if (_31 != 0)
+    goto <bb 52>; [INV]
+  else
+    goto <bb 54>; [INV]
+
+  <bb 52> :
+  # DEBUG BEGIN_STMT
+  __asm__ __volatile__(" cpsid i " :  :  : "memory");
+
+  <bb 53> :
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  goto <bb 53>; [INV]
+
+  <bb 54> :
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  D.6568 = pvReturn;
+  return D.6568;
+
+}
+
+

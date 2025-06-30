@@ -1,0 +1,1377 @@
+Archive member included to satisfy reference by file (symbol)
+
+c:/nxp/s32ds.3.5/s32ds/build_tools/gcc_v10.2/gcc-10.2-arm32-eabi/bin/../lib/gcc/arm-none-eabi/10.2.0/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libg_nano.a(lib_a-memcpy-stub.o)
+                              Output/queue.o (memcpy)
+c:/nxp/s32ds.3.5/s32ds/build_tools/gcc_v10.2/gcc-10.2-arm32-eabi/bin/../lib/gcc/arm-none-eabi/10.2.0/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libg_nano.a(lib_a-memset.o)
+                              Output/tasks.o (memset)
+c:/nxp/s32ds.3.5/s32ds/build_tools/gcc_v10.2/gcc-10.2-arm32-eabi/bin/../lib/gcc/arm-none-eabi/10.2.0/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libg_nano.a(lib_a-snprintf.o)
+                              Output/tasks.o (snprintf)
+c:/nxp/s32ds.3.5/s32ds/build_tools/gcc_v10.2/gcc-10.2-arm32-eabi/bin/../lib/gcc/arm-none-eabi/10.2.0/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libg_nano.a(lib_a-strcpy.o)
+                              Output/tasks.o (strcpy)
+c:/nxp/s32ds.3.5/s32ds/build_tools/gcc_v10.2/gcc-10.2-arm32-eabi/bin/../lib/gcc/arm-none-eabi/10.2.0/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libg_nano.a(lib_a-strlen.o)
+                              Output/tasks.o (strlen)
+c:/nxp/s32ds.3.5/s32ds/build_tools/gcc_v10.2/gcc-10.2-arm32-eabi/bin/../lib/gcc/arm-none-eabi/10.2.0/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libg_nano.a(lib_a-impure.o)
+                              c:/nxp/s32ds.3.5/s32ds/build_tools/gcc_v10.2/gcc-10.2-arm32-eabi/bin/../lib/gcc/arm-none-eabi/10.2.0/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libg_nano.a(lib_a-snprintf.o) (_impure_ptr)
+c:/nxp/s32ds.3.5/s32ds/build_tools/gcc_v10.2/gcc-10.2-arm32-eabi/bin/../lib/gcc/arm-none-eabi/10.2.0/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libg_nano.a(lib_a-nano-svfprintf.o)
+                              c:/nxp/s32ds.3.5/s32ds/build_tools/gcc_v10.2/gcc-10.2-arm32-eabi/bin/../lib/gcc/arm-none-eabi/10.2.0/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libg_nano.a(lib_a-snprintf.o) (_svfprintf_r)
+c:/nxp/s32ds.3.5/s32ds/build_tools/gcc_v10.2/gcc-10.2-arm32-eabi/bin/../lib/gcc/arm-none-eabi/10.2.0/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libg_nano.a(lib_a-nano-vfprintf_i.o)
+                              c:/nxp/s32ds.3.5/s32ds/build_tools/gcc_v10.2/gcc-10.2-arm32-eabi/bin/../lib/gcc/arm-none-eabi/10.2.0/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libg_nano.a(lib_a-nano-svfprintf.o) (_printf_i)
+c:/nxp/s32ds.3.5/s32ds/build_tools/gcc_v10.2/gcc-10.2-arm32-eabi/bin/../lib/gcc/arm-none-eabi/10.2.0/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libg_nano.a(lib_a-memchr.o)
+                              c:/nxp/s32ds.3.5/s32ds/build_tools/gcc_v10.2/gcc-10.2-arm32-eabi/bin/../lib/gcc/arm-none-eabi/10.2.0/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libg_nano.a(lib_a-nano-svfprintf.o) (memchr)
+c:/nxp/s32ds.3.5/s32ds/build_tools/gcc_v10.2/gcc-10.2-arm32-eabi/bin/../lib/gcc/arm-none-eabi/10.2.0/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libg_nano.a(lib_a-memmove.o)
+                              c:/nxp/s32ds.3.5/s32ds/build_tools/gcc_v10.2/gcc-10.2-arm32-eabi/bin/../lib/gcc/arm-none-eabi/10.2.0/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libg_nano.a(lib_a-nano-svfprintf.o) (memmove)
+c:/nxp/s32ds.3.5/s32ds/build_tools/gcc_v10.2/gcc-10.2-arm32-eabi/bin/../lib/gcc/arm-none-eabi/10.2.0/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libg_nano.a(lib_a-nano-freer.o)
+                              c:/nxp/s32ds.3.5/s32ds/build_tools/gcc_v10.2/gcc-10.2-arm32-eabi/bin/../lib/gcc/arm-none-eabi/10.2.0/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libg_nano.a(lib_a-nano-svfprintf.o) (_free_r)
+c:/nxp/s32ds.3.5/s32ds/build_tools/gcc_v10.2/gcc-10.2-arm32-eabi/bin/../lib/gcc/arm-none-eabi/10.2.0/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libg_nano.a(lib_a-nano-mallocr.o)
+                              c:/nxp/s32ds.3.5/s32ds/build_tools/gcc_v10.2/gcc-10.2-arm32-eabi/bin/../lib/gcc/arm-none-eabi/10.2.0/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libg_nano.a(lib_a-nano-svfprintf.o) (_malloc_r)
+c:/nxp/s32ds.3.5/s32ds/build_tools/gcc_v10.2/gcc-10.2-arm32-eabi/bin/../lib/gcc/arm-none-eabi/10.2.0/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libg_nano.a(lib_a-nano-reallocr.o)
+                              c:/nxp/s32ds.3.5/s32ds/build_tools/gcc_v10.2/gcc-10.2-arm32-eabi/bin/../lib/gcc/arm-none-eabi/10.2.0/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libg_nano.a(lib_a-nano-svfprintf.o) (_realloc_r)
+c:/nxp/s32ds.3.5/s32ds/build_tools/gcc_v10.2/gcc-10.2-arm32-eabi/bin/../lib/gcc/arm-none-eabi/10.2.0/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libg_nano.a(lib_a-sbrkr.o)
+                              c:/nxp/s32ds.3.5/s32ds/build_tools/gcc_v10.2/gcc-10.2-arm32-eabi/bin/../lib/gcc/arm-none-eabi/10.2.0/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libg_nano.a(lib_a-nano-mallocr.o) (_sbrk_r)
+c:/nxp/s32ds.3.5/s32ds/build_tools/gcc_v10.2/gcc-10.2-arm32-eabi/bin/../lib/gcc/arm-none-eabi/10.2.0/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libg_nano.a(lib_a-mlock.o)
+                              c:/nxp/s32ds.3.5/s32ds/build_tools/gcc_v10.2/gcc-10.2-arm32-eabi/bin/../lib/gcc/arm-none-eabi/10.2.0/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libg_nano.a(lib_a-nano-freer.o) (__malloc_lock)
+c:/nxp/s32ds.3.5/s32ds/build_tools/gcc_v10.2/gcc-10.2-arm32-eabi/bin/../lib/gcc/arm-none-eabi/10.2.0/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libg_nano.a(lib_a-nano-msizer.o)
+                              c:/nxp/s32ds.3.5/s32ds/build_tools/gcc_v10.2/gcc-10.2-arm32-eabi/bin/../lib/gcc/arm-none-eabi/10.2.0/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libg_nano.a(lib_a-nano-reallocr.o) (_malloc_usable_size_r)
+c:/nxp/s32ds.3.5/s32ds/build_tools/gcc_v10.2/gcc-10.2-arm32-eabi/bin/../lib/gcc/arm-none-eabi/10.2.0/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libg_nano.a(lib_a-reent.o)
+                              c:/nxp/s32ds.3.5/s32ds/build_tools/gcc_v10.2/gcc-10.2-arm32-eabi/bin/../lib/gcc/arm-none-eabi/10.2.0/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libg_nano.a(lib_a-sbrkr.o) (errno)
+c:/nxp/s32ds.3.5/s32ds/build_tools/gcc_v10.2/gcc-10.2-arm32-eabi/bin/../lib/gcc/arm-none-eabi/10.2.0/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libnosys.a(sbrk.o)
+                              c:/nxp/s32ds.3.5/s32ds/build_tools/gcc_v10.2/gcc-10.2-arm32-eabi/bin/../lib/gcc/arm-none-eabi/10.2.0/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libg_nano.a(lib_a-sbrkr.o) (_sbrk)
+
+Discarded input sections
+
+ .group         0x00000000        0xc Output/tasks.o
+ .group         0x00000000        0xc Output/tasks.o
+ .group         0x00000000        0xc Output/tasks.o
+ .group         0x00000000        0xc Output/tasks.o
+ .group         0x00000000        0xc Output/tasks.o
+ .group         0x00000000        0xc Output/tasks.o
+ .group         0x00000000        0xc Output/tasks.o
+ .group         0x00000000        0xc Output/tasks.o
+ .group         0x00000000        0xc Output/tasks.o
+ .group         0x00000000        0xc Output/tasks.o
+ .group         0x00000000        0xc Output/tasks.o
+ .group         0x00000000        0xc Output/tasks.o
+ .group         0x00000000        0xc Output/tasks.o
+ .group         0x00000000        0xc Output/tasks.o
+ .group         0x00000000        0xc Output/tasks.o
+ .group         0x00000000        0xc Output/tasks.o
+ .group         0x00000000        0xc Output/tasks.o
+ .group         0x00000000        0xc Output/tasks.o
+ .group         0x00000000        0xc Output/tasks.o
+ .group         0x00000000        0xc Output/tasks.o
+ .group         0x00000000        0xc Output/tasks.o
+ .group         0x00000000        0xc Output/tasks.o
+ .group         0x00000000        0xc Output/tasks.o
+ .group         0x00000000        0xc Output/tasks.o
+ .group         0x00000000        0xc Output/tasks.o
+ .group         0x00000000        0xc Output/tasks.o
+ .group         0x00000000        0xc Output/tasks.o
+ .group         0x00000000        0xc Output/tasks.o
+ .group         0x00000000        0xc Output/tasks.o
+ .group         0x00000000        0xc Output/tasks.o
+ .group         0x00000000        0xc Output/tasks.o
+ .group         0x00000000        0xc Output/tasks.o
+ .group         0x00000000        0xc Output/tasks.o
+ .group         0x00000000        0xc Output/tasks.o
+ .group         0x00000000        0xc Output/tasks.o
+ .group         0x00000000        0xc Output/tasks.o
+ .group         0x00000000        0xc Output/tasks.o
+ .group         0x00000000        0xc Output/tasks.o
+ .group         0x00000000        0xc Output/tasks.o
+ .group         0x00000000        0xc Output/tasks.o
+ .group         0x00000000        0xc Output/tasks.o
+ .group         0x00000000        0xc Output/tasks.o
+ .group         0x00000000        0xc Output/timers.o
+ .group         0x00000000        0xc Output/timers.o
+ .group         0x00000000        0xc Output/timers.o
+ .group         0x00000000        0xc Output/timers.o
+ .group         0x00000000        0xc Output/timers.o
+ .group         0x00000000        0xc Output/timers.o
+ .group         0x00000000        0xc Output/timers.o
+ .group         0x00000000        0xc Output/timers.o
+ .group         0x00000000        0xc Output/timers.o
+ .group         0x00000000        0xc Output/timers.o
+ .group         0x00000000        0xc Output/timers.o
+ .group         0x00000000        0xc Output/timers.o
+ .group         0x00000000        0xc Output/timers.o
+ .group         0x00000000        0xc Output/timers.o
+ .group         0x00000000        0xc Output/timers.o
+ .group         0x00000000        0xc Output/timers.o
+ .group         0x00000000        0xc Output/timers.o
+ .group         0x00000000        0xc Output/timers.o
+ .group         0x00000000        0xc Output/timers.o
+ .group         0x00000000        0xc Output/timers.o
+ .group         0x00000000        0xc Output/timers.o
+ .group         0x00000000        0xc Output/timers.o
+ .group         0x00000000        0xc Output/timers.o
+ .group         0x00000000        0xc Output/timers.o
+ .group         0x00000000        0xc Output/timers.o
+ .group         0x00000000        0xc Output/timers.o
+ .group         0x00000000        0xc Output/timers.o
+ .group         0x00000000        0xc Output/timers.o
+ .group         0x00000000        0xc Output/timers.o
+ .group         0x00000000        0xc Output/timers.o
+ .group         0x00000000        0xc Output/timers.o
+ .group         0x00000000        0xc Output/timers.o
+ .group         0x00000000        0xc Output/timers.o
+ .group         0x00000000        0xc Output/timers.o
+ .group         0x00000000        0xc Output/timers.o
+ .debug_macro   0x00000000      0xa6c Output/timers.o
+ .debug_macro   0x00000000       0x18 Output/timers.o
+ .debug_macro   0x00000000       0x22 Output/timers.o
+ .debug_macro   0x00000000       0x52 Output/timers.o
+ .debug_macro   0x00000000       0x5c Output/timers.o
+ .debug_macro   0x00000000       0x35 Output/timers.o
+ .debug_macro   0x00000000       0x34 Output/timers.o
+ .debug_macro   0x00000000       0x16 Output/timers.o
+ .debug_macro   0x00000000      0x10e Output/timers.o
+ .debug_macro   0x00000000       0x86 Output/timers.o
+ .debug_macro   0x00000000       0x16 Output/timers.o
+ .debug_macro   0x00000000       0x43 Output/timers.o
+ .debug_macro   0x00000000       0x57 Output/timers.o
+ .debug_macro   0x00000000       0x34 Output/timers.o
+ .debug_macro   0x00000000       0x10 Output/timers.o
+ .debug_macro   0x00000000       0x52 Output/timers.o
+ .debug_macro   0x00000000      0x182 Output/timers.o
+ .debug_macro   0x00000000      0x356 Output/timers.o
+ .debug_macro   0x00000000       0x22 Output/timers.o
+ .debug_macro   0x00000000      0x103 Output/timers.o
+ .debug_macro   0x00000000       0x6a Output/timers.o
+ .debug_macro   0x00000000      0x1df Output/timers.o
+ .debug_macro   0x00000000       0x16 Output/timers.o
+ .debug_macro   0x00000000      0x1c5 Output/timers.o
+ .debug_macro   0x00000000       0x1c Output/timers.o
+ .debug_macro   0x00000000      0x182 Output/timers.o
+ .debug_macro   0x00000000      0x1d7 Output/timers.o
+ .debug_macro   0x00000000       0x2e Output/timers.o
+ .debug_macro   0x00000000       0x1f Output/timers.o
+ .debug_macro   0x00000000       0x12 Output/timers.o
+ .debug_macro   0x00000000     0x1033 Output/timers.o
+ .debug_macro   0x00000000       0xc3 Output/timers.o
+ .debug_macro   0x00000000      0x14f Output/timers.o
+ .group         0x00000000        0xc Output/event_groups.o
+ .group         0x00000000        0xc Output/event_groups.o
+ .group         0x00000000        0xc Output/event_groups.o
+ .group         0x00000000        0xc Output/event_groups.o
+ .group         0x00000000        0xc Output/event_groups.o
+ .group         0x00000000        0xc Output/event_groups.o
+ .group         0x00000000        0xc Output/event_groups.o
+ .group         0x00000000        0xc Output/event_groups.o
+ .group         0x00000000        0xc Output/event_groups.o
+ .group         0x00000000        0xc Output/event_groups.o
+ .group         0x00000000        0xc Output/event_groups.o
+ .group         0x00000000        0xc Output/event_groups.o
+ .group         0x00000000        0xc Output/event_groups.o
+ .group         0x00000000        0xc Output/event_groups.o
+ .group         0x00000000        0xc Output/event_groups.o
+ .group         0x00000000        0xc Output/event_groups.o
+ .group         0x00000000        0xc Output/event_groups.o
+ .group         0x00000000        0xc Output/event_groups.o
+ .group         0x00000000        0xc Output/event_groups.o
+ .group         0x00000000        0xc Output/event_groups.o
+ .group         0x00000000        0xc Output/event_groups.o
+ .group         0x00000000        0xc Output/event_groups.o
+ .group         0x00000000        0xc Output/event_groups.o
+ .group         0x00000000        0xc Output/event_groups.o
+ .group         0x00000000        0xc Output/event_groups.o
+ .group         0x00000000        0xc Output/event_groups.o
+ .group         0x00000000        0xc Output/event_groups.o
+ .group         0x00000000        0xc Output/event_groups.o
+ .group         0x00000000        0xc Output/event_groups.o
+ .group         0x00000000        0xc Output/event_groups.o
+ .group         0x00000000        0xc Output/event_groups.o
+ .group         0x00000000        0xc Output/event_groups.o
+ .group         0x00000000        0xc Output/event_groups.o
+ .group         0x00000000        0xc Output/event_groups.o
+ .group         0x00000000        0xc Output/event_groups.o
+ .debug_macro   0x00000000      0xa6c Output/event_groups.o
+ .debug_macro   0x00000000       0x18 Output/event_groups.o
+ .debug_macro   0x00000000       0x22 Output/event_groups.o
+ .debug_macro   0x00000000       0x52 Output/event_groups.o
+ .debug_macro   0x00000000       0x5c Output/event_groups.o
+ .debug_macro   0x00000000       0x35 Output/event_groups.o
+ .debug_macro   0x00000000       0x34 Output/event_groups.o
+ .debug_macro   0x00000000       0x16 Output/event_groups.o
+ .debug_macro   0x00000000      0x10e Output/event_groups.o
+ .debug_macro   0x00000000       0x86 Output/event_groups.o
+ .debug_macro   0x00000000       0x16 Output/event_groups.o
+ .debug_macro   0x00000000       0x43 Output/event_groups.o
+ .debug_macro   0x00000000       0x57 Output/event_groups.o
+ .debug_macro   0x00000000       0x34 Output/event_groups.o
+ .debug_macro   0x00000000       0x10 Output/event_groups.o
+ .debug_macro   0x00000000       0x52 Output/event_groups.o
+ .debug_macro   0x00000000      0x182 Output/event_groups.o
+ .debug_macro   0x00000000      0x356 Output/event_groups.o
+ .debug_macro   0x00000000       0x22 Output/event_groups.o
+ .debug_macro   0x00000000      0x103 Output/event_groups.o
+ .debug_macro   0x00000000       0x6a Output/event_groups.o
+ .debug_macro   0x00000000      0x1df Output/event_groups.o
+ .debug_macro   0x00000000       0x16 Output/event_groups.o
+ .debug_macro   0x00000000      0x1c5 Output/event_groups.o
+ .debug_macro   0x00000000       0x1c Output/event_groups.o
+ .debug_macro   0x00000000      0x182 Output/event_groups.o
+ .debug_macro   0x00000000      0x1d7 Output/event_groups.o
+ .debug_macro   0x00000000       0x2e Output/event_groups.o
+ .debug_macro   0x00000000       0x1f Output/event_groups.o
+ .debug_macro   0x00000000       0x12 Output/event_groups.o
+ .debug_macro   0x00000000     0x1033 Output/event_groups.o
+ .debug_macro   0x00000000       0xc3 Output/event_groups.o
+ .debug_macro   0x00000000      0x14f Output/event_groups.o
+ .debug_macro   0x00000000       0x98 Output/event_groups.o
+ .group         0x00000000        0xc Output/queue.o
+ .group         0x00000000        0xc Output/queue.o
+ .group         0x00000000        0xc Output/queue.o
+ .group         0x00000000        0xc Output/queue.o
+ .group         0x00000000        0xc Output/queue.o
+ .group         0x00000000        0xc Output/queue.o
+ .group         0x00000000        0xc Output/queue.o
+ .group         0x00000000        0xc Output/queue.o
+ .group         0x00000000        0xc Output/queue.o
+ .group         0x00000000        0xc Output/queue.o
+ .group         0x00000000        0xc Output/queue.o
+ .group         0x00000000        0xc Output/queue.o
+ .group         0x00000000        0xc Output/queue.o
+ .group         0x00000000        0xc Output/queue.o
+ .group         0x00000000        0xc Output/queue.o
+ .group         0x00000000        0xc Output/queue.o
+ .group         0x00000000        0xc Output/queue.o
+ .group         0x00000000        0xc Output/queue.o
+ .group         0x00000000        0xc Output/queue.o
+ .group         0x00000000        0xc Output/queue.o
+ .group         0x00000000        0xc Output/queue.o
+ .group         0x00000000        0xc Output/queue.o
+ .group         0x00000000        0xc Output/queue.o
+ .group         0x00000000        0xc Output/queue.o
+ .group         0x00000000        0xc Output/queue.o
+ .group         0x00000000        0xc Output/queue.o
+ .group         0x00000000        0xc Output/queue.o
+ .group         0x00000000        0xc Output/queue.o
+ .group         0x00000000        0xc Output/queue.o
+ .group         0x00000000        0xc Output/queue.o
+ .group         0x00000000        0xc Output/queue.o
+ .group         0x00000000        0xc Output/queue.o
+ .group         0x00000000        0xc Output/queue.o
+ .group         0x00000000        0xc Output/queue.o
+ .group         0x00000000        0xc Output/queue.o
+ .group         0x00000000        0xc Output/queue.o
+ .debug_macro   0x00000000      0xa6c Output/queue.o
+ .debug_macro   0x00000000       0x18 Output/queue.o
+ .debug_macro   0x00000000       0x22 Output/queue.o
+ .debug_macro   0x00000000       0x52 Output/queue.o
+ .debug_macro   0x00000000       0x5c Output/queue.o
+ .debug_macro   0x00000000       0x35 Output/queue.o
+ .debug_macro   0x00000000       0x34 Output/queue.o
+ .debug_macro   0x00000000       0x16 Output/queue.o
+ .debug_macro   0x00000000      0x10e Output/queue.o
+ .debug_macro   0x00000000       0x86 Output/queue.o
+ .debug_macro   0x00000000       0x16 Output/queue.o
+ .debug_macro   0x00000000       0x43 Output/queue.o
+ .debug_macro   0x00000000       0x57 Output/queue.o
+ .debug_macro   0x00000000       0x34 Output/queue.o
+ .debug_macro   0x00000000       0x10 Output/queue.o
+ .debug_macro   0x00000000       0x52 Output/queue.o
+ .debug_macro   0x00000000      0x182 Output/queue.o
+ .debug_macro   0x00000000      0x356 Output/queue.o
+ .debug_macro   0x00000000       0x22 Output/queue.o
+ .debug_macro   0x00000000       0x16 Output/queue.o
+ .debug_macro   0x00000000       0x35 Output/queue.o
+ .debug_macro   0x00000000      0x103 Output/queue.o
+ .debug_macro   0x00000000       0x6a Output/queue.o
+ .debug_macro   0x00000000      0x1df Output/queue.o
+ .debug_macro   0x00000000       0x16 Output/queue.o
+ .debug_macro   0x00000000      0x1c5 Output/queue.o
+ .debug_macro   0x00000000       0x1c Output/queue.o
+ .debug_macro   0x00000000      0x182 Output/queue.o
+ .debug_macro   0x00000000      0x1d7 Output/queue.o
+ .debug_macro   0x00000000       0x2e Output/queue.o
+ .debug_macro   0x00000000       0x1f Output/queue.o
+ .debug_macro   0x00000000       0x12 Output/queue.o
+ .debug_macro   0x00000000     0x1033 Output/queue.o
+ .debug_macro   0x00000000       0xc3 Output/queue.o
+ .debug_macro   0x00000000      0x14f Output/queue.o
+ .debug_macro   0x00000000       0x80 Output/queue.o
+ .group         0x00000000        0xc Output/list.o
+ .group         0x00000000        0xc Output/list.o
+ .group         0x00000000        0xc Output/list.o
+ .group         0x00000000        0xc Output/list.o
+ .group         0x00000000        0xc Output/list.o
+ .group         0x00000000        0xc Output/list.o
+ .group         0x00000000        0xc Output/list.o
+ .group         0x00000000        0xc Output/list.o
+ .group         0x00000000        0xc Output/list.o
+ .group         0x00000000        0xc Output/list.o
+ .group         0x00000000        0xc Output/list.o
+ .group         0x00000000        0xc Output/list.o
+ .group         0x00000000        0xc Output/list.o
+ .group         0x00000000        0xc Output/list.o
+ .group         0x00000000        0xc Output/list.o
+ .group         0x00000000        0xc Output/list.o
+ .group         0x00000000        0xc Output/list.o
+ .group         0x00000000        0xc Output/list.o
+ .group         0x00000000        0xc Output/list.o
+ .group         0x00000000        0xc Output/list.o
+ .group         0x00000000        0xc Output/list.o
+ .group         0x00000000        0xc Output/list.o
+ .group         0x00000000        0xc Output/list.o
+ .group         0x00000000        0xc Output/list.o
+ .group         0x00000000        0xc Output/list.o
+ .group         0x00000000        0xc Output/list.o
+ .group         0x00000000        0xc Output/list.o
+ .group         0x00000000        0xc Output/list.o
+ .group         0x00000000        0xc Output/list.o
+ .group         0x00000000        0xc Output/list.o
+ .group         0x00000000        0xc Output/list.o
+ .group         0x00000000        0xc Output/list.o
+ .debug_macro   0x00000000      0xa6c Output/list.o
+ .debug_macro   0x00000000       0x18 Output/list.o
+ .debug_macro   0x00000000       0x22 Output/list.o
+ .debug_macro   0x00000000       0x52 Output/list.o
+ .debug_macro   0x00000000       0x5c Output/list.o
+ .debug_macro   0x00000000       0x35 Output/list.o
+ .debug_macro   0x00000000       0x34 Output/list.o
+ .debug_macro   0x00000000       0x16 Output/list.o
+ .debug_macro   0x00000000      0x10e Output/list.o
+ .debug_macro   0x00000000       0x86 Output/list.o
+ .debug_macro   0x00000000       0x16 Output/list.o
+ .debug_macro   0x00000000       0x43 Output/list.o
+ .debug_macro   0x00000000       0x57 Output/list.o
+ .debug_macro   0x00000000       0x34 Output/list.o
+ .debug_macro   0x00000000       0x10 Output/list.o
+ .debug_macro   0x00000000       0x52 Output/list.o
+ .debug_macro   0x00000000      0x182 Output/list.o
+ .debug_macro   0x00000000      0x356 Output/list.o
+ .debug_macro   0x00000000       0x22 Output/list.o
+ .debug_macro   0x00000000      0x103 Output/list.o
+ .debug_macro   0x00000000       0x6a Output/list.o
+ .debug_macro   0x00000000      0x1df Output/list.o
+ .debug_macro   0x00000000       0x16 Output/list.o
+ .debug_macro   0x00000000      0x1c5 Output/list.o
+ .debug_macro   0x00000000       0x1c Output/list.o
+ .debug_macro   0x00000000      0x182 Output/list.o
+ .debug_macro   0x00000000      0x1d7 Output/list.o
+ .debug_macro   0x00000000       0x2e Output/list.o
+ .debug_macro   0x00000000       0x1f Output/list.o
+ .debug_macro   0x00000000       0x12 Output/list.o
+ .debug_macro   0x00000000     0x1033 Output/list.o
+ .debug_macro   0x00000000       0xc3 Output/list.o
+ .group         0x00000000        0xc Output/croutine.o
+ .group         0x00000000        0xc Output/croutine.o
+ .group         0x00000000        0xc Output/croutine.o
+ .group         0x00000000        0xc Output/croutine.o
+ .group         0x00000000        0xc Output/croutine.o
+ .group         0x00000000        0xc Output/croutine.o
+ .group         0x00000000        0xc Output/croutine.o
+ .group         0x00000000        0xc Output/croutine.o
+ .group         0x00000000        0xc Output/croutine.o
+ .group         0x00000000        0xc Output/croutine.o
+ .group         0x00000000        0xc Output/croutine.o
+ .group         0x00000000        0xc Output/croutine.o
+ .group         0x00000000        0xc Output/croutine.o
+ .group         0x00000000        0xc Output/croutine.o
+ .group         0x00000000        0xc Output/croutine.o
+ .group         0x00000000        0xc Output/croutine.o
+ .group         0x00000000        0xc Output/croutine.o
+ .group         0x00000000        0xc Output/croutine.o
+ .group         0x00000000        0xc Output/croutine.o
+ .group         0x00000000        0xc Output/croutine.o
+ .debug_macro   0x00000000      0xa6c Output/croutine.o
+ .debug_macro   0x00000000       0x22 Output/croutine.o
+ .debug_macro   0x00000000      0x103 Output/croutine.o
+ .debug_macro   0x00000000       0x6a Output/croutine.o
+ .debug_macro   0x00000000      0x1df Output/croutine.o
+ .debug_macro   0x00000000       0x16 Output/croutine.o
+ .debug_macro   0x00000000      0x1c5 Output/croutine.o
+ .debug_macro   0x00000000       0x1c Output/croutine.o
+ .debug_macro   0x00000000      0x182 Output/croutine.o
+ .debug_macro   0x00000000      0x1d7 Output/croutine.o
+ .debug_macro   0x00000000       0x2e Output/croutine.o
+ .debug_macro   0x00000000       0x1f Output/croutine.o
+ .debug_macro   0x00000000       0x12 Output/croutine.o
+ .debug_macro   0x00000000     0x1033 Output/croutine.o
+ .debug_macro   0x00000000       0xc3 Output/croutine.o
+ .debug_macro   0x00000000      0x14f Output/croutine.o
+ .group         0x00000000        0xc Output/port.o
+ .group         0x00000000        0xc Output/port.o
+ .group         0x00000000        0xc Output/port.o
+ .group         0x00000000        0xc Output/port.o
+ .group         0x00000000        0xc Output/port.o
+ .group         0x00000000        0xc Output/port.o
+ .group         0x00000000        0xc Output/port.o
+ .group         0x00000000        0xc Output/port.o
+ .group         0x00000000        0xc Output/port.o
+ .group         0x00000000        0xc Output/port.o
+ .group         0x00000000        0xc Output/port.o
+ .group         0x00000000        0xc Output/port.o
+ .group         0x00000000        0xc Output/port.o
+ .group         0x00000000        0xc Output/port.o
+ .group         0x00000000        0xc Output/port.o
+ .group         0x00000000        0xc Output/port.o
+ .group         0x00000000        0xc Output/port.o
+ .group         0x00000000        0xc Output/port.o
+ .group         0x00000000        0xc Output/port.o
+ .debug_macro   0x00000000      0xa6c Output/port.o
+ .debug_macro   0x00000000      0x16d Output/port.o
+ .debug_macro   0x00000000       0x22 Output/port.o
+ .debug_macro   0x00000000       0x56 Output/port.o
+ .debug_macro   0x00000000       0x51 Output/port.o
+ .debug_macro   0x00000000      0x103 Output/port.o
+ .debug_macro   0x00000000       0x6a Output/port.o
+ .debug_macro   0x00000000      0x1df Output/port.o
+ .debug_macro   0x00000000       0x16 Output/port.o
+ .debug_macro   0x00000000      0x1c5 Output/port.o
+ .debug_macro   0x00000000       0x1c Output/port.o
+ .debug_macro   0x00000000      0x182 Output/port.o
+ .debug_macro   0x00000000      0x1d7 Output/port.o
+ .debug_macro   0x00000000       0x2e Output/port.o
+ .debug_macro   0x00000000       0x1f Output/port.o
+ .debug_macro   0x00000000       0x12 Output/port.o
+ .debug_macro   0x00000000     0x1033 Output/port.o
+ .debug_macro   0x00000000       0xc3 Output/port.o
+ .debug_macro   0x00000000      0x14f Output/port.o
+ .group         0x00000000        0xc Output/heap_4.o
+ .group         0x00000000        0xc Output/heap_4.o
+ .group         0x00000000        0xc Output/heap_4.o
+ .group         0x00000000        0xc Output/heap_4.o
+ .group         0x00000000        0xc Output/heap_4.o
+ .group         0x00000000        0xc Output/heap_4.o
+ .group         0x00000000        0xc Output/heap_4.o
+ .group         0x00000000        0xc Output/heap_4.o
+ .group         0x00000000        0xc Output/heap_4.o
+ .group         0x00000000        0xc Output/heap_4.o
+ .group         0x00000000        0xc Output/heap_4.o
+ .group         0x00000000        0xc Output/heap_4.o
+ .group         0x00000000        0xc Output/heap_4.o
+ .group         0x00000000        0xc Output/heap_4.o
+ .group         0x00000000        0xc Output/heap_4.o
+ .group         0x00000000        0xc Output/heap_4.o
+ .group         0x00000000        0xc Output/heap_4.o
+ .group         0x00000000        0xc Output/heap_4.o
+ .group         0x00000000        0xc Output/heap_4.o
+ .group         0x00000000        0xc Output/heap_4.o
+ .group         0x00000000        0xc Output/heap_4.o
+ .group         0x00000000        0xc Output/heap_4.o
+ .group         0x00000000        0xc Output/heap_4.o
+ .group         0x00000000        0xc Output/heap_4.o
+ .group         0x00000000        0xc Output/heap_4.o
+ .group         0x00000000        0xc Output/heap_4.o
+ .group         0x00000000        0xc Output/heap_4.o
+ .group         0x00000000        0xc Output/heap_4.o
+ .group         0x00000000        0xc Output/heap_4.o
+ .group         0x00000000        0xc Output/heap_4.o
+ .group         0x00000000        0xc Output/heap_4.o
+ .group         0x00000000        0xc Output/heap_4.o
+ .group         0x00000000        0xc Output/heap_4.o
+ .group         0x00000000        0xc Output/heap_4.o
+ .group         0x00000000        0xc Output/heap_4.o
+ .debug_macro   0x00000000      0xa6c Output/heap_4.o
+ .debug_macro   0x00000000       0x18 Output/heap_4.o
+ .debug_macro   0x00000000       0x22 Output/heap_4.o
+ .debug_macro   0x00000000       0x52 Output/heap_4.o
+ .debug_macro   0x00000000       0x5c Output/heap_4.o
+ .debug_macro   0x00000000       0x35 Output/heap_4.o
+ .debug_macro   0x00000000       0x34 Output/heap_4.o
+ .debug_macro   0x00000000       0x16 Output/heap_4.o
+ .debug_macro   0x00000000      0x10e Output/heap_4.o
+ .debug_macro   0x00000000       0x86 Output/heap_4.o
+ .debug_macro   0x00000000       0x16 Output/heap_4.o
+ .debug_macro   0x00000000       0x43 Output/heap_4.o
+ .debug_macro   0x00000000       0x57 Output/heap_4.o
+ .debug_macro   0x00000000       0x34 Output/heap_4.o
+ .debug_macro   0x00000000       0x10 Output/heap_4.o
+ .debug_macro   0x00000000       0x52 Output/heap_4.o
+ .debug_macro   0x00000000      0x182 Output/heap_4.o
+ .debug_macro   0x00000000      0x356 Output/heap_4.o
+ .debug_macro   0x00000000       0x22 Output/heap_4.o
+ .debug_macro   0x00000000       0x16 Output/heap_4.o
+ .debug_macro   0x00000000       0x35 Output/heap_4.o
+ .debug_macro   0x00000000      0x103 Output/heap_4.o
+ .debug_macro   0x00000000       0x6a Output/heap_4.o
+ .debug_macro   0x00000000      0x1df Output/heap_4.o
+ .debug_macro   0x00000000       0x16 Output/heap_4.o
+ .debug_macro   0x00000000      0x1c5 Output/heap_4.o
+ .debug_macro   0x00000000       0x1c Output/heap_4.o
+ .debug_macro   0x00000000      0x182 Output/heap_4.o
+ .debug_macro   0x00000000      0x1d7 Output/heap_4.o
+ .debug_macro   0x00000000       0x2e Output/heap_4.o
+ .debug_macro   0x00000000       0x1f Output/heap_4.o
+ .debug_macro   0x00000000       0x12 Output/heap_4.o
+ .debug_macro   0x00000000     0x1033 Output/heap_4.o
+ .debug_macro   0x00000000       0xc3 Output/heap_4.o
+ .debug_macro   0x00000000      0x14f Output/heap_4.o
+ .group         0x00000000        0xc Output/hw_system.o
+ .group         0x00000000        0xc Output/hw_system.o
+ .group         0x00000000        0xc Output/hw_system.o
+ .group         0x00000000        0xc Output/hw_system.o
+ .group         0x00000000        0xc Output/hw_system.o
+ .group         0x00000000        0xc Output/hw_system.o
+ .group         0x00000000        0xc Output/hw_system.o
+ .group         0x00000000        0xc Output/hw_system.o
+ .debug_macro   0x00000000      0xa6c Output/hw_system.o
+ .debug_macro   0x00000000       0x22 Output/hw_system.o
+ .debug_macro   0x00000000       0x56 Output/hw_system.o
+ .debug_macro   0x00000000       0x51 Output/hw_system.o
+ .debug_macro   0x00000000      0x103 Output/hw_system.o
+ .debug_macro   0x00000000       0x6a Output/hw_system.o
+ .debug_macro   0x00000000      0x1df Output/hw_system.o
+ .group         0x00000000        0xc Output/vector.o
+ .debug_macro   0x00000000      0xa6c Output/vector.o
+ .group         0x00000000        0xc Output/main.o
+ .group         0x00000000        0xc Output/main.o
+ .group         0x00000000        0xc Output/main.o
+ .group         0x00000000        0xc Output/main.o
+ .group         0x00000000        0xc Output/main.o
+ .group         0x00000000        0xc Output/main.o
+ .group         0x00000000        0xc Output/main.o
+ .group         0x00000000        0xc Output/main.o
+ .group         0x00000000        0xc Output/main.o
+ .group         0x00000000        0xc Output/main.o
+ .group         0x00000000        0xc Output/main.o
+ .group         0x00000000        0xc Output/main.o
+ .group         0x00000000        0xc Output/main.o
+ .group         0x00000000        0xc Output/main.o
+ .group         0x00000000        0xc Output/main.o
+ .group         0x00000000        0xc Output/main.o
+ .group         0x00000000        0xc Output/main.o
+ .group         0x00000000        0xc Output/main.o
+ .group         0x00000000        0xc Output/main.o
+ .group         0x00000000        0xc Output/main.o
+ .group         0x00000000        0xc Output/main.o
+ .group         0x00000000        0xc Output/main.o
+ .group         0x00000000        0xc Output/main.o
+ .group         0x00000000        0xc Output/main.o
+ .group         0x00000000        0xc Output/main.o
+ .group         0x00000000        0xc Output/main.o
+ .group         0x00000000        0xc Output/main.o
+ .group         0x00000000        0xc Output/main.o
+ .group         0x00000000        0xc Output/main.o
+ .group         0x00000000        0xc Output/main.o
+ .group         0x00000000        0xc Output/main.o
+ .group         0x00000000        0xc Output/main.o
+ .group         0x00000000        0xc Output/main.o
+ .group         0x00000000        0xc Output/main.o
+ .group         0x00000000        0xc Output/main.o
+ .group         0x00000000        0xc Output/main.o
+ .group         0x00000000        0xc Output/main.o
+ .group         0x00000000        0xc Output/main.o
+ .group         0x00000000        0xc Output/main.o
+ .group         0x00000000        0xc Output/main.o
+ .group         0x00000000        0xc Output/main.o
+ .group         0x00000000        0xc Output/main.o
+ .group         0x00000000        0xc Output/main.o
+ .group         0x00000000        0xc Output/main.o
+ .group         0x00000000        0xc Output/main.o
+ .debug_macro   0x00000000      0xa6c Output/main.o
+ .debug_macro   0x00000000       0x18 Output/main.o
+ .debug_macro   0x00000000       0x22 Output/main.o
+ .debug_macro   0x00000000       0x52 Output/main.o
+ .debug_macro   0x00000000       0x5c Output/main.o
+ .debug_macro   0x00000000       0x35 Output/main.o
+ .debug_macro   0x00000000       0x34 Output/main.o
+ .debug_macro   0x00000000       0x16 Output/main.o
+ .debug_macro   0x00000000      0x10e Output/main.o
+ .debug_macro   0x00000000       0x86 Output/main.o
+ .debug_macro   0x00000000       0x16 Output/main.o
+ .debug_macro   0x00000000       0x43 Output/main.o
+ .debug_macro   0x00000000       0x57 Output/main.o
+ .debug_macro   0x00000000       0x34 Output/main.o
+ .debug_macro   0x00000000       0x10 Output/main.o
+ .debug_macro   0x00000000       0x52 Output/main.o
+ .debug_macro   0x00000000      0x182 Output/main.o
+ .debug_macro   0x00000000      0x356 Output/main.o
+ .debug_macro   0x00000000       0x22 Output/main.o
+ .debug_macro   0x00000000       0x1c Output/main.o
+ .debug_macro   0x00000000       0x35 Output/main.o
+ .debug_macro   0x00000000       0x6a Output/main.o
+ .debug_macro   0x00000000       0x16 Output/main.o
+ .debug_macro   0x00000000      0x129 Output/main.o
+ .debug_macro   0x00000000       0x16 Output/main.o
+ .debug_macro   0x00000000      0x103 Output/main.o
+ .debug_macro   0x00000000      0x1df Output/main.o
+ .debug_macro   0x00000000       0x16 Output/main.o
+ .debug_macro   0x00000000      0x1c5 Output/main.o
+ .debug_macro   0x00000000       0x1c Output/main.o
+ .debug_macro   0x00000000      0x182 Output/main.o
+ .debug_macro   0x00000000      0x1d7 Output/main.o
+ .debug_macro   0x00000000       0x2e Output/main.o
+ .debug_macro   0x00000000       0x1f Output/main.o
+ .debug_macro   0x00000000       0x12 Output/main.o
+ .debug_macro   0x00000000     0x1033 Output/main.o
+ .debug_macro   0x00000000       0xc3 Output/main.o
+ .debug_macro   0x00000000      0x14f Output/main.o
+ .debug_macro   0x00000000       0x80 Output/main.o
+
+Memory Configuration
+
+Name             Origin             Length             Attributes
+RAM              0x20400000         0x00050000         xrw
+*default*        0x00000000         0xffffffff
+
+Linker script and memory map
+
+LOAD c:/nxp/s32ds.3.5/s32ds/build_tools/gcc_v10.2/gcc-10.2-arm32-eabi/bin/../lib/gcc/arm-none-eabi/10.2.0/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libm.a
+LOAD c:/nxp/s32ds.3.5/s32ds/build_tools/gcc_v10.2/gcc-10.2-arm32-eabi/bin/../lib/gcc/arm-none-eabi/10.2.0/thumb/v7e-m+fp/hard\libgcc.a
+LOAD c:/nxp/s32ds.3.5/s32ds/build_tools/gcc_v10.2/gcc-10.2-arm32-eabi/bin/../lib/gcc/arm-none-eabi/10.2.0/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libc_nano.a
+LOAD Output/tasks.o
+LOAD Output/timers.o
+LOAD Output/event_groups.o
+LOAD Output/queue.o
+LOAD Output/list.o
+LOAD Output/croutine.o
+LOAD Output/port.o
+LOAD Output/heap_4.o
+LOAD Output/hw_system.o
+LOAD Output/vector.o
+LOAD Output/startup.o
+LOAD Output/main.o
+START GROUP
+LOAD c:/nxp/s32ds.3.5/s32ds/build_tools/gcc_v10.2/gcc-10.2-arm32-eabi/bin/../lib/gcc/arm-none-eabi/10.2.0/thumb/v7e-m+fp/hard\libgcc.a
+LOAD c:/nxp/s32ds.3.5/s32ds/build_tools/gcc_v10.2/gcc-10.2-arm32-eabi/bin/../lib/gcc/arm-none-eabi/10.2.0/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libg_nano.a
+LOAD c:/nxp/s32ds.3.5/s32ds/build_tools/gcc_v10.2/gcc-10.2-arm32-eabi/bin/../lib/gcc/arm-none-eabi/10.2.0/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libc_nano.a
+END GROUP
+START GROUP
+LOAD c:/nxp/s32ds.3.5/s32ds/build_tools/gcc_v10.2/gcc-10.2-arm32-eabi/bin/../lib/gcc/arm-none-eabi/10.2.0/thumb/v7e-m+fp/hard\libgcc.a
+LOAD c:/nxp/s32ds.3.5/s32ds/build_tools/gcc_v10.2/gcc-10.2-arm32-eabi/bin/../lib/gcc/arm-none-eabi/10.2.0/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libc_nano.a
+LOAD c:/nxp/s32ds.3.5/s32ds/build_tools/gcc_v10.2/gcc-10.2-arm32-eabi/bin/../lib/gcc/arm-none-eabi/10.2.0/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libnosys.a
+END GROUP
+START GROUP
+LOAD c:/nxp/s32ds.3.5/s32ds/build_tools/gcc_v10.2/gcc-10.2-arm32-eabi/bin/../lib/gcc/arm-none-eabi/10.2.0/thumb/v7e-m+fp/hard\libgcc.a
+LOAD c:/nxp/s32ds.3.5/s32ds/build_tools/gcc_v10.2/gcc-10.2-arm32-eabi/bin/../lib/gcc/arm-none-eabi/10.2.0/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libc_nano.a
+LOAD c:/nxp/s32ds.3.5/s32ds/build_tools/gcc_v10.2/gcc-10.2-arm32-eabi/bin/../lib/gcc/arm-none-eabi/10.2.0/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libnosys.a
+END GROUP
+                0x00000200                STACK_SIZE = DEFINED (__stack_size__)?__stack_size__:0x200
+                0x00003000                HEAP_SIZE = DEFINED (__heap_size__)?__heap_size__:0x3000
+
+.core_exception
+                0x20400000       0x40
+                0x20400000                . = ALIGN (0x4)
+ *(.core_exception)
+ .core_exception
+                0x20400000       0x40 Output/startup.o
+                0x20400000                core_exception
+                0x20400040                . = ALIGN (0x4)
+
+.irq_handler    0x20400040      0x35c
+                0x20400040                . = ALIGN (0x4)
+ *(.irq_handler)
+ .irq_handler   0x20400040      0x35c Output/vector.o
+                0x20400040                __vector_table__
+ .irq_handler   0x2040039c        0x0 Output/startup.o
+                0x2040039c                . = ALIGN (0x4)
+
+.text           0x204003a0     0x4048
+                0x204003a0                . = ALIGN (0x4)
+ *(.text)
+ .text          0x204003a0     0x1904 Output/tasks.o
+                0x20400508                xTaskCreate
+                0x20400698                vTaskDelete
+                0x20400734                eTaskGetState
+                0x204007ac                uxTaskPriorityGet
+                0x204007cc                uxTaskPriorityGetFromISR
+                0x20400800                uxTaskBasePriorityGet
+                0x20400820                uxTaskBasePriorityGetFromISR
+                0x20400854                vTaskPrioritySet
+                0x20400924                vTaskResume
+                0x204009a8                xTaskResumeFromISR
+                0x20400a50                vTaskStartScheduler
+                0x20400ad0                vTaskEndScheduler
+                0x20400b10                vTaskSuspendAll
+                0x20400b24                xTaskGetTickCount
+                0x20400b30                xTaskGetTickCountFromISR
+                0x20400b40                uxTaskGetNumberOfTasks
+                0x20400b4c                pcTaskGetName
+                0x20400b60                xTaskIncrementTick
+                0x20400cac                xTaskResumeAll
+                0x20400dbc                xTaskDelayUntil
+                0x20400e2c                vTaskDelay
+                0x20400e6c                xTaskGetHandle
+                0x20400ee0                xTaskCatchUpTicks
+                0x20400f14                xTaskAbortDelay
+                0x20400fa0                vTaskSwitchContext
+                0x20401000                vTaskSuspend
+                0x20401098                vTaskPlaceOnEventList
+                0x204010bc                vTaskPlaceOnUnorderedEventList
+                0x2040110c                vTaskPlaceOnEventListRestricted
+                0x20401158                xTaskRemoveFromEventList
+                0x20401210                vTaskRemoveFromUnorderedEventList
+                0x204012ac                vTaskSetTimeOutState
+                0x204012d4                vTaskInternalSetTimeOutState
+                0x204012e8                xTaskCheckForTimeOut
+                0x20401354                vTaskMissedYield
+                0x20401364                uxTaskGetTaskNumber
+                0x2040136a                vTaskSetTaskNumber
+                0x20401370                vTaskGetInfo
+                0x20401442                uxTaskGetSystemState
+                0x204014e0                uxTaskGetStackHighWaterMark
+                0x204014fc                xTaskGetCurrentTaskHandle
+                0x20401508                xTaskGetCurrentTaskHandleForCore
+                0x20401518                xTaskGetSchedulerState
+                0x20401538                xTaskPriorityInherit
+                0x204015c8                xTaskPriorityDisinherit
+                0x20401640                vTaskPriorityDisinheritAfterTimeout
+                0x204016cc                vTaskListTasks
+                0x204017b4                uxTaskResetEventItemValue
+                0x204017cc                pvTaskIncrementMutexHeldCount
+                0x204017e0                ulTaskGenericNotifyTake
+                0x20401864                xTaskGenericNotifyWait
+                0x20401910                xTaskGenericNotify
+                0x204019f4                xTaskGenericNotifyFromISR
+                0x20401b20                vTaskGenericNotifyGiveFromISR
+                0x20401c10                xTaskGenericNotifyStateClear
+                0x20401c44                ulTaskGenericNotifyValueClear
+                0x20401c74                vTaskResetState
+ .text          0x20401ca4      0x4cc Output/timers.o
+                0x20401f2c                xTimerCreateTimerTask
+                0x20401f68                xTimerCreate
+                0x20401fb4                xTimerGenericCommandFromTask
+                0x20401ff4                xTimerGenericCommandFromISR
+                0x20402028                xTimerGetTimerDaemonTaskHandle
+                0x20402038                xTimerGetPeriod
+                0x20402042                vTimerSetReloadMode
+                0x2040206e                xTimerGetReloadMode
+                0x20402090                uxTimerGetReloadMode
+                0x20402094                xTimerGetExpiryTime
+                0x2040209e                pcTimerGetName
+                0x204020a8                xTimerIsTimerActive
+                0x204020ca                pvTimerGetTimerID
+                0x204020e6                vTimerSetTimerID
+                0x20402100                xTimerPendFunctionCallFromISR
+                0x20402128                xTimerPendFunctionCall
+                0x20402158                uxTimerGetTimerNumber
+                0x2040215c                vTimerSetTimerNumber
+                0x20402160                vTimerResetState
+ .text          0x20402170      0x2c4 Output/event_groups.o
+                0x20402170                xEventGroupCreate
+                0x2040218a                xEventGroupWaitBits
+                0x20402262                xEventGroupClearBits
+                0x2040228c                vEventGroupClearBitsCallback
+                0x20402290                xEventGroupClearBitsFromISR
+                0x204022a0                xEventGroupGetBitsFromISR
+                0x204022c0                xEventGroupSetBits
+                0x2040232a                xEventGroupSync
+                0x204023dc                vEventGroupSetBitsCallback
+                0x204023e0                vEventGroupDelete
+                0x20402418                xEventGroupSetBitsFromISR
+                0x20402428                uxEventGroupGetNumber
+                0x2040242e                vEventGroupSetNumber
+ .text          0x20402434      0xae8 Output/queue.o
+                0x2040254e                xQueueGenericReset
+                0x204025cc                xQueueGenericCreate
+                0x20402612                xQueueGetMutexHolder
+                0x20402632                xQueueGetMutexHolderFromISR
+                0x20402644                xQueueCreateCountingSemaphore
+                0x20402660                xQueueGenericSend
+                0x2040278e                xQueueCreateMutex
+                0x204027b2                xQueueGiveMutexRecursive
+                0x204027e0                xQueueGenericSendFromISR
+                0x2040288e                xQueueGiveFromISR
+                0x20402920                xQueueReceive
+                0x20402a34                xQueueSemaphoreTake
+                0x20402b7c                xQueueTakeMutexRecursive
+                0x20402bb2                xQueuePeek
+                0x20402cc6                xQueueReceiveFromISR
+                0x20402d5c                xQueuePeekFromISR
+                0x20402dac                uxQueueMessagesWaiting
+                0x20402dc8                uxQueueSpacesAvailable
+                0x20402de8                uxQueueMessagesWaitingFromISR
+                0x20402df2                uxQueueGetQueueNumber
+                0x20402df6                vQueueSetQueueNumber
+                0x20402dfa                ucQueueGetQueueType
+                0x20402e00                uxQueueGetQueueItemSize
+                0x20402e04                uxQueueGetQueueLength
+                0x20402e08                xQueueIsQueueEmptyFromISR
+                0x20402e18                xQueueIsQueueFullFromISR
+                0x20402e2a                vQueueAddToRegistry
+                0x20402e6c                pcQueueGetName
+                0x20402e94                vQueueUnregisterQueue
+                0x20402ec0                vQueueDelete
+                0x20402ed4                vQueueWaitForMessageRestricted
+ .text          0x20402f1c       0x80 Output/list.o
+                0x20402f1c                vListInitialise
+                0x20402f32                vListInitialiseItem
+                0x20402f38                vListInsertEnd
+                0x20402f50                vListInsert
+                0x20402f7e                uxListRemove
+ .text          0x20402f9c        0x0 Output/croutine.o
+ .text          0x20402f9c      0x328 Output/port.o
+                0x20402ff8                PendSV_Handler
+                0x2040306c                vPortSVCHandler
+                0x204030bc                pxPortInitialiseStack
+                0x204030e0                vPortEndScheduler
+                0x204030f4                vPortEnterCritical
+                0x2040312c                vPortExitCritical
+                0x20403148                SysTick_Handler
+                0x20403178                vPortSetupTimerInterrupt
+                0x2040318e                xPortStartScheduler
+                0x20403284                vPortValidateInterruptPriority
+ .text          0x204032c4      0x290 Output/heap_4.o
+                0x204032c4                pvPortMalloc
+                0x204033e4                vPortFree
+                0x20403490                xPortGetFreeHeapSize
+                0x2040349c                xPortGetMinimumEverFreeHeapSize
+                0x204034a8                vPortInitialiseBlocks
+                0x204034aa                pvPortCalloc
+                0x204034d8                vPortGetHeapStats
+                0x20403540                vPortHeapResetState
+ .text          0x20403554       0x60 Output/hw_system.o
+                0x20403554                SystemInit
+ .text          0x204035b4        0xc Output/vector.o
+                0x204035b4                vInitInterruptTable
+ .text          0x204035c0       0x80 Output/startup.o
+                0x204035c0                Reset_Handler
+                0x20403638                SVC_Handler
+                0x2040363c                Core_Default_Handler
+ .text          0x20403640      0x124 Output/main.o
+                0x20403640                PIT0_Handler
+                0x2040365c                task0
+                0x2040367c                task1
+                0x204036a8                vApplicationTickHook
+                0x204036b8                vAssertCalled
+                0x204036ba                vApplicationStackOverflowHook
+                0x204036bc                vApplicationMallocFailedHook
+                0x204036be                timerSetUp
+                0x20403724                task2
+                0x20403754                timerDisable
+ .text          0x20403764        0x0 c:/nxp/s32ds.3.5/s32ds/build_tools/gcc_v10.2/gcc-10.2-arm32-eabi/bin/../lib/gcc/arm-none-eabi/10.2.0/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libg_nano.a(lib_a-memcpy-stub.o)
+ .text          0x20403764        0x0 c:/nxp/s32ds.3.5/s32ds/build_tools/gcc_v10.2/gcc-10.2-arm32-eabi/bin/../lib/gcc/arm-none-eabi/10.2.0/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libg_nano.a(lib_a-memset.o)
+ .text          0x20403764        0x0 c:/nxp/s32ds.3.5/s32ds/build_tools/gcc_v10.2/gcc-10.2-arm32-eabi/bin/../lib/gcc/arm-none-eabi/10.2.0/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libg_nano.a(lib_a-snprintf.o)
+ .text          0x20403764        0x0 c:/nxp/s32ds.3.5/s32ds/build_tools/gcc_v10.2/gcc-10.2-arm32-eabi/bin/../lib/gcc/arm-none-eabi/10.2.0/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libg_nano.a(lib_a-strcpy.o)
+ .text          0x20403764       0x10 c:/nxp/s32ds.3.5/s32ds/build_tools/gcc_v10.2/gcc-10.2-arm32-eabi/bin/../lib/gcc/arm-none-eabi/10.2.0/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libg_nano.a(lib_a-strlen.o)
+                0x20403764                strlen
+ .text          0x20403774        0x0 c:/nxp/s32ds.3.5/s32ds/build_tools/gcc_v10.2/gcc-10.2-arm32-eabi/bin/../lib/gcc/arm-none-eabi/10.2.0/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libg_nano.a(lib_a-impure.o)
+ .text          0x20403774        0x0 c:/nxp/s32ds.3.5/s32ds/build_tools/gcc_v10.2/gcc-10.2-arm32-eabi/bin/../lib/gcc/arm-none-eabi/10.2.0/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libg_nano.a(lib_a-nano-svfprintf.o)
+ .text          0x20403774        0x0 c:/nxp/s32ds.3.5/s32ds/build_tools/gcc_v10.2/gcc-10.2-arm32-eabi/bin/../lib/gcc/arm-none-eabi/10.2.0/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libg_nano.a(lib_a-nano-vfprintf_i.o)
+ *fill*         0x20403774        0xc 
+ .text          0x20403780       0xa0 c:/nxp/s32ds.3.5/s32ds/build_tools/gcc_v10.2/gcc-10.2-arm32-eabi/bin/../lib/gcc/arm-none-eabi/10.2.0/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libg_nano.a(lib_a-memchr.o)
+                0x20403780                memchr
+ .text          0x20403820        0x0 c:/nxp/s32ds.3.5/s32ds/build_tools/gcc_v10.2/gcc-10.2-arm32-eabi/bin/../lib/gcc/arm-none-eabi/10.2.0/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libg_nano.a(lib_a-memmove.o)
+ .text          0x20403820        0x0 c:/nxp/s32ds.3.5/s32ds/build_tools/gcc_v10.2/gcc-10.2-arm32-eabi/bin/../lib/gcc/arm-none-eabi/10.2.0/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libg_nano.a(lib_a-nano-freer.o)
+ .text          0x20403820        0x0 c:/nxp/s32ds.3.5/s32ds/build_tools/gcc_v10.2/gcc-10.2-arm32-eabi/bin/../lib/gcc/arm-none-eabi/10.2.0/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libg_nano.a(lib_a-nano-mallocr.o)
+ .text          0x20403820        0x0 c:/nxp/s32ds.3.5/s32ds/build_tools/gcc_v10.2/gcc-10.2-arm32-eabi/bin/../lib/gcc/arm-none-eabi/10.2.0/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libg_nano.a(lib_a-nano-reallocr.o)
+ .text          0x20403820        0x0 c:/nxp/s32ds.3.5/s32ds/build_tools/gcc_v10.2/gcc-10.2-arm32-eabi/bin/../lib/gcc/arm-none-eabi/10.2.0/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libg_nano.a(lib_a-sbrkr.o)
+ .text          0x20403820        0x0 c:/nxp/s32ds.3.5/s32ds/build_tools/gcc_v10.2/gcc-10.2-arm32-eabi/bin/../lib/gcc/arm-none-eabi/10.2.0/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libg_nano.a(lib_a-mlock.o)
+ .text          0x20403820        0x0 c:/nxp/s32ds.3.5/s32ds/build_tools/gcc_v10.2/gcc-10.2-arm32-eabi/bin/../lib/gcc/arm-none-eabi/10.2.0/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libg_nano.a(lib_a-nano-msizer.o)
+ .text          0x20403820        0x0 c:/nxp/s32ds.3.5/s32ds/build_tools/gcc_v10.2/gcc-10.2-arm32-eabi/bin/../lib/gcc/arm-none-eabi/10.2.0/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libg_nano.a(lib_a-reent.o)
+ .text          0x20403820        0x0 c:/nxp/s32ds.3.5/s32ds/build_tools/gcc_v10.2/gcc-10.2-arm32-eabi/bin/../lib/gcc/arm-none-eabi/10.2.0/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libnosys.a(sbrk.o)
+ *(.text*)
+ .text.startup  0x20403820       0x90 Output/main.o
+                0x20403820                main
+ .text.memcpy   0x204038b0       0x1c c:/nxp/s32ds.3.5/s32ds/build_tools/gcc_v10.2/gcc-10.2-arm32-eabi/bin/../lib/gcc/arm-none-eabi/10.2.0/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libg_nano.a(lib_a-memcpy-stub.o)
+                0x204038b0                memcpy
+ .text.memset   0x204038cc       0x10 c:/nxp/s32ds.3.5/s32ds/build_tools/gcc_v10.2/gcc-10.2-arm32-eabi/bin/../lib/gcc/arm-none-eabi/10.2.0/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libg_nano.a(lib_a-memset.o)
+                0x204038cc                memset
+ .text._snprintf_r
+                0x204038dc       0x5e c:/nxp/s32ds.3.5/s32ds/build_tools/gcc_v10.2/gcc-10.2-arm32-eabi/bin/../lib/gcc/arm-none-eabi/10.2.0/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libg_nano.a(lib_a-snprintf.o)
+                0x204038dc                _snprintf_r
+                0x204038dc                _sniprintf_r
+ *fill*         0x2040393a        0x2 
+ .text.snprintf
+                0x2040393c       0x68 c:/nxp/s32ds.3.5/s32ds/build_tools/gcc_v10.2/gcc-10.2-arm32-eabi/bin/../lib/gcc/arm-none-eabi/10.2.0/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libg_nano.a(lib_a-snprintf.o)
+                0x2040393c                sniprintf
+                0x2040393c                snprintf
+ .text.strcpy   0x204039a4       0x10 c:/nxp/s32ds.3.5/s32ds/build_tools/gcc_v10.2/gcc-10.2-arm32-eabi/bin/../lib/gcc/arm-none-eabi/10.2.0/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libg_nano.a(lib_a-strcpy.o)
+                0x204039a4                strcpy
+ .text.__ssputs_r
+                0x204039b4       0xb6 c:/nxp/s32ds.3.5/s32ds/build_tools/gcc_v10.2/gcc-10.2-arm32-eabi/bin/../lib/gcc/arm-none-eabi/10.2.0/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libg_nano.a(lib_a-nano-svfprintf.o)
+                0x204039b4                __ssputs_r
+ .text.__ssprint_r
+                0x20403a6a       0xf6 c:/nxp/s32ds.3.5/s32ds/build_tools/gcc_v10.2/gcc-10.2-arm32-eabi/bin/../lib/gcc/arm-none-eabi/10.2.0/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libg_nano.a(lib_a-nano-svfprintf.o)
+                0x20403a6a                __ssprint_r
+ .text._svfprintf_r
+                0x20403b60      0x200 c:/nxp/s32ds.3.5/s32ds/build_tools/gcc_v10.2/gcc-10.2-arm32-eabi/bin/../lib/gcc/arm-none-eabi/10.2.0/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libg_nano.a(lib_a-nano-svfprintf.o)
+                0x20403b60                _svfiprintf_r
+                0x20403b60                _svfprintf_r
+ .text._printf_common
+                0x20403d60       0xda c:/nxp/s32ds.3.5/s32ds/build_tools/gcc_v10.2/gcc-10.2-arm32-eabi/bin/../lib/gcc/arm-none-eabi/10.2.0/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libg_nano.a(lib_a-nano-vfprintf_i.o)
+                0x20403d60                _printf_common
+ *fill*         0x20403e3a        0x2 
+ .text._printf_i
+                0x20403e3c      0x24c c:/nxp/s32ds.3.5/s32ds/build_tools/gcc_v10.2/gcc-10.2-arm32-eabi/bin/../lib/gcc/arm-none-eabi/10.2.0/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libg_nano.a(lib_a-nano-vfprintf_i.o)
+                0x20403e3c                _printf_i
+ .text.memmove  0x20404088       0x34 c:/nxp/s32ds.3.5/s32ds/build_tools/gcc_v10.2/gcc-10.2-arm32-eabi/bin/../lib/gcc/arm-none-eabi/10.2.0/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libg_nano.a(lib_a-memmove.o)
+                0x20404088                memmove
+ .text._free_r  0x204040bc       0x98 c:/nxp/s32ds.3.5/s32ds/build_tools/gcc_v10.2/gcc-10.2-arm32-eabi/bin/../lib/gcc/arm-none-eabi/10.2.0/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libg_nano.a(lib_a-nano-freer.o)
+                0x204040bc                _free_r
+ .text._malloc_r
+                0x20404154       0xb4 c:/nxp/s32ds.3.5/s32ds/build_tools/gcc_v10.2/gcc-10.2-arm32-eabi/bin/../lib/gcc/arm-none-eabi/10.2.0/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libg_nano.a(lib_a-nano-mallocr.o)
+                0x20404154                _malloc_r
+ .text._realloc_r
+                0x20404208       0x4c c:/nxp/s32ds.3.5/s32ds/build_tools/gcc_v10.2/gcc-10.2-arm32-eabi/bin/../lib/gcc/arm-none-eabi/10.2.0/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libg_nano.a(lib_a-nano-reallocr.o)
+                0x20404208                _realloc_r
+ .text._sbrk_r  0x20404254       0x20 c:/nxp/s32ds.3.5/s32ds/build_tools/gcc_v10.2/gcc-10.2-arm32-eabi/bin/../lib/gcc/arm-none-eabi/10.2.0/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libg_nano.a(lib_a-sbrkr.o)
+                0x20404254                _sbrk_r
+ .text.__malloc_lock
+                0x20404274        0x2 c:/nxp/s32ds.3.5/s32ds/build_tools/gcc_v10.2/gcc-10.2-arm32-eabi/bin/../lib/gcc/arm-none-eabi/10.2.0/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libg_nano.a(lib_a-mlock.o)
+                0x20404274                __malloc_lock
+ .text.__malloc_unlock
+                0x20404276        0x2 c:/nxp/s32ds.3.5/s32ds/build_tools/gcc_v10.2/gcc-10.2-arm32-eabi/bin/../lib/gcc/arm-none-eabi/10.2.0/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libg_nano.a(lib_a-mlock.o)
+                0x20404276                __malloc_unlock
+ .text._malloc_usable_size_r
+                0x20404278       0x10 c:/nxp/s32ds.3.5/s32ds/build_tools/gcc_v10.2/gcc-10.2-arm32-eabi/bin/../lib/gcc/arm-none-eabi/10.2.0/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libg_nano.a(lib_a-nano-msizer.o)
+                0x20404278                _malloc_usable_size_r
+ .text.cleanup_glue
+                0x20404288       0x1a c:/nxp/s32ds.3.5/s32ds/build_tools/gcc_v10.2/gcc-10.2-arm32-eabi/bin/../lib/gcc/arm-none-eabi/10.2.0/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libg_nano.a(lib_a-reent.o)
+                0x20404288                cleanup_glue
+ *fill*         0x204042a2        0x2 
+ .text._reclaim_reent
+                0x204042a4       0xb8 c:/nxp/s32ds.3.5/s32ds/build_tools/gcc_v10.2/gcc-10.2-arm32-eabi/bin/../lib/gcc/arm-none-eabi/10.2.0/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libg_nano.a(lib_a-reent.o)
+                0x204042a4                _reclaim_reent
+ .text._sbrk    0x2040435c       0x1c c:/nxp/s32ds.3.5/s32ds/build_tools/gcc_v10.2/gcc-10.2-arm32-eabi/bin/../lib/gcc/arm-none-eabi/10.2.0/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libnosys.a(sbrk.o)
+                0x2040435c                _sbrk
+ *(.rodata)
+ .rodata        0x20404378        0x5 Output/tasks.o
+ *(.rodata*)
+ .rodata.str1.1
+                0x2040437d       0x14 Output/tasks.o
+ .rodata.str1.1
+                0x20404391        0xd Output/timers.o
+ .rodata.str1.1
+                0x2040439e       0x12 Output/main.o
+ .rodata._global_impure_ptr
+                0x204043b0        0x4 c:/nxp/s32ds.3.5/s32ds/build_tools/gcc_v10.2/gcc-10.2-arm32-eabi/bin/../lib/gcc/arm-none-eabi/10.2.0/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libg_nano.a(lib_a-impure.o)
+                0x204043b0                _global_impure_ptr
+ .rodata._svfprintf_r.str1.1
+                0x204043b4       0x11 c:/nxp/s32ds.3.5/s32ds/build_tools/gcc_v10.2/gcc-10.2-arm32-eabi/bin/../lib/gcc/arm-none-eabi/10.2.0/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libg_nano.a(lib_a-nano-svfprintf.o)
+ .rodata._printf_i.str1.1
+                0x204043c5       0x22 c:/nxp/s32ds.3.5/s32ds/build_tools/gcc_v10.2/gcc-10.2-arm32-eabi/bin/../lib/gcc/arm-none-eabi/10.2.0/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libg_nano.a(lib_a-nano-vfprintf_i.o)
+ *(.glue_7)
+ .glue_7        0x204043e7        0x0 linker stubs
+ *(.glue_7t)
+ .glue_7t       0x204043e7        0x0 linker stubs
+ *(.eh_frame)
+ *(.init)
+ *(.fini)
+                0x204043e8                . = ALIGN (0x4)
+ *fill*         0x204043e7        0x1 
+
+.vfp11_veneer   0x204043e8        0x0
+ .vfp11_veneer  0x204043e8        0x0 linker stubs
+
+.v4_bx          0x204043e8        0x0
+ .v4_bx         0x204043e8        0x0 linker stubs
+
+.iplt           0x204043e8        0x0
+ .iplt          0x204043e8        0x0 Output/tasks.o
+
+.rel.dyn        0x204043e8        0x0
+ .rel.iplt      0x204043e8        0x0 Output/tasks.o
+
+.data           0x204043e8       0x6c
+                0x204043e8                . = ALIGN (0x4)
+ *(.data)
+ .data          0x204043e8        0x4 Output/tasks.o
+ .data          0x204043ec        0x0 Output/timers.o
+ .data          0x204043ec        0x0 Output/event_groups.o
+ .data          0x204043ec        0x0 Output/queue.o
+ .data          0x204043ec        0x0 Output/list.o
+ .data          0x204043ec        0x0 Output/croutine.o
+ .data          0x204043ec        0x4 Output/port.o
+ .data          0x204043f0        0x0 Output/heap_4.o
+ .data          0x204043f0        0x0 Output/hw_system.o
+ .data          0x204043f0        0x0 Output/vector.o
+ .data          0x204043f0        0x0 Output/startup.o
+ .data          0x204043f0        0x0 Output/main.o
+ .data          0x204043f0        0x0 c:/nxp/s32ds.3.5/s32ds/build_tools/gcc_v10.2/gcc-10.2-arm32-eabi/bin/../lib/gcc/arm-none-eabi/10.2.0/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libg_nano.a(lib_a-memcpy-stub.o)
+ .data          0x204043f0        0x0 c:/nxp/s32ds.3.5/s32ds/build_tools/gcc_v10.2/gcc-10.2-arm32-eabi/bin/../lib/gcc/arm-none-eabi/10.2.0/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libg_nano.a(lib_a-memset.o)
+ .data          0x204043f0        0x0 c:/nxp/s32ds.3.5/s32ds/build_tools/gcc_v10.2/gcc-10.2-arm32-eabi/bin/../lib/gcc/arm-none-eabi/10.2.0/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libg_nano.a(lib_a-snprintf.o)
+ .data          0x204043f0        0x0 c:/nxp/s32ds.3.5/s32ds/build_tools/gcc_v10.2/gcc-10.2-arm32-eabi/bin/../lib/gcc/arm-none-eabi/10.2.0/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libg_nano.a(lib_a-strcpy.o)
+ .data          0x204043f0        0x0 c:/nxp/s32ds.3.5/s32ds/build_tools/gcc_v10.2/gcc-10.2-arm32-eabi/bin/../lib/gcc/arm-none-eabi/10.2.0/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libg_nano.a(lib_a-strlen.o)
+ .data          0x204043f0        0x0 c:/nxp/s32ds.3.5/s32ds/build_tools/gcc_v10.2/gcc-10.2-arm32-eabi/bin/../lib/gcc/arm-none-eabi/10.2.0/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libg_nano.a(lib_a-impure.o)
+ .data          0x204043f0        0x0 c:/nxp/s32ds.3.5/s32ds/build_tools/gcc_v10.2/gcc-10.2-arm32-eabi/bin/../lib/gcc/arm-none-eabi/10.2.0/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libg_nano.a(lib_a-nano-svfprintf.o)
+ .data          0x204043f0        0x0 c:/nxp/s32ds.3.5/s32ds/build_tools/gcc_v10.2/gcc-10.2-arm32-eabi/bin/../lib/gcc/arm-none-eabi/10.2.0/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libg_nano.a(lib_a-nano-vfprintf_i.o)
+ .data          0x204043f0        0x0 c:/nxp/s32ds.3.5/s32ds/build_tools/gcc_v10.2/gcc-10.2-arm32-eabi/bin/../lib/gcc/arm-none-eabi/10.2.0/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libg_nano.a(lib_a-memchr.o)
+ .data          0x204043f0        0x0 c:/nxp/s32ds.3.5/s32ds/build_tools/gcc_v10.2/gcc-10.2-arm32-eabi/bin/../lib/gcc/arm-none-eabi/10.2.0/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libg_nano.a(lib_a-memmove.o)
+ .data          0x204043f0        0x0 c:/nxp/s32ds.3.5/s32ds/build_tools/gcc_v10.2/gcc-10.2-arm32-eabi/bin/../lib/gcc/arm-none-eabi/10.2.0/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libg_nano.a(lib_a-nano-freer.o)
+ .data          0x204043f0        0x0 c:/nxp/s32ds.3.5/s32ds/build_tools/gcc_v10.2/gcc-10.2-arm32-eabi/bin/../lib/gcc/arm-none-eabi/10.2.0/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libg_nano.a(lib_a-nano-mallocr.o)
+ .data          0x204043f0        0x0 c:/nxp/s32ds.3.5/s32ds/build_tools/gcc_v10.2/gcc-10.2-arm32-eabi/bin/../lib/gcc/arm-none-eabi/10.2.0/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libg_nano.a(lib_a-nano-reallocr.o)
+ .data          0x204043f0        0x0 c:/nxp/s32ds.3.5/s32ds/build_tools/gcc_v10.2/gcc-10.2-arm32-eabi/bin/../lib/gcc/arm-none-eabi/10.2.0/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libg_nano.a(lib_a-sbrkr.o)
+ .data          0x204043f0        0x0 c:/nxp/s32ds.3.5/s32ds/build_tools/gcc_v10.2/gcc-10.2-arm32-eabi/bin/../lib/gcc/arm-none-eabi/10.2.0/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libg_nano.a(lib_a-mlock.o)
+ .data          0x204043f0        0x0 c:/nxp/s32ds.3.5/s32ds/build_tools/gcc_v10.2/gcc-10.2-arm32-eabi/bin/../lib/gcc/arm-none-eabi/10.2.0/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libg_nano.a(lib_a-nano-msizer.o)
+ .data          0x204043f0        0x0 c:/nxp/s32ds.3.5/s32ds/build_tools/gcc_v10.2/gcc-10.2-arm32-eabi/bin/../lib/gcc/arm-none-eabi/10.2.0/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libg_nano.a(lib_a-reent.o)
+ .data          0x204043f0        0x0 c:/nxp/s32ds.3.5/s32ds/build_tools/gcc_v10.2/gcc-10.2-arm32-eabi/bin/../lib/gcc/arm-none-eabi/10.2.0/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libnosys.a(sbrk.o)
+ *(.data*)
+ .data._impure_ptr
+                0x204043f0        0x4 c:/nxp/s32ds.3.5/s32ds/build_tools/gcc_v10.2/gcc-10.2-arm32-eabi/bin/../lib/gcc/arm-none-eabi/10.2.0/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libg_nano.a(lib_a-impure.o)
+                0x204043f0                _impure_ptr
+ .data.impure_data
+                0x204043f4       0x60 c:/nxp/s32ds.3.5/s32ds/build_tools/gcc_v10.2/gcc-10.2-arm32-eabi/bin/../lib/gcc/arm-none-eabi/10.2.0/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libg_nano.a(lib_a-impure.o)
+                0x20404454                . = ALIGN (0x4)
+
+.igot.plt       0x20404454        0x0
+ .igot.plt      0x20404454        0x0 Output/tasks.o
+
+privileged_data
+                0x20404454        0x8
+ privileged_data
+                0x20404454        0x8 Output/main.o
+                0x20404454                ui32_ms_cnt
+                0x20404458                ui32_get_ID_core2
+
+.bss            0x2040445c     0x2214
+                0x2040445c                . = ALIGN (0x4)
+                0x2040445c                __bss_start__ = .
+ *(.bss)
+ .bss           0x2040445c      0x168 Output/tasks.o
+                0x20404468                pxCurrentTCB
+ .bss           0x204045c4       0x3c Output/timers.o
+ .bss           0x20404600        0x0 Output/event_groups.o
+ .bss           0x20404600       0x10 Output/queue.o
+                0x20404600                xQueueRegistry
+ .bss           0x20404610        0x0 Output/list.o
+ .bss           0x20404610        0x0 Output/croutine.o
+ .bss           0x20404610        0xd Output/port.o
+                0x20404610                svc_id
+ *fill*         0x2040461d        0x3 
+ .bss           0x20404620     0x201c Output/heap_4.o
+ .bss           0x2040663c        0x0 Output/hw_system.o
+ .bss           0x2040663c        0x0 Output/vector.o
+ .bss           0x2040663c        0x0 Output/startup.o
+ .bss           0x2040663c       0x24 Output/main.o
+                0x2040663c                counter
+                0x20406640                xSemaphore0
+                0x20406644                task0_count
+                0x20406648                xSemaphore1
+                0x2040664c                task1_count
+                0x20406650                xSemaphore2
+                0x20406654                task2_count
+                0x20406658                handlerFlag
+                0x2040665c                svcCnt
+ .bss           0x20406660        0x0 c:/nxp/s32ds.3.5/s32ds/build_tools/gcc_v10.2/gcc-10.2-arm32-eabi/bin/../lib/gcc/arm-none-eabi/10.2.0/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libg_nano.a(lib_a-memcpy-stub.o)
+ .bss           0x20406660        0x0 c:/nxp/s32ds.3.5/s32ds/build_tools/gcc_v10.2/gcc-10.2-arm32-eabi/bin/../lib/gcc/arm-none-eabi/10.2.0/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libg_nano.a(lib_a-memset.o)
+ .bss           0x20406660        0x0 c:/nxp/s32ds.3.5/s32ds/build_tools/gcc_v10.2/gcc-10.2-arm32-eabi/bin/../lib/gcc/arm-none-eabi/10.2.0/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libg_nano.a(lib_a-snprintf.o)
+ .bss           0x20406660        0x0 c:/nxp/s32ds.3.5/s32ds/build_tools/gcc_v10.2/gcc-10.2-arm32-eabi/bin/../lib/gcc/arm-none-eabi/10.2.0/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libg_nano.a(lib_a-strcpy.o)
+ .bss           0x20406660        0x0 c:/nxp/s32ds.3.5/s32ds/build_tools/gcc_v10.2/gcc-10.2-arm32-eabi/bin/../lib/gcc/arm-none-eabi/10.2.0/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libg_nano.a(lib_a-strlen.o)
+ .bss           0x20406660        0x0 c:/nxp/s32ds.3.5/s32ds/build_tools/gcc_v10.2/gcc-10.2-arm32-eabi/bin/../lib/gcc/arm-none-eabi/10.2.0/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libg_nano.a(lib_a-impure.o)
+ .bss           0x20406660        0x0 c:/nxp/s32ds.3.5/s32ds/build_tools/gcc_v10.2/gcc-10.2-arm32-eabi/bin/../lib/gcc/arm-none-eabi/10.2.0/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libg_nano.a(lib_a-nano-svfprintf.o)
+ .bss           0x20406660        0x0 c:/nxp/s32ds.3.5/s32ds/build_tools/gcc_v10.2/gcc-10.2-arm32-eabi/bin/../lib/gcc/arm-none-eabi/10.2.0/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libg_nano.a(lib_a-nano-vfprintf_i.o)
+ .bss           0x20406660        0x0 c:/nxp/s32ds.3.5/s32ds/build_tools/gcc_v10.2/gcc-10.2-arm32-eabi/bin/../lib/gcc/arm-none-eabi/10.2.0/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libg_nano.a(lib_a-memchr.o)
+ .bss           0x20406660        0x0 c:/nxp/s32ds.3.5/s32ds/build_tools/gcc_v10.2/gcc-10.2-arm32-eabi/bin/../lib/gcc/arm-none-eabi/10.2.0/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libg_nano.a(lib_a-memmove.o)
+ .bss           0x20406660        0x0 c:/nxp/s32ds.3.5/s32ds/build_tools/gcc_v10.2/gcc-10.2-arm32-eabi/bin/../lib/gcc/arm-none-eabi/10.2.0/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libg_nano.a(lib_a-nano-freer.o)
+ .bss           0x20406660        0x0 c:/nxp/s32ds.3.5/s32ds/build_tools/gcc_v10.2/gcc-10.2-arm32-eabi/bin/../lib/gcc/arm-none-eabi/10.2.0/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libg_nano.a(lib_a-nano-mallocr.o)
+ .bss           0x20406660        0x0 c:/nxp/s32ds.3.5/s32ds/build_tools/gcc_v10.2/gcc-10.2-arm32-eabi/bin/../lib/gcc/arm-none-eabi/10.2.0/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libg_nano.a(lib_a-nano-reallocr.o)
+ .bss           0x20406660        0x0 c:/nxp/s32ds.3.5/s32ds/build_tools/gcc_v10.2/gcc-10.2-arm32-eabi/bin/../lib/gcc/arm-none-eabi/10.2.0/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libg_nano.a(lib_a-sbrkr.o)
+ .bss           0x20406660        0x0 c:/nxp/s32ds.3.5/s32ds/build_tools/gcc_v10.2/gcc-10.2-arm32-eabi/bin/../lib/gcc/arm-none-eabi/10.2.0/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libg_nano.a(lib_a-mlock.o)
+ .bss           0x20406660        0x0 c:/nxp/s32ds.3.5/s32ds/build_tools/gcc_v10.2/gcc-10.2-arm32-eabi/bin/../lib/gcc/arm-none-eabi/10.2.0/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libg_nano.a(lib_a-nano-msizer.o)
+ .bss           0x20406660        0x0 c:/nxp/s32ds.3.5/s32ds/build_tools/gcc_v10.2/gcc-10.2-arm32-eabi/bin/../lib/gcc/arm-none-eabi/10.2.0/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libg_nano.a(lib_a-reent.o)
+ .bss           0x20406660        0x0 c:/nxp/s32ds.3.5/s32ds/build_tools/gcc_v10.2/gcc-10.2-arm32-eabi/bin/../lib/gcc/arm-none-eabi/10.2.0/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libnosys.a(sbrk.o)
+ *(.bss*)
+ .bss.__malloc_free_list
+                0x20406660        0x4 c:/nxp/s32ds.3.5/s32ds/build_tools/gcc_v10.2/gcc-10.2-arm32-eabi/bin/../lib/gcc/arm-none-eabi/10.2.0/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libg_nano.a(lib_a-nano-mallocr.o)
+                0x20406660                __malloc_free_list
+ .bss.__malloc_sbrk_start
+                0x20406664        0x4 c:/nxp/s32ds.3.5/s32ds/build_tools/gcc_v10.2/gcc-10.2-arm32-eabi/bin/../lib/gcc/arm-none-eabi/10.2.0/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libg_nano.a(lib_a-nano-mallocr.o)
+                0x20406664                __malloc_sbrk_start
+ .bss.errno     0x20406668        0x4 c:/nxp/s32ds.3.5/s32ds/build_tools/gcc_v10.2/gcc-10.2-arm32-eabi/bin/../lib/gcc/arm-none-eabi/10.2.0/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libg_nano.a(lib_a-reent.o)
+                0x20406668                errno
+ .bss.heap_end.0
+                0x2040666c        0x4 c:/nxp/s32ds.3.5/s32ds/build_tools/gcc_v10.2/gcc-10.2-arm32-eabi/bin/../lib/gcc/arm-none-eabi/10.2.0/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libnosys.a(sbrk.o)
+ *(COMMON)
+                0x20406670                . = ALIGN (0x4)
+                0x20406670                __bss_end__ = .
+                0x4080cce0                . = (. + ALIGN (0x4))
+                0x4080cce0                _end = .
+                0x4080cce0                end = .
+
+.heap           0x20406670     0x3000
+                0x20406670                _heap_start = .
+                0x20409670                . = (. + HEAP_SIZE)
+ *fill*         0x20406670     0x3000 
+                0x20409670                _heap_end = .
+
+.stack          0x20409670      0x200
+                0x20409670                . = ALIGN (0x8)
+                0x20409870                . = (. + STACK_SIZE)
+ *fill*         0x20409670      0x200 
+                0x20450000                __stack_top__ = (ORIGIN (RAM) + LENGTH (RAM))
+                0x2044fe00                __stack_limit__ = (__stack_top__ - STACK_SIZE)
+                [!provide]                PROVIDE (__stack = __stack_top__)
+OUTPUT(Output/image.elf elf32-littlearm)
+LOAD linker stubs
+
+.debug_info     0x00000000     0x927a
+ .debug_info    0x00000000     0x3978 Output/tasks.o
+ .debug_info    0x00003978     0x14d4 Output/timers.o
+ .debug_info    0x00004e4c      0xd35 Output/event_groups.o
+ .debug_info    0x00005b81     0x20af Output/queue.o
+ .debug_info    0x00007c30      0x2d8 Output/list.o
+ .debug_info    0x00007f08       0x6f Output/croutine.o
+ .debug_info    0x00007f77      0x516 Output/port.o
+ .debug_info    0x0000848d      0x61c Output/heap_4.o
+ .debug_info    0x00008aa9      0x125 Output/hw_system.o
+ .debug_info    0x00008bce       0x8e Output/vector.o
+ .debug_info    0x00008c5c       0x26 Output/startup.o
+ .debug_info    0x00008c82      0x5f8 Output/main.o
+
+.debug_abbrev   0x00000000     0x1751
+ .debug_abbrev  0x00000000      0x454 Output/tasks.o
+ .debug_abbrev  0x00000454      0x3ce Output/timers.o
+ .debug_abbrev  0x00000822      0x2ab Output/event_groups.o
+ .debug_abbrev  0x00000acd      0x357 Output/queue.o
+ .debug_abbrev  0x00000e24      0x102 Output/list.o
+ .debug_abbrev  0x00000f26       0x29 Output/croutine.o
+ .debug_abbrev  0x00000f4f      0x291 Output/port.o
+ .debug_abbrev  0x000011e0      0x2b0 Output/heap_4.o
+ .debug_abbrev  0x00001490       0xa6 Output/hw_system.o
+ .debug_abbrev  0x00001536       0x97 Output/vector.o
+ .debug_abbrev  0x000015cd       0x14 Output/startup.o
+ .debug_abbrev  0x000015e1      0x170 Output/main.o
+
+.debug_loc      0x00000000     0x6a6c
+ .debug_loc     0x00000000     0x30ad Output/tasks.o
+ .debug_loc     0x000030ad      0xec4 Output/timers.o
+ .debug_loc     0x00003f71      0xb2d Output/event_groups.o
+ .debug_loc     0x00004a9e     0x18c9 Output/queue.o
+ .debug_loc     0x00006367       0xaf Output/list.o
+ .debug_loc     0x00006416       0xd6 Output/port.o
+ .debug_loc     0x000064ec      0x4d1 Output/heap_4.o
+ .debug_loc     0x000069bd       0x40 Output/hw_system.o
+ .debug_loc     0x000069fd       0x6f Output/main.o
+
+.debug_aranges  0x00000000      0x180
+ .debug_aranges
+                0x00000000       0x20 Output/tasks.o
+ .debug_aranges
+                0x00000020       0x20 Output/timers.o
+ .debug_aranges
+                0x00000040       0x20 Output/event_groups.o
+ .debug_aranges
+                0x00000060       0x20 Output/queue.o
+ .debug_aranges
+                0x00000080       0x20 Output/list.o
+ .debug_aranges
+                0x000000a0       0x18 Output/croutine.o
+ .debug_aranges
+                0x000000b8       0x20 Output/port.o
+ .debug_aranges
+                0x000000d8       0x20 Output/heap_4.o
+ .debug_aranges
+                0x000000f8       0x20 Output/hw_system.o
+ .debug_aranges
+                0x00000118       0x20 Output/vector.o
+ .debug_aranges
+                0x00000138       0x20 Output/startup.o
+ .debug_aranges
+                0x00000158       0x28 Output/main.o
+
+.debug_ranges   0x00000000      0x678
+ .debug_ranges  0x00000000      0x388 Output/tasks.o
+ .debug_ranges  0x00000388       0x80 Output/timers.o
+ .debug_ranges  0x00000408       0x50 Output/event_groups.o
+ .debug_ranges  0x00000458      0x180 Output/queue.o
+ .debug_ranges  0x000005d8       0x50 Output/port.o
+ .debug_ranges  0x00000628       0x18 Output/heap_4.o
+ .debug_ranges  0x00000640       0x20 Output/hw_system.o
+ .debug_ranges  0x00000660       0x18 Output/main.o
+
+.debug_macro    0x00000000     0x4bf7
+ .debug_macro   0x00000000      0x2ea Output/tasks.o
+ .debug_macro   0x000002ea      0xa6c Output/tasks.o
+ .debug_macro   0x00000d56       0x18 Output/tasks.o
+ .debug_macro   0x00000d6e       0x22 Output/tasks.o
+ .debug_macro   0x00000d90       0x52 Output/tasks.o
+ .debug_macro   0x00000de2       0x5c Output/tasks.o
+ .debug_macro   0x00000e3e       0x35 Output/tasks.o
+ .debug_macro   0x00000e73       0x34 Output/tasks.o
+ .debug_macro   0x00000ea7       0x16 Output/tasks.o
+ .debug_macro   0x00000ebd      0x10e Output/tasks.o
+ .debug_macro   0x00000fcb       0x86 Output/tasks.o
+ .debug_macro   0x00001051       0x16 Output/tasks.o
+ .debug_macro   0x00001067       0x43 Output/tasks.o
+ .debug_macro   0x000010aa       0x57 Output/tasks.o
+ .debug_macro   0x00001101       0x34 Output/tasks.o
+ .debug_macro   0x00001135       0x10 Output/tasks.o
+ .debug_macro   0x00001145       0x52 Output/tasks.o
+ .debug_macro   0x00001197      0x182 Output/tasks.o
+ .debug_macro   0x00001319      0x356 Output/tasks.o
+ .debug_macro   0x0000166f       0x22 Output/tasks.o
+ .debug_macro   0x00001691       0x16 Output/tasks.o
+ .debug_macro   0x000016a7       0x35 Output/tasks.o
+ .debug_macro   0x000016dc      0x103 Output/tasks.o
+ .debug_macro   0x000017df       0x6a Output/tasks.o
+ .debug_macro   0x00001849      0x1df Output/tasks.o
+ .debug_macro   0x00001a28       0x16 Output/tasks.o
+ .debug_macro   0x00001a3e      0x1c5 Output/tasks.o
+ .debug_macro   0x00001c03       0x1c Output/tasks.o
+ .debug_macro   0x00001c1f      0x182 Output/tasks.o
+ .debug_macro   0x00001da1      0x1d7 Output/tasks.o
+ .debug_macro   0x00001f78       0x2e Output/tasks.o
+ .debug_macro   0x00001fa6       0x1f Output/tasks.o
+ .debug_macro   0x00001fc5       0x12 Output/tasks.o
+ .debug_macro   0x00001fd7     0x1033 Output/tasks.o
+ .debug_macro   0x0000300a       0xc3 Output/tasks.o
+ .debug_macro   0x000030cd      0x14f Output/tasks.o
+ .debug_macro   0x0000321c       0x98 Output/tasks.o
+ .debug_macro   0x000032b4       0x17 Output/tasks.o
+ .debug_macro   0x000032cb       0x1c Output/tasks.o
+ .debug_macro   0x000032e7       0x10 Output/tasks.o
+ .debug_macro   0x000032f7       0xbe Output/tasks.o
+ .debug_macro   0x000033b5       0x16 Output/tasks.o
+ .debug_macro   0x000033cb      0x129 Output/tasks.o
+ .debug_macro   0x000034f4      0x1d9 Output/timers.o
+ .debug_macro   0x000036cd       0x80 Output/timers.o
+ .debug_macro   0x0000374d       0x9e Output/timers.o
+ .debug_macro   0x000037eb      0x1bf Output/event_groups.o
+ .debug_macro   0x000039aa       0x23 Output/event_groups.o
+ .debug_macro   0x000039cd      0x208 Output/queue.o
+ .debug_macro   0x00003bd5      0x18a Output/list.o
+ .debug_macro   0x00003d5f       0xe8 Output/croutine.o
+ .debug_macro   0x00003e47      0x16d Output/croutine.o
+ .debug_macro   0x00003fb4       0x56 Output/croutine.o
+ .debug_macro   0x0000400a       0x51 Output/croutine.o
+ .debug_macro   0x0000405b       0x49 Output/croutine.o
+ .debug_macro   0x000040a4      0x1c3 Output/port.o
+ .debug_macro   0x00004267      0x206 Output/heap_4.o
+ .debug_macro   0x0000446d       0x72 Output/hw_system.o
+ .debug_macro   0x000044df      0x15d Output/hw_system.o
+ .debug_macro   0x0000463c       0x11 Output/vector.o
+ .debug_macro   0x0000464d      0x238 Output/main.o
+ .debug_macro   0x00004885       0x58 Output/main.o
+ .debug_macro   0x000048dd       0x10 Output/main.o
+ .debug_macro   0x000048ed       0xb2 Output/main.o
+ .debug_macro   0x0000499f      0x163 Output/main.o
+ .debug_macro   0x00004b02       0x70 Output/main.o
+ .debug_macro   0x00004b72       0x85 Output/main.o
+
+.debug_line     0x00000000     0x8db8
+ .debug_line    0x00000000     0x3670 Output/tasks.o
+ .debug_line    0x00003670      0xdfa Output/timers.o
+ .debug_line    0x0000446a      0xac6 Output/event_groups.o
+ .debug_line    0x00004f30     0x1c1f Output/queue.o
+ .debug_line    0x00006b4f      0x532 Output/list.o
+ .debug_line    0x00007081      0x32e Output/croutine.o
+ .debug_line    0x000073af      0x7db Output/port.o
+ .debug_line    0x00007b8a      0x94a Output/heap_4.o
+ .debug_line    0x000084d4      0x27b Output/hw_system.o
+ .debug_line    0x0000874f       0x4b Output/vector.o
+ .debug_line    0x0000879a       0x6b Output/startup.o
+ .debug_line    0x00008805      0x5b3 Output/main.o
+
+.debug_str      0x00000000    0x18ef4
+ .debug_str     0x00000000    0x1405b Output/tasks.o
+                              0x14376 (size before relaxing)
+ .debug_str     0x0001405b      0xdbf Output/timers.o
+                              0x12fa7 (size before relaxing)
+ .debug_str     0x00014e1a      0x42e Output/event_groups.o
+                              0x125ce (size before relaxing)
+ .debug_str     0x00015248      0xa3a Output/queue.o
+                              0x12c3b (size before relaxing)
+ .debug_str     0x00015c82       0x73 Output/list.o
+                              0x10319 (size before relaxing)
+ .debug_str     0x00015cf5      0x667 Output/croutine.o
+                               0xf46a (size before relaxing)
+ .debug_str     0x0001635c      0x8c0 Output/port.o
+                               0xf854 (size before relaxing)
+ .debug_str     0x00016c1c      0x73f Output/heap_4.o
+                              0x11e07 (size before relaxing)
+ .debug_str     0x0001735b      0xe07 Output/hw_system.o
+                               0x4a4b (size before relaxing)
+ .debug_str     0x00018162       0x3c Output/vector.o
+                               0x2de5 (size before relaxing)
+ .debug_str     0x0001819e       0x1f Output/startup.o
+                                 0x6d (size before relaxing)
+ .debug_str     0x000181bd      0xd37 Output/main.o
+                              0x14062 (size before relaxing)
+
+.comment        0x00000000       0x88
+ .comment       0x00000000       0x88 Output/tasks.o
+                                 0x89 (size before relaxing)
+ .comment       0x00000088       0x89 Output/timers.o
+ .comment       0x00000088       0x89 Output/event_groups.o
+ .comment       0x00000088       0x89 Output/queue.o
+ .comment       0x00000088       0x89 Output/list.o
+ .comment       0x00000088       0x89 Output/croutine.o
+ .comment       0x00000088       0x89 Output/port.o
+ .comment       0x00000088       0x89 Output/heap_4.o
+ .comment       0x00000088       0x89 Output/hw_system.o
+ .comment       0x00000088       0x89 Output/vector.o
+ .comment       0x00000088       0x89 Output/main.o
+ .comment       0x00000088       0x89 c:/nxp/s32ds.3.5/s32ds/build_tools/gcc_v10.2/gcc-10.2-arm32-eabi/bin/../lib/gcc/arm-none-eabi/10.2.0/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libg_nano.a(lib_a-memcpy-stub.o)
+ .comment       0x00000088       0x89 c:/nxp/s32ds.3.5/s32ds/build_tools/gcc_v10.2/gcc-10.2-arm32-eabi/bin/../lib/gcc/arm-none-eabi/10.2.0/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libg_nano.a(lib_a-memset.o)
+ .comment       0x00000088       0x89 c:/nxp/s32ds.3.5/s32ds/build_tools/gcc_v10.2/gcc-10.2-arm32-eabi/bin/../lib/gcc/arm-none-eabi/10.2.0/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libg_nano.a(lib_a-snprintf.o)
+ .comment       0x00000088       0x89 c:/nxp/s32ds.3.5/s32ds/build_tools/gcc_v10.2/gcc-10.2-arm32-eabi/bin/../lib/gcc/arm-none-eabi/10.2.0/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libg_nano.a(lib_a-strcpy.o)
+ .comment       0x00000088       0x89 c:/nxp/s32ds.3.5/s32ds/build_tools/gcc_v10.2/gcc-10.2-arm32-eabi/bin/../lib/gcc/arm-none-eabi/10.2.0/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libg_nano.a(lib_a-impure.o)
+ .comment       0x00000088       0x89 c:/nxp/s32ds.3.5/s32ds/build_tools/gcc_v10.2/gcc-10.2-arm32-eabi/bin/../lib/gcc/arm-none-eabi/10.2.0/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libg_nano.a(lib_a-nano-svfprintf.o)
+ .comment       0x00000088       0x89 c:/nxp/s32ds.3.5/s32ds/build_tools/gcc_v10.2/gcc-10.2-arm32-eabi/bin/../lib/gcc/arm-none-eabi/10.2.0/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libg_nano.a(lib_a-nano-vfprintf_i.o)
+ .comment       0x00000088       0x89 c:/nxp/s32ds.3.5/s32ds/build_tools/gcc_v10.2/gcc-10.2-arm32-eabi/bin/../lib/gcc/arm-none-eabi/10.2.0/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libg_nano.a(lib_a-memmove.o)
+ .comment       0x00000088       0x89 c:/nxp/s32ds.3.5/s32ds/build_tools/gcc_v10.2/gcc-10.2-arm32-eabi/bin/../lib/gcc/arm-none-eabi/10.2.0/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libg_nano.a(lib_a-nano-freer.o)
+ .comment       0x00000088       0x89 c:/nxp/s32ds.3.5/s32ds/build_tools/gcc_v10.2/gcc-10.2-arm32-eabi/bin/../lib/gcc/arm-none-eabi/10.2.0/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libg_nano.a(lib_a-nano-mallocr.o)
+ .comment       0x00000088       0x89 c:/nxp/s32ds.3.5/s32ds/build_tools/gcc_v10.2/gcc-10.2-arm32-eabi/bin/../lib/gcc/arm-none-eabi/10.2.0/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libg_nano.a(lib_a-nano-reallocr.o)
+ .comment       0x00000088       0x89 c:/nxp/s32ds.3.5/s32ds/build_tools/gcc_v10.2/gcc-10.2-arm32-eabi/bin/../lib/gcc/arm-none-eabi/10.2.0/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libg_nano.a(lib_a-sbrkr.o)
+ .comment       0x00000088       0x89 c:/nxp/s32ds.3.5/s32ds/build_tools/gcc_v10.2/gcc-10.2-arm32-eabi/bin/../lib/gcc/arm-none-eabi/10.2.0/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libg_nano.a(lib_a-mlock.o)
+ .comment       0x00000088       0x89 c:/nxp/s32ds.3.5/s32ds/build_tools/gcc_v10.2/gcc-10.2-arm32-eabi/bin/../lib/gcc/arm-none-eabi/10.2.0/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libg_nano.a(lib_a-nano-msizer.o)
+ .comment       0x00000088       0x89 c:/nxp/s32ds.3.5/s32ds/build_tools/gcc_v10.2/gcc-10.2-arm32-eabi/bin/../lib/gcc/arm-none-eabi/10.2.0/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libg_nano.a(lib_a-reent.o)
+ .comment       0x00000088       0x89 c:/nxp/s32ds.3.5/s32ds/build_tools/gcc_v10.2/gcc-10.2-arm32-eabi/bin/../lib/gcc/arm-none-eabi/10.2.0/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libnosys.a(sbrk.o)
+
+.ARM.attributes
+                0x00000000       0x32
+ .ARM.attributes
+                0x00000000       0x34 Output/tasks.o
+ .ARM.attributes
+                0x00000034       0x34 Output/timers.o
+ .ARM.attributes
+                0x00000068       0x34 Output/event_groups.o
+ .ARM.attributes
+                0x0000009c       0x34 Output/queue.o
+ .ARM.attributes
+                0x000000d0       0x34 Output/list.o
+ .ARM.attributes
+                0x00000104       0x39 Output/croutine.o
+ .ARM.attributes
+                0x0000013d       0x34 Output/port.o
+ .ARM.attributes
+                0x00000171       0x34 Output/heap_4.o
+ .ARM.attributes
+                0x000001a5       0x34 Output/hw_system.o
+ .ARM.attributes
+                0x000001d9       0x34 Output/vector.o
+ .ARM.attributes
+                0x0000020d       0x20 Output/startup.o
+ .ARM.attributes
+                0x0000022d       0x34 Output/main.o
+ .ARM.attributes
+                0x00000261       0x34 c:/nxp/s32ds.3.5/s32ds/build_tools/gcc_v10.2/gcc-10.2-arm32-eabi/bin/../lib/gcc/arm-none-eabi/10.2.0/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libg_nano.a(lib_a-memcpy-stub.o)
+ .ARM.attributes
+                0x00000295       0x34 c:/nxp/s32ds.3.5/s32ds/build_tools/gcc_v10.2/gcc-10.2-arm32-eabi/bin/../lib/gcc/arm-none-eabi/10.2.0/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libg_nano.a(lib_a-memset.o)
+ .ARM.attributes
+                0x000002c9       0x34 c:/nxp/s32ds.3.5/s32ds/build_tools/gcc_v10.2/gcc-10.2-arm32-eabi/bin/../lib/gcc/arm-none-eabi/10.2.0/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libg_nano.a(lib_a-snprintf.o)
+ .ARM.attributes
+                0x000002fd       0x34 c:/nxp/s32ds.3.5/s32ds/build_tools/gcc_v10.2/gcc-10.2-arm32-eabi/bin/../lib/gcc/arm-none-eabi/10.2.0/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libg_nano.a(lib_a-strcpy.o)
+ .ARM.attributes
+                0x00000331       0x17 c:/nxp/s32ds.3.5/s32ds/build_tools/gcc_v10.2/gcc-10.2-arm32-eabi/bin/../lib/gcc/arm-none-eabi/10.2.0/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libg_nano.a(lib_a-strlen.o)
+ .ARM.attributes
+                0x00000348       0x32 c:/nxp/s32ds.3.5/s32ds/build_tools/gcc_v10.2/gcc-10.2-arm32-eabi/bin/../lib/gcc/arm-none-eabi/10.2.0/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libg_nano.a(lib_a-impure.o)
+ .ARM.attributes
+                0x0000037a       0x34 c:/nxp/s32ds.3.5/s32ds/build_tools/gcc_v10.2/gcc-10.2-arm32-eabi/bin/../lib/gcc/arm-none-eabi/10.2.0/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libg_nano.a(lib_a-nano-svfprintf.o)
+ .ARM.attributes
+                0x000003ae       0x34 c:/nxp/s32ds.3.5/s32ds/build_tools/gcc_v10.2/gcc-10.2-arm32-eabi/bin/../lib/gcc/arm-none-eabi/10.2.0/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libg_nano.a(lib_a-nano-vfprintf_i.o)
+ .ARM.attributes
+                0x000003e2       0x1c c:/nxp/s32ds.3.5/s32ds/build_tools/gcc_v10.2/gcc-10.2-arm32-eabi/bin/../lib/gcc/arm-none-eabi/10.2.0/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libg_nano.a(lib_a-memchr.o)
+ .ARM.attributes
+                0x000003fe       0x34 c:/nxp/s32ds.3.5/s32ds/build_tools/gcc_v10.2/gcc-10.2-arm32-eabi/bin/../lib/gcc/arm-none-eabi/10.2.0/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libg_nano.a(lib_a-memmove.o)
+ .ARM.attributes
+                0x00000432       0x34 c:/nxp/s32ds.3.5/s32ds/build_tools/gcc_v10.2/gcc-10.2-arm32-eabi/bin/../lib/gcc/arm-none-eabi/10.2.0/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libg_nano.a(lib_a-nano-freer.o)
+ .ARM.attributes
+                0x00000466       0x34 c:/nxp/s32ds.3.5/s32ds/build_tools/gcc_v10.2/gcc-10.2-arm32-eabi/bin/../lib/gcc/arm-none-eabi/10.2.0/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libg_nano.a(lib_a-nano-mallocr.o)
+ .ARM.attributes
+                0x0000049a       0x34 c:/nxp/s32ds.3.5/s32ds/build_tools/gcc_v10.2/gcc-10.2-arm32-eabi/bin/../lib/gcc/arm-none-eabi/10.2.0/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libg_nano.a(lib_a-nano-reallocr.o)
+ .ARM.attributes
+                0x000004ce       0x34 c:/nxp/s32ds.3.5/s32ds/build_tools/gcc_v10.2/gcc-10.2-arm32-eabi/bin/../lib/gcc/arm-none-eabi/10.2.0/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libg_nano.a(lib_a-sbrkr.o)
+ .ARM.attributes
+                0x00000502       0x34 c:/nxp/s32ds.3.5/s32ds/build_tools/gcc_v10.2/gcc-10.2-arm32-eabi/bin/../lib/gcc/arm-none-eabi/10.2.0/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libg_nano.a(lib_a-mlock.o)
+ .ARM.attributes
+                0x00000536       0x34 c:/nxp/s32ds.3.5/s32ds/build_tools/gcc_v10.2/gcc-10.2-arm32-eabi/bin/../lib/gcc/arm-none-eabi/10.2.0/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libg_nano.a(lib_a-nano-msizer.o)
+ .ARM.attributes
+                0x0000056a       0x34 c:/nxp/s32ds.3.5/s32ds/build_tools/gcc_v10.2/gcc-10.2-arm32-eabi/bin/../lib/gcc/arm-none-eabi/10.2.0/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libg_nano.a(lib_a-reent.o)
+ .ARM.attributes
+                0x0000059e       0x34 c:/nxp/s32ds.3.5/s32ds/build_tools/gcc_v10.2/gcc-10.2-arm32-eabi/bin/../lib/gcc/arm-none-eabi/10.2.0/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libnosys.a(sbrk.o)
+
+.debug_frame    0x00000000     0x1230
+ .debug_frame   0x00000000      0x714 Output/tasks.o
+ .debug_frame   0x00000714      0x2a4 Output/timers.o
+ .debug_frame   0x000009b8      0x140 Output/event_groups.o
+ .debug_frame   0x00000af8      0x3bc Output/queue.o
+ .debug_frame   0x00000eb4       0x6c Output/list.o
+ .debug_frame   0x00000f20      0x100 Output/port.o
+ .debug_frame   0x00001020       0xe8 Output/heap_4.o
+ .debug_frame   0x00001108       0x20 Output/hw_system.o
+ .debug_frame   0x00001128       0x20 Output/vector.o
+ .debug_frame   0x00001148       0xe8 Output/main.o

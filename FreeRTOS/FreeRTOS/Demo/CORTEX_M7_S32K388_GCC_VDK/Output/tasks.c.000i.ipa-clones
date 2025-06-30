@@ -1,0 +1,55 @@
+Callgraph clone;prvTaskIsTaskSuspended;44;D:/Gitwork/freertos-git.freescale.com/FreeRTOS/Source/tasks.c;3283;23;prvTaskIsTaskSuspended.part.0;122;D:/Gitwork/freertos-git.freescale.com/FreeRTOS/Source/tasks.c;3283;23;part
+Callgraph clone;prvResetNextTaskUnblockTime;82;D:/Gitwork/freertos-git.freescale.com/FreeRTOS/Source/tasks.c;6456;13;prvResetNextTaskUnblockTime.part.0;123;D:/Gitwork/freertos-git.freescale.com/FreeRTOS/Source/tasks.c;6456;13;part
+Callgraph clone;eTaskGetState;37;D:/Gitwork/freertos-git.freescale.com/FreeRTOS/Source/tasks.c;2485;16;eTaskGetState.part.0;124;D:/Gitwork/freertos-git.freescale.com/FreeRTOS/Source/tasks.c;2485;16;part
+Callgraph clone;vPortSetBASEPRI;3;../../Source/portable/GCC/ARM_CM7/r0p1/portmacro.h;405;30;uxTaskPriorityGetFromISR;39;D:/Gitwork/freertos-git.freescale.com/FreeRTOS/Source/tasks.c;2643;17;inlining to
+Callgraph clone;ulPortRaiseBASEPRI;2;../../Source/portable/GCC/ARM_CM7/r0p1/portmacro.h;383;34;uxTaskPriorityGetFromISR;39;D:/Gitwork/freertos-git.freescale.com/FreeRTOS/Source/tasks.c;2643;17;inlining to
+Callgraph clone;vPortSetBASEPRI;3;../../Source/portable/GCC/ARM_CM7/r0p1/portmacro.h;405;30;uxTaskBasePriorityGetFromISR;41;D:/Gitwork/freertos-git.freescale.com/FreeRTOS/Source/tasks.c;2717;17;inlining to
+Callgraph clone;ulPortRaiseBASEPRI;2;../../Source/portable/GCC/ARM_CM7/r0p1/portmacro.h;383;34;uxTaskBasePriorityGetFromISR;41;D:/Gitwork/freertos-git.freescale.com/FreeRTOS/Source/tasks.c;2717;17;inlining to
+Callgraph clone;vPortSetBASEPRI;3;../../Source/portable/GCC/ARM_CM7/r0p1/portmacro.h;405;30;xTaskResumeFromISR;46;D:/Gitwork/freertos-git.freescale.com/FreeRTOS/Source/tasks.c;3414;16;inlining to
+Callgraph clone;ulPortRaiseBASEPRI;2;../../Source/portable/GCC/ARM_CM7/r0p1/portmacro.h;383;34;xTaskResumeFromISR;46;D:/Gitwork/freertos-git.freescale.com/FreeRTOS/Source/tasks.c;3414;16;inlining to
+Callgraph clone;vPortRaiseBASEPRI;1;../../Source/portable/GCC/ARM_CM7/r0p1/portmacro.h;365;30;vTaskStartScheduler;48;D:/Gitwork/freertos-git.freescale.com/FreeRTOS/Source/tasks.c;3665;6;inlining to
+Callgraph clone;vPortRaiseBASEPRI;1;../../Source/portable/GCC/ARM_CM7/r0p1/portmacro.h;365;30;vTaskEndScheduler;49;D:/Gitwork/freertos-git.freescale.com/FreeRTOS/Source/tasks.c;3768;6;inlining to
+Callgraph removal;vPortRaiseBASEPRI;1;../../Source/portable/GCC/ARM_CM7/r0p1/portmacro.h;365;30
+Callgraph clone;xTaskIncrementTick;61;D:/Gitwork/freertos-git.freescale.com/FreeRTOS/Source/tasks.c;4670;12;xTaskIncrementTick.part.0;132;D:/Gitwork/freertos-git.freescale.com/FreeRTOS/Source/tasks.c;4670;12;part
+Callgraph clone;xTaskResumeAll;51;D:/Gitwork/freertos-git.freescale.com/FreeRTOS/Source/tasks.c;3956;12;xTaskResumeAll.part.0;133;D:/Gitwork/freertos-git.freescale.com/FreeRTOS/Source/tasks.c;3956;12;part
+Callgraph clone;vTaskSwitchContext;62;D:/Gitwork/freertos-git.freescale.com/FreeRTOS/Source/tasks.c;5056;10;vTaskSwitchContext.part.0;134;D:/Gitwork/freertos-git.freescale.com/FreeRTOS/Source/tasks.c;5056;10;part
+Callgraph clone;vPortSetBASEPRI;3;../../Source/portable/GCC/ARM_CM7/r0p1/portmacro.h;405;30;xTaskGenericNotifyFromISR;96;D:/Gitwork/freertos-git.freescale.com/FreeRTOS/Source/tasks.c;7952;16;inlining to
+Callgraph clone;ulPortRaiseBASEPRI;2;../../Source/portable/GCC/ARM_CM7/r0p1/portmacro.h;383;34;xTaskGenericNotifyFromISR;96;D:/Gitwork/freertos-git.freescale.com/FreeRTOS/Source/tasks.c;7952;16;inlining to
+Callgraph clone;vPortSetBASEPRI;3;../../Source/portable/GCC/ARM_CM7/r0p1/portmacro.h;405;30;vTaskGenericNotifyGiveFromISR;97;D:/Gitwork/freertos-git.freescale.com/FreeRTOS/Source/tasks.c;8118;10;inlining to
+Callgraph clone;ulPortRaiseBASEPRI;2;../../Source/portable/GCC/ARM_CM7/r0p1/portmacro.h;383;34;vTaskGenericNotifyGiveFromISR;97;D:/Gitwork/freertos-git.freescale.com/FreeRTOS/Source/tasks.c;8118;10;inlining to
+Callgraph removal;ulPortRaiseBASEPRI;2;../../Source/portable/GCC/ARM_CM7/r0p1/portmacro.h;383;34
+Callgraph removal;vPortSetBASEPRI;3;../../Source/portable/GCC/ARM_CM7/r0p1/portmacro.h;405;30
+Callgraph clone;prvInitialiseNewTask;31;D:/Gitwork/freertos-git.freescale.com/FreeRTOS/Source/tasks.c;1793;13;prvInitialiseNewTask.constprop.0;138;D:/Gitwork/freertos-git.freescale.com/FreeRTOS/Source/tasks.c;1793;13;constprop
+Callgraph clone;prvDeleteTCB;81;D:/Gitwork/freertos-git.freescale.com/FreeRTOS/Source/tasks.c;6403;17;prvCheckTasksWaitingTermination;76;D:/Gitwork/freertos-git.freescale.com/FreeRTOS/Source/tasks.c;6043;13;inlining to
+Callgraph clone;prvSnprintfReturnValueToCharsWritten;33;D:/Gitwork/freertos-git.freescale.com/FreeRTOS/Source/tasks.c;2158;19;vTaskListTasks;90;D:/Gitwork/freertos-git.freescale.com/FreeRTOS/Source/tasks.c;7213;10;inlining to
+Callgraph clone;prvTaskCheckFreeStackSpace;79;D:/Gitwork/freertos-git.freescale.com/FreeRTOS/Source/tasks.c;6307;35;uxTaskGetStackHighWaterMark;80;D:/Gitwork/freertos-git.freescale.com/FreeRTOS/Source/tasks.c;6371;17;inlining to
+Callgraph clone;prvWriteNameToBuffer;89;D:/Gitwork/freertos-git.freescale.com/FreeRTOS/Source/tasks.c;7186;19;vTaskListTasks;90;D:/Gitwork/freertos-git.freescale.com/FreeRTOS/Source/tasks.c;7213;10;inlining to
+Callgraph clone;prvDeleteTCB;81;D:/Gitwork/freertos-git.freescale.com/FreeRTOS/Source/tasks.c;6403;17;vTaskDelete;34;D:/Gitwork/freertos-git.freescale.com/FreeRTOS/Source/tasks.c;2191;10;inlining to
+Callgraph clone;prvTaskCheckFreeStackSpace;79;D:/Gitwork/freertos-git.freescale.com/FreeRTOS/Source/tasks.c;6307;35;vTaskGetInfo;77;D:/Gitwork/freertos-git.freescale.com/FreeRTOS/Source/tasks.c;6121;10;inlining to
+Callgraph clone;prvCreateTask;29;D:/Gitwork/freertos-git.freescale.com/FreeRTOS/Source/tasks.c;1620;20;xTaskCreate;30;D:/Gitwork/freertos-git.freescale.com/FreeRTOS/Source/tasks.c;1718;16;inlining to
+Callgraph clone;prvCreateIdleTasks;47;D:/Gitwork/freertos-git.freescale.com/FreeRTOS/Source/tasks.c;3511;19;vTaskStartScheduler;48;D:/Gitwork/freertos-git.freescale.com/FreeRTOS/Source/tasks.c;3665;6;inlining to
+Callgraph clone;prvTaskIsTaskSuspended.part.0;122;D:/Gitwork/freertos-git.freescale.com/FreeRTOS/Source/tasks.c;3283;23;prvTaskIsTaskSuspended;44;D:/Gitwork/freertos-git.freescale.com/FreeRTOS/Source/tasks.c;3283;23;inlining to
+Callgraph clone;vTaskSwitchContext.part.0;134;D:/Gitwork/freertos-git.freescale.com/FreeRTOS/Source/tasks.c;5056;10;vTaskSwitchContext;62;D:/Gitwork/freertos-git.freescale.com/FreeRTOS/Source/tasks.c;5056;10;inlining to
+Callgraph clone;prvInitialiseNewTask.constprop.0;138;D:/Gitwork/freertos-git.freescale.com/FreeRTOS/Source/tasks.c;1793;13;xTaskCreate;30;D:/Gitwork/freertos-git.freescale.com/FreeRTOS/Source/tasks.c;1718;16;inlining to
+Callgraph clone;prvResetNextTaskUnblockTime.part.0;123;D:/Gitwork/freertos-git.freescale.com/FreeRTOS/Source/tasks.c;6456;13;prvResetNextTaskUnblockTime;82;D:/Gitwork/freertos-git.freescale.com/FreeRTOS/Source/tasks.c;6456;13;inlining to
+Callgraph clone;prvInitialiseTaskLists;75;D:/Gitwork/freertos-git.freescale.com/FreeRTOS/Source/tasks.c;6011;13;prvAddNewTaskToReadyList;32;D:/Gitwork/freertos-git.freescale.com/FreeRTOS/Source/tasks.c;2019;17;inlining to
+Callgraph clone;eTaskGetState.part.0;124;D:/Gitwork/freertos-git.freescale.com/FreeRTOS/Source/tasks.c;2485;16;eTaskGetState;37;D:/Gitwork/freertos-git.freescale.com/FreeRTOS/Source/tasks.c;2485;16;inlining to
+Callgraph clone;xTaskResumeAll.part.0;133;D:/Gitwork/freertos-git.freescale.com/FreeRTOS/Source/tasks.c;3956;12;xTaskResumeAll;51;D:/Gitwork/freertos-git.freescale.com/FreeRTOS/Source/tasks.c;3956;12;inlining to
+Callgraph clone;xTaskIncrementTick.part.0;132;D:/Gitwork/freertos-git.freescale.com/FreeRTOS/Source/tasks.c;4670;12;xTaskIncrementTick;61;D:/Gitwork/freertos-git.freescale.com/FreeRTOS/Source/tasks.c;4670;12;inlining to
+Callgraph clone;prvAddNewTaskToReadyList;32;D:/Gitwork/freertos-git.freescale.com/FreeRTOS/Source/tasks.c;2019;17;xTaskCreate;30;D:/Gitwork/freertos-git.freescale.com/FreeRTOS/Source/tasks.c;1718;16;inlining to
+Callgraph removal;prvInitialiseNewTask;31;D:/Gitwork/freertos-git.freescale.com/FreeRTOS/Source/tasks.c;1793;13
+Callgraph removal;prvTaskIsTaskSuspended.part.0;122;D:/Gitwork/freertos-git.freescale.com/FreeRTOS/Source/tasks.c;3283;23
+Callgraph removal;prvResetNextTaskUnblockTime.part.0;123;D:/Gitwork/freertos-git.freescale.com/FreeRTOS/Source/tasks.c;6456;13
+Callgraph removal;prvCreateTask;29;D:/Gitwork/freertos-git.freescale.com/FreeRTOS/Source/tasks.c;1620;20
+Callgraph removal;prvInitialiseNewTask.constprop.0;138;D:/Gitwork/freertos-git.freescale.com/FreeRTOS/Source/tasks.c;1793;13
+Callgraph removal;prvAddNewTaskToReadyList;32;D:/Gitwork/freertos-git.freescale.com/FreeRTOS/Source/tasks.c;2019;17
+Callgraph removal;prvInitialiseTaskLists;75;D:/Gitwork/freertos-git.freescale.com/FreeRTOS/Source/tasks.c;6011;13
+Callgraph removal;prvDeleteTCB;81;D:/Gitwork/freertos-git.freescale.com/FreeRTOS/Source/tasks.c;6403;17
+Callgraph removal;eTaskGetState.part.0;124;D:/Gitwork/freertos-git.freescale.com/FreeRTOS/Source/tasks.c;2485;16
+Callgraph removal;prvCreateIdleTasks;47;D:/Gitwork/freertos-git.freescale.com/FreeRTOS/Source/tasks.c;3511;19
+Callgraph removal;xTaskIncrementTick.part.0;132;D:/Gitwork/freertos-git.freescale.com/FreeRTOS/Source/tasks.c;4670;12
+Callgraph removal;xTaskResumeAll.part.0;133;D:/Gitwork/freertos-git.freescale.com/FreeRTOS/Source/tasks.c;3956;12
+Callgraph removal;vTaskSwitchContext.part.0;134;D:/Gitwork/freertos-git.freescale.com/FreeRTOS/Source/tasks.c;5056;10
+Callgraph removal;prvTaskCheckFreeStackSpace;79;D:/Gitwork/freertos-git.freescale.com/FreeRTOS/Source/tasks.c;6307;35
+Callgraph removal;prvWriteNameToBuffer;89;D:/Gitwork/freertos-git.freescale.com/FreeRTOS/Source/tasks.c;7186;19
+Callgraph removal;prvSnprintfReturnValueToCharsWritten;33;D:/Gitwork/freertos-git.freescale.com/FreeRTOS/Source/tasks.c;2158;19

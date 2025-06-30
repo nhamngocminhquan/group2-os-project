@@ -238,16 +238,14 @@ static void s32k3x8_init(MachineState *ms) {
             // Connect splitter to CPUs according to IRSPRC
             int cpu_i = 0;
             for (int port = 0; port < MAX_CPU; port++)
-                if (CPU_MASK & (1 << port)) {
-                    if (IRSPRC_reg[i] & (1 << port)) {
-                        qdev_connect_gpio_out(
-                            DEVICE(splitter), port,
-                            qdev_get_gpio_in(
-                                DEVICE(&sms->armv7m[cpu_i]),
-                                i
-                            )
-                        );
-                    }
+                if (IRSPRC_reg[i] & (1 << port)) {
+                    qdev_connect_gpio_out(
+                        DEVICE(splitter), port,
+                        qdev_get_gpio_in(
+                            DEVICE(&sms->armv7m[cpu_i]),
+                            i
+                        )
+                    );
                     cpu_i++;
                     if (cpu_i == ms->smp.cpus) break;
                 }

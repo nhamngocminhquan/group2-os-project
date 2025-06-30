@@ -1,0 +1,13 @@
+D:/Gitwork/freertos-git.freescale.com/FreeRTOS/Source/portable/GCC/ARM_CM7/r0p1/port.c:237:13:prvTaskExitError	8	static
+D:/Gitwork/freertos-git.freescale.com/FreeRTOS/Source/portable/GCC/ARM_CM7/r0p1/port.c:339:13:prvPortStartFirstTask	0	static
+D:/Gitwork/freertos-git.freescale.com/FreeRTOS/Source/portable/GCC/ARM_CM7/r0p1/port.c:596:6:PendSV_Handler	0	static
+D:/Gitwork/freertos-git.freescale.com/FreeRTOS/Source/portable/GCC/ARM_CM7/r0p1/port.c:996:13:vPortEnableVFP	0	static
+D:/Gitwork/freertos-git.freescale.com/FreeRTOS/Source/portable/GCC/ARM_CM7/r0p1/port.c:295:6:vPortSVCHandler	0	static
+D:/Gitwork/freertos-git.freescale.com/FreeRTOS/Source/portable/GCC/ARM_CM7/r0p1/port.c:205:15:pxPortInitialiseStack	0	static
+D:/Gitwork/freertos-git.freescale.com/FreeRTOS/Source/portable/GCC/ARM_CM7/r0p1/port.c:559:6:vPortEndScheduler	0	static
+D:/Gitwork/freertos-git.freescale.com/FreeRTOS/Source/portable/GCC/ARM_CM7/r0p1/port.c:567:6:vPortEnterCritical	0	static
+D:/Gitwork/freertos-git.freescale.com/FreeRTOS/Source/portable/GCC/ARM_CM7/r0p1/port.c:584:6:vPortExitCritical	0	static
+D:/Gitwork/freertos-git.freescale.com/FreeRTOS/Source/portable/GCC/ARM_CM7/r0p1/port.c:671:6:SysTick_Handler	8	static
+D:/Gitwork/freertos-git.freescale.com/FreeRTOS/Source/portable/GCC/ARM_CM7/r0p1/port.c:923:32:vPortSetupTimerInterrupt	0	static
+D:/Gitwork/freertos-git.freescale.com/FreeRTOS/Source/portable/GCC/ARM_CM7/r0p1/port.c:366:12:xPortStartScheduler	24	static
+D:/Gitwork/freertos-git.freescale.com/FreeRTOS/Source/portable/GCC/ARM_CM7/r0p1/port.c:1013:10:vPortValidateInterruptPriority	0	static

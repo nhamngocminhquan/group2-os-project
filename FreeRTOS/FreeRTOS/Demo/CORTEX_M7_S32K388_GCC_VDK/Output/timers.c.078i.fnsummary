@@ -1,0 +1,3287 @@
+
+Analyzing function: xTimerGetReloadMode.part.0/61
+;; 1 loops found
+;;
+;; Loop 0
+;;  header 0, latch 1
+;;  depth 0, outer -1
+;;  nodes: 0 1 5 2 3 4
+;; 5 succs { 2 }
+;; 2 succs { 4 3 }
+;; 3 succs { 4 }
+;; 4 succs { 1 }
+
+Analyzing function body size: xTimerGetReloadMode.part.0/61
+
+IPA function summary for xTimerGetReloadMode.part.0/61 inlinable
+  global time:     26.000000
+  self size:       9
+  global size:     0
+  min size:       0
+  self stack:      0
+  global stack:    0
+    size:3.500000, time:3.500000
+    size:3.500000, time:2.500000,  executed if:(not inlined)
+  calls:
+    vPortEnterCritical/50 function body not available
+      freq:1.00 loop depth: 0 size: 1 time: 10
+    vPortExitCritical/54 function body not available
+      freq:1.00 loop depth: 0 size: 1 time: 10
+
+
+Analyzing function: prvInsertTimerInActiveList.part.0/60
+;; 1 loops found
+;;
+;; Loop 0
+;;  header 0, latch 1
+;;  depth 0, outer -1
+;;  nodes: 0 1 4 2 3
+;; 4 succs { 2 }
+;; 2 succs { 3 }
+;; 3 succs { 1 }
+
+Analyzing function body size: prvInsertTimerInActiveList.part.0/60
+
+IPA function summary for prvInsertTimerInActiveList.part.0/60 inlinable
+  global time:     15.000000
+  self size:       7
+  global size:     0
+  min size:       0
+  self stack:      0
+  global stack:    0
+    size:1.000000, time:1.000000
+    size:3.000000, time:2.000000,  executed if:(not inlined)
+  calls:
+    vListInsert/47 function body not available
+      freq:1.00 loop depth: 0 size: 3 time: 12
+
+
+Analyzing function: vTimerResetState/39
+;; 1 loops found
+;;
+;; Loop 0
+;;  header 0, latch 1
+;;  depth 0, outer -1
+;;  nodes: 0 1 2
+;; 2 succs { 1 }
+
+Analyzing function body size: vTimerResetState/39
+
+IPA function summary for vTimerResetState/39 inlinable
+  global time:     4.000000
+  self size:       5
+  global size:     0
+  min size:       0
+  self stack:      0
+  global stack:    0
+    size:2.000000, time:2.000000
+    size:3.000000, time:2.000000,  executed if:(not inlined)
+  calls:
+
+
+Analyzing function: vTimerSetTimerNumber/38
+;; 1 loops found
+;;
+;; Loop 0
+;;  header 0, latch 1
+;;  depth 0, outer -1
+;;  nodes: 0 1 2
+;; 2 succs { 1 }
+
+Analyzing function body size: vTimerSetTimerNumber/38
+
+IPA function summary for vTimerSetTimerNumber/38 inlinable
+  global time:     3.000000
+  self size:       4
+  global size:     0
+  min size:       0
+  self stack:      0
+  global stack:    0
+    size:0.500000, time:0.500000
+    size:3.500000, time:2.500000,  executed if:(not inlined)
+  calls:
+
+
+Analyzing function: uxTimerGetTimerNumber/37
+;; 1 loops found
+;;
+;; Loop 0
+;;  header 0, latch 1
+;;  depth 0, outer -1
+;;  nodes: 0 1 2
+;; 2 succs { 1 }
+
+Analyzing function body size: uxTimerGetTimerNumber/37
+
+IPA function summary for uxTimerGetTimerNumber/37 inlinable
+  global time:     3.000000
+  self size:       4
+  global size:     0
+  min size:       0
+  self stack:      0
+  global stack:    0
+    size:0.000000, time:0.000000
+    size:3.000000, time:2.000000,  executed if:(not inlined)
+    size:0.500000, time:0.500000,  executed if:(not inlined),  nonconst if:(op0[ref offset: 288] changed) && (not inlined)
+    size:0.500000, time:0.500000,  nonconst if:(op0[ref offset: 288] changed)
+  calls:
+
+
+Analyzing function: xTimerPendFunctionCall/36
+;; 2 loops found
+;;
+;; Loop 0
+;;  header 0, latch 1
+;;  depth 0, outer -1
+;;  nodes: 0 1 2 3 4 6 5
+;;
+;; Loop 1
+;;  header 4, latch 6
+;;  depth 1, outer 0
+;;  nodes: 4 6
+;; 2 succs { 3 5 }
+;; 3 succs { 4 }
+;; 4 succs { 6 }
+;; 6 succs { 4 }
+;; 5 succs { 1 }
+
+Analyzing function body size: xTimerPendFunctionCall/36
+
+IPA function summary for xTimerPendFunctionCall/36 inlinable
+  global time:     14.694000
+  self size:       17
+  global size:     0
+  min size:       0
+  self stack:      16
+  global stack:    16
+    size:8.000000, time:5.604100
+    size:3.000000, time:1.069400,  executed if:(not inlined)
+  calls:
+    xQueueGenericSend/58 function body not available
+      freq:0.53 loop depth: 0 size: 6 time: 15
+       op1 is compile time invariant
+       op3 is compile time invariant
+
+
+Analyzing function: xTimerPendFunctionCallFromISR/35
+;; 1 loops found
+;;
+;; Loop 0
+;;  header 0, latch 1
+;;  depth 0, outer -1
+;;  nodes: 0 1 2
+;; 2 succs { 1 }
+
+Analyzing function body size: xTimerPendFunctionCallFromISR/35
+
+IPA function summary for xTimerPendFunctionCallFromISR/35 inlinable
+  global time:     22.000000
+  self size:       14
+  global size:     0
+  min size:       0
+  self stack:      16
+  global stack:    16
+    size:5.000000, time:5.000000
+    size:3.000000, time:2.000000,  executed if:(not inlined)
+  calls:
+    xQueueGenericSendFromISR/59 function body not available
+      freq:1.00 loop depth: 0 size: 6 time: 15
+       op1 is compile time invariant
+       op3 is compile time invariant
+
+
+Analyzing function: vTimerSetTimerID/34
+;; 2 loops found
+;;
+;; Loop 0
+;;  header 0, latch 1
+;;  depth 0, outer -1
+;;  nodes: 0 1 2 3 4 6 5
+;;
+;; Loop 1
+;;  header 4, latch 6
+;;  depth 1, outer 0
+;;  nodes: 4 6
+;; 2 succs { 3 5 }
+;; 3 succs { 4 }
+;; 4 succs { 6 }
+;; 6 succs { 4 }
+;; 5 succs { 1 }
+
+Analyzing function body size: vTimerSetTimerID/34
+
+IPA function summary for vTimerSetTimerID/34 inlinable
+  global time:     14.763400
+  self size:       9
+  global size:     0
+  min size:       0
+  self stack:      0
+  global stack:    0
+    size:0.000000, time:0.000000
+    size:2.000000, time:0.000000,  executed if:(not inlined)
+    size:2.000000, time:2.000000,  nonconst if:(op0 changed)
+    size:1.500000, time:1.336750,  executed if:(op0 != 0B) && (not inlined)
+    size:0.500000, time:0.267350,  executed if:(op0 != 0B)
+    size:1.000000, time:0.465300,  executed if:(op0 == 0B)
+  calls:
+    vPortExitCritical/54 function body not available
+      freq:0.53 loop depth: 0 size: 1 time: 10 predicate: (op0 != 0B)
+    vPortEnterCritical/50 function body not available
+      freq:0.53 loop depth: 0 size: 1 time: 10 predicate: (op0 != 0B)
+
+
+Analyzing function: pvTimerGetTimerID/33
+;; 2 loops found
+;;
+;; Loop 0
+;;  header 0, latch 1
+;;  depth 0, outer -1
+;;  nodes: 0 1 2 3 4 6 5
+;;
+;; Loop 1
+;;  header 4, latch 6
+;;  depth 1, outer 0
+;;  nodes: 4 6
+;; 2 succs { 3 5 }
+;; 3 succs { 4 }
+;; 4 succs { 6 }
+;; 6 succs { 4 }
+;; 5 succs { 1 }
+
+Analyzing function body size: pvTimerGetTimerID/33
+
+IPA function summary for pvTimerGetTimerID/33 inlinable
+  global time:     14.763400
+  self size:       9
+  global size:     0
+  min size:       0
+  self stack:      0
+  global stack:    0
+    size:0.000000, time:0.000000
+    size:2.000000, time:0.000000,  executed if:(not inlined)
+    size:2.000000, time:2.000000,  nonconst if:(op0 changed)
+    size:1.500000, time:1.336750,  executed if:(op0 != 0B) && (not inlined)
+    size:0.500000, time:0.267350,  executed if:(op0 != 0B)
+    size:1.000000, time:0.465300,  executed if:(op0 == 0B)
+  calls:
+    vPortExitCritical/54 function body not available
+      freq:0.53 loop depth: 0 size: 1 time: 10 predicate: (op0 != 0B)
+    vPortEnterCritical/50 function body not available
+      freq:0.53 loop depth: 0 size: 1 time: 10 predicate: (op0 != 0B)
+
+
+Analyzing function: xTimerIsTimerActive/32
+;; 2 loops found
+;;
+;; Loop 0
+;;  header 0, latch 1
+;;  depth 0, outer -1
+;;  nodes: 0 1 2 3 4 6 5
+;;
+;; Loop 1
+;;  header 4, latch 6
+;;  depth 1, outer 0
+;;  nodes: 4 6
+;; 2 succs { 3 5 }
+;; 3 succs { 4 }
+;; 4 succs { 6 }
+;; 6 succs { 4 }
+;; 5 succs { 1 }
+
+Analyzing function body size: xTimerIsTimerActive/32
+
+IPA function summary for xTimerIsTimerActive/32 inlinable
+  global time:     15.298100
+  self size:       10
+  global size:     0
+  min size:       0
+  self stack:      0
+  global stack:    0
+    size:0.000000, time:0.000000
+    size:2.000000, time:0.000000,  executed if:(not inlined)
+    size:2.000000, time:2.000000,  nonconst if:(op0 changed)
+    size:1.500000, time:1.336750,  executed if:(op0 != 0B) && (not inlined)
+    size:1.500000, time:0.802050,  executed if:(op0 != 0B)
+    size:1.000000, time:0.465300,  executed if:(op0 == 0B)
+  calls:
+    vPortExitCritical/54 function body not available
+      freq:0.53 loop depth: 0 size: 1 time: 10 predicate: (op0 != 0B)
+    vPortEnterCritical/50 function body not available
+      freq:0.53 loop depth: 0 size: 1 time: 10 predicate: (op0 != 0B)
+
+
+Analyzing function: prvCheckForValidListAndQueue/31
+;; 1 loops found
+;;
+;; Loop 0
+;;  header 0, latch 1
+;;  depth 0, outer -1
+;;  nodes: 0 1 2 3 4 5
+;; 2 succs { 3 5 }
+;; 3 succs { 4 5 }
+;; 4 succs { 5 }
+;; 5 succs { 1 }
+
+Analyzing function body size: prvCheckForValidListAndQueue/31
+
+IPA function summary for prvCheckForValidListAndQueue/31 inlinable
+  global time:     33.264679
+  self size:       25
+  global size:     0
+  min size:       0
+  self stack:      0
+  global stack:    0
+    size:8.000000, time:3.871500
+    size:3.000000, time:2.000000,  executed if:(not inlined)
+  calls:
+    vPortExitCritical/54 function body not available
+      freq:1.00 loop depth: 0 size: 1 time: 10
+    vQueueAddToRegistry/53 function body not available
+      freq:0.09 loop depth: 0 size: 3 time: 12
+       op1 is compile time invariant
+    xQueueGenericCreate/52 function body not available
+      freq:0.17 loop depth: 0 size: 5 time: 14
+       op0 is compile time invariant
+       op1 is compile time invariant
+       op2 is compile time invariant
+    vListInitialise/51 function body not available
+      freq:0.17 loop depth: 0 size: 2 time: 11
+       op0 is compile time invariant
+    vListInitialise/51 function body not available
+      freq:0.17 loop depth: 0 size: 2 time: 11
+       op0 is compile time invariant
+    vPortEnterCritical/50 function body not available
+      freq:1.00 loop depth: 0 size: 1 time: 10
+
+
+Analyzing function: prvSwitchTimerLists/30
+;; 2 loops found
+;;
+;; Loop 0
+;;  header 0, latch 1
+;;  depth 0, outer -1
+;;  nodes: 0 1 2 3 4 5
+;;
+;; Loop 1
+;;  header 4, latch 3
+;;  depth 1, outer 0
+;;  nodes: 4 3
+;; 2 succs { 4 }
+;; 3 succs { 4 }
+;; 4 succs { 3 5 }
+;; 5 succs { 1 }
+
+Analyzing function body size: prvSwitchTimerLists/30
+
+IPA function summary for prvSwitchTimerLists/30 inlinable
+  global time:     154.636365
+  self size:       15
+  global size:     0
+  min size:       0
+  self stack:      0
+  global stack:    0
+    size:9.000000, time:55.545455
+    size:3.000000, time:2.000000,  executed if:(not inlined)
+  calls:
+    prvProcessExpiredTimer/23 function not considered for inlining
+      freq:8.09 loop depth: 1 size: 3 time: 12
+       op1 is compile time invariant
+
+
+Analyzing function: prvProcessReceivedCommands/29
+;; 6 loops found
+;;
+;; Loop 0
+;;  header 0, latch 1
+;;  depth 0, outer -1
+;;  nodes: 0 1 2 3 4 5 29 6 7 8 28 9 10 11 12 13 14 15 16 17 27 18 19 20 21 22 23 24 25 26
+;;
+;; Loop 2
+;;  header 17, latch 27
+;;  depth 1, outer 0
+;;  nodes: 17 27
+;;
+;; Loop 1
+;;  header 23, latch 22
+;;  depth 1, outer 0
+;;  nodes: 23 22 20 13 9 21 18 14 8 6 7 5 3 4 25 24 29 28 15 19 11 12 10
+;;
+;; Loop 5
+;;  header 24, latch 28
+;;  depth 2, outer 1
+;;  nodes: 24 28 8 6 7 5 3 4 25 29
+;;
+;; Loop 4
+;;  header 25, latch 29
+;;  depth 3, outer 5
+;;  nodes: 25 29 5 3 4
+;; 2 succs { 23 }
+;; 3 succs { 4 5 }
+;; 4 succs { 5 }
+;; 5 succs { 6 29 }
+;; 29 succs { 25 }
+;; 6 succs { 7 8 }
+;; 7 succs { 8 }
+;; 8 succs { 28 9 14 15 19 }
+;; 28 succs { 24 }
+;; 9 succs { 10 22 }
+;; 10 succs { 11 12 }
+;; 11 succs { 13 }
+;; 12 succs { 13 }
+;; 13 succs { 22 }
+;; 14 succs { 22 }
+;; 15 succs { 16 18 }
+;; 16 succs { 17 }
+;; 17 succs { 27 }
+;; 27 succs { 17 }
+;; 18 succs { 22 }
+;; 19 succs { 20 21 }
+;; 20 succs { 22 }
+;; 21 succs { 22 }
+;; 22 succs { 23 }
+;; 23 succs { 24 }
+;; 24 succs { 25 }
+;; 25 succs { 3 26 }
+;; 26 succs { 1 }
+
+Analyzing function body size: prvProcessReceivedCommands/29
+
+IPA function summary for prvProcessReceivedCommands/29 inlinable
+  global time:     593.470305
+  self size:       112
+  global size:     0
+  min size:       0
+  self stack:      20
+  global stack:    20
+    size:73.000000, time:196.457360
+    size:3.000000, time:1.979424,  executed if:(not inlined)
+  calls:
+    xQueueReceive/49 function body not available
+      freq:17.99 loop depth: 3 size: 5 time: 14
+       op1 is compile time invariant
+       op2 is compile time invariant
+    vPortFree/48 function body not available
+      freq:0.06 loop depth: 1 size: 2 time: 11
+    prvInsertTimerInActiveList/28 function not considered for inlining
+      freq:0.18 loop depth: 1 size: 5 time: 14
+    prvReloadTimer/22 function not considered for inlining
+      freq:0.03 loop depth: 1 size: 4 time: 13
+    prvInsertTimerInActiveList/28 function not considered for inlining
+      freq:0.19 loop depth: 1 size: 6 time: 15
+    prvSampleTimeNow/27 function not considered for inlining
+      freq:0.94 loop depth: 2 size: 3 time: 12
+       op0 is compile time invariant
+    uxListRemove/46 function body not available
+      freq:0.50 loop depth: 2 size: 2 time: 11
+    indirect call loop depth: 1 freq:0.09 size: 4 time: 16
+    indirect call loop depth: 3 freq:6.97 size: 5 time: 17
+
+
+Analyzing function: prvInsertTimerInActiveList/28
+;; 1 loops found
+;;
+;; Loop 0
+;;  header 0, latch 1
+;;  depth 0, outer -1
+;;  nodes: 0 1 2 3 4 5 6 7 8
+;; 2 succs { 3 5 }
+;; 3 succs { 8 4 }
+;; 4 succs { 8 }
+;; 5 succs { 6 7 }
+;; 6 succs { 8 7 }
+;; 7 succs { 8 }
+;; 8 succs { 1 }
+
+Analyzing function body size: prvInsertTimerInActiveList/28
+
+IPA function summary for prvInsertTimerInActiveList/28 inlinable
+  global time:     15.972500
+  self size:       22
+  global size:     0
+  min size:       0
+  self stack:      0
+  global stack:    0
+    size:2.000000, time:1.332500
+    size:4.000000, time:3.000000,  executed if:(not inlined)
+    size:2.000000, time:2.000000,  nonconst if:(op1 changed || op2 changed)
+    size:3.000000, time:1.500000,  nonconst if:(op2 changed || op3 changed)
+    size:2.000000, time:0.670000,  nonconst if:(op1 changed || op3 changed)
+    size:0.500000, time:0.250000,  executed if:(not inlined),  nonconst if:(op0[ref offset: 192] changed) && (not inlined)
+    size:0.500000, time:0.250000,  nonconst if:(op0[ref offset: 192] changed)
+    size:2.000000, time:1.000000,  nonconst if:(op2 changed || op3 changed || op0[ref offset: 192] changed)
+  calls:
+    vListInsert/47 function body not available
+      freq:0.33 loop depth: 0 size: 3 time: 12
+    prvInsertTimerInActiveList.part.0/60 function not considered for inlining
+      freq:0.16 loop depth: 0 size: 3 time: 12 callee size: 3 stack: 0
+
+
+Analyzing function: prvSampleTimeNow/27
+;; 1 loops found
+;;
+;; Loop 0
+;;  header 0, latch 1
+;;  depth 0, outer -1
+;;  nodes: 0 1 2 3 4 5
+;; 2 succs { 3 4 }
+;; 3 succs { 5 }
+;; 4 succs { 5 }
+;; 5 succs { 1 }
+
+Analyzing function body size: prvSampleTimeNow/27
+
+IPA function summary for prvSampleTimeNow/27 inlinable
+  global time:     21.300000
+  self size:       12
+  global size:     0
+  min size:       0
+  self stack:      0
+  global stack:    0
+    size:5.000000, time:4.500000
+    size:4.000000, time:2.500000,  executed if:(not inlined)
+  calls:
+    prvSwitchTimerLists/30 function not considered for inlining
+      freq:0.33 loop depth: 0 size: 1 time: 10 callee size: 7 stack: 0
+    xTaskGetTickCount/44 function body not available
+      freq:1.00 loop depth: 0 size: 2 time: 11
+
+
+Analyzing function: prvGetNextExpireTime/26
+;; 1 loops found
+;;
+;; Loop 0
+;;  header 0, latch 1
+;;  depth 0, outer -1
+;;  nodes: 0 1 2 3 4 5 6
+;; 2 succs { 4 3 }
+;; 3 succs { 4 }
+;; 4 succs { 5 6 }
+;; 5 succs { 6 }
+;; 6 succs { 1 }
+
+Analyzing function body size: prvGetNextExpireTime/26
+
+IPA function summary for prvGetNextExpireTime/26 inlinable
+  global time:     10.000000
+  self size:       12
+  global size:     0
+  min size:       0
+  self stack:      0
+  global stack:    0
+    size:8.500000, time:7.500000
+    size:3.500000, time:2.500000,  executed if:(not inlined)
+  calls:
+
+
+Analyzing function: prvProcessTimerOrBlockTask/25
+;; 1 loops found
+;;
+;; Loop 0
+;;  header 0, latch 1
+;;  depth 0, outer -1
+;;  nodes: 0 1 2 3 4 5 6 7 8 10 11 12 13
+;; 2 succs { 3 12 }
+;; 3 succs { 4 6 }
+;; 4 succs { 5 6 }
+;; 5 succs { 13 }
+;; 6 succs { 7 10 }
+;; 7 succs { 10 8 }
+;; 8 succs { 10 }
+;; 10 succs { 11 13 }
+;; 11 succs { 13 }
+;; 12 succs { 13 }
+;; 13 succs { 1 }
+
+Analyzing function body size: prvProcessTimerOrBlockTask/25
+
+IPA function summary for prvProcessTimerOrBlockTask/25 inlinable
+  global time:     53.483675
+  self size:       38
+  global size:     0
+  min size:       0
+  self stack:      4
+  global stack:    4
+    size:10.000000, time:6.076975
+    size:3.000000, time:2.000000,  executed if:(not inlined)
+    size:4.000000, time:2.458900,  nonconst if:(op1 changed)
+    size:2.000000, time:0.670000,  executed if:(op1 == 0)
+    size:4.000000, time:1.118900,  executed if:(op1 != 0)
+  calls:
+    xTaskResumeAll/42 function body not available
+      freq:0.33 loop depth: 0 size: 1 time: 10
+    xTaskResumeAll/42 function body not available
+      freq:0.56 loop depth: 0 size: 2 time: 11
+    vQueueWaitForMessageRestricted/43 function body not available
+      freq:0.56 loop depth: 0 size: 4 time: 13
+    prvProcessExpiredTimer/23 function not considered for inlining
+      freq:0.11 loop depth: 0 size: 3 time: 12 predicate: (op1 == 0)
+    xTaskResumeAll/42 function body not available
+      freq:0.11 loop depth: 0 size: 1 time: 10 predicate: (op1 == 0)
+    prvSampleTimeNow/27 function not considered for inlining
+      freq:1.00 loop depth: 0 size: 3 time: 12 callee size: 6 stack: 0
+       op0 is compile time invariant
+    vTaskSuspendAll/41 function body not available
+      freq:1.00 loop depth: 0 size: 1 time: 10
+
+
+Analyzing function: prvTimerTask/24
+;; 2 loops found
+;;
+;; Loop 0
+;;  header 0, latch 1
+;;  depth 0, outer -1
+;;  nodes: 0 1 2 3 4
+;;
+;; Loop 1
+;;  header 3, latch 4
+;;  depth 1, outer 0
+;;  nodes: 3 4
+;; 2 succs { 3 }
+;; 3 succs { 4 }
+;; 4 succs { 3 }
+
+Analyzing function body size: prvTimerTask/24
+
+IPA function summary for prvTimerTask/24 inlinable
+  global time:     3534.999729
+  self size:       10
+  global size:     0
+  min size:       0
+  self stack:      4
+  global stack:    4
+    size:1.000000, time:100.999992
+    size:2.000000, time:0.000000,  executed if:(not inlined)
+  calls:
+    prvProcessReceivedCommands/29 function not considered for inlining
+      freq:101.00 loop depth: 1 size: 1 time: 10 callee size:56 stack:20
+    prvProcessTimerOrBlockTask/25 function not considered for inlining
+      freq:101.00 loop depth: 1 size: 3 time: 12 callee size:19 stack: 4
+    prvGetNextExpireTime/26 function not considered for inlining
+      freq:101.00 loop depth: 1 size: 3 time: 12 callee size: 6 stack: 0
+       op0 is compile time invariant
+
+
+Analyzing function: prvProcessExpiredTimer/23
+;; 1 loops found
+;;
+;; Loop 0
+;;  header 0, latch 1
+;;  depth 0, outer -1
+;;  nodes: 0 1 2 3 4 5
+;; 2 succs { 3 4 }
+;; 3 succs { 5 }
+;; 4 succs { 5 }
+;; 5 succs { 1 }
+
+Analyzing function body size: prvProcessExpiredTimer/23
+
+IPA function summary for prvProcessExpiredTimer/23 inlinable
+  global time:     42.630000
+  self size:       23
+  global size:     0
+  min size:       0
+  self stack:      0
+  global stack:    0
+    size:10.000000, time:9.340000
+    size:3.000000, time:2.000000,  executed if:(not inlined)
+  calls:
+    prvReloadTimer/22 function not considered for inlining
+      freq:0.33 loop depth: 0 size: 4 time: 13
+    uxListRemove/46 function body not available
+      freq:1.00 loop depth: 0 size: 2 time: 11
+    indirect call loop depth: 0 freq:1.00 size: 4 time: 16
+
+
+Analyzing function: prvReloadTimer/22
+;; 2 loops found
+;;
+;; Loop 0
+;;  header 0, latch 1
+;;  depth 0, outer -1
+;;  nodes: 0 1 2 3 4 5
+;;
+;; Loop 1
+;;  header 4, latch 3
+;;  depth 1, outer 0
+;;  nodes: 4 3
+;; 2 succs { 4 }
+;; 3 succs { 4 }
+;; 4 succs { 3 5 }
+;; 5 succs { 1 }
+
+Analyzing function body size: prvReloadTimer/22
+
+IPA function summary for prvReloadTimer/22 inlinable
+  global time:     328.454548
+  self size:       20
+  global size:     0
+  min size:       0
+  self stack:      0
+  global stack:    0
+    size:5.500000, time:48.000000
+    size:4.500000, time:14.636364,  executed if:(not inlined)
+  calls:
+    prvInsertTimerInActiveList/28 function not considered for inlining
+      freq:9.09 loop depth: 1 size: 6 time: 15 callee size:11 stack: 0
+       op0 change 10.990000% of time
+       op2 change 10.990000% of time
+    indirect call loop depth: 1 freq:8.09 size: 4 time: 16
+
+
+Analyzing function: pcTimerGetName/21
+;; 2 loops found
+;;
+;; Loop 0
+;;  header 0, latch 1
+;;  depth 0, outer -1
+;;  nodes: 0 1 2 3 4 6 5
+;;
+;; Loop 1
+;;  header 4, latch 6
+;;  depth 1, outer 0
+;;  nodes: 4 6
+;; 2 succs { 3 5 }
+;; 3 succs { 4 }
+;; 4 succs { 6 }
+;; 6 succs { 4 }
+;; 5 succs { 1 }
+
+Analyzing function body size: pcTimerGetName/21
+
+IPA function summary for pcTimerGetName/21 inlinable
+  global time:     4.400000
+  self size:       7
+  global size:     0
+  min size:       0
+  self stack:      0
+  global stack:    0
+    size:0.000000, time:0.000000
+    size:2.000000, time:0.000000,  executed if:(not inlined)
+    size:2.000000, time:2.000000,  nonconst if:(op0 changed)
+    size:0.500000, time:0.350000,  executed if:(op0 != 0B) && (not inlined),  nonconst if:(op0[ref offset: 0] changed) && (op0 != 0B) && (not inlined)
+    size:0.500000, time:0.350000,  executed if:(op0 != 0B),  nonconst if:(op0[ref offset: 0] changed) && (op0 != 0B)
+    size:1.000000, time:1.400000,  executed if:(op0 != 0B) && (not inlined)
+    size:1.000000, time:0.300000,  executed if:(op0 == 0B)
+  calls:
+
+
+Analyzing function: xTimerGetExpiryTime/20
+;; 2 loops found
+;;
+;; Loop 0
+;;  header 0, latch 1
+;;  depth 0, outer -1
+;;  nodes: 0 1 2 3 4 6 5
+;;
+;; Loop 1
+;;  header 4, latch 6
+;;  depth 1, outer 0
+;;  nodes: 4 6
+;; 2 succs { 3 5 }
+;; 3 succs { 4 }
+;; 4 succs { 6 }
+;; 6 succs { 4 }
+;; 5 succs { 1 }
+
+Analyzing function body size: xTimerGetExpiryTime/20
+
+IPA function summary for xTimerGetExpiryTime/20 inlinable
+  global time:     4.400000
+  self size:       7
+  global size:     0
+  min size:       0
+  self stack:      0
+  global stack:    0
+    size:0.000000, time:0.000000
+    size:2.000000, time:0.000000,  executed if:(not inlined)
+    size:2.000000, time:2.000000,  nonconst if:(op0 changed)
+    size:0.500000, time:0.350000,  executed if:(op0 != 0B) && (not inlined),  nonconst if:(op0[ref offset: 32] changed) && (op0 != 0B) && (not inlined)
+    size:0.500000, time:0.350000,  executed if:(op0 != 0B),  nonconst if:(op0[ref offset: 32] changed) && (op0 != 0B)
+    size:1.000000, time:1.400000,  executed if:(op0 != 0B) && (not inlined)
+    size:1.000000, time:0.300000,  executed if:(op0 == 0B)
+  calls:
+
+
+Analyzing function: uxTimerGetReloadMode/19
+;; 1 loops found
+;;
+;; Loop 0
+;;  header 0, latch 1
+;;  depth 0, outer -1
+;;  nodes: 0 1 2
+;; 2 succs { 1 }
+
+Analyzing function body size: uxTimerGetReloadMode/19
+
+IPA function summary for uxTimerGetReloadMode/19 inlinable
+  global time:     14.000000
+  self size:       6
+  global size:     0
+  min size:       0
+  self stack:      0
+  global stack:    0
+    size:0.000000, time:0.000000
+    size:3.000000, time:2.000000,  executed if:(not inlined)
+  calls:
+    xTimerGetReloadMode/18 function not considered for inlining
+      freq:1.00 loop depth: 0 size: 3 time: 12
+
+
+Analyzing function: xTimerGetReloadMode/18
+;; 2 loops found
+;;
+;; Loop 0
+;;  header 0, latch 1
+;;  depth 0, outer -1
+;;  nodes: 0 1 2 3 4 6 5
+;;
+;; Loop 1
+;;  header 4, latch 6
+;;  depth 1, outer 0
+;;  nodes: 4 6
+;; 2 succs { 3 5 }
+;; 3 succs { 4 }
+;; 4 succs { 6 }
+;; 6 succs { 4 }
+;; 5 succs { 1 }
+
+Analyzing function body size: xTimerGetReloadMode/18
+
+IPA function summary for xTimerGetReloadMode/18 inlinable
+  global time:     9.951100
+  self size:       9
+  global size:     0
+  min size:       0
+  self stack:      0
+  global stack:    0
+    size:0.000000, time:0.000000
+    size:2.000000, time:0.000000,  executed if:(not inlined)
+    size:2.000000, time:2.000000,  nonconst if:(op0 changed)
+    size:1.000000, time:1.069400,  executed if:(op0 != 0B) && (not inlined)
+    size:1.000000, time:0.465300,  executed if:(op0 == 0B)
+  calls:
+    xTimerGetReloadMode.part.0/61 function not considered for inlining
+      freq:0.53 loop depth: 0 size: 3 time: 12 callee size: 4 stack: 0 predicate: (op0 != 0B)
+
+
+Analyzing function: vTimerSetReloadMode/17
+;; 2 loops found
+;;
+;; Loop 0
+;;  header 0, latch 1
+;;  depth 0, outer -1
+;;  nodes: 0 1 2 3 4 9 5 6 7 8
+;;
+;; Loop 1
+;;  header 4, latch 9
+;;  depth 1, outer 0
+;;  nodes: 4 9
+;; 2 succs { 3 5 }
+;; 3 succs { 4 }
+;; 4 succs { 9 }
+;; 9 succs { 4 }
+;; 5 succs { 6 7 }
+;; 6 succs { 8 }
+;; 7 succs { 8 }
+;; 8 succs { 1 }
+
+Analyzing function body size: vTimerSetReloadMode/17
+
+IPA function summary for vTimerSetReloadMode/17 inlinable
+  global time:     16.902200
+  self size:       16
+  global size:     0
+  min size:       0
+  self stack:      0
+  global stack:    0
+    size:0.000000, time:0.000000
+    size:2.000000, time:0.000000,  executed if:(not inlined)
+    size:2.000000, time:2.000000,  nonconst if:(op0 changed)
+    size:2.000000, time:1.069400,  executed if:(op0 != 0B),  nonconst if:(op1 changed) && (op0 != 0B)
+    size:1.000000, time:0.267350,  executed if:(op1 == 0) && (op0 != 0B) && (not inlined)
+    size:2.000000, time:0.534700,  executed if:(op1 == 0) && (op0 != 0B)
+    size:1.000000, time:0.267350,  executed if:(op1 != 0) && (op0 != 0B) && (not inlined)
+    size:2.000000, time:0.534700,  executed if:(op1 != 0) && (op0 != 0B)
+    size:1.000000, time:1.069400,  executed if:(op0 != 0B) && (not inlined)
+    size:1.000000, time:0.465300,  executed if:(op0 == 0B)
+  calls:
+    vPortExitCritical/54 function body not available
+      freq:0.53 loop depth: 0 size: 1 time: 10 predicate: (op0 != 0B)
+    vPortEnterCritical/50 function body not available
+      freq:0.53 loop depth: 0 size: 1 time: 10 predicate: (op0 != 0B)
+
+
+Analyzing function: xTimerGetPeriod/16
+;; 2 loops found
+;;
+;; Loop 0
+;;  header 0, latch 1
+;;  depth 0, outer -1
+;;  nodes: 0 1 2 3 4 6 5
+;;
+;; Loop 1
+;;  header 4, latch 6
+;;  depth 1, outer 0
+;;  nodes: 4 6
+;; 2 succs { 3 5 }
+;; 3 succs { 4 }
+;; 4 succs { 6 }
+;; 6 succs { 4 }
+;; 5 succs { 1 }
+
+Analyzing function body size: xTimerGetPeriod/16
+
+IPA function summary for xTimerGetPeriod/16 inlinable
+  global time:     4.400000
+  self size:       7
+  global size:     0
+  min size:       0
+  self stack:      0
+  global stack:    0
+    size:0.000000, time:0.000000
+    size:2.000000, time:0.000000,  executed if:(not inlined)
+    size:2.000000, time:2.000000,  nonconst if:(op0 changed)
+    size:0.500000, time:0.350000,  executed if:(op0 != 0B) && (not inlined),  nonconst if:(op0[ref offset: 192] changed) && (op0 != 0B) && (not inlined)
+    size:0.500000, time:0.350000,  executed if:(op0 != 0B),  nonconst if:(op0[ref offset: 192] changed) && (op0 != 0B)
+    size:1.000000, time:1.400000,  executed if:(op0 != 0B) && (not inlined)
+    size:1.000000, time:0.300000,  executed if:(op0 == 0B)
+  calls:
+
+
+Analyzing function: xTimerGetTimerDaemonTaskHandle/15
+;; 2 loops found
+;;
+;; Loop 0
+;;  header 0, latch 1
+;;  depth 0, outer -1
+;;  nodes: 0 1 2 3 4 6 5
+;;
+;; Loop 1
+;;  header 4, latch 6
+;;  depth 1, outer 0
+;;  nodes: 4 6
+;; 2 succs { 3 5 }
+;; 3 succs { 4 }
+;; 4 succs { 6 }
+;; 6 succs { 4 }
+;; 5 succs { 1 }
+
+Analyzing function body size: xTimerGetTimerDaemonTaskHandle/15
+
+IPA function summary for xTimerGetTimerDaemonTaskHandle/15 inlinable
+  global time:     4.700000
+  self size:       7
+  global size:     0
+  min size:       0
+  self stack:      0
+  global stack:    0
+    size:4.000000, time:3.300000
+    size:3.000000, time:1.400000,  executed if:(not inlined)
+  calls:
+
+
+Analyzing function: xTimerGenericCommandFromISR/14
+;; 3 loops found
+;;
+;; Loop 0
+;;  header 0, latch 1
+;;  depth 0, outer -1
+;;  nodes: 0 1 2 3 4 11 5 6 7 8 12 9 10
+;;
+;; Loop 2
+;;  header 4, latch 11
+;;  depth 1, outer 0
+;;  nodes: 4 11
+;;
+;; Loop 1
+;;  header 8, latch 12
+;;  depth 1, outer 0
+;;  nodes: 8 12
+;; 2 succs { 3 5 }
+;; 3 succs { 4 }
+;; 4 succs { 11 }
+;; 11 succs { 4 }
+;; 5 succs { 6 10 }
+;; 6 succs { 7 9 }
+;; 7 succs { 8 }
+;; 8 succs { 12 }
+;; 12 succs { 8 }
+;; 9 succs { 10 }
+;; 10 succs { 1 }
+
+Analyzing function body size: xTimerGenericCommandFromISR/14
+
+IPA function summary for xTimerGenericCommandFromISR/14 inlinable
+  global time:     10.347200
+  self size:       21
+  global size:     0
+  min size:       0
+  self stack:      16
+  global stack:    16
+    size:0.000000, time:0.000000
+    size:2.000000, time:0.000000,  executed if:(not inlined)
+    size:2.000000, time:2.000000,  nonconst if:(op0 changed)
+    size:6.000000, time:3.570000,  executed if:(op0 != 0B)
+    size:2.000000, time:0.980000,  executed if:(op0 != 0B),  nonconst if:(op1 changed) && (op0 != 0B)
+    size:1.000000, time:0.743400,  executed if:(op0 != 0B) && (not inlined)
+    size:1.000000, time:0.328300,  executed if:(op1 <= 5) && (op0 != 0B)
+    size:1.000000, time:0.300000,  executed if:(op0 == 0B)
+  calls:
+    xQueueGenericSendFromISR/59 function body not available
+      freq:0.16 loop depth: 0 size: 6 time: 15 predicate: (op1 > 5) && (op0 != 0B)
+       op1 is compile time invariant
+       op3 is compile time invariant
+
+
+Analyzing function: xTimerGenericCommandFromTask/13
+;; 3 loops found
+;;
+;; Loop 0
+;;  header 0, latch 1
+;;  depth 0, outer -1
+;;  nodes: 0 1 2 3 4 13 5 6 7 8 14 9 10 11 12
+;;
+;; Loop 2
+;;  header 4, latch 13
+;;  depth 1, outer 0
+;;  nodes: 4 13
+;;
+;; Loop 1
+;;  header 8, latch 14
+;;  depth 1, outer 0
+;;  nodes: 8 14
+;; 2 succs { 3 5 }
+;; 3 succs { 4 }
+;; 4 succs { 13 }
+;; 13 succs { 4 }
+;; 5 succs { 6 12 }
+;; 6 succs { 7 9 }
+;; 7 succs { 8 }
+;; 8 succs { 14 }
+;; 14 succs { 8 }
+;; 9 succs { 10 11 }
+;; 10 succs { 12 }
+;; 11 succs { 12 }
+;; 12 succs { 1 }
+
+Analyzing function body size: xTimerGenericCommandFromTask/13
+
+IPA function summary for xTimerGenericCommandFromTask/13 inlinable
+  global time:     12.611000
+  self size:       33
+  global size:     0
+  min size:       0
+  self stack:      16
+  global stack:    16
+    size:0.000000, time:0.000000
+    size:2.000000, time:0.000000,  executed if:(not inlined)
+    size:2.000000, time:2.000000,  nonconst if:(op0 changed)
+    size:6.000000, time:3.570000,  executed if:(op0 != 0B)
+    size:2.000000, time:0.980000,  executed if:(op0 != 0B),  nonconst if:(op1 changed) && (op0 != 0B)
+    size:4.000000, time:0.485100,  executed if:(op1 <= 5) && (op0 != 0B)
+    size:1.000000, time:0.743400,  executed if:(op0 != 0B) && (not inlined)
+    size:1.000000, time:0.328300,  executed if:(op1 > 5) && (op0 != 0B)
+    size:1.000000, time:0.300000,  executed if:(op0 == 0B)
+  calls:
+    xQueueGenericSend/58 function body not available
+      freq:0.11 loop depth: 0 size: 6 time: 15 predicate: (op1 <= 5) && (op0 != 0B)
+       op1 is compile time invariant
+       op2 is compile time invariant
+       op3 is compile time invariant
+    xQueueGenericSend/58 function body not available
+      freq:0.05 loop depth: 0 size: 6 time: 15 predicate: (op1 <= 5) && (op0 != 0B)
+       op1 is compile time invariant
+       op3 is compile time invariant
+    xTaskGetSchedulerState/57 function body not available
+      freq:0.16 loop depth: 0 size: 2 time: 11 predicate: (op1 <= 5) && (op0 != 0B)
+
+
+Analyzing function: prvInitialiseNewTimer/12
+;; 2 loops found
+;;
+;; Loop 0
+;;  header 0, latch 1
+;;  depth 0, outer -1
+;;  nodes: 0 1 2 3 4 8 5 6 7
+;;
+;; Loop 1
+;;  header 4, latch 8
+;;  depth 1, outer 0
+;;  nodes: 4 8
+;; 2 succs { 3 5 }
+;; 3 succs { 4 }
+;; 4 succs { 8 }
+;; 8 succs { 4 }
+;; 5 succs { 6 7 }
+;; 6 succs { 7 }
+;; 7 succs { 1 }
+
+Analyzing function body size: prvInitialiseNewTimer/12
+
+IPA function summary for prvInitialiseNewTimer/12 inlinable
+  global time:     12.735000
+  self size:       18
+  global size:     0
+  min size:       0
+  self stack:      0
+  global stack:    0
+    size:0.000000, time:0.000000
+    size:2.000000, time:0.000000,  executed if:(not inlined)
+    size:2.000000, time:2.000000,  nonconst if:(op1 changed)
+    size:3.000000, time:1.320000,  executed if:(op1 != 0) && (not inlined)
+    size:2.000000, time:0.660000,  executed if:(op1 != 0)
+    size:2.000000, time:0.660000,  executed if:(op1 != 0),  nonconst if:(op2 changed) && (op1 != 0)
+    size:1.000000, time:0.165000,  executed if:(op2 != 0) && (op1 != 0) && (not inlined)
+    size:2.000000, time:0.330000,  executed if:(op2 != 0) && (op1 != 0)
+    size:1.000000, time:0.670000,  executed if:(op1 == 0)
+  calls:
+    vListInitialiseItem/56 function body not available
+      freq:0.33 loop depth: 0 size: 2 time: 11 predicate: (op1 != 0)
+    prvCheckForValidListAndQueue/31 function not considered for inlining
+      freq:0.33 loop depth: 0 size: 1 time: 10 callee size:12 stack: 0 predicate: (op1 != 0)
+
+
+Analyzing function: xTimerCreate/11
+;; 1 loops found
+;;
+;; Loop 0
+;;  header 0, latch 1
+;;  depth 0, outer -1
+;;  nodes: 0 1 2 3 4
+;; 2 succs { 3 4 }
+;; 3 succs { 4 }
+;; 4 succs { 1 }
+
+Analyzing function body size: xTimerCreate/11
+
+IPA function summary for xTimerCreate/11 inlinable
+  global time:     25.089900
+  self size:       16
+  global size:     0
+  min size:       0
+  self stack:      0
+  global stack:    0
+    size:3.000000, time:2.534700
+    size:3.000000, time:2.000000,  executed if:(not inlined)
+  calls:
+    prvInitialiseNewTimer/12 function not considered for inlining
+      freq:0.53 loop depth: 0 size: 7 time: 16 callee size: 9 stack: 0
+    pvPortMalloc/55 function body not available
+      freq:1.00 loop depth: 0 size: 3 time: 12
+       op0 is compile time invariant
+
+
+Analyzing function: xTimerCreateTimerTask/10
+;; 2 loops found
+;;
+;; Loop 0
+;;  header 0, latch 1
+;;  depth 0, outer -1
+;;  nodes: 0 1 2 4 5 6 8 7
+;;
+;; Loop 1
+;;  header 6, latch 8
+;;  depth 1, outer 0
+;;  nodes: 6 8
+;; 2 succs { 4 5 }
+;; 4 succs { 5 7 }
+;; 5 succs { 6 }
+;; 6 succs { 8 }
+;; 8 succs { 6 }
+;; 7 succs { 1 }
+
+Analyzing function body size: xTimerCreateTimerTask/10
+
+IPA function summary for xTimerCreateTimerTask/10 inlinable
+  global time:     24.426650
+  self size:       18
+  global size:     0
+  min size:       0
+  self stack:      0
+  global stack:    0
+    size:6.000000, time:4.802050
+    size:3.000000, time:0.534700,  executed if:(not inlined)
+  calls:
+    xTaskCreate/40 function body not available
+      freq:0.53 loop depth: 0 size: 8 time: 17
+       op0 is compile time invariant
+       op1 is compile time invariant
+       op2 is compile time invariant
+       op3 is compile time invariant
+       op4 is compile time invariant
+       op5 is compile time invariant
+    prvCheckForValidListAndQueue/31 function not considered for inlining
+      freq:1.00 loop depth: 0 size: 1 time: 10 callee size:12 stack: 0
+
+Symbol table:
+
+prvInitialiseNewTimer.constprop.0/62 (prvInitialiseNewTimer.constprop) @06a67d20
+  Type: function definition analyzed
+  Visibility:
+  References: 
+  Referring: 
+  Clone of prvInitialiseNewTimer/12
+  Availability: local
+  Function flags: count:15867325 (estimated locally) local optimize_size
+  Called by: xTimerCreate/11 (574129753 (estimated locally),0.53 per call) 
+  Calls: prvCheckForValidListAndQueue/31 (5236217 (estimated locally),0.33 per call) vListInitialiseItem/56 (5236217 (estimated locally),0.33 per call) 
+xTimerGetReloadMode.part.0/61 (xTimerGetReloadMode.part.0) @06a67ee0
+  Type: function definition analyzed
+  Visibility: prevailing_def_ironly artificial
+  References: 
+  Referring: 
+  Availability: local
+  Function flags: count:1073741824 (estimated locally) body local split_part optimize_size
+  Called by: xTimerGetReloadMode/18 (12216749 (estimated locally),0.53 per call) 
+  Calls: vPortEnterCritical/50 (1073741824 (estimated locally),1.00 per call) vPortExitCritical/54 (1073741824 (estimated locally),1.00 per call) 
+prvInsertTimerInActiveList.part.0/60 (prvInsertTimerInActiveList.part.0) @06a67540
+  Type: function definition analyzed
+  Visibility: prevailing_def_ironly artificial
+  References: pxOverflowTimerList/7 (read) 
+  Referring: 
+  Availability: local
+  Function flags: count:1073741824 (estimated locally) body local split_part optimize_size
+  Called by: prvInsertTimerInActiveList/28 (177167400 (estimated locally),0.16 per call) 
+  Calls: vListInsert/47 (1073741824 (estimated locally),1.00 per call) 
+xQueueGenericSendFromISR/59 (xQueueGenericSendFromISR) @06a2ad20
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags: optimize_size
+  Called by: xTimerPendFunctionCallFromISR/35 (1073741824 (estimated locally),1.00 per call) xTimerGenericCommandFromISR/14 (5236217 (estimated locally),0.16 per call) 
+  Calls: 
+xQueueGenericSend/58 (xQueueGenericSend) @06a2ab60
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags: optimize_size
+  Called by: xTimerPendFunctionCall/36 (12216749 (estimated locally),0.53 per call) xTimerGenericCommandFromTask/13 (3455903 (estimated locally),0.11 per call) xTimerGenericCommandFromTask/13 (1780314 (estimated locally),0.05 per call) 
+  Calls: 
+xTaskGetSchedulerState/57 (xTaskGetSchedulerState) @06a2aa80
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags: optimize_size
+  Called by: xTimerGenericCommandFromTask/13 (5236217 (estimated locally),0.16 per call) 
+  Calls: 
+vListInitialiseItem/56 (vListInitialiseItem) @06a2a8c0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags: optimize_size
+  Called by: prvInitialiseNewTimer.constprop.0/62 (5236217 (estimated locally),0.33 per call) 
+  Calls: 
+pvPortMalloc/55 (pvPortMalloc) @06a2a700
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags: optimize_size
+  Called by: xTimerCreate/11 (1073741824 (estimated locally),1.00 per call) 
+  Calls: 
+vPortExitCritical/54 (vPortExitCritical) @06a2a540
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags: optimize_size
+  Called by: vTimerSetTimerID/34 (12216749 (estimated locally),0.53 per call) pvTimerGetTimerID/33 (12216749 (estimated locally),0.53 per call) xTimerIsTimerActive/32 (12216749 (estimated locally),0.53 per call) xTimerGetReloadMode.part.0/61 (1073741824 (estimated locally),1.00 per call) vTimerSetReloadMode/17 (12216749 (estimated locally),0.53 per call) prvCheckForValidListAndQueue/31 (1073741824 (estimated locally),1.00 per call) 
+  Calls: 
+vQueueAddToRegistry/53 (vQueueAddToRegistry) @06a2a460
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags: optimize_size
+  Called by: prvCheckForValidListAndQueue/31 (100070816 (estimated locally),0.09 per call) 
+  Calls: 
+xQueueGenericCreate/52 (xQueueGenericCreate) @06a2a380
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags: optimize_size
+  Called by: prvCheckForValidListAndQueue/31 (187153200 (estimated locally),0.17 per call) 
+  Calls: 
+vListInitialise/51 (vListInitialise) @06a2a1c0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags: optimize_size
+  Called by: prvCheckForValidListAndQueue/31 (187153200 (estimated locally),0.17 per call) prvCheckForValidListAndQueue/31 (187153200 (estimated locally),0.17 per call) 
+  Calls: 
+vPortEnterCritical/50 (vPortEnterCritical) @06a2a0e0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags: optimize_size
+  Called by: vTimerSetTimerID/34 (12216749 (estimated locally),0.53 per call) pvTimerGetTimerID/33 (12216749 (estimated locally),0.53 per call) xTimerIsTimerActive/32 (12216749 (estimated locally),0.53 per call) xTimerGetReloadMode.part.0/61 (1073741824 (estimated locally),1.00 per call) vTimerSetReloadMode/17 (12216749 (estimated locally),0.53 per call) prvCheckForValidListAndQueue/31 (1073741824 (estimated locally),1.00 per call) 
+  Calls: 
+xQueueReceive/49 (xQueueReceive) @06a07ee0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags: optimize_size
+  Called by: prvProcessReceivedCommands/29 (1073741824 (estimated locally),17.99 per call) 
+  Calls: 
+vPortFree/48 (vPortFree) @06a07e00
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags: optimize_size
+  Called by: prvProcessReceivedCommands/29 (3683310 (estimated locally),0.06 per call) 
+  Calls: 
+vListInsert/47 (vListInsert) @06a07a80
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags: optimize_size
+  Called by: prvInsertTimerInActiveList/28 (357019156 (estimated locally),0.33 per call) prvInsertTimerInActiveList.part.0/60 (1073741824 (estimated locally),1.00 per call) 
+  Calls: 
+uxListRemove/46 (uxListRemove) @06a077e0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags: optimize_size
+  Called by: prvProcessReceivedCommands/29 (29840394 (estimated locally),0.50 per call) prvProcessExpiredTimer/23 (1073741824 (estimated locally),1.00 per call) 
+  Calls: 
+xLastTime.0/45 (xLastTime) @06a1a708
+  Type: variable definition analyzed
+  Visibility: prevailing_def_ironly
+  References: 
+  Referring: prvSampleTimeNow/27 (read) prvSampleTimeNow/27 (write) 
+  Availability: available
+  Varpool flags: initialized
+xTaskGetTickCount/44 (xTaskGetTickCount) @06a07460
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags: optimize_size
+  Called by: prvSampleTimeNow/27 (1073741824 (estimated locally),1.00 per call) 
+  Calls: 
+vQueueWaitForMessageRestricted/43 (vQueueWaitForMessageRestricted) @06a072a0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags: optimize_size
+  Called by: prvProcessTimerOrBlockTask/25 (600704867 (estimated locally),0.56 per call) 
+  Calls: 
+xTaskResumeAll/42 (xTaskResumeAll) @06a071c0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags: optimize_size
+  Called by: prvProcessTimerOrBlockTask/25 (354334800 (estimated locally),0.33 per call) prvProcessTimerOrBlockTask/25 (600704867 (estimated locally),0.56 per call) prvProcessTimerOrBlockTask/25 (118702158 (estimated locally),0.11 per call) 
+  Calls: 
+vTaskSuspendAll/41 (vTaskSuspendAll) @06a070e0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags: optimize_size
+  Called by: prvProcessTimerOrBlockTask/25 (1073741824 (estimated locally),1.00 per call) 
+  Calls: 
+xTaskCreate/40 (xTaskCreate) @06a00540
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags: optimize_size
+  Called by: xTimerCreateTimerTask/10 (7758757 (estimated locally),0.53 per call) 
+  Calls: 
+vTimerResetState/39 (vTimerResetState) @06a00c40
+  Type: function definition analyzed
+  Visibility: externally_visible public
+  References: xTimerQueue/8 (write) xTimerTaskHandle/9 (write) 
+  Referring: 
+  Availability: available
+  Function flags: count:1073741824 (estimated locally) body optimize_size
+  Called by: 
+  Calls: 
+vTimerSetTimerNumber/38 (vTimerSetTimerNumber) @06a009a0
+  Type: function definition analyzed
+  Visibility: externally_visible public
+  References: 
+  Referring: 
+  Availability: available
+  Function flags: count:1073741824 (estimated locally) body optimize_size
+  Called by: 
+  Calls: 
+uxTimerGetTimerNumber/37 (uxTimerGetTimerNumber) @06a00700
+  Type: function definition analyzed
+  Visibility: externally_visible public
+  References: 
+  Referring: 
+  Availability: available
+  Function flags: count:1073741824 (estimated locally) body optimize_size
+  Called by: 
+  Calls: 
+xTimerPendFunctionCall/36 (xTimerPendFunctionCall) @06a00460
+  Type: function definition analyzed
+  Visibility: externally_visible public
+  References: xTimerQueue/8 (read) 
+  Referring: 
+  Availability: available
+  Function flags: count:22847857 (estimated locally) body optimize_size
+  Called by: 
+  Calls: xQueueGenericSend/58 (12216749 (estimated locally),0.53 per call) 
+xTimerPendFunctionCallFromISR/35 (xTimerPendFunctionCallFromISR) @06a00000
+  Type: function definition analyzed
+  Visibility: externally_visible public
+  References: xTimerQueue/8 (read) 
+  Referring: 
+  Availability: available
+  Function flags: count:1073741824 (estimated locally) body optimize_size
+  Called by: 
+  Calls: xQueueGenericSendFromISR/59 (1073741824 (estimated locally),1.00 per call) 
+vTimerSetTimerID/34 (vTimerSetTimerID) @069f67e0
+  Type: function definition analyzed
+  Visibility: externally_visible public
+  References: 
+  Referring: 
+  Availability: available
+  Function flags: count:22847857 (estimated locally) body optimize_size
+  Called by: 
+  Calls: vPortExitCritical/54 (12216749 (estimated locally),0.53 per call) vPortEnterCritical/50 (12216749 (estimated locally),0.53 per call) 
+pvTimerGetTimerID/33 (pvTimerGetTimerID) @069f6e00
+  Type: function definition analyzed
+  Visibility: externally_visible public
+  References: 
+  Referring: 
+  Availability: available
+  Function flags: count:22847857 (estimated locally) body optimize_size
+  Called by: 
+  Calls: vPortExitCritical/54 (12216749 (estimated locally),0.53 per call) vPortEnterCritical/50 (12216749 (estimated locally),0.53 per call) 
+xTimerIsTimerActive/32 (xTimerIsTimerActive) @069f6a80
+  Type: function definition analyzed
+  Visibility: externally_visible public
+  References: 
+  Referring: 
+  Availability: available
+  Function flags: count:22847857 (estimated locally) body optimize_size
+  Called by: 
+  Calls: vPortExitCritical/54 (12216749 (estimated locally),0.53 per call) vPortEnterCritical/50 (12216749 (estimated locally),0.53 per call) 
+prvCheckForValidListAndQueue/31 (prvCheckForValidListAndQueue) @069f6700
+  Type: function definition analyzed
+  Visibility: prevailing_def_ironly
+  References: xTimerQueue/8 (read) xActiveTimerList1/4 (addr) xActiveTimerList2/5 (addr) pxCurrentTimerList/6 (write) xActiveTimerList1/4 (addr) pxOverflowTimerList/7 (write) xActiveTimerList2/5 (addr) xTimerQueue/8 (write) 
+  Referring: 
+  Availability: local
+  Function flags: count:1073741824 (estimated locally) body local optimize_size
+  Called by: prvInitialiseNewTimer.constprop.0/62 (5236217 (estimated locally),0.33 per call) xTimerCreateTimerTask/10 (14510487 (estimated locally),1.00 per call) 
+  Calls: vPortExitCritical/54 (1073741824 (estimated locally),1.00 per call) vQueueAddToRegistry/53 (100070816 (estimated locally),0.09 per call) xQueueGenericCreate/52 (187153200 (estimated locally),0.17 per call) vListInitialise/51 (187153200 (estimated locally),0.17 per call) vListInitialise/51 (187153200 (estimated locally),0.17 per call) vPortEnterCritical/50 (1073741824 (estimated locally),1.00 per call) 
+prvSwitchTimerLists/30 (prvSwitchTimerLists) @069f6460
+  Type: function definition analyzed
+  Visibility: prevailing_def_ironly
+  References: pxCurrentTimerList/6 (read) pxOverflowTimerList/7 (read) pxCurrentTimerList/6 (write) pxOverflowTimerList/7 (write) 
+  Referring: 
+  Availability: local
+  Function flags: count:118111600 (estimated locally) body local optimize_size
+  Called by: prvSampleTimeNow/27 (354334800 (estimated locally),0.33 per call) 
+  Calls: prvProcessExpiredTimer/23 (955630225 (estimated locally),8.09 per call) 
+prvProcessReceivedCommands/29 (prvProcessReceivedCommands) @069f60e0
+  Type: function definition analyzed
+  Visibility: prevailing_def_ironly
+  References: xTimerQueue/8 (read) 
+  Referring: 
+  Availability: local
+  Function flags: count:59669683 (estimated locally) body local optimize_size
+  Called by: prvTimerTask/24 (1073741824 (estimated locally),101.00 per call) 
+  Calls: xQueueReceive/49 (1073741824 (estimated locally),17.99 per call) vPortFree/48 (3683310 (estimated locally),0.06 per call) prvInsertTimerInActiveList/28 (10547661 (estimated locally),0.18 per call) prvReloadTimer/22 (1841655 (estimated locally),0.03 per call) prvInsertTimerInActiveList/28 (11161546 (estimated locally),0.19 per call) prvSampleTimeNow/27 (55807731 (estimated locally),0.94 per call) uxListRemove/46 (29840394 (estimated locally),0.50 per call) 
+   Indirect call(5580773 (estimated locally),0.09 per call)  Num speculative call targets: 0
+   Indirect call(416021267 (estimated locally),6.97 per call)  Num speculative call targets: 0
+prvInsertTimerInActiveList/28 (prvInsertTimerInActiveList) @069eac40
+  Type: function definition analyzed
+  Visibility: prevailing_def_ironly
+  References: pxCurrentTimerList/6 (read) 
+  Referring: 
+  Availability: local
+  Function flags: count:1073741824 (estimated locally) body local optimize_size
+  Called by: prvProcessReceivedCommands/29 (10547661 (estimated locally),0.18 per call) prvProcessReceivedCommands/29 (11161546 (estimated locally),0.19 per call) prvReloadTimer/22 (1073741824 (estimated locally),9.09 per call) 
+  Calls: vListInsert/47 (357019156 (estimated locally),0.33 per call) prvInsertTimerInActiveList.part.0/60 (177167400 (estimated locally),0.16 per call) 
+prvSampleTimeNow/27 (prvSampleTimeNow) @069eae00
+  Type: function definition analyzed
+  Visibility: prevailing_def_ironly
+  References: xLastTime.0/45 (read) xLastTime.0/45 (write) 
+  Referring: 
+  Availability: local
+  Function flags: count:1073741824 (estimated locally) body local optimize_size
+  Called by: prvProcessReceivedCommands/29 (55807731 (estimated locally),0.94 per call) prvProcessTimerOrBlockTask/25 (1073741824 (estimated locally),1.00 per call) 
+  Calls: prvSwitchTimerLists/30 (354334800 (estimated locally),0.33 per call) xTaskGetTickCount/44 (1073741824 (estimated locally),1.00 per call) 
+prvGetNextExpireTime/26 (prvGetNextExpireTime) @069eab60
+  Type: function definition analyzed
+  Visibility: prevailing_def_ironly
+  References: pxCurrentTimerList/6 (read) 
+  Referring: 
+  Availability: local
+  Function flags: count:1073741824 (estimated locally) body local optimize_size
+  Called by: prvTimerTask/24 (1073741824 (estimated locally),101.00 per call) 
+  Calls: 
+prvProcessTimerOrBlockTask/25 (prvProcessTimerOrBlockTask) @069ea7e0
+  Type: function definition analyzed
+  Visibility: prevailing_def_ironly
+  References: pxOverflowTimerList/7 (read) xTimerQueue/8 (read) 
+  Referring: 
+  Availability: local
+  Function flags: count:1073741824 (estimated locally) body local optimize_size
+  Called by: prvTimerTask/24 (1073741824 (estimated locally),101.00 per call) 
+  Calls: xTaskResumeAll/42 (354334800 (estimated locally),0.33 per call) xTaskResumeAll/42 (600704867 (estimated locally),0.56 per call) vQueueWaitForMessageRestricted/43 (600704867 (estimated locally),0.56 per call) prvProcessExpiredTimer/23 (118702158 (estimated locally),0.11 per call) xTaskResumeAll/42 (118702158 (estimated locally),0.11 per call) prvSampleTimeNow/27 (1073741824 (estimated locally),1.00 per call) vTaskSuspendAll/41 (1073741824 (estimated locally),1.00 per call) 
+prvTimerTask/24 (prvTimerTask) @069ea380
+  Type: function definition analyzed
+  Visibility: prevailing_def_ironly
+  Address is taken.
+  References: 
+  Referring: xTimerCreateTimerTask/10 (addr) 
+  Availability: available
+  Function flags: count:10631108 (estimated locally) body executed_once optimize_size
+  Called by: 
+  Calls: prvProcessReceivedCommands/29 (1073741824 (estimated locally),101.00 per call) prvProcessTimerOrBlockTask/25 (1073741824 (estimated locally),101.00 per call) prvGetNextExpireTime/26 (1073741824 (estimated locally),101.00 per call) 
+prvProcessExpiredTimer/23 (prvProcessExpiredTimer) @069ea0e0
+  Type: function definition analyzed
+  Visibility: prevailing_def_ironly
+  References: pxCurrentTimerList/6 (read) 
+  Referring: 
+  Availability: local
+  Function flags: count:1073741824 (estimated locally) body local optimize_size
+  Called by: prvProcessTimerOrBlockTask/25 (118702158 (estimated locally),0.11 per call) prvSwitchTimerLists/30 (955630225 (estimated locally),8.09 per call) 
+  Calls: prvReloadTimer/22 (354334800 (estimated locally),0.33 per call) uxListRemove/46 (1073741824 (estimated locally),1.00 per call) 
+   Indirect call(1073741824 (estimated locally),1.00 per call)  Num speculative call targets: 0
+prvReloadTimer/22 (prvReloadTimer) @069aaa80
+  Type: function definition analyzed
+  Visibility: prevailing_def_ironly
+  References: 
+  Referring: 
+  Availability: local
+  Function flags: count:118111600 (estimated locally) body local optimize_size
+  Called by: prvProcessReceivedCommands/29 (1841655 (estimated locally),0.03 per call) prvProcessExpiredTimer/23 (354334800 (estimated locally),0.33 per call) 
+  Calls: prvInsertTimerInActiveList/28 (1073741824 (estimated locally),9.09 per call) 
+   Indirect call(955630225 (estimated locally),8.09 per call)  of param:0 loaded from aggregate passed by reference at offset 256 (vptr maybe changed) Num speculative call targets: 0
+pcTimerGetName/21 (pcTimerGetName) @069aa460
+  Type: function definition analyzed
+  Visibility: externally_visible public
+  References: 
+  Referring: 
+  Availability: available
+  Function flags: count:35437027 (estimated locally) body optimize_size
+  Called by: 
+  Calls: 
+xTimerGetExpiryTime/20 (xTimerGetExpiryTime) @069aad20
+  Type: function definition analyzed
+  Visibility: externally_visible public
+  References: 
+  Referring: 
+  Availability: available
+  Function flags: count:35437027 (estimated locally) body optimize_size
+  Called by: 
+  Calls: 
+uxTimerGetReloadMode/19 (uxTimerGetReloadMode) @069aa9a0
+  Type: function definition analyzed
+  Visibility: externally_visible public
+  References: 
+  Referring: 
+  Availability: available
+  Function flags: count:1073741824 (estimated locally) body optimize_size
+  Called by: 
+  Calls: xTimerGetReloadMode/18 (1073741824 (estimated locally),1.00 per call) 
+xTimerGetReloadMode/18 (xTimerGetReloadMode) @069aa700
+  Type: function definition analyzed
+  Visibility: externally_visible public
+  References: 
+  Referring: 
+  Availability: available
+  Function flags: count:22847857 (estimated locally) body optimize_size
+  Called by: uxTimerGetReloadMode/19 (1073741824 (estimated locally),1.00 per call) 
+  Calls: xTimerGetReloadMode.part.0/61 (12216749 (estimated locally),0.53 per call) 
+vTimerSetReloadMode/17 (vTimerSetReloadMode) @069aa380
+  Type: function definition analyzed
+  Visibility: externally_visible public
+  References: 
+  Referring: 
+  Availability: available
+  Function flags: count:22847857 (estimated locally) body optimize_size
+  Called by: 
+  Calls: vPortExitCritical/54 (12216749 (estimated locally),0.53 per call) vPortEnterCritical/50 (12216749 (estimated locally),0.53 per call) 
+xTimerGetPeriod/16 (xTimerGetPeriod) @069aa000
+  Type: function definition analyzed
+  Visibility: externally_visible public
+  References: 
+  Referring: 
+  Availability: available
+  Function flags: count:35437027 (estimated locally) body optimize_size
+  Called by: 
+  Calls: 
+xTimerGetTimerDaemonTaskHandle/15 (xTimerGetTimerDaemonTaskHandle) @069bd460
+  Type: function definition analyzed
+  Visibility: externally_visible public
+  References: xTimerTaskHandle/9 (read) 
+  Referring: 
+  Availability: available
+  Function flags: count:35437027 (estimated locally) body optimize_size
+  Called by: 
+  Calls: 
+xTimerGenericCommandFromISR/14 (xTimerGenericCommandFromISR) @069bdee0
+  Type: function definition analyzed
+  Visibility: externally_visible public
+  References: xTimerQueue/8 (read) 
+  Referring: 
+  Availability: available
+  Function flags: count:32382296 (estimated locally) body optimize_size
+  Called by: 
+  Calls: xQueueGenericSendFromISR/59 (5236217 (estimated locally),0.16 per call) 
+xTimerGenericCommandFromTask/13 (xTimerGenericCommandFromTask) @069bda80
+  Type: function definition analyzed
+  Visibility: externally_visible public
+  References: xTimerQueue/8 (read) xTimerQueue/8 (read) xTimerQueue/8 (read) 
+  Referring: 
+  Availability: available
+  Function flags: count:32382296 (estimated locally) body optimize_size
+  Called by: 
+  Calls: xQueueGenericSend/58 (3455903 (estimated locally),0.11 per call) xQueueGenericSend/58 (1780314 (estimated locally),0.05 per call) xTaskGetSchedulerState/57 (5236217 (estimated locally),0.16 per call) 
+prvInitialiseNewTimer/12 (prvInitialiseNewTimer) @069bd620
+  Type: function
+  Body removed by symtab_remove_unreachable_nodes
+  Visibility: prevailing_def_ironly
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags: count:15867325 (estimated locally) body optimize_size
+  Called by: 
+  Calls: 
+xTimerCreate/11 (xTimerCreate) @069bd380
+  Type: function definition analyzed
+  Visibility: externally_visible public
+  References: 
+  Referring: 
+  Availability: available
+  Function flags: count:1073741824 (estimated locally) body optimize_size
+  Called by: 
+  Calls: prvInitialiseNewTimer.constprop.0/62 (574129753 (estimated locally),0.53 per call) pvPortMalloc/55 (1073741824 (estimated locally),1.00 per call) 
+xTimerCreateTimerTask/10 (xTimerCreateTimerTask) @069bd0e0
+  Type: function definition analyzed
+  Visibility: externally_visible public
+  References: xTimerQueue/8 (read) prvTimerTask/24 (addr) xTimerTaskHandle/9 (addr) 
+  Referring: 
+  Availability: available
+  Function flags: count:14510487 (estimated locally) body optimize_size
+  Called by: 
+  Calls: xTaskCreate/40 (7758757 (estimated locally),0.53 per call) prvCheckForValidListAndQueue/31 (14510487 (estimated locally),1.00 per call) 
+xTimerTaskHandle/9 (xTimerTaskHandle) @069b2cf0
+  Type: variable definition analyzed
+  Visibility: prevailing_def_ironly
+  References: 
+  Referring: xTimerCreateTimerTask/10 (addr) xTimerGetTimerDaemonTaskHandle/15 (read) vTimerResetState/39 (write) 
+  Availability: available
+  Varpool flags: initialized
+xTimerQueue/8 (xTimerQueue) @069b2ca8
+  Type: variable definition analyzed
+  Visibility: prevailing_def_ironly
+  References: 
+  Referring: prvProcessReceivedCommands/29 (read) xTimerPendFunctionCallFromISR/35 (read) xTimerPendFunctionCall/36 (read) xTimerGenericCommandFromTask/13 (read) xTimerGenericCommandFromTask/13 (read) xTimerGenericCommandFromISR/14 (read) prvProcessTimerOrBlockTask/25 (read) xTimerCreateTimerTask/10 (read) xTimerGenericCommandFromTask/13 (read) prvCheckForValidListAndQueue/31 (write) prvCheckForValidListAndQueue/31 (read) vTimerResetState/39 (write) 
+  Availability: available
+  Varpool flags: initialized
+pxOverflowTimerList/7 (pxOverflowTimerList) @069b2c18
+  Type: variable definition analyzed
+  Visibility: prevailing_def_ironly
+  References: 
+  Referring: prvInsertTimerInActiveList.part.0/60 (read) prvSwitchTimerLists/30 (write) prvProcessTimerOrBlockTask/25 (read) prvSwitchTimerLists/30 (read) prvCheckForValidListAndQueue/31 (write) 
+  Availability: available
+  Varpool flags:
+pxCurrentTimerList/6 (pxCurrentTimerList) @069b2b88
+  Type: variable definition analyzed
+  Visibility: prevailing_def_ironly
+  References: 
+  Referring: prvSwitchTimerLists/30 (write) prvProcessExpiredTimer/23 (read) prvInsertTimerInActiveList/28 (read) prvGetNextExpireTime/26 (read) prvSwitchTimerLists/30 (read) prvCheckForValidListAndQueue/31 (write) 
+  Availability: available
+  Varpool flags:
+xActiveTimerList2/5 (xActiveTimerList2) @069b2af8
+  Type: variable definition analyzed
+  Visibility: prevailing_def_ironly
+  References: 
+  Referring: prvCheckForValidListAndQueue/31 (addr) prvCheckForValidListAndQueue/31 (addr) 
+  Availability: available
+  Varpool flags:
+xActiveTimerList1/4 (xActiveTimerList1) @069b2a68
+  Type: variable definition analyzed
+  Visibility: prevailing_def_ironly
+  References: 
+  Referring: prvCheckForValidListAndQueue/31 (addr) prvCheckForValidListAndQueue/31 (addr) 
+  Availability: available
+  Varpool flags:
+xTimerGetReloadMode.part.0 (struct tmrTimerControl * xTimer)
+{
+  struct Timer_t * pxTimer;
+  BaseType_t xReturn;
+  unsigned char _2;
+  unsigned char _3;
+
+  <bb 5> [local count: 1073741824]:
+
+  <bb 2> [local count: 1073741824]:
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  vPortEnterCritical ();
+  # DEBUG BEGIN_STMT
+  _2 = MEM[(struct Timer_t *)xTimer_1(D)].ucStatus;
+  _3 = _2 & 4;
+  if (_3 == 0)
+    goto <bb 4>; [50.00%]
+  else
+    goto <bb 3>; [50.00%]
+
+  <bb 3> [local count: 536870913]:
+  # DEBUG BEGIN_STMT
+  # DEBUG xReturn => 1
+
+  <bb 4> [local count: 1073741824]:
+  # xReturn_4 = PHI <0(2), 1(3)>
+  # DEBUG xReturn => xReturn_4
+  # DEBUG BEGIN_STMT
+  vPortExitCritical ();
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  return xReturn_4;
+
+}
+
+
+prvInsertTimerInActiveList.part.0 (struct Timer_t * const pxTimer)
+{
+  BaseType_t xProcessTimerNow;
+  const TickType_t xNextExpiryTime;
+  const TickType_t xTimeNow;
+  const TickType_t xCommandTime;
+  struct List_t * pxOverflowTimerList.14_1;
+  struct ListItem_t * _3;
+
+  <bb 4> [local count: 1073741824]:
+  # DEBUG D#6 s=> xNextExpiryTime
+  # DEBUG xNextExpiryTime => D#6
+  # DEBUG D#5 s=> xTimeNow
+  # DEBUG xTimeNow => D#5
+  # DEBUG D#4 s=> xCommandTime
+  # DEBUG xCommandTime => D#4
+
+  <bb 2> [local count: 1073741824]:
+  # DEBUG BEGIN_STMT
+  pxOverflowTimerList.14_1 = pxOverflowTimerList;
+  _3 = &pxTimer_2(D)->xTimerListItem;
+  vListInsert (pxOverflowTimerList.14_1, _3);
+
+  <bb 3> [local count: 1073741824]:
+  # xProcessTimerNow_4 = PHI <0(2)>
+  # DEBUG xProcessTimerNow => xProcessTimerNow_4
+  # DEBUG BEGIN_STMT
+  return xProcessTimerNow_4;
+
+}
+
+
+vTimerResetState ()
+{
+  <bb 2> [local count: 1073741824]:
+  # DEBUG BEGIN_STMT
+  xTimerQueue = 0B;
+  # DEBUG BEGIN_STMT
+  xTimerTaskHandle = 0B;
+  return;
+
+}
+
+
+vTimerSetTimerNumber (struct tmrTimerControl * xTimer, UBaseType_t uxTimerNumber)
+{
+  <bb 2> [local count: 1073741824]:
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  MEM[(struct Timer_t *)xTimer_2(D)].uxTimerNumber = uxTimerNumber_3(D);
+  # DEBUG BEGIN_STMT
+  return;
+
+}
+
+
+uxTimerGetTimerNumber (struct tmrTimerControl * xTimer)
+{
+  UBaseType_t _3;
+
+  <bb 2> [local count: 1073741824]:
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  _3 = MEM[(struct Timer_t *)xTimer_2(D)].uxTimerNumber;
+  return _3;
+
+}
+
+
+xTimerPendFunctionCall (void (*PendedFunction_t) (void *, uint32_t) xFunctionToPend, void * pvParameter1, uint32_t ulParameter2, TickType_t xTicksToWait)
+{
+  BaseType_t xReturn;
+  struct DaemonTaskMessage_t xMessage;
+  struct QueueDefinition * xTimerQueue.27_1;
+
+  <bb 2> [local count: 22847857]:
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  xTimerQueue.27_1 = xTimerQueue;
+  if (xTimerQueue.27_1 == 0B)
+    goto <bb 3>; [46.53%]
+  else
+    goto <bb 5>; [53.47%]
+
+  <bb 3> [local count: 10631108]:
+  # DEBUG BEGIN_STMT
+  __asm__ __volatile__(" cpsid i " :  :  : "memory");
+
+  <bb 4> [local count: 1073741824]:
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+
+  <bb 6> [local count: 1073741824]:
+  goto <bb 4>; [100.00%]
+
+  <bb 5> [local count: 12216749]:
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  xMessage.xMessageID = -1;
+  # DEBUG BEGIN_STMT
+  xMessage.u.xCallbackParameters.pxCallbackFunction = xFunctionToPend_4(D);
+  # DEBUG BEGIN_STMT
+  xMessage.u.xCallbackParameters.pvParameter1 = pvParameter1_6(D);
+  # DEBUG BEGIN_STMT
+  xMessage.u.xCallbackParameters.ulParameter2 = ulParameter2_8(D);
+  # DEBUG BEGIN_STMT
+  xReturn_12 = xQueueGenericSend (xTimerQueue.27_1, &xMessage, xTicksToWait_10(D), 0);
+  # DEBUG xReturn => xReturn_12
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  xMessage ={v} {CLOBBER};
+  return xReturn_12;
+
+}
+
+
+xTimerPendFunctionCallFromISR (void (*PendedFunction_t) (void *, uint32_t) xFunctionToPend, void * pvParameter1, uint32_t ulParameter2, BaseType_t * pxHigherPriorityTaskWoken)
+{
+  BaseType_t xReturn;
+  struct DaemonTaskMessage_t xMessage;
+  struct QueueDefinition * xTimerQueue.26_1;
+
+  <bb 2> [local count: 1073741824]:
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  xMessage.xMessageID = -2;
+  # DEBUG BEGIN_STMT
+  xMessage.u.xCallbackParameters.pxCallbackFunction = xFunctionToPend_4(D);
+  # DEBUG BEGIN_STMT
+  xMessage.u.xCallbackParameters.pvParameter1 = pvParameter1_6(D);
+  # DEBUG BEGIN_STMT
+  xMessage.u.xCallbackParameters.ulParameter2 = ulParameter2_8(D);
+  # DEBUG BEGIN_STMT
+  xTimerQueue.26_1 = xTimerQueue;
+  xReturn_12 = xQueueGenericSendFromISR (xTimerQueue.26_1, &xMessage, pxHigherPriorityTaskWoken_10(D), 0);
+  # DEBUG xReturn => xReturn_12
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  xMessage ={v} {CLOBBER};
+  return xReturn_12;
+
+}
+
+
+vTimerSetTimerID (struct tmrTimerControl * xTimer, void * pvNewID)
+{
+  <bb 2> [local count: 22847857]:
+  # DEBUG BEGIN_STMT
+  # DEBUG pxTimer => xTimer_1(D)
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  if (xTimer_1(D) == 0B)
+    goto <bb 3>; [46.53%]
+  else
+    goto <bb 5>; [53.47%]
+
+  <bb 3> [local count: 10631108]:
+  # DEBUG BEGIN_STMT
+  __asm__ __volatile__(" cpsid i " :  :  : "memory");
+
+  <bb 4> [local count: 1073741824]:
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+
+  <bb 6> [local count: 1073741824]:
+  goto <bb 4>; [100.00%]
+
+  <bb 5> [local count: 12216749]:
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  vPortEnterCritical ();
+  # DEBUG BEGIN_STMT
+  MEM[(struct Timer_t *)xTimer_1(D)].pvTimerID = pvNewID_4(D);
+  # DEBUG BEGIN_STMT
+  vPortExitCritical ();
+  # DEBUG BEGIN_STMT
+  return;
+
+}
+
+
+pvTimerGetTimerID (struct tmrTimerControl * const xTimer)
+{
+  void * pvReturn;
+
+  <bb 2> [local count: 22847857]:
+  # DEBUG BEGIN_STMT
+  # DEBUG pxTimer => xTimer_1(D)
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  if (xTimer_1(D) == 0B)
+    goto <bb 3>; [46.53%]
+  else
+    goto <bb 5>; [53.47%]
+
+  <bb 3> [local count: 10631108]:
+  # DEBUG BEGIN_STMT
+  __asm__ __volatile__(" cpsid i " :  :  : "memory");
+
+  <bb 4> [local count: 1073741824]:
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+
+  <bb 6> [local count: 1073741824]:
+  goto <bb 4>; [100.00%]
+
+  <bb 5> [local count: 12216749]:
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  vPortEnterCritical ();
+  # DEBUG BEGIN_STMT
+  pvReturn_4 = MEM[(struct Timer_t *)xTimer_1(D)].pvTimerID;
+  # DEBUG pvReturn => pvReturn_4
+  # DEBUG BEGIN_STMT
+  vPortExitCritical ();
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  return pvReturn_4;
+
+}
+
+
+xTimerIsTimerActive (struct tmrTimerControl * xTimer)
+{
+  unsigned char _1;
+  long int _2;
+  unsigned char _4;
+
+  <bb 2> [local count: 22847857]:
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  # DEBUG pxTimer => xTimer_3(D)
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  if (xTimer_3(D) == 0B)
+    goto <bb 3>; [46.53%]
+  else
+    goto <bb 5>; [53.47%]
+
+  <bb 3> [local count: 10631108]:
+  # DEBUG BEGIN_STMT
+  __asm__ __volatile__(" cpsid i " :  :  : "memory");
+
+  <bb 4> [local count: 1073741824]:
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+
+  <bb 6> [local count: 1073741824]:
+  goto <bb 4>; [100.00%]
+
+  <bb 5> [local count: 12216749]:
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  vPortEnterCritical ();
+  # DEBUG BEGIN_STMT
+  _1 = MEM[(struct Timer_t *)xTimer_3(D)].ucStatus;
+  _4 = _1 & 1;
+  _2 = (long int) _4;
+  # DEBUG xReturn => _2
+  # DEBUG BEGIN_STMT
+  vPortExitCritical ();
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  return _2;
+
+}
+
+
+prvCheckForValidListAndQueue ()
+{
+  struct QueueDefinition * xTimerQueue.17_1;
+  struct QueueDefinition * _2;
+
+  <bb 2> [local count: 1073741824]:
+  # DEBUG BEGIN_STMT
+  vPortEnterCritical ();
+  # DEBUG BEGIN_STMT
+  xTimerQueue.17_1 = xTimerQueue;
+  if (xTimerQueue.17_1 == 0B)
+    goto <bb 3>; [17.43%]
+  else
+    goto <bb 5>; [82.57%]
+
+  <bb 3> [local count: 187153200]:
+  # DEBUG BEGIN_STMT
+  vListInitialise (&xActiveTimerList1);
+  # DEBUG BEGIN_STMT
+  vListInitialise (&xActiveTimerList2);
+  # DEBUG BEGIN_STMT
+  pxCurrentTimerList = &xActiveTimerList1;
+  # DEBUG BEGIN_STMT
+  pxOverflowTimerList = &xActiveTimerList2;
+  # DEBUG BEGIN_STMT
+  _2 = xQueueGenericCreate (10, 16, 0);
+  xTimerQueue = _2;
+  # DEBUG BEGIN_STMT
+  if (_2 != 0B)
+    goto <bb 4>; [53.47%]
+  else
+    goto <bb 5>; [46.53%]
+
+  <bb 4> [local count: 100070816]:
+  # DEBUG BEGIN_STMT
+  vQueueAddToRegistry (_2, "TmrQ");
+
+  <bb 5> [local count: 1073741824]:
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  vPortExitCritical ();
+  return;
+
+}
+
+
+prvSwitchTimerLists ()
+{
+  TickType_t xNextExpireTime;
+  struct xLIST_ITEM * _1;
+  struct List_t * pxCurrentTimerList.11_2;
+  long unsigned int _3;
+  struct List_t * pxOverflowTimerList.12_4;
+  struct List_t * pxCurrentTimerList.11_7;
+
+  <bb 2> [local count: 118111600]:
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  goto <bb 4>; [100.00%]
+
+  <bb 3> [local count: 955630225]:
+  # DEBUG BEGIN_STMT
+  _1 = pxCurrentTimerList.11_2->xListEnd.pxNext;
+  xNextExpireTime_10 = _1->xItemValue;
+  # DEBUG xNextExpireTime => xNextExpireTime_10
+  # DEBUG BEGIN_STMT
+  prvProcessExpiredTimer (xNextExpireTime_10, 4294967295);
+
+  <bb 4> [local count: 1073741824]:
+  # DEBUG BEGIN_STMT
+  pxCurrentTimerList.11_2 = pxCurrentTimerList;
+  _3 = pxCurrentTimerList.11_2->uxNumberOfItems;
+  if (_3 != 0)
+    goto <bb 3>; [89.00%]
+  else
+    goto <bb 5>; [11.00%]
+
+  <bb 5> [local count: 118111600]:
+  # pxCurrentTimerList.11_7 = PHI <pxCurrentTimerList.11_2(4)>
+  # DEBUG BEGIN_STMT
+  # DEBUG pxTemp => pxCurrentTimerList.11_7
+  # DEBUG BEGIN_STMT
+  pxOverflowTimerList.12_4 = pxOverflowTimerList;
+  pxCurrentTimerList = pxOverflowTimerList.12_4;
+  # DEBUG BEGIN_STMT
+  pxOverflowTimerList = pxCurrentTimerList.11_7;
+  return;
+
+}
+
+
+prvProcessReceivedCommands ()
+{
+  TickType_t xTimeNow;
+  BaseType_t xTimerListsWereSwitched;
+  struct Timer_t * pxTimer;
+  struct DaemonTaskMessage_t xMessage;
+  long int _1;
+  void (*<T696>) (void *, uint32_t) _2;
+  void * _3;
+  long unsigned int _4;
+  long int _5;
+  struct xLIST * _6;
+  struct ListItem_t * _7;
+  long int _8;
+  unsigned char _9;
+  unsigned char _10;
+  long unsigned int _11;
+  long unsigned int _12;
+  long unsigned int _13;
+  long int _15;
+  unsigned char _16;
+  long unsigned int _17;
+  long unsigned int _18;
+  long unsigned int _19;
+  unsigned char _21;
+  void (*<T691>) (struct tmrTimerControl *) _22;
+  unsigned char _23;
+  unsigned char _24;
+  unsigned char _25;
+  unsigned char _26;
+  long unsigned int _27;
+  long unsigned int _30;
+  unsigned char _31;
+  unsigned char _33;
+  struct QueueDefinition * xTimerQueue.16_34;
+  long int _35;
+  unsigned char _45;
+  unsigned char _47;
+
+  <bb 2> [local count: 59669683]:
+  # DEBUG BEGIN_STMT
+  xMessage = {};
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  goto <bb 23>; [100.00%]
+
+  <bb 3> [local count: 1014686025]:
+  # DEBUG BEGIN_STMT
+  _1 = xMessage.xMessageID;
+  if (_1 < 0)
+    goto <bb 4>; [41.00%]
+  else
+    goto <bb 5>; [59.00%]
+
+  <bb 4> [local count: 416021267]:
+  # DEBUG BEGIN_STMT
+  # DEBUG pxCallback => &xMessage.u.xCallbackParameters
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  _2 = MEM[(const struct CallbackParameters_t *)&xMessage + 4B].pxCallbackFunction;
+  _3 = MEM[(const struct CallbackParameters_t *)&xMessage + 4B].pvParameter1;
+  _4 = MEM[(const struct CallbackParameters_t *)&xMessage + 4B].ulParameter2;
+  _2 (_3, _4);
+
+  <bb 5> [local count: 1014686025]:
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  _5 = xMessage.xMessageID;
+  if (_5 >= 0)
+    goto <bb 6>; [5.50%]
+  else
+    goto <bb 29>; [94.50%]
+
+  <bb 29> [local count: 958878294]:
+  goto <bb 25>; [100.00%]
+
+  <bb 6> [local count: 55807731]:
+  # DEBUG BEGIN_STMT
+  pxTimer_48 = xMessage.u.xTimerParameters.pxTimer;
+  # DEBUG pxTimer => pxTimer_48
+  # DEBUG BEGIN_STMT
+  _6 = pxTimer_48->xTimerListItem.pvContainer;
+  if (_6 != 0B)
+    goto <bb 7>; [53.47%]
+  else
+    goto <bb 8>; [46.53%]
+
+  <bb 7> [local count: 29840394]:
+  # DEBUG BEGIN_STMT
+  _7 = &pxTimer_48->xTimerListItem;
+  uxListRemove (_7);
+
+  <bb 8> [local count: 55807731]:
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  xTimeNow_51 = prvSampleTimeNow (&xTimerListsWereSwitched);
+  # DEBUG xTimeNow => xTimeNow_51
+  # DEBUG BEGIN_STMT
+  _8 = xMessage.xMessageID;
+  switch (_8) <default: <L41> [20.00%], case 1 ... 2: <L11> [20.00%], case 3: <L21> [20.00%], case 4: <L23> [20.00%], case 5: <L28> [20.00%], case 6 ... 7: <L11> [20.00%], case 8: <L21> [20.00%], case 9: <L23> [20.00%]>
+
+  <bb 28> [local count: 11161546]:
+<L41>:
+  goto <bb 24>; [100.00%]
+
+  <bb 9> [local count: 11161546]:
+  # pxTimer_14 = PHI <pxTimer_48(8)>
+  # xTimeNow_66 = PHI <xTimeNow_51(8)>
+<L11>:
+  # DEBUG BEGIN_STMT
+  _9 = pxTimer_14->ucStatus;
+  _10 = _9 | 1;
+  pxTimer_14->ucStatus = _10;
+  # DEBUG BEGIN_STMT
+  _11 = xMessage.u.xTimerParameters.xMessageValue;
+  _12 = pxTimer_14->xTimerPeriodInTicks;
+  _13 = _11 + _12;
+  _15 = prvInsertTimerInActiveList (pxTimer_14, _13, xTimeNow_66, _11);
+  if (_15 != 0)
+    goto <bb 10>; [50.00%]
+  else
+    goto <bb 22>; [50.00%]
+
+  <bb 10> [local count: 5580773]:
+  # DEBUG BEGIN_STMT
+  _16 = pxTimer_14->ucStatus;
+  _45 = _16 & 4;
+  if (_45 != 0)
+    goto <bb 11>; [33.00%]
+  else
+    goto <bb 12>; [67.00%]
+
+  <bb 11> [local count: 1841655]:
+  # DEBUG BEGIN_STMT
+  _17 = xMessage.u.xTimerParameters.xMessageValue;
+  _18 = pxTimer_14->xTimerPeriodInTicks;
+  _19 = _17 + _18;
+  prvReloadTimer (pxTimer_14, _19, xTimeNow_66);
+  goto <bb 13>; [100.00%]
+
+  <bb 12> [local count: 3739118]:
+  # DEBUG BEGIN_STMT
+  _21 = _16 & 254;
+  pxTimer_14->ucStatus = _21;
+
+  <bb 13> [local count: 5580773]:
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  _22 = pxTimer_14->pxCallbackFunction;
+  _22 (pxTimer_14);
+  goto <bb 22>; [100.00%]
+
+  <bb 14> [local count: 11161546]:
+  # pxTimer_20 = PHI <pxTimer_48(8)>
+<L21>:
+  # DEBUG BEGIN_STMT
+  _23 = pxTimer_20->ucStatus;
+  _24 = _23 & 254;
+  pxTimer_20->ucStatus = _24;
+  # DEBUG BEGIN_STMT
+  goto <bb 22>; [100.00%]
+
+  <bb 15> [local count: 11161546]:
+  # pxTimer_64 = PHI <pxTimer_48(8)>
+  # xTimeNow_67 = PHI <xTimeNow_51(8)>
+<L23>:
+  # DEBUG BEGIN_STMT
+  _25 = pxTimer_64->ucStatus;
+  _26 = _25 | 1;
+  pxTimer_64->ucStatus = _26;
+  # DEBUG BEGIN_STMT
+  _27 = xMessage.u.xTimerParameters.xMessageValue;
+  pxTimer_64->xTimerPeriodInTicks = _27;
+  # DEBUG BEGIN_STMT
+  if (_27 == 0)
+    goto <bb 16>; [5.50%]
+  else
+    goto <bb 18>; [94.50%]
+
+  <bb 16> [local count: 613885]:
+  # DEBUG BEGIN_STMT
+  __asm__ __volatile__(" cpsid i " :  :  : "memory");
+
+  <bb 17> [local count: 62002385]:
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+
+  <bb 27> [local count: 62002385]:
+  goto <bb 17>; [100.00%]
+
+  <bb 18> [local count: 10547661]:
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  _30 = _27 + xTimeNow_67;
+  prvInsertTimerInActiveList (pxTimer_64, _30, xTimeNow_67, xTimeNow_67);
+  # DEBUG BEGIN_STMT
+  goto <bb 22>; [100.00%]
+
+  <bb 19> [local count: 11161546]:
+  # pxTimer_65 = PHI <pxTimer_48(8)>
+<L28>:
+  # DEBUG BEGIN_STMT
+  _31 = pxTimer_65->ucStatus;
+  _47 = _31 & 2;
+  if (_47 == 0)
+    goto <bb 20>; [33.00%]
+  else
+    goto <bb 21>; [67.00%]
+
+  <bb 20> [local count: 3683310]:
+  # DEBUG BEGIN_STMT
+  vPortFree (pxTimer_65);
+  goto <bb 22>; [100.00%]
+
+  <bb 21> [local count: 7478236]:
+  # DEBUG BEGIN_STMT
+  _33 = _31 & 254;
+  pxTimer_65->ucStatus = _33;
+
+  <bb 22> [local count: 44032300]:
+
+  <bb 23> [local count: 103701984]:
+
+  <bb 24> [local count: 114863530]:
+<L38>:
+
+  <bb 25> [local count: 1073741824]:
+  # DEBUG BEGIN_STMT
+  xTimerQueue.16_34 = xTimerQueue;
+  _35 = xQueueReceive (xTimerQueue.16_34, &xMessage, 0);
+  if (_35 != 0)
+    goto <bb 3>; [94.50%]
+  else
+    goto <bb 26>; [5.50%]
+
+  <bb 26> [local count: 59055800]:
+  xMessage ={v} {CLOBBER};
+  xTimerListsWereSwitched ={v} {CLOBBER};
+  return;
+
+}
+
+
+prvInsertTimerInActiveList (struct Timer_t * const pxTimer, const TickType_t xNextExpiryTime, const TickType_t xTimeNow, const TickType_t xCommandTime)
+{
+  BaseType_t xProcessTimerNow;
+  long unsigned int _1;
+  long unsigned int _2;
+  struct List_t * pxCurrentTimerList.15_3;
+  struct ListItem_t * _4;
+
+  <bb 2> [local count: 1073741824]:
+  # DEBUG BEGIN_STMT
+  # DEBUG xProcessTimerNow => 0
+  # DEBUG BEGIN_STMT
+  pxTimer_8(D)->xTimerListItem.xItemValue = xNextExpiryTime_9(D);
+  # DEBUG BEGIN_STMT
+  pxTimer_8(D)->xTimerListItem.pvOwner = pxTimer_8(D);
+  # DEBUG BEGIN_STMT
+  if (xNextExpiryTime_9(D) <= xTimeNow_12(D))
+    goto <bb 3>; [50.00%]
+  else
+    goto <bb 5>; [50.00%]
+
+  <bb 3> [local count: 536870913]:
+  # DEBUG BEGIN_STMT
+  _1 = xTimeNow_12(D) - xCommandTime_13(D);
+  _2 = pxTimer_8(D)->xTimerPeriodInTicks;
+  if (_1 >= _2)
+    goto <bb 8>; [67.00%]
+  else
+    goto <bb 4>; [33.00%]
+
+  <bb 4> [local count: 177167400]:
+  # DEBUG D#1 => xNextExpiryTime_9(D)
+  # DEBUG D#2 => xTimeNow_12(D)
+  # DEBUG D#3 => xCommandTime_13(D)
+  xProcessTimerNow_16 = prvInsertTimerInActiveList.part.0 (pxTimer_8(D));
+  goto <bb 8>; [100.00%]
+
+  <bb 5> [local count: 536870913]:
+  # DEBUG BEGIN_STMT
+  if (xTimeNow_12(D) < xCommandTime_13(D))
+    goto <bb 6>; [67.00%]
+  else
+    goto <bb 7>; [33.00%]
+
+  <bb 6> [local count: 359703512]:
+  if (xNextExpiryTime_9(D) >= xCommandTime_13(D))
+    goto <bb 8>; [50.00%]
+  else
+    goto <bb 7>; [50.00%]
+
+  <bb 7> [local count: 357019156]:
+  # DEBUG BEGIN_STMT
+  pxCurrentTimerList.15_3 = pxCurrentTimerList;
+  _4 = &pxTimer_8(D)->xTimerListItem;
+  vListInsert (pxCurrentTimerList.15_3, _4);
+
+  <bb 8> [local count: 1073741824]:
+  # xProcessTimerNow_5 = PHI <xProcessTimerNow_16(4), 1(6), 0(7), 1(3)>
+  # DEBUG xProcessTimerNow => xProcessTimerNow_5
+  # DEBUG BEGIN_STMT
+  return xProcessTimerNow_5;
+
+}
+
+
+prvSampleTimeNow (BaseType_t * const pxTimerListsWereSwitched)
+{
+  static TickType_t xLastTime = 0;
+  TickType_t xTimeNow;
+  long unsigned int xLastTime.9_1;
+
+  <bb 2> [local count: 1073741824]:
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  xTimeNow_5 = xTaskGetTickCount ();
+  # DEBUG xTimeNow => xTimeNow_5
+  # DEBUG BEGIN_STMT
+  xLastTime.9_1 = xLastTime;
+  if (xLastTime.9_1 > xTimeNow_5)
+    goto <bb 3>; [33.00%]
+  else
+    goto <bb 4>; [67.00%]
+
+  <bb 3> [local count: 354334800]:
+  # DEBUG BEGIN_STMT
+  prvSwitchTimerLists ();
+  # DEBUG BEGIN_STMT
+  *pxTimerListsWereSwitched_6(D) = 1;
+  goto <bb 5>; [100.00%]
+
+  <bb 4> [local count: 719407025]:
+  # DEBUG BEGIN_STMT
+  *pxTimerListsWereSwitched_6(D) = 0;
+
+  <bb 5> [local count: 1073741824]:
+  # DEBUG BEGIN_STMT
+  xLastTime = xTimeNow_5;
+  # DEBUG BEGIN_STMT
+  return xTimeNow_5;
+
+}
+
+
+prvGetNextExpireTime (BaseType_t * const pxListWasEmpty)
+{
+  TickType_t xNextExpireTime;
+  struct List_t * pxCurrentTimerList.3_1;
+  long unsigned int _2;
+  struct xLIST_ITEM * _3;
+  long int iftmp.2_5;
+
+  <bb 2> [local count: 1073741824]:
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  pxCurrentTimerList.3_1 = pxCurrentTimerList;
+  _2 = pxCurrentTimerList.3_1->uxNumberOfItems;
+  if (_2 == 0)
+    goto <bb 4>; [50.00%]
+  else
+    goto <bb 3>; [50.00%]
+
+  <bb 3> [local count: 536870913]:
+
+  <bb 4> [local count: 1073741824]:
+  # iftmp.2_5 = PHI <1(2), 0(3)>
+  *pxListWasEmpty_7(D) = iftmp.2_5;
+  # DEBUG BEGIN_STMT
+  if (iftmp.2_5 == 0)
+    goto <bb 5>; [50.00%]
+  else
+    goto <bb 6>; [50.00%]
+
+  <bb 5> [local count: 536870913]:
+  # DEBUG BEGIN_STMT
+  _3 = pxCurrentTimerList.3_1->xListEnd.pxNext;
+  xNextExpireTime_9 = _3->xItemValue;
+  # DEBUG xNextExpireTime => xNextExpireTime_9
+
+  <bb 6> [local count: 1073741824]:
+  # xNextExpireTime_4 = PHI <xNextExpireTime_9(5), 0(4)>
+  # DEBUG xNextExpireTime => xNextExpireTime_4
+  # DEBUG BEGIN_STMT
+  return xNextExpireTime_4;
+
+}
+
+
+prvProcessTimerOrBlockTask (const TickType_t xNextExpireTime, BaseType_t xListWasEmpty)
+{
+  BaseType_t xTimerListsWereSwitched;
+  TickType_t xTimeNow;
+  long int xTimerListsWereSwitched.5_1;
+  struct List_t * pxOverflowTimerList.7_2;
+  long unsigned int _3;
+  struct QueueDefinition * xTimerQueue.8_4;
+  long unsigned int _5;
+  long int _6;
+
+  <bb 2> [local count: 1073741824]:
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  vTaskSuspendAll ();
+  # DEBUG BEGIN_STMT
+  xTimeNow_12 = prvSampleTimeNow (&xTimerListsWereSwitched);
+  # DEBUG xTimeNow => xTimeNow_12
+  # DEBUG BEGIN_STMT
+  xTimerListsWereSwitched.5_1 = xTimerListsWereSwitched;
+  if (xTimerListsWereSwitched.5_1 == 0)
+    goto <bb 3>; [67.00%]
+  else
+    goto <bb 12>; [33.00%]
+
+  <bb 3> [local count: 719407025]:
+  # DEBUG BEGIN_STMT
+  if (xListWasEmpty_14(D) == 0)
+    goto <bb 4>; [50.00%]
+  else
+    goto <bb 6>; [50.00%]
+
+  <bb 4> [local count: 359703512]:
+  if (xTimeNow_12 >= xNextExpireTime_15(D))
+    goto <bb 5>; [33.00%]
+  else
+    goto <bb 6>; [67.00%]
+
+  <bb 5> [local count: 118702158]:
+  # DEBUG BEGIN_STMT
+  xTaskResumeAll ();
+  # DEBUG BEGIN_STMT
+  prvProcessExpiredTimer (xNextExpireTime_15(D), xTimeNow_12);
+  goto <bb 13>; [100.00%]
+
+  <bb 6> [local count: 600704867]:
+  # DEBUG BEGIN_STMT
+  if (xListWasEmpty_14(D) != 0)
+    goto <bb 7>; [50.00%]
+  else
+    goto <bb 10>; [50.00%]
+
+  <bb 7> [local count: 300352433]:
+  # DEBUG BEGIN_STMT
+  pxOverflowTimerList.7_2 = pxOverflowTimerList;
+  _3 = pxOverflowTimerList.7_2->uxNumberOfItems;
+  if (_3 == 0)
+    goto <bb 10>; [50.00%]
+  else
+    goto <bb 8>; [50.00%]
+
+  <bb 8> [local count: 150176217]:
+
+  <bb 10> [local count: 600704867]:
+  # xListWasEmpty_7 = PHI <xListWasEmpty_14(D)(6), 0(8), 1(7)>
+  # DEBUG xListWasEmpty => xListWasEmpty_7
+  # DEBUG BEGIN_STMT
+  xTimerQueue.8_4 = xTimerQueue;
+  _5 = xNextExpireTime_15(D) - xTimeNow_12;
+  vQueueWaitForMessageRestricted (xTimerQueue.8_4, _5, xListWasEmpty_7);
+  # DEBUG BEGIN_STMT
+  _6 = xTaskResumeAll ();
+  if (_6 == 0)
+    goto <bb 11>; [50.00%]
+  else
+    goto <bb 13>; [50.00%]
+
+  <bb 11> [local count: 300352433]:
+  # DEBUG BEGIN_STMT
+  MEM[(volatile uint32_t *)3758157060B] ={v} 268435456;
+  # DEBUG BEGIN_STMT
+  __asm__ __volatile__("dsb" :  :  : "memory");
+  # DEBUG BEGIN_STMT
+  __asm__ __volatile__("isb");
+  # DEBUG BEGIN_STMT
+  goto <bb 13>; [100.00%]
+
+  <bb 12> [local count: 354334800]:
+  # DEBUG BEGIN_STMT
+  xTaskResumeAll ();
+
+  <bb 13> [local count: 1073741824]:
+  xTimerListsWereSwitched ={v} {CLOBBER};
+  return;
+
+}
+
+
+prvTimerTask (void * pvParameters)
+{
+  BaseType_t xListWasEmpty;
+  TickType_t xNextExpireTime;
+  long int xListWasEmpty.1_1;
+
+  <bb 2> [local count: 10631108]:
+
+  <bb 3> [local count: 1073741824]:
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  xNextExpireTime_5 = prvGetNextExpireTime (&xListWasEmpty);
+  # DEBUG xNextExpireTime => xNextExpireTime_5
+  # DEBUG BEGIN_STMT
+  xListWasEmpty.1_1 = xListWasEmpty;
+  prvProcessTimerOrBlockTask (xNextExpireTime_5, xListWasEmpty.1_1);
+  # DEBUG BEGIN_STMT
+  prvProcessReceivedCommands ();
+  # DEBUG BEGIN_STMT
+
+  <bb 4> [local count: 1073741824]:
+  goto <bb 3>; [100.00%]
+
+}
+
+
+prvProcessExpiredTimer (const TickType_t xNextExpireTime, const TickType_t xTimeNow)
+{
+  struct Timer_t * const pxTimer;
+  struct List_t * pxCurrentTimerList.13_1;
+  struct xLIST_ITEM * _2;
+  struct ListItem_t * _3;
+  unsigned char _4;
+  unsigned char _5;
+  void (*<T691>) (struct tmrTimerControl *) _6;
+  unsigned char _16;
+
+  <bb 2> [local count: 1073741824]:
+  # DEBUG BEGIN_STMT
+  pxCurrentTimerList.13_1 = pxCurrentTimerList;
+  _2 = pxCurrentTimerList.13_1->xListEnd.pxNext;
+  pxTimer_9 = _2->pvOwner;
+  # DEBUG pxTimer => pxTimer_9
+  # DEBUG BEGIN_STMT
+  _3 = &pxTimer_9->xTimerListItem;
+  uxListRemove (_3);
+  # DEBUG BEGIN_STMT
+  _4 = pxTimer_9->ucStatus;
+  _16 = _4 & 4;
+  if (_16 != 0)
+    goto <bb 3>; [33.00%]
+  else
+    goto <bb 4>; [67.00%]
+
+  <bb 3> [local count: 354334800]:
+  # DEBUG BEGIN_STMT
+  prvReloadTimer (pxTimer_9, xNextExpireTime_12(D), xTimeNow_13(D));
+  goto <bb 5>; [100.00%]
+
+  <bb 4> [local count: 719407025]:
+  # DEBUG BEGIN_STMT
+  _5 = _4 & 254;
+  pxTimer_9->ucStatus = _5;
+
+  <bb 5> [local count: 1073741824]:
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  _6 = pxTimer_9->pxCallbackFunction;
+  _6 (pxTimer_9);
+  return;
+
+}
+
+
+prvReloadTimer (struct Timer_t * const pxTimer, TickType_t xExpiredTime, const TickType_t xTimeNow)
+{
+  long unsigned int _1;
+  void (*<T691>) (struct tmrTimerControl *) _2;
+  long unsigned int _3;
+  long unsigned int _4;
+  long int _5;
+
+  <bb 2> [local count: 118111600]:
+  # DEBUG BEGIN_STMT
+  goto <bb 4>; [100.00%]
+
+  <bb 3> [local count: 955630225]:
+  # DEBUG BEGIN_STMT
+  _1 = pxTimer_10(D)->xTimerPeriodInTicks;
+  xExpiredTime_13 = _1 + xExpiredTime_6;
+  # DEBUG xExpiredTime => xExpiredTime_13
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  _2 = pxTimer_10(D)->pxCallbackFunction;
+  _2 (pxTimer_10(D));
+
+  <bb 4> [local count: 1073741824]:
+  # xExpiredTime_6 = PHI <xExpiredTime_8(D)(2), xExpiredTime_13(3)>
+  # DEBUG xExpiredTime => xExpiredTime_6
+  # DEBUG BEGIN_STMT
+  _3 = pxTimer_10(D)->xTimerPeriodInTicks;
+  _4 = _3 + xExpiredTime_6;
+  _5 = prvInsertTimerInActiveList (pxTimer_10(D), _4, xTimeNow_11(D), xExpiredTime_6);
+  if (_5 != 0)
+    goto <bb 3>; [89.00%]
+  else
+    goto <bb 5>; [11.00%]
+
+  <bb 5> [local count: 118111600]:
+  return;
+
+}
+
+
+pcTimerGetName (struct tmrTimerControl * xTimer)
+{
+  const char * _3;
+
+  <bb 2> [local count: 35437027]:
+  # DEBUG BEGIN_STMT
+  # DEBUG pxTimer => xTimer_1(D)
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  if (xTimer_1(D) == 0B)
+    goto <bb 3>; [30.00%]
+  else
+    goto <bb 5>; [70.00%]
+
+  <bb 3> [local count: 10631108]:
+  # DEBUG BEGIN_STMT
+  __asm__ __volatile__(" cpsid i " :  :  : "memory");
+
+  <bb 4> [local count: 1073741824]:
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+
+  <bb 6> [local count: 1073741824]:
+  goto <bb 4>; [100.00%]
+
+  <bb 5> [local count: 24805919]:
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  _3 = MEM[(struct Timer_t *)xTimer_1(D)].pcTimerName;
+  return _3;
+
+}
+
+
+xTimerGetExpiryTime (struct tmrTimerControl * xTimer)
+{
+  TickType_t xReturn;
+
+  <bb 2> [local count: 35437027]:
+  # DEBUG BEGIN_STMT
+  # DEBUG pxTimer => xTimer_1(D)
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  if (xTimer_1(D) == 0B)
+    goto <bb 3>; [30.00%]
+  else
+    goto <bb 5>; [70.00%]
+
+  <bb 3> [local count: 10631108]:
+  # DEBUG BEGIN_STMT
+  __asm__ __volatile__(" cpsid i " :  :  : "memory");
+
+  <bb 4> [local count: 1073741824]:
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+
+  <bb 6> [local count: 1073741824]:
+  goto <bb 4>; [100.00%]
+
+  <bb 5> [local count: 24805919]:
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  xReturn_3 = MEM[(struct Timer_t *)xTimer_1(D)].xTimerListItem.xItemValue;
+  # DEBUG xReturn => xReturn_3
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  return xReturn_3;
+
+}
+
+
+uxTimerGetReloadMode (struct tmrTimerControl * xTimer)
+{
+  UBaseType_t uxReturn;
+  long int _1;
+
+  <bb 2> [local count: 1073741824]:
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  _1 = xTimerGetReloadMode (xTimer_3(D));
+  uxReturn_5 = (UBaseType_t) _1;
+  # DEBUG uxReturn => uxReturn_5
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  return uxReturn_5;
+
+}
+
+
+xTimerGetReloadMode (struct tmrTimerControl * xTimer)
+{
+  BaseType_t D.6991;
+
+  <bb 2> [local count: 22847857]:
+  # DEBUG BEGIN_STMT
+  # DEBUG pxTimer => xTimer_3(D)
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  if (xTimer_3(D) == 0B)
+    goto <bb 3>; [46.53%]
+  else
+    goto <bb 5>; [53.47%]
+
+  <bb 3> [local count: 10631108]:
+  # DEBUG BEGIN_STMT
+  __asm__ __volatile__(" cpsid i " :  :  : "memory");
+
+  <bb 4> [local count: 1073741824]:
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+
+  <bb 6> [local count: 1073741824]:
+  goto <bb 4>; [100.00%]
+
+  <bb 5> [local count: 12216749]:
+  _1 = xTimerGetReloadMode.part.0 (xTimer_3(D));
+  return _1;
+
+}
+
+
+vTimerSetReloadMode (struct tmrTimerControl * xTimer, const BaseType_t xAutoReload)
+{
+  unsigned char _1;
+  unsigned char _2;
+  unsigned char _3;
+  unsigned char _4;
+
+  <bb 2> [local count: 22847857]:
+  # DEBUG BEGIN_STMT
+  # DEBUG pxTimer => xTimer_6(D)
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  if (xTimer_6(D) == 0B)
+    goto <bb 3>; [46.53%]
+  else
+    goto <bb 5>; [53.47%]
+
+  <bb 3> [local count: 10631108]:
+  # DEBUG BEGIN_STMT
+  __asm__ __volatile__(" cpsid i " :  :  : "memory");
+
+  <bb 4> [local count: 1073741824]:
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+
+  <bb 9> [local count: 1073741824]:
+  goto <bb 4>; [100.00%]
+
+  <bb 5> [local count: 12216749]:
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  vPortEnterCritical ();
+  # DEBUG BEGIN_STMT
+  if (xAutoReload_9(D) != 0)
+    goto <bb 6>; [50.00%]
+  else
+    goto <bb 7>; [50.00%]
+
+  <bb 6> [local count: 6108375]:
+  # DEBUG BEGIN_STMT
+  _1 = MEM[(struct Timer_t *)xTimer_6(D)].ucStatus;
+  _2 = _1 | 4;
+  MEM[(struct Timer_t *)xTimer_6(D)].ucStatus = _2;
+  goto <bb 8>; [100.00%]
+
+  <bb 7> [local count: 6108375]:
+  # DEBUG BEGIN_STMT
+  _3 = MEM[(struct Timer_t *)xTimer_6(D)].ucStatus;
+  _4 = _3 & 251;
+  MEM[(struct Timer_t *)xTimer_6(D)].ucStatus = _4;
+
+  <bb 8> [local count: 12216749]:
+  # DEBUG BEGIN_STMT
+  vPortExitCritical ();
+  # DEBUG BEGIN_STMT
+  return;
+
+}
+
+
+xTimerGetPeriod (struct tmrTimerControl * xTimer)
+{
+  TickType_t _3;
+
+  <bb 2> [local count: 35437027]:
+  # DEBUG BEGIN_STMT
+  # DEBUG pxTimer => xTimer_1(D)
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  if (xTimer_1(D) == 0B)
+    goto <bb 3>; [30.00%]
+  else
+    goto <bb 5>; [70.00%]
+
+  <bb 3> [local count: 10631108]:
+  # DEBUG BEGIN_STMT
+  __asm__ __volatile__(" cpsid i " :  :  : "memory");
+
+  <bb 4> [local count: 1073741824]:
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+
+  <bb 6> [local count: 1073741824]:
+  goto <bb 4>; [100.00%]
+
+  <bb 5> [local count: 24805919]:
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  _3 = MEM[(struct Timer_t *)xTimer_1(D)].xTimerPeriodInTicks;
+  return _3;
+
+}
+
+
+xTimerGetTimerDaemonTaskHandle ()
+{
+  struct tskTaskControlBlock * xTimerTaskHandle.25_1;
+
+  <bb 2> [local count: 35437027]:
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  xTimerTaskHandle.25_1 = xTimerTaskHandle;
+  if (xTimerTaskHandle.25_1 == 0B)
+    goto <bb 3>; [30.00%]
+  else
+    goto <bb 5>; [70.00%]
+
+  <bb 3> [local count: 10631108]:
+  # DEBUG BEGIN_STMT
+  __asm__ __volatile__(" cpsid i " :  :  : "memory");
+
+  <bb 4> [local count: 1073741824]:
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+
+  <bb 6> [local count: 1073741824]:
+  goto <bb 4>; [100.00%]
+
+  <bb 5> [local count: 24805919]:
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  return xTimerTaskHandle.25_1;
+
+}
+
+
+xTimerGenericCommandFromISR (struct tmrTimerControl * xTimer, const BaseType_t xCommandID, const TickType_t xOptionalValue, BaseType_t * const pxHigherPriorityTaskWoken, const TickType_t xTicksToWait)
+{
+  struct DaemonTaskMessage_t xMessage;
+  BaseType_t xReturn;
+  struct QueueDefinition * xTimerQueue.23_1;
+
+  <bb 2> [local count: 32382296]:
+  # DEBUG BEGIN_STMT
+  # DEBUG xReturn => 0
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  if (xTimer_4(D) == 0B)
+    goto <bb 3>; [30.00%]
+  else
+    goto <bb 5>; [70.00%]
+
+  <bb 3> [local count: 9714689]:
+  # DEBUG BEGIN_STMT
+  __asm__ __volatile__(" cpsid i " :  :  : "memory");
+
+  <bb 4> [local count: 981183493]:
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+
+  <bb 11> [local count: 981183493]:
+  goto <bb 4>; [100.00%]
+
+  <bb 5> [local count: 22667608]:
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  xTimerQueue.23_1 = xTimerQueue;
+  if (xTimerQueue.23_1 != 0B)
+    goto <bb 6>; [70.00%]
+  else
+    goto <bb 10>; [30.00%]
+
+  <bb 6> [local count: 15867325]:
+  # DEBUG BEGIN_STMT
+  xMessage.xMessageID = xCommandID_6(D);
+  # DEBUG BEGIN_STMT
+  xMessage.u.xTimerParameters.xMessageValue = xOptionalValue_8(D);
+  # DEBUG BEGIN_STMT
+  xMessage.u.xTimerParameters.pxTimer = xTimer_4(D);
+  # DEBUG BEGIN_STMT
+  if (xCommandID_6(D) <= 5)
+    goto <bb 7>; [67.00%]
+  else
+    goto <bb 9>; [33.00%]
+
+  <bb 7> [local count: 10631108]:
+  # DEBUG BEGIN_STMT
+  __asm__ __volatile__(" cpsid i " :  :  : "memory");
+
+  <bb 8> [local count: 1073741824]:
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+
+  <bb 12> [local count: 1073741824]:
+  goto <bb 8>; [100.00%]
+
+  <bb 9> [local count: 5236217]:
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  xReturn_13 = xQueueGenericSendFromISR (xTimerQueue.23_1, &xMessage, pxHigherPriorityTaskWoken_11(D), 0);
+  # DEBUG xReturn => xReturn_13
+
+  <bb 10> [local count: 12036500]:
+  # xReturn_2 = PHI <0(5), xReturn_13(9)>
+  # DEBUG xReturn => xReturn_2
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  xMessage ={v} {CLOBBER};
+  return xReturn_2;
+
+}
+
+
+xTimerGenericCommandFromTask (struct tmrTimerControl * xTimer, const BaseType_t xCommandID, const TickType_t xOptionalValue, BaseType_t * const pxHigherPriorityTaskWoken, const TickType_t xTicksToWait)
+{
+  struct DaemonTaskMessage_t xMessage;
+  BaseType_t xReturn;
+  struct QueueDefinition * xTimerQueue.20_1;
+  long int _2;
+  struct QueueDefinition * xTimerQueue.21_3;
+  struct QueueDefinition * xTimerQueue.22_4;
+
+  <bb 2> [local count: 32382296]:
+  # DEBUG BEGIN_STMT
+  # DEBUG xReturn => 0
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  if (xTimer_7(D) == 0B)
+    goto <bb 3>; [30.00%]
+  else
+    goto <bb 5>; [70.00%]
+
+  <bb 3> [local count: 9714689]:
+  # DEBUG BEGIN_STMT
+  __asm__ __volatile__(" cpsid i " :  :  : "memory");
+
+  <bb 4> [local count: 981183493]:
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+
+  <bb 13> [local count: 981183493]:
+  goto <bb 4>; [100.00%]
+
+  <bb 5> [local count: 22667608]:
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  xTimerQueue.20_1 = xTimerQueue;
+  if (xTimerQueue.20_1 != 0B)
+    goto <bb 6>; [70.00%]
+  else
+    goto <bb 12>; [30.00%]
+
+  <bb 6> [local count: 15867325]:
+  # DEBUG BEGIN_STMT
+  xMessage.xMessageID = xCommandID_9(D);
+  # DEBUG BEGIN_STMT
+  xMessage.u.xTimerParameters.xMessageValue = xOptionalValue_11(D);
+  # DEBUG BEGIN_STMT
+  xMessage.u.xTimerParameters.pxTimer = xTimer_7(D);
+  # DEBUG BEGIN_STMT
+  if (xCommandID_9(D) > 5)
+    goto <bb 7>; [67.00%]
+  else
+    goto <bb 9>; [33.00%]
+
+  <bb 7> [local count: 10631108]:
+  # DEBUG BEGIN_STMT
+  __asm__ __volatile__(" cpsid i " :  :  : "memory");
+
+  <bb 8> [local count: 1073741824]:
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+
+  <bb 14> [local count: 1073741824]:
+  goto <bb 8>; [100.00%]
+
+  <bb 9> [local count: 5236217]:
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  _2 = xTaskGetSchedulerState ();
+  if (_2 == 2)
+    goto <bb 10>; [34.00%]
+  else
+    goto <bb 11>; [66.00%]
+
+  <bb 10> [local count: 1780314]:
+  # DEBUG BEGIN_STMT
+  xTimerQueue.21_3 = xTimerQueue;
+  xReturn_19 = xQueueGenericSend (xTimerQueue.21_3, &xMessage, xTicksToWait_17(D), 0);
+  # DEBUG xReturn => xReturn_19
+  goto <bb 12>; [100.00%]
+
+  <bb 11> [local count: 3455903]:
+  # DEBUG BEGIN_STMT
+  xTimerQueue.22_4 = xTimerQueue;
+  xReturn_16 = xQueueGenericSend (xTimerQueue.22_4, &xMessage, 0, 0);
+  # DEBUG xReturn => xReturn_16
+
+  <bb 12> [local count: 12036500]:
+  # xReturn_5 = PHI <0(5), xReturn_19(10), xReturn_16(11)>
+  # DEBUG xReturn => xReturn_5
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  xMessage ={v} {CLOBBER};
+  return xReturn_5;
+
+}
+
+
+xTimerCreate (const char * const pcTimerName, const TickType_t xTimerPeriodInTicks, const BaseType_t xAutoReload, void * const pvTimerID, void (*TimerCallbackFunction_t) (struct tmrTimerControl *) pxCallbackFunction)
+{
+  struct Timer_t * pxNewTimer;
+
+  <bb 2> [local count: 1073741824]:
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  pxNewTimer_4 = pvPortMalloc (44);
+  # DEBUG pxNewTimer => pxNewTimer_4
+  # DEBUG BEGIN_STMT
+  if (pxNewTimer_4 != 0B)
+    goto <bb 3>; [53.47%]
+  else
+    goto <bb 4>; [46.53%]
+
+  <bb 3> [local count: 574129753]:
+  # DEBUG BEGIN_STMT
+  pxNewTimer_4->ucStatus = 0;
+  # DEBUG BEGIN_STMT
+  prvInitialiseNewTimer (pcTimerName_6(D), xTimerPeriodInTicks_7(D), xAutoReload_8(D), pvTimerID_9(D), pxCallbackFunction_10(D), pxNewTimer_4);
+
+  <bb 4> [local count: 1073741824]:
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  return pxNewTimer_4;
+
+}
+
+
+xTimerCreateTimerTask ()
+{
+  BaseType_t xReturn;
+  struct QueueDefinition * xTimerQueue.0_1;
+
+  <bb 2> [local count: 14510487]:
+  # DEBUG BEGIN_STMT
+  # DEBUG xReturn => 0
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  prvCheckForValidListAndQueue ();
+  # DEBUG BEGIN_STMT
+  xTimerQueue.0_1 = xTimerQueue;
+  if (xTimerQueue.0_1 != 0B)
+    goto <bb 4>; [53.47%]
+  else
+    goto <bb 5>; [46.53%]
+
+  <bb 4> [local count: 7758757]:
+  # DEBUG BEGIN_STMT
+  xReturn_5 = xTaskCreate (prvTimerTask, "Tmr Svc", 180, 0B, 2, &xTimerTaskHandle);
+  # DEBUG xReturn => xReturn_5
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  if (xReturn_5 == 0)
+    goto <bb 5>; [50.00%]
+  else
+    goto <bb 7>; [50.00%]
+
+  <bb 5> [local count: 10631108]:
+  # DEBUG xReturn => NULL
+  # DEBUG BEGIN_STMT
+  __asm__ __volatile__(" cpsid i " :  :  : "memory");
+
+  <bb 6> [local count: 1073741824]:
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+
+  <bb 8> [local count: 1073741824]:
+  goto <bb 6>; [100.00%]
+
+  <bb 7> [local count: 3879379]:
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  return xReturn_5;
+
+}
+
+

@@ -1,0 +1,2281 @@
+IPA function summary for xEventGroupSetBits.part.0/31 inlinable
+  global time:     189.559093
+  self size:       39
+  global size:     39
+  min size:       32
+  self stack:      0
+  global stack:    0
+    size:26.500000, time:118.036365
+    size:7.500000, time:10.744546,  executed if:(not inlined)
+  calls:
+    vTaskSuspendAll/21 function body not available
+      freq:1.00 loop depth: 0 size: 1 time: 10
+    vTaskRemoveFromUnorderedEventList/28 function body not available
+      freq:3.40 loop depth: 1 size: 3 time: 12
+    xTaskResumeAll/23 function body not available
+      freq:1.00 loop depth: 0 size: 1 time: 10
+
+IPA function summary for xEventGroupClearBits.part.0/30 inlinable
+  global time:     26.000000
+  self size:       9
+  global size:     9
+  min size:       4
+  self stack:      0
+  global stack:    0
+    size:2.000000, time:2.000000
+    size:4.000000, time:3.000000,  executed if:(not inlined)
+    size:1.000000, time:1.000000,  nonconst if:(op1 changed)
+  calls:
+    vPortEnterCritical/25 function body not available
+      freq:1.00 loop depth: 0 size: 1 time: 10
+    vPortExitCritical/26 function body not available
+      freq:1.00 loop depth: 0 size: 1 time: 10
+
+IPA function summary for vEventGroupSetNumber/17 inlinable
+  global time:     3.000000
+  self size:       4
+  global size:     4
+  min size:       1
+  self stack:      0
+  global stack:    0
+    size:0.500000, time:0.500000
+    size:3.500000, time:2.500000,  executed if:(not inlined)
+  calls:
+
+IPA function summary for uxEventGroupGetNumber/16 inlinable
+  global time:     4.700000
+  self size:       6
+  global size:     6
+  min size:       0
+  self stack:      0
+  global stack:    0
+    size:0.000000, time:0.000000
+    size:3.000000, time:2.000000,  executed if:(not inlined)
+    size:2.000000, time:2.000000,  nonconst if:(op0 changed)
+    size:0.500000, time:0.350000,  executed if:(op0 != 0B) && (not inlined),  nonconst if:(op0[ref offset: 192] changed) && (op0 != 0B) && (not inlined)
+    size:0.500000, time:0.350000,  executed if:(op0 != 0B),  nonconst if:(op0[ref offset: 192] changed) && (op0 != 0B)
+  calls:
+
+IPA function summary for xEventGroupSetBitsFromISR/15 inlinable
+  global time:     17.000000
+  self size:       9
+  global size:     9
+  min size:       6
+  self stack:      0
+  global stack:    0
+    size:0.000000, time:0.000000
+    size:3.000000, time:2.000000,  executed if:(not inlined)
+  calls:
+    xTimerPendFunctionCallFromISR/27 function body not available
+      freq:1.00 loop depth: 0 size: 6 time: 15
+       op0 is compile time invariant
+
+IPA function summary for prvTestWaitCondition/14 inlinable
+  global time:     7.000000
+  self size:       11
+  global size:     11
+  min size:       0
+  self stack:      0
+  global stack:    0
+    size:0.000000, time:0.000000
+    size:3.000000, time:2.000000,  executed if:(not inlined)
+    size:2.000000, time:2.000000,  nonconst if:(op2 changed)
+    size:3.000000, time:1.500000,  executed if:(op2 != 0),  nonconst if:(op0 changed || op1 changed) && (op2 != 0)
+    size:3.000000, time:1.500000,  executed if:(op2 == 0),  nonconst if:(op0 changed || op1 changed) && (op2 == 0)
+  calls:
+
+IPA function summary for vEventGroupClearBitsCallback/13 inlinable
+  global time:     14.000000
+  self size:       6
+  global size:     6
+  min size:       3
+  self stack:      0
+  global stack:    0
+    size:0.000000, time:0.000000
+    size:3.000000, time:2.000000,  executed if:(not inlined)
+  calls:
+    xEventGroupClearBits/7 function not considered for inlining
+      freq:1.00 loop depth: 0 size: 3 time: 12 callee size: 7 stack: 0
+
+IPA function summary for vEventGroupSetBitsCallback/12 inlinable
+  global time:     14.000000
+  self size:       6
+  global size:     6
+  min size:       3
+  self stack:      0
+  global stack:    0
+    size:0.000000, time:0.000000
+    size:3.000000, time:2.000000,  executed if:(not inlined)
+  calls:
+    xEventGroupSetBits/10 function not considered for inlining
+      freq:1.00 loop depth: 0 size: 3 time: 12 callee size: 7 stack: 0
+
+IPA function summary for vEventGroupDelete/11 inlinable
+  global time:     97.124447
+  self size:       20
+  global size:     20
+  min size:       0
+  self stack:      0
+  global stack:    0
+    size:0.000000, time:0.000000
+    size:2.000000, time:0.000000,  executed if:(not inlined)
+    size:2.000000, time:2.000000,  nonconst if:(op0 changed)
+    size:2.000000, time:5.410729,  executed if:(op0 != 0B) && (not inlined)
+    size:6.000000, time:24.564336,  executed if:(op0 != 0B)
+    size:1.000000, time:0.465300,  executed if:(op0 == 0B)
+  calls:
+    vPortFree/29 function body not available
+      freq:0.27 loop depth: 0 size: 2 time: 11 predicate: (op0 != 0B)
+    xTaskResumeAll/23 function body not available
+      freq:0.27 loop depth: 0 size: 1 time: 10 predicate: (op0 != 0B)
+    vTaskRemoveFromUnorderedEventList/28 function body not available
+      freq:4.46 loop depth: 1 size: 3 time: 12 predicate: (op0 != 0B)
+       op1 is compile time invariant
+    vTaskSuspendAll/21 function body not available
+      freq:0.53 loop depth: 0 size: 1 time: 10 predicate: (op0 != 0B)
+
+IPA function summary for xEventGroupSetBits/10 inlinable
+  global time:     8.334000
+  self size:       14
+  global size:     14
+  min size:       0
+  self stack:      0
+  global stack:    0
+    size:0.000000, time:0.000000
+    size:2.000000, time:0.000000,  executed if:(not inlined)
+    size:2.000000, time:2.000000,  nonconst if:(op0 changed)
+    size:3.000000, time:2.100000,  executed if:(op0 != 0B),  nonconst if:(op1 changed) && (op0 != 0B)
+    size:1.000000, time:0.462000,  executed if:(op1,(# & 4278190080) == 0) && (op0 != 0B) && (not inlined)
+    size:1.000000, time:0.469000,  executed if:(op1,(# & 4278190080) != 0) && (op0 != 0B)
+    size:1.000000, time:0.300000,  executed if:(op0 == 0B)
+  calls:
+    xEventGroupSetBits.part.0/31 function not considered for inlining
+      freq:0.23 loop depth: 0 size: 4 time: 13 callee size:19 stack: 0 predicate: (op1,(# & 4278190080) == 0) && (op0 != 0B)
+
+IPA function summary for xEventGroupGetBitsFromISR/9 inlinable
+  global time:     12.000000
+  self size:       13
+  global size:     13
+  min size:       10
+  self stack:      0
+  global stack:    0
+    size:9.500000, time:9.500000
+    size:3.500000, time:2.500000,  executed if:(not inlined)
+  calls:
+
+IPA function summary for xEventGroupClearBitsFromISR/8 inlinable
+  global time:     17.000000
+  self size:       9
+  global size:     9
+  min size:       6
+  self stack:      0
+  global stack:    0
+    size:0.000000, time:0.000000
+    size:3.000000, time:2.000000,  executed if:(not inlined)
+  calls:
+    xTimerPendFunctionCallFromISR/27 function body not available
+      freq:1.00 loop depth: 0 size: 6 time: 15
+       op0 is compile time invariant
+       op3 is compile time invariant
+
+IPA function summary for xEventGroupClearBits/7 inlinable
+  global time:     8.334000
+  self size:       14
+  global size:     14
+  min size:       0
+  self stack:      0
+  global stack:    0
+    size:0.000000, time:0.000000
+    size:2.000000, time:0.000000,  executed if:(not inlined)
+    size:2.000000, time:2.000000,  nonconst if:(op0 changed)
+    size:3.000000, time:2.100000,  executed if:(op0 != 0B),  nonconst if:(op1 changed) && (op0 != 0B)
+    size:1.000000, time:0.462000,  executed if:(op1,(# & 4278190080) == 0) && (op0 != 0B) && (not inlined)
+    size:1.000000, time:0.469000,  executed if:(op1,(# & 4278190080) != 0) && (op0 != 0B)
+    size:1.000000, time:0.300000,  executed if:(op0 == 0B)
+  calls:
+    xEventGroupClearBits.part.0/30 function not considered for inlining
+      freq:0.23 loop depth: 0 size: 4 time: 13 callee size: 4 stack: 0 predicate: (op1,(# & 4278190080) == 0) && (op0 != 0B)
+
+IPA function summary for xEventGroupWaitBits/6 inlinable
+  global time:     12.373390
+  self size:       76
+  global size:     76
+  min size:       0
+  self stack:      0
+  global stack:    0
+    size:0.000000, time:0.000000
+    size:2.000000, time:0.000000,  executed if:(not inlined)
+    size:2.000000, time:2.000000,  nonconst if:(op0 changed)
+    size:3.000000, time:2.100000,  executed if:(op0 != 0B),  nonconst if:(op1 changed) && (op0 != 0B)
+    size:2.000000, time:0.700000,  executed if:(op1,(# & 4278190080) == 0) && (op0 != 0B),  nonconst if:(op1 changed) && (op1,(# & 4278190080) == 0) && (op0 != 0B)
+    size:18.000000, time:0.896345,  executed if:(op1 != 0) && (op1,(# & 4278190080) == 0) && (op0 != 0B)
+    size:4.000000, time:0.231577,  executed if:(op1 != 0) && (op1,(# & 4278190080) == 0) && (op0 != 0B),  nonconst if:(op4 changed) && (op1 != 0) && (op1,(# & 4278190080) == 0) && (op0 != 0B)
+    size:1.000000, time:0.038693,  executed if:(op4 != 0) && (op1 != 0) && (op1,(# & 4278190080) == 0) && (op0 != 0B)
+    size:2.000000, time:0.198355,  executed if:(op1 != 0) && (op1,(# & 4278190080) == 0) && (op0 != 0B) && (not inlined)
+    size:2.000000, time:0.038404,  executed if:(op4 != 0) && (op1 != 0) && (op1,(# & 4278190080) == 0) && (op0 != 0B),  nonconst if:(op2 changed) && (op4 != 0) && (op1 != 0) && (op1,(# & 4278190080) == 0) && (op0 != 0B)
+    size:2.000000, time:0.038404,  executed if:(op4 != 0) && (op1 != 0) && (op1,(# & 4278190080) == 0) && (op0 != 0B),  nonconst if:(op3 changed) && (op4 != 0) && (op1 != 0) && (op1,(# & 4278190080) == 0) && (op0 != 0B)
+    size:1.000000, time:0.009601,  executed if:(op3 != 0) && (op4 != 0) && (op1 != 0) && (op1,(# & 4278190080) == 0) && (op0 != 0B),  nonconst if:(op2 changed) && (op3 != 0) && (op4 != 0) && (op1 != 0) && (op1,(# & 4278190080) == 0) && (op0 != 0B)
+    size:1.000000, time:0.019202,  executed if:(op4 != 0) && (op1 != 0) && (op1,(# & 4278190080) == 0) && (op0 != 0B),  nonconst if:(op1 changed || op2 changed || op3 changed) && (op4 != 0) && (op1 != 0) && (op1,(# & 4278190080) == 0) && (op0 != 0B)
+    size:4.000000, time:0.089481,  executed if:(op1 != 0) && (op1,(# & 4278190080) == 0) && (op0 != 0B),  nonconst if:(op2 changed) && (op1 != 0) && (op1,(# & 4278190080) == 0) && (op0 != 0B)
+    size:2.000000, time:0.022370,  executed if:(op2 != 0) && (op1 != 0) && (op1,(# & 4278190080) == 0) && (op0 != 0B),  nonconst if:(op1 changed) && (op2 != 0) && (op1 != 0) && (op1,(# & 4278190080) == 0) && (op0 != 0B)
+    size:3.000000, time:0.033555,  executed if:(op2 != 0) && (op1 != 0) && (op1,(# & 4278190080) == 0) && (op0 != 0B)
+    size:1.000000, time:0.011185,  executed if:(op2 != 0) && (op1 != 0) && (op1,(# & 4278190080) == 0) && (op0 != 0B) && (not inlined)
+    size:1.000000, time:0.234500,  executed if:(op1 == 0) && (op1,(# & 4278190080) == 0) && (op0 != 0B)
+    size:1.000000, time:0.350000,  executed if:(op1,(# & 4278190080) != 0) && (op0 != 0B)
+    size:1.000000, time:0.300000,  executed if:(op0 == 0B)
+  calls:
+    vPortExitCritical/26 function body not available
+      freq:0.01 loop depth: 0 size: 1 time: 10 predicate: (op1 != 0) && (op1,(# & 4278190080) == 0) && (op0 != 0B)
+    prvTestWaitCondition/14 function not considered for inlining
+      freq:0.01 loop depth: 0 size: 5 time: 14 callee size: 5 stack: 0 predicate: (op1 != 0) && (op1,(# & 4278190080) == 0) && (op0 != 0B)
+    vPortEnterCritical/25 function body not available
+      freq:0.01 loop depth: 0 size: 1 time: 10 predicate: (op1 != 0) && (op1,(# & 4278190080) == 0) && (op0 != 0B)
+    uxTaskResetEventItemValue/24 function body not available
+      freq:0.04 loop depth: 0 size: 2 time: 11 predicate: (op1 != 0) && (op1,(# & 4278190080) == 0) && (op0 != 0B)
+    xTaskResumeAll/23 function body not available
+      freq:0.08 loop depth: 0 size: 2 time: 11 predicate: (op1 != 0) && (op1,(# & 4278190080) == 0) && (op0 != 0B)
+    vTaskPlaceOnUnorderedEventList/22 function body not available
+      freq:0.02 loop depth: 0 size: 4 time: 13 predicate: (op4 != 0) && (op1 != 0) && (op1,(# & 4278190080) == 0) && (op0 != 0B)
+    prvTestWaitCondition/14 function not considered for inlining
+      freq:0.08 loop depth: 0 size: 5 time: 14 callee size: 5 stack: 0 predicate: (op1 != 0) && (op1,(# & 4278190080) == 0) && (op0 != 0B)
+    vTaskSuspendAll/21 function body not available
+      freq:0.08 loop depth: 0 size: 1 time: 10 predicate: (op1 != 0) && (op1,(# & 4278190080) == 0) && (op0 != 0B)
+    xTaskGetSchedulerState/20 function body not available
+      freq:0.12 loop depth: 0 size: 2 time: 11 predicate: (op1 != 0) && (op1,(# & 4278190080) == 0) && (op0 != 0B)
+
+IPA function summary for xEventGroupSync/5 inlinable
+  global time:     14.009916
+  self size:       62
+  global size:     62
+  min size:       0
+  self stack:      0
+  global stack:    0
+    size:0.000000, time:0.000000
+    size:2.000000, time:0.000000,  executed if:(not inlined)
+    size:3.000000, time:3.000000,  nonconst if:(op2 changed)
+    size:2.000000, time:1.000000,  executed if:(op2,(# & 4278190080) == 0),  nonconst if:(op2 changed) && (op2,(# & 4278190080) == 0)
+    size:24.500000, time:1.601894,  executed if:(op2 != 0) && (op2,(# & 4278190080) == 0)
+    size:4.000000, time:0.365937,  executed if:(op2 != 0) && (op2,(# & 4278190080) == 0),  nonconst if:(op3 changed) && (op2 != 0) && (op2,(# & 4278190080) == 0)
+    size:1.000000, time:0.055275,  executed if:(op3 != 0) && (op2 != 0) && (op2,(# & 4278190080) == 0)
+    size:3.500000, time:0.323749,  executed if:(op2 != 0) && (op2,(# & 4278190080) == 0) && (not inlined)
+    size:0.500000, time:0.024260,  executed if:(op3 == 0) && (op2 != 0) && (op2,(# & 4278190080) == 0) && (not inlined)
+    size:0.500000, time:0.024260,  executed if:(op3 == 0) && (op2 != 0) && (op2,(# & 4278190080) == 0)
+    size:1.000000, time:0.023898,  executed if:(op3 != 0) && (op2 != 0) && (op2,(# & 4278190080) == 0),  nonconst if:(op2 changed) && (op3 != 0) && (op2 != 0) && (op2,(# & 4278190080) == 0)
+    size:2.000000, time:0.043462,  executed if:(op2 != 0) && (op2,(# & 4278190080) == 0),  nonconst if:(op2 changed) && (op2 != 0) && (op2,(# & 4278190080) == 0)
+    size:1.000000, time:0.335000,  executed if:(op2 == 0) && (op2,(# & 4278190080) == 0)
+    size:1.000000, time:0.500000,  executed if:(op2,(# & 4278190080) != 0)
+  calls:
+    vPortExitCritical/26 function body not available
+      freq:0.02 loop depth: 0 size: 1 time: 10 predicate: (op2 != 0) && (op2,(# & 4278190080) == 0)
+    vPortEnterCritical/25 function body not available
+      freq:0.02 loop depth: 0 size: 1 time: 10 predicate: (op2 != 0) && (op2,(# & 4278190080) == 0)
+    uxTaskResetEventItemValue/24 function body not available
+      freq:0.05 loop depth: 0 size: 2 time: 11 predicate: (op2 != 0) && (op2,(# & 4278190080) == 0)
+    xTaskResumeAll/23 function body not available
+      freq:0.11 loop depth: 0 size: 2 time: 11 predicate: (op2 != 0) && (op2,(# & 4278190080) == 0)
+    vTaskPlaceOnUnorderedEventList/22 function body not available
+      freq:0.02 loop depth: 0 size: 4 time: 13 predicate: (op3 != 0) && (op2 != 0) && (op2,(# & 4278190080) == 0)
+    xEventGroupSetBits/10 function not considered for inlining
+      freq:0.11 loop depth: 0 size: 3 time: 12 callee size: 7 stack: 0 predicate: (op2 != 0) && (op2,(# & 4278190080) == 0)
+    vTaskSuspendAll/21 function body not available
+      freq:0.11 loop depth: 0 size: 1 time: 10 predicate: (op2 != 0) && (op2,(# & 4278190080) == 0)
+    xTaskGetSchedulerState/20 function body not available
+      freq:0.17 loop depth: 0 size: 2 time: 11 predicate: (op2 != 0) && (op2,(# & 4278190080) == 0)
+
+IPA function summary for xEventGroupCreate/4 inlinable
+  global time:     22.416400
+  self size:       11
+  global size:     11
+  min size:       8
+  self stack:      0
+  global stack:    0
+    size:3.000000, time:2.534700
+    size:3.000000, time:2.000000,  executed if:(not inlined)
+  calls:
+    vListInitialise/19 function body not available
+      freq:0.53 loop depth: 0 size: 2 time: 11
+    pvPortMalloc/18 function body not available
+      freq:1.00 loop depth: 0 size: 3 time: 12
+       op0 is compile time invariant
+
+
+Flattening functions:
+Overall time estimate: 466.851245 weighted by profile: 0.000000
+
+Deciding on inlining of small functions.  Starting with size 0.
+Enqueueing calls in xEventGroupSetBits.part.0/31.
+Enqueueing calls in xEventGroupClearBits.part.0/30.
+Enqueueing calls in vEventGroupSetNumber/17.
+Enqueueing calls in uxEventGroupGetNumber/16.
+Enqueueing calls in xEventGroupSetBitsFromISR/15.
+Enqueueing calls in prvTestWaitCondition/14.
+Enqueueing calls in vEventGroupClearBitsCallback/13.
+Enqueueing calls in vEventGroupSetBitsCallback/12.
+Enqueueing calls in vEventGroupDelete/11.
+Enqueueing calls in xEventGroupSetBits/10.
+Enqueueing calls in xEventGroupGetBitsFromISR/9.
+Enqueueing calls in xEventGroupClearBitsFromISR/8.
+Enqueueing calls in xEventGroupClearBits/7.
+Enqueueing calls in xEventGroupWaitBits/6.
+Enqueueing calls in xEventGroupSync/5.
+Enqueueing calls in xEventGroupCreate/4.
+
+Considering xEventGroupClearBits.part.0/30 with 9 size
+ to be inlined into xEventGroupClearBits/7 in unknown:0
+ Estimated badness is -0.985600, frequency 0.23.
+
+Considering prvTestWaitCondition/14 with 11 size
+ to be inlined into xEventGroupWaitBits/6 in D:/Gitwork/freertos-git.freescale.com/FreeRTOS/Source/event_groups.c:341
+ Estimated badness is -0.020741, frequency 0.08.
+
+Considering prvTestWaitCondition/14 with 11 size
+ to be inlined into xEventGroupWaitBits/6 in D:/Gitwork/freertos-git.freescale.com/FreeRTOS/Source/event_groups.c:432
+ Estimated badness is -0.003297, frequency 0.01.
+
+Considering xEventGroupSetBits.part.0/31 with 39 size
+ to be inlined into xEventGroupSetBits/10 in unknown:0
+ Estimated badness is -0.000073, frequency 0.23.
+node context cache: 3 hits, 0 misses, 7 initializations
+
+Reclaiming functions:
+Reclaiming variables:
+Clearing address taken flags:
+
+Deciding on functions to be inlined into all callers and removing useless speculations:
+Overall time estimate: 284.099983 weighted by profile: 0.000000
+
+Why inlining failed?
+function body not available                       :       27 calls, 11.643351 freq, 0 count
+--param max-inline-insns-auto limit reached       :        2 calls, 1.109725 freq, 0 count
+call is unlikely and code size would grow         :        1 calls, 1.000000 freq, 0 count
+IPA function summary for vEventGroupSetNumber/17 inlinable
+  global time:     3.000000
+  self size:       4
+  global size:     4
+  min size:       1
+  self stack:      0
+  global stack:    0
+    size:0.500000, time:0.500000
+    size:3.500000, time:2.500000,  executed if:(not inlined)
+  calls:
+
+IPA function summary for uxEventGroupGetNumber/16 inlinable
+  global time:     4.700000
+  self size:       6
+  global size:     6
+  min size:       0
+  self stack:      0
+  global stack:    0
+    size:0.000000, time:0.000000
+    size:3.000000, time:2.000000,  executed if:(not inlined)
+    size:2.000000, time:2.000000,  nonconst if:(op0 changed)
+    size:0.500000, time:0.350000,  executed if:(op0 != 0B) && (not inlined),  nonconst if:(op0[ref offset: 192] changed) && (op0 != 0B) && (not inlined)
+    size:0.500000, time:0.350000,  executed if:(op0 != 0B),  nonconst if:(op0[ref offset: 192] changed) && (op0 != 0B)
+  calls:
+
+IPA function summary for xEventGroupSetBitsFromISR/15 inlinable
+  global time:     17.000000
+  self size:       9
+  global size:     9
+  min size:       6
+  self stack:      0
+  global stack:    0
+    size:0.000000, time:0.000000
+    size:3.000000, time:2.000000,  executed if:(not inlined)
+  calls:
+    xTimerPendFunctionCallFromISR/27 function body not available
+      freq:1.00 loop depth: 0 size: 6 time: 15
+       op0 is compile time invariant
+
+IPA function summary for vEventGroupClearBitsCallback/13 inlinable
+  global time:     14.000000
+  self size:       6
+  global size:     6
+  min size:       3
+  self stack:      0
+  global stack:    0
+    size:0.000000, time:0.000000
+    size:3.000000, time:2.000000,  executed if:(not inlined)
+  calls:
+    xEventGroupClearBits/7 call is unlikely and code size would grow
+      freq:1.00 loop depth: 0 size: 3 time: 12 callee size: 7 stack: 0
+
+IPA function summary for vEventGroupSetBitsCallback/12 inlinable
+  global time:     14.000000
+  self size:       6
+  global size:     6
+  min size:       3
+  self stack:      0
+  global stack:    0
+    size:0.000000, time:0.000000
+    size:3.000000, time:2.000000,  executed if:(not inlined)
+  calls:
+    xEventGroupSetBits/10 --param max-inline-insns-auto limit reached
+      freq:1.00 loop depth: 0 size: 3 time: 12 callee size:21 stack: 0
+
+IPA function summary for vEventGroupDelete/11 inlinable
+  global time:     97.124447
+  self size:       20
+  global size:     20
+  min size:       0
+  self stack:      0
+  global stack:    0
+    size:0.000000, time:0.000000
+    size:2.000000, time:0.000000,  executed if:(not inlined)
+    size:2.000000, time:2.000000,  nonconst if:(op0 changed)
+    size:2.000000, time:5.410729,  executed if:(op0 != 0B) && (not inlined)
+    size:6.000000, time:24.564336,  executed if:(op0 != 0B)
+    size:1.000000, time:0.465300,  executed if:(op0 == 0B)
+  calls:
+    vPortFree/29 function body not available
+      freq:0.27 loop depth: 0 size: 2 time: 11 predicate: (op0 != 0B)
+    xTaskResumeAll/23 function body not available
+      freq:0.27 loop depth: 0 size: 1 time: 10 predicate: (op0 != 0B)
+    vTaskRemoveFromUnorderedEventList/28 function body not available
+      freq:4.46 loop depth: 1 size: 3 time: 12 predicate: (op0 != 0B)
+       op1 is compile time invariant
+    vTaskSuspendAll/21 function body not available
+      freq:0.53 loop depth: 0 size: 1 time: 10 predicate: (op0 != 0B)
+
+IPA function summary for xEventGroupSetBits/10 inlinable
+  global time:     46.637157
+  self size:       14
+  global size:     42
+  min size:       0
+  self stack:      0
+  global stack:    0
+  estimated growth:16
+    size:0.000000, time:0.000000
+    size:2.000000, time:0.000000,  executed if:(not inlined)
+    size:2.000000, time:2.000000,  nonconst if:(op0 changed)
+    size:3.000000, time:2.100000,  executed if:(op0 != 0B),  nonconst if:(op1 changed) && (op0 != 0B)
+    size:1.000000, time:0.462000,  executed if:(op1,(# & 4278190080) == 0) && (op0 != 0B) && (not inlined)
+    size:1.000000, time:0.469000,  executed if:(op1,(# & 4278190080) != 0) && (op0 != 0B)
+    size:1.000000, time:0.300000,  executed if:(op0 == 0B)
+    size:26.500000, time:27.266398,  executed if:(op1,(# & 4278190080) == 0) && (op0 != 0B)
+  calls:
+    xEventGroupSetBits.part.0/31 inlined
+      freq:0.23
+      Stack frame offset 0, callee self size 0
+      vTaskSuspendAll/21 function body not available
+        freq:0.23 loop depth: 0 size: 1 time: 10 predicate: (op1,(# & 4278190080) == 0) && (op0 != 0B)
+      vTaskRemoveFromUnorderedEventList/28 function body not available
+        freq:0.78 loop depth: 1 size: 3 time: 12 predicate: (op1,(# & 4278190080) == 0) && (op0 != 0B)
+      xTaskResumeAll/23 function body not available
+        freq:0.23 loop depth: 0 size: 1 time: 10 predicate: (op1,(# & 4278190080) == 0) && (op0 != 0B)
+
+IPA function summary for xEventGroupGetBitsFromISR/9 inlinable
+  global time:     12.000000
+  self size:       13
+  global size:     13
+  min size:       10
+  self stack:      0
+  global stack:    0
+    size:9.500000, time:9.500000
+    size:3.500000, time:2.500000,  executed if:(not inlined)
+  calls:
+
+IPA function summary for xEventGroupClearBitsFromISR/8 inlinable
+  global time:     17.000000
+  self size:       9
+  global size:     9
+  min size:       6
+  self stack:      0
+  global stack:    0
+    size:0.000000, time:0.000000
+    size:3.000000, time:2.000000,  executed if:(not inlined)
+  calls:
+    xTimerPendFunctionCallFromISR/27 function body not available
+      freq:1.00 loop depth: 0 size: 6 time: 15
+       op0 is compile time invariant
+       op3 is compile time invariant
+
+IPA function summary for xEventGroupClearBits/7 inlinable
+  global time:     10.643999
+  self size:       14
+  global size:     15
+  min size:       0
+  self stack:      0
+  global stack:    0
+  estimated growth:8
+    size:0.000000, time:0.000000
+    size:2.000000, time:0.000000,  executed if:(not inlined)
+    size:2.000000, time:2.000000,  nonconst if:(op0 changed)
+    size:3.000000, time:2.100000,  executed if:(op0 != 0B),  nonconst if:(op1 changed) && (op0 != 0B)
+    size:1.000000, time:0.462000,  executed if:(op1,(# & 4278190080) == 0) && (op0 != 0B) && (not inlined)
+    size:1.000000, time:0.469000,  executed if:(op1,(# & 4278190080) != 0) && (op0 != 0B)
+    size:1.000000, time:0.300000,  executed if:(op0 == 0B)
+    size:2.000000, time:0.462000,  executed if:(op1,(# & 4278190080) == 0) && (op0 != 0B)
+    size:1.000000, time:0.231000,  executed if:(op1,(# & 4278190080) == 0) && (op0 != 0B),  nonconst if:(op1 changed) && (op1,(# & 4278190080) == 0) && (op0 != 0B)
+  calls:
+    xEventGroupClearBits.part.0/30 inlined
+      freq:0.23
+      Stack frame offset 0, callee self size 0
+      vPortEnterCritical/25 function body not available
+        freq:0.23 loop depth: 0 size: 1 time: 10 predicate: (op1,(# & 4278190080) == 0) && (op0 != 0B)
+      vPortExitCritical/26 function body not available
+        freq:0.23 loop depth: 0 size: 1 time: 10 predicate: (op1,(# & 4278190080) == 0) && (op0 != 0B)
+
+IPA function summary for xEventGroupWaitBits/6 inlinable
+  global time:     11.568063
+  self size:       76
+  global size:     82
+  min size:       0
+  self stack:      0
+  global stack:    0
+    size:0.000000, time:0.000000
+    size:2.000000, time:0.000000,  executed if:(not inlined)
+    size:2.000000, time:2.000000,  nonconst if:(op0 changed)
+    size:3.000000, time:2.100000,  executed if:(op0 != 0B),  nonconst if:(op1 changed) && (op0 != 0B)
+    size:2.000000, time:0.700000,  executed if:(op1,(# & 4278190080) == 0) && (op0 != 0B),  nonconst if:(op1 changed) && (op1,(# & 4278190080) == 0) && (op0 != 0B)
+    size:18.000000, time:0.896345,  executed if:(op1 != 0) && (op1,(# & 4278190080) == 0) && (op0 != 0B)
+    size:4.000000, time:0.231577,  executed if:(op1 != 0) && (op1,(# & 4278190080) == 0) && (op0 != 0B),  nonconst if:(op4 changed) && (op1 != 0) && (op1,(# & 4278190080) == 0) && (op0 != 0B)
+    size:1.000000, time:0.038693,  executed if:(op4 != 0) && (op1 != 0) && (op1,(# & 4278190080) == 0) && (op0 != 0B)
+    size:2.000000, time:0.198355,  executed if:(op1 != 0) && (op1,(# & 4278190080) == 0) && (op0 != 0B) && (not inlined)
+    size:2.000000, time:0.038404,  executed if:(op4 != 0) && (op1 != 0) && (op1,(# & 4278190080) == 0) && (op0 != 0B),  nonconst if:(op2 changed) && (op4 != 0) && (op1 != 0) && (op1,(# & 4278190080) == 0) && (op0 != 0B)
+    size:2.000000, time:0.038404,  executed if:(op4 != 0) && (op1 != 0) && (op1,(# & 4278190080) == 0) && (op0 != 0B),  nonconst if:(op3 changed) && (op4 != 0) && (op1 != 0) && (op1,(# & 4278190080) == 0) && (op0 != 0B)
+    size:1.000000, time:0.009601,  executed if:(op3 != 0) && (op4 != 0) && (op1 != 0) && (op1,(# & 4278190080) == 0) && (op0 != 0B),  nonconst if:(op2 changed) && (op3 != 0) && (op4 != 0) && (op1 != 0) && (op1,(# & 4278190080) == 0) && (op0 != 0B)
+    size:1.000000, time:0.019202,  executed if:(op4 != 0) && (op1 != 0) && (op1,(# & 4278190080) == 0) && (op0 != 0B),  nonconst if:(op1 changed || op2 changed || op3 changed) && (op4 != 0) && (op1 != 0) && (op1,(# & 4278190080) == 0) && (op0 != 0B)
+    size:4.000000, time:0.089481,  executed if:(op1 != 0) && (op1,(# & 4278190080) == 0) && (op0 != 0B),  nonconst if:(op2 changed) && (op1 != 0) && (op1,(# & 4278190080) == 0) && (op0 != 0B)
+    size:2.000000, time:0.022370,  executed if:(op2 != 0) && (op1 != 0) && (op1,(# & 4278190080) == 0) && (op0 != 0B),  nonconst if:(op1 changed) && (op2 != 0) && (op1 != 0) && (op1,(# & 4278190080) == 0) && (op0 != 0B)
+    size:3.000000, time:0.033555,  executed if:(op2 != 0) && (op1 != 0) && (op1,(# & 4278190080) == 0) && (op0 != 0B)
+    size:1.000000, time:0.011185,  executed if:(op2 != 0) && (op1 != 0) && (op1,(# & 4278190080) == 0) && (op0 != 0B) && (not inlined)
+    size:1.000000, time:0.234500,  executed if:(op1 == 0) && (op1,(# & 4278190080) == 0) && (op0 != 0B)
+    size:1.000000, time:0.350000,  executed if:(op1,(# & 4278190080) != 0) && (op0 != 0B)
+    size:1.000000, time:0.300000,  executed if:(op0 == 0B)
+    size:4.000000, time:0.178961,  executed if:(op1 != 0) && (op1,(# & 4278190080) == 0) && (op0 != 0B),  nonconst if:(op3 changed) && (op1 != 0) && (op1,(# & 4278190080) == 0) && (op0 != 0B)
+    size:6.000000, time:0.134221,  executed if:(op3 != 0) && (op1 != 0) && (op1,(# & 4278190080) == 0) && (op0 != 0B)
+    size:6.000000, time:0.134221,  executed if:(op3 == 0) && (op1 != 0) && (op1,(# & 4278190080) == 0) && (op0 != 0B)
+  calls:
+    vPortExitCritical/26 function body not available
+      freq:0.01 loop depth: 0 size: 1 time: 10 predicate: (op1 != 0) && (op1,(# & 4278190080) == 0) && (op0 != 0B)
+    prvTestWaitCondition/14 inlined
+      freq:0.01
+      Stack frame offset 0, callee self size 0
+    vPortEnterCritical/25 function body not available
+      freq:0.01 loop depth: 0 size: 1 time: 10 predicate: (op1 != 0) && (op1,(# & 4278190080) == 0) && (op0 != 0B)
+    uxTaskResetEventItemValue/24 function body not available
+      freq:0.04 loop depth: 0 size: 2 time: 11 predicate: (op1 != 0) && (op1,(# & 4278190080) == 0) && (op0 != 0B)
+    xTaskResumeAll/23 function body not available
+      freq:0.08 loop depth: 0 size: 2 time: 11 predicate: (op1 != 0) && (op1,(# & 4278190080) == 0) && (op0 != 0B)
+    vTaskPlaceOnUnorderedEventList/22 function body not available
+      freq:0.02 loop depth: 0 size: 4 time: 13 predicate: (op4 != 0) && (op1 != 0) && (op1,(# & 4278190080) == 0) && (op0 != 0B)
+    prvTestWaitCondition/32 inlined
+      freq:0.08
+      Stack frame offset 0, callee self size 0
+    vTaskSuspendAll/21 function body not available
+      freq:0.08 loop depth: 0 size: 1 time: 10 predicate: (op1 != 0) && (op1,(# & 4278190080) == 0) && (op0 != 0B)
+    xTaskGetSchedulerState/20 function body not available
+      freq:0.12 loop depth: 0 size: 2 time: 11 predicate: (op1 != 0) && (op1,(# & 4278190080) == 0) && (op0 != 0B)
+
+IPA function summary for xEventGroupSync/5 inlinable
+  global time:     14.009916
+  self size:       62
+  global size:     62
+  min size:       0
+  self stack:      0
+  global stack:    0
+    size:0.000000, time:0.000000
+    size:2.000000, time:0.000000,  executed if:(not inlined)
+    size:3.000000, time:3.000000,  nonconst if:(op2 changed)
+    size:2.000000, time:1.000000,  executed if:(op2,(# & 4278190080) == 0),  nonconst if:(op2 changed) && (op2,(# & 4278190080) == 0)
+    size:24.500000, time:1.601894,  executed if:(op2 != 0) && (op2,(# & 4278190080) == 0)
+    size:4.000000, time:0.365937,  executed if:(op2 != 0) && (op2,(# & 4278190080) == 0),  nonconst if:(op3 changed) && (op2 != 0) && (op2,(# & 4278190080) == 0)
+    size:1.000000, time:0.055275,  executed if:(op3 != 0) && (op2 != 0) && (op2,(# & 4278190080) == 0)
+    size:3.500000, time:0.323749,  executed if:(op2 != 0) && (op2,(# & 4278190080) == 0) && (not inlined)
+    size:0.500000, time:0.024260,  executed if:(op3 == 0) && (op2 != 0) && (op2,(# & 4278190080) == 0) && (not inlined)
+    size:0.500000, time:0.024260,  executed if:(op3 == 0) && (op2 != 0) && (op2,(# & 4278190080) == 0)
+    size:1.000000, time:0.023898,  executed if:(op3 != 0) && (op2 != 0) && (op2,(# & 4278190080) == 0),  nonconst if:(op2 changed) && (op3 != 0) && (op2 != 0) && (op2,(# & 4278190080) == 0)
+    size:2.000000, time:0.043462,  executed if:(op2 != 0) && (op2,(# & 4278190080) == 0),  nonconst if:(op2 changed) && (op2 != 0) && (op2,(# & 4278190080) == 0)
+    size:1.000000, time:0.335000,  executed if:(op2 == 0) && (op2,(# & 4278190080) == 0)
+    size:1.000000, time:0.500000,  executed if:(op2,(# & 4278190080) != 0)
+  calls:
+    vPortExitCritical/26 function body not available
+      freq:0.02 loop depth: 0 size: 1 time: 10 predicate: (op2 != 0) && (op2,(# & 4278190080) == 0)
+    vPortEnterCritical/25 function body not available
+      freq:0.02 loop depth: 0 size: 1 time: 10 predicate: (op2 != 0) && (op2,(# & 4278190080) == 0)
+    uxTaskResetEventItemValue/24 function body not available
+      freq:0.05 loop depth: 0 size: 2 time: 11 predicate: (op2 != 0) && (op2,(# & 4278190080) == 0)
+    xTaskResumeAll/23 function body not available
+      freq:0.11 loop depth: 0 size: 2 time: 11 predicate: (op2 != 0) && (op2,(# & 4278190080) == 0)
+    vTaskPlaceOnUnorderedEventList/22 function body not available
+      freq:0.02 loop depth: 0 size: 4 time: 13 predicate: (op3 != 0) && (op2 != 0) && (op2,(# & 4278190080) == 0)
+    xEventGroupSetBits/10 --param max-inline-insns-auto limit reached
+      freq:0.11 loop depth: 0 size: 3 time: 12 callee size:21 stack: 0 predicate: (op2 != 0) && (op2,(# & 4278190080) == 0)
+    vTaskSuspendAll/21 function body not available
+      freq:0.11 loop depth: 0 size: 1 time: 10 predicate: (op2 != 0) && (op2,(# & 4278190080) == 0)
+    xTaskGetSchedulerState/20 function body not available
+      freq:0.17 loop depth: 0 size: 2 time: 11 predicate: (op2 != 0) && (op2,(# & 4278190080) == 0)
+
+IPA function summary for xEventGroupCreate/4 inlinable
+  global time:     22.416400
+  self size:       11
+  global size:     11
+  min size:       8
+  self stack:      0
+  global stack:    0
+    size:3.000000, time:2.534700
+    size:3.000000, time:2.000000,  executed if:(not inlined)
+  calls:
+    vListInitialise/19 function body not available
+      freq:0.53 loop depth: 0 size: 2 time: 11
+    pvPortMalloc/18 function body not available
+      freq:1.00 loop depth: 0 size: 3 time: 12
+       op0 is compile time invariant
+
+Symbol table:
+
+prvTestWaitCondition/32 (prvTestWaitCondition) @06ace2a0
+  Type: function definition analyzed
+  Visibility:
+  next sharing asm name: 14
+  References: 
+  Referring: 
+  Function prvTestWaitCondition/32 is inline copy in xEventGroupWaitBits/6
+  Clone of prvTestWaitCondition/14
+  Availability: local
+  Function flags: count:2332997 (estimated locally) body local optimize_size
+  Called by: xEventGroupWaitBits/6 (inlined) (2332997 (estimated locally),0.08 per call) 
+  Calls: 
+xEventGroupSetBits.part.0/31 (xEventGroupSetBits.part.0) @0698d9a0
+  Type: function definition analyzed
+  Visibility: prevailing_def_ironly artificial
+  References: 
+  Referring: 
+  Function xEventGroupSetBits.part.0/31 is inline copy in xEventGroupSetBits/10
+  Availability: local
+  Function flags: count:5236217 (estimated locally) body local split_part optimize_size
+  Called by: xEventGroupSetBits/10 (inlined) (5236217 (estimated locally),0.23 per call) 
+  Calls: vTaskSuspendAll/21 (5236217 (estimated locally),0.23 per call) vTaskRemoveFromUnorderedEventList/28 (17793618 (estimated locally),0.78 per call) xTaskResumeAll/23 (5236217 (estimated locally),0.23 per call) 
+xEventGroupClearBits.part.0/30 (xEventGroupClearBits.part.0) @069c28c0
+  Type: function definition analyzed
+  Visibility: prevailing_def_ironly artificial
+  References: 
+  Referring: 
+  Function xEventGroupClearBits.part.0/30 is inline copy in xEventGroupClearBits/7
+  Availability: local
+  Function flags: count:5236217 (estimated locally) body local split_part optimize_size
+  Called by: xEventGroupClearBits/7 (inlined) (5236217 (estimated locally),0.23 per call) 
+  Calls: vPortEnterCritical/25 (5236217 (estimated locally),0.23 per call) vPortExitCritical/26 (5236217 (estimated locally),0.23 per call) 
+vPortFree/29 (vPortFree) @0698de00
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags: optimize_size
+  Called by: vEventGroupDelete/11 (6281105 (estimated locally),0.27 per call) 
+  Calls: 
+vTaskRemoveFromUnorderedEventList/28 (vTaskRemoveFromUnorderedEventList) @0698dc40
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags: optimize_size
+  Called by: vEventGroupDelete/11 (101985162 (estimated locally),4.46 per call) xEventGroupSetBits.part.0/31 (17793618 (estimated locally),0.78 per call) 
+  Calls: 
+xTimerPendFunctionCallFromISR/27 (xTimerPendFunctionCallFromISR) @0698d700
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags: optimize_size
+  Called by: xEventGroupSetBitsFromISR/15 (1073741824 (estimated locally),1.00 per call) xEventGroupClearBitsFromISR/8 (1073741824 (estimated locally),1.00 per call) 
+  Calls: 
+vPortExitCritical/26 (vPortExitCritical) @0698d0e0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags: optimize_size
+  Called by: xEventGroupSync/5 (384944 (estimated locally),0.02 per call) xEventGroupClearBits.part.0/30 (5236217 (estimated locally),0.23 per call) xEventGroupWaitBits/6 (384944 (estimated locally),0.01 per call) 
+  Calls: 
+vPortEnterCritical/25 (vPortEnterCritical) @0698d000
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags: optimize_size
+  Called by: xEventGroupSync/5 (384944 (estimated locally),0.02 per call) xEventGroupClearBits.part.0/30 (5236217 (estimated locally),0.23 per call) xEventGroupWaitBits/6 (384944 (estimated locally),0.01 per call) 
+  Calls: 
+uxTaskResetEventItemValue/24 (uxTaskResetEventItemValue) @0694c2a0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags: optimize_size
+  Called by: xEventGroupSync/5 (1166498 (estimated locally),0.05 per call) xEventGroupWaitBits/6 (1166498 (estimated locally),0.04 per call) 
+  Calls: 
+xTaskResumeAll/23 (xTaskResumeAll) @0694c000
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags: optimize_size
+  Called by: vEventGroupDelete/11 (6281105 (estimated locally),0.27 per call) xEventGroupSync/5 (2332997 (estimated locally),0.11 per call) xEventGroupSetBits.part.0/31 (5236217 (estimated locally),0.23 per call) xEventGroupWaitBits/6 (2332997 (estimated locally),0.08 per call) 
+  Calls: 
+vTaskPlaceOnUnorderedEventList/22 (vTaskPlaceOnUnorderedEventList) @0694cee0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags: optimize_size
+  Called by: xEventGroupSync/5 (508127 (estimated locally),0.02 per call) xEventGroupWaitBits/6 (583249 (estimated locally),0.02 per call) 
+  Calls: 
+vTaskSuspendAll/21 (vTaskSuspendAll) @0694ce00
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags: optimize_size
+  Called by: vEventGroupDelete/11 (12216749 (estimated locally),0.53 per call) xEventGroupSync/5 (2332997 (estimated locally),0.11 per call) xEventGroupSetBits.part.0/31 (5236217 (estimated locally),0.23 per call) xEventGroupWaitBits/6 (2332997 (estimated locally),0.08 per call) 
+  Calls: 
+xTaskGetSchedulerState/20 (xTaskGetSchedulerState) @0694cd20
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags: optimize_size
+  Called by: xEventGroupSync/5 (3508266 (estimated locally),0.17 per call) xEventGroupWaitBits/6 (3508266 (estimated locally),0.12 per call) 
+  Calls: 
+vListInitialise/19 (vListInitialise) @0694c9a0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags: optimize_size
+  Called by: xEventGroupCreate/4 (574129753 (estimated locally),0.53 per call) 
+  Calls: 
+pvPortMalloc/18 (pvPortMalloc) @0694c8c0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags: optimize_size
+  Called by: xEventGroupCreate/4 (1073741824 (estimated locally),1.00 per call) 
+  Calls: 
+vEventGroupSetNumber/17 (vEventGroupSetNumber) @0694c460
+  Type: function definition analyzed
+  Visibility: externally_visible public
+  References: 
+  Referring: 
+  Availability: available
+  Function flags: count:1073741824 (estimated locally) body optimize_size
+  Called by: 
+  Calls: 
+uxEventGroupGetNumber/16 (uxEventGroupGetNumber) @0694c1c0
+  Type: function definition analyzed
+  Visibility: externally_visible public
+  References: 
+  Referring: 
+  Availability: available
+  Function flags: count:1073741824 (estimated locally) body optimize_size
+  Called by: 
+  Calls: 
+xEventGroupSetBitsFromISR/15 (xEventGroupSetBitsFromISR) @06942e00
+  Type: function definition analyzed
+  Visibility: externally_visible public
+  References: vEventGroupSetBitsCallback/12 (addr) 
+  Referring: 
+  Availability: available
+  Function flags: count:1073741824 (estimated locally) body optimize_size
+  Called by: 
+  Calls: xTimerPendFunctionCallFromISR/27 (1073741824 (estimated locally),1.00 per call) 
+prvTestWaitCondition/14 (prvTestWaitCondition) @069427e0
+  Type: function definition analyzed
+  Visibility: prevailing_def_ironly
+  previous sharing asm name: 32
+  References: 
+  Referring: 
+  Function prvTestWaitCondition/14 is inline copy in xEventGroupWaitBits/6
+  Availability: local
+  Function flags: count:384944 (estimated locally) body local optimize_size
+  Called by: xEventGroupWaitBits/6 (inlined) (384944 (estimated locally),0.01 per call) 
+  Calls: 
+vEventGroupClearBitsCallback/13 (vEventGroupClearBitsCallback) @069420e0
+  Type: function definition analyzed
+  Visibility: externally_visible public
+  Address is taken.
+  References: 
+  Referring: xEventGroupClearBitsFromISR/8 (addr) 
+  Availability: available
+  Function flags: count:1073741824 (estimated locally) body optimize_size
+  Called by: 
+  Calls: xEventGroupClearBits/7 (1073741824 (estimated locally),1.00 per call) 
+vEventGroupSetBitsCallback/12 (vEventGroupSetBitsCallback) @06942d20
+  Type: function definition analyzed
+  Visibility: externally_visible public
+  Address is taken.
+  References: 
+  Referring: xEventGroupSetBitsFromISR/15 (addr) 
+  Availability: available
+  Function flags: count:1073741824 (estimated locally) body optimize_size
+  Called by: 
+  Calls: xEventGroupSetBits/10 (1073741824 (estimated locally),1.00 per call) 
+vEventGroupDelete/11 (vEventGroupDelete) @06942a80
+  Type: function definition analyzed
+  Visibility: externally_visible public
+  References: 
+  Referring: 
+  Availability: available
+  Function flags: count:22847857 (estimated locally) body optimize_size
+  Called by: 
+  Calls: vPortFree/29 (6281105 (estimated locally),0.27 per call) xTaskResumeAll/23 (6281105 (estimated locally),0.27 per call) vTaskRemoveFromUnorderedEventList/28 (101985162 (estimated locally),4.46 per call) vTaskSuspendAll/21 (12216749 (estimated locally),0.53 per call) 
+xEventGroupSetBits/10 (xEventGroupSetBits) @06942700
+  Type: function definition analyzed
+  Visibility: externally_visible public
+  References: 
+  Referring: 
+  Availability: available
+  Function flags: count:22667608 (estimated locally) body optimize_size
+  Called by: vEventGroupSetBitsCallback/12 (1073741824 (estimated locally),1.00 per call) xEventGroupSync/5 (2332997 (estimated locally),0.11 per call) 
+  Calls: xEventGroupSetBits.part.0/31 (inlined) (5236217 (estimated locally),0.23 per call) 
+xEventGroupGetBitsFromISR/9 (xEventGroupGetBitsFromISR) @069422a0
+  Type: function definition analyzed
+  Visibility: externally_visible public
+  References: 
+  Referring: 
+  Availability: available
+  Function flags: count:1073741824 (estimated locally) body optimize_size
+  Called by: 
+  Calls: 
+xEventGroupClearBitsFromISR/8 (xEventGroupClearBitsFromISR) @06942000
+  Type: function definition analyzed
+  Visibility: externally_visible public
+  References: vEventGroupClearBitsCallback/13 (addr) 
+  Referring: 
+  Availability: available
+  Function flags: count:1073741824 (estimated locally) body optimize_size
+  Called by: 
+  Calls: xTimerPendFunctionCallFromISR/27 (1073741824 (estimated locally),1.00 per call) 
+xEventGroupClearBits/7 (xEventGroupClearBits) @0692fa80
+  Type: function definition analyzed
+  Visibility: externally_visible public
+  References: 
+  Referring: 
+  Availability: available
+  Function flags: count:22667608 (estimated locally) body optimize_size
+  Called by: vEventGroupClearBitsCallback/13 (1073741824 (estimated locally),1.00 per call) 
+  Calls: xEventGroupClearBits.part.0/30 (inlined) (5236217 (estimated locally),0.23 per call) 
+xEventGroupWaitBits/6 (xEventGroupWaitBits) @0692fe00
+  Type: function definition analyzed
+  Visibility: externally_visible public
+  References: 
+  Referring: 
+  Availability: available
+  Function flags: count:30374594 (estimated locally) body optimize_size
+  Called by: 
+  Calls: vPortExitCritical/26 (384944 (estimated locally),0.01 per call) prvTestWaitCondition/14 (inlined) (384944 (estimated locally),0.01 per call) vPortEnterCritical/25 (384944 (estimated locally),0.01 per call) uxTaskResetEventItemValue/24 (1166498 (estimated locally),0.04 per call) xTaskResumeAll/23 (2332997 (estimated locally),0.08 per call) vTaskPlaceOnUnorderedEventList/22 (583249 (estimated locally),0.02 per call) prvTestWaitCondition/32 (inlined) (2332997 (estimated locally),0.08 per call) vTaskSuspendAll/21 (2332997 (estimated locally),0.08 per call) xTaskGetSchedulerState/20 (3508266 (estimated locally),0.12 per call) 
+xEventGroupSync/5 (xEventGroupSync) @0692f9a0
+  Type: function definition analyzed
+  Visibility: externally_visible public
+  References: 
+  Referring: 
+  Availability: available
+  Function flags: count:21262216 (estimated locally) body optimize_size
+  Called by: 
+  Calls: vPortExitCritical/26 (384944 (estimated locally),0.02 per call) vPortEnterCritical/25 (384944 (estimated locally),0.02 per call) uxTaskResetEventItemValue/24 (1166498 (estimated locally),0.05 per call) xTaskResumeAll/23 (2332997 (estimated locally),0.11 per call) vTaskPlaceOnUnorderedEventList/22 (508127 (estimated locally),0.02 per call) xEventGroupSetBits/10 (2332997 (estimated locally),0.11 per call) vTaskSuspendAll/21 (2332997 (estimated locally),0.11 per call) xTaskGetSchedulerState/20 (3508266 (estimated locally),0.17 per call) 
+xEventGroupCreate/4 (xEventGroupCreate) @0692f620
+  Type: function definition analyzed
+  Visibility: externally_visible public
+  References: 
+  Referring: 
+  Availability: available
+  Function flags: count:1073741824 (estimated locally) body optimize_size
+  Called by: 
+  Calls: vListInitialise/19 (574129753 (estimated locally),0.53 per call) pvPortMalloc/18 (1073741824 (estimated locally),1.00 per call) 
+
+;; Function xEventGroupCreate (xEventGroupCreate, funcdef_no=4, decl_uid=6400, cgraph_uid=5, symbol_order=4)
+
+xEventGroupCreate ()
+{
+  struct EventGroup_t * pxEventBits;
+  struct List_t * _1;
+
+  <bb 2> [local count: 1073741824]:
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  pxEventBits_5 = pvPortMalloc (28);
+  # DEBUG pxEventBits => pxEventBits_5
+  # DEBUG BEGIN_STMT
+  if (pxEventBits_5 != 0B)
+    goto <bb 3>; [53.47%]
+  else
+    goto <bb 4>; [46.53%]
+
+  <bb 3> [local count: 574129753]:
+  # DEBUG BEGIN_STMT
+  pxEventBits_5->uxEventBits = 0;
+  # DEBUG BEGIN_STMT
+  _1 = &pxEventBits_5->xTasksWaitingForBits;
+  vListInitialise (_1);
+  # DEBUG BEGIN_STMT
+
+  <bb 4> [local count: 1073741824]:
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  return pxEventBits_5;
+
+}
+
+
+
+;; Function xEventGroupWaitBits (xEventGroupWaitBits, funcdef_no=6, decl_uid=6406, cgraph_uid=7, symbol_order=6)
+
+
+Symbols to be put in SSA form
+{ D.6763 D.6768 }
+Incremental SSA update started at block: 0
+Number of blocks in CFG: 52
+Number of blocks to update: 51 ( 98%)
+
+
+Merging blocks 4 and 34
+Merging blocks 7 and 35
+Merging blocks 10 and 36
+Merging blocks 14 and 37
+Merging blocks 15 and 39
+Merging blocks 28 and 46
+Merging blocks 44 and 38
+Merging blocks 51 and 45
+;; 5 loops found
+;;
+;; Loop 0
+;;  header 0, latch 1
+;;  depth 0, outer -1
+;;  nodes: 0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43
+;;
+;; Loop 4
+;;  header 4, latch 4
+;;  depth 1, outer 0
+;;  nodes: 4
+;;
+;; Loop 3
+;;  header 7, latch 7
+;;  depth 1, outer 0
+;;  nodes: 7
+;;
+;; Loop 2
+;;  header 10, latch 10
+;;  depth 1, outer 0
+;;  nodes: 10
+;;
+;; Loop 1
+;;  header 14, latch 14
+;;  depth 1, outer 0
+;;  nodes: 14
+;; 2 succs { 3 5 }
+;; 3 succs { 4 }
+;; 4 succs { 4 }
+;; 5 succs { 6 8 }
+;; 6 succs { 7 }
+;; 7 succs { 7 }
+;; 8 succs { 9 11 }
+;; 9 succs { 10 }
+;; 10 succs { 10 }
+;; 11 succs { 15 12 }
+;; 12 succs { 15 13 }
+;; 13 succs { 14 }
+;; 14 succs { 14 }
+;; 15 succs { 16 18 }
+;; 16 succs { 17 20 }
+;; 17 succs { 20 }
+;; 18 succs { 19 20 }
+;; 19 succs { 20 }
+;; 20 succs { 21 23 }
+;; 21 succs { 22 29 }
+;; 22 succs { 29 }
+;; 23 succs { 29 24 }
+;; 24 succs { 25 26 }
+;; 25 succs { 26 }
+;; 26 succs { 27 28 }
+;; 27 succs { 28 }
+;; 28 succs { 29 }
+;; 29 succs { 30 43 }
+;; 30 succs { 31 32 }
+;; 31 succs { 32 }
+;; 32 succs { 33 42 }
+;; 33 succs { 34 36 }
+;; 34 succs { 35 38 }
+;; 35 succs { 38 }
+;; 36 succs { 37 38 }
+;; 37 succs { 38 }
+;; 38 succs { 39 41 }
+;; 39 succs { 40 41 }
+;; 40 succs { 41 }
+;; 41 succs { 42 }
+;; 42 succs { 43 }
+;; 43 succs { 1 }
+cyclic probability of bb 4 is 1.000000 (capped to 0.990099); turning freq 0.300000 to 30.299997
+cyclic probability of bb 7 is 1.000000 (capped to 0.990099); turning freq 0.350000 to 35.349997
+cyclic probability of bb 10 is 1.000000 (capped to 0.990099); turning freq 0.234500 to 23.684498
+cyclic probability of bb 14 is 1.000000 (capped to 0.990099); turning freq 0.038693 to 3.907942
+xEventGroupWaitBits (struct EventGroupDef_t * xEventGroup, const EventBits_t uxBitsToWaitFor, const BaseType_t xClearOnExit, const BaseType_t xWaitForAllBits, TickType_t xTicksToWait)
+{
+  BaseType_t xWaitConditionMet;
+  BaseType_t D.6768;
+  BaseType_t xWaitConditionMet;
+  BaseType_t D.6763;
+  const EventBits_t uxCurrentEventBits;
+  BaseType_t xAlreadyYielded;
+  BaseType_t xWaitConditionMet;
+  EventBits_t uxControlBits;
+  EventBits_t uxReturn;
+  long unsigned int _1;
+  long int _2;
+  long unsigned int _3;
+  long unsigned int _4;
+  struct List_t * _5;
+  long unsigned int _6;
+  long unsigned int _7;
+  long int _8;
+  long unsigned int _9;
+  long unsigned int _10;
+  long unsigned int _51;
+  long unsigned int _52;
+  long unsigned int _54;
+  long unsigned int _55;
+
+  <bb 2> [local count: 30374594]:
+  # DEBUG BEGIN_STMT
+  # DEBUG pxEventBits => xEventGroup_22(D)
+  # DEBUG BEGIN_STMT
+  # DEBUG uxControlBits => 0
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  # DEBUG xTimeoutOccurred => 0
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  if (xEventGroup_22(D) == 0B)
+    goto <bb 3>; [30.00%]
+  else
+    goto <bb 5>; [70.00%]
+
+  <bb 3> [local count: 9112378]:
+  # DEBUG BEGIN_STMT
+  __asm__ __volatile__(" cpsid i " :  :  : "memory");
+
+  <bb 4> [local count: 920350123]:
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  goto <bb 4>; [100.00%]
+
+  <bb 5> [local count: 21262216]:
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  _1 = uxBitsToWaitFor_23(D) & 4278190080;
+  if (_1 != 0)
+    goto <bb 6>; [50.00%]
+  else
+    goto <bb 8>; [50.00%]
+
+  <bb 6> [local count: 10631108]:
+  # DEBUG BEGIN_STMT
+  __asm__ __volatile__(" cpsid i " :  :  : "memory");
+
+  <bb 7> [local count: 1073741824]:
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  goto <bb 7>; [100.00%]
+
+  <bb 8> [local count: 10631108]:
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  if (uxBitsToWaitFor_23(D) == 0)
+    goto <bb 9>; [67.00%]
+  else
+    goto <bb 11>; [33.00%]
+
+  <bb 9> [local count: 7122842]:
+  # DEBUG BEGIN_STMT
+  __asm__ __volatile__(" cpsid i " :  :  : "memory");
+
+  <bb 10> [local count: 719407025]:
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  goto <bb 10>; [100.00%]
+
+  <bb 11> [local count: 3508266]:
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  _2 = xTaskGetSchedulerState ();
+  if (_2 != 0)
+    goto <bb 15>; [33.00%]
+  else
+    goto <bb 12>; [67.00%]
+
+  <bb 12> [local count: 2350538]:
+  if (xTicksToWait_26(D) == 0)
+    goto <bb 15>; [50.00%]
+  else
+    goto <bb 13>; [50.00%]
+
+  <bb 13> [local count: 1175269]:
+  # DEBUG BEGIN_STMT
+  __asm__ __volatile__(" cpsid i " :  :  : "memory");
+
+  <bb 14> [local count: 118702158]:
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  goto <bb 14>; [100.00%]
+
+  <bb 15> [local count: 2332997]:
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  vTaskSuspendAll ();
+  # DEBUG BEGIN_STMT
+  uxCurrentEventBits_28 = MEM[(struct EventGroup_t *)xEventGroup_22(D)].uxEventBits;
+  # DEBUG uxCurrentEventBits => uxCurrentEventBits_28
+  # DEBUG BEGIN_STMT
+  # DEBUG uxCurrentEventBits => uxCurrentEventBits_28
+  # DEBUG uxBitsToWaitFor => uxBitsToWaitFor_23(D)
+  # DEBUG xWaitForAllBits => xWaitForAllBits_29(D)
+  # DEBUG INLINE_ENTRY prvTestWaitCondition
+  # DEBUG BEGIN_STMT
+  # DEBUG xWaitConditionMet => 0
+  # DEBUG BEGIN_STMT
+  if (xWaitForAllBits_29(D) == 0)
+    goto <bb 16>; [50.00%]
+  else
+    goto <bb 18>; [50.00%]
+
+  <bb 16> [local count: 1166498]:
+  # DEBUG BEGIN_STMT
+  _51 = uxBitsToWaitFor_23(D) & uxCurrentEventBits_28;
+  if (_51 != 0)
+    goto <bb 17>; [50.00%]
+  else
+    goto <bb 20>; [50.00%]
+
+  <bb 17> [local count: 583249]:
+  # DEBUG BEGIN_STMT
+  # DEBUG xWaitConditionMet => 1
+  goto <bb 20>; [100.00%]
+
+  <bb 18> [local count: 1166498]:
+  # DEBUG BEGIN_STMT
+  _52 = uxBitsToWaitFor_23(D) & uxCurrentEventBits_28;
+  if (uxBitsToWaitFor_23(D) == _52)
+    goto <bb 19>; [34.00%]
+  else
+    goto <bb 20>; [66.00%]
+
+  <bb 19> [local count: 396609]:
+  # DEBUG BEGIN_STMT
+  # DEBUG xWaitConditionMet => 1
+
+  <bb 20> [local count: 2332997]:
+  # xWaitConditionMet_53 = PHI <0(16), 1(17), 0(18), 1(19)>
+  # DEBUG xWaitConditionMet => xWaitConditionMet_53
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  _57 = xWaitConditionMet_53;
+  # DEBUG uxCurrentEventBits => NULL
+  # DEBUG uxBitsToWaitFor => NULL
+  # DEBUG xWaitForAllBits => NULL
+  # DEBUG xWaitConditionMet => NULL
+  xWaitConditionMet_30 = _57;
+  # DEBUG xWaitConditionMet => xWaitConditionMet_30
+  # DEBUG BEGIN_STMT
+  if (xWaitConditionMet_30 != 0)
+    goto <bb 21>; [50.00%]
+  else
+    goto <bb 23>; [50.00%]
+
+  <bb 21> [local count: 1166498]:
+  # DEBUG BEGIN_STMT
+  # DEBUG uxReturn => uxCurrentEventBits_28
+  # DEBUG BEGIN_STMT
+  # DEBUG xTicksToWait => 0
+  # DEBUG BEGIN_STMT
+  if (xClearOnExit_31(D) != 0)
+    goto <bb 22>; [50.00%]
+  else
+    goto <bb 29>; [50.00%]
+
+  <bb 22> [local count: 583249]:
+  # DEBUG BEGIN_STMT
+  _3 = ~uxBitsToWaitFor_23(D);
+  _4 = _3 & uxCurrentEventBits_28;
+  MEM[(struct EventGroup_t *)xEventGroup_22(D)].uxEventBits = _4;
+  goto <bb 29>; [100.00%]
+
+  <bb 23> [local count: 1166498]:
+  # DEBUG BEGIN_STMT
+  if (xTicksToWait_26(D) == 0)
+    goto <bb 29>; [50.00%]
+  else
+    goto <bb 24>; [50.00%]
+
+  <bb 24> [local count: 583249]:
+  # DEBUG BEGIN_STMT
+  if (xClearOnExit_31(D) != 0)
+    goto <bb 25>; [50.00%]
+  else
+    goto <bb 26>; [50.00%]
+
+  <bb 25> [local count: 291625]:
+  # DEBUG BEGIN_STMT
+  # DEBUG uxControlBits => 16777216
+
+  <bb 26> [local count: 583249]:
+  # uxControlBits_15 = PHI <0(24), 16777216(25)>
+  # DEBUG uxControlBits => uxControlBits_15
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  if (xWaitForAllBits_29(D) != 0)
+    goto <bb 27>; [50.00%]
+  else
+    goto <bb 28>; [50.00%]
+
+  <bb 27> [local count: 291625]:
+  # DEBUG BEGIN_STMT
+  uxControlBits_32 = uxControlBits_15 | 67108864;
+  # DEBUG uxControlBits => uxControlBits_32
+
+  <bb 28> [local count: 583249]:
+  # uxControlBits_16 = PHI <uxControlBits_15(26), uxControlBits_32(27)>
+  # DEBUG uxControlBits => uxControlBits_16
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  _5 = &MEM[(struct EventGroup_t *)xEventGroup_22(D)].xTasksWaitingForBits;
+  _6 = uxControlBits_16 | uxBitsToWaitFor_23(D);
+  vTaskPlaceOnUnorderedEventList (_5, _6, xTicksToWait_26(D));
+  # DEBUG BEGIN_STMT
+  # DEBUG uxReturn => 0
+
+  <bb 29> [local count: 2332997]:
+  # xTicksToWait_11 = PHI <0(22), xTicksToWait_26(D)(23), xTicksToWait_26(D)(28), 0(21)>
+  # uxReturn_12 = PHI <uxCurrentEventBits_28(22), uxCurrentEventBits_28(23), 0(28), uxCurrentEventBits_28(21)>
+  # DEBUG xTimeoutOccurred => NULL
+  # DEBUG uxReturn => uxReturn_12
+  # DEBUG xTicksToWait => xTicksToWait_11
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  xAlreadyYielded_36 = xTaskResumeAll ();
+  # DEBUG xAlreadyYielded => xAlreadyYielded_36
+  # DEBUG BEGIN_STMT
+  if (xTicksToWait_11 != 0)
+    goto <bb 30>; [50.00%]
+  else
+    goto <bb 43>; [50.00%]
+
+  <bb 30> [local count: 1166498]:
+  # DEBUG BEGIN_STMT
+  if (xAlreadyYielded_36 == 0)
+    goto <bb 31>; [50.00%]
+  else
+    goto <bb 32>; [50.00%]
+
+  <bb 31> [local count: 583249]:
+  # DEBUG BEGIN_STMT
+  MEM[(volatile uint32_t *)3758157060B] ={v} 268435456;
+  # DEBUG BEGIN_STMT
+  __asm__ __volatile__("dsb" :  :  : "memory");
+  # DEBUG BEGIN_STMT
+  __asm__ __volatile__("isb");
+  # DEBUG BEGIN_STMT
+
+  <bb 32> [local count: 1166498]:
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  uxReturn_41 = uxTaskResetEventItemValue ();
+  # DEBUG uxReturn => uxReturn_41
+  # DEBUG BEGIN_STMT
+  _7 = uxReturn_41 & 33554432;
+  if (_7 == 0)
+    goto <bb 33>; [33.00%]
+  else
+    goto <bb 42>; [67.00%]
+
+  <bb 33> [local count: 384944]:
+  # DEBUG BEGIN_STMT
+  vPortEnterCritical ();
+  # DEBUG BEGIN_STMT
+  uxReturn_43 = MEM[(struct EventGroup_t *)xEventGroup_22(D)].uxEventBits;
+  # DEBUG uxReturn => uxReturn_43
+  # DEBUG BEGIN_STMT
+  # DEBUG uxCurrentEventBits => uxReturn_43
+  # DEBUG uxBitsToWaitFor => uxBitsToWaitFor_23(D)
+  # DEBUG xWaitForAllBits => xWaitForAllBits_29(D)
+  # DEBUG INLINE_ENTRY prvTestWaitCondition
+  # DEBUG BEGIN_STMT
+  # DEBUG xWaitConditionMet => 0
+  # DEBUG BEGIN_STMT
+  if (xWaitForAllBits_29(D) == 0)
+    goto <bb 34>; [50.00%]
+  else
+    goto <bb 36>; [50.00%]
+
+  <bb 34> [local count: 192472]:
+  # DEBUG BEGIN_STMT
+  _54 = uxBitsToWaitFor_23(D) & uxReturn_43;
+  if (_54 != 0)
+    goto <bb 35>; [50.00%]
+  else
+    goto <bb 38>; [50.00%]
+
+  <bb 35> [local count: 96236]:
+  # DEBUG BEGIN_STMT
+  # DEBUG xWaitConditionMet => 1
+  goto <bb 38>; [100.00%]
+
+  <bb 36> [local count: 192472]:
+  # DEBUG BEGIN_STMT
+  _55 = uxBitsToWaitFor_23(D) & uxReturn_43;
+  if (uxBitsToWaitFor_23(D) == _55)
+    goto <bb 37>; [34.00%]
+  else
+    goto <bb 38>; [66.00%]
+
+  <bb 37> [local count: 65441]:
+  # DEBUG BEGIN_STMT
+  # DEBUG xWaitConditionMet => 1
+
+  <bb 38> [local count: 384944]:
+  # xWaitConditionMet_56 = PHI <0(34), 1(35), 0(36), 1(37)>
+  # DEBUG xWaitConditionMet => xWaitConditionMet_56
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  _58 = xWaitConditionMet_56;
+  # DEBUG uxCurrentEventBits => NULL
+  # DEBUG uxBitsToWaitFor => NULL
+  # DEBUG xWaitForAllBits => NULL
+  # DEBUG xWaitConditionMet => NULL
+  _8 = _58;
+  if (_8 != 0)
+    goto <bb 39>; [50.00%]
+  else
+    goto <bb 41>; [50.00%]
+
+  <bb 39> [local count: 192472]:
+  # DEBUG BEGIN_STMT
+  if (xClearOnExit_31(D) != 0)
+    goto <bb 40>; [50.00%]
+  else
+    goto <bb 41>; [50.00%]
+
+  <bb 40> [local count: 96236]:
+  # DEBUG BEGIN_STMT
+  _9 = ~uxBitsToWaitFor_23(D);
+  _10 = _9 & uxReturn_43;
+  MEM[(struct EventGroup_t *)xEventGroup_22(D)].uxEventBits = _10;
+
+  <bb 41> [local count: 384944]:
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  # DEBUG xTimeoutOccurred => 1
+  # DEBUG BEGIN_STMT
+  vPortExitCritical ();
+
+  <bb 42> [local count: 1166498]:
+  # uxReturn_13 = PHI <uxReturn_41(32), uxReturn_43(41)>
+  # DEBUG uxReturn => uxReturn_13
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  uxReturn_46 = uxReturn_13 & 16777215;
+  # DEBUG uxReturn => uxReturn_46
+
+  <bb 43> [local count: 2332997]:
+  # uxReturn_14 = PHI <uxReturn_12(29), uxReturn_46(42)>
+  # DEBUG uxReturn => uxReturn_14
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  return uxReturn_14;
+
+}
+
+
+
+;; Function xEventGroupClearBits (xEventGroupClearBits, funcdef_no=7, decl_uid=6409, cgraph_uid=8, symbol_order=7)
+
+
+Symbols to be put in SSA form
+{ D.6702 D.6776 }
+Incremental SSA update started at block: 0
+Number of blocks in CFG: 14
+Number of blocks to update: 13 ( 93%)
+
+
+Merging blocks 4 and 9
+Merging blocks 7 and 10
+Removing basic block 8
+Removing basic block 12
+Merging blocks 13 and 11
+;; 3 loops found
+;;
+;; Loop 0
+;;  header 0, latch 1
+;;  depth 0, outer -1
+;;  nodes: 0 1 2 3 4 5 6 7 8
+;;
+;; Loop 2
+;;  header 4, latch 4
+;;  depth 1, outer 0
+;;  nodes: 4
+;;
+;; Loop 1
+;;  header 7, latch 7
+;;  depth 1, outer 0
+;;  nodes: 7
+;; 2 succs { 3 5 }
+;; 3 succs { 4 }
+;; 4 succs { 4 }
+;; 5 succs { 6 8 }
+;; 6 succs { 7 }
+;; 7 succs { 7 }
+;; 8 succs { 1 }
+cyclic probability of bb 4 is 1.000000 (capped to 0.990099); turning freq 0.300000 to 30.299997
+cyclic probability of bb 7 is 1.000000 (capped to 0.990099); turning freq 0.469000 to 47.368997
+xEventGroupClearBits (struct EventGroupDef_t * xEventGroup, const EventBits_t uxBitsToClear)
+{
+  EventBits_t uxReturn;
+  EventBits_t D.6776;
+  EventBits_t D.6726;
+  long unsigned int _1;
+  long unsigned int _10;
+  long unsigned int _11;
+
+  <bb 2> [local count: 22667608]:
+  # DEBUG BEGIN_STMT
+  # DEBUG pxEventBits => xEventGroup_3(D)
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  if (xEventGroup_3(D) == 0B)
+    goto <bb 3>; [30.00%]
+  else
+    goto <bb 5>; [70.00%]
+
+  <bb 3> [local count: 6800282]:
+  # DEBUG BEGIN_STMT
+  __asm__ __volatile__(" cpsid i " :  :  : "memory");
+
+  <bb 4> [local count: 686828449]:
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  goto <bb 4>; [100.00%]
+
+  <bb 5> [local count: 15867325]:
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  _1 = uxBitsToClear_5(D) & 4278190080;
+  if (_1 != 0)
+    goto <bb 6>; [67.00%]
+  else
+    goto <bb 8>; [33.00%]
+
+  <bb 6> [local count: 10631108]:
+  # DEBUG BEGIN_STMT
+  __asm__ __volatile__(" cpsid i " :  :  : "memory");
+
+  <bb 7> [local count: 1073741824]:
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  goto <bb 7>; [100.00%]
+
+  <bb 8> [local count: 5236217]:
+  # DEBUG xEventGroup => xEventGroup_3(D)
+  # DEBUG uxBitsToClear => uxBitsToClear_5(D)
+  # DEBUG INLINE_ENTRY xEventGroupClearBits
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  vPortEnterCritical ();
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  uxReturn_9 = MEM[(struct EventGroup_t *)xEventGroup_3(D)].uxEventBits;
+  # DEBUG uxReturn => uxReturn_9
+  # DEBUG BEGIN_STMT
+  _10 = ~uxBitsToClear_5(D);
+  _11 = uxReturn_9 & _10;
+  MEM[(struct EventGroup_t *)xEventGroup_3(D)].uxEventBits = _11;
+  # DEBUG BEGIN_STMT
+  vPortExitCritical ();
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  _15 = uxReturn_9;
+  # DEBUG xEventGroup => NULL
+  # DEBUG uxBitsToClear => NULL
+  # DEBUG pxEventBits => NULL
+  # DEBUG uxReturn => NULL
+  _2 = _15;
+  return _2;
+
+}
+
+
+
+;; Function vEventGroupClearBitsCallback (vEventGroupClearBitsCallback, funcdef_no=13, decl_uid=6434, cgraph_uid=14, symbol_order=13)
+
+vEventGroupClearBitsCallback (void * pvEventGroup, uint32_t ulBitsToClear)
+{
+  <bb 2> [local count: 1073741824]:
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  xEventGroupClearBits (pvEventGroup_2(D), ulBitsToClear_3(D));
+  # DEBUG BEGIN_STMT
+  return;
+
+}
+
+
+
+;; Function xEventGroupClearBitsFromISR (xEventGroupClearBitsFromISR, funcdef_no=8, decl_uid=6412, cgraph_uid=9, symbol_order=8)
+
+xEventGroupClearBitsFromISR (struct EventGroupDef_t * xEventGroup, const EventBits_t uxBitsToClear)
+{
+  BaseType_t xReturn;
+
+  <bb 2> [local count: 1073741824]:
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  xReturn_5 = xTimerPendFunctionCallFromISR (vEventGroupClearBitsCallback, xEventGroup_2(D), uxBitsToClear_3(D), 0B);
+  # DEBUG xReturn => xReturn_5
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  return xReturn_5;
+
+}
+
+
+
+;; Function xEventGroupGetBitsFromISR (xEventGroupGetBitsFromISR, funcdef_no=9, decl_uid=6426, cgraph_uid=10, symbol_order=9)
+
+xEventGroupGetBitsFromISR (struct EventGroupDef_t * xEventGroup)
+{
+  uint32_t ulOriginalBASEPRI;
+  uint32_t ulNewBASEPRI;
+  EventBits_t uxReturn;
+
+  <bb 2> [local count: 1073741824]:
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  # DEBUG pxEventBits => xEventGroup_1(D)
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  # DEBUG INLINE_ENTRY ulPortRaiseBASEPRI
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  __asm__ __volatile__("   mrs %0, basepri                                         
+   mov %1, %2                                              
+   cpsid i                                                 
+   msr basepri, %1                                         
+   isb                                                     
+   dsb                                                     
+   cpsie i                                                 
+" : "=r" ulOriginalBASEPRI_4, "=r" ulNewBASEPRI_5 : "i" 16 : "memory");
+  # DEBUG ulNewBASEPRI => ulNewBASEPRI_5
+  # DEBUG ulOriginalBASEPRI => ulOriginalBASEPRI_4
+  # DEBUG BEGIN_STMT
+  # DEBUG ulNewBASEPRI => NULL
+  # DEBUG ulOriginalBASEPRI => NULL
+  # DEBUG uxSavedInterruptStatus => ulOriginalBASEPRI_4
+  # DEBUG BEGIN_STMT
+  uxReturn_3 = MEM[(const struct EventGroup_t *)xEventGroup_1(D)].uxEventBits;
+  # DEBUG uxReturn => uxReturn_3
+  # DEBUG BEGIN_STMT
+  # DEBUG ulNewMaskValue => ulOriginalBASEPRI_4
+  # DEBUG INLINE_ENTRY vPortSetBASEPRI
+  # DEBUG BEGIN_STMT
+  __asm__ __volatile__("   msr basepri, %0 " :  : "r" ulOriginalBASEPRI_4 : "memory");
+  # DEBUG ulNewMaskValue => NULL
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  return uxReturn_3;
+
+}
+
+
+
+;; Function xEventGroupSetBits (xEventGroupSetBits, funcdef_no=10, decl_uid=6415, cgraph_uid=11, symbol_order=10)
+
+
+Symbols to be put in SSA form
+{ D.6706 D.6802 }
+Incremental SSA update started at block: 0
+Number of blocks in CFG: 23
+Number of blocks to update: 22 ( 96%)
+
+
+Merging blocks 4 and 9
+Merging blocks 7 and 10
+Removing basic block 8
+Removing basic block 12
+Merging blocks 22 and 11
+;; 5 loops found
+;;
+;; Loop 0
+;;  header 0, latch 1
+;;  depth 0, outer -1
+;;  nodes: 0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17
+;;
+;; Loop 3
+;;  header 4, latch 4
+;;  depth 1, outer 0
+;;  nodes: 4
+;;
+;; Loop 2
+;;  header 7, latch 7
+;;  depth 1, outer 0
+;;  nodes: 7
+;;
+;; Loop 4
+;;  header 16, latch 15
+;;  depth 1, outer 0
+;;  nodes: 16 15 10 11 14 12 13 9
+;; 2 succs { 3 5 }
+;; 3 succs { 4 }
+;; 4 succs { 4 }
+;; 5 succs { 6 8 }
+;; 6 succs { 7 }
+;; 7 succs { 7 }
+;; 8 succs { 16 }
+;; 9 succs { 10 11 }
+;; 10 succs { 12 15 }
+;; 11 succs { 12 15 }
+;; 12 succs { 13 14 }
+;; 13 succs { 14 }
+;; 14 succs { 15 }
+;; 15 succs { 16 }
+;; 16 succs { 9 17 }
+;; 17 succs { 1 }
+cyclic probability of bb 4 is 1.000000 (capped to 0.990099); turning freq 0.300000 to 30.299997
+cyclic probability of bb 7 is 1.000000 (capped to 0.990099); turning freq 0.469000 to 47.368997
+cyclic probability of bb 16 is 0.890000; turning freq 0.231000 to 2.100000
+xEventGroupSetBits (struct EventGroupDef_t * xEventGroup, const EventBits_t uxBitsToSet)
+{
+  EventBits_t uxBitsWaitedFor;
+  EventBits_t uxBitsToClear;
+  const struct ListItem_t * pxListEnd;
+  struct ListItem_t * pxNext;
+  struct ListItem_t * pxListItem;
+  EventBits_t D.6802;
+  EventBits_t D.6749;
+  long unsigned int _1;
+  long unsigned int _11;
+  long unsigned int _12;
+  long unsigned int _17;
+  long unsigned int _18;
+  long unsigned int _19;
+  long unsigned int _20;
+  long unsigned int _21;
+  long unsigned int _22;
+  long unsigned int _25;
+  long unsigned int _26;
+  long unsigned int _27;
+  long unsigned int _29;
+  long unsigned int _30;
+  long unsigned int _31;
+
+  <bb 2> [local count: 22667608]:
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  # DEBUG uxBitsToClear => 0
+  # DEBUG BEGIN_STMT
+  # DEBUG pxEventBits => xEventGroup_3(D)
+  # DEBUG BEGIN_STMT
+  # DEBUG xMatchFound => 0
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  if (xEventGroup_3(D) == 0B)
+    goto <bb 3>; [30.00%]
+  else
+    goto <bb 5>; [70.00%]
+
+  <bb 3> [local count: 6800282]:
+  # DEBUG BEGIN_STMT
+  __asm__ __volatile__(" cpsid i " :  :  : "memory");
+
+  <bb 4> [local count: 686828449]:
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  goto <bb 4>; [100.00%]
+
+  <bb 5> [local count: 15867325]:
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  _1 = uxBitsToSet_4(D) & 4278190080;
+  if (_1 != 0)
+    goto <bb 6>; [67.00%]
+  else
+    goto <bb 8>; [33.00%]
+
+  <bb 6> [local count: 10631108]:
+  # DEBUG BEGIN_STMT
+  __asm__ __volatile__(" cpsid i " :  :  : "memory");
+
+  <bb 7> [local count: 1073741824]:
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  goto <bb 7>; [100.00%]
+
+  <bb 8> [local count: 5236217]:
+  # DEBUG xEventGroup => xEventGroup_3(D)
+  # DEBUG uxBitsToSet => uxBitsToSet_4(D)
+  # DEBUG INLINE_ENTRY xEventGroupSetBits
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  # DEBUG D#1 => &MEM[(struct EventGroup_t *)xEventGroup_3(D)].xTasksWaitingForBits
+  # DEBUG pxList => D#1
+  # DEBUG BEGIN_STMT
+  pxListEnd_9 = &MEM[(const struct List_t *)xEventGroup_3(D) + 4B].xListEnd;
+  # DEBUG pxListEnd => pxListEnd_9
+  # DEBUG BEGIN_STMT
+  vTaskSuspendAll ();
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  pxListItem_10 = MEM[(const struct List_t *)xEventGroup_3(D) + 4B].xListEnd.pxNext;
+  # DEBUG pxListItem => pxListItem_10
+  # DEBUG BEGIN_STMT
+  _11 = MEM[(struct EventGroup_t *)xEventGroup_3(D)].uxEventBits;
+  _12 = uxBitsToSet_4(D) | _11;
+  MEM[(struct EventGroup_t *)xEventGroup_3(D)].uxEventBits = _12;
+  # DEBUG BEGIN_STMT
+  goto <bb 16>; [100.00%]
+
+  <bb 9> [local count: 42365759]:
+  # DEBUG BEGIN_STMT
+  pxNext_14 = pxListItem_13->pxNext;
+  # DEBUG pxNext => pxNext_14
+  # DEBUG BEGIN_STMT
+  uxBitsWaitedFor_15 = pxListItem_13->xItemValue;
+  # DEBUG uxBitsWaitedFor => uxBitsWaitedFor_15
+  # DEBUG BEGIN_STMT
+  # DEBUG xMatchFound => 0
+  # DEBUG BEGIN_STMT
+  # DEBUG uxControlBits => uxBitsWaitedFor_15 & 4278190080
+  # DEBUG BEGIN_STMT
+  uxBitsWaitedFor_16 = uxBitsWaitedFor_15 & 16777215;
+  # DEBUG uxBitsWaitedFor => uxBitsWaitedFor_16
+  # DEBUG BEGIN_STMT
+  _17 = uxBitsWaitedFor_15 & 67108864;
+  if (_17 == 0)
+    goto <bb 10>; [50.00%]
+  else
+    goto <bb 11>; [50.00%]
+
+  <bb 10> [local count: 21182879]:
+  # DEBUG BEGIN_STMT
+  _18 = MEM[(struct EventGroup_t *)xEventGroup_3(D)].uxEventBits;
+  _19 = uxBitsWaitedFor_16 & _18;
+  if (_19 != 0)
+    goto <bb 12>; [50.00%]
+  else
+    goto <bb 15>; [50.00%]
+
+  <bb 11> [local count: 21182879]:
+  # DEBUG BEGIN_STMT
+  _20 = MEM[(struct EventGroup_t *)xEventGroup_3(D)].uxEventBits;
+  _21 = uxBitsWaitedFor_16 & _20;
+  if (uxBitsWaitedFor_16 == _21)
+    goto <bb 12>; [34.00%]
+  else
+    goto <bb 15>; [66.00%]
+
+  <bb 12> [local count: 17793619]:
+  # DEBUG xMatchFound => NULL
+  # DEBUG BEGIN_STMT
+  _22 = uxBitsWaitedFor_15 & 16777216;
+  if (_22 != 0)
+    goto <bb 13>; [50.00%]
+  else
+    goto <bb 14>; [50.00%]
+
+  <bb 13> [local count: 8896809]:
+  # DEBUG BEGIN_STMT
+  uxBitsToClear_24 = uxBitsWaitedFor_16 | uxBitsToClear_23;
+  # DEBUG uxBitsToClear => uxBitsToClear_24
+
+  <bb 14> [local count: 17793619]:
+  # uxBitsToClear_32 = PHI <uxBitsToClear_23(12), uxBitsToClear_24(13)>
+  # DEBUG uxBitsToClear => uxBitsToClear_32
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  _25 = MEM[(struct EventGroup_t *)xEventGroup_3(D)].uxEventBits;
+  _26 = _25 | 33554432;
+  vTaskRemoveFromUnorderedEventList (pxListItem_13, _26);
+
+  <bb 15> [local count: 42365759]:
+  # pxListItem_33 = PHI <pxNext_14(10), pxNext_14(11), pxNext_14(14)>
+  # uxBitsToClear_34 = PHI <uxBitsToClear_23(10), uxBitsToClear_23(11), uxBitsToClear_32(14)>
+
+  <bb 16> [local count: 47601976]:
+  # pxListItem_13 = PHI <pxListItem_10(8), pxListItem_33(15)>
+  # uxBitsToClear_23 = PHI <0(8), uxBitsToClear_34(15)>
+  # DEBUG xMatchFound => NULL
+  # DEBUG uxBitsToClear => uxBitsToClear_23
+  # DEBUG pxListItem => pxListItem_13
+  # DEBUG BEGIN_STMT
+  if (pxListEnd_9 != pxListItem_13)
+    goto <bb 9>; [89.00%]
+  else
+    goto <bb 17>; [11.00%]
+
+  <bb 17> [local count: 5236217]:
+  # uxBitsToClear_28 = PHI <uxBitsToClear_23(16)>
+  # DEBUG BEGIN_STMT
+  _27 = MEM[(struct EventGroup_t *)xEventGroup_3(D)].uxEventBits;
+  _29 = ~uxBitsToClear_28;
+  _30 = _27 & _29;
+  MEM[(struct EventGroup_t *)xEventGroup_3(D)].uxEventBits = _30;
+  # DEBUG BEGIN_STMT
+  xTaskResumeAll ();
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  _31 = MEM[(struct EventGroup_t *)xEventGroup_3(D)].uxEventBits;
+  _41 = _31;
+  # DEBUG xEventGroup => NULL
+  # DEBUG uxBitsToSet => NULL
+  # DEBUG pxListItem => NULL
+  # DEBUG pxNext => NULL
+  # DEBUG pxListEnd => NULL
+  # DEBUG pxList => NULL
+  # DEBUG uxBitsToClear => NULL
+  # DEBUG uxBitsWaitedFor => NULL
+  # DEBUG uxControlBits => NULL
+  # DEBUG pxEventBits => NULL
+  # DEBUG xMatchFound => NULL
+  _6 = _41;
+  return _6;
+
+}
+
+
+
+;; Function xEventGroupSync (xEventGroupSync, funcdef_no=5, decl_uid=6424, cgraph_uid=6, symbol_order=5)
+
+xEventGroupSync (struct EventGroupDef_t * xEventGroup, const EventBits_t uxBitsToSet, const EventBits_t uxBitsToWaitFor, TickType_t xTicksToWait)
+{
+  BaseType_t xAlreadyYielded;
+  EventBits_t uxReturn;
+  EventBits_t uxOriginalBitValue;
+  long unsigned int _1;
+  long int _2;
+  long unsigned int _3;
+  long unsigned int _4;
+  long unsigned int _5;
+  long unsigned int _6;
+  long unsigned int _7;
+  struct List_t * _8;
+  long unsigned int _9;
+  long unsigned int _10;
+  long unsigned int _11;
+  long unsigned int _12;
+  long unsigned int _13;
+
+  <bb 2> [local count: 21262216]:
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  # DEBUG pxEventBits => xEventGroup_23(D)
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  # DEBUG xTimeoutOccurred => 0
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  _1 = uxBitsToWaitFor_24(D) & 4278190080;
+  if (_1 != 0)
+    goto <bb 3>; [50.00%]
+  else
+    goto <bb 5>; [50.00%]
+
+  <bb 3> [local count: 10631108]:
+  # DEBUG BEGIN_STMT
+  __asm__ __volatile__(" cpsid i " :  :  : "memory");
+
+  <bb 4> [local count: 1073741824]:
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+
+  <bb 26> [local count: 1073741824]:
+  goto <bb 4>; [100.00%]
+
+  <bb 5> [local count: 10631108]:
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  if (uxBitsToWaitFor_24(D) == 0)
+    goto <bb 6>; [67.00%]
+  else
+    goto <bb 8>; [33.00%]
+
+  <bb 6> [local count: 7122842]:
+  # DEBUG BEGIN_STMT
+  __asm__ __volatile__(" cpsid i " :  :  : "memory");
+
+  <bb 7> [local count: 719407024]:
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+
+  <bb 27> [local count: 719407024]:
+  goto <bb 7>; [100.00%]
+
+  <bb 8> [local count: 3508266]:
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  _2 = xTaskGetSchedulerState ();
+  if (_2 != 0)
+    goto <bb 12>; [33.00%]
+  else
+    goto <bb 9>; [67.00%]
+
+  <bb 9> [local count: 2350538]:
+  if (xTicksToWait_27(D) == 0)
+    goto <bb 12>; [50.00%]
+  else
+    goto <bb 10>; [50.00%]
+
+  <bb 10> [local count: 1175269]:
+  # DEBUG BEGIN_STMT
+  __asm__ __volatile__(" cpsid i " :  :  : "memory");
+
+  <bb 11> [local count: 118702158]:
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+
+  <bb 28> [local count: 118702158]:
+  goto <bb 11>; [100.00%]
+
+  <bb 12> [local count: 2332997]:
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  vTaskSuspendAll ();
+  # DEBUG BEGIN_STMT
+  uxOriginalBitValue_29 = MEM[(struct EventGroup_t *)xEventGroup_23(D)].uxEventBits;
+  # DEBUG uxOriginalBitValue => uxOriginalBitValue_29
+  # DEBUG BEGIN_STMT
+  xEventGroupSetBits (xEventGroup_23(D), uxBitsToSet_30(D));
+  # DEBUG BEGIN_STMT
+  _3 = uxOriginalBitValue_29 | uxBitsToSet_30(D);
+  _4 = _3 & uxBitsToWaitFor_24(D);
+  if (_4 == uxBitsToWaitFor_24(D))
+    goto <bb 13>; [34.00%]
+  else
+    goto <bb 14>; [66.00%]
+
+  <bb 13> [local count: 793219]:
+  # DEBUG BEGIN_STMT
+  # DEBUG uxReturn => _3
+  # DEBUG BEGIN_STMT
+  _5 = MEM[(struct EventGroup_t *)xEventGroup_23(D)].uxEventBits;
+  _6 = ~uxBitsToWaitFor_24(D);
+  _7 = _5 & _6;
+  MEM[(struct EventGroup_t *)xEventGroup_23(D)].uxEventBits = _7;
+  # DEBUG BEGIN_STMT
+  # DEBUG xTicksToWait => 0
+  goto <bb 17>; [100.00%]
+
+  <bb 14> [local count: 1539778]:
+  # DEBUG BEGIN_STMT
+  if (xTicksToWait_27(D) != 0)
+    goto <bb 15>; [33.00%]
+  else
+    goto <bb 16>; [67.00%]
+
+  <bb 15> [local count: 508127]:
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  _8 = &MEM[(struct EventGroup_t *)xEventGroup_23(D)].xTasksWaitingForBits;
+  _9 = uxBitsToWaitFor_24(D) | 83886080;
+  vTaskPlaceOnUnorderedEventList (_8, _9, xTicksToWait_27(D));
+  # DEBUG BEGIN_STMT
+  # DEBUG uxReturn => 0
+  goto <bb 17>; [100.00%]
+
+  <bb 16> [local count: 1031651]:
+  # DEBUG BEGIN_STMT
+  uxReturn_32 = MEM[(struct EventGroup_t *)xEventGroup_23(D)].uxEventBits;
+  # DEBUG uxReturn => uxReturn_32
+  # DEBUG BEGIN_STMT
+  # DEBUG xTimeoutOccurred => 1
+
+  <bb 17> [local count: 2332997]:
+  # xTicksToWait_14 = PHI <0(13), xTicksToWait_27(D)(15), 0(16)>
+  # uxReturn_15 = PHI <_3(13), 0(15), uxReturn_32(16)>
+  # DEBUG uxReturn => uxReturn_15
+  # DEBUG xTicksToWait => xTicksToWait_14
+  # DEBUG BEGIN_STMT
+  xAlreadyYielded_36 = xTaskResumeAll ();
+  # DEBUG xAlreadyYielded => xAlreadyYielded_36
+  # DEBUG BEGIN_STMT
+  if (xTicksToWait_14 != 0)
+    goto <bb 18>; [50.00%]
+  else
+    goto <bb 25>; [50.00%]
+
+  <bb 18> [local count: 1166498]:
+  # DEBUG BEGIN_STMT
+  if (xAlreadyYielded_36 == 0)
+    goto <bb 19>; [50.00%]
+  else
+    goto <bb 20>; [50.00%]
+
+  <bb 19> [local count: 583249]:
+  # DEBUG BEGIN_STMT
+  MEM[(volatile uint32_t *)3758157060B] ={v} 268435456;
+  # DEBUG BEGIN_STMT
+  __asm__ __volatile__("dsb" :  :  : "memory");
+  # DEBUG BEGIN_STMT
+  __asm__ __volatile__("isb");
+  # DEBUG BEGIN_STMT
+
+  <bb 20> [local count: 1166498]:
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  uxReturn_41 = uxTaskResetEventItemValue ();
+  # DEBUG uxReturn => uxReturn_41
+  # DEBUG BEGIN_STMT
+  _10 = uxReturn_41 & 33554432;
+  if (_10 == 0)
+    goto <bb 21>; [33.00%]
+  else
+    goto <bb 24>; [67.00%]
+
+  <bb 21> [local count: 384944]:
+  # DEBUG BEGIN_STMT
+  vPortEnterCritical ();
+  # DEBUG BEGIN_STMT
+  uxReturn_43 = MEM[(struct EventGroup_t *)xEventGroup_23(D)].uxEventBits;
+  # DEBUG uxReturn => uxReturn_43
+  # DEBUG BEGIN_STMT
+  _11 = uxBitsToWaitFor_24(D) & uxReturn_43;
+  if (_11 == uxBitsToWaitFor_24(D))
+    goto <bb 22>; [34.00%]
+  else
+    goto <bb 23>; [66.00%]
+
+  <bb 22> [local count: 130881]:
+  # DEBUG BEGIN_STMT
+  _12 = ~uxBitsToWaitFor_24(D);
+  _13 = _12 & uxReturn_43;
+  MEM[(struct EventGroup_t *)xEventGroup_23(D)].uxEventBits = _13;
+
+  <bb 23> [local count: 384944]:
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  vPortExitCritical ();
+  # DEBUG BEGIN_STMT
+  # DEBUG xTimeoutOccurred => 1
+
+  <bb 24> [local count: 1166498]:
+  # uxReturn_16 = PHI <uxReturn_41(20), uxReturn_43(23)>
+  # DEBUG uxReturn => uxReturn_16
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  uxReturn_46 = uxReturn_16 & 16777215;
+  # DEBUG uxReturn => uxReturn_46
+
+  <bb 25> [local count: 2332997]:
+  # uxReturn_17 = PHI <uxReturn_15(17), uxReturn_46(24)>
+  # DEBUG uxReturn => uxReturn_17
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  return uxReturn_17;
+
+}
+
+
+
+;; Function vEventGroupSetBitsCallback (vEventGroupSetBitsCallback, funcdef_no=12, decl_uid=6431, cgraph_uid=13, symbol_order=12)
+
+vEventGroupSetBitsCallback (void * pvEventGroup, uint32_t ulBitsToSet)
+{
+  <bb 2> [local count: 1073741824]:
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  xEventGroupSetBits (pvEventGroup_2(D), ulBitsToSet_3(D));
+  # DEBUG BEGIN_STMT
+  return;
+
+}
+
+
+
+;; Function vEventGroupDelete (vEventGroupDelete, funcdef_no=11, decl_uid=6428, cgraph_uid=12, symbol_order=11)
+
+vEventGroupDelete (struct EventGroupDef_t * xEventGroup)
+{
+  struct xLIST_ITEM * _1;
+  const struct MiniListItem_t * _2;
+  long unsigned int _3;
+
+  <bb 2> [local count: 22847857]:
+  # DEBUG BEGIN_STMT
+  # DEBUG pxEventBits => xEventGroup_5(D)
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  if (xEventGroup_5(D) == 0B)
+    goto <bb 3>; [46.53%]
+  else
+    goto <bb 5>; [53.47%]
+
+  <bb 3> [local count: 10631108]:
+  # DEBUG BEGIN_STMT
+  __asm__ __volatile__(" cpsid i " :  :  : "memory");
+
+  <bb 4> [local count: 1073741824]:
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+
+  <bb 12> [local count: 1073741824]:
+  goto <bb 4>; [100.00%]
+
+  <bb 5> [local count: 12216749]:
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  # DEBUG D#2 => &MEM[(struct EventGroup_t *)xEventGroup_5(D)].xTasksWaitingForBits
+  # DEBUG pxTasksWaitingForBits => D#2
+  # DEBUG BEGIN_STMT
+  vTaskSuspendAll ();
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  goto <bb 10>; [100.00%]
+
+  <bb 6> [local count: 107920806]:
+  # DEBUG BEGIN_STMT
+  _1 = MEM[(const struct List_t *)xEventGroup_5(D) + 4B].xListEnd.pxNext;
+  _2 = &MEM[(const struct List_t *)xEventGroup_5(D) + 4B].xListEnd;
+  if (_1 == _2)
+    goto <bb 7>; [5.50%]
+  else
+    goto <bb 9>; [94.50%]
+
+  <bb 7> [local count: 5935644]:
+  # DEBUG BEGIN_STMT
+  __asm__ __volatile__(" cpsid i " :  :  : "memory");
+
+  <bb 8> [local count: 599500028]:
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+
+  <bb 13> [local count: 599500028]:
+  goto <bb 8>; [100.00%]
+
+  <bb 9> [local count: 101985162]:
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  vTaskRemoveFromUnorderedEventList (_1, 33554432);
+
+  <bb 10> [local count: 114201911]:
+  # DEBUG BEGIN_STMT
+  _3 = MEM[(const struct List_t *)xEventGroup_5(D) + 4B].uxNumberOfItems;
+  if (_3 != 0)
+    goto <bb 6>; [94.50%]
+  else
+    goto <bb 11>; [5.50%]
+
+  <bb 11> [local count: 6281105]:
+  # DEBUG BEGIN_STMT
+  xTaskResumeAll ();
+  # DEBUG BEGIN_STMT
+  vPortFree (xEventGroup_5(D));
+  # DEBUG BEGIN_STMT
+  return;
+
+}
+
+
+
+;; Function xEventGroupSetBitsFromISR (xEventGroupSetBitsFromISR, funcdef_no=15, decl_uid=6419, cgraph_uid=16, symbol_order=15)
+
+xEventGroupSetBitsFromISR (struct EventGroupDef_t * xEventGroup, const EventBits_t uxBitsToSet, BaseType_t * pxHigherPriorityTaskWoken)
+{
+  BaseType_t xReturn;
+
+  <bb 2> [local count: 1073741824]:
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  xReturn_6 = xTimerPendFunctionCallFromISR (vEventGroupSetBitsCallback, xEventGroup_2(D), uxBitsToSet_3(D), pxHigherPriorityTaskWoken_4(D));
+  # DEBUG xReturn => xReturn_6
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  return xReturn_6;
+
+}
+
+
+
+;; Function uxEventGroupGetNumber (uxEventGroupGetNumber, funcdef_no=16, decl_uid=6436, cgraph_uid=17, symbol_order=16)
+
+uxEventGroupGetNumber (void * xEventGroup)
+{
+  UBaseType_t xReturn;
+
+  <bb 2> [local count: 1073741824]:
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  # DEBUG pxEventBits => xEventGroup_2(D)
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  if (xEventGroup_2(D) == 0B)
+    goto <bb 4>; [30.00%]
+  else
+    goto <bb 3>; [70.00%]
+
+  <bb 3> [local count: 751619281]:
+  # DEBUG BEGIN_STMT
+  xReturn_4 = MEM[(const struct EventGroup_t *)xEventGroup_2(D)].uxEventGroupNumber;
+  # DEBUG xReturn => xReturn_4
+
+  <bb 4> [local count: 1073741824]:
+  # xReturn_1 = PHI <0(2), xReturn_4(3)>
+  # DEBUG xReturn => xReturn_1
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  return xReturn_1;
+
+}
+
+
+
+;; Function vEventGroupSetNumber (vEventGroupSetNumber, funcdef_no=17, decl_uid=6439, cgraph_uid=18, symbol_order=17)
+
+vEventGroupSetNumber (void * xEventGroup, UBaseType_t uxEventGroupNumber)
+{
+  <bb 2> [local count: 1073741824]:
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  MEM[(struct EventGroup_t *)xEventGroup_2(D)].uxEventGroupNumber = uxEventGroupNumber_3(D);
+  # DEBUG BEGIN_STMT
+  return;
+
+}
+
+

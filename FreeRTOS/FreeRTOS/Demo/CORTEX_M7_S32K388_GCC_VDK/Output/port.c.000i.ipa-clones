@@ -1,0 +1,7 @@
+Callgraph clone;vPortRaiseBASEPRI;1;../../Source/portable/GCC/ARM_CM7/r0p1/portmacro.h;365;30;prvTaskExitError;10;D:/Gitwork/freertos-git.freescale.com/FreeRTOS/Source/portable/GCC/ARM_CM7/r0p1/port.c;237;13;inlining to
+Callgraph clone;vPortRaiseBASEPRI;1;../../Source/portable/GCC/ARM_CM7/r0p1/portmacro.h;365;30;vPortEnterCritical;16;D:/Gitwork/freertos-git.freescale.com/FreeRTOS/Source/portable/GCC/ARM_CM7/r0p1/port.c;567;6;inlining to
+Callgraph clone;vPortSetBASEPRI;3;../../Source/portable/GCC/ARM_CM7/r0p1/portmacro.h;405;30;vPortExitCritical;17;D:/Gitwork/freertos-git.freescale.com/FreeRTOS/Source/portable/GCC/ARM_CM7/r0p1/port.c;584;6;inlining to
+Callgraph clone;vPortSetBASEPRI;3;../../Source/portable/GCC/ARM_CM7/r0p1/portmacro.h;405;30;SysTick_Handler;19;D:/Gitwork/freertos-git.freescale.com/FreeRTOS/Source/portable/GCC/ARM_CM7/r0p1/port.c;671;6;inlining to
+Callgraph clone;vPortRaiseBASEPRI;1;../../Source/portable/GCC/ARM_CM7/r0p1/portmacro.h;365;30;SysTick_Handler;19;D:/Gitwork/freertos-git.freescale.com/FreeRTOS/Source/portable/GCC/ARM_CM7/r0p1/port.c;671;6;inlining to
+Callgraph removal;vPortRaiseBASEPRI;1;../../Source/portable/GCC/ARM_CM7/r0p1/portmacro.h;365;30
+Callgraph removal;vPortSetBASEPRI;3;../../Source/portable/GCC/ARM_CM7/r0p1/portmacro.h;405;30

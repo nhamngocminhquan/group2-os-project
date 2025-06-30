@@ -1,0 +1,24 @@
+Callgraph clone;xQueueGenericReset;5;D:/Gitwork/freertos-git.freescale.com/FreeRTOS/Source/queue.c;303;12;xQueueGenericReset.part.0;66;D:/Gitwork/freertos-git.freescale.com/FreeRTOS/Source/queue.c;303;12;part
+Callgraph clone;vPortSetBASEPRI;3;../../Source/portable/GCC/ARM_CM7/r0p1/portmacro.h;405;30;xQueueGenericSendFromISR;16;D:/Gitwork/freertos-git.freescale.com/FreeRTOS/Source/queue.c;1157;12;inlining to
+Callgraph clone;ulPortRaiseBASEPRI;2;../../Source/portable/GCC/ARM_CM7/r0p1/portmacro.h;383;34;xQueueGenericSendFromISR;16;D:/Gitwork/freertos-git.freescale.com/FreeRTOS/Source/queue.c;1157;12;inlining to
+Callgraph clone;vPortSetBASEPRI;3;../../Source/portable/GCC/ARM_CM7/r0p1/portmacro.h;405;30;xQueueGiveFromISR;17;D:/Gitwork/freertos-git.freescale.com/FreeRTOS/Source/queue.c;1329;12;inlining to
+Callgraph clone;ulPortRaiseBASEPRI;2;../../Source/portable/GCC/ARM_CM7/r0p1/portmacro.h;383;34;xQueueGiveFromISR;17;D:/Gitwork/freertos-git.freescale.com/FreeRTOS/Source/queue.c;1329;12;inlining to
+Callgraph clone;vPortSetBASEPRI;3;../../Source/portable/GCC/ARM_CM7/r0p1/portmacro.h;405;30;xQueueReceiveFromISR;21;D:/Gitwork/freertos-git.freescale.com/FreeRTOS/Source/queue.c;2035;12;inlining to
+Callgraph clone;ulPortRaiseBASEPRI;2;../../Source/portable/GCC/ARM_CM7/r0p1/portmacro.h;383;34;xQueueReceiveFromISR;21;D:/Gitwork/freertos-git.freescale.com/FreeRTOS/Source/queue.c;2035;12;inlining to
+Callgraph clone;vPortSetBASEPRI;3;../../Source/portable/GCC/ARM_CM7/r0p1/portmacro.h;405;30;xQueuePeekFromISR;22;D:/Gitwork/freertos-git.freescale.com/FreeRTOS/Source/queue.c;2135;12;inlining to
+Callgraph clone;ulPortRaiseBASEPRI;2;../../Source/portable/GCC/ARM_CM7/r0p1/portmacro.h;383;34;xQueuePeekFromISR;22;D:/Gitwork/freertos-git.freescale.com/FreeRTOS/Source/queue.c;2135;12;inlining to
+Callgraph removal;ulPortRaiseBASEPRI;2;../../Source/portable/GCC/ARM_CM7/r0p1/portmacro.h;383;34
+Callgraph removal;vPortSetBASEPRI;3;../../Source/portable/GCC/ARM_CM7/r0p1/portmacro.h;405;30
+Callgraph clone;vQueueUnregisterQueue;42;D:/Gitwork/freertos-git.freescale.com/FreeRTOS/Source/queue.c;3095;10;vQueueUnregisterQueue.part.0;73;D:/Gitwork/freertos-git.freescale.com/FreeRTOS/Source/queue.c;3095;10;part
+Callgraph clone;prvIsQueueFull;38;D:/Gitwork/freertos-git.freescale.com/FreeRTOS/Source/queue.c;2659;19;xQueueGenericSend;15;D:/Gitwork/freertos-git.freescale.com/FreeRTOS/Source/queue.c;939;12;inlining to
+Callgraph clone;prvInitialiseMutex;8;D:/Gitwork/freertos-git.freescale.com/FreeRTOS/Source/queue.c;614;17;xQueueCreateMutex;9;D:/Gitwork/freertos-git.freescale.com/FreeRTOS/Source/queue.c;644;19;inlining to
+Callgraph clone;vQueueUnregisterQueue.part.0;73;D:/Gitwork/freertos-git.freescale.com/FreeRTOS/Source/queue.c;3095;10;vQueueUnregisterQueue;42;D:/Gitwork/freertos-git.freescale.com/FreeRTOS/Source/queue.c;3095;10;inlining to
+Callgraph clone;prvInitialiseNewQueue;7;D:/Gitwork/freertos-git.freescale.com/FreeRTOS/Source/queue.c;566;13;xQueueGenericCreate;6;D:/Gitwork/freertos-git.freescale.com/FreeRTOS/Source/queue.c;502;19;inlining to
+Callgraph clone;xQueueGenericReset.part.0;66;D:/Gitwork/freertos-git.freescale.com/FreeRTOS/Source/queue.c;303;12;xQueueGenericReset;5;D:/Gitwork/freertos-git.freescale.com/FreeRTOS/Source/queue.c;303;12;inlining to
+Callgraph clone;prvGetDisinheritPriorityAfterTimeout;32;D:/Gitwork/freertos-git.freescale.com/FreeRTOS/Source/queue.c;2365;24;xQueueSemaphoreTake;19;D:/Gitwork/freertos-git.freescale.com/FreeRTOS/Source/queue.c;1652;12;inlining to
+Callgraph removal;xQueueGenericReset.part.0;66;D:/Gitwork/freertos-git.freescale.com/FreeRTOS/Source/queue.c;303;12
+Callgraph removal;prvInitialiseNewQueue;7;D:/Gitwork/freertos-git.freescale.com/FreeRTOS/Source/queue.c;566;13
+Callgraph removal;prvIsQueueFull;38;D:/Gitwork/freertos-git.freescale.com/FreeRTOS/Source/queue.c;2659;19
+Callgraph removal;prvInitialiseMutex;8;D:/Gitwork/freertos-git.freescale.com/FreeRTOS/Source/queue.c;614;17
+Callgraph removal;prvGetDisinheritPriorityAfterTimeout;32;D:/Gitwork/freertos-git.freescale.com/FreeRTOS/Source/queue.c;2365;24
+Callgraph removal;vQueueUnregisterQueue.part.0;73;D:/Gitwork/freertos-git.freescale.com/FreeRTOS/Source/queue.c;3095;10

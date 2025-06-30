@@ -1,0 +1,2023 @@
+
+Marking local functions: prvCheckForValidListAndQueue/31 prvSwitchTimerLists/30 prvProcessReceivedCommands/29 prvInsertTimerInActiveList/28 prvSampleTimeNow/27 prvGetNextExpireTime/26 prvProcessTimerOrBlockTask/25 prvProcessExpiredTimer/23 prvReloadTimer/22 prvInitialiseNewTimer/12
+
+
+Marking externally visible functions: vTimerResetState/39 vTimerSetTimerNumber/38 uxTimerGetTimerNumber/37 xTimerPendFunctionCall/36 xTimerPendFunctionCallFromISR/35 vTimerSetTimerID/34 pvTimerGetTimerID/33 xTimerIsTimerActive/32 pcTimerGetName/21 xTimerGetExpiryTime/20 uxTimerGetReloadMode/19 xTimerGetReloadMode/18 vTimerSetReloadMode/17 xTimerGetPeriod/16 xTimerGetTimerDaemonTaskHandle/15 xTimerGenericCommandFromISR/14 xTimerGenericCommandFromTask/13 xTimerCreate/11 xTimerCreateTimerTask/10
+
+
+Marking externally visible variables:
+
+
+Reclaiming functions:
+Reclaiming variables:
+Clearing address taken flags:
+Symbol table:
+
+xQueueGenericSendFromISR/59 (xQueueGenericSendFromISR) @06a2ad20
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags: optimize_size
+  Called by: xTimerPendFunctionCallFromISR/35 xTimerGenericCommandFromISR/14 
+  Calls: 
+xQueueGenericSend/58 (xQueueGenericSend) @06a2ab60
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags: optimize_size
+  Called by: xTimerPendFunctionCall/36 xTimerGenericCommandFromTask/13 xTimerGenericCommandFromTask/13 
+  Calls: 
+xTaskGetSchedulerState/57 (xTaskGetSchedulerState) @06a2aa80
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags: optimize_size
+  Called by: xTimerGenericCommandFromTask/13 
+  Calls: 
+vListInitialiseItem/56 (vListInitialiseItem) @06a2a8c0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags: optimize_size
+  Called by: prvInitialiseNewTimer/12 
+  Calls: 
+pvPortMalloc/55 (pvPortMalloc) @06a2a700
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags: optimize_size
+  Called by: xTimerCreate/11 
+  Calls: 
+vPortExitCritical/54 (vPortExitCritical) @06a2a540
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags: optimize_size
+  Called by: vTimerSetTimerID/34 pvTimerGetTimerID/33 xTimerIsTimerActive/32 xTimerGetReloadMode/18 vTimerSetReloadMode/17 prvCheckForValidListAndQueue/31 
+  Calls: 
+vQueueAddToRegistry/53 (vQueueAddToRegistry) @06a2a460
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags: optimize_size
+  Called by: prvCheckForValidListAndQueue/31 
+  Calls: 
+xQueueGenericCreate/52 (xQueueGenericCreate) @06a2a380
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags: optimize_size
+  Called by: prvCheckForValidListAndQueue/31 
+  Calls: 
+vListInitialise/51 (vListInitialise) @06a2a1c0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags: optimize_size
+  Called by: prvCheckForValidListAndQueue/31 prvCheckForValidListAndQueue/31 
+  Calls: 
+vPortEnterCritical/50 (vPortEnterCritical) @06a2a0e0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags: optimize_size
+  Called by: vTimerSetTimerID/34 pvTimerGetTimerID/33 xTimerIsTimerActive/32 xTimerGetReloadMode/18 vTimerSetReloadMode/17 prvCheckForValidListAndQueue/31 
+  Calls: 
+xQueueReceive/49 (xQueueReceive) @06a07ee0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags: optimize_size
+  Called by: prvProcessReceivedCommands/29 
+  Calls: 
+vPortFree/48 (vPortFree) @06a07e00
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags: optimize_size
+  Called by: prvProcessReceivedCommands/29 
+  Calls: 
+vListInsert/47 (vListInsert) @06a07a80
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags: optimize_size
+  Called by: prvInsertTimerInActiveList/28 prvInsertTimerInActiveList/28 
+  Calls: 
+uxListRemove/46 (uxListRemove) @06a077e0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags: optimize_size
+  Called by: prvProcessReceivedCommands/29 prvProcessExpiredTimer/23 
+  Calls: 
+xLastTime.0/45 (xLastTime) @06a1a708
+  Type: variable definition analyzed
+  Visibility: prevailing_def_ironly
+  References: 
+  Referring: prvSampleTimeNow/27 (read) prvSampleTimeNow/27 (write) 
+  Availability: available
+  Varpool flags: initialized
+xTaskGetTickCount/44 (xTaskGetTickCount) @06a07460
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags: optimize_size
+  Called by: prvSampleTimeNow/27 
+  Calls: 
+vQueueWaitForMessageRestricted/43 (vQueueWaitForMessageRestricted) @06a072a0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags: optimize_size
+  Called by: prvProcessTimerOrBlockTask/25 
+  Calls: 
+xTaskResumeAll/42 (xTaskResumeAll) @06a071c0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags: optimize_size
+  Called by: prvProcessTimerOrBlockTask/25 prvProcessTimerOrBlockTask/25 prvProcessTimerOrBlockTask/25 
+  Calls: 
+vTaskSuspendAll/41 (vTaskSuspendAll) @06a070e0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags: optimize_size
+  Called by: prvProcessTimerOrBlockTask/25 
+  Calls: 
+xTaskCreate/40 (xTaskCreate) @06a00540
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags: optimize_size
+  Called by: xTimerCreateTimerTask/10 
+  Calls: 
+vTimerResetState/39 (vTimerResetState) @06a00c40
+  Type: function definition analyzed
+  Visibility: externally_visible public
+  References: xTimerQueue/8 (write) xTimerTaskHandle/9 (write) 
+  Referring: 
+  Availability: available
+  Function flags: body optimize_size
+  Called by: 
+  Calls: 
+vTimerSetTimerNumber/38 (vTimerSetTimerNumber) @06a009a0
+  Type: function definition analyzed
+  Visibility: externally_visible public
+  References: 
+  Referring: 
+  Availability: available
+  Function flags: body optimize_size
+  Called by: 
+  Calls: 
+uxTimerGetTimerNumber/37 (uxTimerGetTimerNumber) @06a00700
+  Type: function definition analyzed
+  Visibility: externally_visible public
+  References: 
+  Referring: 
+  Availability: available
+  Function flags: body optimize_size
+  Called by: 
+  Calls: 
+xTimerPendFunctionCall/36 (xTimerPendFunctionCall) @06a00460
+  Type: function definition analyzed
+  Visibility: externally_visible public
+  References: xTimerQueue/8 (read) xTimerQueue/8 (read) 
+  Referring: 
+  Availability: available
+  Function flags: body optimize_size
+  Called by: 
+  Calls: xQueueGenericSend/58 
+xTimerPendFunctionCallFromISR/35 (xTimerPendFunctionCallFromISR) @06a00000
+  Type: function definition analyzed
+  Visibility: externally_visible public
+  References: xTimerQueue/8 (read) 
+  Referring: 
+  Availability: available
+  Function flags: body optimize_size
+  Called by: 
+  Calls: xQueueGenericSendFromISR/59 
+vTimerSetTimerID/34 (vTimerSetTimerID) @069f67e0
+  Type: function definition analyzed
+  Visibility: externally_visible public
+  References: 
+  Referring: 
+  Availability: available
+  Function flags: body optimize_size
+  Called by: 
+  Calls: vPortExitCritical/54 vPortEnterCritical/50 
+pvTimerGetTimerID/33 (pvTimerGetTimerID) @069f6e00
+  Type: function definition analyzed
+  Visibility: externally_visible public
+  References: 
+  Referring: 
+  Availability: available
+  Function flags: body optimize_size
+  Called by: 
+  Calls: vPortExitCritical/54 vPortEnterCritical/50 
+xTimerIsTimerActive/32 (xTimerIsTimerActive) @069f6a80
+  Type: function definition analyzed
+  Visibility: externally_visible public
+  References: 
+  Referring: 
+  Availability: available
+  Function flags: body optimize_size
+  Called by: 
+  Calls: vPortExitCritical/54 vPortEnterCritical/50 
+prvCheckForValidListAndQueue/31 (prvCheckForValidListAndQueue) @069f6700
+  Type: function definition analyzed
+  Visibility: prevailing_def_ironly
+  References: xTimerQueue/8 (read) xActiveTimerList1/4 (addr) xActiveTimerList2/5 (addr) pxCurrentTimerList/6 (write) xActiveTimerList1/4 (addr) pxOverflowTimerList/7 (write) xActiveTimerList2/5 (addr) xTimerQueue/8 (write) xTimerQueue/8 (read) xTimerQueue/8 (read) 
+  Referring: 
+  Availability: local
+  Function flags: body local optimize_size
+  Called by: prvInitialiseNewTimer/12 xTimerCreateTimerTask/10 
+  Calls: vPortExitCritical/54 vQueueAddToRegistry/53 xQueueGenericCreate/52 vListInitialise/51 vListInitialise/51 vPortEnterCritical/50 
+prvSwitchTimerLists/30 (prvSwitchTimerLists) @069f6460
+  Type: function definition analyzed
+  Visibility: prevailing_def_ironly
+  References: pxCurrentTimerList/6 (read) pxCurrentTimerList/6 (read) pxCurrentTimerList/6 (read) pxOverflowTimerList/7 (read) pxCurrentTimerList/6 (write) pxOverflowTimerList/7 (write) 
+  Referring: 
+  Availability: local
+  Function flags: body local optimize_size
+  Called by: prvSampleTimeNow/27 
+  Calls: prvProcessExpiredTimer/23 
+prvProcessReceivedCommands/29 (prvProcessReceivedCommands) @069f60e0
+  Type: function definition analyzed
+  Visibility: prevailing_def_ironly
+  References: xTimerQueue/8 (read) 
+  Referring: 
+  Availability: local
+  Function flags: body local optimize_size
+  Called by: prvTimerTask/24 
+  Calls: xQueueReceive/49 vPortFree/48 prvInsertTimerInActiveList/28 prvReloadTimer/22 prvInsertTimerInActiveList/28 prvSampleTimeNow/27 uxListRemove/46 
+   Indirect call Num speculative call targets: 0
+   Indirect call Num speculative call targets: 0
+prvInsertTimerInActiveList/28 (prvInsertTimerInActiveList) @069eac40
+  Type: function definition analyzed
+  Visibility: prevailing_def_ironly
+  References: pxOverflowTimerList/7 (read) pxCurrentTimerList/6 (read) 
+  Referring: 
+  Availability: local
+  Function flags: body local optimize_size
+  Called by: prvProcessReceivedCommands/29 prvProcessReceivedCommands/29 prvReloadTimer/22 
+  Calls: vListInsert/47 vListInsert/47 
+prvSampleTimeNow/27 (prvSampleTimeNow) @069eae00
+  Type: function definition analyzed
+  Visibility: prevailing_def_ironly
+  References: xLastTime.0/45 (read) xLastTime.0/45 (write) 
+  Referring: 
+  Availability: local
+  Function flags: body local optimize_size
+  Called by: prvProcessReceivedCommands/29 prvProcessTimerOrBlockTask/25 
+  Calls: prvSwitchTimerLists/30 xTaskGetTickCount/44 
+prvGetNextExpireTime/26 (prvGetNextExpireTime) @069eab60
+  Type: function definition analyzed
+  Visibility: prevailing_def_ironly
+  References: pxCurrentTimerList/6 (read) pxCurrentTimerList/6 (read) 
+  Referring: 
+  Availability: local
+  Function flags: body local optimize_size
+  Called by: prvTimerTask/24 
+  Calls: 
+prvProcessTimerOrBlockTask/25 (prvProcessTimerOrBlockTask) @069ea7e0
+  Type: function definition analyzed
+  Visibility: prevailing_def_ironly
+  References: pxOverflowTimerList/7 (read) xTimerQueue/8 (read) 
+  Referring: 
+  Availability: local
+  Function flags: body local optimize_size
+  Called by: prvTimerTask/24 
+  Calls: xTaskResumeAll/42 xTaskResumeAll/42 vQueueWaitForMessageRestricted/43 prvProcessExpiredTimer/23 xTaskResumeAll/42 prvSampleTimeNow/27 vTaskSuspendAll/41 
+prvTimerTask/24 (prvTimerTask) @069ea380
+  Type: function definition analyzed
+  Visibility: prevailing_def_ironly
+  Address is taken.
+  References: 
+  Referring: xTimerCreateTimerTask/10 (addr) 
+  Availability: available
+  Function flags: body optimize_size
+  Called by: 
+  Calls: prvProcessReceivedCommands/29 prvProcessTimerOrBlockTask/25 prvGetNextExpireTime/26 
+prvProcessExpiredTimer/23 (prvProcessExpiredTimer) @069ea0e0
+  Type: function definition analyzed
+  Visibility: prevailing_def_ironly
+  References: pxCurrentTimerList/6 (read) 
+  Referring: 
+  Availability: local
+  Function flags: body local optimize_size
+  Called by: prvSwitchTimerLists/30 prvProcessTimerOrBlockTask/25 
+  Calls: prvReloadTimer/22 uxListRemove/46 
+   Indirect call Num speculative call targets: 0
+prvReloadTimer/22 (prvReloadTimer) @069aaa80
+  Type: function definition analyzed
+  Visibility: prevailing_def_ironly
+  References: 
+  Referring: 
+  Availability: local
+  Function flags: body local optimize_size
+  Called by: prvProcessReceivedCommands/29 prvProcessExpiredTimer/23 
+  Calls: prvInsertTimerInActiveList/28 
+   Indirect call Num speculative call targets: 0
+pcTimerGetName/21 (pcTimerGetName) @069aa460
+  Type: function definition analyzed
+  Visibility: externally_visible public
+  References: 
+  Referring: 
+  Availability: available
+  Function flags: body optimize_size
+  Called by: 
+  Calls: 
+xTimerGetExpiryTime/20 (xTimerGetExpiryTime) @069aad20
+  Type: function definition analyzed
+  Visibility: externally_visible public
+  References: 
+  Referring: 
+  Availability: available
+  Function flags: body optimize_size
+  Called by: 
+  Calls: 
+uxTimerGetReloadMode/19 (uxTimerGetReloadMode) @069aa9a0
+  Type: function definition analyzed
+  Visibility: externally_visible public
+  References: 
+  Referring: 
+  Availability: available
+  Function flags: body optimize_size
+  Called by: 
+  Calls: xTimerGetReloadMode/18 
+xTimerGetReloadMode/18 (xTimerGetReloadMode) @069aa700
+  Type: function definition analyzed
+  Visibility: externally_visible public
+  References: 
+  Referring: 
+  Availability: available
+  Function flags: body optimize_size
+  Called by: uxTimerGetReloadMode/19 
+  Calls: vPortExitCritical/54 vPortEnterCritical/50 
+vTimerSetReloadMode/17 (vTimerSetReloadMode) @069aa380
+  Type: function definition analyzed
+  Visibility: externally_visible public
+  References: 
+  Referring: 
+  Availability: available
+  Function flags: body optimize_size
+  Called by: 
+  Calls: vPortExitCritical/54 vPortEnterCritical/50 
+xTimerGetPeriod/16 (xTimerGetPeriod) @069aa000
+  Type: function definition analyzed
+  Visibility: externally_visible public
+  References: 
+  Referring: 
+  Availability: available
+  Function flags: body optimize_size
+  Called by: 
+  Calls: 
+xTimerGetTimerDaemonTaskHandle/15 (xTimerGetTimerDaemonTaskHandle) @069bd460
+  Type: function definition analyzed
+  Visibility: externally_visible public
+  References: xTimerTaskHandle/9 (read) xTimerTaskHandle/9 (read) 
+  Referring: 
+  Availability: available
+  Function flags: body optimize_size
+  Called by: 
+  Calls: 
+xTimerGenericCommandFromISR/14 (xTimerGenericCommandFromISR) @069bdee0
+  Type: function definition analyzed
+  Visibility: externally_visible public
+  References: xTimerQueue/8 (read) xTimerQueue/8 (read) 
+  Referring: 
+  Availability: available
+  Function flags: body optimize_size
+  Called by: 
+  Calls: xQueueGenericSendFromISR/59 
+xTimerGenericCommandFromTask/13 (xTimerGenericCommandFromTask) @069bda80
+  Type: function definition analyzed
+  Visibility: externally_visible public
+  References: xTimerQueue/8 (read) xTimerQueue/8 (read) xTimerQueue/8 (read) 
+  Referring: 
+  Availability: available
+  Function flags: body optimize_size
+  Called by: 
+  Calls: xQueueGenericSend/58 xQueueGenericSend/58 xTaskGetSchedulerState/57 
+prvInitialiseNewTimer/12 (prvInitialiseNewTimer) @069bd620
+  Type: function definition analyzed
+  Visibility: prevailing_def_ironly
+  References: 
+  Referring: 
+  Availability: local
+  Function flags: body local optimize_size
+  Called by: xTimerCreate/11 
+  Calls: vListInitialiseItem/56 prvCheckForValidListAndQueue/31 
+xTimerCreate/11 (xTimerCreate) @069bd380
+  Type: function definition analyzed
+  Visibility: externally_visible public
+  References: 
+  Referring: 
+  Availability: available
+  Function flags: body optimize_size
+  Called by: 
+  Calls: prvInitialiseNewTimer/12 pvPortMalloc/55 
+xTimerCreateTimerTask/10 (xTimerCreateTimerTask) @069bd0e0
+  Type: function definition analyzed
+  Visibility: externally_visible public
+  References: xTimerQueue/8 (read) prvTimerTask/24 (addr) xTimerTaskHandle/9 (addr) 
+  Referring: 
+  Availability: available
+  Function flags: body optimize_size
+  Called by: 
+  Calls: xTaskCreate/40 prvCheckForValidListAndQueue/31 
+xTimerTaskHandle/9 (xTimerTaskHandle) @069b2cf0
+  Type: variable definition analyzed
+  Visibility: prevailing_def_ironly
+  References: 
+  Referring: xTimerCreateTimerTask/10 (addr) xTimerGetTimerDaemonTaskHandle/15 (read) xTimerGetTimerDaemonTaskHandle/15 (read) vTimerResetState/39 (write) 
+  Availability: available
+  Varpool flags: initialized
+xTimerQueue/8 (xTimerQueue) @069b2ca8
+  Type: variable definition analyzed
+  Visibility: prevailing_def_ironly
+  References: 
+  Referring: xTimerCreateTimerTask/10 (read) prvProcessTimerOrBlockTask/25 (read) prvProcessReceivedCommands/29 (read) prvCheckForValidListAndQueue/31 (read) prvCheckForValidListAndQueue/31 (write) prvCheckForValidListAndQueue/31 (read) prvCheckForValidListAndQueue/31 (read) xTimerGenericCommandFromTask/13 (read) xTimerGenericCommandFromTask/13 (read) xTimerGenericCommandFromTask/13 (read) xTimerGenericCommandFromISR/14 (read) xTimerGenericCommandFromISR/14 (read) xTimerPendFunctionCallFromISR/35 (read) xTimerPendFunctionCall/36 (read) xTimerPendFunctionCall/36 (read) vTimerResetState/39 (write) 
+  Availability: available
+  Varpool flags: initialized
+pxOverflowTimerList/7 (pxOverflowTimerList) @069b2c18
+  Type: variable definition analyzed
+  Visibility: prevailing_def_ironly
+  References: 
+  Referring: prvProcessTimerOrBlockTask/25 (read) prvSwitchTimerLists/30 (read) prvSwitchTimerLists/30 (write) prvInsertTimerInActiveList/28 (read) prvCheckForValidListAndQueue/31 (write) 
+  Availability: available
+  Varpool flags:
+pxCurrentTimerList/6 (pxCurrentTimerList) @069b2b88
+  Type: variable definition analyzed
+  Visibility: prevailing_def_ironly
+  References: 
+  Referring: prvGetNextExpireTime/26 (read) prvGetNextExpireTime/26 (read) prvSwitchTimerLists/30 (read) prvSwitchTimerLists/30 (read) prvSwitchTimerLists/30 (read) prvSwitchTimerLists/30 (write) prvProcessExpiredTimer/23 (read) prvInsertTimerInActiveList/28 (read) prvCheckForValidListAndQueue/31 (write) 
+  Availability: available
+  Varpool flags:
+xActiveTimerList2/5 (xActiveTimerList2) @069b2af8
+  Type: variable definition analyzed
+  Visibility: prevailing_def_ironly
+  References: 
+  Referring: prvCheckForValidListAndQueue/31 (addr) prvCheckForValidListAndQueue/31 (addr) 
+  Availability: available
+  Varpool flags:
+xActiveTimerList1/4 (xActiveTimerList1) @069b2a68
+  Type: variable definition analyzed
+  Visibility: prevailing_def_ironly
+  References: 
+  Referring: prvCheckForValidListAndQueue/31 (addr) prvCheckForValidListAndQueue/31 (addr) 
+  Availability: available
+  Varpool flags:
+vTimerResetState ()
+{
+  <bb 2> :
+  # DEBUG BEGIN_STMT
+  xTimerQueue = 0B;
+  # DEBUG BEGIN_STMT
+  xTimerTaskHandle = 0B;
+  return;
+
+}
+
+
+vTimerSetTimerNumber (struct tmrTimerControl * xTimer, UBaseType_t uxTimerNumber)
+{
+  <bb 2> :
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  MEM[(struct Timer_t *)xTimer].uxTimerNumber = uxTimerNumber;
+  # DEBUG BEGIN_STMT
+  return;
+
+}
+
+
+uxTimerGetTimerNumber (struct tmrTimerControl * xTimer)
+{
+  UBaseType_t D.6922;
+
+  <bb 2> :
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  D.6922 = MEM[(struct Timer_t *)xTimer].uxTimerNumber;
+  return D.6922;
+
+}
+
+
+xTimerPendFunctionCall (void (*PendedFunction_t) (void *, uint32_t) xFunctionToPend, void * pvParameter1, uint32_t ulParameter2, TickType_t xTicksToWait)
+{
+  BaseType_t xReturn;
+  struct DaemonTaskMessage_t xMessage;
+  BaseType_t D.6919;
+
+  <bb 2> :
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  xTimerQueue.27_1 = xTimerQueue;
+  if (xTimerQueue.27_1 == 0B)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 5>; [INV]
+
+  <bb 3> :
+  # DEBUG BEGIN_STMT
+  __asm__ __volatile__(" cpsid i " :  :  : "memory");
+
+  <bb 4> :
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  goto <bb 4>; [INV]
+
+  <bb 5> :
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  xMessage.xMessageID = -1;
+  # DEBUG BEGIN_STMT
+  xMessage.u.xCallbackParameters.pxCallbackFunction = xFunctionToPend;
+  # DEBUG BEGIN_STMT
+  xMessage.u.xCallbackParameters.pvParameter1 = pvParameter1;
+  # DEBUG BEGIN_STMT
+  xMessage.u.xCallbackParameters.ulParameter2 = ulParameter2;
+  # DEBUG BEGIN_STMT
+  xTimerQueue.28_2 = xTimerQueue;
+  xReturn = xQueueGenericSend (xTimerQueue.28_2, &xMessage, xTicksToWait, 0);
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  D.6919 = xReturn;
+  xMessage = {CLOBBER};
+  return D.6919;
+
+}
+
+
+xTimerPendFunctionCallFromISR (void (*PendedFunction_t) (void *, uint32_t) xFunctionToPend, void * pvParameter1, uint32_t ulParameter2, BaseType_t * pxHigherPriorityTaskWoken)
+{
+  BaseType_t xReturn;
+  struct DaemonTaskMessage_t xMessage;
+  BaseType_t D.6914;
+
+  <bb 2> :
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  xMessage.xMessageID = -2;
+  # DEBUG BEGIN_STMT
+  xMessage.u.xCallbackParameters.pxCallbackFunction = xFunctionToPend;
+  # DEBUG BEGIN_STMT
+  xMessage.u.xCallbackParameters.pvParameter1 = pvParameter1;
+  # DEBUG BEGIN_STMT
+  xMessage.u.xCallbackParameters.ulParameter2 = ulParameter2;
+  # DEBUG BEGIN_STMT
+  xTimerQueue.26_1 = xTimerQueue;
+  xReturn = xQueueGenericSendFromISR (xTimerQueue.26_1, &xMessage, pxHigherPriorityTaskWoken, 0);
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  D.6914 = xReturn;
+  xMessage = {CLOBBER};
+  return D.6914;
+
+}
+
+
+vTimerSetTimerID (struct tmrTimerControl * xTimer, void * pvNewID)
+{
+  struct Timer_t * const pxTimer;
+
+  <bb 2> :
+  # DEBUG BEGIN_STMT
+  pxTimer = xTimer;
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  if (xTimer == 0B)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 5>; [INV]
+
+  <bb 3> :
+  # DEBUG BEGIN_STMT
+  __asm__ __volatile__(" cpsid i " :  :  : "memory");
+
+  <bb 4> :
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  goto <bb 4>; [INV]
+
+  <bb 5> :
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  vPortEnterCritical ();
+  # DEBUG BEGIN_STMT
+  pxTimer->pvTimerID = pvNewID;
+  # DEBUG BEGIN_STMT
+  vPortExitCritical ();
+  # DEBUG BEGIN_STMT
+  return;
+
+}
+
+
+pvTimerGetTimerID (struct tmrTimerControl * const xTimer)
+{
+  void * pvReturn;
+  struct Timer_t * const pxTimer;
+  void * D.6910;
+
+  <bb 2> :
+  # DEBUG BEGIN_STMT
+  pxTimer = xTimer;
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  if (xTimer == 0B)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 5>; [INV]
+
+  <bb 3> :
+  # DEBUG BEGIN_STMT
+  __asm__ __volatile__(" cpsid i " :  :  : "memory");
+
+  <bb 4> :
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  goto <bb 4>; [INV]
+
+  <bb 5> :
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  vPortEnterCritical ();
+  # DEBUG BEGIN_STMT
+  pvReturn = pxTimer->pvTimerID;
+  # DEBUG BEGIN_STMT
+  vPortExitCritical ();
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  D.6910 = pvReturn;
+  return D.6910;
+
+}
+
+
+xTimerIsTimerActive (struct tmrTimerControl * xTimer)
+{
+  struct Timer_t * pxTimer;
+  BaseType_t xReturn;
+  BaseType_t D.6906;
+
+  <bb 2> :
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  pxTimer = xTimer;
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  if (xTimer == 0B)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 5>; [INV]
+
+  <bb 3> :
+  # DEBUG BEGIN_STMT
+  __asm__ __volatile__(" cpsid i " :  :  : "memory");
+
+  <bb 4> :
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  goto <bb 4>; [INV]
+
+  <bb 5> :
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  vPortEnterCritical ();
+  # DEBUG BEGIN_STMT
+  _1 = pxTimer->ucStatus;
+  _2 = (unsigned int) _1;
+  _3 = _2 & 1;
+  if (_3 == 0)
+    goto <bb 6>; [INV]
+  else
+    goto <bb 7>; [INV]
+
+  <bb 6> :
+  # DEBUG BEGIN_STMT
+  xReturn = 0;
+  goto <bb 8>; [INV]
+
+  <bb 7> :
+  # DEBUG BEGIN_STMT
+  xReturn = 1;
+
+  <bb 8> :
+  # DEBUG BEGIN_STMT
+  vPortExitCritical ();
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  D.6906 = xReturn;
+  return D.6906;
+
+}
+
+
+prvCheckForValidListAndQueue ()
+{
+  <bb 2> :
+  # DEBUG BEGIN_STMT
+  vPortEnterCritical ();
+  # DEBUG BEGIN_STMT
+  xTimerQueue.17_1 = xTimerQueue;
+  if (xTimerQueue.17_1 == 0B)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 5>; [INV]
+
+  <bb 3> :
+  # DEBUG BEGIN_STMT
+  vListInitialise (&xActiveTimerList1);
+  # DEBUG BEGIN_STMT
+  vListInitialise (&xActiveTimerList2);
+  # DEBUG BEGIN_STMT
+  pxCurrentTimerList = &xActiveTimerList1;
+  # DEBUG BEGIN_STMT
+  pxOverflowTimerList = &xActiveTimerList2;
+  # DEBUG BEGIN_STMT
+  _2 = xQueueGenericCreate (10, 16, 0);
+  xTimerQueue = _2;
+  # DEBUG BEGIN_STMT
+  xTimerQueue.18_3 = xTimerQueue;
+  if (xTimerQueue.18_3 != 0B)
+    goto <bb 4>; [INV]
+  else
+    goto <bb 5>; [INV]
+
+  <bb 4> :
+  # DEBUG BEGIN_STMT
+  xTimerQueue.19_4 = xTimerQueue;
+  vQueueAddToRegistry (xTimerQueue.19_4, "TmrQ");
+
+  <bb 5> :
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  vPortExitCritical ();
+  return;
+
+}
+
+
+prvSwitchTimerLists ()
+{
+  struct List_t * pxTemp;
+  TickType_t xNextExpireTime;
+
+  <bb 2> :
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  goto <bb 4>; [INV]
+
+  <bb 3> :
+  # DEBUG BEGIN_STMT
+  pxCurrentTimerList.10_1 = pxCurrentTimerList;
+  _2 = pxCurrentTimerList.10_1->xListEnd.pxNext;
+  xNextExpireTime = _2->xItemValue;
+  # DEBUG BEGIN_STMT
+  prvProcessExpiredTimer (xNextExpireTime, 4294967295);
+
+  <bb 4> :
+  # DEBUG BEGIN_STMT
+  pxCurrentTimerList.11_3 = pxCurrentTimerList;
+  _4 = pxCurrentTimerList.11_3->uxNumberOfItems;
+  if (_4 != 0)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 5>; [INV]
+
+  <bb 5> :
+  # DEBUG BEGIN_STMT
+  pxTemp = pxCurrentTimerList;
+  # DEBUG BEGIN_STMT
+  pxOverflowTimerList.12_5 = pxOverflowTimerList;
+  pxCurrentTimerList = pxOverflowTimerList.12_5;
+  # DEBUG BEGIN_STMT
+  pxOverflowTimerList = pxTemp;
+  return;
+
+}
+
+
+prvProcessReceivedCommands ()
+{
+  const struct CallbackParameters_t * const pxCallback;
+  TickType_t xTimeNow;
+  BaseType_t xTimerListsWereSwitched;
+  struct Timer_t * pxTimer;
+  struct DaemonTaskMessage_t xMessage;
+
+  <bb 2> :
+  # DEBUG BEGIN_STMT
+  xMessage = {};
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  goto <bb 25>; [INV]
+
+  <bb 3> :
+  # DEBUG BEGIN_STMT
+  _1 = xMessage.xMessageID;
+  if (_1 < 0)
+    goto <bb 4>; [INV]
+  else
+    goto <bb 8>; [INV]
+
+  <bb 4> :
+  # DEBUG BEGIN_STMT
+  pxCallback = &xMessage.u.xCallbackParameters;
+  # DEBUG BEGIN_STMT
+  if (pxCallback == 0B)
+    goto <bb 5>; [INV]
+  else
+    goto <bb 7>; [INV]
+
+  <bb 5> :
+  # DEBUG BEGIN_STMT
+  __asm__ __volatile__(" cpsid i " :  :  : "memory");
+
+  <bb 6> :
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  goto <bb 6>; [INV]
+
+  <bb 7> :
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  _2 = pxCallback->pxCallbackFunction;
+  _3 = pxCallback->pvParameter1;
+  _4 = pxCallback->ulParameter2;
+  _2 (_3, _4);
+
+  <bb 8> :
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  _5 = xMessage.xMessageID;
+  if (_5 >= 0)
+    goto <bb 9>; [INV]
+  else
+    goto <bb 25>; [INV]
+
+  <bb 9> :
+  # DEBUG BEGIN_STMT
+  pxTimer = xMessage.u.xTimerParameters.pxTimer;
+  # DEBUG BEGIN_STMT
+  _6 = pxTimer->xTimerListItem.pvContainer;
+  if (_6 != 0B)
+    goto <bb 10>; [INV]
+  else
+    goto <bb 11>; [INV]
+
+  <bb 10> :
+  # DEBUG BEGIN_STMT
+  _7 = &pxTimer->xTimerListItem;
+  uxListRemove (_7);
+
+  <bb 11> :
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  xTimeNow = prvSampleTimeNow (&xTimerListsWereSwitched);
+  # DEBUG BEGIN_STMT
+  _8 = xMessage.xMessageID;
+  switch (_8) <default: <L37> [INV], case 1 ... 2: <L11> [INV], case 3: <L21> [INV], case 4: <L23> [INV], case 5: <L28> [INV], case 6 ... 7: <L11> [INV], case 8: <L21> [INV], case 9: <L23> [INV]>
+
+  <bb 12> :
+<L11>:
+  # DEBUG BEGIN_STMT
+  _9 = pxTimer->ucStatus;
+  _10 = _9 | 1;
+  pxTimer->ucStatus = _10;
+  # DEBUG BEGIN_STMT
+  _11 = xMessage.u.xTimerParameters.xMessageValue;
+  _12 = pxTimer->xTimerPeriodInTicks;
+  _13 = _11 + _12;
+  _14 = xMessage.u.xTimerParameters.xMessageValue;
+  _15 = prvInsertTimerInActiveList (pxTimer, _13, xTimeNow, _14);
+  if (_15 != 0)
+    goto <bb 13>; [INV]
+  else
+    goto <bb 25>; [INV]
+
+  <bb 13> :
+  # DEBUG BEGIN_STMT
+  _16 = pxTimer->ucStatus;
+  _17 = (unsigned int) _16;
+  _18 = _17 & 4;
+  if (_18 != 0)
+    goto <bb 14>; [INV]
+  else
+    goto <bb 15>; [INV]
+
+  <bb 14> :
+  # DEBUG BEGIN_STMT
+  _19 = xMessage.u.xTimerParameters.xMessageValue;
+  _20 = pxTimer->xTimerPeriodInTicks;
+  _21 = _19 + _20;
+  prvReloadTimer (pxTimer, _21, xTimeNow);
+  goto <bb 16>; [INV]
+
+  <bb 15> :
+  # DEBUG BEGIN_STMT
+  _22 = pxTimer->ucStatus;
+  _23 = _22 & 254;
+  pxTimer->ucStatus = _23;
+
+  <bb 16> :
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  _24 = pxTimer->pxCallbackFunction;
+  _24 (pxTimer);
+  goto <bb 25>; [INV]
+
+  <bb 17> :
+<L21>:
+  # DEBUG BEGIN_STMT
+  _25 = pxTimer->ucStatus;
+  _26 = _25 & 254;
+  pxTimer->ucStatus = _26;
+  # DEBUG BEGIN_STMT
+  goto <bb 25>; [INV]
+
+  <bb 18> :
+<L23>:
+  # DEBUG BEGIN_STMT
+  _27 = pxTimer->ucStatus;
+  _28 = _27 | 1;
+  pxTimer->ucStatus = _28;
+  # DEBUG BEGIN_STMT
+  _29 = xMessage.u.xTimerParameters.xMessageValue;
+  pxTimer->xTimerPeriodInTicks = _29;
+  # DEBUG BEGIN_STMT
+  _30 = pxTimer->xTimerPeriodInTicks;
+  if (_30 == 0)
+    goto <bb 19>; [INV]
+  else
+    goto <bb 21>; [INV]
+
+  <bb 19> :
+  # DEBUG BEGIN_STMT
+  __asm__ __volatile__(" cpsid i " :  :  : "memory");
+
+  <bb 20> :
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  goto <bb 20>; [INV]
+
+  <bb 21> :
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  _31 = pxTimer->xTimerPeriodInTicks;
+  _32 = xTimeNow + _31;
+  prvInsertTimerInActiveList (pxTimer, _32, xTimeNow, xTimeNow);
+  # DEBUG BEGIN_STMT
+  goto <bb 25>; [INV]
+
+  <bb 22> :
+<L28>:
+  # DEBUG BEGIN_STMT
+  _33 = pxTimer->ucStatus;
+  _34 = (unsigned int) _33;
+  _35 = _34 & 2;
+  if (_35 == 0)
+    goto <bb 23>; [INV]
+  else
+    goto <bb 24>; [INV]
+
+  <bb 23> :
+  # DEBUG BEGIN_STMT
+  vPortFree (pxTimer);
+  goto <bb 25>; [INV]
+
+  <bb 24> :
+  # DEBUG BEGIN_STMT
+  _36 = pxTimer->ucStatus;
+  _37 = _36 & 254;
+  pxTimer->ucStatus = _37;
+
+  <bb 25> :
+<L37>:
+  # DEBUG BEGIN_STMT
+  xTimerQueue.16_38 = xTimerQueue;
+  _39 = xQueueReceive (xTimerQueue.16_38, &xMessage, 0);
+  if (_39 != 0)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 26>; [INV]
+
+  <bb 26> :
+  xMessage = {CLOBBER};
+  xTimerListsWereSwitched = {CLOBBER};
+  return;
+
+}
+
+
+prvInsertTimerInActiveList (struct Timer_t * const pxTimer, const TickType_t xNextExpiryTime, const TickType_t xTimeNow, const TickType_t xCommandTime)
+{
+  BaseType_t xProcessTimerNow;
+  BaseType_t D.6806;
+
+  <bb 2> :
+  # DEBUG BEGIN_STMT
+  xProcessTimerNow = 0;
+  # DEBUG BEGIN_STMT
+  pxTimer->xTimerListItem.xItemValue = xNextExpiryTime;
+  # DEBUG BEGIN_STMT
+  pxTimer->xTimerListItem.pvOwner = pxTimer;
+  # DEBUG BEGIN_STMT
+  if (xNextExpiryTime <= xTimeNow)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 6>; [INV]
+
+  <bb 3> :
+  # DEBUG BEGIN_STMT
+  _1 = xTimeNow - xCommandTime;
+  _2 = pxTimer->xTimerPeriodInTicks;
+  if (_1 >= _2)
+    goto <bb 4>; [INV]
+  else
+    goto <bb 5>; [INV]
+
+  <bb 4> :
+  # DEBUG BEGIN_STMT
+  xProcessTimerNow = 1;
+  goto <bb 10>; [INV]
+
+  <bb 5> :
+  # DEBUG BEGIN_STMT
+  pxOverflowTimerList.14_3 = pxOverflowTimerList;
+  _4 = &pxTimer->xTimerListItem;
+  vListInsert (pxOverflowTimerList.14_3, _4);
+  goto <bb 10>; [INV]
+
+  <bb 6> :
+  # DEBUG BEGIN_STMT
+  if (xTimeNow < xCommandTime)
+    goto <bb 7>; [INV]
+  else
+    goto <bb 9>; [INV]
+
+  <bb 7> :
+  if (xNextExpiryTime >= xCommandTime)
+    goto <bb 8>; [INV]
+  else
+    goto <bb 9>; [INV]
+
+  <bb 8> :
+  # DEBUG BEGIN_STMT
+  xProcessTimerNow = 1;
+  goto <bb 10>; [INV]
+
+  <bb 9> :
+  # DEBUG BEGIN_STMT
+  pxCurrentTimerList.15_5 = pxCurrentTimerList;
+  _6 = &pxTimer->xTimerListItem;
+  vListInsert (pxCurrentTimerList.15_5, _6);
+
+  <bb 10> :
+  # DEBUG BEGIN_STMT
+  D.6806 = xProcessTimerNow;
+  return D.6806;
+
+}
+
+
+prvSampleTimeNow (BaseType_t * const pxTimerListsWereSwitched)
+{
+  static TickType_t xLastTime = 0;
+  TickType_t xTimeNow;
+  TickType_t D.6791;
+
+  <bb 2> :
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  xTimeNow = xTaskGetTickCount ();
+  # DEBUG BEGIN_STMT
+  xLastTime.9_1 = xLastTime;
+  if (xTimeNow < xLastTime.9_1)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 4>; [INV]
+
+  <bb 3> :
+  # DEBUG BEGIN_STMT
+  prvSwitchTimerLists ();
+  # DEBUG BEGIN_STMT
+  *pxTimerListsWereSwitched = 1;
+  goto <bb 5>; [INV]
+
+  <bb 4> :
+  # DEBUG BEGIN_STMT
+  *pxTimerListsWereSwitched = 0;
+
+  <bb 5> :
+  # DEBUG BEGIN_STMT
+  xLastTime = xTimeNow;
+  # DEBUG BEGIN_STMT
+  D.6791 = xTimeNow;
+  return D.6791;
+
+}
+
+
+prvGetNextExpireTime (BaseType_t * const pxListWasEmpty)
+{
+  TickType_t xNextExpireTime;
+  TickType_t D.6770;
+  long int iftmp.2;
+
+  <bb 2> :
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  pxCurrentTimerList.3_1 = pxCurrentTimerList;
+  _2 = pxCurrentTimerList.3_1->uxNumberOfItems;
+  if (_2 == 0)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 4>; [INV]
+
+  <bb 3> :
+  iftmp.2 = 1;
+  goto <bb 5>; [INV]
+
+  <bb 4> :
+  iftmp.2 = 0;
+
+  <bb 5> :
+  *pxListWasEmpty = iftmp.2;
+  # DEBUG BEGIN_STMT
+  _3 = *pxListWasEmpty;
+  if (_3 == 0)
+    goto <bb 6>; [INV]
+  else
+    goto <bb 7>; [INV]
+
+  <bb 6> :
+  # DEBUG BEGIN_STMT
+  pxCurrentTimerList.4_4 = pxCurrentTimerList;
+  _5 = pxCurrentTimerList.4_4->xListEnd.pxNext;
+  xNextExpireTime = _5->xItemValue;
+  goto <bb 8>; [INV]
+
+  <bb 7> :
+  # DEBUG BEGIN_STMT
+  xNextExpireTime = 0;
+
+  <bb 8> :
+  # DEBUG BEGIN_STMT
+  D.6770 = xNextExpireTime;
+  return D.6770;
+
+}
+
+
+prvProcessTimerOrBlockTask (const TickType_t xNextExpireTime, BaseType_t xListWasEmpty)
+{
+  BaseType_t xTimerListsWereSwitched;
+  TickType_t xTimeNow;
+  long int iftmp.6;
+
+  <bb 2> :
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  vTaskSuspendAll ();
+  # DEBUG BEGIN_STMT
+  xTimeNow = prvSampleTimeNow (&xTimerListsWereSwitched);
+  # DEBUG BEGIN_STMT
+  xTimerListsWereSwitched.5_1 = xTimerListsWereSwitched;
+  if (xTimerListsWereSwitched.5_1 == 0)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 13>; [INV]
+
+  <bb 3> :
+  # DEBUG BEGIN_STMT
+  if (xListWasEmpty == 0)
+    goto <bb 4>; [INV]
+  else
+    goto <bb 6>; [INV]
+
+  <bb 4> :
+  if (xNextExpireTime <= xTimeNow)
+    goto <bb 5>; [INV]
+  else
+    goto <bb 6>; [INV]
+
+  <bb 5> :
+  # DEBUG BEGIN_STMT
+  xTaskResumeAll ();
+  # DEBUG BEGIN_STMT
+  prvProcessExpiredTimer (xNextExpireTime, xTimeNow);
+  goto <bb 14>; [INV]
+
+  <bb 6> :
+  # DEBUG BEGIN_STMT
+  if (xListWasEmpty != 0)
+    goto <bb 7>; [INV]
+  else
+    goto <bb 11>; [INV]
+
+  <bb 7> :
+  # DEBUG BEGIN_STMT
+  pxOverflowTimerList.7_2 = pxOverflowTimerList;
+  _3 = pxOverflowTimerList.7_2->uxNumberOfItems;
+  if (_3 == 0)
+    goto <bb 8>; [INV]
+  else
+    goto <bb 9>; [INV]
+
+  <bb 8> :
+  iftmp.6 = 1;
+  goto <bb 10>; [INV]
+
+  <bb 9> :
+  iftmp.6 = 0;
+
+  <bb 10> :
+  xListWasEmpty = iftmp.6;
+
+  <bb 11> :
+  # DEBUG BEGIN_STMT
+  xTimerQueue.8_4 = xTimerQueue;
+  _5 = xNextExpireTime - xTimeNow;
+  vQueueWaitForMessageRestricted (xTimerQueue.8_4, _5, xListWasEmpty);
+  # DEBUG BEGIN_STMT
+  _6 = xTaskResumeAll ();
+  if (_6 == 0)
+    goto <bb 12>; [INV]
+  else
+    goto <bb 14>; [INV]
+
+  <bb 12> :
+  # DEBUG BEGIN_STMT
+  _7 = 3758157060B;
+  *_7 = 268435456;
+  # DEBUG BEGIN_STMT
+  __asm__ __volatile__("dsb" :  :  : "memory");
+  # DEBUG BEGIN_STMT
+  __asm__ __volatile__("isb");
+  # DEBUG BEGIN_STMT
+  goto <bb 14>; [INV]
+
+  <bb 13> :
+  # DEBUG BEGIN_STMT
+  xTaskResumeAll ();
+
+  <bb 14> :
+  xTimerListsWereSwitched = {CLOBBER};
+  return;
+
+}
+
+
+prvTimerTask (void * pvParameters)
+{
+  BaseType_t xListWasEmpty;
+  TickType_t xNextExpireTime;
+
+  <bb 2> :
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  xNextExpireTime = prvGetNextExpireTime (&xListWasEmpty);
+  # DEBUG BEGIN_STMT
+  xListWasEmpty.1_1 = xListWasEmpty;
+  prvProcessTimerOrBlockTask (xNextExpireTime, xListWasEmpty.1_1);
+  # DEBUG BEGIN_STMT
+  prvProcessReceivedCommands ();
+  # DEBUG BEGIN_STMT
+  goto <bb 2>; [INV]
+
+}
+
+
+prvProcessExpiredTimer (const TickType_t xNextExpireTime, const TickType_t xTimeNow)
+{
+  struct Timer_t * const pxTimer;
+
+  <bb 2> :
+  # DEBUG BEGIN_STMT
+  pxCurrentTimerList.13_1 = pxCurrentTimerList;
+  _2 = pxCurrentTimerList.13_1->xListEnd.pxNext;
+  pxTimer = _2->pvOwner;
+  # DEBUG BEGIN_STMT
+  _3 = &pxTimer->xTimerListItem;
+  uxListRemove (_3);
+  # DEBUG BEGIN_STMT
+  _4 = pxTimer->ucStatus;
+  _5 = (unsigned int) _4;
+  _6 = _5 & 4;
+  if (_6 != 0)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 4>; [INV]
+
+  <bb 3> :
+  # DEBUG BEGIN_STMT
+  prvReloadTimer (pxTimer, xNextExpireTime, xTimeNow);
+  goto <bb 5>; [INV]
+
+  <bb 4> :
+  # DEBUG BEGIN_STMT
+  _7 = pxTimer->ucStatus;
+  _8 = _7 & 254;
+  pxTimer->ucStatus = _8;
+
+  <bb 5> :
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  _9 = pxTimer->pxCallbackFunction;
+  _9 (pxTimer);
+  return;
+
+}
+
+
+prvReloadTimer (struct Timer_t * const pxTimer, TickType_t xExpiredTime, const TickType_t xTimeNow)
+{
+  <bb 2> :
+  # DEBUG BEGIN_STMT
+  goto <bb 4>; [INV]
+
+  <bb 3> :
+  # DEBUG BEGIN_STMT
+  _1 = pxTimer->xTimerPeriodInTicks;
+  xExpiredTime = xExpiredTime + _1;
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  _2 = pxTimer->pxCallbackFunction;
+  _2 (pxTimer);
+
+  <bb 4> :
+  # DEBUG BEGIN_STMT
+  _3 = pxTimer->xTimerPeriodInTicks;
+  _4 = xExpiredTime + _3;
+  _5 = prvInsertTimerInActiveList (pxTimer, _4, xTimeNow, xExpiredTime);
+  if (_5 != 0)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 5>; [INV]
+
+  <bb 5> :
+  return;
+
+}
+
+
+pcTimerGetName (struct tmrTimerControl * xTimer)
+{
+  struct Timer_t * pxTimer;
+  const char * D.6899;
+
+  <bb 2> :
+  # DEBUG BEGIN_STMT
+  pxTimer = xTimer;
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  if (xTimer == 0B)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 5>; [INV]
+
+  <bb 3> :
+  # DEBUG BEGIN_STMT
+  __asm__ __volatile__(" cpsid i " :  :  : "memory");
+
+  <bb 4> :
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  goto <bb 4>; [INV]
+
+  <bb 5> :
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  D.6899 = pxTimer->pcTimerName;
+  return D.6899;
+
+}
+
+
+xTimerGetExpiryTime (struct tmrTimerControl * xTimer)
+{
+  TickType_t xReturn;
+  struct Timer_t * pxTimer;
+  TickType_t D.6895;
+
+  <bb 2> :
+  # DEBUG BEGIN_STMT
+  pxTimer = xTimer;
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  if (xTimer == 0B)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 5>; [INV]
+
+  <bb 3> :
+  # DEBUG BEGIN_STMT
+  __asm__ __volatile__(" cpsid i " :  :  : "memory");
+
+  <bb 4> :
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  goto <bb 4>; [INV]
+
+  <bb 5> :
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  xReturn = pxTimer->xTimerListItem.xItemValue;
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  D.6895 = xReturn;
+  return D.6895;
+
+}
+
+
+uxTimerGetReloadMode (struct tmrTimerControl * xTimer)
+{
+  UBaseType_t uxReturn;
+  UBaseType_t D.6891;
+
+  <bb 2> :
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  _1 = xTimerGetReloadMode (xTimer);
+  uxReturn = (UBaseType_t) _1;
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  D.6891 = uxReturn;
+  return D.6891;
+
+}
+
+
+xTimerGetReloadMode (struct tmrTimerControl * xTimer)
+{
+  BaseType_t xReturn;
+  struct Timer_t * pxTimer;
+  BaseType_t D.6889;
+
+  <bb 2> :
+  # DEBUG BEGIN_STMT
+  pxTimer = xTimer;
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  if (xTimer == 0B)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 5>; [INV]
+
+  <bb 3> :
+  # DEBUG BEGIN_STMT
+  __asm__ __volatile__(" cpsid i " :  :  : "memory");
+
+  <bb 4> :
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  goto <bb 4>; [INV]
+
+  <bb 5> :
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  vPortEnterCritical ();
+  # DEBUG BEGIN_STMT
+  _1 = pxTimer->ucStatus;
+  _2 = (unsigned int) _1;
+  _3 = _2 & 4;
+  if (_3 == 0)
+    goto <bb 6>; [INV]
+  else
+    goto <bb 7>; [INV]
+
+  <bb 6> :
+  # DEBUG BEGIN_STMT
+  xReturn = 0;
+  goto <bb 8>; [INV]
+
+  <bb 7> :
+  # DEBUG BEGIN_STMT
+  xReturn = 1;
+
+  <bb 8> :
+  # DEBUG BEGIN_STMT
+  vPortExitCritical ();
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  D.6889 = xReturn;
+  return D.6889;
+
+}
+
+
+vTimerSetReloadMode (struct tmrTimerControl * xTimer, const BaseType_t xAutoReload)
+{
+  struct Timer_t * pxTimer;
+
+  <bb 2> :
+  # DEBUG BEGIN_STMT
+  pxTimer = xTimer;
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  if (xTimer == 0B)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 5>; [INV]
+
+  <bb 3> :
+  # DEBUG BEGIN_STMT
+  __asm__ __volatile__(" cpsid i " :  :  : "memory");
+
+  <bb 4> :
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  goto <bb 4>; [INV]
+
+  <bb 5> :
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  vPortEnterCritical ();
+  # DEBUG BEGIN_STMT
+  if (xAutoReload != 0)
+    goto <bb 6>; [INV]
+  else
+    goto <bb 7>; [INV]
+
+  <bb 6> :
+  # DEBUG BEGIN_STMT
+  _1 = pxTimer->ucStatus;
+  _2 = _1 | 4;
+  pxTimer->ucStatus = _2;
+  goto <bb 8>; [INV]
+
+  <bb 7> :
+  # DEBUG BEGIN_STMT
+  _3 = pxTimer->ucStatus;
+  _4 = _3 & 251;
+  pxTimer->ucStatus = _4;
+
+  <bb 8> :
+  # DEBUG BEGIN_STMT
+  vPortExitCritical ();
+  # DEBUG BEGIN_STMT
+  return;
+
+}
+
+
+xTimerGetPeriod (struct tmrTimerControl * xTimer)
+{
+  struct Timer_t * pxTimer;
+  TickType_t D.6877;
+
+  <bb 2> :
+  # DEBUG BEGIN_STMT
+  pxTimer = xTimer;
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  if (xTimer == 0B)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 5>; [INV]
+
+  <bb 3> :
+  # DEBUG BEGIN_STMT
+  __asm__ __volatile__(" cpsid i " :  :  : "memory");
+
+  <bb 4> :
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  goto <bb 4>; [INV]
+
+  <bb 5> :
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  D.6877 = pxTimer->xTimerPeriodInTicks;
+  return D.6877;
+
+}
+
+
+xTimerGetTimerDaemonTaskHandle ()
+{
+  struct tskTaskControlBlock * D.6873;
+
+  <bb 2> :
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  xTimerTaskHandle.25_1 = xTimerTaskHandle;
+  if (xTimerTaskHandle.25_1 == 0B)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 5>; [INV]
+
+  <bb 3> :
+  # DEBUG BEGIN_STMT
+  __asm__ __volatile__(" cpsid i " :  :  : "memory");
+
+  <bb 4> :
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  goto <bb 4>; [INV]
+
+  <bb 5> :
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  D.6873 = xTimerTaskHandle;
+  return D.6873;
+
+}
+
+
+xTimerGenericCommandFromISR (struct tmrTimerControl * xTimer, const BaseType_t xCommandID, const TickType_t xOptionalValue, BaseType_t * const pxHigherPriorityTaskWoken, const TickType_t xTicksToWait)
+{
+  struct DaemonTaskMessage_t xMessage;
+  BaseType_t xReturn;
+  BaseType_t D.6868;
+
+  <bb 2> :
+  # DEBUG BEGIN_STMT
+  xReturn = 0;
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  if (xTimer == 0B)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 5>; [INV]
+
+  <bb 3> :
+  # DEBUG BEGIN_STMT
+  __asm__ __volatile__(" cpsid i " :  :  : "memory");
+
+  <bb 4> :
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  goto <bb 4>; [INV]
+
+  <bb 5> :
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  xTimerQueue.23_1 = xTimerQueue;
+  if (xTimerQueue.23_1 != 0B)
+    goto <bb 6>; [INV]
+  else
+    goto <bb 11>; [INV]
+
+  <bb 6> :
+  # DEBUG BEGIN_STMT
+  xMessage.xMessageID = xCommandID;
+  # DEBUG BEGIN_STMT
+  xMessage.u.xTimerParameters.xMessageValue = xOptionalValue;
+  # DEBUG BEGIN_STMT
+  xMessage.u.xTimerParameters.pxTimer = xTimer;
+  # DEBUG BEGIN_STMT
+  if (xCommandID <= 5)
+    goto <bb 7>; [INV]
+  else
+    goto <bb 9>; [INV]
+
+  <bb 7> :
+  # DEBUG BEGIN_STMT
+  __asm__ __volatile__(" cpsid i " :  :  : "memory");
+
+  <bb 8> :
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  goto <bb 8>; [INV]
+
+  <bb 9> :
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  if (xCommandID > 5)
+    goto <bb 10>; [INV]
+  else
+    goto <bb 11>; [INV]
+
+  <bb 10> :
+  # DEBUG BEGIN_STMT
+  xTimerQueue.24_2 = xTimerQueue;
+  xReturn = xQueueGenericSendFromISR (xTimerQueue.24_2, &xMessage, pxHigherPriorityTaskWoken, 0);
+
+  <bb 11> :
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  D.6868 = xReturn;
+  xMessage = {CLOBBER};
+  return D.6868;
+
+}
+
+
+xTimerGenericCommandFromTask (struct tmrTimerControl * xTimer, const BaseType_t xCommandID, const TickType_t xOptionalValue, BaseType_t * const pxHigherPriorityTaskWoken, const TickType_t xTicksToWait)
+{
+  struct DaemonTaskMessage_t xMessage;
+  BaseType_t xReturn;
+  BaseType_t D.6856;
+
+  <bb 2> :
+  # DEBUG BEGIN_STMT
+  xReturn = 0;
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  if (xTimer == 0B)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 5>; [INV]
+
+  <bb 3> :
+  # DEBUG BEGIN_STMT
+  __asm__ __volatile__(" cpsid i " :  :  : "memory");
+
+  <bb 4> :
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  goto <bb 4>; [INV]
+
+  <bb 5> :
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  xTimerQueue.20_1 = xTimerQueue;
+  if (xTimerQueue.20_1 != 0B)
+    goto <bb 6>; [INV]
+  else
+    goto <bb 13>; [INV]
+
+  <bb 6> :
+  # DEBUG BEGIN_STMT
+  xMessage.xMessageID = xCommandID;
+  # DEBUG BEGIN_STMT
+  xMessage.u.xTimerParameters.xMessageValue = xOptionalValue;
+  # DEBUG BEGIN_STMT
+  xMessage.u.xTimerParameters.pxTimer = xTimer;
+  # DEBUG BEGIN_STMT
+  if (xCommandID > 5)
+    goto <bb 7>; [INV]
+  else
+    goto <bb 9>; [INV]
+
+  <bb 7> :
+  # DEBUG BEGIN_STMT
+  __asm__ __volatile__(" cpsid i " :  :  : "memory");
+
+  <bb 8> :
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  goto <bb 8>; [INV]
+
+  <bb 9> :
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  if (xCommandID <= 5)
+    goto <bb 10>; [INV]
+  else
+    goto <bb 13>; [INV]
+
+  <bb 10> :
+  # DEBUG BEGIN_STMT
+  _2 = xTaskGetSchedulerState ();
+  if (_2 == 2)
+    goto <bb 11>; [INV]
+  else
+    goto <bb 12>; [INV]
+
+  <bb 11> :
+  # DEBUG BEGIN_STMT
+  xTimerQueue.21_3 = xTimerQueue;
+  xReturn = xQueueGenericSend (xTimerQueue.21_3, &xMessage, xTicksToWait, 0);
+  goto <bb 13>; [INV]
+
+  <bb 12> :
+  # DEBUG BEGIN_STMT
+  xTimerQueue.22_4 = xTimerQueue;
+  xReturn = xQueueGenericSend (xTimerQueue.22_4, &xMessage, 0, 0);
+
+  <bb 13> :
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  D.6856 = xReturn;
+  xMessage = {CLOBBER};
+  return D.6856;
+
+}
+
+
+prvInitialiseNewTimer (const char * const pcTimerName, const TickType_t xTimerPeriodInTicks, const BaseType_t xAutoReload, void * const pvTimerID, void (*TimerCallbackFunction_t) (struct tmrTimerControl *) pxCallbackFunction, struct Timer_t * pxNewTimer)
+{
+  <bb 2> :
+  # DEBUG BEGIN_STMT
+  if (xTimerPeriodInTicks == 0)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 5>; [INV]
+
+  <bb 3> :
+  # DEBUG BEGIN_STMT
+  __asm__ __volatile__(" cpsid i " :  :  : "memory");
+
+  <bb 4> :
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  goto <bb 4>; [INV]
+
+  <bb 5> :
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  prvCheckForValidListAndQueue ();
+  # DEBUG BEGIN_STMT
+  pxNewTimer->pcTimerName = pcTimerName;
+  # DEBUG BEGIN_STMT
+  pxNewTimer->xTimerPeriodInTicks = xTimerPeriodInTicks;
+  # DEBUG BEGIN_STMT
+  pxNewTimer->pvTimerID = pvTimerID;
+  # DEBUG BEGIN_STMT
+  pxNewTimer->pxCallbackFunction = pxCallbackFunction;
+  # DEBUG BEGIN_STMT
+  _1 = &pxNewTimer->xTimerListItem;
+  vListInitialiseItem (_1);
+  # DEBUG BEGIN_STMT
+  if (xAutoReload != 0)
+    goto <bb 6>; [INV]
+  else
+    goto <bb 7>; [INV]
+
+  <bb 6> :
+  # DEBUG BEGIN_STMT
+  _2 = pxNewTimer->ucStatus;
+  _3 = _2 | 4;
+  pxNewTimer->ucStatus = _3;
+
+  <bb 7> :
+  # DEBUG BEGIN_STMT
+  return;
+
+}
+
+
+xTimerCreate (const char * const pcTimerName, const TickType_t xTimerPeriodInTicks, const BaseType_t xAutoReload, void * const pvTimerID, void (*TimerCallbackFunction_t) (struct tmrTimerControl *) pxCallbackFunction)
+{
+  struct Timer_t * pxNewTimer;
+  struct tmrTimerControl * D.6838;
+
+  <bb 2> :
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  pxNewTimer = pvPortMalloc (44);
+  # DEBUG BEGIN_STMT
+  if (pxNewTimer != 0B)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 4>; [INV]
+
+  <bb 3> :
+  # DEBUG BEGIN_STMT
+  pxNewTimer->ucStatus = 0;
+  # DEBUG BEGIN_STMT
+  prvInitialiseNewTimer (pcTimerName, xTimerPeriodInTicks, xAutoReload, pvTimerID, pxCallbackFunction, pxNewTimer);
+
+  <bb 4> :
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  D.6838 = pxNewTimer;
+  return D.6838;
+
+}
+
+
+xTimerCreateTimerTask ()
+{
+  BaseType_t xReturn;
+  BaseType_t D.6761;
+
+  <bb 2> :
+  # DEBUG BEGIN_STMT
+  xReturn = 0;
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  prvCheckForValidListAndQueue ();
+  # DEBUG BEGIN_STMT
+  xTimerQueue.0_1 = xTimerQueue;
+  if (xTimerQueue.0_1 != 0B)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 4>; [INV]
+
+  <bb 3> :
+  # DEBUG BEGIN_STMT
+  xReturn = xTaskCreate (prvTimerTask, "Tmr Svc", 180, 0B, 2, &xTimerTaskHandle);
+
+  <bb 4> :
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  if (xReturn == 0)
+    goto <bb 5>; [INV]
+  else
+    goto <bb 7>; [INV]
+
+  <bb 5> :
+  # DEBUG BEGIN_STMT
+  __asm__ __volatile__(" cpsid i " :  :  : "memory");
+
+  <bb 6> :
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  goto <bb 6>; [INV]
+
+  <bb 7> :
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  D.6761 = xReturn;
+  return D.6761;
+
+}
+
+

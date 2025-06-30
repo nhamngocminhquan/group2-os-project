@@ -1,0 +1,4 @@
+Callgraph clone;prvHeapInit;18;D:/Gitwork/freertos-git.freescale.com/FreeRTOS/Source/portable/MemMang/heap_4.c;444;13;pvPortMalloc;12;D:/Gitwork/freertos-git.freescale.com/FreeRTOS/Source/portable/MemMang/heap_4.c;173;8;inlining to
+Callgraph clone;prvInsertBlockIntoFreeList;19;D:/Gitwork/freertos-git.freescale.com/FreeRTOS/Source/portable/MemMang/heap_4.c;492;13;vPortFree;13;D:/Gitwork/freertos-git.freescale.com/FreeRTOS/Source/portable/MemMang/heap_4.c;348;6;inlining to
+Callgraph removal;prvHeapInit;18;D:/Gitwork/freertos-git.freescale.com/FreeRTOS/Source/portable/MemMang/heap_4.c;444;13
+Callgraph removal;prvInsertBlockIntoFreeList;19;D:/Gitwork/freertos-git.freescale.com/FreeRTOS/Source/portable/MemMang/heap_4.c;492;13

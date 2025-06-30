@@ -1,0 +1,1177 @@
+Trivially needed symbols: vPortHeapResetState/21 vPortGetHeapStats/20 pvPortCalloc/17 vPortInitialiseBlocks/16 xPortGetMinimumEverFreeHeapSize/15 xPortGetFreeHeapSize/14 vPortFree/13 pvPortMalloc/12
+
+
+Initial Symbol table:
+
+vPortExitCritical/27 (vPortExitCritical) @069c8700
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags: optimize_size
+  Called by: vPortGetHeapStats/20 
+  Calls: 
+vPortEnterCritical/26 (vPortEnterCritical) @069c8540
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags: optimize_size
+  Called by: vPortGetHeapStats/20 
+  Calls: 
+memset/25 (memset) @069c8380
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags: optimize_size
+  Called by: pvPortCalloc/17 
+  Calls: 
+vApplicationMallocFailedHook/24 (vApplicationMallocFailedHook) @06999d20
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags: optimize_size
+  Called by: pvPortMalloc/12 
+  Calls: 
+xTaskResumeAll/23 (xTaskResumeAll) @06999c40
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags: optimize_size
+  Called by: vPortGetHeapStats/20 vPortFree/13 pvPortMalloc/12 
+  Calls: 
+vTaskSuspendAll/22 (vTaskSuspendAll) @06999a80
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags: optimize_size
+  Called by: vPortGetHeapStats/20 vPortFree/13 pvPortMalloc/12 
+  Calls: 
+vPortHeapResetState/21 (vPortHeapResetState) @06999460
+  Type: function definition analyzed
+  Visibility: public
+  Aux: @01981040
+  References: pxEnd/7 (write) xFreeBytesRemaining/8 (write) xMinimumEverFreeBytesRemaining/9 (write) xNumberOfSuccessfulAllocations/10 (write) xNumberOfSuccessfulFrees/11 (write) 
+  Referring: 
+  Function flags: body optimize_size
+  Called by: 
+  Calls: 
+vPortGetHeapStats/20 (vPortGetHeapStats) @069991c0
+  Type: function definition analyzed
+  Visibility: public
+  Aux: @06999460
+  References: xStart/6 (read) pxEnd/7 (read) xFreeBytesRemaining/8 (read) xNumberOfSuccessfulAllocations/10 (read) xNumberOfSuccessfulFrees/11 (read) xMinimumEverFreeBytesRemaining/9 (read) 
+  Referring: 
+  Function flags: body optimize_size
+  Called by: 
+  Calls: vPortExitCritical/27 vPortEnterCritical/26 xTaskResumeAll/23 vTaskSuspendAll/22 
+prvInsertBlockIntoFreeList/19 (prvInsertBlockIntoFreeList) @0698be00
+  Type: function definition analyzed
+  Visibility:
+  Aux: @0698b7e0
+  References: xStart/6 (addr) xStart/6 (addr) ucHeap/4 (addr) ucHeap/4 (addr) pxEnd/7 (read) pxEnd/7 (read) 
+  Referring: 
+  Function flags: body optimize_size
+  Called by: vPortFree/13 
+  Calls: 
+prvHeapInit/18 (prvHeapInit) @0698b8c0
+  Type: function definition analyzed
+  Visibility:
+  Aux: @0698b540
+  References: ucHeap/4 (addr) ucHeap/4 (addr) xStart/6 (write) xStart/6 (write) pxEnd/7 (write) pxEnd/7 (read) pxEnd/7 (read) pxEnd/7 (read) xMinimumEverFreeBytesRemaining/9 (write) xFreeBytesRemaining/8 (write) 
+  Referring: 
+  Function flags: body optimize_size
+  Called by: pvPortMalloc/12 
+  Calls: 
+pvPortCalloc/17 (pvPortCalloc) @0698b0e0
+  Type: function definition analyzed
+  Visibility: public
+  Aux: @069991c0
+  References: 
+  Referring: 
+  Function flags: body optimize_size
+  Called by: 
+  Calls: memset/25 pvPortMalloc/12 
+vPortInitialiseBlocks/16 (vPortInitialiseBlocks) @0698bd20
+  Type: function definition analyzed
+  Visibility: public
+  Aux: @0698b0e0
+  References: 
+  Referring: 
+  Function flags: body optimize_size
+  Called by: 
+  Calls: 
+xPortGetMinimumEverFreeHeapSize/15 (xPortGetMinimumEverFreeHeapSize) @0698ba80
+  Type: function definition analyzed
+  Visibility: public
+  Aux: @0698bd20
+  References: xMinimumEverFreeBytesRemaining/9 (read) 
+  Referring: 
+  Function flags: body optimize_size
+  Called by: 
+  Calls: 
+xPortGetFreeHeapSize/14 (xPortGetFreeHeapSize) @0698b7e0
+  Type: function definition analyzed
+  Visibility: public
+  Aux: @0698ba80
+  References: xFreeBytesRemaining/8 (read) 
+  Referring: 
+  Function flags: body optimize_size
+  Called by: 
+  Calls: 
+vPortFree/13 (vPortFree) @0698b540
+  Type: function definition analyzed
+  Visibility: public
+  Aux: @0698b7e0
+  References: ucHeap/4 (addr) ucHeap/4 (addr) xFreeBytesRemaining/8 (read) xFreeBytesRemaining/8 (write) xNumberOfSuccessfulFrees/11 (read) xNumberOfSuccessfulFrees/11 (write) 
+  Referring: 
+  Function flags: body optimize_size
+  Called by: 
+  Calls: xTaskResumeAll/23 prvInsertBlockIntoFreeList/19 vTaskSuspendAll/22 
+pvPortMalloc/12 (pvPortMalloc) @0698b000
+  Type: function definition analyzed
+  Visibility: public
+  Aux: @0698b540
+  References: pxEnd/7 (read) xFreeBytesRemaining/8 (read) xStart/6 (addr) xStart/6 (read) ucHeap/4 (addr) ucHeap/4 (addr) ucHeap/4 (addr) ucHeap/4 (addr) pxEnd/7 (read) ucHeap/4 (addr) ucHeap/4 (addr) xFreeBytesRemaining/8 (read) xFreeBytesRemaining/8 (write) xFreeBytesRemaining/8 (read) xMinimumEverFreeBytesRemaining/9 (read) xFreeBytesRemaining/8 (read) xMinimumEverFreeBytesRemaining/9 (write) xNumberOfSuccessfulAllocations/10 (read) xNumberOfSuccessfulAllocations/10 (write) 
+  Referring: 
+  Function flags: body optimize_size
+  Called by: pvPortCalloc/17 
+  Calls: vApplicationMallocFailedHook/24 xTaskResumeAll/23 prvHeapInit/18 vTaskSuspendAll/22 
+xNumberOfSuccessfulFrees/11 (xNumberOfSuccessfulFrees) @069b8438
+  Type: variable definition analyzed
+  Visibility:
+  Aux: @0698be00
+  References: 
+  Referring: vPortFree/13 (read) vPortFree/13 (write) vPortGetHeapStats/20 (read) vPortHeapResetState/21 (write) 
+  Availability: not-ready
+  Varpool flags: initialized
+xNumberOfSuccessfulAllocations/10 (xNumberOfSuccessfulAllocations) @069b83f0
+  Type: variable definition analyzed
+  Visibility:
+  Aux: @069b83a8
+  References: 
+  Referring: pvPortMalloc/12 (read) pvPortMalloc/12 (write) vPortGetHeapStats/20 (read) vPortHeapResetState/21 (write) 
+  Availability: not-ready
+  Varpool flags: initialized
+xMinimumEverFreeBytesRemaining/9 (xMinimumEverFreeBytesRemaining) @069b83a8
+  Type: variable definition analyzed
+  Visibility:
+  Aux: @069b1dc8
+  References: 
+  Referring: pvPortMalloc/12 (read) pvPortMalloc/12 (write) prvHeapInit/18 (write) xPortGetMinimumEverFreeHeapSize/15 (read) vPortGetHeapStats/20 (read) vPortHeapResetState/21 (write) 
+  Availability: not-ready
+  Varpool flags: initialized
+xFreeBytesRemaining/8 (xFreeBytesRemaining) @069b8360
+  Type: variable definition analyzed
+  Visibility:
+  Aux: @069b82d0
+  References: 
+  Referring: pvPortMalloc/12 (read) pvPortMalloc/12 (read) pvPortMalloc/12 (write) pvPortMalloc/12 (read) pvPortMalloc/12 (read) prvHeapInit/18 (write) vPortFree/13 (read) vPortFree/13 (write) xPortGetFreeHeapSize/14 (read) vPortGetHeapStats/20 (read) vPortHeapResetState/21 (write) 
+  Availability: not-ready
+  Varpool flags: initialized
+pxEnd/7 (pxEnd) @069b82d0
+  Type: variable definition analyzed
+  Visibility:
+  Aux: @0698b8c0
+  References: 
+  Referring: pvPortMalloc/12 (read) pvPortMalloc/12 (read) prvHeapInit/18 (write) prvHeapInit/18 (read) prvHeapInit/18 (read) prvHeapInit/18 (read) prvInsertBlockIntoFreeList/19 (read) prvInsertBlockIntoFreeList/19 (read) vPortGetHeapStats/20 (read) vPortHeapResetState/21 (write) 
+  Availability: not-ready
+  Varpool flags: initialized
+xStart/6 (xStart) @069b8240
+  Type: variable definition analyzed
+  Visibility:
+  Aux: @069b8360
+  References: 
+  Referring: pvPortMalloc/12 (addr) pvPortMalloc/12 (read) prvHeapInit/18 (write) prvHeapInit/18 (write) prvInsertBlockIntoFreeList/19 (addr) prvInsertBlockIntoFreeList/19 (addr) vPortGetHeapStats/20 (read) 
+  Availability: not-ready
+  Varpool flags:
+xHeapStructSize/5 (xHeapStructSize) @069b81b0
+  Type: variable definition
+  Visibility:
+  References: 
+  Referring: 
+  Availability: not-ready
+  Varpool flags: initialized read-only const-value-known
+ucHeap/4 (ucHeap) @069b1dc8
+  Type: variable definition analyzed
+  Visibility:
+  Aux: @069b8240
+  References: 
+  Referring: pvPortMalloc/12 (addr) pvPortMalloc/12 (addr) pvPortMalloc/12 (addr) pvPortMalloc/12 (addr) pvPortMalloc/12 (addr) pvPortMalloc/12 (addr) prvHeapInit/18 (addr) prvHeapInit/18 (addr) vPortFree/13 (addr) vPortFree/13 (addr) prvInsertBlockIntoFreeList/19 (addr) prvInsertBlockIntoFreeList/19 (addr) 
+  Availability: not-ready
+  Varpool flags:
+vPortSetBASEPRI/3 (vPortSetBASEPRI) @068fa380
+  Type: function definition
+  Visibility:
+  References: 
+  Referring: 
+  Function flags: optimize_size
+  Called by: 
+  Calls: 
+ulPortRaiseBASEPRI/2 (ulPortRaiseBASEPRI) @068fa0e0
+  Type: function definition
+  Visibility:
+  References: 
+  Referring: 
+  Function flags: optimize_size
+  Called by: 
+  Calls: 
+vPortRaiseBASEPRI/1 (vPortRaiseBASEPRI) @068f3e00
+  Type: function definition
+  Visibility:
+  References: 
+  Referring: 
+  Function flags: optimize_size
+  Called by: 
+  Calls: 
+xPortIsInsideInterrupt/0 (xPortIsInsideInterrupt) @068f3b60
+  Type: function definition
+  Visibility:
+  References: 
+  Referring: 
+  Function flags: optimize_size
+  Called by: 
+  Calls: 
+
+Removing unused symbols: xHeapStructSize/5 vPortSetBASEPRI/3 ulPortRaiseBASEPRI/2 vPortRaiseBASEPRI/1 xPortIsInsideInterrupt/0
+
+Reclaimed Symbol table:
+
+vPortExitCritical/27 (vPortExitCritical) @069c8700
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags: optimize_size
+  Called by: vPortGetHeapStats/20 
+  Calls: 
+vPortEnterCritical/26 (vPortEnterCritical) @069c8540
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags: optimize_size
+  Called by: vPortGetHeapStats/20 
+  Calls: 
+memset/25 (memset) @069c8380
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags: optimize_size
+  Called by: pvPortCalloc/17 
+  Calls: 
+vApplicationMallocFailedHook/24 (vApplicationMallocFailedHook) @06999d20
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags: optimize_size
+  Called by: pvPortMalloc/12 
+  Calls: 
+xTaskResumeAll/23 (xTaskResumeAll) @06999c40
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags: optimize_size
+  Called by: vPortGetHeapStats/20 vPortFree/13 pvPortMalloc/12 
+  Calls: 
+vTaskSuspendAll/22 (vTaskSuspendAll) @06999a80
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags: optimize_size
+  Called by: vPortGetHeapStats/20 vPortFree/13 pvPortMalloc/12 
+  Calls: 
+vPortHeapResetState/21 (vPortHeapResetState) @06999460
+  Type: function definition analyzed
+  Visibility: public
+  References: pxEnd/7 (write) xFreeBytesRemaining/8 (write) xMinimumEverFreeBytesRemaining/9 (write) xNumberOfSuccessfulAllocations/10 (write) xNumberOfSuccessfulFrees/11 (write) 
+  Referring: 
+  Function flags: body optimize_size
+  Called by: 
+  Calls: 
+vPortGetHeapStats/20 (vPortGetHeapStats) @069991c0
+  Type: function definition analyzed
+  Visibility: public
+  References: xStart/6 (read) pxEnd/7 (read) xFreeBytesRemaining/8 (read) xNumberOfSuccessfulAllocations/10 (read) xNumberOfSuccessfulFrees/11 (read) xMinimumEverFreeBytesRemaining/9 (read) 
+  Referring: 
+  Function flags: body optimize_size
+  Called by: 
+  Calls: vPortExitCritical/27 vPortEnterCritical/26 xTaskResumeAll/23 vTaskSuspendAll/22 
+prvInsertBlockIntoFreeList/19 (prvInsertBlockIntoFreeList) @0698be00
+  Type: function definition analyzed
+  Visibility:
+  References: xStart/6 (addr) xStart/6 (addr) ucHeap/4 (addr) ucHeap/4 (addr) pxEnd/7 (read) pxEnd/7 (read) 
+  Referring: 
+  Function flags: body optimize_size
+  Called by: vPortFree/13 
+  Calls: 
+prvHeapInit/18 (prvHeapInit) @0698b8c0
+  Type: function definition analyzed
+  Visibility:
+  References: ucHeap/4 (addr) ucHeap/4 (addr) xStart/6 (write) xStart/6 (write) pxEnd/7 (write) pxEnd/7 (read) pxEnd/7 (read) pxEnd/7 (read) xMinimumEverFreeBytesRemaining/9 (write) xFreeBytesRemaining/8 (write) 
+  Referring: 
+  Function flags: body optimize_size
+  Called by: pvPortMalloc/12 
+  Calls: 
+pvPortCalloc/17 (pvPortCalloc) @0698b0e0
+  Type: function definition analyzed
+  Visibility: public
+  References: 
+  Referring: 
+  Function flags: body optimize_size
+  Called by: 
+  Calls: memset/25 pvPortMalloc/12 
+vPortInitialiseBlocks/16 (vPortInitialiseBlocks) @0698bd20
+  Type: function definition analyzed
+  Visibility: public
+  References: 
+  Referring: 
+  Function flags: body optimize_size
+  Called by: 
+  Calls: 
+xPortGetMinimumEverFreeHeapSize/15 (xPortGetMinimumEverFreeHeapSize) @0698ba80
+  Type: function definition analyzed
+  Visibility: public
+  References: xMinimumEverFreeBytesRemaining/9 (read) 
+  Referring: 
+  Function flags: body optimize_size
+  Called by: 
+  Calls: 
+xPortGetFreeHeapSize/14 (xPortGetFreeHeapSize) @0698b7e0
+  Type: function definition analyzed
+  Visibility: public
+  References: xFreeBytesRemaining/8 (read) 
+  Referring: 
+  Function flags: body optimize_size
+  Called by: 
+  Calls: 
+vPortFree/13 (vPortFree) @0698b540
+  Type: function definition analyzed
+  Visibility: public
+  References: ucHeap/4 (addr) ucHeap/4 (addr) xFreeBytesRemaining/8 (read) xFreeBytesRemaining/8 (write) xNumberOfSuccessfulFrees/11 (read) xNumberOfSuccessfulFrees/11 (write) 
+  Referring: 
+  Function flags: body optimize_size
+  Called by: 
+  Calls: xTaskResumeAll/23 prvInsertBlockIntoFreeList/19 vTaskSuspendAll/22 
+pvPortMalloc/12 (pvPortMalloc) @0698b000
+  Type: function definition analyzed
+  Visibility: public
+  References: pxEnd/7 (read) xFreeBytesRemaining/8 (read) xStart/6 (addr) xStart/6 (read) ucHeap/4 (addr) ucHeap/4 (addr) ucHeap/4 (addr) ucHeap/4 (addr) pxEnd/7 (read) ucHeap/4 (addr) ucHeap/4 (addr) xFreeBytesRemaining/8 (read) xFreeBytesRemaining/8 (write) xFreeBytesRemaining/8 (read) xMinimumEverFreeBytesRemaining/9 (read) xFreeBytesRemaining/8 (read) xMinimumEverFreeBytesRemaining/9 (write) xNumberOfSuccessfulAllocations/10 (read) xNumberOfSuccessfulAllocations/10 (write) 
+  Referring: 
+  Function flags: body optimize_size
+  Called by: pvPortCalloc/17 
+  Calls: vApplicationMallocFailedHook/24 xTaskResumeAll/23 prvHeapInit/18 vTaskSuspendAll/22 
+xNumberOfSuccessfulFrees/11 (xNumberOfSuccessfulFrees) @069b8438
+  Type: variable definition analyzed
+  Visibility:
+  References: 
+  Referring: vPortFree/13 (read) vPortFree/13 (write) vPortGetHeapStats/20 (read) vPortHeapResetState/21 (write) 
+  Availability: not-ready
+  Varpool flags: initialized
+xNumberOfSuccessfulAllocations/10 (xNumberOfSuccessfulAllocations) @069b83f0
+  Type: variable definition analyzed
+  Visibility:
+  References: 
+  Referring: pvPortMalloc/12 (read) pvPortMalloc/12 (write) vPortGetHeapStats/20 (read) vPortHeapResetState/21 (write) 
+  Availability: not-ready
+  Varpool flags: initialized
+xMinimumEverFreeBytesRemaining/9 (xMinimumEverFreeBytesRemaining) @069b83a8
+  Type: variable definition analyzed
+  Visibility:
+  References: 
+  Referring: pvPortMalloc/12 (read) pvPortMalloc/12 (write) prvHeapInit/18 (write) xPortGetMinimumEverFreeHeapSize/15 (read) vPortGetHeapStats/20 (read) vPortHeapResetState/21 (write) 
+  Availability: not-ready
+  Varpool flags: initialized
+xFreeBytesRemaining/8 (xFreeBytesRemaining) @069b8360
+  Type: variable definition analyzed
+  Visibility:
+  References: 
+  Referring: pvPortMalloc/12 (read) pvPortMalloc/12 (read) pvPortMalloc/12 (write) pvPortMalloc/12 (read) pvPortMalloc/12 (read) prvHeapInit/18 (write) vPortFree/13 (read) vPortFree/13 (write) xPortGetFreeHeapSize/14 (read) vPortGetHeapStats/20 (read) vPortHeapResetState/21 (write) 
+  Availability: not-ready
+  Varpool flags: initialized
+pxEnd/7 (pxEnd) @069b82d0
+  Type: variable definition analyzed
+  Visibility:
+  References: 
+  Referring: pvPortMalloc/12 (read) pvPortMalloc/12 (read) prvHeapInit/18 (write) prvHeapInit/18 (read) prvHeapInit/18 (read) prvHeapInit/18 (read) prvInsertBlockIntoFreeList/19 (read) prvInsertBlockIntoFreeList/19 (read) vPortGetHeapStats/20 (read) vPortHeapResetState/21 (write) 
+  Availability: not-ready
+  Varpool flags: initialized
+xStart/6 (xStart) @069b8240
+  Type: variable definition analyzed
+  Visibility:
+  References: 
+  Referring: pvPortMalloc/12 (addr) pvPortMalloc/12 (read) prvHeapInit/18 (write) prvHeapInit/18 (write) prvInsertBlockIntoFreeList/19 (addr) prvInsertBlockIntoFreeList/19 (addr) vPortGetHeapStats/20 (read) 
+  Availability: not-ready
+  Varpool flags:
+ucHeap/4 (ucHeap) @069b1dc8
+  Type: variable definition analyzed
+  Visibility:
+  References: 
+  Referring: pvPortMalloc/12 (addr) pvPortMalloc/12 (addr) pvPortMalloc/12 (addr) pvPortMalloc/12 (addr) pvPortMalloc/12 (addr) pvPortMalloc/12 (addr) prvHeapInit/18 (addr) prvHeapInit/18 (addr) vPortFree/13 (addr) vPortFree/13 (addr) prvInsertBlockIntoFreeList/19 (addr) prvInsertBlockIntoFreeList/19 (addr) 
+  Availability: not-ready
+  Varpool flags:
+
+
+Initial Symbol table:
+
+vPortExitCritical/27 (vPortExitCritical) @069c8700
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags: optimize_size
+  Called by: vPortGetHeapStats/20 
+  Calls: 
+vPortEnterCritical/26 (vPortEnterCritical) @069c8540
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags: optimize_size
+  Called by: vPortGetHeapStats/20 
+  Calls: 
+memset/25 (memset) @069c8380
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags: optimize_size
+  Called by: pvPortCalloc/17 
+  Calls: 
+vApplicationMallocFailedHook/24 (vApplicationMallocFailedHook) @06999d20
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags: optimize_size
+  Called by: pvPortMalloc/12 
+  Calls: 
+xTaskResumeAll/23 (xTaskResumeAll) @06999c40
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags: optimize_size
+  Called by: vPortGetHeapStats/20 vPortFree/13 pvPortMalloc/12 
+  Calls: 
+vTaskSuspendAll/22 (vTaskSuspendAll) @06999a80
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags: optimize_size
+  Called by: vPortGetHeapStats/20 vPortFree/13 pvPortMalloc/12 
+  Calls: 
+vPortHeapResetState/21 (vPortHeapResetState) @06999460
+  Type: function definition analyzed
+  Visibility: public
+  References: pxEnd/7 (write) xFreeBytesRemaining/8 (write) xMinimumEverFreeBytesRemaining/9 (write) xNumberOfSuccessfulAllocations/10 (write) xNumberOfSuccessfulFrees/11 (write) 
+  Referring: 
+  Function flags: body optimize_size
+  Called by: 
+  Calls: 
+vPortGetHeapStats/20 (vPortGetHeapStats) @069991c0
+  Type: function definition analyzed
+  Visibility: public
+  References: xStart/6 (read) pxEnd/7 (read) xFreeBytesRemaining/8 (read) xNumberOfSuccessfulAllocations/10 (read) xNumberOfSuccessfulFrees/11 (read) xMinimumEverFreeBytesRemaining/9 (read) 
+  Referring: 
+  Function flags: body optimize_size
+  Called by: 
+  Calls: vPortExitCritical/27 vPortEnterCritical/26 xTaskResumeAll/23 vTaskSuspendAll/22 
+prvInsertBlockIntoFreeList/19 (prvInsertBlockIntoFreeList) @0698be00
+  Type: function definition analyzed
+  Visibility:
+  References: xStart/6 (addr) xStart/6 (addr) ucHeap/4 (addr) ucHeap/4 (addr) pxEnd/7 (read) pxEnd/7 (read) 
+  Referring: 
+  Function flags: body optimize_size
+  Called by: vPortFree/13 
+  Calls: 
+prvHeapInit/18 (prvHeapInit) @0698b8c0
+  Type: function definition analyzed
+  Visibility:
+  References: ucHeap/4 (addr) ucHeap/4 (addr) xStart/6 (write) xStart/6 (write) pxEnd/7 (write) pxEnd/7 (read) pxEnd/7 (read) pxEnd/7 (read) xMinimumEverFreeBytesRemaining/9 (write) xFreeBytesRemaining/8 (write) 
+  Referring: 
+  Function flags: body optimize_size
+  Called by: pvPortMalloc/12 
+  Calls: 
+pvPortCalloc/17 (pvPortCalloc) @0698b0e0
+  Type: function definition analyzed
+  Visibility: public
+  References: 
+  Referring: 
+  Function flags: body optimize_size
+  Called by: 
+  Calls: memset/25 pvPortMalloc/12 
+vPortInitialiseBlocks/16 (vPortInitialiseBlocks) @0698bd20
+  Type: function definition analyzed
+  Visibility: public
+  References: 
+  Referring: 
+  Function flags: body optimize_size
+  Called by: 
+  Calls: 
+xPortGetMinimumEverFreeHeapSize/15 (xPortGetMinimumEverFreeHeapSize) @0698ba80
+  Type: function definition analyzed
+  Visibility: public
+  References: xMinimumEverFreeBytesRemaining/9 (read) 
+  Referring: 
+  Function flags: body optimize_size
+  Called by: 
+  Calls: 
+xPortGetFreeHeapSize/14 (xPortGetFreeHeapSize) @0698b7e0
+  Type: function definition analyzed
+  Visibility: public
+  References: xFreeBytesRemaining/8 (read) 
+  Referring: 
+  Function flags: body optimize_size
+  Called by: 
+  Calls: 
+vPortFree/13 (vPortFree) @0698b540
+  Type: function definition analyzed
+  Visibility: public
+  References: ucHeap/4 (addr) ucHeap/4 (addr) xFreeBytesRemaining/8 (read) xFreeBytesRemaining/8 (write) xNumberOfSuccessfulFrees/11 (read) xNumberOfSuccessfulFrees/11 (write) 
+  Referring: 
+  Function flags: body optimize_size
+  Called by: 
+  Calls: xTaskResumeAll/23 prvInsertBlockIntoFreeList/19 vTaskSuspendAll/22 
+pvPortMalloc/12 (pvPortMalloc) @0698b000
+  Type: function definition analyzed
+  Visibility: public
+  References: pxEnd/7 (read) xFreeBytesRemaining/8 (read) xStart/6 (addr) xStart/6 (read) ucHeap/4 (addr) ucHeap/4 (addr) ucHeap/4 (addr) ucHeap/4 (addr) pxEnd/7 (read) ucHeap/4 (addr) ucHeap/4 (addr) xFreeBytesRemaining/8 (read) xFreeBytesRemaining/8 (write) xFreeBytesRemaining/8 (read) xMinimumEverFreeBytesRemaining/9 (read) xFreeBytesRemaining/8 (read) xMinimumEverFreeBytesRemaining/9 (write) xNumberOfSuccessfulAllocations/10 (read) xNumberOfSuccessfulAllocations/10 (write) 
+  Referring: 
+  Function flags: body optimize_size
+  Called by: pvPortCalloc/17 
+  Calls: vApplicationMallocFailedHook/24 xTaskResumeAll/23 prvHeapInit/18 vTaskSuspendAll/22 
+xNumberOfSuccessfulFrees/11 (xNumberOfSuccessfulFrees) @069b8438
+  Type: variable definition analyzed
+  Visibility:
+  References: 
+  Referring: vPortFree/13 (read) vPortFree/13 (write) vPortGetHeapStats/20 (read) vPortHeapResetState/21 (write) 
+  Availability: not-ready
+  Varpool flags: initialized
+xNumberOfSuccessfulAllocations/10 (xNumberOfSuccessfulAllocations) @069b83f0
+  Type: variable definition analyzed
+  Visibility:
+  References: 
+  Referring: pvPortMalloc/12 (read) pvPortMalloc/12 (write) vPortGetHeapStats/20 (read) vPortHeapResetState/21 (write) 
+  Availability: not-ready
+  Varpool flags: initialized
+xMinimumEverFreeBytesRemaining/9 (xMinimumEverFreeBytesRemaining) @069b83a8
+  Type: variable definition analyzed
+  Visibility:
+  References: 
+  Referring: pvPortMalloc/12 (read) pvPortMalloc/12 (write) prvHeapInit/18 (write) xPortGetMinimumEverFreeHeapSize/15 (read) vPortGetHeapStats/20 (read) vPortHeapResetState/21 (write) 
+  Availability: not-ready
+  Varpool flags: initialized
+xFreeBytesRemaining/8 (xFreeBytesRemaining) @069b8360
+  Type: variable definition analyzed
+  Visibility:
+  References: 
+  Referring: pvPortMalloc/12 (read) pvPortMalloc/12 (read) pvPortMalloc/12 (write) pvPortMalloc/12 (read) pvPortMalloc/12 (read) prvHeapInit/18 (write) vPortFree/13 (read) vPortFree/13 (write) xPortGetFreeHeapSize/14 (read) vPortGetHeapStats/20 (read) vPortHeapResetState/21 (write) 
+  Availability: not-ready
+  Varpool flags: initialized
+pxEnd/7 (pxEnd) @069b82d0
+  Type: variable definition analyzed
+  Visibility:
+  References: 
+  Referring: pvPortMalloc/12 (read) pvPortMalloc/12 (read) prvHeapInit/18 (write) prvHeapInit/18 (read) prvHeapInit/18 (read) prvHeapInit/18 (read) prvInsertBlockIntoFreeList/19 (read) prvInsertBlockIntoFreeList/19 (read) vPortGetHeapStats/20 (read) vPortHeapResetState/21 (write) 
+  Availability: not-ready
+  Varpool flags: initialized
+xStart/6 (xStart) @069b8240
+  Type: variable definition analyzed
+  Visibility:
+  References: 
+  Referring: pvPortMalloc/12 (addr) pvPortMalloc/12 (read) prvHeapInit/18 (write) prvHeapInit/18 (write) prvInsertBlockIntoFreeList/19 (addr) prvInsertBlockIntoFreeList/19 (addr) vPortGetHeapStats/20 (read) 
+  Availability: not-ready
+  Varpool flags:
+ucHeap/4 (ucHeap) @069b1dc8
+  Type: variable definition analyzed
+  Visibility:
+  References: 
+  Referring: pvPortMalloc/12 (addr) pvPortMalloc/12 (addr) pvPortMalloc/12 (addr) pvPortMalloc/12 (addr) pvPortMalloc/12 (addr) pvPortMalloc/12 (addr) prvHeapInit/18 (addr) prvHeapInit/18 (addr) vPortFree/13 (addr) vPortFree/13 (addr) prvInsertBlockIntoFreeList/19 (addr) prvInsertBlockIntoFreeList/19 (addr) 
+  Availability: not-ready
+  Varpool flags:
+
+Removing unused symbols:
+
+Reclaimed Symbol table:
+
+vPortExitCritical/27 (vPortExitCritical) @069c8700
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags: optimize_size
+  Called by: vPortGetHeapStats/20 
+  Calls: 
+vPortEnterCritical/26 (vPortEnterCritical) @069c8540
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags: optimize_size
+  Called by: vPortGetHeapStats/20 
+  Calls: 
+memset/25 (memset) @069c8380
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags: optimize_size
+  Called by: pvPortCalloc/17 
+  Calls: 
+vApplicationMallocFailedHook/24 (vApplicationMallocFailedHook) @06999d20
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags: optimize_size
+  Called by: pvPortMalloc/12 
+  Calls: 
+xTaskResumeAll/23 (xTaskResumeAll) @06999c40
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags: optimize_size
+  Called by: vPortGetHeapStats/20 vPortFree/13 pvPortMalloc/12 
+  Calls: 
+vTaskSuspendAll/22 (vTaskSuspendAll) @06999a80
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags: optimize_size
+  Called by: vPortGetHeapStats/20 vPortFree/13 pvPortMalloc/12 
+  Calls: 
+vPortHeapResetState/21 (vPortHeapResetState) @06999460
+  Type: function definition analyzed
+  Visibility: public
+  References: pxEnd/7 (write) xFreeBytesRemaining/8 (write) xMinimumEverFreeBytesRemaining/9 (write) xNumberOfSuccessfulAllocations/10 (write) xNumberOfSuccessfulFrees/11 (write) 
+  Referring: 
+  Function flags: body optimize_size
+  Called by: 
+  Calls: 
+vPortGetHeapStats/20 (vPortGetHeapStats) @069991c0
+  Type: function definition analyzed
+  Visibility: public
+  References: xStart/6 (read) pxEnd/7 (read) xFreeBytesRemaining/8 (read) xNumberOfSuccessfulAllocations/10 (read) xNumberOfSuccessfulFrees/11 (read) xMinimumEverFreeBytesRemaining/9 (read) 
+  Referring: 
+  Function flags: body optimize_size
+  Called by: 
+  Calls: vPortExitCritical/27 vPortEnterCritical/26 xTaskResumeAll/23 vTaskSuspendAll/22 
+prvInsertBlockIntoFreeList/19 (prvInsertBlockIntoFreeList) @0698be00
+  Type: function definition analyzed
+  Visibility:
+  References: xStart/6 (addr) xStart/6 (addr) ucHeap/4 (addr) ucHeap/4 (addr) pxEnd/7 (read) pxEnd/7 (read) 
+  Referring: 
+  Function flags: body optimize_size
+  Called by: vPortFree/13 
+  Calls: 
+prvHeapInit/18 (prvHeapInit) @0698b8c0
+  Type: function definition analyzed
+  Visibility:
+  References: ucHeap/4 (addr) ucHeap/4 (addr) xStart/6 (write) xStart/6 (write) pxEnd/7 (write) pxEnd/7 (read) pxEnd/7 (read) pxEnd/7 (read) xMinimumEverFreeBytesRemaining/9 (write) xFreeBytesRemaining/8 (write) 
+  Referring: 
+  Function flags: body optimize_size
+  Called by: pvPortMalloc/12 
+  Calls: 
+pvPortCalloc/17 (pvPortCalloc) @0698b0e0
+  Type: function definition analyzed
+  Visibility: public
+  References: 
+  Referring: 
+  Function flags: body optimize_size
+  Called by: 
+  Calls: memset/25 pvPortMalloc/12 
+vPortInitialiseBlocks/16 (vPortInitialiseBlocks) @0698bd20
+  Type: function definition analyzed
+  Visibility: public
+  References: 
+  Referring: 
+  Function flags: body optimize_size
+  Called by: 
+  Calls: 
+xPortGetMinimumEverFreeHeapSize/15 (xPortGetMinimumEverFreeHeapSize) @0698ba80
+  Type: function definition analyzed
+  Visibility: public
+  References: xMinimumEverFreeBytesRemaining/9 (read) 
+  Referring: 
+  Function flags: body optimize_size
+  Called by: 
+  Calls: 
+xPortGetFreeHeapSize/14 (xPortGetFreeHeapSize) @0698b7e0
+  Type: function definition analyzed
+  Visibility: public
+  References: xFreeBytesRemaining/8 (read) 
+  Referring: 
+  Function flags: body optimize_size
+  Called by: 
+  Calls: 
+vPortFree/13 (vPortFree) @0698b540
+  Type: function definition analyzed
+  Visibility: public
+  References: ucHeap/4 (addr) ucHeap/4 (addr) xFreeBytesRemaining/8 (read) xFreeBytesRemaining/8 (write) xNumberOfSuccessfulFrees/11 (read) xNumberOfSuccessfulFrees/11 (write) 
+  Referring: 
+  Function flags: body optimize_size
+  Called by: 
+  Calls: xTaskResumeAll/23 prvInsertBlockIntoFreeList/19 vTaskSuspendAll/22 
+pvPortMalloc/12 (pvPortMalloc) @0698b000
+  Type: function definition analyzed
+  Visibility: public
+  References: pxEnd/7 (read) xFreeBytesRemaining/8 (read) xStart/6 (addr) xStart/6 (read) ucHeap/4 (addr) ucHeap/4 (addr) ucHeap/4 (addr) ucHeap/4 (addr) pxEnd/7 (read) ucHeap/4 (addr) ucHeap/4 (addr) xFreeBytesRemaining/8 (read) xFreeBytesRemaining/8 (write) xFreeBytesRemaining/8 (read) xMinimumEverFreeBytesRemaining/9 (read) xFreeBytesRemaining/8 (read) xMinimumEverFreeBytesRemaining/9 (write) xNumberOfSuccessfulAllocations/10 (read) xNumberOfSuccessfulAllocations/10 (write) 
+  Referring: 
+  Function flags: body optimize_size
+  Called by: pvPortCalloc/17 
+  Calls: vApplicationMallocFailedHook/24 xTaskResumeAll/23 prvHeapInit/18 vTaskSuspendAll/22 
+xNumberOfSuccessfulFrees/11 (xNumberOfSuccessfulFrees) @069b8438
+  Type: variable definition analyzed
+  Visibility:
+  References: 
+  Referring: vPortFree/13 (read) vPortFree/13 (write) vPortGetHeapStats/20 (read) vPortHeapResetState/21 (write) 
+  Availability: not-ready
+  Varpool flags: initialized
+xNumberOfSuccessfulAllocations/10 (xNumberOfSuccessfulAllocations) @069b83f0
+  Type: variable definition analyzed
+  Visibility:
+  References: 
+  Referring: pvPortMalloc/12 (read) pvPortMalloc/12 (write) vPortGetHeapStats/20 (read) vPortHeapResetState/21 (write) 
+  Availability: not-ready
+  Varpool flags: initialized
+xMinimumEverFreeBytesRemaining/9 (xMinimumEverFreeBytesRemaining) @069b83a8
+  Type: variable definition analyzed
+  Visibility:
+  References: 
+  Referring: pvPortMalloc/12 (read) pvPortMalloc/12 (write) prvHeapInit/18 (write) xPortGetMinimumEverFreeHeapSize/15 (read) vPortGetHeapStats/20 (read) vPortHeapResetState/21 (write) 
+  Availability: not-ready
+  Varpool flags: initialized
+xFreeBytesRemaining/8 (xFreeBytesRemaining) @069b8360
+  Type: variable definition analyzed
+  Visibility:
+  References: 
+  Referring: pvPortMalloc/12 (read) pvPortMalloc/12 (read) pvPortMalloc/12 (write) pvPortMalloc/12 (read) pvPortMalloc/12 (read) prvHeapInit/18 (write) vPortFree/13 (read) vPortFree/13 (write) xPortGetFreeHeapSize/14 (read) vPortGetHeapStats/20 (read) vPortHeapResetState/21 (write) 
+  Availability: not-ready
+  Varpool flags: initialized
+pxEnd/7 (pxEnd) @069b82d0
+  Type: variable definition analyzed
+  Visibility:
+  References: 
+  Referring: pvPortMalloc/12 (read) pvPortMalloc/12 (read) prvHeapInit/18 (write) prvHeapInit/18 (read) prvHeapInit/18 (read) prvHeapInit/18 (read) prvInsertBlockIntoFreeList/19 (read) prvInsertBlockIntoFreeList/19 (read) vPortGetHeapStats/20 (read) vPortHeapResetState/21 (write) 
+  Availability: not-ready
+  Varpool flags: initialized
+xStart/6 (xStart) @069b8240
+  Type: variable definition analyzed
+  Visibility:
+  References: 
+  Referring: pvPortMalloc/12 (addr) pvPortMalloc/12 (read) prvHeapInit/18 (write) prvHeapInit/18 (write) prvInsertBlockIntoFreeList/19 (addr) prvInsertBlockIntoFreeList/19 (addr) vPortGetHeapStats/20 (read) 
+  Availability: not-ready
+  Varpool flags:
+ucHeap/4 (ucHeap) @069b1dc8
+  Type: variable definition analyzed
+  Visibility:
+  References: 
+  Referring: pvPortMalloc/12 (addr) pvPortMalloc/12 (addr) pvPortMalloc/12 (addr) pvPortMalloc/12 (addr) pvPortMalloc/12 (addr) pvPortMalloc/12 (addr) prvHeapInit/18 (addr) prvHeapInit/18 (addr) vPortFree/13 (addr) vPortFree/13 (addr) prvInsertBlockIntoFreeList/19 (addr) prvInsertBlockIntoFreeList/19 (addr) 
+  Availability: not-ready
+  Varpool flags:
+
+Reclaiming functions:
+Reclaiming variables:
+Clearing address taken flags:
+Optimized Symbol table:
+
+vPortExitCritical/27 (vPortExitCritical) @069c8700
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags: optimize_size
+  Called by: vPortGetHeapStats/20 (168730857 (estimated locally),1.00 per call) 
+  Calls: 
+vPortEnterCritical/26 (vPortEnterCritical) @069c8540
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags: optimize_size
+  Called by: vPortGetHeapStats/20 (168730857 (estimated locally),1.00 per call) 
+  Calls: 
+memset/25 (memset) @069c8380
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags: optimize_size
+  Called by: pvPortCalloc/17 (462576341 (estimated locally),0.43 per call) 
+  Calls: 
+vApplicationMallocFailedHook/24 (vApplicationMallocFailedHook) @06999d20
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags: optimize_size
+  Called by: pvPortMalloc/12 (9282930 (estimated locally),0.40 per call) 
+  Calls: 
+xTaskResumeAll/23 (xTaskResumeAll) @06999c40
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags: optimize_size
+  Called by: vPortGetHeapStats/20 (168730857 (estimated locally),1.00 per call) vPortFree/13 (253244 (estimated locally),0.01 per call) pvPortMalloc/12 (157185 (estimated locally),0.01 per call) pvPortMalloc/12 (144607 (estimated locally),0.01 per call) pvPortMalloc/12 (2851989 (estimated locally),0.12 per call) pvPortMalloc/12 (3425812 (estimated locally),0.15 per call) pvPortMalloc/12 (2860521 (estimated locally),0.12 per call) 
+  Calls: 
+vTaskSuspendAll/22 (vTaskSuspendAll) @06999a80
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags: optimize_size
+  Called by: vPortGetHeapStats/20 (168730857 (estimated locally),1.00 per call) vPortFree/13 (253244 (estimated locally),0.01 per call) pvPortMalloc/12 (23313133 (estimated locally),1.00 per call) 
+  Calls: 
+vPortHeapResetState/21 (vPortHeapResetState) @06999460
+  Type: function definition analyzed
+  Visibility: externally_visible public
+  References: pxEnd/7 (write) xFreeBytesRemaining/8 (write) xMinimumEverFreeBytesRemaining/9 (write) xNumberOfSuccessfulAllocations/10 (write) xNumberOfSuccessfulFrees/11 (write) 
+  Referring: 
+  Availability: available
+  Function flags: count:1073741824 (estimated locally) body nonfreeing_fn optimize_size
+  Called by: 
+  Calls: 
+vPortGetHeapStats/20 (vPortGetHeapStats) @069991c0
+  Type: function definition analyzed
+  Visibility: externally_visible public
+  References: xStart/6 (read) pxEnd/7 (read) xFreeBytesRemaining/8 (read) xNumberOfSuccessfulAllocations/10 (read) xNumberOfSuccessfulFrees/11 (read) xMinimumEverFreeBytesRemaining/9 (read) 
+  Referring: 
+  Availability: available
+  Function flags: count:168730857 (estimated locally) body optimize_size
+  Called by: 
+  Calls: vPortExitCritical/27 (168730857 (estimated locally),1.00 per call) vPortEnterCritical/26 (168730857 (estimated locally),1.00 per call) xTaskResumeAll/23 (168730857 (estimated locally),1.00 per call) vTaskSuspendAll/22 (168730857 (estimated locally),1.00 per call) 
+prvInsertBlockIntoFreeList/19 (prvInsertBlockIntoFreeList) @0698be00
+  Type: function definition analyzed
+  Visibility: prevailing_def_ironly
+  References: xStart/6 (addr) xStart/6 (addr) ucHeap/4 (addr) ucHeap/4 (addr) pxEnd/7 (read) 
+  Referring: 
+  Function prvInsertBlockIntoFreeList/19 is inline copy in vPortFree/13
+  Availability: local
+  Function flags: count:253244 (estimated locally) body local optimize_size
+  Called by: vPortFree/13 (inlined) (253244 (estimated locally),0.01 per call) 
+  Calls: 
+prvHeapInit/18 (prvHeapInit) @0698b8c0
+  Type: function definition analyzed
+  Visibility: prevailing_def_ironly
+  References: ucHeap/4 (addr) xStart/6 (write) xStart/6 (write) pxEnd/7 (write) xMinimumEverFreeBytesRemaining/9 (write) xFreeBytesRemaining/8 (write) 
+  Referring: 
+  Function prvHeapInit/18 is inline copy in pvPortMalloc/12
+  Availability: local
+  Function flags: count:4063479 (estimated locally) body local nonfreeing_fn optimize_size
+  Called by: pvPortMalloc/12 (inlined) (4063479 (estimated locally),0.17 per call) 
+  Calls: 
+pvPortCalloc/17 (pvPortCalloc) @0698b0e0
+  Type: function definition analyzed
+  Visibility: externally_visible public
+  References: 
+  Referring: 
+  Availability: available
+  Function flags: count:1073741823 (estimated locally) body optimize_size
+  Called by: 
+  Calls: memset/25 (462576341 (estimated locally),0.43 per call) pvPortMalloc/12 (865113787 (estimated locally),0.81 per call) 
+vPortInitialiseBlocks/16 (vPortInitialiseBlocks) @0698bd20
+  Type: function definition analyzed
+  Visibility: externally_visible public
+  References: 
+  Referring: 
+  Availability: available
+  Function flags: count:1073741824 (estimated locally) body nonfreeing_fn optimize_size
+  Called by: 
+  Calls: 
+xPortGetMinimumEverFreeHeapSize/15 (xPortGetMinimumEverFreeHeapSize) @0698ba80
+  Type: function definition analyzed
+  Visibility: externally_visible public
+  References: xMinimumEverFreeBytesRemaining/9 (read) 
+  Referring: 
+  Availability: available
+  Function flags: count:1073741824 (estimated locally) body nonfreeing_fn optimize_size
+  Called by: 
+  Calls: 
+xPortGetFreeHeapSize/14 (xPortGetFreeHeapSize) @0698b7e0
+  Type: function definition analyzed
+  Visibility: externally_visible public
+  References: xFreeBytesRemaining/8 (read) 
+  Referring: 
+  Availability: available
+  Function flags: count:1073741824 (estimated locally) body nonfreeing_fn optimize_size
+  Called by: 
+  Calls: 
+vPortFree/13 (vPortFree) @0698b540
+  Type: function definition analyzed
+  Visibility: externally_visible public
+  References: ucHeap/4 (addr) ucHeap/4 (addr) xFreeBytesRemaining/8 (read) xFreeBytesRemaining/8 (write) xNumberOfSuccessfulFrees/11 (read) xNumberOfSuccessfulFrees/11 (write) 
+  Referring: 
+  Availability: available
+  Function flags: count:20249729 (estimated locally) body optimize_size
+  Called by: 
+  Calls: xTaskResumeAll/23 (253244 (estimated locally),0.01 per call) prvInsertBlockIntoFreeList/19 (inlined) (253244 (estimated locally),0.01 per call) vTaskSuspendAll/22 (253244 (estimated locally),0.01 per call) 
+pvPortMalloc/12 (pvPortMalloc) @0698b000
+  Type: function definition analyzed
+  Visibility: externally_visible public
+  References: pxEnd/7 (read) xFreeBytesRemaining/8 (read) xStart/6 (read) ucHeap/4 (addr) ucHeap/4 (addr) ucHeap/4 (addr) ucHeap/4 (addr) xStart/6 (addr) pxEnd/7 (read) ucHeap/4 (addr) ucHeap/4 (addr) xFreeBytesRemaining/8 (write) xMinimumEverFreeBytesRemaining/9 (read) xMinimumEverFreeBytesRemaining/9 (write) xNumberOfSuccessfulAllocations/10 (read) xNumberOfSuccessfulAllocations/10 (write) 
+  Referring: 
+  Availability: available
+  Function flags: count:23313133 (estimated locally) body optimize_size
+  Called by: pvPortCalloc/17 (865113787 (estimated locally),0.81 per call) 
+  Calls: vApplicationMallocFailedHook/24 (9282930 (estimated locally),0.40 per call) xTaskResumeAll/23 (157185 (estimated locally),0.01 per call) xTaskResumeAll/23 (144607 (estimated locally),0.01 per call) xTaskResumeAll/23 (2851989 (estimated locally),0.12 per call) xTaskResumeAll/23 (3425812 (estimated locally),0.15 per call) xTaskResumeAll/23 (2860521 (estimated locally),0.12 per call) prvHeapInit/18 (inlined) (4063479 (estimated locally),0.17 per call) vTaskSuspendAll/22 (23313133 (estimated locally),1.00 per call) 
+xNumberOfSuccessfulFrees/11 (xNumberOfSuccessfulFrees) @069b8438
+  Type: variable definition analyzed
+  Visibility: prevailing_def_ironly
+  References: 
+  Referring: vPortGetHeapStats/20 (read) vPortFree/13 (write) vPortFree/13 (read) vPortHeapResetState/21 (write) 
+  Availability: available
+  Varpool flags: initialized
+xNumberOfSuccessfulAllocations/10 (xNumberOfSuccessfulAllocations) @069b83f0
+  Type: variable definition analyzed
+  Visibility: prevailing_def_ironly
+  References: 
+  Referring: vPortGetHeapStats/20 (read) pvPortMalloc/12 (write) pvPortMalloc/12 (read) vPortHeapResetState/21 (write) 
+  Availability: available
+  Varpool flags: initialized
+xMinimumEverFreeBytesRemaining/9 (xMinimumEverFreeBytesRemaining) @069b83a8
+  Type: variable definition analyzed
+  Visibility: prevailing_def_ironly
+  References: 
+  Referring: pvPortMalloc/12 (write) vPortGetHeapStats/20 (read) xPortGetMinimumEverFreeHeapSize/15 (read) prvHeapInit/18 (write) pvPortMalloc/12 (read) vPortHeapResetState/21 (write) 
+  Availability: available
+  Varpool flags: initialized
+xFreeBytesRemaining/8 (xFreeBytesRemaining) @069b8360
+  Type: variable definition analyzed
+  Visibility: prevailing_def_ironly
+  References: 
+  Referring: pvPortMalloc/12 (read) prvHeapInit/18 (write) pvPortMalloc/12 (write) vPortFree/13 (write) vPortGetHeapStats/20 (read) xPortGetFreeHeapSize/14 (read) vPortFree/13 (read) vPortHeapResetState/21 (write) 
+  Availability: available
+  Varpool flags: initialized
+pxEnd/7 (pxEnd) @069b82d0
+  Type: variable definition analyzed
+  Visibility: prevailing_def_ironly
+  References: 
+  Referring: pvPortMalloc/12 (read) prvHeapInit/18 (write) prvInsertBlockIntoFreeList/19 (read) vPortGetHeapStats/20 (read) pvPortMalloc/12 (read) vPortHeapResetState/21 (write) 
+  Availability: available
+  Varpool flags: initialized
+xStart/6 (xStart) @069b8240
+  Type: variable definition analyzed
+  Visibility: prevailing_def_ironly
+  References: 
+  Referring: prvHeapInit/18 (write) prvHeapInit/18 (write) pvPortMalloc/12 (addr) prvInsertBlockIntoFreeList/19 (addr) prvInsertBlockIntoFreeList/19 (addr) pvPortMalloc/12 (read) vPortGetHeapStats/20 (read) 
+  Availability: available
+  Varpool flags:
+ucHeap/4 (ucHeap) @069b1dc8
+  Type: variable definition analyzed
+  Visibility: prevailing_def_ironly
+  References: 
+  Referring: pvPortMalloc/12 (addr) pvPortMalloc/12 (addr) prvInsertBlockIntoFreeList/19 (addr) prvInsertBlockIntoFreeList/19 (addr) prvHeapInit/18 (addr) pvPortMalloc/12 (addr) pvPortMalloc/12 (addr) pvPortMalloc/12 (addr) pvPortMalloc/12 (addr) vPortFree/13 (addr) vPortFree/13 (addr) 
+  Availability: available
+  Varpool flags:
+Materializing clones
+Materialization Call site updates done.
+
+Reclaiming functions:
+Reclaiming variables:
+Clearing address taken flags:
+Trivially needed variables: xNumberOfSuccessfulFrees/11 xNumberOfSuccessfulAllocations/10 xMinimumEverFreeBytesRemaining/9 xFreeBytesRemaining/8 pxEnd/7 xStart/6 ucHeap/4
+Removing variables:
+
+Final Symbol table:
+
+vPortExitCritical/27 (vPortExitCritical) @069c8700
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags: optimize_size
+  Called by: 
+  Calls: 
+vPortEnterCritical/26 (vPortEnterCritical) @069c8540
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags: optimize_size
+  Called by: 
+  Calls: 
+memset/25 (memset) @069c8380
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags: optimize_size
+  Called by: 
+  Calls: 
+vApplicationMallocFailedHook/24 (vApplicationMallocFailedHook) @06999d20
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags: optimize_size
+  Called by: 
+  Calls: 
+xTaskResumeAll/23 (xTaskResumeAll) @06999c40
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags: optimize_size
+  Called by: 
+  Calls: 
+vTaskSuspendAll/22 (vTaskSuspendAll) @06999a80
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags: optimize_size
+  Called by: 
+  Calls: 
+vPortHeapResetState/21 (vPortHeapResetState) @06999460
+  Type: function definition analyzed
+  Visibility: externally_visible asm_written public
+  References: 
+  Referring: 
+  Availability: available
+  Function flags: count:1073741824 (estimated locally) nonfreeing_fn optimize_size
+  Called by: 
+  Calls: 
+vPortGetHeapStats/20 (vPortGetHeapStats) @069991c0
+  Type: function definition analyzed
+  Visibility: externally_visible asm_written public
+  References: 
+  Referring: 
+  Availability: available
+  Function flags: count:168730857 (estimated locally) optimize_size
+  Called by: 
+  Calls: 
+pvPortCalloc/17 (pvPortCalloc) @0698b0e0
+  Type: function definition analyzed
+  Visibility: externally_visible asm_written public
+  References: 
+  Referring: 
+  Availability: available
+  Function flags: count:1073741823 (estimated locally) optimize_size
+  Called by: 
+  Calls: 
+vPortInitialiseBlocks/16 (vPortInitialiseBlocks) @0698bd20
+  Type: function definition analyzed
+  Visibility: externally_visible asm_written public
+  References: 
+  Referring: 
+  Availability: available
+  Function flags: count:1073741824 (estimated locally) nonfreeing_fn optimize_size
+  Called by: 
+  Calls: 
+xPortGetMinimumEverFreeHeapSize/15 (xPortGetMinimumEverFreeHeapSize) @0698ba80
+  Type: function definition analyzed
+  Visibility: externally_visible asm_written public
+  References: 
+  Referring: 
+  Availability: available
+  Function flags: count:1073741824 (estimated locally) nonfreeing_fn optimize_size
+  Called by: 
+  Calls: 
+xPortGetFreeHeapSize/14 (xPortGetFreeHeapSize) @0698b7e0
+  Type: function definition analyzed
+  Visibility: externally_visible asm_written public
+  References: 
+  Referring: 
+  Availability: available
+  Function flags: count:1073741824 (estimated locally) nonfreeing_fn optimize_size
+  Called by: 
+  Calls: 
+vPortFree/13 (vPortFree) @0698b540
+  Type: function definition analyzed
+  Visibility: externally_visible asm_written public
+  References: 
+  Referring: 
+  Availability: available
+  Function flags: count:20249729 (estimated locally) optimize_size
+  Called by: 
+  Calls: 
+pvPortMalloc/12 (pvPortMalloc) @0698b000
+  Type: function definition analyzed
+  Visibility: externally_visible asm_written public
+  References: 
+  Referring: 
+  Availability: available
+  Function flags: count:23313133 (estimated locally) optimize_size
+  Called by: 
+  Calls: 
+xNumberOfSuccessfulFrees/11 (xNumberOfSuccessfulFrees) @069b8438
+  Type: variable definition analyzed
+  Visibility: prevailing_def_ironly asm_written
+  Aux: @00000001
+  References: 
+  Referring: 
+  Availability: available
+  Varpool flags: initialized
+xNumberOfSuccessfulAllocations/10 (xNumberOfSuccessfulAllocations) @069b83f0
+  Type: variable definition analyzed
+  Visibility: prevailing_def_ironly asm_written
+  Aux: @069b8438
+  References: 
+  Referring: 
+  Availability: available
+  Varpool flags: initialized
+xMinimumEverFreeBytesRemaining/9 (xMinimumEverFreeBytesRemaining) @069b83a8
+  Type: variable definition analyzed
+  Visibility: prevailing_def_ironly asm_written
+  Aux: @069b83f0
+  References: 
+  Referring: 
+  Availability: available
+  Varpool flags: initialized
+xFreeBytesRemaining/8 (xFreeBytesRemaining) @069b8360
+  Type: variable definition analyzed
+  Visibility: prevailing_def_ironly asm_written
+  Aux: @069b83a8
+  References: 
+  Referring: 
+  Availability: available
+  Varpool flags: initialized
+pxEnd/7 (pxEnd) @069b82d0
+  Type: variable definition analyzed
+  Visibility: prevailing_def_ironly asm_written
+  Aux: @069b8360
+  References: 
+  Referring: 
+  Availability: available
+  Varpool flags: initialized
+xStart/6 (xStart) @069b8240
+  Type: variable definition analyzed
+  Visibility: prevailing_def_ironly asm_written
+  Aux: @069b82d0
+  References: 
+  Referring: 
+  Availability: available
+  Varpool flags:
+ucHeap/4 (ucHeap) @069b1dc8
+  Type: variable definition analyzed
+  Visibility: prevailing_def_ironly asm_written
+  Aux: @069b8240
+  References: 
+  Referring: 
+  Availability: available
+  Varpool flags:

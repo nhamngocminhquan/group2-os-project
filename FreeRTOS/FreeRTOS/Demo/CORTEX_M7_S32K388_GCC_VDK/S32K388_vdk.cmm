@@ -1,0 +1,223 @@
+;  (c) Copyright 2020 NXP
+;
+;  NXP Confidential. This software is owned or controlled by NXP and may only be used strictly
+;  in accordance with the applicable license terms.  By expressly accepting
+;  such terms or by downloading, installing, activating and/or otherwise using
+;  the software, you are agreeing that you have read, and that you agree to
+;  comply with and are bound by, such license terms.  If you do not agree to
+;  be bound by the applicable license terms, then you may not retain,
+;  install, activate or otherwise use the software.
+;
+;  This file contains sample code only. It is not part of the production code deliverables.
+
+;T32     VDK
+;1       /S32Z270_System/S32Z270_MCU/RTU_0/R52_CLUSTER_0/cpu0
+;2       /S32Z270_System/S32Z270_MCU/RTU_0/R52_CLUSTER_0/cpu1
+;3       /S32Z270_System/S32Z270_MCU/RTU_0/R52_CLUSTER_0/cpu2
+;4       /S32Z270_System/S32Z270_MCU/RTU_0/R52_CLUSTER_0/cpu3
+;5       /S32Z270_System/S32Z270_MCU/RTU_1/R52_CLUSTER_1/cpu0
+;6       /S32Z270_System/S32Z270_MCU/RTU_1/R52_CLUSTER_1/cpu1
+;7       /S32Z270_System/S32Z270_MCU/RTU_1/R52_CLUSTER_1/cpu2
+;8       /S32Z270_System/S32Z270_MCU/RTU_1/R52_CLUSTER_1/cpu3
+;9       /S32Z270_System/S32Z270_MCU/SMU/CORTEX_M33
+;0xA     /S32Z270_System/S32Z270_MCU/FlexLLCE/CORTEX_M33_0
+;0xB     /S32Z270_System/S32Z270_MCU/FlexLLCE/CORTEX_M33_1
+;0xC     /S32Z270_System/S32Z270_MCU/HSE/CORTEX_M7
+
+LOCAL &load_to
+LOCAL &elf_file
+LOCAL &load_params
+LOCAL &core_no
+LOCAL &multicore
+LOCAL &core_list
+LOCAL &hse_available
+LOCAL &custom_param
+
+ENTRY &load_to &elf_file &load_params &core_no &multicore &core_list &custom_param
+&elf_file="Output/image.elf"
+&hse_available=0
+
+;plist
+;pbreak.set 84.
+
+;=========================================================================
+; System settings
+;=========================================================================
+IF !SYStem.Up()
+(
+    PRINT %S "### CPU type: CortexM7"
+    SYStem.CPU CortexM7
+    sys.config core 0x4
+    PRINT %S "### Attaching to the simulation ..."
+    SYStem.Mode Attach
+    ;setup.updateRate 100.ms
+    PRINT %S "### Disable the TRACE method"
+    TRACE.Disable
+    SYStem.Option DisMode THUMB
+
+)
+
+Break.direct
+Break
+;=========================================================================
+; set-up system clock initialization
+;=========================================================================
+
+;=========================================================================
+; RAM initialization
+;=========================================================================
+; Commented out - VDK does not currently support TCMs
+;Data.Set A:0x30000000--0x30010000 %Quad 0   ; RTU0_R52_0_TCM_A 32KB
+;Data.Set HD:0x31780000--0x317C0000 %Quad 0   ; RTU0_DRAM_0 (Fast Data 0) 256KB
+
+;=========================================================================
+; LOAD the code and symbols
+;=========================================================================
+
+PER.Set.simple ESD:0xE000ED08 %Long 0x600800
+Data.Set SD:0x600800 %LE %Long 0x2047DC00
+Data.Set SD:0x600804 %LE %Long 0x00600C21
+Data.Set SD:0x600808 %LE %Long 0x00605E95
+
+Data.Assemble ST:0x600C20  cpsid i
+Data.Assemble ST:0x600C22  mov.w r0,#0x0
+Data.Assemble ,               mov.w r1,#0x0
+Data.Assemble ,               mov.w r2,#0x0
+Data.Assemble ,               mov.w r3,#0x0
+Data.Assemble ,               mov.w r4,#0x0
+Data.Assemble ,               mov.w r5,#0x0
+Data.Assemble ,               b 0x600C22
+R.S PC 0x600C20
+
+
+
+;Load application
+;make core run for a while in loop before loading elf to wait for VDK preparation
+ON.ERROR.continue
+go
+wait 2000.ms
+break
+ON.ERROR.default
+Data.Load.Elf &elf_file SD:
+;GOSUB WaitBootROM
+
+; Workaround for simulator bug. R52s do not have ATCMs enabled even if RTU_GPR_CFG_CORE[TCM_BT] = 1
+; Commented out - VDK does not currently support this coprocessor
+;PER.Set.simple C15:0x19 %Long 0x3000001F
+; Workaround for simulator bug. R52s are booting in ARM mode even if RTU_GPR_CFG_CORE[THUMB] = 1
+; Switch to THUMB mode.
+
+v.w tst_status
+register /SpotLight
+data.list
+register.set pc Reset_Handler
+go main
+
+ENDDO
+
+; "EAXI:" not supported by VDK, use "SD:" instead
+EnablePartition1:
+(
+    PRIVATE &temp_var
+
+    ; Enable Partition 1 clock
+    Data.Set SD:0x41900300 %Long 0x00000005    ; Enable partition clock (PRTN1_PCONF[PCE] = 1)
+    Data.Set SD:0x41900304 %Long 0x00000001    ; Trigger the partition's clock hardware process update (PRTN1_PUPD[PCUD]=1)
+    Data.Set SD:0x41900000 %Long 0x00005AF0    ; Write first control key (CTL_KEY[KEY] = 0x5AF0)
+    Data.Set SD:0x41900000 %Long 0x0000A50F    ; Write second control key (CTL_KEY[KEY] = 0xA50F)
+
+    ; Wait for partition clock to become active
+    WAIT (Data.Long(SD:0x41900308)&0x00000001)==0x1  ; Poll PRTN1_STAT[PCS]
+
+    ; Enable Partition 1's Reset Domain Controller (RDC)
+    Data.Set SD:0x41890004 %Long 0x8000000F    ; Unlock reset domain (RD1_CTRL_REG[RD1_CTRL_UNLOCK] = 1)
+    Data.Set SD:0x41890004 %Long 0x80000007    ; Enable interconnect interface (RD1_CTRL_REG[RD1_INTERCONNECT_INTERFACE_DISABLE] = 0)
+
+    ; Wait for RD1's interconnect interface to become active
+    WAIT (Data.Long(SD:0x41890084)&0x00000010)==0x0  ; Poll RD1_STAT_REG[RD1_INTERCONNECT_INTERFACE_DISABLE_STAT]
+
+    ; Release partition reset for Partition 1
+    &temp_var=Data.Long(SD:0x41850048)
+    &temp_var=&temp_var&(~0x1)
+    Data.Set SD:0x41850048 %Long &temp_var     ; PRST1_0[PERIPH_64_RST] = 0
+
+    ; Disable output isolation for Partition 1
+    Data.Set SD:0x41900300 %Long 0x00000001    ; Enable partition clock (PRTN1_PCONF[OSSE] = 0)
+    Data.Set SD:0x41900304 %Long 0x00000004    ; Trigger the partition's output isolation hardware process update (PRTN1_PUPD[OSSUD]=1)
+    Data.Set SD:0x41900000 %Long 0x00005AF0    ; Write first control key (CTL_KEY[KEY] = 0x5AF0)
+    Data.Set SD:0x41900000 %Long 0x0000A50F    ; Write second control key (CTL_KEY[KEY] = 0xA50F)
+
+    ; Wait for the partition output isolation to be deasserted
+    WAIT (Data.Long(SD:0x41900308)&0x00000004)==0x0 ; Poll PRTN1_STAT[OSSS]
+
+    ; Wait for the partition reset to be deasserted
+    WAIT (Data.Long(SD:0x41850148)&0x00000001)==0x0 ; Poll PSTAT1_0[PERIPH_64_STAT]
+
+    RETURN
+)
+
+; "EAXI:" not supported by VDK, use "SD:" instead
+EnableRTU0_R52_0:
+(
+    PRIVATE &prst_reg
+
+    ; Partition 1 must be enabled first
+
+    ; Enable RTU0_R52_0 of Partition 1
+    Data.Set SD:0x4190034C %Long __ENTRY_ETABLE ; Set boot address (PRTN1_CORE0_ADDR[ADDR] = __ENTRY_ETABLE)
+    Data.Set SD:0x41900340 %Long 0x00000001     ; Enable core clock (PRTN1_CORE0_PCONF[CCE] = 1)
+    Data.Set SD:0x41900344 %Long 0x00000001     ; Trigger the core hardware process update (PRTN1_CORE0_PUPD[CCUPD]=1)
+    Data.Set SD:0x41900000 %Long 0x00005AF0     ; Write first control key (CTL_KEY[KEY] = 0x5AF0)
+    Data.Set SD:0x41900000 %Long 0x0000A50F     ; Write second control key (CTL_KEY[KEY] = 0xA50F)
+
+    ; Wait for core clock to become active
+    WAIT (Data.Long(SD:0x41900348)&0x00000001)==0x1  ; Poll PRTN1_CORE0_STAT[CCS]
+
+    ; RTU0_R52_0 - RGM_PRST1_0[PERIPH_65_RST]
+    ; RTU0_R52_1 - RGM_PRST1_0[PERIPH_66_RST]
+    ; RTU0_R52_2 - RGM_PRST1_0[PERIPH_67_RST]
+    ; RTU0_R52_3 - RGM_PRST1_0[PERIPH_68_RST]
+
+    ; Release the core reset via the corresponding MC_RGM_PRST register
+    &prst_reg=Data.Long(SD:0x41850048)
+    &prst_reg=&prst_reg&(~0x2)
+    Data.Set SD:0x41850048 %Long &prst_reg    ; PRST1_0[PERIPH_65_RST] = 0
+
+    ; Wait for the core reset to be deasserted
+    WAIT (Data.Long(SD:0x41850148)&0x00000002)==0x0 ; Poll PSTAT1_0[PERIPH_65_STAT]
+
+    ; Disable SWT_2
+    Data.Set SD:0x76000010 %Long 0x0000C520
+    Data.Set SD:0x76000010 %Long 0x0000D928
+    Data.Set SD:0x76000000 %Long 0xFF000000
+
+    RETURN
+)
+
+WaitBootROM:
+(
+    ; Wait for BootROM to initialize the core
+    ; Note: Use HSE's WFI status from MC_ME instead if it ever becomes available in the VDK
+    PRIVATE &addr
+    PRIVATE &pc
+
+    Break
+
+    &addr=_core_loop
+    &pc=Register(PC)
+    &pc="P:"+"&pc"
+    WHILE ("&pc"!="&addr")
+    (
+        Go
+        Wait 100.ms
+        Break
+        &pc=Register(PC)
+        &pc="P:"+"&pc"
+    )
+
+    Break
+
+    Wait 250.ms
+
+    RETURN
+)

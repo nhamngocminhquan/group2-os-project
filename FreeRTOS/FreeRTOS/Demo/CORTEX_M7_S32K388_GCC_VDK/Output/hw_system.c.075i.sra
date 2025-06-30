@@ -1,0 +1,141 @@
+Creating summary for SystemInit/1:
+
+
+
+========== IPA-SRA IPA stage ==========
+
+Summary for node SystemInit/1:
+  No parameter information. 
+
+
+
+Function SystemInit/1 disqualified because it cannot be made local.
+
+========== IPA-SRA decisions ==========
+
+========== IPA SRA IPA analysis done ==========
+
+
+Reclaiming functions:
+Reclaiming variables:
+Clearing address taken flags:
+Symbol table:
+
+SystemInit/1 (SystemInit) @068a9d20
+  Type: function definition analyzed
+  Visibility: externally_visible public
+  References: 
+  Referring: 
+  Availability: available
+  Function flags: count:10737416 (estimated locally) body optimize_size
+  Called by: 
+  Calls: 
+SystemInit ()
+{
+  uint32_t x;
+  unsigned int baseAddr;
+  uint32_t coreId;
+  long unsigned int _1;
+  long unsigned int _2;
+  long unsigned int _3;
+  long unsigned int _4;
+  long unsigned int _5;
+  unsigned int _6;
+  volatile uint32_t * _7;
+  volatile uint32_t * _8;
+  int _9;
+  long unsigned int _10;
+  long unsigned int _11;
+  volatile uint16_t * _12;
+  short unsigned int _13;
+
+  <bb 2> [local count: 10737416]:
+  # DEBUG BEGIN_STMT
+  _2 ={v} MEM[(volatile uint32_t *)1076232196B];
+  coreId_18 = _2 & 3;
+  # DEBUG coreId => coreId_18
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  _1 = _2 & 2;
+  if (_1 == 0)
+    goto <bb 3>; [50.00%]
+  else
+    goto <bb 4>; [50.00%]
+
+  <bb 3> [local count: 5368708]:
+  # DEBUG BEGIN_STMT
+  _3 = coreId_18 * 2080768;
+  baseAddr_20 = _3 + 1076297728;
+  # DEBUG baseAddr => baseAddr_20
+  goto <bb 5>; [100.00%]
+
+  <bb 4> [local count: 5368708]:
+  # DEBUG BEGIN_STMT
+  _4 = _2 & 1;
+  _5 = _4 * 4194304;
+  baseAddr_19 = 1078394880 - _5;
+  # DEBUG baseAddr => baseAddr_19
+
+  <bb 5> [local count: 10737416]:
+  # baseAddr_14 = PHI <baseAddr_20(3), baseAddr_19(4)>
+  # DEBUG baseAddr => baseAddr_14
+  # DEBUG BEGIN_STMT
+  _6 = baseAddr_14 + 16;
+  _7 = (volatile uint32_t *) _6;
+  *_7 ={v} 50464;
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  # DEBUG D#6 => _2 & 1
+  # DEBUG D#5 => D#6 * 4194304
+  # DEBUG baseAddr => 1078394880 - D#5
+  # DEBUG baseAddr => baseAddr_14
+  # DEBUG BEGIN_STMT
+  *_7 ={v} 55592;
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  # DEBUG D#3 => _2 & 1
+  # DEBUG D#2 => D#3 * 4194304
+  # DEBUG baseAddr => 1078394880 - D#2
+  # DEBUG baseAddr => baseAddr_14
+  # DEBUG BEGIN_STMT
+  _8 = (volatile uint32_t *) baseAddr_14;
+  *_8 ={v} 4278190144;
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  # DEBUG x => 0
+  goto <bb 7>; [100.00%]
+
+  <bb 6> [local count: 1063004409]:
+  # DEBUG BEGIN_STMT
+  _9 = 1 << coreId_18;
+  _10 = x_15 << 1;
+  _11 = _10 + 1076234368;
+  _12 = (volatile uint16_t *) _11;
+  _13 = (short unsigned int) _9;
+  *_12 ={v} _13;
+  # DEBUG BEGIN_STMT
+  x_25 = x_15 + 1;
+  # DEBUG x => x_25
+
+  <bb 7> [local count: 1073741824]:
+  # x_15 = PHI <0(5), x_25(6)>
+  # DEBUG x => x_15
+  # DEBUG BEGIN_STMT
+  if (x_15 != 240)
+    goto <bb 6>; [99.00%]
+  else
+    goto <bb 8>; [1.00%]
+
+  <bb 8> [local count: 10737416]:
+  # DEBUG BEGIN_STMT
+  return;
+
+}
+
+

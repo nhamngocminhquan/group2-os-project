@@ -1,0 +1,18 @@
+Callgraph clone;prvInsertTimerInActiveList;28;D:/Gitwork/freertos-git.freescale.com/FreeRTOS/Source/timers.c;894;23;prvInsertTimerInActiveList.part.0;60;D:/Gitwork/freertos-git.freescale.com/FreeRTOS/Source/timers.c;894;23;part
+Callgraph clone;xTimerGetReloadMode;18;D:/Gitwork/freertos-git.freescale.com/FreeRTOS/Source/timers.c;596;16;xTimerGetReloadMode.part.0;61;D:/Gitwork/freertos-git.freescale.com/FreeRTOS/Source/timers.c;596;16;part
+Callgraph clone;prvInitialiseNewTimer;12;D:/Gitwork/freertos-git.freescale.com/FreeRTOS/Source/timers.c;417;17;prvInitialiseNewTimer.constprop.0;62;D:/Gitwork/freertos-git.freescale.com/FreeRTOS/Source/timers.c;417;17;constprop
+Callgraph clone;prvGetNextExpireTime;26;D:/Gitwork/freertos-git.freescale.com/FreeRTOS/Source/timers.c;844;23;prvTimerTask;24;D:/Gitwork/freertos-git.freescale.com/FreeRTOS/Source/timers.c;748;12;inlining to
+Callgraph clone;prvProcessTimerOrBlockTask;25;D:/Gitwork/freertos-git.freescale.com/FreeRTOS/Source/timers.c;782;17;prvTimerTask;24;D:/Gitwork/freertos-git.freescale.com/FreeRTOS/Source/timers.c;748;12;inlining to
+Callgraph clone;xTimerGetReloadMode.part.0;61;D:/Gitwork/freertos-git.freescale.com/FreeRTOS/Source/timers.c;596;16;xTimerGetReloadMode;18;D:/Gitwork/freertos-git.freescale.com/FreeRTOS/Source/timers.c;596;16;inlining to
+Callgraph clone;prvInsertTimerInActiveList.part.0;60;D:/Gitwork/freertos-git.freescale.com/FreeRTOS/Source/timers.c;894;23;prvInsertTimerInActiveList;28;D:/Gitwork/freertos-git.freescale.com/FreeRTOS/Source/timers.c;894;23;inlining to
+Callgraph clone;prvInitialiseNewTimer.constprop.0;62;D:/Gitwork/freertos-git.freescale.com/FreeRTOS/Source/timers.c;417;17;xTimerCreate;11;D:/Gitwork/freertos-git.freescale.com/FreeRTOS/Source/timers.c;336;23;inlining to
+Callgraph clone;prvSwitchTimerLists;30;D:/Gitwork/freertos-git.freescale.com/FreeRTOS/Source/timers.c;1086;17;prvSampleTimeNow;27;D:/Gitwork/freertos-git.freescale.com/FreeRTOS/Source/timers.c;871;23;inlining to
+Callgraph clone;prvProcessReceivedCommands;29;D:/Gitwork/freertos-git.freescale.com/FreeRTOS/Source/timers.c;938;17;prvTimerTask;24;D:/Gitwork/freertos-git.freescale.com/FreeRTOS/Source/timers.c;748;12;inlining to
+Callgraph removal;prvInitialiseNewTimer;12;D:/Gitwork/freertos-git.freescale.com/FreeRTOS/Source/timers.c;417;17
+Callgraph removal;prvInsertTimerInActiveList.part.0;60;D:/Gitwork/freertos-git.freescale.com/FreeRTOS/Source/timers.c;894;23
+Callgraph removal;prvSwitchTimerLists;30;D:/Gitwork/freertos-git.freescale.com/FreeRTOS/Source/timers.c;1086;17
+Callgraph removal;prvProcessReceivedCommands;29;D:/Gitwork/freertos-git.freescale.com/FreeRTOS/Source/timers.c;938;17
+Callgraph removal;prvProcessTimerOrBlockTask;25;D:/Gitwork/freertos-git.freescale.com/FreeRTOS/Source/timers.c;782;17
+Callgraph removal;prvGetNextExpireTime;26;D:/Gitwork/freertos-git.freescale.com/FreeRTOS/Source/timers.c;844;23
+Callgraph removal;prvInitialiseNewTimer.constprop.0;62;D:/Gitwork/freertos-git.freescale.com/FreeRTOS/Source/timers.c;417;17
+Callgraph removal;xTimerGetReloadMode.part.0;61;D:/Gitwork/freertos-git.freescale.com/FreeRTOS/Source/timers.c;596;16

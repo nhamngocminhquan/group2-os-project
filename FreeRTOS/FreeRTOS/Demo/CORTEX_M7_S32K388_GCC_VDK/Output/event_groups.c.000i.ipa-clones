@@ -1,0 +1,13 @@
+Callgraph clone;xEventGroupClearBits;7;D:/Gitwork/freertos-git.freescale.com/FreeRTOS/Source/event_groups.c;472;17;xEventGroupClearBits.part.0;30;D:/Gitwork/freertos-git.freescale.com/FreeRTOS/Source/event_groups.c;472;17;part
+Callgraph clone;vPortSetBASEPRI;3;../../Source/portable/GCC/ARM_CM7/r0p1/portmacro.h;405;30;xEventGroupGetBitsFromISR;9;D:/Gitwork/freertos-git.freescale.com/FreeRTOS/Source/event_groups.c;524;17;inlining to
+Callgraph clone;ulPortRaiseBASEPRI;2;../../Source/portable/GCC/ARM_CM7/r0p1/portmacro.h;383;34;xEventGroupGetBitsFromISR;9;D:/Gitwork/freertos-git.freescale.com/FreeRTOS/Source/event_groups.c;524;17;inlining to
+Callgraph removal;vPortSetBASEPRI;3;../../Source/portable/GCC/ARM_CM7/r0p1/portmacro.h;405;30
+Callgraph removal;ulPortRaiseBASEPRI;2;../../Source/portable/GCC/ARM_CM7/r0p1/portmacro.h;383;34
+Callgraph clone;xEventGroupSetBits;10;D:/Gitwork/freertos-git.freescale.com/FreeRTOS/Source/event_groups.c;547;17;xEventGroupSetBits.part.0;31;D:/Gitwork/freertos-git.freescale.com/FreeRTOS/Source/event_groups.c;547;17;part
+Callgraph clone;xEventGroupClearBits.part.0;30;D:/Gitwork/freertos-git.freescale.com/FreeRTOS/Source/event_groups.c;472;17;xEventGroupClearBits;7;D:/Gitwork/freertos-git.freescale.com/FreeRTOS/Source/event_groups.c;472;17;inlining to
+Callgraph clone;prvTestWaitCondition;14;D:/Gitwork/freertos-git.freescale.com/FreeRTOS/Source/event_groups.c;775;23;xEventGroupWaitBits;6;D:/Gitwork/freertos-git.freescale.com/FreeRTOS/Source/event_groups.c;312;17;inlining to
+Callgraph clone;prvTestWaitCondition;14;D:/Gitwork/freertos-git.freescale.com/FreeRTOS/Source/event_groups.c;775;23;xEventGroupWaitBits;6;D:/Gitwork/freertos-git.freescale.com/FreeRTOS/Source/event_groups.c;312;17;inlining to
+Callgraph clone;xEventGroupSetBits.part.0;31;D:/Gitwork/freertos-git.freescale.com/FreeRTOS/Source/event_groups.c;547;17;xEventGroupSetBits;10;D:/Gitwork/freertos-git.freescale.com/FreeRTOS/Source/event_groups.c;547;17;inlining to
+Callgraph removal;prvTestWaitCondition;14;D:/Gitwork/freertos-git.freescale.com/FreeRTOS/Source/event_groups.c;775;23
+Callgraph removal;xEventGroupClearBits.part.0;30;D:/Gitwork/freertos-git.freescale.com/FreeRTOS/Source/event_groups.c;472;17
+Callgraph removal;xEventGroupSetBits.part.0;31;D:/Gitwork/freertos-git.freescale.com/FreeRTOS/Source/event_groups.c;547;17

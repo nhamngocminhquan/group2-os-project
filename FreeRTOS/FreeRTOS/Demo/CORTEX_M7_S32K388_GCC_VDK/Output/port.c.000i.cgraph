@@ -1,0 +1,1176 @@
+Trivially needed symbols: vPortValidateInterruptPriority/22 vPortSetupTimerInterrupt/20 SysTick_Handler/19 PendSV_Handler/18 vPortExitCritical/17 vPortEnterCritical/16 vPortEndScheduler/15 xPortStartScheduler/14 vPortSVCHandler/12 svc_id/11 pxPortInitialiseStack/9 flagCheckStartFirstTask/5
+
+
+Initial Symbol table:
+
+xTaskIncrementTick/25 (xTaskIncrementTick) @069671c0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags: optimize_size
+  Called by: SysTick_Handler/19 
+  Calls: 
+vTaskSwitchContext/24 (vTaskSwitchContext) @06913a80
+  Type: function
+  Visibility: force_output external public
+  References: 
+  Referring: 
+  Function flags: optimize_size
+  Called by: xPortStartScheduler/14 
+  Calls: 
+SVC_Handler/23 (SVC_Handler) @06913700
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags: optimize_size
+  Called by: vPortSVCHandler/12 
+  Calls: 
+vPortValidateInterruptPriority/22 (vPortValidateInterruptPriority) @06913000
+  Type: function definition analyzed
+  Visibility: public
+  Aux: @01981040
+  References: ucMaxSysCallPriority/6 (read) ulMaxPRIGROUPValue/7 (read) 
+  Referring: 
+  Function flags: body optimize_size
+  Called by: 
+  Calls: 
+vPortEnableVFP/21 (vPortEnableVFP) @069049a0
+  Type: function definition analyzed
+  Visibility:
+  Aux: @069499a0
+  References: 
+  Referring: 
+  Function flags: body optimize_size
+  Called by: xPortStartScheduler/14 
+  Calls: 
+vPortSetupTimerInterrupt/20 (vPortSetupTimerInterrupt) @06904460
+  Type: function definition analyzed
+  Visibility: public weak
+  Aux: @06913000
+  References: 
+  Referring: 
+  Function flags: body optimize_size
+  Called by: xPortStartScheduler/14 
+  Calls: 
+SysTick_Handler/19 (SysTick_Handler) @06904ee0
+  Type: function definition analyzed
+  Visibility: public
+  Aux: @06904460
+  References: 
+  Referring: 
+  Function flags: body optimize_size
+  Called by: 
+  Calls: vPortSetBASEPRI/3 xTaskIncrementTick/25 vPortRaiseBASEPRI/1 
+PendSV_Handler/18 (PendSV_Handler) @06904c40
+  Type: function definition analyzed
+  Visibility: public
+  Address is taken.
+  Aux: @06904ee0
+  References: 
+  Referring: xPortStartScheduler/14 (addr) 
+  Function flags: body optimize_size
+  Called by: 
+  Calls: 
+vPortExitCritical/17 (vPortExitCritical) @069048c0
+  Type: function definition analyzed
+  Visibility: public
+  Aux: @06904c40
+  References: uxCriticalNesting/4 (read) uxCriticalNesting/4 (read) uxCriticalNesting/4 (write) uxCriticalNesting/4 (read) 
+  Referring: 
+  Function flags: body optimize_size
+  Called by: 
+  Calls: vPortSetBASEPRI/3 
+vPortEnterCritical/16 (vPortEnterCritical) @06904620
+  Type: function definition analyzed
+  Visibility: public
+  Aux: @069048c0
+  References: uxCriticalNesting/4 (read) uxCriticalNesting/4 (write) uxCriticalNesting/4 (read) 
+  Referring: 
+  Function flags: body optimize_size
+  Called by: 
+  Calls: vPortRaiseBASEPRI/1 
+vPortEndScheduler/15 (vPortEndScheduler) @06904380
+  Type: function definition analyzed
+  Visibility: public
+  Aux: @06904620
+  References: uxCriticalNesting/4 (read) 
+  Referring: 
+  Function flags: body optimize_size
+  Called by: 
+  Calls: 
+xPortStartScheduler/14 (xPortStartScheduler) @069040e0
+  Type: function definition analyzed
+  Visibility: public
+  Aux: @06904380
+  References: vPortSVCHandler/12 (addr) PendSV_Handler/18 (addr) ucMaxSysCallPriority/6 (write) ucMaxSysCallPriority/6 (read) ulMaxPRIGROUPValue/7 (write) ulMaxPRIGROUPValue/7 (write) ulMaxPRIGROUPValue/7 (read) ulMaxPRIGROUPValue/7 (write) ulMaxPRIGROUPValue/7 (read) ulMaxPRIGROUPValue/7 (write) uxCriticalNesting/4 (write) 
+  Referring: 
+  Function flags: body optimize_size
+  Called by: 
+  Calls: prvTaskExitError/10 vTaskSwitchContext/24 prvPortStartFirstTask/13 vPortEnableVFP/21 vPortSetupTimerInterrupt/20 
+prvPortStartFirstTask/13 (prvPortStartFirstTask) @069499a0
+  Type: function definition analyzed
+  Visibility:
+  Aux: @06904380
+  References: 
+  Referring: 
+  Function flags: body optimize_size
+  Called by: xPortStartScheduler/14 
+  Calls: 
+vPortSVCHandler/12 (vPortSVCHandler) @06949460
+  Type: function definition analyzed
+  Visibility: public
+  Address is taken.
+  Aux: @069040e0
+  References: svc_id/11 (read) 
+  Referring: xPortStartScheduler/14 (addr) 
+  Function flags: body optimize_size
+  Called by: 
+  Calls: SVC_Handler/23 
+svc_id/11 (svc_id) @06943948
+  Type: variable definition analyzed
+  Visibility: public
+  Aux: @06949460
+  References: 
+  Referring: vPortSVCHandler/12 (read) 
+  Availability: not-ready
+  Varpool flags: initialized
+prvTaskExitError/10 (prvTaskExitError) @06949b60
+  Type: function definition analyzed
+  Visibility:
+  Address is taken.
+  Aux: @06943948
+  References: uxCriticalNesting/4 (read) 
+  Referring: pxPortInitialiseStack/9 (addr) 
+  Function flags: body optimize_size
+  Called by: xPortStartScheduler/14 
+  Calls: vPortRaiseBASEPRI/1 
+pxPortInitialiseStack/9 (pxPortInitialiseStack) @069498c0
+  Type: function definition analyzed
+  Visibility: public
+  Aux: @06943948
+  References: prvTaskExitError/10 (addr) 
+  Referring: 
+  Function flags: body optimize_size
+  Called by: 
+  Calls: 
+pcInterruptPriorityRegisters/8 (pcInterruptPriorityRegisters) @069434c8
+  Type: variable definition
+  Visibility:
+  References: 
+  Referring: 
+  Availability: not-ready
+  Varpool flags: initialized read-only const-value-known
+ulMaxPRIGROUPValue/7 (ulMaxPRIGROUPValue) @06943438
+  Type: variable definition analyzed
+  Visibility:
+  Aux: @069433a8
+  References: 
+  Referring: xPortStartScheduler/14 (write) xPortStartScheduler/14 (write) xPortStartScheduler/14 (read) xPortStartScheduler/14 (write) xPortStartScheduler/14 (read) xPortStartScheduler/14 (write) vPortValidateInterruptPriority/22 (read) 
+  Availability: not-ready
+  Varpool flags: initialized
+ucMaxSysCallPriority/6 (ucMaxSysCallPriority) @069433a8
+  Type: variable definition analyzed
+  Visibility:
+  Aux: @069049a0
+  References: 
+  Referring: xPortStartScheduler/14 (write) xPortStartScheduler/14 (read) vPortValidateInterruptPriority/22 (read) 
+  Availability: not-ready
+  Varpool flags: initialized
+flagCheckStartFirstTask/5 (flagCheckStartFirstTask) @069431f8
+  Type: variable definition analyzed
+  Visibility: force_output
+  Aux: @069498c0
+  References: 
+  Referring: 
+  Availability: not-ready
+  Varpool flags: initialized
+uxCriticalNesting/4 (uxCriticalNesting) @06943168
+  Type: variable definition analyzed
+  Visibility:
+  Aux: @0686fc40
+  References: 
+  Referring: prvTaskExitError/10 (read) xPortStartScheduler/14 (write) vPortEndScheduler/15 (read) vPortEnterCritical/16 (read) vPortEnterCritical/16 (write) vPortEnterCritical/16 (read) vPortExitCritical/17 (read) vPortExitCritical/17 (read) vPortExitCritical/17 (write) vPortExitCritical/17 (read) 
+  Availability: not-ready
+  Varpool flags: initialized
+vPortSetBASEPRI/3 (vPortSetBASEPRI) @068771c0
+  Type: function definition analyzed
+  Visibility:
+  Aux: @06904c40
+  References: 
+  Referring: 
+  Function flags: body optimize_size
+  Called by: SysTick_Handler/19 vPortExitCritical/17 
+  Calls: 
+ulPortRaiseBASEPRI/2 (ulPortRaiseBASEPRI) @0686fee0
+  Type: function definition
+  Visibility:
+  References: 
+  Referring: 
+  Function flags: optimize_size
+  Called by: 
+  Calls: 
+vPortRaiseBASEPRI/1 (vPortRaiseBASEPRI) @0686fc40
+  Type: function definition analyzed
+  Visibility:
+  Aux: @06943948
+  References: 
+  Referring: 
+  Function flags: body optimize_size
+  Called by: SysTick_Handler/19 vPortEnterCritical/16 prvTaskExitError/10 
+  Calls: 
+xPortIsInsideInterrupt/0 (xPortIsInsideInterrupt) @0686f9a0
+  Type: function definition
+  Visibility:
+  References: 
+  Referring: 
+  Function flags: optimize_size
+  Called by: 
+  Calls: 
+
+Removing unused symbols: pcInterruptPriorityRegisters/8 ulPortRaiseBASEPRI/2 xPortIsInsideInterrupt/0
+
+Reclaimed Symbol table:
+
+xTaskIncrementTick/25 (xTaskIncrementTick) @069671c0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags: optimize_size
+  Called by: SysTick_Handler/19 
+  Calls: 
+vTaskSwitchContext/24 (vTaskSwitchContext) @06913a80
+  Type: function
+  Visibility: force_output external public
+  References: 
+  Referring: 
+  Function flags: optimize_size
+  Called by: xPortStartScheduler/14 
+  Calls: 
+SVC_Handler/23 (SVC_Handler) @06913700
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags: optimize_size
+  Called by: vPortSVCHandler/12 
+  Calls: 
+vPortValidateInterruptPriority/22 (vPortValidateInterruptPriority) @06913000
+  Type: function definition analyzed
+  Visibility: public
+  References: ucMaxSysCallPriority/6 (read) ulMaxPRIGROUPValue/7 (read) 
+  Referring: 
+  Function flags: body optimize_size
+  Called by: 
+  Calls: 
+vPortEnableVFP/21 (vPortEnableVFP) @069049a0
+  Type: function definition analyzed
+  Visibility:
+  References: 
+  Referring: 
+  Function flags: body optimize_size
+  Called by: xPortStartScheduler/14 
+  Calls: 
+vPortSetupTimerInterrupt/20 (vPortSetupTimerInterrupt) @06904460
+  Type: function definition analyzed
+  Visibility: public weak
+  References: 
+  Referring: 
+  Function flags: body optimize_size
+  Called by: xPortStartScheduler/14 
+  Calls: 
+SysTick_Handler/19 (SysTick_Handler) @06904ee0
+  Type: function definition analyzed
+  Visibility: public
+  References: 
+  Referring: 
+  Function flags: body optimize_size
+  Called by: 
+  Calls: vPortSetBASEPRI/3 xTaskIncrementTick/25 vPortRaiseBASEPRI/1 
+PendSV_Handler/18 (PendSV_Handler) @06904c40
+  Type: function definition analyzed
+  Visibility: public
+  Address is taken.
+  References: 
+  Referring: xPortStartScheduler/14 (addr) 
+  Function flags: body optimize_size
+  Called by: 
+  Calls: 
+vPortExitCritical/17 (vPortExitCritical) @069048c0
+  Type: function definition analyzed
+  Visibility: public
+  References: uxCriticalNesting/4 (read) uxCriticalNesting/4 (read) uxCriticalNesting/4 (write) uxCriticalNesting/4 (read) 
+  Referring: 
+  Function flags: body optimize_size
+  Called by: 
+  Calls: vPortSetBASEPRI/3 
+vPortEnterCritical/16 (vPortEnterCritical) @06904620
+  Type: function definition analyzed
+  Visibility: public
+  References: uxCriticalNesting/4 (read) uxCriticalNesting/4 (write) uxCriticalNesting/4 (read) 
+  Referring: 
+  Function flags: body optimize_size
+  Called by: 
+  Calls: vPortRaiseBASEPRI/1 
+vPortEndScheduler/15 (vPortEndScheduler) @06904380
+  Type: function definition analyzed
+  Visibility: public
+  References: uxCriticalNesting/4 (read) 
+  Referring: 
+  Function flags: body optimize_size
+  Called by: 
+  Calls: 
+xPortStartScheduler/14 (xPortStartScheduler) @069040e0
+  Type: function definition analyzed
+  Visibility: public
+  References: vPortSVCHandler/12 (addr) PendSV_Handler/18 (addr) ucMaxSysCallPriority/6 (write) ucMaxSysCallPriority/6 (read) ulMaxPRIGROUPValue/7 (write) ulMaxPRIGROUPValue/7 (write) ulMaxPRIGROUPValue/7 (read) ulMaxPRIGROUPValue/7 (write) ulMaxPRIGROUPValue/7 (read) ulMaxPRIGROUPValue/7 (write) uxCriticalNesting/4 (write) 
+  Referring: 
+  Function flags: body optimize_size
+  Called by: 
+  Calls: prvTaskExitError/10 vTaskSwitchContext/24 prvPortStartFirstTask/13 vPortEnableVFP/21 vPortSetupTimerInterrupt/20 
+prvPortStartFirstTask/13 (prvPortStartFirstTask) @069499a0
+  Type: function definition analyzed
+  Visibility:
+  References: 
+  Referring: 
+  Function flags: body optimize_size
+  Called by: xPortStartScheduler/14 
+  Calls: 
+vPortSVCHandler/12 (vPortSVCHandler) @06949460
+  Type: function definition analyzed
+  Visibility: public
+  Address is taken.
+  References: svc_id/11 (read) 
+  Referring: xPortStartScheduler/14 (addr) 
+  Function flags: body optimize_size
+  Called by: 
+  Calls: SVC_Handler/23 
+svc_id/11 (svc_id) @06943948
+  Type: variable definition analyzed
+  Visibility: public
+  References: 
+  Referring: vPortSVCHandler/12 (read) 
+  Availability: not-ready
+  Varpool flags: initialized
+prvTaskExitError/10 (prvTaskExitError) @06949b60
+  Type: function definition analyzed
+  Visibility:
+  Address is taken.
+  References: uxCriticalNesting/4 (read) 
+  Referring: pxPortInitialiseStack/9 (addr) 
+  Function flags: body optimize_size
+  Called by: xPortStartScheduler/14 
+  Calls: vPortRaiseBASEPRI/1 
+pxPortInitialiseStack/9 (pxPortInitialiseStack) @069498c0
+  Type: function definition analyzed
+  Visibility: public
+  References: prvTaskExitError/10 (addr) 
+  Referring: 
+  Function flags: body optimize_size
+  Called by: 
+  Calls: 
+ulMaxPRIGROUPValue/7 (ulMaxPRIGROUPValue) @06943438
+  Type: variable definition analyzed
+  Visibility:
+  References: 
+  Referring: xPortStartScheduler/14 (write) xPortStartScheduler/14 (write) xPortStartScheduler/14 (read) xPortStartScheduler/14 (write) xPortStartScheduler/14 (read) xPortStartScheduler/14 (write) vPortValidateInterruptPriority/22 (read) 
+  Availability: not-ready
+  Varpool flags: initialized
+ucMaxSysCallPriority/6 (ucMaxSysCallPriority) @069433a8
+  Type: variable definition analyzed
+  Visibility:
+  References: 
+  Referring: xPortStartScheduler/14 (write) xPortStartScheduler/14 (read) vPortValidateInterruptPriority/22 (read) 
+  Availability: not-ready
+  Varpool flags: initialized
+flagCheckStartFirstTask/5 (flagCheckStartFirstTask) @069431f8
+  Type: variable definition analyzed
+  Visibility: force_output
+  References: 
+  Referring: 
+  Availability: not-ready
+  Varpool flags: initialized
+uxCriticalNesting/4 (uxCriticalNesting) @06943168
+  Type: variable definition analyzed
+  Visibility:
+  References: 
+  Referring: prvTaskExitError/10 (read) xPortStartScheduler/14 (write) vPortEndScheduler/15 (read) vPortEnterCritical/16 (read) vPortEnterCritical/16 (write) vPortEnterCritical/16 (read) vPortExitCritical/17 (read) vPortExitCritical/17 (read) vPortExitCritical/17 (write) vPortExitCritical/17 (read) 
+  Availability: not-ready
+  Varpool flags: initialized
+vPortSetBASEPRI/3 (vPortSetBASEPRI) @068771c0
+  Type: function definition analyzed
+  Visibility:
+  References: 
+  Referring: 
+  Function flags: body optimize_size
+  Called by: SysTick_Handler/19 vPortExitCritical/17 
+  Calls: 
+vPortRaiseBASEPRI/1 (vPortRaiseBASEPRI) @0686fc40
+  Type: function definition analyzed
+  Visibility:
+  References: 
+  Referring: 
+  Function flags: body optimize_size
+  Called by: SysTick_Handler/19 vPortEnterCritical/16 prvTaskExitError/10 
+  Calls: 
+
+
+Initial Symbol table:
+
+xTaskIncrementTick/25 (xTaskIncrementTick) @069671c0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags: optimize_size
+  Called by: SysTick_Handler/19 
+  Calls: 
+vTaskSwitchContext/24 (vTaskSwitchContext) @06913a80
+  Type: function
+  Visibility: force_output external public
+  References: 
+  Referring: 
+  Function flags: optimize_size
+  Called by: xPortStartScheduler/14 
+  Calls: 
+SVC_Handler/23 (SVC_Handler) @06913700
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags: optimize_size
+  Called by: vPortSVCHandler/12 
+  Calls: 
+vPortValidateInterruptPriority/22 (vPortValidateInterruptPriority) @06913000
+  Type: function definition analyzed
+  Visibility: public
+  References: ucMaxSysCallPriority/6 (read) ulMaxPRIGROUPValue/7 (read) 
+  Referring: 
+  Function flags: body optimize_size
+  Called by: 
+  Calls: 
+vPortEnableVFP/21 (vPortEnableVFP) @069049a0
+  Type: function definition analyzed
+  Visibility:
+  References: 
+  Referring: 
+  Function flags: body optimize_size
+  Called by: xPortStartScheduler/14 
+  Calls: 
+vPortSetupTimerInterrupt/20 (vPortSetupTimerInterrupt) @06904460
+  Type: function definition analyzed
+  Visibility: public weak
+  References: 
+  Referring: 
+  Function flags: body optimize_size
+  Called by: xPortStartScheduler/14 
+  Calls: 
+SysTick_Handler/19 (SysTick_Handler) @06904ee0
+  Type: function definition analyzed
+  Visibility: public
+  References: 
+  Referring: 
+  Function flags: body optimize_size
+  Called by: 
+  Calls: vPortSetBASEPRI/3 xTaskIncrementTick/25 vPortRaiseBASEPRI/1 
+PendSV_Handler/18 (PendSV_Handler) @06904c40
+  Type: function definition analyzed
+  Visibility: public
+  Address is taken.
+  References: 
+  Referring: xPortStartScheduler/14 (addr) 
+  Function flags: body optimize_size
+  Called by: 
+  Calls: 
+vPortExitCritical/17 (vPortExitCritical) @069048c0
+  Type: function definition analyzed
+  Visibility: public
+  References: uxCriticalNesting/4 (read) uxCriticalNesting/4 (read) uxCriticalNesting/4 (write) uxCriticalNesting/4 (read) 
+  Referring: 
+  Function flags: body optimize_size
+  Called by: 
+  Calls: vPortSetBASEPRI/3 
+vPortEnterCritical/16 (vPortEnterCritical) @06904620
+  Type: function definition analyzed
+  Visibility: public
+  References: uxCriticalNesting/4 (read) uxCriticalNesting/4 (write) uxCriticalNesting/4 (read) 
+  Referring: 
+  Function flags: body optimize_size
+  Called by: 
+  Calls: vPortRaiseBASEPRI/1 
+vPortEndScheduler/15 (vPortEndScheduler) @06904380
+  Type: function definition analyzed
+  Visibility: public
+  References: uxCriticalNesting/4 (read) 
+  Referring: 
+  Function flags: body optimize_size
+  Called by: 
+  Calls: 
+xPortStartScheduler/14 (xPortStartScheduler) @069040e0
+  Type: function definition analyzed
+  Visibility: public
+  References: vPortSVCHandler/12 (addr) PendSV_Handler/18 (addr) ucMaxSysCallPriority/6 (write) ucMaxSysCallPriority/6 (read) ulMaxPRIGROUPValue/7 (write) ulMaxPRIGROUPValue/7 (write) ulMaxPRIGROUPValue/7 (read) ulMaxPRIGROUPValue/7 (write) ulMaxPRIGROUPValue/7 (read) ulMaxPRIGROUPValue/7 (write) uxCriticalNesting/4 (write) 
+  Referring: 
+  Function flags: body optimize_size
+  Called by: 
+  Calls: prvTaskExitError/10 vTaskSwitchContext/24 prvPortStartFirstTask/13 vPortEnableVFP/21 vPortSetupTimerInterrupt/20 
+prvPortStartFirstTask/13 (prvPortStartFirstTask) @069499a0
+  Type: function definition analyzed
+  Visibility:
+  References: 
+  Referring: 
+  Function flags: body optimize_size
+  Called by: xPortStartScheduler/14 
+  Calls: 
+vPortSVCHandler/12 (vPortSVCHandler) @06949460
+  Type: function definition analyzed
+  Visibility: public
+  Address is taken.
+  References: svc_id/11 (read) 
+  Referring: xPortStartScheduler/14 (addr) 
+  Function flags: body optimize_size
+  Called by: 
+  Calls: SVC_Handler/23 
+svc_id/11 (svc_id) @06943948
+  Type: variable definition analyzed
+  Visibility: public
+  References: 
+  Referring: vPortSVCHandler/12 (read) 
+  Availability: not-ready
+  Varpool flags: initialized
+prvTaskExitError/10 (prvTaskExitError) @06949b60
+  Type: function definition analyzed
+  Visibility:
+  Address is taken.
+  References: uxCriticalNesting/4 (read) 
+  Referring: pxPortInitialiseStack/9 (addr) 
+  Function flags: body optimize_size
+  Called by: xPortStartScheduler/14 
+  Calls: vPortRaiseBASEPRI/1 
+pxPortInitialiseStack/9 (pxPortInitialiseStack) @069498c0
+  Type: function definition analyzed
+  Visibility: public
+  References: prvTaskExitError/10 (addr) 
+  Referring: 
+  Function flags: body optimize_size
+  Called by: 
+  Calls: 
+ulMaxPRIGROUPValue/7 (ulMaxPRIGROUPValue) @06943438
+  Type: variable definition analyzed
+  Visibility:
+  References: 
+  Referring: xPortStartScheduler/14 (write) xPortStartScheduler/14 (write) xPortStartScheduler/14 (read) xPortStartScheduler/14 (write) xPortStartScheduler/14 (read) xPortStartScheduler/14 (write) vPortValidateInterruptPriority/22 (read) 
+  Availability: not-ready
+  Varpool flags: initialized
+ucMaxSysCallPriority/6 (ucMaxSysCallPriority) @069433a8
+  Type: variable definition analyzed
+  Visibility:
+  References: 
+  Referring: xPortStartScheduler/14 (write) xPortStartScheduler/14 (read) vPortValidateInterruptPriority/22 (read) 
+  Availability: not-ready
+  Varpool flags: initialized
+flagCheckStartFirstTask/5 (flagCheckStartFirstTask) @069431f8
+  Type: variable definition analyzed
+  Visibility: force_output
+  References: 
+  Referring: 
+  Availability: not-ready
+  Varpool flags: initialized
+uxCriticalNesting/4 (uxCriticalNesting) @06943168
+  Type: variable definition analyzed
+  Visibility:
+  References: 
+  Referring: prvTaskExitError/10 (read) xPortStartScheduler/14 (write) vPortEndScheduler/15 (read) vPortEnterCritical/16 (read) vPortEnterCritical/16 (write) vPortEnterCritical/16 (read) vPortExitCritical/17 (read) vPortExitCritical/17 (read) vPortExitCritical/17 (write) vPortExitCritical/17 (read) 
+  Availability: not-ready
+  Varpool flags: initialized
+vPortSetBASEPRI/3 (vPortSetBASEPRI) @068771c0
+  Type: function definition analyzed
+  Visibility:
+  References: 
+  Referring: 
+  Function flags: body optimize_size
+  Called by: SysTick_Handler/19 vPortExitCritical/17 
+  Calls: 
+vPortRaiseBASEPRI/1 (vPortRaiseBASEPRI) @0686fc40
+  Type: function definition analyzed
+  Visibility:
+  References: 
+  Referring: 
+  Function flags: body optimize_size
+  Called by: SysTick_Handler/19 vPortEnterCritical/16 prvTaskExitError/10 
+  Calls: 
+
+Removing unused symbols:
+
+Reclaimed Symbol table:
+
+xTaskIncrementTick/25 (xTaskIncrementTick) @069671c0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags: optimize_size
+  Called by: SysTick_Handler/19 
+  Calls: 
+vTaskSwitchContext/24 (vTaskSwitchContext) @06913a80
+  Type: function
+  Visibility: force_output external public
+  References: 
+  Referring: 
+  Function flags: optimize_size
+  Called by: xPortStartScheduler/14 
+  Calls: 
+SVC_Handler/23 (SVC_Handler) @06913700
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Function flags: optimize_size
+  Called by: vPortSVCHandler/12 
+  Calls: 
+vPortValidateInterruptPriority/22 (vPortValidateInterruptPriority) @06913000
+  Type: function definition analyzed
+  Visibility: public
+  References: ucMaxSysCallPriority/6 (read) ulMaxPRIGROUPValue/7 (read) 
+  Referring: 
+  Function flags: body optimize_size
+  Called by: 
+  Calls: 
+vPortEnableVFP/21 (vPortEnableVFP) @069049a0
+  Type: function definition analyzed
+  Visibility:
+  References: 
+  Referring: 
+  Function flags: body optimize_size
+  Called by: xPortStartScheduler/14 
+  Calls: 
+vPortSetupTimerInterrupt/20 (vPortSetupTimerInterrupt) @06904460
+  Type: function definition analyzed
+  Visibility: public weak
+  References: 
+  Referring: 
+  Function flags: body optimize_size
+  Called by: xPortStartScheduler/14 
+  Calls: 
+SysTick_Handler/19 (SysTick_Handler) @06904ee0
+  Type: function definition analyzed
+  Visibility: public
+  References: 
+  Referring: 
+  Function flags: body optimize_size
+  Called by: 
+  Calls: vPortSetBASEPRI/3 xTaskIncrementTick/25 vPortRaiseBASEPRI/1 
+PendSV_Handler/18 (PendSV_Handler) @06904c40
+  Type: function definition analyzed
+  Visibility: public
+  Address is taken.
+  References: 
+  Referring: xPortStartScheduler/14 (addr) 
+  Function flags: body optimize_size
+  Called by: 
+  Calls: 
+vPortExitCritical/17 (vPortExitCritical) @069048c0
+  Type: function definition analyzed
+  Visibility: public
+  References: uxCriticalNesting/4 (read) uxCriticalNesting/4 (read) uxCriticalNesting/4 (write) uxCriticalNesting/4 (read) 
+  Referring: 
+  Function flags: body optimize_size
+  Called by: 
+  Calls: vPortSetBASEPRI/3 
+vPortEnterCritical/16 (vPortEnterCritical) @06904620
+  Type: function definition analyzed
+  Visibility: public
+  References: uxCriticalNesting/4 (read) uxCriticalNesting/4 (write) uxCriticalNesting/4 (read) 
+  Referring: 
+  Function flags: body optimize_size
+  Called by: 
+  Calls: vPortRaiseBASEPRI/1 
+vPortEndScheduler/15 (vPortEndScheduler) @06904380
+  Type: function definition analyzed
+  Visibility: public
+  References: uxCriticalNesting/4 (read) 
+  Referring: 
+  Function flags: body optimize_size
+  Called by: 
+  Calls: 
+xPortStartScheduler/14 (xPortStartScheduler) @069040e0
+  Type: function definition analyzed
+  Visibility: public
+  References: vPortSVCHandler/12 (addr) PendSV_Handler/18 (addr) ucMaxSysCallPriority/6 (write) ucMaxSysCallPriority/6 (read) ulMaxPRIGROUPValue/7 (write) ulMaxPRIGROUPValue/7 (write) ulMaxPRIGROUPValue/7 (read) ulMaxPRIGROUPValue/7 (write) ulMaxPRIGROUPValue/7 (read) ulMaxPRIGROUPValue/7 (write) uxCriticalNesting/4 (write) 
+  Referring: 
+  Function flags: body optimize_size
+  Called by: 
+  Calls: prvTaskExitError/10 vTaskSwitchContext/24 prvPortStartFirstTask/13 vPortEnableVFP/21 vPortSetupTimerInterrupt/20 
+prvPortStartFirstTask/13 (prvPortStartFirstTask) @069499a0
+  Type: function definition analyzed
+  Visibility:
+  References: 
+  Referring: 
+  Function flags: body optimize_size
+  Called by: xPortStartScheduler/14 
+  Calls: 
+vPortSVCHandler/12 (vPortSVCHandler) @06949460
+  Type: function definition analyzed
+  Visibility: public
+  Address is taken.
+  References: svc_id/11 (read) 
+  Referring: xPortStartScheduler/14 (addr) 
+  Function flags: body optimize_size
+  Called by: 
+  Calls: SVC_Handler/23 
+svc_id/11 (svc_id) @06943948
+  Type: variable definition analyzed
+  Visibility: public
+  References: 
+  Referring: vPortSVCHandler/12 (read) 
+  Availability: not-ready
+  Varpool flags: initialized
+prvTaskExitError/10 (prvTaskExitError) @06949b60
+  Type: function definition analyzed
+  Visibility:
+  Address is taken.
+  References: uxCriticalNesting/4 (read) 
+  Referring: pxPortInitialiseStack/9 (addr) 
+  Function flags: body optimize_size
+  Called by: xPortStartScheduler/14 
+  Calls: vPortRaiseBASEPRI/1 
+pxPortInitialiseStack/9 (pxPortInitialiseStack) @069498c0
+  Type: function definition analyzed
+  Visibility: public
+  References: prvTaskExitError/10 (addr) 
+  Referring: 
+  Function flags: body optimize_size
+  Called by: 
+  Calls: 
+ulMaxPRIGROUPValue/7 (ulMaxPRIGROUPValue) @06943438
+  Type: variable definition analyzed
+  Visibility:
+  References: 
+  Referring: xPortStartScheduler/14 (write) xPortStartScheduler/14 (write) xPortStartScheduler/14 (read) xPortStartScheduler/14 (write) xPortStartScheduler/14 (read) xPortStartScheduler/14 (write) vPortValidateInterruptPriority/22 (read) 
+  Availability: not-ready
+  Varpool flags: initialized
+ucMaxSysCallPriority/6 (ucMaxSysCallPriority) @069433a8
+  Type: variable definition analyzed
+  Visibility:
+  References: 
+  Referring: xPortStartScheduler/14 (write) xPortStartScheduler/14 (read) vPortValidateInterruptPriority/22 (read) 
+  Availability: not-ready
+  Varpool flags: initialized
+flagCheckStartFirstTask/5 (flagCheckStartFirstTask) @069431f8
+  Type: variable definition analyzed
+  Visibility: force_output
+  References: 
+  Referring: 
+  Availability: not-ready
+  Varpool flags: initialized
+uxCriticalNesting/4 (uxCriticalNesting) @06943168
+  Type: variable definition analyzed
+  Visibility:
+  References: 
+  Referring: prvTaskExitError/10 (read) xPortStartScheduler/14 (write) vPortEndScheduler/15 (read) vPortEnterCritical/16 (read) vPortEnterCritical/16 (write) vPortEnterCritical/16 (read) vPortExitCritical/17 (read) vPortExitCritical/17 (read) vPortExitCritical/17 (write) vPortExitCritical/17 (read) 
+  Availability: not-ready
+  Varpool flags: initialized
+vPortSetBASEPRI/3 (vPortSetBASEPRI) @068771c0
+  Type: function definition analyzed
+  Visibility:
+  References: 
+  Referring: 
+  Function flags: body optimize_size
+  Called by: SysTick_Handler/19 vPortExitCritical/17 
+  Calls: 
+vPortRaiseBASEPRI/1 (vPortRaiseBASEPRI) @0686fc40
+  Type: function definition analyzed
+  Visibility:
+  References: 
+  Referring: 
+  Function flags: body optimize_size
+  Called by: SysTick_Handler/19 vPortEnterCritical/16 prvTaskExitError/10 
+  Calls: 
+
+Reclaiming functions:
+Reclaiming variables:
+Clearing address taken flags:
+Optimized Symbol table:
+
+xTaskIncrementTick/25 (xTaskIncrementTick) @069671c0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags: optimize_size
+  Called by: SysTick_Handler/19 (1073741824 (estimated locally),1.00 per call) 
+  Calls: 
+vTaskSwitchContext/24 (vTaskSwitchContext) @06913a80
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags: optimize_size
+  Called by: xPortStartScheduler/14 (341714 (estimated locally),0.02 per call) 
+  Calls: 
+SVC_Handler/23 (SVC_Handler) @06913700
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags: optimize_size
+  Called by: vPortSVCHandler/12 (524845000 (estimated locally),0.49 per call) 
+  Calls: 
+vPortValidateInterruptPriority/22 (vPortValidateInterruptPriority) @06913000
+  Type: function definition analyzed
+  Visibility: externally_visible public
+  References: ucMaxSysCallPriority/6 (read) ulMaxPRIGROUPValue/7 (read) 
+  Referring: 
+  Availability: available
+  Function flags: count:28349621 (estimated locally) body optimize_size
+  Called by: 
+  Calls: 
+vPortEnableVFP/21 (vPortEnableVFP) @069049a0
+  Type: function definition analyzed
+  Visibility: prevailing_def_ironly
+  References: 
+  Referring: 
+  Availability: local
+  Function flags: count:1073741824 (estimated locally) body local optimize_size
+  Called by: xPortStartScheduler/14 (341714 (estimated locally),0.02 per call) 
+  Calls: 
+vPortSetupTimerInterrupt/20 (vPortSetupTimerInterrupt) @06904460
+  Type: function definition analyzed
+  Visibility: externally_visible public weak
+  References: 
+  Referring: 
+  Availability: overwritable
+  Function flags: count:1073741824 (estimated locally) body optimize_size
+  Called by: xPortStartScheduler/14 (341714 (estimated locally),0.02 per call) 
+  Calls: 
+SysTick_Handler/19 (SysTick_Handler) @06904ee0
+  Type: function definition analyzed
+  Visibility: externally_visible public
+  References: 
+  Referring: 
+  Availability: available
+  Function flags: count:1073741824 (estimated locally) body optimize_size
+  Called by: 
+  Calls: xTaskIncrementTick/25 (1073741824 (estimated locally),1.00 per call) 
+PendSV_Handler/18 (PendSV_Handler) @06904c40
+  Type: function definition analyzed
+  Visibility: externally_visible public
+  Address is taken.
+  References: 
+  Referring: xPortStartScheduler/14 (addr) 
+  Availability: available
+  Function flags: count:1073741824 (estimated locally) body optimize_size
+  Called by: 
+  Calls: 
+vPortExitCritical/17 (vPortExitCritical) @069048c0
+  Type: function definition analyzed
+  Visibility: externally_visible public
+  References: uxCriticalNesting/4 (read) uxCriticalNesting/4 (write) 
+  Referring: 
+  Availability: available
+  Function flags: count:21262216 (estimated locally) body optimize_size
+  Called by: 
+  Calls: 
+vPortEnterCritical/16 (vPortEnterCritical) @06904620
+  Type: function definition analyzed
+  Visibility: externally_visible public
+  References: uxCriticalNesting/4 (read) uxCriticalNesting/4 (write) 
+  Referring: 
+  Availability: available
+  Function flags: count:62535929 (estimated locally) body optimize_size
+  Called by: 
+  Calls: 
+vPortEndScheduler/15 (vPortEndScheduler) @06904380
+  Type: function definition analyzed
+  Visibility: externally_visible public
+  References: uxCriticalNesting/4 (read) 
+  Referring: 
+  Availability: available
+  Function flags: count:16107739 (estimated locally) body optimize_size
+  Called by: 
+  Calls: 
+xPortStartScheduler/14 (xPortStartScheduler) @069040e0
+  Type: function definition analyzed
+  Visibility: externally_visible public
+  References: vPortSVCHandler/12 (addr) PendSV_Handler/18 (addr) ucMaxSysCallPriority/6 (write) ulMaxPRIGROUPValue/7 (write) ulMaxPRIGROUPValue/7 (write) ulMaxPRIGROUPValue/7 (read) ulMaxPRIGROUPValue/7 (write) uxCriticalNesting/4 (write) 
+  Referring: 
+  Availability: available
+  Function flags: count:15187297 (estimated locally) body optimize_size
+  Called by: 
+  Calls: prvTaskExitError/10 (341714 (estimated locally),0.02 per call) vTaskSwitchContext/24 (341714 (estimated locally),0.02 per call) prvPortStartFirstTask/13 (341714 (estimated locally),0.02 per call) vPortEnableVFP/21 (341714 (estimated locally),0.02 per call) vPortSetupTimerInterrupt/20 (341714 (estimated locally),0.02 per call) 
+prvPortStartFirstTask/13 (prvPortStartFirstTask) @069499a0
+  Type: function definition analyzed
+  Visibility: prevailing_def_ironly
+  References: 
+  Referring: 
+  Availability: local
+  Function flags: count:1073741824 (estimated locally) body local optimize_size
+  Called by: xPortStartScheduler/14 (341714 (estimated locally),0.02 per call) 
+  Calls: 
+vPortSVCHandler/12 (vPortSVCHandler) @06949460
+  Type: function definition analyzed
+  Visibility: externally_visible public
+  Address is taken.
+  References: svc_id/11 (read) 
+  Referring: xPortStartScheduler/14 (addr) 
+  Availability: available
+  Function flags: count:1073741824 (estimated locally) body optimize_size
+  Called by: 
+  Calls: SVC_Handler/23 (524845000 (estimated locally),0.49 per call) 
+svc_id/11 (svc_id) @06943948
+  Type: variable definition analyzed
+  Visibility: externally_visible public
+  References: 
+  Referring: vPortSVCHandler/12 (read) 
+  Availability: available
+  Varpool flags: initialized
+prvTaskExitError/10 (prvTaskExitError) @06949b60
+  Type: function definition analyzed
+  Visibility: prevailing_def_ironly
+  Address is taken.
+  References: uxCriticalNesting/4 (read) 
+  Referring: pxPortInitialiseStack/9 (addr) 
+  Availability: available
+  Function flags: count:16107739 (estimated locally) body optimize_size
+  Called by: xPortStartScheduler/14 (341714 (estimated locally),0.02 per call) 
+  Calls: 
+pxPortInitialiseStack/9 (pxPortInitialiseStack) @069498c0
+  Type: function definition analyzed
+  Visibility: externally_visible public
+  References: prvTaskExitError/10 (addr) 
+  Referring: 
+  Availability: available
+  Function flags: count:1073741824 (estimated locally) body nonfreeing_fn optimize_size
+  Called by: 
+  Calls: 
+ulMaxPRIGROUPValue/7 (ulMaxPRIGROUPValue) @06943438
+  Type: variable definition analyzed
+  Visibility: prevailing_def_ironly
+  References: 
+  Referring: xPortStartScheduler/14 (write) xPortStartScheduler/14 (write) xPortStartScheduler/14 (write) xPortStartScheduler/14 (read) vPortValidateInterruptPriority/22 (read) 
+  Availability: available
+  Varpool flags: initialized
+ucMaxSysCallPriority/6 (ucMaxSysCallPriority) @069433a8
+  Type: variable definition analyzed
+  Visibility: prevailing_def_ironly
+  References: 
+  Referring: xPortStartScheduler/14 (write) vPortValidateInterruptPriority/22 (read) 
+  Availability: available
+  Varpool flags: initialized
+flagCheckStartFirstTask/5 (flagCheckStartFirstTask) @069431f8
+  Type: variable definition analyzed
+  Visibility: force_output prevailing_def_ironly
+  References: 
+  Referring: 
+  Availability: available
+  Varpool flags: initialized
+uxCriticalNesting/4 (uxCriticalNesting) @06943168
+  Type: variable definition analyzed
+  Visibility: prevailing_def_ironly
+  References: 
+  Referring: vPortEndScheduler/15 (read) vPortEnterCritical/16 (write) vPortExitCritical/17 (write) prvTaskExitError/10 (read) vPortEnterCritical/16 (read) vPortExitCritical/17 (read) xPortStartScheduler/14 (write) 
+  Availability: available
+  Varpool flags: initialized
+Materializing clones
+Materialization Call site updates done.
+
+Reclaiming functions:
+Reclaiming variables:
+Clearing address taken flags:
+Trivially needed variables: svc_id/11 ulMaxPRIGROUPValue/7 ucMaxSysCallPriority/6 flagCheckStartFirstTask/5 uxCriticalNesting/4
+Removing variables:
+
+Final Symbol table:
+
+xTaskIncrementTick/25 (xTaskIncrementTick) @069671c0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags: optimize_size
+  Called by: 
+  Calls: 
+vTaskSwitchContext/24 (vTaskSwitchContext) @06913a80
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags: optimize_size
+  Called by: 
+  Calls: 
+SVC_Handler/23 (SVC_Handler) @06913700
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags: optimize_size
+  Called by: 
+  Calls: 
+vPortValidateInterruptPriority/22 (vPortValidateInterruptPriority) @06913000
+  Type: function definition analyzed
+  Visibility: externally_visible asm_written public
+  References: 
+  Referring: 
+  Availability: available
+  Function flags: count:28349621 (estimated locally) optimize_size
+  Called by: 
+  Calls: 
+vPortEnableVFP/21 (vPortEnableVFP) @069049a0
+  Type: function definition analyzed
+  Visibility: prevailing_def_ironly asm_written
+  References: 
+  Referring: 
+  Availability: local
+  Function flags: count:1073741824 (estimated locally) local optimize_size
+  Called by: 
+  Calls: 
+vPortSetupTimerInterrupt/20 (vPortSetupTimerInterrupt) @06904460
+  Type: function definition analyzed
+  Visibility: externally_visible asm_written public weak
+  References: 
+  Referring: 
+  Availability: overwritable
+  Function flags: count:1073741824 (estimated locally) optimize_size
+  Called by: 
+  Calls: 
+SysTick_Handler/19 (SysTick_Handler) @06904ee0
+  Type: function definition analyzed
+  Visibility: externally_visible asm_written public
+  References: 
+  Referring: 
+  Availability: available
+  Function flags: count:1073741824 (estimated locally) optimize_size
+  Called by: 
+  Calls: 
+PendSV_Handler/18 (PendSV_Handler) @06904c40
+  Type: function definition analyzed
+  Visibility: externally_visible asm_written public
+  Address is taken.
+  References: 
+  Referring: 
+  Availability: available
+  Function flags: count:1073741824 (estimated locally) optimize_size
+  Called by: 
+  Calls: 
+vPortExitCritical/17 (vPortExitCritical) @069048c0
+  Type: function definition analyzed
+  Visibility: externally_visible asm_written public
+  References: 
+  Referring: 
+  Availability: available
+  Function flags: count:21262216 (estimated locally) optimize_size
+  Called by: 
+  Calls: 
+vPortEnterCritical/16 (vPortEnterCritical) @06904620
+  Type: function definition analyzed
+  Visibility: externally_visible asm_written public
+  References: 
+  Referring: 
+  Availability: available
+  Function flags: count:62535929 (estimated locally) optimize_size
+  Called by: 
+  Calls: 
+vPortEndScheduler/15 (vPortEndScheduler) @06904380
+  Type: function definition analyzed
+  Visibility: externally_visible asm_written public
+  References: 
+  Referring: 
+  Availability: available
+  Function flags: count:16107739 (estimated locally) optimize_size
+  Called by: 
+  Calls: 
+xPortStartScheduler/14 (xPortStartScheduler) @069040e0
+  Type: function definition analyzed
+  Visibility: externally_visible asm_written public
+  References: 
+  Referring: 
+  Availability: available
+  Function flags: count:15187297 (estimated locally) optimize_size
+  Called by: 
+  Calls: 
+prvPortStartFirstTask/13 (prvPortStartFirstTask) @069499a0
+  Type: function definition analyzed
+  Visibility: prevailing_def_ironly asm_written
+  References: 
+  Referring: 
+  Availability: local
+  Function flags: count:1073741824 (estimated locally) local optimize_size
+  Called by: 
+  Calls: 
+vPortSVCHandler/12 (vPortSVCHandler) @06949460
+  Type: function definition analyzed
+  Visibility: externally_visible asm_written public
+  Address is taken.
+  References: 
+  Referring: 
+  Availability: available
+  Function flags: count:1073741824 (estimated locally) optimize_size
+  Called by: 
+  Calls: 
+svc_id/11 (svc_id) @06943948
+  Type: variable definition analyzed
+  Visibility: externally_visible asm_written public
+  Aux: @00000001
+  References: 
+  Referring: 
+  Availability: available
+  Varpool flags: initialized
+prvTaskExitError/10 (prvTaskExitError) @06949b60
+  Type: function definition analyzed
+  Visibility: prevailing_def_ironly asm_written
+  Address is taken.
+  References: 
+  Referring: 
+  Availability: available
+  Function flags: count:16107739 (estimated locally) optimize_size
+  Called by: 
+  Calls: 
+pxPortInitialiseStack/9 (pxPortInitialiseStack) @069498c0
+  Type: function definition analyzed
+  Visibility: externally_visible asm_written public
+  References: 
+  Referring: 
+  Availability: available
+  Function flags: count:1073741824 (estimated locally) nonfreeing_fn optimize_size
+  Called by: 
+  Calls: 
+ulMaxPRIGROUPValue/7 (ulMaxPRIGROUPValue) @06943438
+  Type: variable definition analyzed
+  Visibility: prevailing_def_ironly asm_written
+  Aux: @06943948
+  References: 
+  Referring: 
+  Availability: available
+  Varpool flags: initialized
+ucMaxSysCallPriority/6 (ucMaxSysCallPriority) @069433a8
+  Type: variable definition analyzed
+  Visibility: prevailing_def_ironly asm_written
+  Aux: @06943438
+  References: 
+  Referring: 
+  Availability: available
+  Varpool flags: initialized
+flagCheckStartFirstTask/5 (flagCheckStartFirstTask) @069431f8
+  Type: variable definition analyzed
+  Visibility: force_output prevailing_def_ironly asm_written
+  Aux: @069433a8
+  References: 
+  Referring: 
+  Availability: available
+  Varpool flags: initialized
+uxCriticalNesting/4 (uxCriticalNesting) @06943168
+  Type: variable definition analyzed
+  Visibility: prevailing_def_ironly asm_written
+  Aux: @069431f8
+  References: 
+  Referring: 
+  Availability: available
+  Varpool flags: initialized

@@ -1,0 +1,5913 @@
+
+IPA constant propagation start:
+Determining dynamic type for call: prvUnlockQueue (xQueue_8(D));
+  Starting walk at: prvUnlockQueue (xQueue_8(D));
+  instance pointer: xQueue_8(D)  Outer instance pointer: xQueue_8(D) offset: 0 (bits) vtbl reference: 
+  Function call may change dynamic type:vPortExitCritical ();
+  Function call may change dynamic type:vPortEnterCritical ();
+  Function call may change dynamic type:vTaskPlaceOnEventListRestricted (_4, xTicksToWait_14(D), xWaitIndefinitely_15(D));
+Determining dynamic type for call: vQueueUnregisterQueue.part.0 (xQueue_2(D));
+  Starting walk at: vQueueUnregisterQueue.part.0 (xQueue_2(D));
+  instance pointer: xQueue_2(D)  Outer instance pointer: xQueue_2(D) offset: 0 (bits) vtbl reference: 
+Determining dynamic type for call: vQueueUnregisterQueue (xQueue_1(D));
+  Starting walk at: vQueueUnregisterQueue (xQueue_1(D));
+  instance pointer: xQueue_1(D)  Outer instance pointer: xQueue_1(D) offset: 0 (bits) vtbl reference: 
+Determining dynamic type for call: prvCopyDataFromQueue (xQueue_6(D), pvBuffer_7(D));
+  Starting walk at: prvCopyDataFromQueue (xQueue_6(D), pvBuffer_7(D));
+  instance pointer: xQueue_6(D)  Outer instance pointer: xQueue_6(D) offset: 0 (bits) vtbl reference: 
+  Function call may change dynamic type:vPortValidateInterruptPriority ();
+Determining dynamic type for call: prvCopyDataFromQueue (xQueue_6(D), pvBuffer_7(D));
+  Starting walk at: prvCopyDataFromQueue (xQueue_6(D), pvBuffer_7(D));
+  instance pointer: pvBuffer_7(D)  Outer instance pointer: pvBuffer_7(D) offset: 0 (bits) vtbl reference: 
+  Function call may change dynamic type:vPortValidateInterruptPriority ();
+Determining dynamic type for call: prvCopyDataFromQueue (xQueue_12(D), pvBuffer_13(D));
+  Starting walk at: prvCopyDataFromQueue (xQueue_12(D), pvBuffer_13(D));
+  instance pointer: xQueue_12(D)  Outer instance pointer: xQueue_12(D) offset: 0 (bits) vtbl reference: 
+  Function call may change dynamic type:vPortValidateInterruptPriority ();
+Determining dynamic type for call: prvCopyDataFromQueue (xQueue_12(D), pvBuffer_13(D));
+  Starting walk at: prvCopyDataFromQueue (xQueue_12(D), pvBuffer_13(D));
+  instance pointer: pvBuffer_13(D)  Outer instance pointer: pvBuffer_13(D) offset: 0 (bits) vtbl reference: 
+  Function call may change dynamic type:vPortValidateInterruptPriority ();
+Determining dynamic type for call: prvUnlockQueue (xQueue_26(D));
+  Starting walk at: prvUnlockQueue (xQueue_26(D));
+  instance pointer: xQueue_26(D)  Outer instance pointer: xQueue_26(D) offset: 0 (bits) vtbl reference: 
+  Function call may change dynamic type:_10 = xTaskCheckForTimeOut (&xTimeOut, &xTicksToWait);
+  Function call may change dynamic type:vPortExitCritical ();
+  Function call may change dynamic type:vPortEnterCritical ();
+  Function call may change dynamic type:vTaskSuspendAll ();
+  Function call may change dynamic type:vPortExitCritical ();
+  Function call may change dynamic type:vPortEnterCritical ();
+  Function call may change dynamic type:_2 = xTaskGetSchedulerState ();
+  Function call may change dynamic type:_15 = prvIsQueueEmpty (xQueue_26(D));
+  Function call may change dynamic type:xTaskResumeAll ();
+  Function call may change dynamic type:prvUnlockQueue (xQueue_26(D));
+  Function call may change dynamic type:_10 = xTaskCheckForTimeOut (&xTimeOut, &xTicksToWait);
+  Function call may change dynamic type:vPortExitCritical ();
+  Function call may change dynamic type:xTaskResumeAll ();
+  Function call may change dynamic type:prvUnlockQueue (xQueue_26(D));
+  Function call may change dynamic type:_11 = prvIsQueueEmpty (xQueue_26(D));
+  Function call may change dynamic type:_14 = xTaskResumeAll ();
+  Function call may change dynamic type:prvUnlockQueue (xQueue_26(D));
+  Function call may change dynamic type:vTaskPlaceOnEventList (_12, xTicksToWait.26_13);
+  Function call may change dynamic type:vTaskInternalSetTimeOutState (&xTimeOut);
+Determining dynamic type for call: _15 = prvIsQueueEmpty (xQueue_26(D));
+  Starting walk at: _15 = prvIsQueueEmpty (xQueue_26(D));
+  instance pointer: xQueue_26(D)  Outer instance pointer: xQueue_26(D) offset: 0 (bits) vtbl reference: 
+  Function call may change dynamic type:xTaskResumeAll ();
+  Function call may change dynamic type:prvUnlockQueue (xQueue_26(D));
+  Function call may change dynamic type:_10 = xTaskCheckForTimeOut (&xTimeOut, &xTicksToWait);
+  Function call may change dynamic type:vPortExitCritical ();
+  Function call may change dynamic type:vPortEnterCritical ();
+  Function call may change dynamic type:vTaskSuspendAll ();
+  Function call may change dynamic type:vPortExitCritical ();
+  Function call may change dynamic type:vPortEnterCritical ();
+  Function call may change dynamic type:_2 = xTaskGetSchedulerState ();
+  Function call may change dynamic type:_15 = prvIsQueueEmpty (xQueue_26(D));
+  Function call may change dynamic type:xTaskResumeAll ();
+  Function call may change dynamic type:prvUnlockQueue (xQueue_26(D));
+  Function call may change dynamic type:_10 = xTaskCheckForTimeOut (&xTimeOut, &xTicksToWait);
+  Function call may change dynamic type:vPortExitCritical ();
+  Function call may change dynamic type:xTaskResumeAll ();
+  Function call may change dynamic type:prvUnlockQueue (xQueue_26(D));
+  Function call may change dynamic type:_11 = prvIsQueueEmpty (xQueue_26(D));
+  Function call may change dynamic type:_14 = xTaskResumeAll ();
+  Function call may change dynamic type:prvUnlockQueue (xQueue_26(D));
+  Function call may change dynamic type:vTaskPlaceOnEventList (_12, xTicksToWait.26_13);
+  Function call may change dynamic type:vTaskInternalSetTimeOutState (&xTimeOut);
+Determining dynamic type for call: _11 = prvIsQueueEmpty (xQueue_26(D));
+  Starting walk at: _11 = prvIsQueueEmpty (xQueue_26(D));
+  instance pointer: xQueue_26(D)  Outer instance pointer: xQueue_26(D) offset: 0 (bits) vtbl reference: 
+  Function call may change dynamic type:_10 = xTaskCheckForTimeOut (&xTimeOut, &xTicksToWait);
+  Function call may change dynamic type:vPortExitCritical ();
+  Function call may change dynamic type:vPortEnterCritical ();
+  Function call may change dynamic type:vTaskSuspendAll ();
+  Function call may change dynamic type:vPortExitCritical ();
+  Function call may change dynamic type:vPortEnterCritical ();
+  Function call may change dynamic type:_2 = xTaskGetSchedulerState ();
+  Function call may change dynamic type:_15 = prvIsQueueEmpty (xQueue_26(D));
+  Function call may change dynamic type:xTaskResumeAll ();
+  Function call may change dynamic type:prvUnlockQueue (xQueue_26(D));
+  Function call may change dynamic type:_10 = xTaskCheckForTimeOut (&xTimeOut, &xTicksToWait);
+  Function call may change dynamic type:vPortExitCritical ();
+  Function call may change dynamic type:xTaskResumeAll ();
+  Function call may change dynamic type:prvUnlockQueue (xQueue_26(D));
+  Function call may change dynamic type:_11 = prvIsQueueEmpty (xQueue_26(D));
+  Function call may change dynamic type:_14 = xTaskResumeAll ();
+  Function call may change dynamic type:prvUnlockQueue (xQueue_26(D));
+  Function call may change dynamic type:vTaskPlaceOnEventList (_12, xTicksToWait.26_13);
+  Function call may change dynamic type:vTaskInternalSetTimeOutState (&xTimeOut);
+Determining dynamic type for call: prvUnlockQueue (xQueue_26(D));
+  Starting walk at: prvUnlockQueue (xQueue_26(D));
+  instance pointer: xQueue_26(D)  Outer instance pointer: xQueue_26(D) offset: 0 (bits) vtbl reference: 
+  Function call may change dynamic type:_11 = prvIsQueueEmpty (xQueue_26(D));
+  Function call may change dynamic type:_10 = xTaskCheckForTimeOut (&xTimeOut, &xTicksToWait);
+  Function call may change dynamic type:vPortExitCritical ();
+  Function call may change dynamic type:vPortEnterCritical ();
+  Function call may change dynamic type:vTaskSuspendAll ();
+  Function call may change dynamic type:vPortExitCritical ();
+  Function call may change dynamic type:vPortEnterCritical ();
+  Function call may change dynamic type:_2 = xTaskGetSchedulerState ();
+  Function call may change dynamic type:_15 = prvIsQueueEmpty (xQueue_26(D));
+  Function call may change dynamic type:xTaskResumeAll ();
+  Function call may change dynamic type:prvUnlockQueue (xQueue_26(D));
+  Function call may change dynamic type:_10 = xTaskCheckForTimeOut (&xTimeOut, &xTicksToWait);
+  Function call may change dynamic type:vPortExitCritical ();
+  Function call may change dynamic type:xTaskResumeAll ();
+  Function call may change dynamic type:prvUnlockQueue (xQueue_26(D));
+  Function call may change dynamic type:_11 = prvIsQueueEmpty (xQueue_26(D));
+  Function call may change dynamic type:_14 = xTaskResumeAll ();
+  Function call may change dynamic type:prvUnlockQueue (xQueue_26(D));
+  Function call may change dynamic type:vTaskPlaceOnEventList (_12, xTicksToWait.26_13);
+  Function call may change dynamic type:vTaskInternalSetTimeOutState (&xTimeOut);
+Determining dynamic type for call: prvUnlockQueue (xQueue_26(D));
+  Starting walk at: prvUnlockQueue (xQueue_26(D));
+  instance pointer: xQueue_26(D)  Outer instance pointer: xQueue_26(D) offset: 0 (bits) vtbl reference: 
+  Function call may change dynamic type:vTaskPlaceOnEventList (_12, xTicksToWait.26_13);
+  Function call may change dynamic type:_11 = prvIsQueueEmpty (xQueue_26(D));
+  Function call may change dynamic type:_10 = xTaskCheckForTimeOut (&xTimeOut, &xTicksToWait);
+  Function call may change dynamic type:vPortExitCritical ();
+  Function call may change dynamic type:vPortEnterCritical ();
+  Function call may change dynamic type:vTaskSuspendAll ();
+  Function call may change dynamic type:vPortExitCritical ();
+  Function call may change dynamic type:vPortEnterCritical ();
+  Function call may change dynamic type:_2 = xTaskGetSchedulerState ();
+  Function call may change dynamic type:_15 = prvIsQueueEmpty (xQueue_26(D));
+  Function call may change dynamic type:xTaskResumeAll ();
+  Function call may change dynamic type:prvUnlockQueue (xQueue_26(D));
+  Function call may change dynamic type:_10 = xTaskCheckForTimeOut (&xTimeOut, &xTicksToWait);
+  Function call may change dynamic type:vPortExitCritical ();
+  Function call may change dynamic type:xTaskResumeAll ();
+  Function call may change dynamic type:prvUnlockQueue (xQueue_26(D));
+  Function call may change dynamic type:_11 = prvIsQueueEmpty (xQueue_26(D));
+  Function call may change dynamic type:_14 = xTaskResumeAll ();
+  Function call may change dynamic type:prvUnlockQueue (xQueue_26(D));
+  Function call may change dynamic type:vTaskPlaceOnEventList (_12, xTicksToWait.26_13);
+  Function call may change dynamic type:vTaskInternalSetTimeOutState (&xTimeOut);
+Determining dynamic type for call: prvCopyDataFromQueue (xQueue_26(D), pvBuffer_27(D));
+  Starting walk at: prvCopyDataFromQueue (xQueue_26(D), pvBuffer_27(D));
+  instance pointer: xQueue_26(D)  Outer instance pointer: xQueue_26(D) offset: 0 (bits) vtbl reference: 
+  Function call may change dynamic type:vPortEnterCritical ();
+  Function call may change dynamic type:_2 = xTaskGetSchedulerState ();
+  Function call may change dynamic type:_15 = prvIsQueueEmpty (xQueue_26(D));
+  Function call may change dynamic type:xTaskResumeAll ();
+  Function call may change dynamic type:prvUnlockQueue (xQueue_26(D));
+  Function call may change dynamic type:_10 = xTaskCheckForTimeOut (&xTimeOut, &xTicksToWait);
+  Function call may change dynamic type:vPortExitCritical ();
+  Function call may change dynamic type:vPortEnterCritical ();
+  Function call may change dynamic type:vTaskSuspendAll ();
+  Function call may change dynamic type:vPortExitCritical ();
+  Function call may change dynamic type:vPortEnterCritical ();
+  Function call may change dynamic type:vTaskInternalSetTimeOutState (&xTimeOut);
+  Function call may change dynamic type:xTaskResumeAll ();
+  Function call may change dynamic type:prvUnlockQueue (xQueue_26(D));
+  Function call may change dynamic type:_11 = prvIsQueueEmpty (xQueue_26(D));
+  Function call may change dynamic type:_14 = xTaskResumeAll ();
+  Function call may change dynamic type:prvUnlockQueue (xQueue_26(D));
+  Function call may change dynamic type:vTaskPlaceOnEventList (_12, xTicksToWait.26_13);
+Determining dynamic type for call: prvCopyDataFromQueue (xQueue_26(D), pvBuffer_27(D));
+  Starting walk at: prvCopyDataFromQueue (xQueue_26(D), pvBuffer_27(D));
+  instance pointer: pvBuffer_27(D)  Outer instance pointer: pvBuffer_27(D) offset: 0 (bits) vtbl reference: 
+  Function call may change dynamic type:vPortEnterCritical ();
+  Function call may change dynamic type:_2 = xTaskGetSchedulerState ();
+  Function call may change dynamic type:_15 = prvIsQueueEmpty (xQueue_26(D));
+  Function call may change dynamic type:xTaskResumeAll ();
+  Function call may change dynamic type:prvUnlockQueue (xQueue_26(D));
+  Function call may change dynamic type:_10 = xTaskCheckForTimeOut (&xTimeOut, &xTicksToWait);
+  Function call may change dynamic type:vPortExitCritical ();
+  Function call may change dynamic type:vPortEnterCritical ();
+  Function call may change dynamic type:vTaskSuspendAll ();
+  Function call may change dynamic type:vPortExitCritical ();
+  Function call may change dynamic type:vPortEnterCritical ();
+  Function call may change dynamic type:vTaskInternalSetTimeOutState (&xTimeOut);
+  Function call may change dynamic type:xTaskResumeAll ();
+  Function call may change dynamic type:prvUnlockQueue (xQueue_26(D));
+  Function call may change dynamic type:_11 = prvIsQueueEmpty (xQueue_26(D));
+  Function call may change dynamic type:_14 = xTaskResumeAll ();
+  Function call may change dynamic type:prvUnlockQueue (xQueue_26(D));
+  Function call may change dynamic type:vTaskPlaceOnEventList (_12, xTicksToWait.26_13);
+Determining dynamic type for call: prvUnlockQueue (xQueue_38(D));
+  Starting walk at: prvUnlockQueue (xQueue_38(D));
+  instance pointer: xQueue_38(D)  Outer instance pointer: xQueue_38(D) offset: 0 (bits) vtbl reference: 
+  Function call may change dynamic type:_13 = xTaskCheckForTimeOut (&xTimeOut, &xTicksToWait);
+  Function call may change dynamic type:vPortExitCritical ();
+  Function call may change dynamic type:vPortEnterCritical ();
+  Function call may change dynamic type:vTaskSuspendAll ();
+  Function call may change dynamic type:vPortExitCritical ();
+  Function call may change dynamic type:vPortEnterCritical ();
+  Function call may change dynamic type:_2 = xTaskGetSchedulerState ();
+  Function call may change dynamic type:_20 = prvIsQueueEmpty (xQueue_38(D));
+  Function call may change dynamic type:xTaskResumeAll ();
+  Function call may change dynamic type:prvUnlockQueue (xQueue_38(D));
+  Function call may change dynamic type:_13 = xTaskCheckForTimeOut (&xTimeOut, &xTicksToWait);
+  Function call may change dynamic type:vPortExitCritical ();
+  Function call may change dynamic type:xTaskResumeAll ();
+  Function call may change dynamic type:prvUnlockQueue (xQueue_38(D));
+  Function call may change dynamic type:_14 = prvIsQueueEmpty (xQueue_38(D));
+  Function call may change dynamic type:_19 = xTaskResumeAll ();
+  Function call may change dynamic type:prvUnlockQueue (xQueue_38(D));
+  Function call may change dynamic type:vTaskPlaceOnEventList (_17, xTicksToWait.21_18);
+  Function call may change dynamic type:vPortExitCritical ();
+  Function call may change dynamic type:xInheritanceOccurred_68 = xTaskPriorityInherit (_16);
+  Function call may change dynamic type:vPortEnterCritical ();
+  Function call may change dynamic type:vTaskInternalSetTimeOutState (&xTimeOut);
+Determining dynamic type for call: _20 = prvIsQueueEmpty (xQueue_38(D));
+  Starting walk at: _20 = prvIsQueueEmpty (xQueue_38(D));
+  instance pointer: xQueue_38(D)  Outer instance pointer: xQueue_38(D) offset: 0 (bits) vtbl reference: 
+  Function call may change dynamic type:xTaskResumeAll ();
+  Function call may change dynamic type:prvUnlockQueue (xQueue_38(D));
+  Function call may change dynamic type:_13 = xTaskCheckForTimeOut (&xTimeOut, &xTicksToWait);
+  Function call may change dynamic type:vPortExitCritical ();
+  Function call may change dynamic type:vPortEnterCritical ();
+  Function call may change dynamic type:vTaskSuspendAll ();
+  Function call may change dynamic type:vPortExitCritical ();
+  Function call may change dynamic type:vPortEnterCritical ();
+  Function call may change dynamic type:_2 = xTaskGetSchedulerState ();
+  Function call may change dynamic type:_20 = prvIsQueueEmpty (xQueue_38(D));
+  Function call may change dynamic type:xTaskResumeAll ();
+  Function call may change dynamic type:prvUnlockQueue (xQueue_38(D));
+  Function call may change dynamic type:_13 = xTaskCheckForTimeOut (&xTimeOut, &xTicksToWait);
+  Function call may change dynamic type:vPortExitCritical ();
+  Function call may change dynamic type:xTaskResumeAll ();
+  Function call may change dynamic type:prvUnlockQueue (xQueue_38(D));
+  Function call may change dynamic type:_14 = prvIsQueueEmpty (xQueue_38(D));
+  Function call may change dynamic type:_19 = xTaskResumeAll ();
+  Function call may change dynamic type:prvUnlockQueue (xQueue_38(D));
+  Function call may change dynamic type:vTaskPlaceOnEventList (_17, xTicksToWait.21_18);
+  Function call may change dynamic type:vPortExitCritical ();
+  Function call may change dynamic type:xInheritanceOccurred_68 = xTaskPriorityInherit (_16);
+  Function call may change dynamic type:vPortEnterCritical ();
+  Function call may change dynamic type:vTaskInternalSetTimeOutState (&xTimeOut);
+Determining dynamic type for call: uxHighestWaitingPriority_60 = prvGetDisinheritPriorityAfterTimeout (xQueue_38(D));
+  Starting walk at: uxHighestWaitingPriority_60 = prvGetDisinheritPriorityAfterTimeout (xQueue_38(D));
+  instance pointer: xQueue_38(D)  Outer instance pointer: xQueue_38(D) offset: 0 (bits) vtbl reference: 
+  Function call may change dynamic type:vPortEnterCritical ();
+  Function call may change dynamic type:_20 = prvIsQueueEmpty (xQueue_38(D));
+  Function call may change dynamic type:xTaskResumeAll ();
+  Function call may change dynamic type:prvUnlockQueue (xQueue_38(D));
+  Function call may change dynamic type:_13 = xTaskCheckForTimeOut (&xTimeOut, &xTicksToWait);
+  Function call may change dynamic type:vPortExitCritical ();
+  Function call may change dynamic type:vPortEnterCritical ();
+  Function call may change dynamic type:vTaskSuspendAll ();
+  Function call may change dynamic type:vPortExitCritical ();
+  Function call may change dynamic type:vPortEnterCritical ();
+  Function call may change dynamic type:_2 = xTaskGetSchedulerState ();
+  Function call may change dynamic type:_20 = prvIsQueueEmpty (xQueue_38(D));
+  Function call may change dynamic type:xTaskResumeAll ();
+  Function call may change dynamic type:prvUnlockQueue (xQueue_38(D));
+  Function call may change dynamic type:_13 = xTaskCheckForTimeOut (&xTimeOut, &xTicksToWait);
+  Function call may change dynamic type:vPortExitCritical ();
+  Function call may change dynamic type:xTaskResumeAll ();
+  Function call may change dynamic type:prvUnlockQueue (xQueue_38(D));
+  Function call may change dynamic type:_14 = prvIsQueueEmpty (xQueue_38(D));
+  Function call may change dynamic type:_19 = xTaskResumeAll ();
+  Function call may change dynamic type:prvUnlockQueue (xQueue_38(D));
+  Function call may change dynamic type:vTaskPlaceOnEventList (_17, xTicksToWait.21_18);
+  Function call may change dynamic type:vPortExitCritical ();
+  Function call may change dynamic type:xInheritanceOccurred_68 = xTaskPriorityInherit (_16);
+  Function call may change dynamic type:vPortEnterCritical ();
+  Function call may change dynamic type:vTaskInternalSetTimeOutState (&xTimeOut);
+Determining dynamic type for call: _14 = prvIsQueueEmpty (xQueue_38(D));
+  Starting walk at: _14 = prvIsQueueEmpty (xQueue_38(D));
+  instance pointer: xQueue_38(D)  Outer instance pointer: xQueue_38(D) offset: 0 (bits) vtbl reference: 
+  Function call may change dynamic type:_13 = xTaskCheckForTimeOut (&xTimeOut, &xTicksToWait);
+  Function call may change dynamic type:vPortExitCritical ();
+  Function call may change dynamic type:vPortEnterCritical ();
+  Function call may change dynamic type:vTaskSuspendAll ();
+  Function call may change dynamic type:vPortExitCritical ();
+  Function call may change dynamic type:vPortEnterCritical ();
+  Function call may change dynamic type:_2 = xTaskGetSchedulerState ();
+  Function call may change dynamic type:_20 = prvIsQueueEmpty (xQueue_38(D));
+  Function call may change dynamic type:xTaskResumeAll ();
+  Function call may change dynamic type:prvUnlockQueue (xQueue_38(D));
+  Function call may change dynamic type:_13 = xTaskCheckForTimeOut (&xTimeOut, &xTicksToWait);
+  Function call may change dynamic type:vPortExitCritical ();
+  Function call may change dynamic type:xTaskResumeAll ();
+  Function call may change dynamic type:prvUnlockQueue (xQueue_38(D));
+  Function call may change dynamic type:_14 = prvIsQueueEmpty (xQueue_38(D));
+  Function call may change dynamic type:_19 = xTaskResumeAll ();
+  Function call may change dynamic type:prvUnlockQueue (xQueue_38(D));
+  Function call may change dynamic type:vTaskPlaceOnEventList (_17, xTicksToWait.21_18);
+  Function call may change dynamic type:vPortExitCritical ();
+  Function call may change dynamic type:xInheritanceOccurred_68 = xTaskPriorityInherit (_16);
+  Function call may change dynamic type:vPortEnterCritical ();
+  Function call may change dynamic type:vTaskInternalSetTimeOutState (&xTimeOut);
+Determining dynamic type for call: prvUnlockQueue (xQueue_38(D));
+  Starting walk at: prvUnlockQueue (xQueue_38(D));
+  instance pointer: xQueue_38(D)  Outer instance pointer: xQueue_38(D) offset: 0 (bits) vtbl reference: 
+  Function call may change dynamic type:_14 = prvIsQueueEmpty (xQueue_38(D));
+  Function call may change dynamic type:_13 = xTaskCheckForTimeOut (&xTimeOut, &xTicksToWait);
+  Function call may change dynamic type:vPortExitCritical ();
+  Function call may change dynamic type:vPortEnterCritical ();
+  Function call may change dynamic type:vTaskSuspendAll ();
+  Function call may change dynamic type:vPortExitCritical ();
+  Function call may change dynamic type:vPortEnterCritical ();
+  Function call may change dynamic type:_2 = xTaskGetSchedulerState ();
+  Function call may change dynamic type:_20 = prvIsQueueEmpty (xQueue_38(D));
+  Function call may change dynamic type:xTaskResumeAll ();
+  Function call may change dynamic type:prvUnlockQueue (xQueue_38(D));
+  Function call may change dynamic type:_13 = xTaskCheckForTimeOut (&xTimeOut, &xTicksToWait);
+  Function call may change dynamic type:vPortExitCritical ();
+  Function call may change dynamic type:xTaskResumeAll ();
+  Function call may change dynamic type:prvUnlockQueue (xQueue_38(D));
+  Function call may change dynamic type:_14 = prvIsQueueEmpty (xQueue_38(D));
+  Function call may change dynamic type:_19 = xTaskResumeAll ();
+  Function call may change dynamic type:prvUnlockQueue (xQueue_38(D));
+  Function call may change dynamic type:vTaskPlaceOnEventList (_17, xTicksToWait.21_18);
+  Function call may change dynamic type:vPortExitCritical ();
+  Function call may change dynamic type:xInheritanceOccurred_68 = xTaskPriorityInherit (_16);
+  Function call may change dynamic type:vPortEnterCritical ();
+  Function call may change dynamic type:vTaskInternalSetTimeOutState (&xTimeOut);
+Determining dynamic type for call: prvUnlockQueue (xQueue_38(D));
+  Starting walk at: prvUnlockQueue (xQueue_38(D));
+  instance pointer: xQueue_38(D)  Outer instance pointer: xQueue_38(D) offset: 0 (bits) vtbl reference: 
+  Function call may change dynamic type:vTaskPlaceOnEventList (_17, xTicksToWait.21_18);
+  Function call may change dynamic type:_14 = prvIsQueueEmpty (xQueue_38(D));
+  Function call may change dynamic type:_13 = xTaskCheckForTimeOut (&xTimeOut, &xTicksToWait);
+  Function call may change dynamic type:vPortExitCritical ();
+  Function call may change dynamic type:vPortEnterCritical ();
+  Function call may change dynamic type:vTaskSuspendAll ();
+  Function call may change dynamic type:vPortExitCritical ();
+  Function call may change dynamic type:vPortEnterCritical ();
+  Function call may change dynamic type:_2 = xTaskGetSchedulerState ();
+  Function call may change dynamic type:_20 = prvIsQueueEmpty (xQueue_38(D));
+  Function call may change dynamic type:xTaskResumeAll ();
+  Function call may change dynamic type:prvUnlockQueue (xQueue_38(D));
+  Function call may change dynamic type:xTaskResumeAll ();
+  Function call may change dynamic type:prvUnlockQueue (xQueue_38(D));
+  Function call may change dynamic type:_19 = xTaskResumeAll ();
+  Function call may change dynamic type:prvUnlockQueue (xQueue_38(D));
+  Function call may change dynamic type:vTaskPlaceOnEventList (_17, xTicksToWait.21_18);
+  Function call may change dynamic type:vPortExitCritical ();
+  Function call may change dynamic type:xInheritanceOccurred_68 = xTaskPriorityInherit (_16);
+  Function call may change dynamic type:vPortEnterCritical ();
+  Function call may change dynamic type:vTaskInternalSetTimeOutState (&xTimeOut);
+Determining dynamic type for call: prvUnlockQueue (xQueue_27(D));
+  Starting walk at: prvUnlockQueue (xQueue_27(D));
+  instance pointer: xQueue_27(D)  Outer instance pointer: xQueue_27(D) offset: 0 (bits) vtbl reference: 
+  Function call may change dynamic type:_11 = xTaskCheckForTimeOut (&xTimeOut, &xTicksToWait);
+  Function call may change dynamic type:vPortExitCritical ();
+  Function call may change dynamic type:vPortEnterCritical ();
+  Function call may change dynamic type:vTaskSuspendAll ();
+  Function call may change dynamic type:vPortExitCritical ();
+  Function call may change dynamic type:vPortEnterCritical ();
+  Function call may change dynamic type:_2 = xTaskGetSchedulerState ();
+  Function call may change dynamic type:_16 = prvIsQueueEmpty (xQueue_27(D));
+  Function call may change dynamic type:xTaskResumeAll ();
+  Function call may change dynamic type:prvUnlockQueue (xQueue_27(D));
+  Function call may change dynamic type:_11 = xTaskCheckForTimeOut (&xTimeOut, &xTicksToWait);
+  Function call may change dynamic type:vPortExitCritical ();
+  Function call may change dynamic type:xTaskResumeAll ();
+  Function call may change dynamic type:prvUnlockQueue (xQueue_27(D));
+  Function call may change dynamic type:_12 = prvIsQueueEmpty (xQueue_27(D));
+  Function call may change dynamic type:_15 = xTaskResumeAll ();
+  Function call may change dynamic type:prvUnlockQueue (xQueue_27(D));
+  Function call may change dynamic type:vTaskPlaceOnEventList (_13, xTicksToWait.17_14);
+  Function call may change dynamic type:vTaskInternalSetTimeOutState (&xTimeOut);
+Determining dynamic type for call: _16 = prvIsQueueEmpty (xQueue_27(D));
+  Starting walk at: _16 = prvIsQueueEmpty (xQueue_27(D));
+  instance pointer: xQueue_27(D)  Outer instance pointer: xQueue_27(D) offset: 0 (bits) vtbl reference: 
+  Function call may change dynamic type:xTaskResumeAll ();
+  Function call may change dynamic type:prvUnlockQueue (xQueue_27(D));
+  Function call may change dynamic type:_11 = xTaskCheckForTimeOut (&xTimeOut, &xTicksToWait);
+  Function call may change dynamic type:vPortExitCritical ();
+  Function call may change dynamic type:vPortEnterCritical ();
+  Function call may change dynamic type:vTaskSuspendAll ();
+  Function call may change dynamic type:vPortExitCritical ();
+  Function call may change dynamic type:vPortEnterCritical ();
+  Function call may change dynamic type:_2 = xTaskGetSchedulerState ();
+  Function call may change dynamic type:_16 = prvIsQueueEmpty (xQueue_27(D));
+  Function call may change dynamic type:xTaskResumeAll ();
+  Function call may change dynamic type:prvUnlockQueue (xQueue_27(D));
+  Function call may change dynamic type:_11 = xTaskCheckForTimeOut (&xTimeOut, &xTicksToWait);
+  Function call may change dynamic type:vPortExitCritical ();
+  Function call may change dynamic type:xTaskResumeAll ();
+  Function call may change dynamic type:prvUnlockQueue (xQueue_27(D));
+  Function call may change dynamic type:_12 = prvIsQueueEmpty (xQueue_27(D));
+  Function call may change dynamic type:_15 = xTaskResumeAll ();
+  Function call may change dynamic type:prvUnlockQueue (xQueue_27(D));
+  Function call may change dynamic type:vTaskPlaceOnEventList (_13, xTicksToWait.17_14);
+  Function call may change dynamic type:vTaskInternalSetTimeOutState (&xTimeOut);
+Determining dynamic type for call: _12 = prvIsQueueEmpty (xQueue_27(D));
+  Starting walk at: _12 = prvIsQueueEmpty (xQueue_27(D));
+  instance pointer: xQueue_27(D)  Outer instance pointer: xQueue_27(D) offset: 0 (bits) vtbl reference: 
+  Function call may change dynamic type:_11 = xTaskCheckForTimeOut (&xTimeOut, &xTicksToWait);
+  Function call may change dynamic type:vPortExitCritical ();
+  Function call may change dynamic type:vPortEnterCritical ();
+  Function call may change dynamic type:vTaskSuspendAll ();
+  Function call may change dynamic type:vPortExitCritical ();
+  Function call may change dynamic type:vPortEnterCritical ();
+  Function call may change dynamic type:_2 = xTaskGetSchedulerState ();
+  Function call may change dynamic type:_16 = prvIsQueueEmpty (xQueue_27(D));
+  Function call may change dynamic type:xTaskResumeAll ();
+  Function call may change dynamic type:prvUnlockQueue (xQueue_27(D));
+  Function call may change dynamic type:_11 = xTaskCheckForTimeOut (&xTimeOut, &xTicksToWait);
+  Function call may change dynamic type:vPortExitCritical ();
+  Function call may change dynamic type:xTaskResumeAll ();
+  Function call may change dynamic type:prvUnlockQueue (xQueue_27(D));
+  Function call may change dynamic type:_12 = prvIsQueueEmpty (xQueue_27(D));
+  Function call may change dynamic type:_15 = xTaskResumeAll ();
+  Function call may change dynamic type:prvUnlockQueue (xQueue_27(D));
+  Function call may change dynamic type:vTaskPlaceOnEventList (_13, xTicksToWait.17_14);
+  Function call may change dynamic type:vTaskInternalSetTimeOutState (&xTimeOut);
+Determining dynamic type for call: prvUnlockQueue (xQueue_27(D));
+  Starting walk at: prvUnlockQueue (xQueue_27(D));
+  instance pointer: xQueue_27(D)  Outer instance pointer: xQueue_27(D) offset: 0 (bits) vtbl reference: 
+  Function call may change dynamic type:_12 = prvIsQueueEmpty (xQueue_27(D));
+  Function call may change dynamic type:_11 = xTaskCheckForTimeOut (&xTimeOut, &xTicksToWait);
+  Function call may change dynamic type:vPortExitCritical ();
+  Function call may change dynamic type:vPortEnterCritical ();
+  Function call may change dynamic type:vTaskSuspendAll ();
+  Function call may change dynamic type:vPortExitCritical ();
+  Function call may change dynamic type:vPortEnterCritical ();
+  Function call may change dynamic type:_2 = xTaskGetSchedulerState ();
+  Function call may change dynamic type:_16 = prvIsQueueEmpty (xQueue_27(D));
+  Function call may change dynamic type:xTaskResumeAll ();
+  Function call may change dynamic type:prvUnlockQueue (xQueue_27(D));
+  Function call may change dynamic type:_11 = xTaskCheckForTimeOut (&xTimeOut, &xTicksToWait);
+  Function call may change dynamic type:vPortExitCritical ();
+  Function call may change dynamic type:xTaskResumeAll ();
+  Function call may change dynamic type:prvUnlockQueue (xQueue_27(D));
+  Function call may change dynamic type:_12 = prvIsQueueEmpty (xQueue_27(D));
+  Function call may change dynamic type:_15 = xTaskResumeAll ();
+  Function call may change dynamic type:prvUnlockQueue (xQueue_27(D));
+  Function call may change dynamic type:vTaskPlaceOnEventList (_13, xTicksToWait.17_14);
+  Function call may change dynamic type:vTaskInternalSetTimeOutState (&xTimeOut);
+Determining dynamic type for call: prvUnlockQueue (xQueue_27(D));
+  Starting walk at: prvUnlockQueue (xQueue_27(D));
+  instance pointer: xQueue_27(D)  Outer instance pointer: xQueue_27(D) offset: 0 (bits) vtbl reference: 
+  Function call may change dynamic type:vTaskPlaceOnEventList (_13, xTicksToWait.17_14);
+  Function call may change dynamic type:_12 = prvIsQueueEmpty (xQueue_27(D));
+  Function call may change dynamic type:_11 = xTaskCheckForTimeOut (&xTimeOut, &xTicksToWait);
+  Function call may change dynamic type:vPortExitCritical ();
+  Function call may change dynamic type:vPortEnterCritical ();
+  Function call may change dynamic type:vTaskSuspendAll ();
+  Function call may change dynamic type:vPortExitCritical ();
+  Function call may change dynamic type:vPortEnterCritical ();
+  Function call may change dynamic type:_2 = xTaskGetSchedulerState ();
+  Function call may change dynamic type:_16 = prvIsQueueEmpty (xQueue_27(D));
+  Function call may change dynamic type:xTaskResumeAll ();
+  Function call may change dynamic type:prvUnlockQueue (xQueue_27(D));
+  Function call may change dynamic type:_11 = xTaskCheckForTimeOut (&xTimeOut, &xTicksToWait);
+  Function call may change dynamic type:vPortExitCritical ();
+  Function call may change dynamic type:xTaskResumeAll ();
+  Function call may change dynamic type:prvUnlockQueue (xQueue_27(D));
+  Function call may change dynamic type:_12 = prvIsQueueEmpty (xQueue_27(D));
+  Function call may change dynamic type:_15 = xTaskResumeAll ();
+  Function call may change dynamic type:prvUnlockQueue (xQueue_27(D));
+  Function call may change dynamic type:vTaskPlaceOnEventList (_13, xTicksToWait.17_14);
+  Function call may change dynamic type:vTaskInternalSetTimeOutState (&xTimeOut);
+Determining dynamic type for call: prvCopyDataFromQueue (xQueue_27(D), pvBuffer_28(D));
+  Starting walk at: prvCopyDataFromQueue (xQueue_27(D), pvBuffer_28(D));
+  instance pointer: xQueue_27(D)  Outer instance pointer: xQueue_27(D) offset: 0 (bits) vtbl reference: 
+  Function call may change dynamic type:vPortEnterCritical ();
+  Function call may change dynamic type:_2 = xTaskGetSchedulerState ();
+  Function call may change dynamic type:_16 = prvIsQueueEmpty (xQueue_27(D));
+  Function call may change dynamic type:xTaskResumeAll ();
+  Function call may change dynamic type:prvUnlockQueue (xQueue_27(D));
+  Function call may change dynamic type:_11 = xTaskCheckForTimeOut (&xTimeOut, &xTicksToWait);
+  Function call may change dynamic type:vPortExitCritical ();
+  Function call may change dynamic type:vPortEnterCritical ();
+  Function call may change dynamic type:vTaskSuspendAll ();
+  Function call may change dynamic type:vPortExitCritical ();
+  Function call may change dynamic type:vPortEnterCritical ();
+  Function call may change dynamic type:vTaskInternalSetTimeOutState (&xTimeOut);
+  Function call may change dynamic type:xTaskResumeAll ();
+  Function call may change dynamic type:prvUnlockQueue (xQueue_27(D));
+  Function call may change dynamic type:_12 = prvIsQueueEmpty (xQueue_27(D));
+  Function call may change dynamic type:_15 = xTaskResumeAll ();
+  Function call may change dynamic type:prvUnlockQueue (xQueue_27(D));
+  Function call may change dynamic type:vTaskPlaceOnEventList (_13, xTicksToWait.17_14);
+Determining dynamic type for call: prvCopyDataFromQueue (xQueue_27(D), pvBuffer_28(D));
+  Starting walk at: prvCopyDataFromQueue (xQueue_27(D), pvBuffer_28(D));
+  instance pointer: pvBuffer_28(D)  Outer instance pointer: pvBuffer_28(D) offset: 0 (bits) vtbl reference: 
+  Function call may change dynamic type:vPortEnterCritical ();
+  Function call may change dynamic type:_2 = xTaskGetSchedulerState ();
+  Function call may change dynamic type:_16 = prvIsQueueEmpty (xQueue_27(D));
+  Function call may change dynamic type:xTaskResumeAll ();
+  Function call may change dynamic type:prvUnlockQueue (xQueue_27(D));
+  Function call may change dynamic type:_11 = xTaskCheckForTimeOut (&xTimeOut, &xTicksToWait);
+  Function call may change dynamic type:vPortExitCritical ();
+  Function call may change dynamic type:vPortEnterCritical ();
+  Function call may change dynamic type:vTaskSuspendAll ();
+  Function call may change dynamic type:vPortExitCritical ();
+  Function call may change dynamic type:vPortEnterCritical ();
+  Function call may change dynamic type:vTaskInternalSetTimeOutState (&xTimeOut);
+  Function call may change dynamic type:xTaskResumeAll ();
+  Function call may change dynamic type:prvUnlockQueue (xQueue_27(D));
+  Function call may change dynamic type:_12 = prvIsQueueEmpty (xQueue_27(D));
+  Function call may change dynamic type:_15 = xTaskResumeAll ();
+  Function call may change dynamic type:prvUnlockQueue (xQueue_27(D));
+  Function call may change dynamic type:vTaskPlaceOnEventList (_13, xTicksToWait.17_14);
+Determining dynamic type for call: prvCopyDataToQueue (xQueue_14(D), pvItemToQueue_15(D), xCopyPosition_17(D));
+  Starting walk at: prvCopyDataToQueue (xQueue_14(D), pvItemToQueue_15(D), xCopyPosition_17(D));
+  instance pointer: xQueue_14(D)  Outer instance pointer: xQueue_14(D) offset: 0 (bits) vtbl reference: 
+  Function call may change dynamic type:vPortValidateInterruptPriority ();
+Determining dynamic type for call: prvCopyDataToQueue (xQueue_14(D), pvItemToQueue_15(D), xCopyPosition_17(D));
+  Starting walk at: prvCopyDataToQueue (xQueue_14(D), pvItemToQueue_15(D), xCopyPosition_17(D));
+  instance pointer: pvItemToQueue_15(D)  Outer instance pointer: pvItemToQueue_15(D) offset: 0 (bits) vtbl reference: 
+  Function call may change dynamic type:vPortValidateInterruptPriority ();
+Determining dynamic type for call: prvUnlockQueue (xQueue_29(D));
+  Starting walk at: prvUnlockQueue (xQueue_29(D));
+  instance pointer: xQueue_29(D)  Outer instance pointer: xQueue_29(D) offset: 0 (bits) vtbl reference: 
+  Function call may change dynamic type:_13 = xTaskCheckForTimeOut (&xTimeOut, &xTicksToWait);
+  Function call may change dynamic type:vPortExitCritical ();
+  Function call may change dynamic type:vPortEnterCritical ();
+  Function call may change dynamic type:vTaskSuspendAll ();
+  Function call may change dynamic type:vPortExitCritical ();
+  Function call may change dynamic type:vPortEnterCritical ();
+  Function call may change dynamic type:_3 = xTaskGetSchedulerState ();
+  Function call may change dynamic type:_17 = xTaskResumeAll ();
+  Function call may change dynamic type:prvUnlockQueue (xQueue_29(D));
+  Function call may change dynamic type:vTaskPlaceOnEventList (_15, xTicksToWait.5_16);
+  Function call may change dynamic type:_14 = prvIsQueueFull (xQueue_29(D));
+  Function call may change dynamic type:_13 = xTaskCheckForTimeOut (&xTimeOut, &xTicksToWait);
+  Function call may change dynamic type:vPortExitCritical ();
+  Function call may change dynamic type:xTaskResumeAll ();
+  Function call may change dynamic type:prvUnlockQueue (xQueue_29(D));
+  Function call may change dynamic type:vTaskInternalSetTimeOutState (&xTimeOut);
+Determining dynamic type for call: _14 = prvIsQueueFull (xQueue_29(D));
+  Starting walk at: _14 = prvIsQueueFull (xQueue_29(D));
+  instance pointer: xQueue_29(D)  Outer instance pointer: xQueue_29(D) offset: 0 (bits) vtbl reference: 
+  Function call may change dynamic type:_13 = xTaskCheckForTimeOut (&xTimeOut, &xTicksToWait);
+  Function call may change dynamic type:vPortExitCritical ();
+  Function call may change dynamic type:vPortEnterCritical ();
+  Function call may change dynamic type:vTaskSuspendAll ();
+  Function call may change dynamic type:vPortExitCritical ();
+  Function call may change dynamic type:vPortEnterCritical ();
+  Function call may change dynamic type:_3 = xTaskGetSchedulerState ();
+  Function call may change dynamic type:_17 = xTaskResumeAll ();
+  Function call may change dynamic type:prvUnlockQueue (xQueue_29(D));
+  Function call may change dynamic type:vTaskPlaceOnEventList (_15, xTicksToWait.5_16);
+  Function call may change dynamic type:_14 = prvIsQueueFull (xQueue_29(D));
+  Function call may change dynamic type:_13 = xTaskCheckForTimeOut (&xTimeOut, &xTicksToWait);
+  Function call may change dynamic type:vPortExitCritical ();
+  Function call may change dynamic type:xTaskResumeAll ();
+  Function call may change dynamic type:prvUnlockQueue (xQueue_29(D));
+  Function call may change dynamic type:vTaskInternalSetTimeOutState (&xTimeOut);
+Determining dynamic type for call: prvUnlockQueue (xQueue_29(D));
+  Starting walk at: prvUnlockQueue (xQueue_29(D));
+  instance pointer: xQueue_29(D)  Outer instance pointer: xQueue_29(D) offset: 0 (bits) vtbl reference: 
+  Function call may change dynamic type:_14 = prvIsQueueFull (xQueue_29(D));
+  Function call may change dynamic type:_13 = xTaskCheckForTimeOut (&xTimeOut, &xTicksToWait);
+  Function call may change dynamic type:vPortExitCritical ();
+  Function call may change dynamic type:vPortEnterCritical ();
+  Function call may change dynamic type:vTaskSuspendAll ();
+  Function call may change dynamic type:vPortExitCritical ();
+  Function call may change dynamic type:vPortEnterCritical ();
+  Function call may change dynamic type:_3 = xTaskGetSchedulerState ();
+  Function call may change dynamic type:_17 = xTaskResumeAll ();
+  Function call may change dynamic type:prvUnlockQueue (xQueue_29(D));
+  Function call may change dynamic type:vTaskPlaceOnEventList (_15, xTicksToWait.5_16);
+  Function call may change dynamic type:_14 = prvIsQueueFull (xQueue_29(D));
+  Function call may change dynamic type:_13 = xTaskCheckForTimeOut (&xTimeOut, &xTicksToWait);
+  Function call may change dynamic type:vPortExitCritical ();
+  Function call may change dynamic type:xTaskResumeAll ();
+  Function call may change dynamic type:prvUnlockQueue (xQueue_29(D));
+  Function call may change dynamic type:vTaskInternalSetTimeOutState (&xTimeOut);
+Determining dynamic type for call: prvUnlockQueue (xQueue_29(D));
+  Starting walk at: prvUnlockQueue (xQueue_29(D));
+  instance pointer: xQueue_29(D)  Outer instance pointer: xQueue_29(D) offset: 0 (bits) vtbl reference: 
+  Function call may change dynamic type:vTaskPlaceOnEventList (_15, xTicksToWait.5_16);
+  Function call may change dynamic type:_14 = prvIsQueueFull (xQueue_29(D));
+  Function call may change dynamic type:_13 = xTaskCheckForTimeOut (&xTimeOut, &xTicksToWait);
+  Function call may change dynamic type:vPortExitCritical ();
+  Function call may change dynamic type:vPortEnterCritical ();
+  Function call may change dynamic type:vTaskSuspendAll ();
+  Function call may change dynamic type:vPortExitCritical ();
+  Function call may change dynamic type:vPortEnterCritical ();
+  Function call may change dynamic type:_3 = xTaskGetSchedulerState ();
+  Function call may change dynamic type:_17 = xTaskResumeAll ();
+  Function call may change dynamic type:prvUnlockQueue (xQueue_29(D));
+  Function call may change dynamic type:vTaskPlaceOnEventList (_15, xTicksToWait.5_16);
+  Function call may change dynamic type:_14 = prvIsQueueFull (xQueue_29(D));
+  Function call may change dynamic type:_13 = xTaskCheckForTimeOut (&xTimeOut, &xTicksToWait);
+  Function call may change dynamic type:vPortExitCritical ();
+  Function call may change dynamic type:xTaskResumeAll ();
+  Function call may change dynamic type:prvUnlockQueue (xQueue_29(D));
+  Function call may change dynamic type:vTaskInternalSetTimeOutState (&xTimeOut);
+Determining dynamic type for call: xYieldRequired_57 = prvCopyDataToQueue (xQueue_29(D), pvItemToQueue_30(D), xCopyPosition_32(D));
+  Starting walk at: xYieldRequired_57 = prvCopyDataToQueue (xQueue_29(D), pvItemToQueue_30(D), xCopyPosition_32(D));
+  instance pointer: xQueue_29(D)  Outer instance pointer: xQueue_29(D) offset: 0 (bits) vtbl reference: 
+  Function call may change dynamic type:vPortEnterCritical ();
+  Function call may change dynamic type:_3 = xTaskGetSchedulerState ();
+  Function call may change dynamic type:_17 = xTaskResumeAll ();
+  Function call may change dynamic type:prvUnlockQueue (xQueue_29(D));
+  Function call may change dynamic type:vTaskPlaceOnEventList (_15, xTicksToWait.5_16);
+  Function call may change dynamic type:_14 = prvIsQueueFull (xQueue_29(D));
+  Function call may change dynamic type:_13 = xTaskCheckForTimeOut (&xTimeOut, &xTicksToWait);
+  Function call may change dynamic type:vPortExitCritical ();
+  Function call may change dynamic type:vPortEnterCritical ();
+  Function call may change dynamic type:vTaskSuspendAll ();
+  Function call may change dynamic type:vPortExitCritical ();
+  Function call may change dynamic type:vPortEnterCritical ();
+  Function call may change dynamic type:vTaskInternalSetTimeOutState (&xTimeOut);
+  Function call may change dynamic type:xTaskResumeAll ();
+  Function call may change dynamic type:prvUnlockQueue (xQueue_29(D));
+Determining dynamic type for call: xYieldRequired_57 = prvCopyDataToQueue (xQueue_29(D), pvItemToQueue_30(D), xCopyPosition_32(D));
+  Starting walk at: xYieldRequired_57 = prvCopyDataToQueue (xQueue_29(D), pvItemToQueue_30(D), xCopyPosition_32(D));
+  instance pointer: pvItemToQueue_30(D)  Outer instance pointer: pvItemToQueue_30(D) offset: 0 (bits) vtbl reference: 
+  Function call may change dynamic type:vPortEnterCritical ();
+  Function call may change dynamic type:_3 = xTaskGetSchedulerState ();
+  Function call may change dynamic type:_17 = xTaskResumeAll ();
+  Function call may change dynamic type:prvUnlockQueue (xQueue_29(D));
+  Function call may change dynamic type:vTaskPlaceOnEventList (_15, xTicksToWait.5_16);
+  Function call may change dynamic type:_14 = prvIsQueueFull (xQueue_29(D));
+  Function call may change dynamic type:_13 = xTaskCheckForTimeOut (&xTimeOut, &xTicksToWait);
+  Function call may change dynamic type:vPortExitCritical ();
+  Function call may change dynamic type:vPortEnterCritical ();
+  Function call may change dynamic type:vTaskSuspendAll ();
+  Function call may change dynamic type:vPortExitCritical ();
+  Function call may change dynamic type:vPortEnterCritical ();
+  Function call may change dynamic type:vTaskInternalSetTimeOutState (&xTimeOut);
+  Function call may change dynamic type:xTaskResumeAll ();
+  Function call may change dynamic type:prvUnlockQueue (xQueue_29(D));
+Determining dynamic type for call: xReturn_14 = xQueueSemaphoreTake (xMutex_9(D), xTicksToWait_12(D));
+  Starting walk at: xReturn_14 = xQueueSemaphoreTake (xMutex_9(D), xTicksToWait_12(D));
+  instance pointer: xMutex_9(D)  Outer instance pointer: xMutex_9(D) offset: 0 (bits) vtbl reference: 
+  Function call may change dynamic type:_2 = xTaskGetCurrentTaskHandle ();
+Determining dynamic type for call: xQueueGenericSend (xMutex_7(D), 0B, 0, 0);
+  Starting walk at: xQueueGenericSend (xMutex_7(D), 0B, 0, 0);
+  instance pointer: xMutex_7(D)  Outer instance pointer: xMutex_7(D) offset: 0 (bits) vtbl reference: 
+  Function call may change dynamic type:_2 = xTaskGetCurrentTaskHandle ();
+Determining dynamic type for call: xQueueGenericSend (xMutex_7(D), 0B, 0, 0);
+  Starting walk at: xQueueGenericSend (xMutex_7(D), 0B, 0, 0);
+  instance pointer: 0B  Outer instance pointer: 0B offset: 0 (bits) vtbl reference: 
+  Function call may change dynamic type:_2 = xTaskGetCurrentTaskHandle ();
+Determining dynamic type for call: prvInitialiseMutex (xNewQueue_4);
+  Starting walk at: prvInitialiseMutex (xNewQueue_4);
+  instance pointer: xNewQueue_4  Outer instance pointer: xNewQueue_4 offset: 0 (bits) vtbl reference: 
+  Function call may change dynamic type:xNewQueue_4 = xQueueGenericCreate (1, 0, ucQueueType_2(D));
+Determining dynamic type for call: xQueueGenericSend (pxNewQueue_2(D), 0B, 0, 0);
+  Starting walk at: xQueueGenericSend (pxNewQueue_2(D), 0B, 0, 0);
+  instance pointer: pxNewQueue_2(D)  Outer instance pointer: pxNewQueue_2(D) offset: 0 (bits) vtbl reference: 
+Determining dynamic type for call: xQueueGenericSend (pxNewQueue_2(D), 0B, 0, 0);
+  Starting walk at: xQueueGenericSend (pxNewQueue_2(D), 0B, 0, 0);
+  instance pointer: 0B  Outer instance pointer: 0B offset: 0 (bits) vtbl reference: 
+Determining dynamic type for call: xQueueGenericReset (pxNewQueue_4(D), 1);
+  Starting walk at: xQueueGenericReset (pxNewQueue_4(D), 1);
+  instance pointer: pxNewQueue_4(D)  Outer instance pointer: pxNewQueue_4(D) offset: 0 (bits) vtbl reference: 
+Determining dynamic type for call: prvInitialiseNewQueue (uxQueueLength_6(D), uxItemSize_7(D), pucQueueStorage_11, ucQueueType_12(D), pxNewQueue_10);
+  Starting walk at: prvInitialiseNewQueue (uxQueueLength_6(D), uxItemSize_7(D), pucQueueStorage_11, ucQueueType_12(D), pxNewQueue_10);
+  instance pointer: pucQueueStorage_11  Outer instance pointer: pucQueueStorage_11 offset: 0 (bits) vtbl reference: 
+  Function call may change dynamic type:pxNewQueue_10 = pvPortMalloc (_4);
+Determining dynamic type for call: prvInitialiseNewQueue (uxQueueLength_6(D), uxItemSize_7(D), pucQueueStorage_11, ucQueueType_12(D), pxNewQueue_10);
+  Starting walk at: prvInitialiseNewQueue (uxQueueLength_6(D), uxItemSize_7(D), pucQueueStorage_11, ucQueueType_12(D), pxNewQueue_10);
+  instance pointer: pxNewQueue_10  Outer instance pointer: pxNewQueue_10 offset: 0 (bits) vtbl reference: 
+  Function call may change dynamic type:pxNewQueue_10 = pvPortMalloc (_4);
+Determining dynamic type for call: _11 = xQueueGenericReset.part.0 (xQueue_6(D), xNewQueue_8(D));
+  Starting walk at: _11 = xQueueGenericReset.part.0 (xQueue_6(D), xNewQueue_8(D));
+  instance pointer: xQueue_6(D)  Outer instance pointer: xQueue_6(D) offset: 0 (bits) vtbl reference: 
+
+IPA structures before propagation:
+
+Jump functions:
+  Jump functions of caller  vQueueUnregisterQueue.part.0/73:
+  Jump functions of caller  xQueueGenericReset.part.0/66:
+    callsite  xQueueGenericReset.part.0/66 -> vPortEnterCritical/44 : 
+       no arg info
+    callsite  xQueueGenericReset.part.0/66 -> xTaskRemoveFromEventList/45 : 
+       no arg info
+    callsite  xQueueGenericReset.part.0/66 -> vListInitialise/46 : 
+       no arg info
+    callsite  xQueueGenericReset.part.0/66 -> vListInitialise/46 : 
+       no arg info
+    callsite  xQueueGenericReset.part.0/66 -> vPortExitCritical/47 : 
+       no arg info
+  Jump functions of caller  vTaskPlaceOnEventListRestricted/65:
+  Jump functions of caller  vPortFree/64:
+  Jump functions of caller  vTaskPriorityDisinheritAfterTimeout/63:
+  Jump functions of caller  xTaskPriorityInherit/62:
+  Jump functions of caller  pvTaskIncrementMutexHeldCount/61:
+  Jump functions of caller  uxTaskGetNumberOfTasks/60:
+  Jump functions of caller  vPortValidateInterruptPriority/59:
+  Jump functions of caller  vTaskMissedYield/58:
+  Jump functions of caller  memcpy/57:
+  Jump functions of caller  xTaskPriorityDisinherit/56:
+  Jump functions of caller  xTaskResumeAll/55:
+  Jump functions of caller  vTaskPlaceOnEventList/54:
+  Jump functions of caller  xTaskCheckForTimeOut/53:
+  Jump functions of caller  vTaskSuspendAll/52:
+  Jump functions of caller  vTaskInternalSetTimeOutState/51:
+  Jump functions of caller  xTaskGetSchedulerState/50:
+  Jump functions of caller  xTaskGetCurrentTaskHandle/49:
+  Jump functions of caller  pvPortMalloc/48:
+  Jump functions of caller  vPortExitCritical/47:
+  Jump functions of caller  vListInitialise/46:
+  Jump functions of caller  xTaskRemoveFromEventList/45:
+  Jump functions of caller  vPortEnterCritical/44:
+  Jump functions of caller  vQueueWaitForMessageRestricted/43:
+    callsite  vQueueWaitForMessageRestricted/43 -> prvUnlockQueue/35 : 
+       param 0: PASS THROUGH: 0, op nop_expr
+         value: 0x0, mask: 0xffffffff
+         Unknown VR
+    callsite  vQueueWaitForMessageRestricted/43 -> vTaskPlaceOnEventListRestricted/65 : 
+       no arg info
+    callsite  vQueueWaitForMessageRestricted/43 -> vPortExitCritical/47 : 
+       no arg info
+    callsite  vQueueWaitForMessageRestricted/43 -> vPortEnterCritical/44 : 
+       no arg info
+  Jump functions of caller  vQueueUnregisterQueue/42:
+    callsite  vQueueUnregisterQueue/42 -> vQueueUnregisterQueue.part.0/73 : 
+       param 0: PASS THROUGH: 0, op nop_expr, agg_preserved
+         value: 0x0, mask: 0xffffffff
+         Unknown VR
+  Jump functions of caller  pcQueueGetName/41:
+  Jump functions of caller  vQueueAddToRegistry/40:
+  Jump functions of caller  xQueueIsQueueFullFromISR/39:
+  Jump functions of caller  prvIsQueueFull/38:
+    callsite  prvIsQueueFull/38 -> vPortExitCritical/47 : 
+       no arg info
+    callsite  prvIsQueueFull/38 -> vPortEnterCritical/44 : 
+       no arg info
+  Jump functions of caller  xQueueIsQueueEmptyFromISR/37:
+  Jump functions of caller  prvIsQueueEmpty/36:
+    callsite  prvIsQueueEmpty/36 -> vPortExitCritical/47 : 
+       no arg info
+    callsite  prvIsQueueEmpty/36 -> vPortEnterCritical/44 : 
+       no arg info
+  Jump functions of caller  prvUnlockQueue/35:
+    callsite  prvUnlockQueue/35 -> vPortExitCritical/47 : 
+       no arg info
+    callsite  prvUnlockQueue/35 -> vTaskMissedYield/58 : 
+       no arg info
+    callsite  prvUnlockQueue/35 -> xTaskRemoveFromEventList/45 : 
+       no arg info
+    callsite  prvUnlockQueue/35 -> vPortEnterCritical/44 : 
+       no arg info
+    callsite  prvUnlockQueue/35 -> vPortExitCritical/47 : 
+       no arg info
+    callsite  prvUnlockQueue/35 -> vTaskMissedYield/58 : 
+       no arg info
+    callsite  prvUnlockQueue/35 -> xTaskRemoveFromEventList/45 : 
+       no arg info
+    callsite  prvUnlockQueue/35 -> vPortEnterCritical/44 : 
+       no arg info
+  Jump functions of caller  prvCopyDataFromQueue/34:
+    callsite  prvCopyDataFromQueue/34 -> memcpy/57 : 
+       no arg info
+  Jump functions of caller  prvCopyDataToQueue/33:
+    callsite  prvCopyDataToQueue/33 -> memcpy/57 : 
+       no arg info
+    callsite  prvCopyDataToQueue/33 -> memcpy/57 : 
+       no arg info
+    callsite  prvCopyDataToQueue/33 -> xTaskPriorityDisinherit/56 : 
+       no arg info
+  Jump functions of caller  prvGetDisinheritPriorityAfterTimeout/32:
+  Jump functions of caller  uxQueueGetQueueLength/31:
+  Jump functions of caller  uxQueueGetQueueItemSize/30:
+  Jump functions of caller  ucQueueGetQueueType/29:
+  Jump functions of caller  vQueueSetQueueNumber/28:
+  Jump functions of caller  uxQueueGetQueueNumber/27:
+  Jump functions of caller  vQueueDelete/26:
+    callsite  vQueueDelete/26 -> vPortFree/64 : 
+       no arg info
+    callsite  vQueueDelete/26 -> vQueueUnregisterQueue/42 : 
+       param 0: PASS THROUGH: 0, op nop_expr, agg_preserved
+         value: 0x0, mask: 0xffffffff
+         Unknown VR
+  Jump functions of caller  uxQueueMessagesWaitingFromISR/25:
+  Jump functions of caller  uxQueueSpacesAvailable/24:
+    callsite  uxQueueSpacesAvailable/24 -> vPortExitCritical/47 : 
+       no arg info
+    callsite  uxQueueSpacesAvailable/24 -> vPortEnterCritical/44 : 
+       no arg info
+  Jump functions of caller  uxQueueMessagesWaiting/23:
+    callsite  uxQueueMessagesWaiting/23 -> vPortExitCritical/47 : 
+       no arg info
+    callsite  uxQueueMessagesWaiting/23 -> vPortEnterCritical/44 : 
+       no arg info
+  Jump functions of caller  xQueuePeekFromISR/22:
+    callsite  xQueuePeekFromISR/22 -> prvCopyDataFromQueue/34 : 
+       param 0: PASS THROUGH: 0, op nop_expr
+         value: 0x0, mask: 0xffffffff
+         Unknown VR
+       param 1: PASS THROUGH: 1, op nop_expr
+         value: 0x0, mask: 0xffffffff
+         Unknown VR
+    callsite  xQueuePeekFromISR/22 -> vPortValidateInterruptPriority/59 : 
+       no arg info
+  Jump functions of caller  xQueueReceiveFromISR/21:
+    callsite  xQueueReceiveFromISR/21 -> uxTaskGetNumberOfTasks/60 : 
+       no arg info
+    callsite  xQueueReceiveFromISR/21 -> xTaskRemoveFromEventList/45 : 
+       no arg info
+    callsite  xQueueReceiveFromISR/21 -> prvCopyDataFromQueue/34 : 
+       param 0: PASS THROUGH: 0, op nop_expr
+         value: 0x0, mask: 0xffffffff
+         Unknown VR
+       param 1: PASS THROUGH: 1, op nop_expr
+         value: 0x0, mask: 0xffffffff
+         Unknown VR
+    callsite  xQueueReceiveFromISR/21 -> vPortValidateInterruptPriority/59 : 
+       no arg info
+  Jump functions of caller  xQueuePeek/20:
+    callsite  xQueuePeek/20 -> prvIsQueueEmpty/36 : 
+       param 0: PASS THROUGH: 0, op nop_expr
+         value: 0x0, mask: 0xffffffff
+         Unknown VR
+    callsite  xQueuePeek/20 -> xTaskResumeAll/55 : 
+       no arg info
+    callsite  xQueuePeek/20 -> prvUnlockQueue/35 : 
+       param 0: PASS THROUGH: 0, op nop_expr
+         value: 0x0, mask: 0xffffffff
+         Unknown VR
+    callsite  xQueuePeek/20 -> xTaskResumeAll/55 : 
+       no arg info
+    callsite  xQueuePeek/20 -> prvUnlockQueue/35 : 
+       param 0: PASS THROUGH: 0, op nop_expr
+         value: 0x0, mask: 0xffffffff
+         Unknown VR
+    callsite  xQueuePeek/20 -> xTaskResumeAll/55 : 
+       no arg info
+    callsite  xQueuePeek/20 -> prvUnlockQueue/35 : 
+       param 0: PASS THROUGH: 0, op nop_expr
+         value: 0x0, mask: 0xffffffff
+         Unknown VR
+    callsite  xQueuePeek/20 -> vTaskPlaceOnEventList/54 : 
+       no arg info
+    callsite  xQueuePeek/20 -> prvIsQueueEmpty/36 : 
+       param 0: PASS THROUGH: 0, op nop_expr
+         value: 0x0, mask: 0xffffffff
+         Unknown VR
+    callsite  xQueuePeek/20 -> xTaskCheckForTimeOut/53 : 
+       no arg info
+    callsite  xQueuePeek/20 -> vPortExitCritical/47 : 
+       no arg info
+    callsite  xQueuePeek/20 -> vPortEnterCritical/44 : 
+       no arg info
+    callsite  xQueuePeek/20 -> vTaskSuspendAll/52 : 
+       no arg info
+    callsite  xQueuePeek/20 -> vPortExitCritical/47 : 
+       no arg info
+    callsite  xQueuePeek/20 -> vTaskInternalSetTimeOutState/51 : 
+       no arg info
+    callsite  xQueuePeek/20 -> vPortExitCritical/47 : 
+       no arg info
+    callsite  xQueuePeek/20 -> vPortExitCritical/47 : 
+       no arg info
+    callsite  xQueuePeek/20 -> xTaskRemoveFromEventList/45 : 
+       no arg info
+    callsite  xQueuePeek/20 -> prvCopyDataFromQueue/34 : 
+       param 0: PASS THROUGH: 0, op nop_expr
+         value: 0x0, mask: 0xffffffff
+         Unknown VR
+       param 1: PASS THROUGH: 1, op nop_expr
+         value: 0x0, mask: 0xffffffff
+         Unknown VR
+    callsite  xQueuePeek/20 -> vPortEnterCritical/44 : 
+       no arg info
+    callsite  xQueuePeek/20 -> xTaskGetSchedulerState/50 : 
+       no arg info
+  Jump functions of caller  xQueueSemaphoreTake/19:
+    callsite  xQueueSemaphoreTake/19 -> vPortExitCritical/47 : 
+       no arg info
+    callsite  xQueueSemaphoreTake/19 -> vTaskPriorityDisinheritAfterTimeout/63 : 
+       no arg info
+    callsite  xQueueSemaphoreTake/19 -> prvGetDisinheritPriorityAfterTimeout/32 : 
+       param 0: PASS THROUGH: 0, op nop_expr
+         value: 0x0, mask: 0xffffffff
+         Unknown VR
+    callsite  xQueueSemaphoreTake/19 -> vPortEnterCritical/44 : 
+       no arg info
+    callsite  xQueueSemaphoreTake/19 -> prvIsQueueEmpty/36 : 
+       param 0: PASS THROUGH: 0, op nop_expr
+         value: 0x0, mask: 0xffffffff
+         Unknown VR
+    callsite  xQueueSemaphoreTake/19 -> xTaskResumeAll/55 : 
+       no arg info
+    callsite  xQueueSemaphoreTake/19 -> prvUnlockQueue/35 : 
+       param 0: PASS THROUGH: 0, op nop_expr
+         value: 0x0, mask: 0xffffffff
+         Unknown VR
+    callsite  xQueueSemaphoreTake/19 -> xTaskResumeAll/55 : 
+       no arg info
+    callsite  xQueueSemaphoreTake/19 -> prvUnlockQueue/35 : 
+       param 0: PASS THROUGH: 0, op nop_expr
+         value: 0x0, mask: 0xffffffff
+         Unknown VR
+    callsite  xQueueSemaphoreTake/19 -> xTaskResumeAll/55 : 
+       no arg info
+    callsite  xQueueSemaphoreTake/19 -> prvUnlockQueue/35 : 
+       param 0: PASS THROUGH: 0, op nop_expr
+         value: 0x0, mask: 0xffffffff
+         Unknown VR
+    callsite  xQueueSemaphoreTake/19 -> vTaskPlaceOnEventList/54 : 
+       no arg info
+    callsite  xQueueSemaphoreTake/19 -> vPortExitCritical/47 : 
+       no arg info
+    callsite  xQueueSemaphoreTake/19 -> xTaskPriorityInherit/62 : 
+       no arg info
+    callsite  xQueueSemaphoreTake/19 -> vPortEnterCritical/44 : 
+       no arg info
+    callsite  xQueueSemaphoreTake/19 -> prvIsQueueEmpty/36 : 
+       param 0: PASS THROUGH: 0, op nop_expr
+         value: 0x0, mask: 0xffffffff
+         Unknown VR
+    callsite  xQueueSemaphoreTake/19 -> xTaskCheckForTimeOut/53 : 
+       no arg info
+    callsite  xQueueSemaphoreTake/19 -> vPortExitCritical/47 : 
+       no arg info
+    callsite  xQueueSemaphoreTake/19 -> vPortEnterCritical/44 : 
+       no arg info
+    callsite  xQueueSemaphoreTake/19 -> vTaskSuspendAll/52 : 
+       no arg info
+    callsite  xQueueSemaphoreTake/19 -> vPortExitCritical/47 : 
+       no arg info
+    callsite  xQueueSemaphoreTake/19 -> vTaskInternalSetTimeOutState/51 : 
+       no arg info
+    callsite  xQueueSemaphoreTake/19 -> vPortExitCritical/47 : 
+       no arg info
+    callsite  xQueueSemaphoreTake/19 -> vPortExitCritical/47 : 
+       no arg info
+    callsite  xQueueSemaphoreTake/19 -> xTaskRemoveFromEventList/45 : 
+       no arg info
+    callsite  xQueueSemaphoreTake/19 -> pvTaskIncrementMutexHeldCount/61 : 
+       no arg info
+    callsite  xQueueSemaphoreTake/19 -> vPortEnterCritical/44 : 
+       no arg info
+    callsite  xQueueSemaphoreTake/19 -> xTaskGetSchedulerState/50 : 
+       no arg info
+  Jump functions of caller  xQueueReceive/18:
+    callsite  xQueueReceive/18 -> prvIsQueueEmpty/36 : 
+       param 0: PASS THROUGH: 0, op nop_expr
+         value: 0x0, mask: 0xffffffff
+         Unknown VR
+    callsite  xQueueReceive/18 -> xTaskResumeAll/55 : 
+       no arg info
+    callsite  xQueueReceive/18 -> prvUnlockQueue/35 : 
+       param 0: PASS THROUGH: 0, op nop_expr
+         value: 0x0, mask: 0xffffffff
+         Unknown VR
+    callsite  xQueueReceive/18 -> xTaskResumeAll/55 : 
+       no arg info
+    callsite  xQueueReceive/18 -> prvUnlockQueue/35 : 
+       param 0: PASS THROUGH: 0, op nop_expr
+         value: 0x0, mask: 0xffffffff
+         Unknown VR
+    callsite  xQueueReceive/18 -> xTaskResumeAll/55 : 
+       no arg info
+    callsite  xQueueReceive/18 -> prvUnlockQueue/35 : 
+       param 0: PASS THROUGH: 0, op nop_expr
+         value: 0x0, mask: 0xffffffff
+         Unknown VR
+    callsite  xQueueReceive/18 -> vTaskPlaceOnEventList/54 : 
+       no arg info
+    callsite  xQueueReceive/18 -> prvIsQueueEmpty/36 : 
+       param 0: PASS THROUGH: 0, op nop_expr
+         value: 0x0, mask: 0xffffffff
+         Unknown VR
+    callsite  xQueueReceive/18 -> xTaskCheckForTimeOut/53 : 
+       no arg info
+    callsite  xQueueReceive/18 -> vPortExitCritical/47 : 
+       no arg info
+    callsite  xQueueReceive/18 -> vPortEnterCritical/44 : 
+       no arg info
+    callsite  xQueueReceive/18 -> vTaskSuspendAll/52 : 
+       no arg info
+    callsite  xQueueReceive/18 -> vPortExitCritical/47 : 
+       no arg info
+    callsite  xQueueReceive/18 -> vTaskInternalSetTimeOutState/51 : 
+       no arg info
+    callsite  xQueueReceive/18 -> vPortExitCritical/47 : 
+       no arg info
+    callsite  xQueueReceive/18 -> vPortExitCritical/47 : 
+       no arg info
+    callsite  xQueueReceive/18 -> xTaskRemoveFromEventList/45 : 
+       no arg info
+    callsite  xQueueReceive/18 -> prvCopyDataFromQueue/34 : 
+       param 0: PASS THROUGH: 0, op nop_expr
+         value: 0x0, mask: 0xffffffff
+         Unknown VR
+       param 1: PASS THROUGH: 1, op nop_expr
+         value: 0x0, mask: 0xffffffff
+         Unknown VR
+    callsite  xQueueReceive/18 -> vPortEnterCritical/44 : 
+       no arg info
+    callsite  xQueueReceive/18 -> xTaskGetSchedulerState/50 : 
+       no arg info
+  Jump functions of caller  xQueueGiveFromISR/17:
+    callsite  xQueueGiveFromISR/17 -> uxTaskGetNumberOfTasks/60 : 
+       no arg info
+    callsite  xQueueGiveFromISR/17 -> xTaskRemoveFromEventList/45 : 
+       no arg info
+    callsite  xQueueGiveFromISR/17 -> vPortValidateInterruptPriority/59 : 
+       no arg info
+  Jump functions of caller  xQueueGenericSendFromISR/16:
+    callsite  xQueueGenericSendFromISR/16 -> uxTaskGetNumberOfTasks/60 : 
+       no arg info
+    callsite  xQueueGenericSendFromISR/16 -> xTaskRemoveFromEventList/45 : 
+       no arg info
+    callsite  xQueueGenericSendFromISR/16 -> prvCopyDataToQueue/33 : 
+       param 0: PASS THROUGH: 0, op nop_expr
+         value: 0x0, mask: 0xffffffff
+         Unknown VR
+       param 1: PASS THROUGH: 1, op nop_expr
+         value: 0x0, mask: 0xffffffff
+         Unknown VR
+       param 2: PASS THROUGH: 3, op nop_expr
+         value: 0x0, mask: 0xffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
+         Unknown VR
+    callsite  xQueueGenericSendFromISR/16 -> vPortValidateInterruptPriority/59 : 
+       no arg info
+  Jump functions of caller  xQueueGenericSend/15:
+    callsite  xQueueGenericSend/15 -> xTaskResumeAll/55 : 
+       no arg info
+    callsite  xQueueGenericSend/15 -> prvUnlockQueue/35 : 
+       param 0: PASS THROUGH: 0, op nop_expr
+         value: 0x0, mask: 0xffffffff
+         Unknown VR
+    callsite  xQueueGenericSend/15 -> xTaskResumeAll/55 : 
+       no arg info
+    callsite  xQueueGenericSend/15 -> prvUnlockQueue/35 : 
+       param 0: PASS THROUGH: 0, op nop_expr
+         value: 0x0, mask: 0xffffffff
+         Unknown VR
+    callsite  xQueueGenericSend/15 -> xTaskResumeAll/55 : 
+       no arg info
+    callsite  xQueueGenericSend/15 -> prvUnlockQueue/35 : 
+       param 0: PASS THROUGH: 0, op nop_expr
+         value: 0x0, mask: 0xffffffff
+         Unknown VR
+    callsite  xQueueGenericSend/15 -> vTaskPlaceOnEventList/54 : 
+       no arg info
+    callsite  xQueueGenericSend/15 -> prvIsQueueFull/38 : 
+       param 0: PASS THROUGH: 0, op nop_expr
+         value: 0x0, mask: 0xffffffff
+         Unknown VR
+    callsite  xQueueGenericSend/15 -> xTaskCheckForTimeOut/53 : 
+       no arg info
+    callsite  xQueueGenericSend/15 -> vPortExitCritical/47 : 
+       no arg info
+    callsite  xQueueGenericSend/15 -> vPortEnterCritical/44 : 
+       no arg info
+    callsite  xQueueGenericSend/15 -> vTaskSuspendAll/52 : 
+       no arg info
+    callsite  xQueueGenericSend/15 -> vPortExitCritical/47 : 
+       no arg info
+    callsite  xQueueGenericSend/15 -> vTaskInternalSetTimeOutState/51 : 
+       no arg info
+    callsite  xQueueGenericSend/15 -> vPortExitCritical/47 : 
+       no arg info
+    callsite  xQueueGenericSend/15 -> vPortExitCritical/47 : 
+       no arg info
+    callsite  xQueueGenericSend/15 -> xTaskRemoveFromEventList/45 : 
+       no arg info
+    callsite  xQueueGenericSend/15 -> prvCopyDataToQueue/33 : 
+       param 0: PASS THROUGH: 0, op nop_expr
+         value: 0x0, mask: 0xffffffff
+         Unknown VR
+       param 1: PASS THROUGH: 1, op nop_expr
+         value: 0x0, mask: 0xffffffff
+         Unknown VR
+       param 2: PASS THROUGH: 3, op nop_expr
+         value: 0x0, mask: 0xffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
+         Unknown VR
+    callsite  xQueueGenericSend/15 -> vPortEnterCritical/44 : 
+       no arg info
+    callsite  xQueueGenericSend/15 -> xTaskGetSchedulerState/50 : 
+       no arg info
+  Jump functions of caller  xQueueCreateCountingSemaphore/14:
+    callsite  xQueueCreateCountingSemaphore/14 -> xQueueGenericCreate/6 : 
+       param 0: PASS THROUGH: 0, op nop_expr
+         value: 0x0, mask: 0xffffffff
+         Unknown VR
+       param 1: CONST: 0
+         value: 0x0, mask: 0x0
+         Unknown VR
+       param 2: CONST: 2
+         value: 0x2, mask: 0x0
+         Unknown VR
+  Jump functions of caller  xQueueTakeMutexRecursive/13:
+    callsite  xQueueTakeMutexRecursive/13 -> xQueueSemaphoreTake/19 : 
+       param 0: PASS THROUGH: 0, op nop_expr
+         value: 0x0, mask: 0xffffffff
+         Unknown VR
+       param 1: PASS THROUGH: 1, op nop_expr
+         value: 0x0, mask: 0xffffffff
+         Unknown VR
+    callsite  xQueueTakeMutexRecursive/13 -> xTaskGetCurrentTaskHandle/49 : 
+       no arg info
+  Jump functions of caller  xQueueGiveMutexRecursive/12:
+    callsite  xQueueGiveMutexRecursive/12 -> xQueueGenericSend/15 : 
+       param 0: PASS THROUGH: 0, op nop_expr
+         value: 0x0, mask: 0xffffffff
+         Unknown VR
+       param 1: CONST: 0B
+         value: 0x0, mask: 0xfffffff8
+         Unknown VR
+       param 2: CONST: 0
+         value: 0x0, mask: 0x0
+         Unknown VR
+       param 3: CONST: 0
+         value: 0x0, mask: 0x0
+         Unknown VR
+    callsite  xQueueGiveMutexRecursive/12 -> xTaskGetCurrentTaskHandle/49 : 
+       no arg info
+  Jump functions of caller  xQueueGetMutexHolderFromISR/11:
+  Jump functions of caller  xQueueGetMutexHolder/10:
+    callsite  xQueueGetMutexHolder/10 -> vPortExitCritical/47 : 
+       no arg info
+    callsite  xQueueGetMutexHolder/10 -> vPortEnterCritical/44 : 
+       no arg info
+  Jump functions of caller  xQueueCreateMutex/9:
+    callsite  xQueueCreateMutex/9 -> prvInitialiseMutex/8 : 
+       param 0: UNKNOWN
+         value: 0x0, mask: 0xffffffff
+         Unknown VR
+    callsite  xQueueCreateMutex/9 -> xQueueGenericCreate/6 : 
+       param 0: CONST: 1
+         value: 0x1, mask: 0x0
+         Unknown VR
+       param 1: CONST: 0
+         value: 0x0, mask: 0x0
+         Unknown VR
+       param 2: PASS THROUGH: 0, op nop_expr
+         value: 0x0, mask: 0xff
+         Unknown VR
+  Jump functions of caller  prvInitialiseMutex/8:
+    callsite  prvInitialiseMutex/8 -> xQueueGenericSend/15 : 
+       param 0: PASS THROUGH: 0, op nop_expr
+         Aggregate passed by reference:
+           offset: 0, type: int8_t *, CONST: 0B
+           offset: 64, type: struct tskTaskControlBlock *, CONST: 0B
+           offset: 96, type: UBaseType_t, CONST: 0
+         value: 0x0, mask: 0xffffffff
+         Unknown VR
+       param 1: CONST: 0B
+         value: 0x0, mask: 0xfffffff8
+         Unknown VR
+       param 2: CONST: 0
+         value: 0x0, mask: 0x0
+         Unknown VR
+       param 3: CONST: 0
+         value: 0x0, mask: 0x0
+         Unknown VR
+  Jump functions of caller  prvInitialiseNewQueue/7:
+    callsite  prvInitialiseNewQueue/7 -> xQueueGenericReset/5 : 
+       param 0: PASS THROUGH: 4, op nop_expr
+         Aggregate passed by reference:
+           offset: 480, type: UBaseType_t, PASS THROUGH: 0, op nop_expr
+           offset: 512, type: UBaseType_t, PASS THROUGH: 1, op nop_expr
+         value: 0x0, mask: 0xffffffff
+         Unknown VR
+       param 1: CONST: 1
+         value: 0x1, mask: 0x0
+         Unknown VR
+  Jump functions of caller  xQueueGenericCreate/6:
+    callsite  xQueueGenericCreate/6 -> prvInitialiseNewQueue/7 : 
+       param 0: PASS THROUGH: 0, op nop_expr
+         value: 0x0, mask: 0xffffffff
+         Unknown VR
+       param 1: PASS THROUGH: 1, op nop_expr
+         value: 0x0, mask: 0xffffffff
+         Unknown VR
+       param 2: UNKNOWN
+         value: 0x0, mask: 0xffffffff
+         VR  [1, -1]
+       param 3: PASS THROUGH: 2, op nop_expr
+         value: 0x0, mask: 0xff
+         Unknown VR
+       param 4: UNKNOWN
+         value: 0x0, mask: 0xffffffff
+         Unknown VR
+    callsite  xQueueGenericCreate/6 -> pvPortMalloc/48 : 
+       no arg info
+  Jump functions of caller  xQueueGenericReset/5:
+    callsite  xQueueGenericReset/5 -> xQueueGenericReset.part.0/66 : 
+       param 0: PASS THROUGH: 0, op nop_expr, agg_preserved
+         value: 0x0, mask: 0xffffffff
+         Unknown VR
+       param 1: PASS THROUGH: 1, op nop_expr
+         value: 0x0, mask: 0xffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
+         Unknown VR
+
+ Propagating constants:
+
+Not considering vQueueWaitForMessageRestricted/43 for cloning; -fipa-cp-clone disabled.
+Not considering vQueueUnregisterQueue/42 for cloning; -fipa-cp-clone disabled.
+Not considering pcQueueGetName/41 for cloning; -fipa-cp-clone disabled.
+Not considering vQueueAddToRegistry/40 for cloning; -fipa-cp-clone disabled.
+Not considering xQueueIsQueueFullFromISR/39 for cloning; -fipa-cp-clone disabled.
+Not considering xQueueIsQueueEmptyFromISR/37 for cloning; -fipa-cp-clone disabled.
+Not considering uxQueueGetQueueLength/31 for cloning; -fipa-cp-clone disabled.
+Not considering uxQueueGetQueueItemSize/30 for cloning; -fipa-cp-clone disabled.
+Not considering ucQueueGetQueueType/29 for cloning; -fipa-cp-clone disabled.
+Not considering vQueueSetQueueNumber/28 for cloning; -fipa-cp-clone disabled.
+Not considering uxQueueGetQueueNumber/27 for cloning; -fipa-cp-clone disabled.
+Not considering vQueueDelete/26 for cloning; -fipa-cp-clone disabled.
+Not considering uxQueueMessagesWaitingFromISR/25 for cloning; -fipa-cp-clone disabled.
+Not considering uxQueueSpacesAvailable/24 for cloning; -fipa-cp-clone disabled.
+Not considering uxQueueMessagesWaiting/23 for cloning; -fipa-cp-clone disabled.
+Not considering xQueuePeekFromISR/22 for cloning; -fipa-cp-clone disabled.
+Not considering xQueueReceiveFromISR/21 for cloning; -fipa-cp-clone disabled.
+Not considering xQueuePeek/20 for cloning; -fipa-cp-clone disabled.
+Not considering xQueueSemaphoreTake/19 for cloning; -fipa-cp-clone disabled.
+Not considering xQueueReceive/18 for cloning; -fipa-cp-clone disabled.
+Not considering xQueueGiveFromISR/17 for cloning; -fipa-cp-clone disabled.
+Not considering xQueueGenericSendFromISR/16 for cloning; -fipa-cp-clone disabled.
+Not considering xQueueGenericSend/15 for cloning; -fipa-cp-clone disabled.
+Not considering xQueueCreateCountingSemaphore/14 for cloning; -fipa-cp-clone disabled.
+Not considering xQueueTakeMutexRecursive/13 for cloning; -fipa-cp-clone disabled.
+Not considering xQueueGiveMutexRecursive/12 for cloning; -fipa-cp-clone disabled.
+Not considering xQueueGetMutexHolderFromISR/11 for cloning; -fipa-cp-clone disabled.
+Not considering xQueueGetMutexHolder/10 for cloning; -fipa-cp-clone disabled.
+Not considering xQueueCreateMutex/9 for cloning; -fipa-cp-clone disabled.
+Not considering xQueueGenericCreate/6 for cloning; -fipa-cp-clone disabled.
+Not considering xQueueGenericReset/5 for cloning; -fipa-cp-clone disabled.
+
+overall_size: 1108
+
+IPA lattices after all propagation:
+
+Lattices:
+  Node: vQueueUnregisterQueue.part.0/73:
+    param [0]: VARIABLE
+         ctxs: VARIABLE
+         Bits unusable (BOTTOM)
+         int VARYING
+        AGGS VARIABLE
+  Node: xQueueGenericReset.part.0/66:
+    param [0]: VARIABLE
+         ctxs: VARIABLE
+         Bits unusable (BOTTOM)
+         int VARYING
+        AGGS VARIABLE
+    param [1]: VARIABLE
+         ctxs: VARIABLE
+         Bits unusable (BOTTOM)
+         int VARYING
+        AGGS VARIABLE
+  Node: vQueueWaitForMessageRestricted/43:
+    param [0]: BOTTOM
+         ctxs: BOTTOM
+         Bits unusable (BOTTOM)
+         int VARYING
+        AGGS BOTTOM
+    param [1]: BOTTOM
+         ctxs: BOTTOM
+         Bits unusable (BOTTOM)
+         int VARYING
+        AGGS BOTTOM
+    param [2]: BOTTOM
+         ctxs: BOTTOM
+         Bits unusable (BOTTOM)
+         int VARYING
+        AGGS BOTTOM
+  Node: vQueueUnregisterQueue/42:
+    param [0]: BOTTOM
+         ctxs: BOTTOM
+         Bits unusable (BOTTOM)
+         int VARYING
+        AGGS BOTTOM
+  Node: pcQueueGetName/41:
+    param [0]: BOTTOM
+         ctxs: BOTTOM
+         Bits unusable (BOTTOM)
+         int VARYING
+        AGGS BOTTOM
+  Node: vQueueAddToRegistry/40:
+    param [0]: BOTTOM
+         ctxs: BOTTOM
+         Bits unusable (BOTTOM)
+         int VARYING
+        AGGS BOTTOM
+    param [1]: BOTTOM
+         ctxs: BOTTOM
+         Bits unusable (BOTTOM)
+         int VARYING
+        AGGS BOTTOM
+  Node: xQueueIsQueueFullFromISR/39:
+    param [0]: BOTTOM
+         ctxs: BOTTOM
+         Bits unusable (BOTTOM)
+         int VARYING
+        AGGS BOTTOM
+  Node: prvIsQueueFull/38:
+    param [0]: VARIABLE
+         ctxs: VARIABLE
+         Bits unusable (BOTTOM)
+         int VARYING
+        AGGS VARIABLE
+  Node: xQueueIsQueueEmptyFromISR/37:
+    param [0]: BOTTOM
+         ctxs: BOTTOM
+         Bits unusable (BOTTOM)
+         int VARYING
+        AGGS BOTTOM
+  Node: prvIsQueueEmpty/36:
+    param [0]: VARIABLE
+         ctxs: VARIABLE
+         Bits unusable (BOTTOM)
+         int VARYING
+        AGGS VARIABLE
+  Node: prvUnlockQueue/35:
+    param [0]: VARIABLE
+         ctxs: VARIABLE
+         Bits unusable (BOTTOM)
+         int VARYING
+        AGGS VARIABLE
+  Node: prvCopyDataFromQueue/34:
+    param [0]: VARIABLE
+         ctxs: VARIABLE
+         Bits unusable (BOTTOM)
+         int VARYING
+        AGGS VARIABLE
+    param [1]: VARIABLE
+         ctxs: VARIABLE
+         Bits unusable (BOTTOM)
+         int VARYING
+        AGGS VARIABLE
+  Node: prvCopyDataToQueue/33:
+    param [0]: VARIABLE
+         ctxs: VARIABLE
+         Bits unusable (BOTTOM)
+         int VARYING
+        AGGS VARIABLE
+    param [1]: VARIABLE
+         ctxs: VARIABLE
+         Bits unusable (BOTTOM)
+         int VARYING
+        AGGS VARIABLE
+    param [2]: VARIABLE
+         ctxs: VARIABLE
+         Bits unusable (BOTTOM)
+         int VARYING
+        AGGS VARIABLE
+  Node: prvGetDisinheritPriorityAfterTimeout/32:
+    param [0]: VARIABLE
+         ctxs: VARIABLE
+         Bits unusable (BOTTOM)
+         int VARYING
+        AGGS VARIABLE
+  Node: uxQueueGetQueueLength/31:
+    param [0]: BOTTOM
+         ctxs: BOTTOM
+         Bits unusable (BOTTOM)
+         int VARYING
+        AGGS BOTTOM
+  Node: uxQueueGetQueueItemSize/30:
+    param [0]: BOTTOM
+         ctxs: BOTTOM
+         Bits unusable (BOTTOM)
+         int VARYING
+        AGGS BOTTOM
+  Node: ucQueueGetQueueType/29:
+    param [0]: BOTTOM
+         ctxs: BOTTOM
+         Bits unusable (BOTTOM)
+         int VARYING
+        AGGS BOTTOM
+  Node: vQueueSetQueueNumber/28:
+    param [0]: BOTTOM
+         ctxs: BOTTOM
+         Bits unusable (BOTTOM)
+         int VARYING
+        AGGS BOTTOM
+    param [1]: BOTTOM
+         ctxs: BOTTOM
+         Bits unusable (BOTTOM)
+         int VARYING
+        AGGS BOTTOM
+  Node: uxQueueGetQueueNumber/27:
+    param [0]: BOTTOM
+         ctxs: BOTTOM
+         Bits unusable (BOTTOM)
+         int VARYING
+        AGGS BOTTOM
+  Node: vQueueDelete/26:
+    param [0]: BOTTOM
+         ctxs: BOTTOM
+         Bits unusable (BOTTOM)
+         int VARYING
+        AGGS BOTTOM
+  Node: uxQueueMessagesWaitingFromISR/25:
+    param [0]: BOTTOM
+         ctxs: BOTTOM
+         Bits unusable (BOTTOM)
+         int VARYING
+        AGGS BOTTOM
+  Node: uxQueueSpacesAvailable/24:
+    param [0]: BOTTOM
+         ctxs: BOTTOM
+         Bits unusable (BOTTOM)
+         int VARYING
+        AGGS BOTTOM
+  Node: uxQueueMessagesWaiting/23:
+    param [0]: BOTTOM
+         ctxs: BOTTOM
+         Bits unusable (BOTTOM)
+         int VARYING
+        AGGS BOTTOM
+  Node: xQueuePeekFromISR/22:
+    param [0]: BOTTOM
+         ctxs: BOTTOM
+         Bits unusable (BOTTOM)
+         int VARYING
+        AGGS BOTTOM
+    param [1]: BOTTOM
+         ctxs: BOTTOM
+         Bits unusable (BOTTOM)
+         int VARYING
+        AGGS BOTTOM
+  Node: xQueueReceiveFromISR/21:
+    param [0]: BOTTOM
+         ctxs: BOTTOM
+         Bits unusable (BOTTOM)
+         int VARYING
+        AGGS BOTTOM
+    param [1]: BOTTOM
+         ctxs: BOTTOM
+         Bits unusable (BOTTOM)
+         int VARYING
+        AGGS BOTTOM
+    param [2]: BOTTOM
+         ctxs: BOTTOM
+         Bits unusable (BOTTOM)
+         int VARYING
+        AGGS BOTTOM
+  Node: xQueuePeek/20:
+    param [0]: BOTTOM
+         ctxs: BOTTOM
+         Bits unusable (BOTTOM)
+         int VARYING
+        AGGS BOTTOM
+    param [1]: BOTTOM
+         ctxs: BOTTOM
+         Bits unusable (BOTTOM)
+         int VARYING
+        AGGS BOTTOM
+    param [2]: BOTTOM
+         ctxs: BOTTOM
+         Bits unusable (BOTTOM)
+         int VARYING
+        AGGS BOTTOM
+  Node: xQueueSemaphoreTake/19:
+    param [0]: BOTTOM
+         ctxs: BOTTOM
+         Bits unusable (BOTTOM)
+         int VARYING
+        AGGS BOTTOM
+    param [1]: BOTTOM
+         ctxs: BOTTOM
+         Bits unusable (BOTTOM)
+         int VARYING
+        AGGS BOTTOM
+  Node: xQueueReceive/18:
+    param [0]: BOTTOM
+         ctxs: BOTTOM
+         Bits unusable (BOTTOM)
+         int VARYING
+        AGGS BOTTOM
+    param [1]: BOTTOM
+         ctxs: BOTTOM
+         Bits unusable (BOTTOM)
+         int VARYING
+        AGGS BOTTOM
+    param [2]: BOTTOM
+         ctxs: BOTTOM
+         Bits unusable (BOTTOM)
+         int VARYING
+        AGGS BOTTOM
+  Node: xQueueGiveFromISR/17:
+    param [0]: BOTTOM
+         ctxs: BOTTOM
+         Bits unusable (BOTTOM)
+         int VARYING
+        AGGS BOTTOM
+    param [1]: BOTTOM
+         ctxs: BOTTOM
+         Bits unusable (BOTTOM)
+         int VARYING
+        AGGS BOTTOM
+  Node: xQueueGenericSendFromISR/16:
+    param [0]: BOTTOM
+         ctxs: BOTTOM
+         Bits unusable (BOTTOM)
+         int VARYING
+        AGGS BOTTOM
+    param [1]: BOTTOM
+         ctxs: BOTTOM
+         Bits unusable (BOTTOM)
+         int VARYING
+        AGGS BOTTOM
+    param [2]: BOTTOM
+         ctxs: BOTTOM
+         Bits unusable (BOTTOM)
+         int VARYING
+        AGGS BOTTOM
+    param [3]: BOTTOM
+         ctxs: BOTTOM
+         Bits unusable (BOTTOM)
+         int VARYING
+        AGGS BOTTOM
+  Node: xQueueGenericSend/15:
+    param [0]: BOTTOM
+         ctxs: BOTTOM
+         Bits unusable (BOTTOM)
+         int VARYING
+        AGGS BOTTOM
+    param [1]: BOTTOM
+         ctxs: BOTTOM
+         Bits unusable (BOTTOM)
+         int VARYING
+        AGGS BOTTOM
+    param [2]: BOTTOM
+         ctxs: BOTTOM
+         Bits unusable (BOTTOM)
+         int VARYING
+        AGGS BOTTOM
+    param [3]: BOTTOM
+         ctxs: BOTTOM
+         Bits unusable (BOTTOM)
+         int VARYING
+        AGGS BOTTOM
+  Node: xQueueCreateCountingSemaphore/14:
+    param [0]: BOTTOM
+         ctxs: BOTTOM
+         Bits unusable (BOTTOM)
+         int VARYING
+        AGGS BOTTOM
+    param [1]: BOTTOM
+         ctxs: BOTTOM
+         Bits unusable (BOTTOM)
+         int VARYING
+        AGGS BOTTOM
+  Node: xQueueTakeMutexRecursive/13:
+    param [0]: BOTTOM
+         ctxs: BOTTOM
+         Bits unusable (BOTTOM)
+         int VARYING
+        AGGS BOTTOM
+    param [1]: BOTTOM
+         ctxs: BOTTOM
+         Bits unusable (BOTTOM)
+         int VARYING
+        AGGS BOTTOM
+  Node: xQueueGiveMutexRecursive/12:
+    param [0]: BOTTOM
+         ctxs: BOTTOM
+         Bits unusable (BOTTOM)
+         int VARYING
+        AGGS BOTTOM
+  Node: xQueueGetMutexHolderFromISR/11:
+    param [0]: BOTTOM
+         ctxs: BOTTOM
+         Bits unusable (BOTTOM)
+         int VARYING
+        AGGS BOTTOM
+  Node: xQueueGetMutexHolder/10:
+    param [0]: BOTTOM
+         ctxs: BOTTOM
+         Bits unusable (BOTTOM)
+         int VARYING
+        AGGS BOTTOM
+  Node: xQueueCreateMutex/9:
+    param [0]: BOTTOM
+         ctxs: BOTTOM
+         Bits unusable (BOTTOM)
+         int VARYING
+        AGGS BOTTOM
+  Node: prvInitialiseMutex/8:
+    param [0]: VARIABLE
+         ctxs: VARIABLE
+         Bits unusable (BOTTOM)
+         int VARYING
+        AGGS VARIABLE
+  Node: prvInitialiseNewQueue/7:
+    param [0]: VARIABLE
+         ctxs: VARIABLE
+         Bits unusable (BOTTOM)
+         int VARYING
+        AGGS VARIABLE
+    param [1]: VARIABLE
+         ctxs: VARIABLE
+         Bits unusable (BOTTOM)
+         int VARYING
+        AGGS VARIABLE
+    param [2]: VARIABLE
+         ctxs: VARIABLE
+         Bits unusable (BOTTOM)
+         uint8_t * [1B, +INF]
+        AGGS VARIABLE
+    param [3]: VARIABLE
+         ctxs: VARIABLE
+         Bits unusable (BOTTOM)
+         int VARYING
+        AGGS VARIABLE
+    param [4]: VARIABLE
+         ctxs: VARIABLE
+         Bits unusable (BOTTOM)
+         int VARYING
+        AGGS VARIABLE
+  Node: xQueueGenericCreate/6:
+    param [0]: BOTTOM
+         ctxs: BOTTOM
+         Bits unusable (BOTTOM)
+         int VARYING
+        AGGS BOTTOM
+    param [1]: BOTTOM
+         ctxs: BOTTOM
+         Bits unusable (BOTTOM)
+         int VARYING
+        AGGS BOTTOM
+    param [2]: BOTTOM
+         ctxs: BOTTOM
+         Bits unusable (BOTTOM)
+         int VARYING
+        AGGS BOTTOM
+  Node: xQueueGenericReset/5:
+    param [0]: BOTTOM
+         ctxs: BOTTOM
+         Bits unusable (BOTTOM)
+         int VARYING
+        AGGS BOTTOM
+    param [1]: BOTTOM
+         ctxs: BOTTOM
+         Bits unusable (BOTTOM)
+         int VARYING
+        AGGS BOTTOM
+
+IPA decision stage:
+
+
+IPA constant propagation end
+
+Reclaiming functions:
+Reclaiming variables:
+Clearing address taken flags:
+Symbol table:
+
+vQueueUnregisterQueue.part.0/73 (vQueueUnregisterQueue.part.0) @06bc4620
+  Type: function definition analyzed
+  Visibility: prevailing_def_ironly artificial
+  References: xQueueRegistry/4 (read) xQueueRegistry/4 (write) xQueueRegistry/4 (write) 
+  Referring: 
+  Availability: local
+  Function flags: count:397250654 (estimated locally) body local split_part optimize_size
+  Called by: vQueueUnregisterQueue/42 (24805919 (estimated locally),0.70 per call) 
+  Calls: 
+xQueueGenericReset.part.0/66 (xQueueGenericReset.part.0) @06a76540
+  Type: function definition analyzed
+  Visibility: prevailing_def_ironly artificial
+  References: 
+  Referring: 
+  Availability: local
+  Function flags: count:1073741824 (estimated locally) body local split_part optimize_size
+  Called by: xQueueGenericReset/5 (2100758 (estimated locally),0.12 per call) 
+  Calls: vPortEnterCritical/44 (1073741824 (estimated locally),1.00 per call) xTaskRemoveFromEventList/45 (237404317 (estimated locally),0.22 per call) vListInitialise/46 (354334800 (estimated locally),0.33 per call) vListInitialise/46 (354334800 (estimated locally),0.33 per call) vPortExitCritical/47 (1073741824 (estimated locally),1.00 per call) 
+vTaskPlaceOnEventListRestricted/65 (vTaskPlaceOnEventListRestricted) @06a4f1c0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags: optimize_size
+  Called by: vQueueWaitForMessageRestricted/43 (354334800 (estimated locally),0.33 per call) 
+  Calls: 
+vPortFree/64 (vPortFree) @06a367e0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags: optimize_size
+  Called by: vQueueDelete/26 (12216749 (estimated locally),0.53 per call) 
+  Calls: 
+vTaskPriorityDisinheritAfterTimeout/63 (vTaskPriorityDisinheritAfterTimeout) @06a09e00
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags: optimize_size
+  Called by: xQueueSemaphoreTake/19 (247755 (estimated locally),0.01 per call) 
+  Calls: 
+xTaskPriorityInherit/62 (xTaskPriorityInherit) @06a09d20
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags: optimize_size
+  Called by: xQueueSemaphoreTake/19 (2395518 (estimated locally),0.11 per call) 
+  Calls: 
+pvTaskIncrementMutexHeldCount/61 (pvTaskIncrementMutexHeldCount) @06a09c40
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags: optimize_size
+  Called by: xQueueSemaphoreTake/19 (281983 (estimated locally),0.01 per call) 
+  Calls: 
+uxTaskGetNumberOfTasks/60 (uxTaskGetNumberOfTasks) @06a09000
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags: optimize_size
+  Called by: xQueueReceiveFromISR/21 (3070393 (estimated locally),0.09 per call) xQueueGiveFromISR/17 (1751969 (estimated locally),0.06 per call) xQueueGenericSendFromISR/16 (3809260 (estimated locally),0.11 per call) 
+  Calls: 
+vPortValidateInterruptPriority/59 (vPortValidateInterruptPriority) @064ca1c0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags: optimize_size
+  Called by: xQueuePeekFromISR/22 (5236217 (estimated locally),0.20 per call) xQueueReceiveFromISR/21 (19034822 (estimated locally),0.54 per call) xQueueGiveFromISR/17 (7168450 (estimated locally),0.24 per call) xQueueGenericSendFromISR/16 (13971110 (estimated locally),0.39 per call) 
+  Calls: 
+vTaskMissedYield/58 (vTaskMissedYield) @064cad20
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags: optimize_size
+  Called by: prvUnlockQueue/35 (316429835 (estimated locally),2.75 per call) prvUnlockQueue/35 (316429832 (estimated locally),2.75 per call) 
+  Calls: 
+memcpy/57 (memcpy) @064caa80
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags: optimize_size
+  Called by: prvCopyDataFromQueue/34 (536870913 (estimated locally),0.50 per call) prvCopyDataToQueue/33 (268435456 (estimated locally),0.25 per call) prvCopyDataToQueue/33 (268435456 (estimated locally),0.25 per call) 
+  Calls: 
+xTaskPriorityDisinherit/56 (xTaskPriorityDisinherit) @064ca9a0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags: optimize_size
+  Called by: prvCopyDataToQueue/33 (93576600 (estimated locally),0.09 per call) 
+  Calls: 
+xTaskResumeAll/55 (xTaskResumeAll) @064ca700
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags: optimize_size
+  Called by: xQueuePeek/20 (74569022 (estimated locally),2.10 per call) xQueuePeek/20 (37284511 (estimated locally),1.05 per call) xQueuePeek/20 (37284511 (estimated locally),1.05 per call) xQueueSemaphoreTake/19 (20512911 (estimated locally),0.90 per call) xQueueSemaphoreTake/19 (6769261 (estimated locally),0.30 per call) xQueueSemaphoreTake/19 (13743650 (estimated locally),0.61 per call) xQueueReceive/18 (74569022 (estimated locally),2.10 per call) xQueueReceive/18 (37284511 (estimated locally),1.05 per call) xQueueReceive/18 (37284511 (estimated locally),1.05 per call) xQueueGenericSend/15 (2511051 (estimated locally),0.07 per call) xQueueGenericSend/15 (44399945 (estimated locally),1.25 per call) xQueueGenericSend/15 (44399945 (estimated locally),1.25 per call) 
+  Calls: 
+vTaskPlaceOnEventList/54 (vTaskPlaceOnEventList) @064ca620
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags: optimize_size
+  Called by: xQueuePeek/20 (37284511 (estimated locally),1.05 per call) xQueueSemaphoreTake/19 (13743650 (estimated locally),0.61 per call) xQueueReceive/18 (37284511 (estimated locally),1.05 per call) xQueueGenericSend/15 (44399945 (estimated locally),1.25 per call) 
+  Calls: 
+xTaskCheckForTimeOut/53 (xTaskCheckForTimeOut) @064ca540
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags: optimize_size
+  Called by: xQueuePeek/20 (149138045 (estimated locally),4.21 per call) xQueueSemaphoreTake/19 (41025822 (estimated locally),1.81 per call) xQueueReceive/18 (149138045 (estimated locally),4.21 per call) xQueueGenericSend/15 (91310940 (estimated locally),2.58 per call) 
+  Calls: 
+vTaskSuspendAll/52 (vTaskSuspendAll) @064ca460
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags: optimize_size
+  Called by: xQueuePeek/20 (149138045 (estimated locally),4.21 per call) xQueueSemaphoreTake/19 (41025822 (estimated locally),1.81 per call) xQueueReceive/18 (149138045 (estimated locally),4.21 per call) xQueueGenericSend/15 (91310940 (estimated locally),2.58 per call) 
+  Calls: 
+vTaskInternalSetTimeOutState/51 (vTaskInternalSetTimeOutState) @064ca380
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags: optimize_size
+  Called by: xQueuePeek/20 (49215554 (estimated locally),1.39 per call) xQueueSemaphoreTake/19 (13538521 (estimated locally),0.60 per call) xQueueReceive/18 (49215554 (estimated locally),1.39 per call) xQueueGenericSend/15 (30132610 (estimated locally),0.85 per call) 
+  Calls: 
+xTaskGetSchedulerState/50 (xTaskGetSchedulerState) @064ca2a0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags: optimize_size
+  Called by: xQueuePeek/20 (19034822 (estimated locally),0.54 per call) xQueueSemaphoreTake/19 (5236217 (estimated locally),0.23 per call) xQueueReceive/18 (19034822 (estimated locally),0.54 per call) xQueueGenericSend/15 (13971110 (estimated locally),0.39 per call) 
+  Calls: 
+xTaskGetCurrentTaskHandle/49 (xTaskGetCurrentTaskHandle) @069ecd20
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags: optimize_size
+  Called by: xQueueTakeMutexRecursive/13 (12216749 (estimated locally),0.53 per call) xQueueGiveMutexRecursive/12 (12216749 (estimated locally),0.53 per call) 
+  Calls: 
+pvPortMalloc/48 (pvPortMalloc) @069ec700
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags: optimize_size
+  Called by: xQueueGenericCreate/6 (955931 (estimated locally),0.08 per call) 
+  Calls: 
+vPortExitCritical/47 (vPortExitCritical) @069ec540
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags: optimize_size
+  Called by: vQueueWaitForMessageRestricted/43 (1073741824 (estimated locally),1.00 per call) uxQueueSpacesAvailable/24 (12216749 (estimated locally),0.53 per call) uxQueueMessagesWaiting/23 (12216749 (estimated locally),0.53 per call) xQueuePeek/20 (149138045 (estimated locally),4.21 per call) xQueuePeek/20 (149138045 (estimated locally),4.21 per call) xQueuePeek/20 (5665822 (estimated locally),0.16 per call) xQueuePeek/20 (5881069 (estimated locally),0.17 per call) xQueueSemaphoreTake/19 (247755 (estimated locally),0.01 per call) xQueueSemaphoreTake/19 (2395518 (estimated locally),0.11 per call) xQueueSemaphoreTake/19 (41025822 (estimated locally),1.81 per call) xQueueSemaphoreTake/19 (41025822 (estimated locally),1.81 per call) xQueueSemaphoreTake/19 (1558590 (estimated locally),0.07 per call) xQueueSemaphoreTake/19 (1617801 (estimated locally),0.07 per call) xQueueReceive/18 (149138045 (estimated locally),4.21 per call) xQueueReceive/18 (149138045 (estimated locally),4.21 per call) xQueueReceive/18 (5665822 (estimated locally),0.16 per call) xQueueReceive/18 (5881069 (estimated locally),0.17 per call) xQueueGenericSend/15 (91310940 (estimated locally),2.58 per call) xQueueGenericSend/15 (91310940 (estimated locally),2.58 per call) xQueueGenericSend/15 (2582058 (estimated locally),0.07 per call) xQueueGenericSend/15 (5385224 (estimated locally),0.15 per call) xQueueGetMutexHolder/10 (12216749 (estimated locally),0.53 per call) xQueueGenericReset.part.0/66 (1073741824 (estimated locally),1.00 per call) prvUnlockQueue/35 (114863531 (estimated locally),1.00 per call) prvUnlockQueue/35 (114863530 (estimated locally),1.00 per call) prvIsQueueEmpty/36 (1073741824 (estimated locally),1.00 per call) prvIsQueueFull/38 (1073741824 (estimated locally),1.00 per call) 
+  Calls: 
+vListInitialise/46 (vListInitialise) @069ec460
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags: optimize_size
+  Called by: xQueueGenericReset.part.0/66 (354334800 (estimated locally),0.33 per call) xQueueGenericReset.part.0/66 (354334800 (estimated locally),0.33 per call) 
+  Calls: 
+xTaskRemoveFromEventList/45 (xTaskRemoveFromEventList) @069ec380
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags: optimize_size
+  Called by: xQueueReceiveFromISR/21 (1059662 (estimated locally),0.03 per call) xQueuePeek/20 (1940753 (estimated locally),0.05 per call) xQueueSemaphoreTake/19 (533874 (estimated locally),0.02 per call) xQueueReceive/18 (1940753 (estimated locally),0.05 per call) xQueueGiveFromISR/17 (604644 (estimated locally),0.02 per call) xQueueGenericSendFromISR/16 (1314662 (estimated locally),0.04 per call) xQueueGenericSend/15 (1777124 (estimated locally),0.05 per call) xQueueGenericReset.part.0/66 (237404317 (estimated locally),0.22 per call) prvUnlockQueue/35 (958878293 (estimated locally),8.35 per call) prvUnlockQueue/35 (958878284 (estimated locally),8.35 per call) 
+  Calls: 
+vPortEnterCritical/44 (vPortEnterCritical) @069ec2a0
+  Type: function
+  Visibility: external public
+  References: 
+  Referring: 
+  Availability: not_available
+  Function flags: optimize_size
+  Called by: vQueueWaitForMessageRestricted/43 (1073741824 (estimated locally),1.00 per call) uxQueueSpacesAvailable/24 (12216749 (estimated locally),0.53 per call) uxQueueMessagesWaiting/23 (12216749 (estimated locally),0.53 per call) xQueuePeek/20 (149138045 (estimated locally),4.21 per call) xQueuePeek/20 (160684935 (estimated locally),4.53 per call) xQueueSemaphoreTake/19 (247755 (estimated locally),0.01 per call) xQueueSemaphoreTake/19 (2395518 (estimated locally),0.11 per call) xQueueSemaphoreTake/19 (41025822 (estimated locally),1.81 per call) xQueueSemaphoreTake/19 (44202212 (estimated locally),1.95 per call) xQueueReceive/18 (149138045 (estimated locally),4.21 per call) xQueueReceive/18 (160684935 (estimated locally),4.53 per call) xQueueGenericSend/15 (91310940 (estimated locally),2.58 per call) xQueueGenericSend/15 (99278222 (estimated locally),2.80 per call) xQueueGetMutexHolder/10 (12216749 (estimated locally),0.53 per call) xQueueGenericReset.part.0/66 (1073741824 (estimated locally),1.00 per call) prvUnlockQueue/35 (114863530 (estimated locally),1.00 per call) prvUnlockQueue/35 (114863529 (estimated locally),1.00 per call) prvIsQueueEmpty/36 (1073741824 (estimated locally),1.00 per call) prvIsQueueFull/38 (1073741824 (estimated locally),1.00 per call) 
+  Calls: 
+vQueueWaitForMessageRestricted/43 (vQueueWaitForMessageRestricted) @06999620
+  Type: function definition analyzed
+  Visibility: externally_visible public
+  References: 
+  Referring: 
+  Availability: available
+  Function flags: count:1073741824 (estimated locally) body optimize_size
+  Called by: 
+  Calls: prvUnlockQueue/35 (1073741824 (estimated locally),1.00 per call) vTaskPlaceOnEventListRestricted/65 (354334800 (estimated locally),0.33 per call) vPortExitCritical/47 (1073741824 (estimated locally),1.00 per call) vPortEnterCritical/44 (1073741824 (estimated locally),1.00 per call) 
+vQueueUnregisterQueue/42 (vQueueUnregisterQueue) @06999000
+  Type: function definition analyzed
+  Visibility: externally_visible public
+  References: 
+  Referring: 
+  Availability: available
+  Function flags: count:35437027 (estimated locally) body optimize_size
+  Called by: vQueueDelete/26 (12216749 (estimated locally),0.53 per call) 
+  Calls: vQueueUnregisterQueue.part.0/73 (24805919 (estimated locally),0.70 per call) 
+pcQueueGetName/41 (pcQueueGetName) @06999c40
+  Type: function definition analyzed
+  Visibility: externally_visible public
+  References: xQueueRegistry/4 (read) xQueueRegistry/4 (read) 
+  Referring: 
+  Availability: available
+  Function flags: count:35437027 (estimated locally) body optimize_size
+  Called by: 
+  Calls: 
+vQueueAddToRegistry/40 (vQueueAddToRegistry) @069998c0
+  Type: function definition analyzed
+  Visibility: externally_visible public
+  References: xQueueRegistry/4 (read) xQueueRegistry/4 (addr) xQueueRegistry/4 (read) xQueueRegistry/4 (addr) 
+  Referring: 
+  Availability: available
+  Function flags: count:35437027 (estimated locally) body optimize_size
+  Called by: 
+  Calls: 
+xQueueIsQueueFullFromISR/39 (xQueueIsQueueFullFromISR) @06999540
+  Type: function definition analyzed
+  Visibility: externally_visible public
+  References: 
+  Referring: 
+  Availability: available
+  Function flags: count:35437027 (estimated locally) body optimize_size
+  Called by: 
+  Calls: 
+prvIsQueueFull/38 (prvIsQueueFull) @069991c0
+  Type: function definition analyzed
+  Visibility: prevailing_def_ironly
+  References: 
+  Referring: 
+  Availability: local
+  Function flags: count:1073741824 (estimated locally) body local optimize_size
+  Called by: xQueueGenericSend/15 (88799889 (estimated locally),2.51 per call) 
+  Calls: vPortExitCritical/47 (1073741824 (estimated locally),1.00 per call) vPortEnterCritical/44 (1073741824 (estimated locally),1.00 per call) 
+xQueueIsQueueEmptyFromISR/37 (xQueueIsQueueEmptyFromISR) @0698eb60
+  Type: function definition analyzed
+  Visibility: externally_visible public
+  References: 
+  Referring: 
+  Availability: available
+  Function flags: count:35437027 (estimated locally) body optimize_size
+  Called by: 
+  Calls: 
+prvIsQueueEmpty/36 (prvIsQueueEmpty) @0698e2a0
+  Type: function definition analyzed
+  Visibility: prevailing_def_ironly
+  References: 
+  Referring: 
+  Availability: local
+  Function flags: count:1073741824 (estimated locally) body local optimize_size
+  Called by: xQueuePeek/20 (74569022 (estimated locally),2.10 per call) xQueuePeek/20 (74569022 (estimated locally),2.10 per call) xQueueSemaphoreTake/19 (20512911 (estimated locally),0.90 per call) xQueueSemaphoreTake/19 (20512911 (estimated locally),0.90 per call) xQueueReceive/18 (74569022 (estimated locally),2.10 per call) xQueueReceive/18 (74569022 (estimated locally),2.10 per call) 
+  Calls: vPortExitCritical/47 (1073741824 (estimated locally),1.00 per call) vPortEnterCritical/44 (1073741824 (estimated locally),1.00 per call) 
+prvUnlockQueue/35 (prvUnlockQueue) @0698eee0
+  Type: function definition analyzed
+  Visibility: prevailing_def_ironly
+  References: 
+  Referring: 
+  Availability: local
+  Function flags: count:114863529 (estimated locally) body local optimize_size
+  Called by: vQueueWaitForMessageRestricted/43 (1073741824 (estimated locally),1.00 per call) xQueuePeek/20 (74569022 (estimated locally),2.10 per call) xQueuePeek/20 (37284511 (estimated locally),1.05 per call) xQueuePeek/20 (37284511 (estimated locally),1.05 per call) xQueueSemaphoreTake/19 (20512911 (estimated locally),0.90 per call) xQueueSemaphoreTake/19 (6769261 (estimated locally),0.30 per call) xQueueSemaphoreTake/19 (13743650 (estimated locally),0.61 per call) xQueueReceive/18 (74569022 (estimated locally),2.10 per call) xQueueReceive/18 (37284511 (estimated locally),1.05 per call) xQueueReceive/18 (37284511 (estimated locally),1.05 per call) xQueueGenericSend/15 (2511051 (estimated locally),0.07 per call) xQueueGenericSend/15 (44399945 (estimated locally),1.25 per call) xQueueGenericSend/15 (44399945 (estimated locally),1.25 per call) 
+  Calls: vPortExitCritical/47 (114863531 (estimated locally),1.00 per call) vTaskMissedYield/58 (316429835 (estimated locally),2.75 per call) xTaskRemoveFromEventList/45 (958878293 (estimated locally),8.35 per call) vPortEnterCritical/44 (114863530 (estimated locally),1.00 per call) vPortExitCritical/47 (114863530 (estimated locally),1.00 per call) vTaskMissedYield/58 (316429832 (estimated locally),2.75 per call) xTaskRemoveFromEventList/45 (958878284 (estimated locally),8.35 per call) vPortEnterCritical/44 (114863529 (estimated locally),1.00 per call) 
+prvCopyDataFromQueue/34 (prvCopyDataFromQueue) @0698ea80
+  Type: function definition analyzed
+  Visibility: prevailing_def_ironly
+  References: 
+  Referring: 
+  Availability: local
+  Function flags: count:1073741824 (estimated locally) body local optimize_size
+  Called by: xQueuePeekFromISR/22 (1727952 (estimated locally),0.06 per call) xQueueReceiveFromISR/21 (6281491 (estimated locally),0.18 per call) xQueuePeek/20 (5881069 (estimated locally),0.17 per call) xQueueReceive/18 (5881069 (estimated locally),0.17 per call) 
+  Calls: memcpy/57 (536870913 (estimated locally),0.50 per call) 
+prvCopyDataToQueue/33 (prvCopyDataToQueue) @0698e7e0
+  Type: function definition analyzed
+  Visibility: prevailing_def_ironly
+  References: 
+  Referring: 
+  Availability: local
+  Function flags: count:1073741824 (estimated locally) body local optimize_size
+  Called by: xQueueGenericSendFromISR/16 (7793085 (estimated locally),0.22 per call) xQueueGenericSend/15 (5385224 (estimated locally),0.15 per call) 
+  Calls: memcpy/57 (268435456 (estimated locally),0.25 per call) memcpy/57 (268435456 (estimated locally),0.25 per call) xTaskPriorityDisinherit/56 (93576600 (estimated locally),0.09 per call) 
+prvGetDisinheritPriorityAfterTimeout/32 (prvGetDisinheritPriorityAfterTimeout) @0698e540
+  Type: function definition analyzed
+  Visibility: prevailing_def_ironly
+  References: 
+  Referring: 
+  Availability: local
+  Function flags: count:1073741824 (estimated locally) body local optimize_size
+  Called by: xQueueSemaphoreTake/19 (247755 (estimated locally),0.01 per call) 
+  Calls: 
+uxQueueGetQueueLength/31 (uxQueueGetQueueLength) @0698e1c0
+  Type: function definition analyzed
+  Visibility: externally_visible public
+  References: 
+  Referring: 
+  Availability: available
+  Function flags: count:1073741824 (estimated locally) body optimize_size
+  Called by: 
+  Calls: 
+uxQueueGetQueueItemSize/30 (uxQueueGetQueueItemSize) @0698ae00
+  Type: function definition analyzed
+  Visibility: externally_visible public
+  References: 
+  Referring: 
+  Availability: available
+  Function flags: count:1073741824 (estimated locally) body optimize_size
+  Called by: 
+  Calls: 
+ucQueueGetQueueType/29 (ucQueueGetQueueType) @0698a7e0
+  Type: function definition analyzed
+  Visibility: externally_visible public
+  References: 
+  Referring: 
+  Availability: available
+  Function flags: count:1073741824 (estimated locally) body optimize_size
+  Called by: 
+  Calls: 
+vQueueSetQueueNumber/28 (vQueueSetQueueNumber) @0698a0e0
+  Type: function definition analyzed
+  Visibility: externally_visible public
+  References: 
+  Referring: 
+  Availability: available
+  Function flags: count:1073741824 (estimated locally) body optimize_size
+  Called by: 
+  Calls: 
+uxQueueGetQueueNumber/27 (uxQueueGetQueueNumber) @0698ad20
+  Type: function definition analyzed
+  Visibility: externally_visible public
+  References: 
+  Referring: 
+  Availability: available
+  Function flags: count:1073741824 (estimated locally) body optimize_size
+  Called by: 
+  Calls: 
+vQueueDelete/26 (vQueueDelete) @0698aa80
+  Type: function definition analyzed
+  Visibility: externally_visible public
+  References: 
+  Referring: 
+  Availability: available
+  Function flags: count:22847857 (estimated locally) body optimize_size
+  Called by: 
+  Calls: vPortFree/64 (12216749 (estimated locally),0.53 per call) vQueueUnregisterQueue/42 (12216749 (estimated locally),0.53 per call) 
+uxQueueMessagesWaitingFromISR/25 (uxQueueMessagesWaitingFromISR) @0698a700
+  Type: function definition analyzed
+  Visibility: externally_visible public
+  References: 
+  Referring: 
+  Availability: available
+  Function flags: count:35437027 (estimated locally) body optimize_size
+  Called by: 
+  Calls: 
+uxQueueSpacesAvailable/24 (uxQueueSpacesAvailable) @0698a380
+  Type: function definition analyzed
+  Visibility: externally_visible public
+  References: 
+  Referring: 
+  Availability: available
+  Function flags: count:22847857 (estimated locally) body optimize_size
+  Called by: 
+  Calls: vPortExitCritical/47 (12216749 (estimated locally),0.53 per call) vPortEnterCritical/44 (12216749 (estimated locally),0.53 per call) 
+uxQueueMessagesWaiting/23 (uxQueueMessagesWaiting) @0698a000
+  Type: function definition analyzed
+  Visibility: externally_visible public
+  References: 
+  Referring: 
+  Availability: available
+  Function flags: count:22847857 (estimated locally) body optimize_size
+  Called by: 
+  Calls: vPortExitCritical/47 (12216749 (estimated locally),0.53 per call) vPortEnterCritical/44 (12216749 (estimated locally),0.53 per call) 
+xQueuePeekFromISR/22 (xQueuePeekFromISR) @06977380
+  Type: function definition analyzed
+  Visibility: externally_visible public
+  References: 
+  Referring: 
+  Availability: available
+  Function flags: count:26667774 (estimated locally) body optimize_size
+  Called by: 
+  Calls: prvCopyDataFromQueue/34 (1727952 (estimated locally),0.06 per call) vPortValidateInterruptPriority/59 (5236217 (estimated locally),0.20 per call) 
+xQueueReceiveFromISR/21 (xQueueReceiveFromISR) @06977c40
+  Type: function definition analyzed
+  Visibility: externally_visible public
+  References: 
+  Referring: 
+  Availability: available
+  Function flags: count:35437027 (estimated locally) body optimize_size
+  Called by: 
+  Calls: uxTaskGetNumberOfTasks/60 (3070393 (estimated locally),0.09 per call) xTaskRemoveFromEventList/45 (1059662 (estimated locally),0.03 per call) prvCopyDataFromQueue/34 (6281491 (estimated locally),0.18 per call) vPortValidateInterruptPriority/59 (19034822 (estimated locally),0.54 per call) 
+xQueuePeek/20 (xQueuePeek) @069777e0
+  Type: function definition analyzed
+  Visibility: externally_visible public
+  References: 
+  Referring: 
+  Availability: available
+  Function flags: count:35437027 (estimated locally) body optimize_size
+  Called by: 
+  Calls: prvIsQueueEmpty/36 (74569022 (estimated locally),2.10 per call) xTaskResumeAll/55 (74569022 (estimated locally),2.10 per call) prvUnlockQueue/35 (74569022 (estimated locally),2.10 per call) xTaskResumeAll/55 (37284511 (estimated locally),1.05 per call) prvUnlockQueue/35 (37284511 (estimated locally),1.05 per call) xTaskResumeAll/55 (37284511 (estimated locally),1.05 per call) prvUnlockQueue/35 (37284511 (estimated locally),1.05 per call) vTaskPlaceOnEventList/54 (37284511 (estimated locally),1.05 per call) prvIsQueueEmpty/36 (74569022 (estimated locally),2.10 per call) xTaskCheckForTimeOut/53 (149138045 (estimated locally),4.21 per call) vPortExitCritical/47 (149138045 (estimated locally),4.21 per call) vPortEnterCritical/44 (149138045 (estimated locally),4.21 per call) vTaskSuspendAll/52 (149138045 (estimated locally),4.21 per call) vPortExitCritical/47 (149138045 (estimated locally),4.21 per call) vTaskInternalSetTimeOutState/51 (49215554 (estimated locally),1.39 per call) vPortExitCritical/47 (5665822 (estimated locally),0.16 per call) vPortExitCritical/47 (5881069 (estimated locally),0.17 per call) xTaskRemoveFromEventList/45 (1940753 (estimated locally),0.05 per call) prvCopyDataFromQueue/34 (5881069 (estimated locally),0.17 per call) vPortEnterCritical/44 (160684935 (estimated locally),4.53 per call) xTaskGetSchedulerState/50 (19034822 (estimated locally),0.54 per call) 
+xQueueSemaphoreTake/19 (xQueueSemaphoreTake) @069772a0
+  Type: function definition analyzed
+  Visibility: externally_visible public
+  References: 
+  Referring: 
+  Availability: available
+  Function flags: count:22667608 (estimated locally) body optimize_size
+  Called by: xQueueTakeMutexRecursive/13 (6532296 (estimated locally),0.29 per call) 
+  Calls: vPortExitCritical/47 (247755 (estimated locally),0.01 per call) vTaskPriorityDisinheritAfterTimeout/63 (247755 (estimated locally),0.01 per call) prvGetDisinheritPriorityAfterTimeout/32 (247755 (estimated locally),0.01 per call) vPortEnterCritical/44 (247755 (estimated locally),0.01 per call) prvIsQueueEmpty/36 (20512911 (estimated locally),0.90 per call) xTaskResumeAll/55 (20512911 (estimated locally),0.90 per call) prvUnlockQueue/35 (20512911 (estimated locally),0.90 per call) xTaskResumeAll/55 (6769261 (estimated locally),0.30 per call) prvUnlockQueue/35 (6769261 (estimated locally),0.30 per call) xTaskResumeAll/55 (13743650 (estimated locally),0.61 per call) prvUnlockQueue/35 (13743650 (estimated locally),0.61 per call) vTaskPlaceOnEventList/54 (13743650 (estimated locally),0.61 per call) vPortExitCritical/47 (2395518 (estimated locally),0.11 per call) xTaskPriorityInherit/62 (2395518 (estimated locally),0.11 per call) vPortEnterCritical/44 (2395518 (estimated locally),0.11 per call) prvIsQueueEmpty/36 (20512911 (estimated locally),0.90 per call) xTaskCheckForTimeOut/53 (41025822 (estimated locally),1.81 per call) vPortExitCritical/47 (41025822 (estimated locally),1.81 per call) vPortEnterCritical/44 (41025822 (estimated locally),1.81 per call) vTaskSuspendAll/52 (41025822 (estimated locally),1.81 per call) vPortExitCritical/47 (41025822 (estimated locally),1.81 per call) vTaskInternalSetTimeOutState/51 (13538521 (estimated locally),0.60 per call) vPortExitCritical/47 (1558590 (estimated locally),0.07 per call) vPortExitCritical/47 (1617801 (estimated locally),0.07 per call) xTaskRemoveFromEventList/45 (533874 (estimated locally),0.02 per call) pvTaskIncrementMutexHeldCount/61 (281983 (estimated locally),0.01 per call) vPortEnterCritical/44 (44202212 (estimated locally),1.95 per call) xTaskGetSchedulerState/50 (5236217 (estimated locally),0.23 per call) 
+xQueueReceive/18 (xQueueReceive) @0695f7e0
+  Type: function definition analyzed
+  Visibility: externally_visible public
+  References: 
+  Referring: 
+  Availability: available
+  Function flags: count:35437027 (estimated locally) body optimize_size
+  Called by: 
+  Calls: prvIsQueueEmpty/36 (74569022 (estimated locally),2.10 per call) xTaskResumeAll/55 (74569022 (estimated locally),2.10 per call) prvUnlockQueue/35 (74569022 (estimated locally),2.10 per call) xTaskResumeAll/55 (37284511 (estimated locally),1.05 per call) prvUnlockQueue/35 (37284511 (estimated locally),1.05 per call) xTaskResumeAll/55 (37284511 (estimated locally),1.05 per call) prvUnlockQueue/35 (37284511 (estimated locally),1.05 per call) vTaskPlaceOnEventList/54 (37284511 (estimated locally),1.05 per call) prvIsQueueEmpty/36 (74569022 (estimated locally),2.10 per call) xTaskCheckForTimeOut/53 (149138045 (estimated locally),4.21 per call) vPortExitCritical/47 (149138045 (estimated locally),4.21 per call) vPortEnterCritical/44 (149138045 (estimated locally),4.21 per call) vTaskSuspendAll/52 (149138045 (estimated locally),4.21 per call) vPortExitCritical/47 (149138045 (estimated locally),4.21 per call) vTaskInternalSetTimeOutState/51 (49215554 (estimated locally),1.39 per call) vPortExitCritical/47 (5665822 (estimated locally),0.16 per call) vPortExitCritical/47 (5881069 (estimated locally),0.17 per call) xTaskRemoveFromEventList/45 (1940753 (estimated locally),0.05 per call) prvCopyDataFromQueue/34 (5881069 (estimated locally),0.17 per call) vPortEnterCritical/44 (160684935 (estimated locally),4.53 per call) xTaskGetSchedulerState/50 (19034822 (estimated locally),0.54 per call) 
+xQueueGiveFromISR/17 (xQueueGiveFromISR) @0695fb60
+  Type: function definition analyzed
+  Visibility: externally_visible public
+  References: 
+  Referring: 
+  Availability: available
+  Function flags: count:30374594 (estimated locally) body optimize_size
+  Called by: 
+  Calls: uxTaskGetNumberOfTasks/60 (1751969 (estimated locally),0.06 per call) xTaskRemoveFromEventList/45 (604644 (estimated locally),0.02 per call) vPortValidateInterruptPriority/59 (7168450 (estimated locally),0.24 per call) 
+xQueueGenericSendFromISR/16 (xQueueGenericSendFromISR) @0695f700
+  Type: function definition analyzed
+  Visibility: externally_visible public
+  References: 
+  Referring: 
+  Availability: available
+  Function flags: count:35437027 (estimated locally) body optimize_size
+  Called by: 
+  Calls: uxTaskGetNumberOfTasks/60 (3809260 (estimated locally),0.11 per call) xTaskRemoveFromEventList/45 (1314662 (estimated locally),0.04 per call) prvCopyDataToQueue/33 (7793085 (estimated locally),0.22 per call) vPortValidateInterruptPriority/59 (13971110 (estimated locally),0.39 per call) 
+xQueueGenericSend/15 (xQueueGenericSend) @0695f2a0
+  Type: function definition analyzed
+  Visibility: externally_visible public
+  References: 
+  Referring: 
+  Availability: available
+  Function flags: count:35437027 (estimated locally) body optimize_size
+  Called by: xQueueGiveMutexRecursive/12 (1209458 (estimated locally),0.05 per call) prvInitialiseMutex/8 (574129753 (estimated locally),0.53 per call) 
+  Calls: xTaskResumeAll/55 (2511051 (estimated locally),0.07 per call) prvUnlockQueue/35 (2511051 (estimated locally),0.07 per call) xTaskResumeAll/55 (44399945 (estimated locally),1.25 per call) prvUnlockQueue/35 (44399945 (estimated locally),1.25 per call) xTaskResumeAll/55 (44399945 (estimated locally),1.25 per call) prvUnlockQueue/35 (44399945 (estimated locally),1.25 per call) vTaskPlaceOnEventList/54 (44399945 (estimated locally),1.25 per call) prvIsQueueFull/38 (88799889 (estimated locally),2.51 per call) xTaskCheckForTimeOut/53 (91310940 (estimated locally),2.58 per call) vPortExitCritical/47 (91310940 (estimated locally),2.58 per call) vPortEnterCritical/44 (91310940 (estimated locally),2.58 per call) vTaskSuspendAll/52 (91310940 (estimated locally),2.58 per call) vPortExitCritical/47 (91310940 (estimated locally),2.58 per call) vTaskInternalSetTimeOutState/51 (30132610 (estimated locally),0.85 per call) vPortExitCritical/47 (2582058 (estimated locally),0.07 per call) vPortExitCritical/47 (5385224 (estimated locally),0.15 per call) xTaskRemoveFromEventList/45 (1777124 (estimated locally),0.05 per call) prvCopyDataToQueue/33 (5385224 (estimated locally),0.15 per call) vPortEnterCritical/44 (99278222 (estimated locally),2.80 per call) xTaskGetSchedulerState/50 (13971110 (estimated locally),0.39 per call) 
+xQueueCreateCountingSemaphore/14 (xQueueCreateCountingSemaphore) @0692a380
+  Type: function definition analyzed
+  Visibility: externally_visible public
+  References: 
+  Referring: 
+  Availability: available
+  Function flags: count:12731866 (estimated locally) body optimize_size
+  Called by: 
+  Calls: xQueueGenericCreate/6 (2100758 (estimated locally),0.17 per call) 
+xQueueTakeMutexRecursive/13 (xQueueTakeMutexRecursive) @0692ad20
+  Type: function definition analyzed
+  Visibility: externally_visible public
+  References: 
+  Referring: 
+  Availability: available
+  Function flags: count:22847857 (estimated locally) body optimize_size
+  Called by: 
+  Calls: xQueueSemaphoreTake/19 (6532296 (estimated locally),0.29 per call) xTaskGetCurrentTaskHandle/49 (12216749 (estimated locally),0.53 per call) 
+xQueueGiveMutexRecursive/12 (xQueueGiveMutexRecursive) @0692a9a0
+  Type: function definition analyzed
+  Visibility: externally_visible public
+  References: 
+  Referring: 
+  Availability: available
+  Function flags: count:22847857 (estimated locally) body optimize_size
+  Called by: 
+  Calls: xQueueGenericSend/15 (1209458 (estimated locally),0.05 per call) xTaskGetCurrentTaskHandle/49 (12216749 (estimated locally),0.53 per call) 
+xQueueGetMutexHolderFromISR/11 (xQueueGetMutexHolderFromISR) @0692a620
+  Type: function definition analyzed
+  Visibility: externally_visible public
+  References: 
+  Referring: 
+  Availability: available
+  Function flags: count:35437027 (estimated locally) body optimize_size
+  Called by: 
+  Calls: 
+xQueueGetMutexHolder/10 (xQueueGetMutexHolder) @0692a2a0
+  Type: function definition analyzed
+  Visibility: externally_visible public
+  References: 
+  Referring: 
+  Availability: available
+  Function flags: count:22847857 (estimated locally) body optimize_size
+  Called by: 
+  Calls: vPortExitCritical/47 (12216749 (estimated locally),0.53 per call) vPortEnterCritical/44 (12216749 (estimated locally),0.53 per call) 
+xQueueCreateMutex/9 (xQueueCreateMutex) @0693dee0
+  Type: function definition analyzed
+  Visibility: externally_visible public
+  References: 
+  Referring: 
+  Availability: available
+  Function flags: count:1073741824 (estimated locally) body optimize_size
+  Called by: 
+  Calls: prvInitialiseMutex/8 (1073741824 (estimated locally),1.00 per call) xQueueGenericCreate/6 (1073741824 (estimated locally),1.00 per call) 
+prvInitialiseMutex/8 (prvInitialiseMutex) @0693d8c0
+  Type: function definition analyzed
+  Visibility: prevailing_def_ironly
+  References: 
+  Referring: 
+  Availability: local
+  Function flags: count:1073741824 (estimated locally) body local optimize_size
+  Called by: xQueueCreateMutex/9 (1073741824 (estimated locally),1.00 per call) 
+  Calls: xQueueGenericSend/15 (574129753 (estimated locally),0.53 per call) 
+prvInitialiseNewQueue/7 (prvInitialiseNewQueue) @0693de00
+  Type: function definition analyzed
+  Visibility: prevailing_def_ironly
+  References: 
+  Referring: 
+  Availability: local
+  Function flags: count:1073741824 (estimated locally) body local optimize_size
+  Called by: xQueueGenericCreate/6 (511136 (estimated locally),0.04 per call) 
+  Calls: xQueueGenericReset/5 (1073741824 (estimated locally),1.00 per call) 
+xQueueGenericCreate/6 (xQueueGenericCreate) @0693db60
+  Type: function definition analyzed
+  Visibility: externally_visible public
+  References: 
+  Referring: 
+  Availability: available
+  Function flags: count:11587039 (estimated locally) body optimize_size
+  Called by: xQueueCreateMutex/9 (1073741824 (estimated locally),1.00 per call) xQueueCreateCountingSemaphore/14 (2100758 (estimated locally),0.17 per call) 
+  Calls: prvInitialiseNewQueue/7 (511136 (estimated locally),0.04 per call) pvPortMalloc/48 (955931 (estimated locally),0.08 per call) 
+xQueueGenericReset/5 (xQueueGenericReset) @0693d7e0
+  Type: function definition analyzed
+  Visibility: externally_visible public
+  References: 
+  Referring: 
+  Availability: available
+  Function flags: count:18188380 (estimated locally) body optimize_size
+  Called by: prvInitialiseNewQueue/7 (1073741824 (estimated locally),1.00 per call) 
+  Calls: xQueueGenericReset.part.0/66 (2100758 (estimated locally),0.12 per call) 
+xQueueRegistry/4 (xQueueRegistry) @06959cf0
+  Type: variable definition analyzed
+  Visibility: externally_visible public
+  References: 
+  Referring: pcQueueGetName/41 (read) vQueueAddToRegistry/40 (addr) vQueueAddToRegistry/40 (read) vQueueAddToRegistry/40 (addr) pcQueueGetName/41 (read) vQueueAddToRegistry/40 (read) vQueueUnregisterQueue.part.0/73 (read) vQueueUnregisterQueue.part.0/73 (write) vQueueUnregisterQueue.part.0/73 (write) 
+  Availability: available
+  Varpool flags:
+
+;; Function prvIsQueueEmpty (prvIsQueueEmpty, funcdef_no=35, decl_uid=6541, cgraph_uid=36, symbol_order=36)
+
+Modification phase of node prvIsQueueEmpty/36
+prvIsQueueEmpty (const struct Queue_t * pxQueue)
+{
+  BaseType_t xReturn;
+  long unsigned int _1;
+
+  <bb 2> [local count: 1073741824]:
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  vPortEnterCritical ();
+  # DEBUG BEGIN_STMT
+  _1 ={v} pxQueue_5(D)->uxMessagesWaiting;
+  if (_1 == 0)
+    goto <bb 4>; [50.00%]
+  else
+    goto <bb 3>; [50.00%]
+
+  <bb 3> [local count: 536870913]:
+  # DEBUG BEGIN_STMT
+  # DEBUG xReturn => 0
+
+  <bb 4> [local count: 1073741824]:
+  # xReturn_2 = PHI <1(2), 0(3)>
+  # DEBUG xReturn => xReturn_2
+  # DEBUG BEGIN_STMT
+  vPortExitCritical ();
+  # DEBUG BEGIN_STMT
+  return xReturn_2;
+
+}
+
+
+
+;; Function prvCopyDataToQueue (prvCopyDataToQueue, funcdef_no=32, decl_uid=6547, cgraph_uid=33, symbol_order=33)
+
+Modification phase of node prvCopyDataToQueue/33
+prvCopyDataToQueue (struct Queue_t * const pxQueue, const void * pvItemToQueue, const BaseType_t xPosition)
+{
+  UBaseType_t uxMessagesWaiting;
+  BaseType_t xReturn;
+  long unsigned int _1;
+  int8_t * _2;
+  struct tskTaskControlBlock * _3;
+  int8_t * _4;
+  int8_t * _5;
+  long unsigned int _6;
+  int8_t * _7;
+  int8_t * _8;
+  int8_t * _9;
+  int8_t * _10;
+  int8_t * _11;
+  long unsigned int _12;
+  sizetype _13;
+  int8_t * _14;
+  int8_t * _15;
+  int8_t * _16;
+  int8_t * _17;
+  long unsigned int _18;
+
+  <bb 2> [local count: 1073741824]:
+  # DEBUG BEGIN_STMT
+  # DEBUG xReturn => 0
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  uxMessagesWaiting_25 ={v} pxQueue_24(D)->uxMessagesWaiting;
+  # DEBUG uxMessagesWaiting => uxMessagesWaiting_25
+  # DEBUG BEGIN_STMT
+  _1 = pxQueue_24(D)->uxItemSize;
+  if (_1 == 0)
+    goto <bb 3>; [50.00%]
+  else
+    goto <bb 5>; [50.00%]
+
+  <bb 3> [local count: 536870913]:
+  # DEBUG BEGIN_STMT
+  _2 = pxQueue_24(D)->pcHead;
+  if (_2 == 0B)
+    goto <bb 4>; [17.43%]
+  else
+    goto <bb 13>; [82.57%]
+
+  <bb 4> [local count: 93576600]:
+  # DEBUG BEGIN_STMT
+  _3 = pxQueue_24(D)->u.xSemaphore.xMutexHolder;
+  xReturn_36 = xTaskPriorityDisinherit (_3);
+  # DEBUG xReturn => xReturn_36
+  # DEBUG BEGIN_STMT
+  pxQueue_24(D)->u.xSemaphore.xMutexHolder = 0B;
+  goto <bb 13>; [100.00%]
+
+  <bb 5> [local count: 536870913]:
+  # DEBUG BEGIN_STMT
+  if (xPosition_26(D) == 0)
+    goto <bb 6>; [50.00%]
+  else
+    goto <bb 8>; [50.00%]
+
+  <bb 6> [local count: 268435456]:
+  # DEBUG BEGIN_STMT
+  _4 = pxQueue_24(D)->pcWriteTo;
+  memcpy (_4, pvItemToQueue_27(D), _1);
+  # DEBUG BEGIN_STMT
+  _5 = pxQueue_24(D)->pcWriteTo;
+  _6 = pxQueue_24(D)->uxItemSize;
+  _7 = _5 + _6;
+  pxQueue_24(D)->pcWriteTo = _7;
+  # DEBUG BEGIN_STMT
+  _8 = pxQueue_24(D)->u.xQueue.pcTail;
+  if (_7 >= _8)
+    goto <bb 7>; [50.00%]
+  else
+    goto <bb 13>; [50.00%]
+
+  <bb 7> [local count: 134217728]:
+  # DEBUG BEGIN_STMT
+  _9 = pxQueue_24(D)->pcHead;
+  pxQueue_24(D)->pcWriteTo = _9;
+  goto <bb 13>; [100.00%]
+
+  <bb 8> [local count: 268435456]:
+  # DEBUG BEGIN_STMT
+  _10 = pxQueue_24(D)->u.xQueue.pcReadFrom;
+  memcpy (_10, pvItemToQueue_27(D), _1);
+  # DEBUG BEGIN_STMT
+  _11 = pxQueue_24(D)->u.xQueue.pcReadFrom;
+  _12 = pxQueue_24(D)->uxItemSize;
+  _13 = -_12;
+  _14 = _11 + _13;
+  pxQueue_24(D)->u.xQueue.pcReadFrom = _14;
+  # DEBUG BEGIN_STMT
+  _15 = pxQueue_24(D)->pcHead;
+  if (_14 < _15)
+    goto <bb 9>; [50.00%]
+  else
+    goto <bb 10>; [50.00%]
+
+  <bb 9> [local count: 134217728]:
+  # DEBUG BEGIN_STMT
+  _16 = pxQueue_24(D)->u.xQueue.pcTail;
+  _17 = _16 + _13;
+  pxQueue_24(D)->u.xQueue.pcReadFrom = _17;
+
+  <bb 10> [local count: 268435456]:
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  if (xPosition_26(D) == 2)
+    goto <bb 11>; [34.00%]
+  else
+    goto <bb 13>; [66.00%]
+
+  <bb 11> [local count: 91268056]:
+  # DEBUG BEGIN_STMT
+  if (uxMessagesWaiting_25 != 0)
+    goto <bb 12>; [50.00%]
+  else
+    goto <bb 13>; [50.00%]
+
+  <bb 12> [local count: 45634028]:
+  # DEBUG BEGIN_STMT
+  uxMessagesWaiting_31 = uxMessagesWaiting_25 + 4294967295;
+  # DEBUG uxMessagesWaiting => uxMessagesWaiting_31
+
+  <bb 13> [local count: 1073741824]:
+  # xReturn_19 = PHI <xReturn_36(4), 0(7), 0(10), 0(12), 0(3), 0(6), 0(11)>
+  # uxMessagesWaiting_20 = PHI <uxMessagesWaiting_25(4), uxMessagesWaiting_25(7), uxMessagesWaiting_25(10), uxMessagesWaiting_31(12), uxMessagesWaiting_25(3), uxMessagesWaiting_25(6), uxMessagesWaiting_25(11)>
+  # DEBUG uxMessagesWaiting => uxMessagesWaiting_20
+  # DEBUG xReturn => xReturn_19
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  _18 = uxMessagesWaiting_20 + 1;
+  pxQueue_24(D)->uxMessagesWaiting ={v} _18;
+  # DEBUG BEGIN_STMT
+  return xReturn_19;
+
+}
+
+
+
+;; Function prvCopyDataFromQueue (prvCopyDataFromQueue, funcdef_no=33, decl_uid=6550, cgraph_uid=34, symbol_order=34)
+
+Modification phase of node prvCopyDataFromQueue/34
+prvCopyDataFromQueue (struct Queue_t * const pxQueue, void * const pvBuffer)
+{
+  long unsigned int _1;
+  int8_t * _2;
+  int8_t * _3;
+  int8_t * _4;
+  int8_t * _5;
+  int8_t * _6;
+
+  <bb 2> [local count: 1073741824]:
+  # DEBUG BEGIN_STMT
+  _1 = pxQueue_10(D)->uxItemSize;
+  if (_1 != 0)
+    goto <bb 3>; [50.00%]
+  else
+    goto <bb 6>; [50.00%]
+
+  <bb 3> [local count: 536870913]:
+  # DEBUG BEGIN_STMT
+  _2 = pxQueue_10(D)->u.xQueue.pcReadFrom;
+  _3 = _2 + _1;
+  pxQueue_10(D)->u.xQueue.pcReadFrom = _3;
+  # DEBUG BEGIN_STMT
+  _4 = pxQueue_10(D)->u.xQueue.pcTail;
+  if (_3 >= _4)
+    goto <bb 4>; [50.00%]
+  else
+    goto <bb 5>; [50.00%]
+
+  <bb 4> [local count: 268435456]:
+  # DEBUG BEGIN_STMT
+  _5 = pxQueue_10(D)->pcHead;
+  pxQueue_10(D)->u.xQueue.pcReadFrom = _5;
+
+  <bb 5> [local count: 536870913]:
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  _6 = pxQueue_10(D)->u.xQueue.pcReadFrom;
+  memcpy (pvBuffer_13(D), _6, _1);
+
+  <bb 6> [local count: 1073741824]:
+  return;
+
+}
+
+
+
+;; Function prvUnlockQueue (prvUnlockQueue, funcdef_no=34, decl_uid=6539, cgraph_uid=35, symbol_order=35)
+
+Modification phase of node prvUnlockQueue/35
+prvUnlockQueue (struct Queue_t * const pxQueue)
+{
+  int8_t cRxLock;
+  int8_t cTxLock;
+  long unsigned int _1;
+  struct List_t * _2;
+  long int _3;
+  unsigned char cTxLock.6_4;
+  unsigned char _5;
+  long unsigned int _6;
+  struct List_t * _7;
+  long int _8;
+  unsigned char cRxLock.7_9;
+  unsigned char _10;
+
+  <bb 2> [local count: 114863529]:
+  # DEBUG BEGIN_STMT
+  vPortEnterCritical ();
+  # DEBUG BEGIN_STMT
+  cTxLock_20 ={v} pxQueue_19(D)->cTxLock;
+  # DEBUG cTxLock => cTxLock_20
+  # DEBUG BEGIN_STMT
+  goto <bb 7>; [100.00%]
+
+  <bb 3> [local count: 1014686014]:
+  # DEBUG BEGIN_STMT
+  _1 = pxQueue_19(D)->xTasksWaitingToReceive.uxNumberOfItems;
+  if (_1 != 0)
+    goto <bb 4>; [94.50%]
+  else
+    goto <bb 8>; [5.50%]
+
+  <bb 4> [local count: 958878284]:
+  # DEBUG BEGIN_STMT
+  _2 = &pxQueue_19(D)->xTasksWaitingToReceive;
+  _3 = xTaskRemoveFromEventList (_2);
+  if (_3 != 0)
+    goto <bb 5>; [33.00%]
+  else
+    goto <bb 6>; [67.00%]
+
+  <bb 5> [local count: 316429832]:
+  # DEBUG BEGIN_STMT
+  vTaskMissedYield ();
+
+  <bb 6> [local count: 958878284]:
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  cTxLock.6_4 = (unsigned char) cTxLock_11;
+  _5 = cTxLock.6_4 + 255;
+  cTxLock_23 = (int8_t) _5;
+  # DEBUG cTxLock => cTxLock_23
+
+  <bb 7> [local count: 1073741813]:
+  # cTxLock_11 = PHI <cTxLock_20(2), cTxLock_23(6)>
+  # DEBUG cTxLock => cTxLock_11
+  # DEBUG BEGIN_STMT
+  if (cTxLock_11 > 0)
+    goto <bb 3>; [94.50%]
+  else
+    goto <bb 8>; [5.50%]
+
+  <bb 8> [local count: 114863530]:
+  # DEBUG BEGIN_STMT
+  pxQueue_19(D)->cTxLock ={v} -1;
+  # DEBUG BEGIN_STMT
+  vPortExitCritical ();
+  # DEBUG BEGIN_STMT
+  vPortEnterCritical ();
+  # DEBUG BEGIN_STMT
+  cRxLock_27 ={v} pxQueue_19(D)->cRxLock;
+  # DEBUG cRxLock => cRxLock_27
+  # DEBUG BEGIN_STMT
+  goto <bb 13>; [100.00%]
+
+  <bb 9> [local count: 1014686024]:
+  # DEBUG BEGIN_STMT
+  _6 = pxQueue_19(D)->xTasksWaitingToSend.uxNumberOfItems;
+  if (_6 != 0)
+    goto <bb 10>; [94.50%]
+  else
+    goto <bb 14>; [5.50%]
+
+  <bb 10> [local count: 958878293]:
+  # DEBUG BEGIN_STMT
+  _7 = &pxQueue_19(D)->xTasksWaitingToSend;
+  _8 = xTaskRemoveFromEventList (_7);
+  if (_8 != 0)
+    goto <bb 11>; [33.00%]
+  else
+    goto <bb 12>; [67.00%]
+
+  <bb 11> [local count: 316429835]:
+  # DEBUG BEGIN_STMT
+  vTaskMissedYield ();
+
+  <bb 12> [local count: 958878293]:
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  cRxLock.7_9 = (unsigned char) cRxLock_12;
+  _10 = cRxLock.7_9 + 255;
+  cRxLock_30 = (int8_t) _10;
+  # DEBUG cRxLock => cRxLock_30
+
+  <bb 13> [local count: 1073741824]:
+  # cRxLock_12 = PHI <cRxLock_27(8), cRxLock_30(12)>
+  # DEBUG cRxLock => cRxLock_12
+  # DEBUG BEGIN_STMT
+  if (cRxLock_12 > 0)
+    goto <bb 9>; [94.50%]
+  else
+    goto <bb 14>; [5.50%]
+
+  <bb 14> [local count: 114863531]:
+  # DEBUG BEGIN_STMT
+  pxQueue_19(D)->cRxLock ={v} -1;
+  # DEBUG BEGIN_STMT
+  vPortExitCritical ();
+  return;
+
+}
+
+
+
+;; Function xQueueGenericReset (xQueueGenericReset, funcdef_no=4, decl_uid=6495, cgraph_uid=5, symbol_order=5)
+
+Modification phase of node xQueueGenericReset/5
+xQueueGenericReset (struct QueueDefinition * xQueue, BaseType_t xNewQueue)
+{
+  BaseType_t D.7432;
+  long unsigned int _1;
+  __complex__ long unsigned int _2;
+  long unsigned int _3;
+  long unsigned int _4;
+
+  <bb 2> [local count: 18188380]:
+  # DEBUG BEGIN_STMT
+  # DEBUG xReturn => 1
+  # DEBUG BEGIN_STMT
+  # DEBUG pxQueue => xQueue_6(D)
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  if (xQueue_6(D) == 0B)
+    goto <bb 3>; [30.00%]
+  else
+    goto <bb 5>; [70.00%]
+
+  <bb 3> [local count: 5456514]:
+  # DEBUG BEGIN_STMT
+  __asm__ __volatile__(" cpsid i " :  :  : "memory");
+
+  <bb 4> [local count: 551107857]:
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+
+  <bb 10> [local count: 551107857]:
+  goto <bb 4>; [100.00%]
+
+  <bb 5> [local count: 12731866]:
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  _1 = MEM[(struct Queue_t *)xQueue_6(D)].uxLength;
+  if (_1 != 0)
+    goto <bb 6>; [50.00%]
+  else
+    goto <bb 8>; [50.00%]
+
+  <bb 6> [local count: 6365933]:
+  _3 = MEM[(struct Queue_t *)xQueue_6(D)].uxItemSize;
+  _2 = .MUL_OVERFLOW (_3, _1);
+  _4 = IMAGPART_EXPR <_2>;
+  if (_4 == 0)
+    goto <bb 7>; [33.00%]
+  else
+    goto <bb 8>; [67.00%]
+
+  <bb 7> [local count: 2100758]:
+  _11 = xQueueGenericReset.part.0 (xQueue_6(D), xNewQueue_8(D));
+  return _11;
+
+  <bb 8> [local count: 10631108]:
+  # DEBUG xReturn => NULL
+  # DEBUG BEGIN_STMT
+  __asm__ __volatile__(" cpsid i " :  :  : "memory");
+
+  <bb 9> [local count: 1073741824]:
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+
+  <bb 11> [local count: 1073741824]:
+  goto <bb 9>; [100.00%]
+
+}
+
+
+
+;; Function xQueueGenericCreate (xQueueGenericCreate, funcdef_no=5, decl_uid=6488, cgraph_uid=6, symbol_order=6)
+
+Modification phase of node xQueueGenericCreate/6
+xQueueGenericCreate (const UBaseType_t uxQueueLength, const UBaseType_t uxItemSize, const uint8_t ucQueueType)
+{
+  uint8_t * pucQueueStorage;
+  struct Queue_t * pxNewQueue;
+  __complex__ long unsigned int _1;
+  long unsigned int _2;
+  long unsigned int _3;
+  unsigned int _4;
+
+  <bb 2> [local count: 11587039]:
+  # DEBUG BEGIN_STMT
+  # DEBUG pxNewQueue => 0B
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  if (uxQueueLength_6(D) != 0)
+    goto <bb 3>; [50.00%]
+  else
+    goto <bb 7>; [50.00%]
+
+  <bb 3> [local count: 5793519]:
+  _1 = .MUL_OVERFLOW (uxItemSize_7(D), uxQueueLength_6(D));
+  _2 = IMAGPART_EXPR <_1>;
+  if (_2 == 0)
+    goto <bb 4>; [50.00%]
+  else
+    goto <bb 7>; [50.00%]
+
+  <bb 4> [local count: 2896760]:
+  _3 = uxQueueLength_6(D) * uxItemSize_7(D);
+  if (_3 <= 4294967215)
+    goto <bb 5>; [33.00%]
+  else
+    goto <bb 7>; [67.00%]
+
+  <bb 5> [local count: 955931]:
+  # DEBUG BEGIN_STMT
+  # DEBUG xQueueSizeInBytes => _3
+  # DEBUG BEGIN_STMT
+  _4 = _3 + 80;
+  pxNewQueue_10 = pvPortMalloc (_4);
+  # DEBUG pxNewQueue => pxNewQueue_10
+  # DEBUG BEGIN_STMT
+  if (pxNewQueue_10 != 0B)
+    goto <bb 6>; [53.47%]
+  else
+    goto <bb 9>; [46.53%]
+
+  <bb 6> [local count: 511136]:
+  # DEBUG BEGIN_STMT
+  # DEBUG pucQueueStorage => pxNewQueue_10
+  # DEBUG BEGIN_STMT
+  pucQueueStorage_11 = pxNewQueue_10 + 80;
+  # DEBUG pucQueueStorage => pucQueueStorage_11
+  # DEBUG BEGIN_STMT
+  prvInitialiseNewQueue (uxQueueLength_6(D), uxItemSize_7(D), pucQueueStorage_11, ucQueueType_12(D), pxNewQueue_10);
+  goto <bb 9>; [100.00%]
+
+  <bb 7> [local count: 10631108]:
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  __asm__ __volatile__(" cpsid i " :  :  : "memory");
+
+  <bb 8> [local count: 1073741824]:
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+
+  <bb 10> [local count: 1073741824]:
+  goto <bb 8>; [100.00%]
+
+  <bb 9> [local count: 955931]:
+  # DEBUG pxNewQueue => pxNewQueue_10
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  return pxNewQueue_10;
+
+}
+
+
+
+;; Function xQueueGetMutexHolder (xQueueGetMutexHolder, funcdef_no=9, decl_uid=6470, cgraph_uid=10, symbol_order=10)
+
+Modification phase of node xQueueGetMutexHolder/10
+xQueueGetMutexHolder (struct QueueDefinition * xSemaphore)
+{
+  struct tskTaskControlBlock * pxReturn;
+  int8_t * _1;
+
+  <bb 2> [local count: 22847857]:
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  # DEBUG pxSemaphore => xSemaphore_3(D)
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  if (xSemaphore_3(D) == 0B)
+    goto <bb 3>; [46.53%]
+  else
+    goto <bb 5>; [53.47%]
+
+  <bb 3> [local count: 10631108]:
+  # DEBUG BEGIN_STMT
+  __asm__ __volatile__(" cpsid i " :  :  : "memory");
+
+  <bb 4> [local count: 1073741824]:
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+
+  <bb 8> [local count: 1073741824]:
+  goto <bb 4>; [100.00%]
+
+  <bb 5> [local count: 12216749]:
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  vPortEnterCritical ();
+  # DEBUG BEGIN_STMT
+  _1 = MEM[(struct Queue_t *)xSemaphore_3(D)].pcHead;
+  if (_1 == 0B)
+    goto <bb 6>; [51.20%]
+  else
+    goto <bb 7>; [48.80%]
+
+  <bb 6> [local count: 6254976]:
+  # DEBUG BEGIN_STMT
+  pxReturn_6 = MEM[(struct Queue_t *)xSemaphore_3(D)].u.xSemaphore.xMutexHolder;
+  # DEBUG pxReturn => pxReturn_6
+
+  <bb 7> [local count: 12216749]:
+  # pxReturn_2 = PHI <pxReturn_6(6), 0B(5)>
+  # DEBUG pxReturn => pxReturn_2
+  # DEBUG BEGIN_STMT
+  vPortExitCritical ();
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  return pxReturn_2;
+
+}
+
+
+
+;; Function xQueueGetMutexHolderFromISR (xQueueGetMutexHolderFromISR, funcdef_no=10, decl_uid=6472, cgraph_uid=11, symbol_order=11)
+
+Modification phase of node xQueueGetMutexHolderFromISR/11
+xQueueGetMutexHolderFromISR (struct QueueDefinition * xSemaphore)
+{
+  struct tskTaskControlBlock * pxReturn;
+  int8_t * _1;
+
+  <bb 2> [local count: 35437027]:
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  if (xSemaphore_3(D) == 0B)
+    goto <bb 3>; [30.00%]
+  else
+    goto <bb 5>; [70.00%]
+
+  <bb 3> [local count: 10631108]:
+  # DEBUG BEGIN_STMT
+  __asm__ __volatile__(" cpsid i " :  :  : "memory");
+
+  <bb 4> [local count: 1073741824]:
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+
+  <bb 8> [local count: 1073741824]:
+  goto <bb 4>; [100.00%]
+
+  <bb 5> [local count: 24805919]:
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  _1 = MEM[(struct Queue_t *)xSemaphore_3(D)].pcHead;
+  if (_1 == 0B)
+    goto <bb 6>; [51.20%]
+  else
+    goto <bb 7>; [48.80%]
+
+  <bb 6> [local count: 12700631]:
+  # DEBUG BEGIN_STMT
+  pxReturn_5 = MEM[(struct Queue_t *)xSemaphore_3(D)].u.xSemaphore.xMutexHolder;
+  # DEBUG pxReturn => pxReturn_5
+
+  <bb 7> [local count: 24805919]:
+  # pxReturn_2 = PHI <pxReturn_5(6), 0B(5)>
+  # DEBUG pxReturn => pxReturn_2
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  return pxReturn_2;
+
+}
+
+
+
+;; Function xQueueCreateCountingSemaphore (xQueueCreateCountingSemaphore, funcdef_no=13, decl_uid=6465, cgraph_uid=14, symbol_order=14)
+
+Modification phase of node xQueueCreateCountingSemaphore/14
+xQueueCreateCountingSemaphore (const UBaseType_t uxMaxCount, const UBaseType_t uxInitialCount)
+{
+  struct QueueDefinition * xHandle;
+
+  <bb 2> [local count: 12731866]:
+  # DEBUG BEGIN_STMT
+  # DEBUG xHandle => 0B
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  if (uxMaxCount_2(D) != 0)
+    goto <bb 3>; [50.00%]
+  else
+    goto <bb 6>; [50.00%]
+
+  <bb 3> [local count: 6365933]:
+  if (uxMaxCount_2(D) >= uxInitialCount_3(D))
+    goto <bb 4>; [33.00%]
+  else
+    goto <bb 6>; [67.00%]
+
+  <bb 4> [local count: 2100758]:
+  # DEBUG BEGIN_STMT
+  xHandle_6 = xQueueGenericCreate (uxMaxCount_2(D), 0, 2);
+  # DEBUG xHandle => xHandle_6
+  # DEBUG BEGIN_STMT
+  if (xHandle_6 != 0B)
+    goto <bb 5>; [70.00%]
+  else
+    goto <bb 8>; [30.00%]
+
+  <bb 5> [local count: 1470531]:
+  # DEBUG BEGIN_STMT
+  MEM[(struct Queue_t *)xHandle_6].uxMessagesWaiting ={v} uxInitialCount_3(D);
+  # DEBUG BEGIN_STMT
+  goto <bb 8>; [100.00%]
+
+  <bb 6> [local count: 10631108]:
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  __asm__ __volatile__(" cpsid i " :  :  : "memory");
+
+  <bb 7> [local count: 1073741824]:
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+
+  <bb 9> [local count: 1073741824]:
+  goto <bb 7>; [100.00%]
+
+  <bb 8> [local count: 2100758]:
+  # DEBUG xHandle => xHandle_6
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  return xHandle_6;
+
+}
+
+
+
+;; Function xQueueGenericSend (xQueueGenericSend, funcdef_no=14, decl_uid=6425, cgraph_uid=15, symbol_order=15)
+
+Modification phase of node xQueueGenericSend/15
+xQueueGenericSend (struct QueueDefinition * xQueue, const void * const pvItemToQueue, TickType_t xTicksToWait, const BaseType_t xCopyPosition)
+{
+  struct TimeOut_t xTimeOut;
+  BaseType_t xYieldRequired;
+  BaseType_t xEntryTimeSet;
+  long unsigned int _1;
+  long unsigned int _2;
+  long int _3;
+  long unsigned int xTicksToWait.3_4;
+  long unsigned int _5;
+  long unsigned int _6;
+  long unsigned int _7;
+  struct List_t * _8;
+  long int _9;
+  long unsigned int xTicksToWait.4_10;
+  signed char _11;
+  signed char _12;
+  long int _13;
+  long int _14;
+  struct List_t * _15;
+  long unsigned int xTicksToWait.5_16;
+  long int _17;
+  BaseType_t _21;
+
+  <bb 2> [local count: 35437027]:
+  # DEBUG BEGIN_STMT
+  # DEBUG xEntryTimeSet => 0
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  # DEBUG pxQueue => xQueue_29(D)
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  if (xQueue_29(D) == 0B)
+    goto <bb 3>; [30.00%]
+  else
+    goto <bb 5>; [70.00%]
+
+  <bb 3> [local count: 10631108]:
+  # DEBUG BEGIN_STMT
+  __asm__ __volatile__(" cpsid i " :  :  : "memory");
+
+  <bb 4> [local count: 1073741824]:
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+
+  <bb 42> [local count: 1073741824]:
+  goto <bb 4>; [100.00%]
+
+  <bb 5> [local count: 24805919]:
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  if (pvItemToQueue_30(D) != 0B)
+    goto <bb 9>; [70.00%]
+  else
+    goto <bb 6>; [30.00%]
+
+  <bb 6> [local count: 7441776]:
+  _1 = MEM[(struct Queue_t *)xQueue_29(D)].uxItemSize;
+  if (_1 == 0)
+    goto <bb 9>; [50.00%]
+  else
+    goto <bb 7>; [50.00%]
+
+  <bb 7> [local count: 3720888]:
+  # DEBUG BEGIN_STMT
+  __asm__ __volatile__(" cpsid i " :  :  : "memory");
+
+  <bb 8> [local count: 375809640]:
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+
+  <bb 45> [local count: 375809640]:
+  goto <bb 8>; [100.00%]
+
+  <bb 9> [local count: 21085031]:
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  if (xCopyPosition_32(D) != 2)
+    goto <bb 13>; [48.88%]
+  else
+    goto <bb 10>; [51.12%]
+
+  <bb 10> [local count: 10778668]:
+  _2 = MEM[(struct Queue_t *)xQueue_29(D)].uxLength;
+  if (_2 == 1)
+    goto <bb 13>; [34.00%]
+  else
+    goto <bb 11>; [66.00%]
+
+  <bb 11> [local count: 7113921]:
+  # DEBUG BEGIN_STMT
+  __asm__ __volatile__(" cpsid i " :  :  : "memory");
+
+  <bb 12> [local count: 718505950]:
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+
+  <bb 44> [local count: 718505950]:
+  goto <bb 12>; [100.00%]
+
+  <bb 13> [local count: 13971110]:
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  _3 = xTaskGetSchedulerState ();
+  if (_3 != 0)
+    goto <bb 14>; [50.00%]
+  else
+    goto <bb 15>; [50.00%]
+
+  <bb 14> [local count: 10478333]:
+  # xEntryTimeSet_36 = PHI <0(13), 0(15)>
+  goto <bb 19>; [100.00%]
+
+  <bb 15> [local count: 6985555]:
+  xTicksToWait.3_4 = xTicksToWait;
+  if (xTicksToWait.3_4 == 0)
+    goto <bb 14>; [50.00%]
+  else
+    goto <bb 16>; [50.00%]
+
+  <bb 16> [local count: 3492778]:
+  # DEBUG BEGIN_STMT
+  __asm__ __volatile__(" cpsid i " :  :  : "memory");
+
+  <bb 17> [local count: 352770509]:
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+
+  <bb 43> [local count: 352770509]:
+  goto <bb 17>; [100.00%]
+
+  <bb 18> [local count: 88799889]:
+  # xEntryTimeSet_18 = PHI <xEntryTimeSet_20(38), xEntryTimeSet_20(39), xEntryTimeSet_20(37)>
+
+  <bb 19> [local count: 99278222]:
+  # xEntryTimeSet_19 = PHI <xEntryTimeSet_36(14), xEntryTimeSet_18(18)>
+  # DEBUG xEntryTimeSet => xEntryTimeSet_19
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  vPortEnterCritical ();
+  # DEBUG BEGIN_STMT
+  _5 ={v} MEM[(struct Queue_t *)xQueue_29(D)].uxMessagesWaiting;
+  _6 = MEM[(struct Queue_t *)xQueue_29(D)].uxLength;
+  if (_5 < _6)
+    goto <bb 21>; [2.75%]
+  else
+    goto <bb 20>; [97.25%]
+
+  <bb 20> [local count: 96548070]:
+  if (xCopyPosition_32(D) == 2)
+    goto <bb 21>; [2.75%]
+  else
+    goto <bb 27>; [97.25%]
+
+  <bb 21> [local count: 5385224]:
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  xYieldRequired_57 = prvCopyDataToQueue (xQueue_29(D), pvItemToQueue_30(D), xCopyPosition_32(D));
+  # DEBUG xYieldRequired => xYieldRequired_57
+  # DEBUG BEGIN_STMT
+  _7 = MEM[(struct Queue_t *)xQueue_29(D)].xTasksWaitingToReceive.uxNumberOfItems;
+  if (_7 != 0)
+    goto <bb 22>; [33.00%]
+  else
+    goto <bb 24>; [67.00%]
+
+  <bb 22> [local count: 1777124]:
+  # DEBUG BEGIN_STMT
+  _8 = &MEM[(struct Queue_t *)xQueue_29(D)].xTasksWaitingToReceive;
+  _9 = xTaskRemoveFromEventList (_8);
+  if (_9 != 0)
+    goto <bb 23>; [50.00%]
+  else
+    goto <bb 26>; [50.00%]
+
+  <bb 23> [local count: 888562]:
+  # DEBUG BEGIN_STMT
+  MEM[(volatile uint32_t *)3758157060B] ={v} 268435456;
+  # DEBUG BEGIN_STMT
+  __asm__ __volatile__("dsb" :  :  : "memory");
+  # DEBUG BEGIN_STMT
+  __asm__ __volatile__("isb");
+  # DEBUG BEGIN_STMT
+  goto <bb 26>; [100.00%]
+
+  <bb 24> [local count: 3608100]:
+  # DEBUG BEGIN_STMT
+  if (xYieldRequired_57 != 0)
+    goto <bb 25>; [50.00%]
+  else
+    goto <bb 26>; [50.00%]
+
+  <bb 25> [local count: 1804050]:
+  # DEBUG BEGIN_STMT
+  MEM[(volatile uint32_t *)3758157060B] ={v} 268435456;
+  # DEBUG BEGIN_STMT
+  __asm__ __volatile__("dsb" :  :  : "memory");
+  # DEBUG BEGIN_STMT
+  __asm__ __volatile__("isb");
+  # DEBUG BEGIN_STMT
+
+  <bb 26> [local count: 5385224]:
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  vPortExitCritical ();
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  goto <bb 41>; [100.00%]
+
+  <bb 27> [local count: 93892998]:
+  # DEBUG BEGIN_STMT
+  xTicksToWait.4_10 = xTicksToWait;
+  if (xTicksToWait.4_10 == 0)
+    goto <bb 28>; [2.75%]
+  else
+    goto <bb 29>; [97.25%]
+
+  <bb 28> [local count: 2582058]:
+  # DEBUG BEGIN_STMT
+  vPortExitCritical ();
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  goto <bb 41>; [100.00%]
+
+  <bb 29> [local count: 91310940]:
+  # DEBUG BEGIN_STMT
+  if (xEntryTimeSet_19 == 0)
+    goto <bb 30>; [33.00%]
+  else
+    goto <bb 31>; [67.00%]
+
+  <bb 30> [local count: 30132610]:
+  # DEBUG BEGIN_STMT
+  vTaskInternalSetTimeOutState (&xTimeOut);
+  # DEBUG BEGIN_STMT
+  # DEBUG xEntryTimeSet => 1
+
+  <bb 31> [local count: 91310940]:
+  # xEntryTimeSet_20 = PHI <xEntryTimeSet_19(29), 1(30)>
+  # DEBUG xEntryTimeSet => xEntryTimeSet_20
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  vPortExitCritical ();
+  # DEBUG BEGIN_STMT
+  vTaskSuspendAll ();
+  # DEBUG BEGIN_STMT
+  vPortEnterCritical ();
+  # DEBUG BEGIN_STMT
+  _11 ={v} MEM[(struct Queue_t *)xQueue_29(D)].cRxLock;
+  if (_11 == -1)
+    goto <bb 32>; [34.00%]
+  else
+    goto <bb 33>; [66.00%]
+
+  <bb 32> [local count: 31045720]:
+  # DEBUG BEGIN_STMT
+  MEM[(struct Queue_t *)xQueue_29(D)].cRxLock ={v} 0;
+
+  <bb 33> [local count: 91310940]:
+  # DEBUG BEGIN_STMT
+  _12 ={v} MEM[(struct Queue_t *)xQueue_29(D)].cTxLock;
+  if (_12 == -1)
+    goto <bb 34>; [34.00%]
+  else
+    goto <bb 35>; [66.00%]
+
+  <bb 34> [local count: 31045720]:
+  # DEBUG BEGIN_STMT
+  MEM[(struct Queue_t *)xQueue_29(D)].cTxLock ={v} 0;
+
+  <bb 35> [local count: 91310940]:
+  # DEBUG BEGIN_STMT
+  vPortExitCritical ();
+  # DEBUG BEGIN_STMT
+  _13 = xTaskCheckForTimeOut (&xTimeOut, &xTicksToWait);
+  if (_13 == 0)
+    goto <bb 36>; [97.25%]
+  else
+    goto <bb 40>; [2.75%]
+
+  <bb 36> [local count: 88799889]:
+  # DEBUG BEGIN_STMT
+  _14 = prvIsQueueFull (xQueue_29(D));
+  if (_14 != 0)
+    goto <bb 37>; [50.00%]
+  else
+    goto <bb 39>; [50.00%]
+
+  <bb 37> [local count: 44399945]:
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  _15 = &MEM[(struct Queue_t *)xQueue_29(D)].xTasksWaitingToSend;
+  xTicksToWait.5_16 = xTicksToWait;
+  vTaskPlaceOnEventList (_15, xTicksToWait.5_16);
+  # DEBUG BEGIN_STMT
+  prvUnlockQueue (xQueue_29(D));
+  # DEBUG BEGIN_STMT
+  _17 = xTaskResumeAll ();
+  if (_17 == 0)
+    goto <bb 38>; [50.00%]
+  else
+    goto <bb 18>; [50.00%]
+
+  <bb 38> [local count: 22199972]:
+  # DEBUG BEGIN_STMT
+  MEM[(volatile uint32_t *)3758157060B] ={v} 268435456;
+  # DEBUG BEGIN_STMT
+  __asm__ __volatile__("dsb" :  :  : "memory");
+  # DEBUG BEGIN_STMT
+  __asm__ __volatile__("isb");
+  goto <bb 18>; [100.00%]
+
+  <bb 39> [local count: 44399945]:
+  # DEBUG BEGIN_STMT
+  prvUnlockQueue (xQueue_29(D));
+  # DEBUG BEGIN_STMT
+  xTaskResumeAll ();
+  goto <bb 18>; [100.00%]
+
+  <bb 40> [local count: 2511051]:
+  # DEBUG BEGIN_STMT
+  prvUnlockQueue (xQueue_29(D));
+  # DEBUG BEGIN_STMT
+  xTaskResumeAll ();
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+
+  <bb 41> [local count: 10478333]:
+  # _21 = PHI <1(26), 0(28), 0(40)>
+  xTimeOut ={v} {CLOBBER};
+  return _21;
+
+}
+
+
+
+;; Function xQueueCreateMutex (xQueueCreateMutex, funcdef_no=8, decl_uid=6462, cgraph_uid=9, symbol_order=9)
+
+Modification phase of node xQueueCreateMutex/9
+xQueueCreateMutex (const uint8_t ucQueueType)
+{
+  struct QueueDefinition * xNewQueue;
+
+  <bb 2> [local count: 1073741824]:
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  # DEBUG uxMutexLength => 1
+  # DEBUG uxMutexSize => 0
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  xNewQueue_4 = xQueueGenericCreate (1, 0, ucQueueType_2(D));
+  # DEBUG xNewQueue => xNewQueue_4
+  # DEBUG BEGIN_STMT
+  prvInitialiseMutex (xNewQueue_4);
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  return xNewQueue_4;
+
+}
+
+
+
+;; Function xQueueGiveMutexRecursive (xQueueGiveMutexRecursive, funcdef_no=11, decl_uid=6477, cgraph_uid=12, symbol_order=12)
+
+Modification phase of node xQueueGiveMutexRecursive/12
+xQueueGiveMutexRecursive (struct QueueDefinition * xMutex)
+{
+  BaseType_t xReturn;
+  struct tskTaskControlBlock * _1;
+  struct tskTaskControlBlock * _2;
+  long unsigned int _3;
+  long unsigned int _4;
+
+  <bb 2> [local count: 22847857]:
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  # DEBUG pxMutex => xMutex_7(D)
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  if (xMutex_7(D) == 0B)
+    goto <bb 3>; [46.53%]
+  else
+    goto <bb 5>; [53.47%]
+
+  <bb 3> [local count: 10631108]:
+  # DEBUG BEGIN_STMT
+  __asm__ __volatile__(" cpsid i " :  :  : "memory");
+
+  <bb 4> [local count: 1073741824]:
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+
+  <bb 10> [local count: 1073741824]:
+  goto <bb 4>; [100.00%]
+
+  <bb 5> [local count: 12216749]:
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  _1 = MEM[(struct Queue_t *)xMutex_7(D)].u.xSemaphore.xMutexHolder;
+  _2 = xTaskGetCurrentTaskHandle ();
+  if (_1 == _2)
+    goto <bb 6>; [30.00%]
+  else
+    goto <bb 9>; [70.00%]
+
+  <bb 6> [local count: 3665025]:
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  _3 = MEM[(struct Queue_t *)xMutex_7(D)].u.xSemaphore.uxRecursiveCallCount;
+  _4 = _3 + 4294967295;
+  MEM[(struct Queue_t *)xMutex_7(D)].u.xSemaphore.uxRecursiveCallCount = _4;
+  # DEBUG BEGIN_STMT
+  if (_4 == 0)
+    goto <bb 7>; [33.00%]
+  else
+    goto <bb 9>; [67.00%]
+
+  <bb 7> [local count: 1209458]:
+  # DEBUG BEGIN_STMT
+  xQueueGenericSend (xMutex_7(D), 0B, 0, 0);
+
+  <bb 9> [local count: 12216749]:
+  # xReturn_5 = PHI <1(7), 0(5), 1(6)>
+  # DEBUG xReturn => xReturn_5
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  return xReturn_5;
+
+}
+
+
+
+;; Function xQueueGenericSendFromISR (xQueueGenericSendFromISR, funcdef_no=15, decl_uid=6447, cgraph_uid=16, symbol_order=16)
+
+Modification phase of node xQueueGenericSendFromISR/16
+xQueueGenericSendFromISR (struct QueueDefinition * xQueue, const void * const pvItemToQueue, BaseType_t * const pxHigherPriorityTaskWoken, const BaseType_t xCopyPosition)
+{
+  uint32_t ulOriginalBASEPRI;
+  uint32_t ulNewBASEPRI;
+  const UBaseType_t uxNumberOfTasks;
+  const UBaseType_t uxPreviousMessagesWaiting;
+  const int8_t cTxLock;
+  BaseType_t xReturn;
+  long unsigned int _1;
+  long unsigned int _2;
+  long unsigned int _3;
+  long unsigned int _4;
+  long unsigned int _5;
+  struct List_t * _6;
+  long int _7;
+  long unsigned int _8;
+  unsigned char cTxLock.10_9;
+  unsigned char _10;
+  signed char _11;
+
+  <bb 2> [local count: 35437027]:
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  # DEBUG pxQueue => xQueue_14(D)
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  if (xQueue_14(D) == 0B)
+    goto <bb 3>; [30.00%]
+  else
+    goto <bb 5>; [70.00%]
+
+  <bb 3> [local count: 10631108]:
+  # DEBUG BEGIN_STMT
+  __asm__ __volatile__(" cpsid i " :  :  : "memory");
+
+  <bb 4> [local count: 1073741824]:
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+
+  <bb 27> [local count: 1073741824]:
+  goto <bb 4>; [100.00%]
+
+  <bb 5> [local count: 24805919]:
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  if (pvItemToQueue_15(D) != 0B)
+    goto <bb 9>; [70.00%]
+  else
+    goto <bb 6>; [30.00%]
+
+  <bb 6> [local count: 7441776]:
+  _1 = MEM[(struct Queue_t *)xQueue_14(D)].uxItemSize;
+  if (_1 == 0)
+    goto <bb 9>; [50.00%]
+  else
+    goto <bb 7>; [50.00%]
+
+  <bb 7> [local count: 3720888]:
+  # DEBUG BEGIN_STMT
+  __asm__ __volatile__(" cpsid i " :  :  : "memory");
+
+  <bb 8> [local count: 375809640]:
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+
+  <bb 30> [local count: 375809640]:
+  goto <bb 8>; [100.00%]
+
+  <bb 9> [local count: 21085031]:
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  if (xCopyPosition_17(D) != 2)
+    goto <bb 13>; [48.88%]
+  else
+    goto <bb 10>; [51.12%]
+
+  <bb 10> [local count: 10778668]:
+  _2 = MEM[(struct Queue_t *)xQueue_14(D)].uxLength;
+  if (_2 == 1)
+    goto <bb 13>; [34.00%]
+  else
+    goto <bb 11>; [66.00%]
+
+  <bb 11> [local count: 7113921]:
+  # DEBUG BEGIN_STMT
+  __asm__ __volatile__(" cpsid i " :  :  : "memory");
+
+  <bb 12> [local count: 718505950]:
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+
+  <bb 29> [local count: 718505950]:
+  goto <bb 12>; [100.00%]
+
+  <bb 13> [local count: 13971110]:
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  vPortValidateInterruptPriority ();
+  # DEBUG BEGIN_STMT
+  # DEBUG INLINE_ENTRY ulPortRaiseBASEPRI
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  __asm__ __volatile__("   mrs %0, basepri                                         
+   mov %1, %2                                              
+   cpsid i                                                 
+   msr basepri, %1                                         
+   isb                                                     
+   dsb                                                     
+   cpsie i                                                 
+" : "=r" ulOriginalBASEPRI_32, "=r" ulNewBASEPRI_33 : "i" 16 : "memory");
+  # DEBUG ulNewBASEPRI => ulNewBASEPRI_33
+  # DEBUG ulOriginalBASEPRI => ulOriginalBASEPRI_32
+  # DEBUG BEGIN_STMT
+  # DEBUG ulNewBASEPRI => NULL
+  # DEBUG ulOriginalBASEPRI => NULL
+  # DEBUG uxSavedInterruptStatus => ulOriginalBASEPRI_32
+  # DEBUG BEGIN_STMT
+  _3 ={v} MEM[(struct Queue_t *)xQueue_14(D)].uxMessagesWaiting;
+  _4 = MEM[(struct Queue_t *)xQueue_14(D)].uxLength;
+  if (_3 < _4)
+    goto <bb 15>; [33.00%]
+  else
+    goto <bb 14>; [67.00%]
+
+  <bb 14> [local count: 9360644]:
+  if (xCopyPosition_17(D) == 2)
+    goto <bb 15>; [34.00%]
+  else
+    goto <bb 26>; [66.00%]
+
+  <bb 15> [local count: 7793085]:
+  # DEBUG BEGIN_STMT
+  cTxLock_19 ={v} MEM[(struct Queue_t *)xQueue_14(D)].cTxLock;
+  # DEBUG cTxLock => cTxLock_19
+  # DEBUG BEGIN_STMT
+  uxPreviousMessagesWaiting_20 ={v} MEM[(struct Queue_t *)xQueue_14(D)].uxMessagesWaiting;
+  # DEBUG uxPreviousMessagesWaiting => uxPreviousMessagesWaiting_20
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  prvCopyDataToQueue (xQueue_14(D), pvItemToQueue_15(D), xCopyPosition_17(D));
+  # DEBUG BEGIN_STMT
+  if (cTxLock_19 == -1)
+    goto <bb 16>; [51.12%]
+  else
+    goto <bb 20>; [48.88%]
+
+  <bb 16> [local count: 3983825]:
+  # DEBUG BEGIN_STMT
+  _5 = MEM[(struct Queue_t *)xQueue_14(D)].xTasksWaitingToReceive.uxNumberOfItems;
+  if (_5 != 0)
+    goto <bb 17>; [33.00%]
+  else
+    goto <bb 26>; [67.00%]
+
+  <bb 17> [local count: 1314662]:
+  # DEBUG BEGIN_STMT
+  _6 = &MEM[(struct Queue_t *)xQueue_14(D)].xTasksWaitingToReceive;
+  _7 = xTaskRemoveFromEventList (_6);
+  if (_7 != 0)
+    goto <bb 18>; [50.00%]
+  else
+    goto <bb 26>; [50.00%]
+
+  <bb 18> [local count: 657331]:
+  # DEBUG BEGIN_STMT
+  if (pxHigherPriorityTaskWoken_27(D) != 0B)
+    goto <bb 19>; [70.00%]
+  else
+    goto <bb 26>; [30.00%]
+
+  <bb 19> [local count: 460132]:
+  # DEBUG BEGIN_STMT
+  *pxHigherPriorityTaskWoken_27(D) = 1;
+  goto <bb 26>; [100.00%]
+
+  <bb 20> [local count: 3809260]:
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  uxNumberOfTasks_23 = uxTaskGetNumberOfTasks ();
+  # DEBUG uxNumberOfTasks => uxNumberOfTasks_23
+  # DEBUG BEGIN_STMT
+  _8 = (long unsigned int) cTxLock_19;
+  if (_8 < uxNumberOfTasks_23)
+    goto <bb 21>; [50.00%]
+  else
+    goto <bb 26>; [50.00%]
+
+  <bb 21> [local count: 1904630]:
+  # DEBUG BEGIN_STMT
+  if (cTxLock_19 == 127)
+    goto <bb 22>; [34.00%]
+  else
+    goto <bb 24>; [66.00%]
+
+  <bb 22> [local count: 647574]:
+  # DEBUG BEGIN_STMT
+  __asm__ __volatile__(" cpsid i " :  :  : "memory");
+
+  <bb 23> [local count: 65404992]:
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+
+  <bb 28> [local count: 65404992]:
+  goto <bb 23>; [100.00%]
+
+  <bb 24> [local count: 1257056]:
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  cTxLock.10_9 = (unsigned char) cTxLock_19;
+  _10 = cTxLock.10_9 + 1;
+  _11 = (signed char) _10;
+  MEM[(struct Queue_t *)xQueue_14(D)].cTxLock ={v} _11;
+
+  <bb 26> [local count: 13323536]:
+  # xReturn_12 = PHI <1(20), 0(14), 1(19), 1(17), 1(18), 1(16), 1(24)>
+  # DEBUG xReturn => xReturn_12
+  # DEBUG BEGIN_STMT
+  # DEBUG ulNewMaskValue => ulOriginalBASEPRI_32
+  # DEBUG INLINE_ENTRY vPortSetBASEPRI
+  # DEBUG BEGIN_STMT
+  __asm__ __volatile__("   msr basepri, %0 " :  : "r" ulOriginalBASEPRI_32 : "memory");
+  # DEBUG ulNewMaskValue => NULL
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  return xReturn_12;
+
+}
+
+
+
+;; Function xQueueGiveFromISR (xQueueGiveFromISR, funcdef_no=16, decl_uid=6450, cgraph_uid=17, symbol_order=17)
+
+Modification phase of node xQueueGiveFromISR/17
+xQueueGiveFromISR (struct QueueDefinition * xQueue, BaseType_t * const pxHigherPriorityTaskWoken)
+{
+  uint32_t ulOriginalBASEPRI;
+  uint32_t ulNewBASEPRI;
+  const UBaseType_t uxNumberOfTasks;
+  const int8_t cTxLock;
+  const UBaseType_t uxMessagesWaiting;
+  BaseType_t xReturn;
+  long unsigned int _1;
+  int8_t * _2;
+  struct tskTaskControlBlock * _3;
+  long unsigned int _4;
+  long unsigned int _5;
+  long unsigned int _6;
+  struct List_t * _7;
+  long int _8;
+  long unsigned int _9;
+  unsigned char cTxLock.12_10;
+  unsigned char _11;
+  signed char _12;
+
+  <bb 2> [local count: 30374594]:
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  # DEBUG pxQueue => xQueue_15(D)
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  if (xQueue_15(D) == 0B)
+    goto <bb 3>; [30.00%]
+  else
+    goto <bb 5>; [70.00%]
+
+  <bb 3> [local count: 9112378]:
+  # DEBUG BEGIN_STMT
+  __asm__ __volatile__(" cpsid i " :  :  : "memory");
+
+  <bb 4> [local count: 920350123]:
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+
+  <bb 25> [local count: 920350123]:
+  goto <bb 4>; [100.00%]
+
+  <bb 5> [local count: 21262216]:
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  _1 = MEM[(struct Queue_t *)xQueue_15(D)].uxItemSize;
+  if (_1 != 0)
+    goto <bb 6>; [50.00%]
+  else
+    goto <bb 8>; [50.00%]
+
+  <bb 6> [local count: 10631108]:
+  # DEBUG BEGIN_STMT
+  __asm__ __volatile__(" cpsid i " :  :  : "memory");
+
+  <bb 7> [local count: 1073741824]:
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+
+  <bb 26> [local count: 1073741824]:
+  goto <bb 7>; [100.00%]
+
+  <bb 8> [local count: 10631108]:
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  _2 = MEM[(struct Queue_t *)xQueue_15(D)].pcHead;
+  if (_2 != 0B)
+    goto <bb 12>; [53.47%]
+  else
+    goto <bb 9>; [46.53%]
+
+  <bb 9> [local count: 4946655]:
+  _3 = MEM[(struct Queue_t *)xQueue_15(D)].u.xSemaphore.xMutexHolder;
+  if (_3 == 0B)
+    goto <bb 12>; [30.00%]
+  else
+    goto <bb 10>; [70.00%]
+
+  <bb 10> [local count: 3462658]:
+  # DEBUG BEGIN_STMT
+  __asm__ __volatile__(" cpsid i " :  :  : "memory");
+
+  <bb 11> [local count: 349728452]:
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+
+  <bb 28> [local count: 349728452]:
+  goto <bb 11>; [100.00%]
+
+  <bb 12> [local count: 7168450]:
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  vPortValidateInterruptPriority ();
+  # DEBUG BEGIN_STMT
+  # DEBUG INLINE_ENTRY ulPortRaiseBASEPRI
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  __asm__ __volatile__("   mrs %0, basepri                                         
+   mov %1, %2                                              
+   cpsid i                                                 
+   msr basepri, %1                                         
+   isb                                                     
+   dsb                                                     
+   cpsie i                                                 
+" : "=r" ulOriginalBASEPRI_31, "=r" ulNewBASEPRI_32 : "i" 16 : "memory");
+  # DEBUG ulNewBASEPRI => ulNewBASEPRI_32
+  # DEBUG ulOriginalBASEPRI => ulOriginalBASEPRI_31
+  # DEBUG BEGIN_STMT
+  # DEBUG ulNewBASEPRI => NULL
+  # DEBUG ulOriginalBASEPRI => NULL
+  # DEBUG uxSavedInterruptStatus => ulOriginalBASEPRI_31
+  # DEBUG BEGIN_STMT
+  uxMessagesWaiting_18 ={v} MEM[(struct Queue_t *)xQueue_15(D)].uxMessagesWaiting;
+  # DEBUG uxMessagesWaiting => uxMessagesWaiting_18
+  # DEBUG BEGIN_STMT
+  _4 = MEM[(struct Queue_t *)xQueue_15(D)].uxLength;
+  if (_4 > uxMessagesWaiting_18)
+    goto <bb 13>; [50.00%]
+  else
+    goto <bb 24>; [50.00%]
+
+  <bb 13> [local count: 3584225]:
+  # DEBUG BEGIN_STMT
+  cTxLock_19 ={v} MEM[(struct Queue_t *)xQueue_15(D)].cTxLock;
+  # DEBUG cTxLock => cTxLock_19
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  _5 = uxMessagesWaiting_18 + 1;
+  MEM[(struct Queue_t *)xQueue_15(D)].uxMessagesWaiting ={v} _5;
+  # DEBUG BEGIN_STMT
+  if (cTxLock_19 == -1)
+    goto <bb 14>; [51.12%]
+  else
+    goto <bb 18>; [48.88%]
+
+  <bb 14> [local count: 1832256]:
+  # DEBUG BEGIN_STMT
+  _6 = MEM[(struct Queue_t *)xQueue_15(D)].xTasksWaitingToReceive.uxNumberOfItems;
+  if (_6 != 0)
+    goto <bb 15>; [33.00%]
+  else
+    goto <bb 24>; [67.00%]
+
+  <bb 15> [local count: 604644]:
+  # DEBUG BEGIN_STMT
+  _7 = &MEM[(struct Queue_t *)xQueue_15(D)].xTasksWaitingToReceive;
+  _8 = xTaskRemoveFromEventList (_7);
+  if (_8 != 0)
+    goto <bb 16>; [50.00%]
+  else
+    goto <bb 24>; [50.00%]
+
+  <bb 16> [local count: 302322]:
+  # DEBUG BEGIN_STMT
+  if (pxHigherPriorityTaskWoken_26(D) != 0B)
+    goto <bb 17>; [70.00%]
+  else
+    goto <bb 24>; [30.00%]
+
+  <bb 17> [local count: 211626]:
+  # DEBUG BEGIN_STMT
+  *pxHigherPriorityTaskWoken_26(D) = 1;
+  goto <bb 24>; [100.00%]
+
+  <bb 18> [local count: 1751969]:
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  uxNumberOfTasks_22 = uxTaskGetNumberOfTasks ();
+  # DEBUG uxNumberOfTasks => uxNumberOfTasks_22
+  # DEBUG BEGIN_STMT
+  _9 = (long unsigned int) cTxLock_19;
+  if (_9 < uxNumberOfTasks_22)
+    goto <bb 19>; [50.00%]
+  else
+    goto <bb 24>; [50.00%]
+
+  <bb 19> [local count: 875985]:
+  # DEBUG BEGIN_STMT
+  if (cTxLock_19 == 127)
+    goto <bb 20>; [34.00%]
+  else
+    goto <bb 22>; [66.00%]
+
+  <bb 20> [local count: 297835]:
+  # DEBUG BEGIN_STMT
+  __asm__ __volatile__(" cpsid i " :  :  : "memory");
+
+  <bb 21> [local count: 30081308]:
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+
+  <bb 27> [local count: 30081308]:
+  goto <bb 21>; [100.00%]
+
+  <bb 22> [local count: 578150]:
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  cTxLock.12_10 = (unsigned char) cTxLock_19;
+  _11 = cTxLock.12_10 + 1;
+  _12 = (signed char) _11;
+  MEM[(struct Queue_t *)xQueue_15(D)].cTxLock ={v} _12;
+
+  <bb 24> [local count: 6870615]:
+  # xReturn_13 = PHI <1(18), 0(12), 1(17), 1(15), 1(16), 1(14), 1(22)>
+  # DEBUG xReturn => xReturn_13
+  # DEBUG BEGIN_STMT
+  # DEBUG ulNewMaskValue => ulOriginalBASEPRI_31
+  # DEBUG INLINE_ENTRY vPortSetBASEPRI
+  # DEBUG BEGIN_STMT
+  __asm__ __volatile__("   msr basepri, %0 " :  : "r" ulOriginalBASEPRI_31 : "memory");
+  # DEBUG ulNewMaskValue => NULL
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  return xReturn_13;
+
+}
+
+
+
+;; Function xQueueReceive (xQueueReceive, funcdef_no=17, decl_uid=6436, cgraph_uid=18, symbol_order=18)
+
+Modification phase of node xQueueReceive/18
+xQueueReceive (struct QueueDefinition * xQueue, void * const pvBuffer, TickType_t xTicksToWait)
+{
+  const UBaseType_t uxMessagesWaiting;
+  struct TimeOut_t xTimeOut;
+  BaseType_t xEntryTimeSet;
+  long unsigned int _1;
+  long int _2;
+  long unsigned int xTicksToWait.15_3;
+  long unsigned int _4;
+  long unsigned int _5;
+  struct List_t * _6;
+  long int _7;
+  long unsigned int xTicksToWait.16_8;
+  signed char _9;
+  signed char _10;
+  long int _11;
+  long int _12;
+  struct List_t * _13;
+  long unsigned int xTicksToWait.17_14;
+  long int _15;
+  long int _16;
+  BaseType_t _19;
+
+  <bb 2> [local count: 35437027]:
+  # DEBUG BEGIN_STMT
+  # DEBUG xEntryTimeSet => 0
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  # DEBUG pxQueue => xQueue_27(D)
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  if (xQueue_27(D) == 0B)
+    goto <bb 3>; [30.00%]
+  else
+    goto <bb 5>; [70.00%]
+
+  <bb 3> [local count: 10631108]:
+  # DEBUG BEGIN_STMT
+  __asm__ __volatile__(" cpsid i " :  :  : "memory");
+
+  <bb 4> [local count: 1073741824]:
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+
+  <bb 35> [local count: 1073741824]:
+  goto <bb 4>; [100.00%]
+
+  <bb 5> [local count: 24805919]:
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  if (pvBuffer_28(D) != 0B)
+    goto <bb 9>; [53.47%]
+  else
+    goto <bb 6>; [46.53%]
+
+  <bb 6> [local count: 11542194]:
+  _1 = MEM[(struct Queue_t *)xQueue_27(D)].uxItemSize;
+  if (_1 == 0)
+    goto <bb 9>; [50.00%]
+  else
+    goto <bb 7>; [50.00%]
+
+  <bb 7> [local count: 5771097]:
+  # DEBUG BEGIN_STMT
+  __asm__ __volatile__(" cpsid i " :  :  : "memory");
+
+  <bb 8> [local count: 582880760]:
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+
+  <bb 37> [local count: 582880760]:
+  goto <bb 8>; [100.00%]
+
+  <bb 9> [local count: 19034822]:
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  _2 = xTaskGetSchedulerState ();
+  if (_2 != 0)
+    goto <bb 10>; [50.00%]
+  else
+    goto <bb 11>; [50.00%]
+
+  <bb 10> [local count: 14276116]:
+  # xEntryTimeSet_32 = PHI <0(9), 0(11)>
+  goto <bb 15>; [100.00%]
+
+  <bb 11> [local count: 9517411]:
+  xTicksToWait.15_3 = xTicksToWait;
+  if (xTicksToWait.15_3 == 0)
+    goto <bb 10>; [50.00%]
+  else
+    goto <bb 12>; [50.00%]
+
+  <bb 12> [local count: 4758705]:
+  # DEBUG BEGIN_STMT
+  __asm__ __volatile__(" cpsid i " :  :  : "memory");
+
+  <bb 13> [local count: 480629216]:
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+
+  <bb 36> [local count: 480629216]:
+  goto <bb 13>; [100.00%]
+
+  <bb 14> [local count: 146408819]:
+  # xEntryTimeSet_46 = PHI <xEntryTimeSet_18(33), xEntryTimeSet_18(32), xEntryTimeSet_18(31), xEntryTimeSet_18(30)>
+
+  <bb 15> [local count: 160684935]:
+  # xEntryTimeSet_17 = PHI <xEntryTimeSet_32(10), xEntryTimeSet_46(14)>
+  # DEBUG xEntryTimeSet => xEntryTimeSet_17
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  vPortEnterCritical ();
+  # DEBUG BEGIN_STMT
+  uxMessagesWaiting_34 ={v} MEM[(struct Queue_t *)xQueue_27(D)].uxMessagesWaiting;
+  # DEBUG uxMessagesWaiting => uxMessagesWaiting_34
+  # DEBUG BEGIN_STMT
+  if (uxMessagesWaiting_34 != 0)
+    goto <bb 16>; [3.66%]
+  else
+    goto <bb 20>; [96.34%]
+
+  <bb 16> [local count: 5881069]:
+  # uxMessagesWaiting_31 = PHI <uxMessagesWaiting_34(15)>
+  # DEBUG BEGIN_STMT
+  prvCopyDataFromQueue (xQueue_27(D), pvBuffer_28(D));
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  _4 = uxMessagesWaiting_31 + 4294967295;
+  MEM[(struct Queue_t *)xQueue_27(D)].uxMessagesWaiting ={v} _4;
+  # DEBUG BEGIN_STMT
+  _5 = MEM[(struct Queue_t *)xQueue_27(D)].xTasksWaitingToSend.uxNumberOfItems;
+  if (_5 != 0)
+    goto <bb 17>; [33.00%]
+  else
+    goto <bb 19>; [67.00%]
+
+  <bb 17> [local count: 1940753]:
+  # DEBUG BEGIN_STMT
+  _6 = &MEM[(struct Queue_t *)xQueue_27(D)].xTasksWaitingToSend;
+  _7 = xTaskRemoveFromEventList (_6);
+  if (_7 != 0)
+    goto <bb 18>; [50.00%]
+  else
+    goto <bb 19>; [50.00%]
+
+  <bb 18> [local count: 970376]:
+  # DEBUG BEGIN_STMT
+  MEM[(volatile uint32_t *)3758157060B] ={v} 268435456;
+  # DEBUG BEGIN_STMT
+  __asm__ __volatile__("dsb" :  :  : "memory");
+  # DEBUG BEGIN_STMT
+  __asm__ __volatile__("isb");
+  # DEBUG BEGIN_STMT
+
+  <bb 19> [local count: 5881069]:
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  vPortExitCritical ();
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  goto <bb 34>; [100.00%]
+
+  <bb 20> [local count: 154803866]:
+  # DEBUG BEGIN_STMT
+  xTicksToWait.16_8 = xTicksToWait;
+  if (xTicksToWait.16_8 == 0)
+    goto <bb 21>; [3.66%]
+  else
+    goto <bb 22>; [96.34%]
+
+  <bb 21> [local count: 5665822]:
+  # DEBUG BEGIN_STMT
+  vPortExitCritical ();
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  goto <bb 34>; [100.00%]
+
+  <bb 22> [local count: 149138045]:
+  # DEBUG BEGIN_STMT
+  if (xEntryTimeSet_17 == 0)
+    goto <bb 23>; [33.00%]
+  else
+    goto <bb 24>; [67.00%]
+
+  <bb 23> [local count: 49215554]:
+  # DEBUG BEGIN_STMT
+  vTaskInternalSetTimeOutState (&xTimeOut);
+  # DEBUG BEGIN_STMT
+  # DEBUG xEntryTimeSet => 1
+
+  <bb 24> [local count: 149138045]:
+  # xEntryTimeSet_18 = PHI <xEntryTimeSet_17(22), 1(23)>
+  # DEBUG xEntryTimeSet => xEntryTimeSet_18
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  vPortExitCritical ();
+  # DEBUG BEGIN_STMT
+  vTaskSuspendAll ();
+  # DEBUG BEGIN_STMT
+  vPortEnterCritical ();
+  # DEBUG BEGIN_STMT
+  _9 ={v} MEM[(struct Queue_t *)xQueue_27(D)].cRxLock;
+  if (_9 == -1)
+    goto <bb 25>; [34.00%]
+  else
+    goto <bb 26>; [66.00%]
+
+  <bb 25> [local count: 50706936]:
+  # DEBUG BEGIN_STMT
+  MEM[(struct Queue_t *)xQueue_27(D)].cRxLock ={v} 0;
+
+  <bb 26> [local count: 149138045]:
+  # DEBUG BEGIN_STMT
+  _10 ={v} MEM[(struct Queue_t *)xQueue_27(D)].cTxLock;
+  if (_10 == -1)
+    goto <bb 27>; [34.00%]
+  else
+    goto <bb 28>; [66.00%]
+
+  <bb 27> [local count: 50706936]:
+  # DEBUG BEGIN_STMT
+  MEM[(struct Queue_t *)xQueue_27(D)].cTxLock ={v} 0;
+
+  <bb 28> [local count: 149138045]:
+  # DEBUG BEGIN_STMT
+  vPortExitCritical ();
+  # DEBUG BEGIN_STMT
+  _11 = xTaskCheckForTimeOut (&xTimeOut, &xTicksToWait);
+  if (_11 == 0)
+    goto <bb 29>; [50.00%]
+  else
+    goto <bb 33>; [50.00%]
+
+  <bb 29> [local count: 74569022]:
+  # DEBUG BEGIN_STMT
+  _12 = prvIsQueueEmpty (xQueue_27(D));
+  if (_12 != 0)
+    goto <bb 30>; [50.00%]
+  else
+    goto <bb 32>; [50.00%]
+
+  <bb 30> [local count: 37284511]:
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  _13 = &MEM[(struct Queue_t *)xQueue_27(D)].xTasksWaitingToReceive;
+  xTicksToWait.17_14 = xTicksToWait;
+  vTaskPlaceOnEventList (_13, xTicksToWait.17_14);
+  # DEBUG BEGIN_STMT
+  prvUnlockQueue (xQueue_27(D));
+  # DEBUG BEGIN_STMT
+  _15 = xTaskResumeAll ();
+  if (_15 == 0)
+    goto <bb 31>; [50.00%]
+  else
+    goto <bb 14>; [50.00%]
+
+  <bb 31> [local count: 18642256]:
+  # DEBUG BEGIN_STMT
+  MEM[(volatile uint32_t *)3758157060B] ={v} 268435456;
+  # DEBUG BEGIN_STMT
+  __asm__ __volatile__("dsb" :  :  : "memory");
+  # DEBUG BEGIN_STMT
+  __asm__ __volatile__("isb");
+  # DEBUG BEGIN_STMT
+  goto <bb 14>; [100.00%]
+
+  <bb 32> [local count: 37284511]:
+  # DEBUG BEGIN_STMT
+  prvUnlockQueue (xQueue_27(D));
+  # DEBUG BEGIN_STMT
+  xTaskResumeAll ();
+  goto <bb 14>; [100.00%]
+
+  <bb 33> [local count: 74569022]:
+  # DEBUG BEGIN_STMT
+  prvUnlockQueue (xQueue_27(D));
+  # DEBUG BEGIN_STMT
+  xTaskResumeAll ();
+  # DEBUG BEGIN_STMT
+  _16 = prvIsQueueEmpty (xQueue_27(D));
+  if (_16 != 0)
+    goto <bb 34>; [3.66%]
+  else
+    goto <bb 14>; [96.34%]
+
+  <bb 34> [local count: 14276117]:
+  # _19 = PHI <1(19), 0(21), 0(33)>
+  xTimeOut ={v} {CLOBBER};
+  return _19;
+
+}
+
+
+
+;; Function xQueueSemaphoreTake (xQueueSemaphoreTake, funcdef_no=18, decl_uid=6468, cgraph_uid=19, symbol_order=19)
+
+Modification phase of node xQueueSemaphoreTake/19
+xQueueSemaphoreTake (struct QueueDefinition * xQueue, TickType_t xTicksToWait)
+{
+  UBaseType_t uxHighestWaitingPriority;
+  const UBaseType_t uxSemaphoreCount;
+  BaseType_t xInheritanceOccurred;
+  struct TimeOut_t xTimeOut;
+  BaseType_t xEntryTimeSet;
+  long unsigned int _1;
+  long int _2;
+  long unsigned int xTicksToWait.19_3;
+  long unsigned int _4;
+  int8_t * _5;
+  struct tskTaskControlBlock * _6;
+  long unsigned int _7;
+  struct List_t * _8;
+  long int _9;
+  long unsigned int xTicksToWait.20_10;
+  signed char _11;
+  signed char _12;
+  long int _13;
+  long int _14;
+  int8_t * _15;
+  struct tskTaskControlBlock * _16;
+  struct List_t * _17;
+  long unsigned int xTicksToWait.21_18;
+  long int _19;
+  long int _20;
+  struct tskTaskControlBlock * _21;
+  BaseType_t _27;
+
+  <bb 2> [local count: 22667608]:
+  # DEBUG BEGIN_STMT
+  # DEBUG xEntryTimeSet => 0
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  # DEBUG pxQueue => xQueue_38(D)
+  # DEBUG BEGIN_STMT
+  # DEBUG xInheritanceOccurred => 0
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  if (xQueue_38(D) == 0B)
+    goto <bb 3>; [30.00%]
+  else
+    goto <bb 5>; [70.00%]
+
+  <bb 3> [local count: 6800282]:
+  # DEBUG BEGIN_STMT
+  __asm__ __volatile__(" cpsid i " :  :  : "memory");
+
+  <bb 4> [local count: 686828449]:
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+
+  <bb 41> [local count: 686828449]:
+  goto <bb 4>; [100.00%]
+
+  <bb 5> [local count: 15867325]:
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  _1 = MEM[(struct Queue_t *)xQueue_38(D)].uxItemSize;
+  if (_1 != 0)
+    goto <bb 6>; [67.00%]
+  else
+    goto <bb 8>; [33.00%]
+
+  <bb 6> [local count: 10631108]:
+  # DEBUG BEGIN_STMT
+  __asm__ __volatile__(" cpsid i " :  :  : "memory");
+
+  <bb 7> [local count: 1073741824]:
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+
+  <bb 42> [local count: 1073741824]:
+  goto <bb 7>; [100.00%]
+
+  <bb 8> [local count: 5236217]:
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  _2 = xTaskGetSchedulerState ();
+  if (_2 != 0)
+    goto <bb 10>; [50.00%]
+  else
+    goto <bb 9>; [50.00%]
+
+  <bb 9> [local count: 2618109]:
+  xTicksToWait.19_3 = xTicksToWait;
+  if (xTicksToWait.19_3 == 0)
+    goto <bb 10>; [50.00%]
+  else
+    goto <bb 11>; [50.00%]
+
+  <bb 10> [local count: 3927163]:
+  # xEntryTimeSet_40 = PHI <0(9), 0(8)>
+  # xInheritanceOccurred_26 = PHI <0(9), 0(8)>
+  goto <bb 14>; [100.00%]
+
+  <bb 11> [local count: 1309054]:
+  # DEBUG BEGIN_STMT
+  __asm__ __volatile__(" cpsid i " :  :  : "memory");
+
+  <bb 12> [local count: 132214477]:
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+
+  <bb 43> [local count: 132214477]:
+  goto <bb 12>; [100.00%]
+
+  <bb 13> [local count: 40275049]:
+  # xEntryTimeSet_48 = PHI <xEntryTimeSet_23(36), xEntryTimeSet_23(35), xEntryTimeSet_23(34), xEntryTimeSet_23(33)>
+  # xInheritanceOccurred_39 = PHI <xInheritanceOccurred_24(36), xInheritanceOccurred_24(35), xInheritanceOccurred_25(34), xInheritanceOccurred_25(33)>
+
+  <bb 14> [local count: 44202212]:
+  # xEntryTimeSet_22 = PHI <xEntryTimeSet_40(10), xEntryTimeSet_48(13)>
+  # xInheritanceOccurred_24 = PHI <xInheritanceOccurred_26(10), xInheritanceOccurred_39(13)>
+  # DEBUG xInheritanceOccurred => xInheritanceOccurred_24
+  # DEBUG xEntryTimeSet => xEntryTimeSet_22
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  vPortEnterCritical ();
+  # DEBUG BEGIN_STMT
+  uxSemaphoreCount_46 ={v} MEM[(struct Queue_t *)xQueue_38(D)].uxMessagesWaiting;
+  # DEBUG uxSemaphoreCount => uxSemaphoreCount_46
+  # DEBUG BEGIN_STMT
+  if (uxSemaphoreCount_46 != 0)
+    goto <bb 15>; [3.66%]
+  else
+    goto <bb 21>; [96.34%]
+
+  <bb 15> [local count: 1617801]:
+  # uxSemaphoreCount_44 = PHI <uxSemaphoreCount_46(14)>
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  _4 = uxSemaphoreCount_44 + 4294967295;
+  MEM[(struct Queue_t *)xQueue_38(D)].uxMessagesWaiting ={v} _4;
+  # DEBUG BEGIN_STMT
+  _5 = MEM[(struct Queue_t *)xQueue_38(D)].pcHead;
+  if (_5 == 0B)
+    goto <bb 16>; [17.43%]
+  else
+    goto <bb 17>; [82.57%]
+
+  <bb 16> [local count: 281983]:
+  # DEBUG BEGIN_STMT
+  _6 = pvTaskIncrementMutexHeldCount ();
+  MEM[(struct Queue_t *)xQueue_38(D)].u.xSemaphore.xMutexHolder = _6;
+
+  <bb 17> [local count: 1617801]:
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  _7 = MEM[(struct Queue_t *)xQueue_38(D)].xTasksWaitingToSend.uxNumberOfItems;
+  if (_7 != 0)
+    goto <bb 18>; [33.00%]
+  else
+    goto <bb 20>; [67.00%]
+
+  <bb 18> [local count: 533874]:
+  # DEBUG BEGIN_STMT
+  _8 = &MEM[(struct Queue_t *)xQueue_38(D)].xTasksWaitingToSend;
+  _9 = xTaskRemoveFromEventList (_8);
+  if (_9 != 0)
+    goto <bb 19>; [50.00%]
+  else
+    goto <bb 20>; [50.00%]
+
+  <bb 19> [local count: 266937]:
+  # DEBUG BEGIN_STMT
+  MEM[(volatile uint32_t *)3758157060B] ={v} 268435456;
+  # DEBUG BEGIN_STMT
+  __asm__ __volatile__("dsb" :  :  : "memory");
+  # DEBUG BEGIN_STMT
+  __asm__ __volatile__("isb");
+  # DEBUG BEGIN_STMT
+
+  <bb 20> [local count: 1617801]:
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  vPortExitCritical ();
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  goto <bb 40>; [100.00%]
+
+  <bb 21> [local count: 42584411]:
+  # DEBUG BEGIN_STMT
+  xTicksToWait.20_10 = xTicksToWait;
+  if (xTicksToWait.20_10 == 0)
+    goto <bb 22>; [3.66%]
+  else
+    goto <bb 23>; [96.34%]
+
+  <bb 22> [local count: 1558590]:
+  # DEBUG BEGIN_STMT
+  vPortExitCritical ();
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  goto <bb 40>; [100.00%]
+
+  <bb 23> [local count: 41025822]:
+  # DEBUG BEGIN_STMT
+  if (xEntryTimeSet_22 == 0)
+    goto <bb 24>; [33.00%]
+  else
+    goto <bb 25>; [67.00%]
+
+  <bb 24> [local count: 13538521]:
+  # DEBUG BEGIN_STMT
+  vTaskInternalSetTimeOutState (&xTimeOut);
+  # DEBUG BEGIN_STMT
+  # DEBUG xEntryTimeSet => 1
+
+  <bb 25> [local count: 41025822]:
+  # xEntryTimeSet_23 = PHI <xEntryTimeSet_22(23), 1(24)>
+  # DEBUG xEntryTimeSet => xEntryTimeSet_23
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  vPortExitCritical ();
+  # DEBUG BEGIN_STMT
+  vTaskSuspendAll ();
+  # DEBUG BEGIN_STMT
+  vPortEnterCritical ();
+  # DEBUG BEGIN_STMT
+  _11 ={v} MEM[(struct Queue_t *)xQueue_38(D)].cRxLock;
+  if (_11 == -1)
+    goto <bb 26>; [34.00%]
+  else
+    goto <bb 27>; [66.00%]
+
+  <bb 26> [local count: 13948780]:
+  # DEBUG BEGIN_STMT
+  MEM[(struct Queue_t *)xQueue_38(D)].cRxLock ={v} 0;
+
+  <bb 27> [local count: 41025822]:
+  # DEBUG BEGIN_STMT
+  _12 ={v} MEM[(struct Queue_t *)xQueue_38(D)].cTxLock;
+  if (_12 == -1)
+    goto <bb 28>; [34.00%]
+  else
+    goto <bb 29>; [66.00%]
+
+  <bb 28> [local count: 13948780]:
+  # DEBUG BEGIN_STMT
+  MEM[(struct Queue_t *)xQueue_38(D)].cTxLock ={v} 0;
+
+  <bb 29> [local count: 41025822]:
+  # DEBUG BEGIN_STMT
+  vPortExitCritical ();
+  # DEBUG BEGIN_STMT
+  _13 = xTaskCheckForTimeOut (&xTimeOut, &xTicksToWait);
+  if (_13 == 0)
+    goto <bb 30>; [50.00%]
+  else
+    goto <bb 36>; [50.00%]
+
+  <bb 30> [local count: 20512911]:
+  # DEBUG BEGIN_STMT
+  _14 = prvIsQueueEmpty (xQueue_38(D));
+  if (_14 != 0)
+    goto <bb 31>; [67.00%]
+  else
+    goto <bb 35>; [33.00%]
+
+  <bb 31> [local count: 13743650]:
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  _15 = MEM[(struct Queue_t *)xQueue_38(D)].pcHead;
+  if (_15 == 0B)
+    goto <bb 32>; [17.43%]
+  else
+    goto <bb 33>; [82.57%]
+
+  <bb 32> [local count: 2395518]:
+  # DEBUG BEGIN_STMT
+  vPortEnterCritical ();
+  # DEBUG BEGIN_STMT
+  _16 = MEM[(struct Queue_t *)xQueue_38(D)].u.xSemaphore.xMutexHolder;
+  xInheritanceOccurred_68 = xTaskPriorityInherit (_16);
+  # DEBUG xInheritanceOccurred => xInheritanceOccurred_68
+  # DEBUG BEGIN_STMT
+  vPortExitCritical ();
+
+  <bb 33> [local count: 13743650]:
+  # xInheritanceOccurred_25 = PHI <xInheritanceOccurred_24(31), xInheritanceOccurred_68(32)>
+  # DEBUG xInheritanceOccurred => xInheritanceOccurred_25
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  _17 = &MEM[(struct Queue_t *)xQueue_38(D)].xTasksWaitingToReceive;
+  xTicksToWait.21_18 = xTicksToWait;
+  vTaskPlaceOnEventList (_17, xTicksToWait.21_18);
+  # DEBUG BEGIN_STMT
+  prvUnlockQueue (xQueue_38(D));
+  # DEBUG BEGIN_STMT
+  _19 = xTaskResumeAll ();
+  if (_19 == 0)
+    goto <bb 34>; [50.00%]
+  else
+    goto <bb 13>; [50.00%]
+
+  <bb 34> [local count: 6871825]:
+  # DEBUG BEGIN_STMT
+  MEM[(volatile uint32_t *)3758157060B] ={v} 268435456;
+  # DEBUG BEGIN_STMT
+  __asm__ __volatile__("dsb" :  :  : "memory");
+  # DEBUG BEGIN_STMT
+  __asm__ __volatile__("isb");
+  # DEBUG BEGIN_STMT
+  goto <bb 13>; [100.00%]
+
+  <bb 35> [local count: 6769261]:
+  # DEBUG BEGIN_STMT
+  prvUnlockQueue (xQueue_38(D));
+  # DEBUG BEGIN_STMT
+  xTaskResumeAll ();
+  goto <bb 13>; [100.00%]
+
+  <bb 36> [local count: 20512911]:
+  # DEBUG BEGIN_STMT
+  prvUnlockQueue (xQueue_38(D));
+  # DEBUG BEGIN_STMT
+  xTaskResumeAll ();
+  # DEBUG BEGIN_STMT
+  _20 = prvIsQueueEmpty (xQueue_38(D));
+  if (_20 != 0)
+    goto <bb 37>; [3.66%]
+  else
+    goto <bb 13>; [96.34%]
+
+  <bb 37> [local count: 750773]:
+  # xInheritanceOccurred_43 = PHI <xInheritanceOccurred_24(36)>
+  # DEBUG BEGIN_STMT
+  if (xInheritanceOccurred_43 != 0)
+    goto <bb 38>; [33.00%]
+  else
+    goto <bb 39>; [67.00%]
+
+  <bb 38> [local count: 247755]:
+  # DEBUG BEGIN_STMT
+  vPortEnterCritical ();
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  uxHighestWaitingPriority_60 = prvGetDisinheritPriorityAfterTimeout (xQueue_38(D));
+  # DEBUG uxHighestWaitingPriority => uxHighestWaitingPriority_60
+  # DEBUG BEGIN_STMT
+  _21 = MEM[(struct Queue_t *)xQueue_38(D)].u.xSemaphore.xMutexHolder;
+  vTaskPriorityDisinheritAfterTimeout (_21, uxHighestWaitingPriority_60);
+  # DEBUG BEGIN_STMT
+  vPortExitCritical ();
+
+  <bb 39> [local count: 750773]:
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+
+  <bb 40> [local count: 3927163]:
+  # _27 = PHI <1(20), 0(22), 0(39)>
+  xTimeOut ={v} {CLOBBER};
+  return _27;
+
+}
+
+
+
+;; Function xQueueTakeMutexRecursive (xQueueTakeMutexRecursive, funcdef_no=12, decl_uid=6475, cgraph_uid=13, symbol_order=13)
+
+Modification phase of node xQueueTakeMutexRecursive/13
+xQueueTakeMutexRecursive (struct QueueDefinition * xMutex, TickType_t xTicksToWait)
+{
+  BaseType_t xReturn;
+  struct tskTaskControlBlock * _1;
+  struct tskTaskControlBlock * _2;
+  long unsigned int _3;
+  long unsigned int _4;
+  long unsigned int _5;
+  long unsigned int _6;
+
+  <bb 2> [local count: 22847857]:
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  # DEBUG pxMutex => xMutex_9(D)
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  if (xMutex_9(D) == 0B)
+    goto <bb 3>; [46.53%]
+  else
+    goto <bb 5>; [53.47%]
+
+  <bb 3> [local count: 10631108]:
+  # DEBUG BEGIN_STMT
+  __asm__ __volatile__(" cpsid i " :  :  : "memory");
+
+  <bb 4> [local count: 1073741824]:
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+
+  <bb 10> [local count: 1073741824]:
+  goto <bb 4>; [100.00%]
+
+  <bb 5> [local count: 12216749]:
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  _1 = MEM[(struct Queue_t *)xMutex_9(D)].u.xSemaphore.xMutexHolder;
+  _2 = xTaskGetCurrentTaskHandle ();
+  if (_1 == _2)
+    goto <bb 6>; [46.53%]
+  else
+    goto <bb 7>; [53.47%]
+
+  <bb 6> [local count: 5684453]:
+  # DEBUG BEGIN_STMT
+  _3 = MEM[(struct Queue_t *)xMutex_9(D)].u.xSemaphore.uxRecursiveCallCount;
+  _4 = _3 + 1;
+  MEM[(struct Queue_t *)xMutex_9(D)].u.xSemaphore.uxRecursiveCallCount = _4;
+  # DEBUG BEGIN_STMT
+  # DEBUG xReturn => 1
+  goto <bb 9>; [100.00%]
+
+  <bb 7> [local count: 6532296]:
+  # DEBUG BEGIN_STMT
+  xReturn_14 = xQueueSemaphoreTake (xMutex_9(D), xTicksToWait_12(D));
+  # DEBUG xReturn => xReturn_14
+  # DEBUG BEGIN_STMT
+  if (xReturn_14 != 0)
+    goto <bb 8>; [50.00%]
+  else
+    goto <bb 9>; [50.00%]
+
+  <bb 8> [local count: 3266148]:
+  # DEBUG BEGIN_STMT
+  _5 = MEM[(struct Queue_t *)xMutex_9(D)].u.xSemaphore.uxRecursiveCallCount;
+  _6 = _5 + 1;
+  MEM[(struct Queue_t *)xMutex_9(D)].u.xSemaphore.uxRecursiveCallCount = _6;
+
+  <bb 9> [local count: 12216749]:
+  # xReturn_7 = PHI <1(6), xReturn_14(7), xReturn_14(8)>
+  # DEBUG xReturn => xReturn_7
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  return xReturn_7;
+
+}
+
+
+
+;; Function xQueuePeek (xQueuePeek, funcdef_no=19, decl_uid=6429, cgraph_uid=20, symbol_order=20)
+
+Modification phase of node xQueuePeek/20
+xQueuePeek (struct QueueDefinition * xQueue, void * const pvBuffer, TickType_t xTicksToWait)
+{
+  const UBaseType_t uxMessagesWaiting;
+  int8_t * pcOriginalReadPosition;
+  struct TimeOut_t xTimeOut;
+  BaseType_t xEntryTimeSet;
+  long unsigned int _1;
+  long int _2;
+  long unsigned int xTicksToWait.24_3;
+  long unsigned int _4;
+  struct List_t * _5;
+  long int _6;
+  long unsigned int xTicksToWait.25_7;
+  signed char _8;
+  signed char _9;
+  long int _10;
+  long int _11;
+  struct List_t * _12;
+  long unsigned int xTicksToWait.26_13;
+  long int _14;
+  long int _15;
+  BaseType_t _18;
+
+  <bb 2> [local count: 35437027]:
+  # DEBUG BEGIN_STMT
+  # DEBUG xEntryTimeSet => 0
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  # DEBUG pxQueue => xQueue_26(D)
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  if (xQueue_26(D) == 0B)
+    goto <bb 3>; [30.00%]
+  else
+    goto <bb 5>; [70.00%]
+
+  <bb 3> [local count: 10631108]:
+  # DEBUG BEGIN_STMT
+  __asm__ __volatile__(" cpsid i " :  :  : "memory");
+
+  <bb 4> [local count: 1073741824]:
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+
+  <bb 35> [local count: 1073741824]:
+  goto <bb 4>; [100.00%]
+
+  <bb 5> [local count: 24805919]:
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  if (pvBuffer_27(D) != 0B)
+    goto <bb 9>; [53.47%]
+  else
+    goto <bb 6>; [46.53%]
+
+  <bb 6> [local count: 11542194]:
+  _1 = MEM[(struct Queue_t *)xQueue_26(D)].uxItemSize;
+  if (_1 == 0)
+    goto <bb 9>; [50.00%]
+  else
+    goto <bb 7>; [50.00%]
+
+  <bb 7> [local count: 5771097]:
+  # DEBUG BEGIN_STMT
+  __asm__ __volatile__(" cpsid i " :  :  : "memory");
+
+  <bb 8> [local count: 582880760]:
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+
+  <bb 37> [local count: 582880760]:
+  goto <bb 8>; [100.00%]
+
+  <bb 9> [local count: 19034822]:
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  _2 = xTaskGetSchedulerState ();
+  if (_2 != 0)
+    goto <bb 10>; [50.00%]
+  else
+    goto <bb 11>; [50.00%]
+
+  <bb 10> [local count: 14276116]:
+  # xEntryTimeSet_30 = PHI <0(9), 0(11)>
+  goto <bb 15>; [100.00%]
+
+  <bb 11> [local count: 9517411]:
+  xTicksToWait.24_3 = xTicksToWait;
+  if (xTicksToWait.24_3 == 0)
+    goto <bb 10>; [50.00%]
+  else
+    goto <bb 12>; [50.00%]
+
+  <bb 12> [local count: 4758705]:
+  # DEBUG BEGIN_STMT
+  __asm__ __volatile__(" cpsid i " :  :  : "memory");
+
+  <bb 13> [local count: 480629216]:
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+
+  <bb 36> [local count: 480629216]:
+  goto <bb 13>; [100.00%]
+
+  <bb 14> [local count: 146408819]:
+  # xEntryTimeSet_44 = PHI <xEntryTimeSet_17(33), xEntryTimeSet_17(32), xEntryTimeSet_17(31), xEntryTimeSet_17(30)>
+
+  <bb 15> [local count: 160684935]:
+  # xEntryTimeSet_16 = PHI <xEntryTimeSet_30(10), xEntryTimeSet_44(14)>
+  # DEBUG xEntryTimeSet => xEntryTimeSet_16
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  vPortEnterCritical ();
+  # DEBUG BEGIN_STMT
+  uxMessagesWaiting_32 ={v} MEM[(struct Queue_t *)xQueue_26(D)].uxMessagesWaiting;
+  # DEBUG uxMessagesWaiting => uxMessagesWaiting_32
+  # DEBUG BEGIN_STMT
+  if (uxMessagesWaiting_32 != 0)
+    goto <bb 16>; [3.66%]
+  else
+    goto <bb 20>; [96.34%]
+
+  <bb 16> [local count: 5881069]:
+  # DEBUG BEGIN_STMT
+  pcOriginalReadPosition_55 = MEM[(struct Queue_t *)xQueue_26(D)].u.xQueue.pcReadFrom;
+  # DEBUG pcOriginalReadPosition => pcOriginalReadPosition_55
+  # DEBUG BEGIN_STMT
+  prvCopyDataFromQueue (xQueue_26(D), pvBuffer_27(D));
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  MEM[(struct Queue_t *)xQueue_26(D)].u.xQueue.pcReadFrom = pcOriginalReadPosition_55;
+  # DEBUG BEGIN_STMT
+  _4 = MEM[(struct Queue_t *)xQueue_26(D)].xTasksWaitingToReceive.uxNumberOfItems;
+  if (_4 != 0)
+    goto <bb 17>; [33.00%]
+  else
+    goto <bb 19>; [67.00%]
+
+  <bb 17> [local count: 1940753]:
+  # DEBUG BEGIN_STMT
+  _5 = &MEM[(struct Queue_t *)xQueue_26(D)].xTasksWaitingToReceive;
+  _6 = xTaskRemoveFromEventList (_5);
+  if (_6 != 0)
+    goto <bb 18>; [50.00%]
+  else
+    goto <bb 19>; [50.00%]
+
+  <bb 18> [local count: 970376]:
+  # DEBUG BEGIN_STMT
+  MEM[(volatile uint32_t *)3758157060B] ={v} 268435456;
+  # DEBUG BEGIN_STMT
+  __asm__ __volatile__("dsb" :  :  : "memory");
+  # DEBUG BEGIN_STMT
+  __asm__ __volatile__("isb");
+  # DEBUG BEGIN_STMT
+
+  <bb 19> [local count: 5881069]:
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  vPortExitCritical ();
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  goto <bb 34>; [100.00%]
+
+  <bb 20> [local count: 154803866]:
+  # DEBUG BEGIN_STMT
+  xTicksToWait.25_7 = xTicksToWait;
+  if (xTicksToWait.25_7 == 0)
+    goto <bb 21>; [3.66%]
+  else
+    goto <bb 22>; [96.34%]
+
+  <bb 21> [local count: 5665822]:
+  # DEBUG BEGIN_STMT
+  vPortExitCritical ();
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  goto <bb 34>; [100.00%]
+
+  <bb 22> [local count: 149138045]:
+  # DEBUG BEGIN_STMT
+  if (xEntryTimeSet_16 == 0)
+    goto <bb 23>; [33.00%]
+  else
+    goto <bb 24>; [67.00%]
+
+  <bb 23> [local count: 49215554]:
+  # DEBUG BEGIN_STMT
+  vTaskInternalSetTimeOutState (&xTimeOut);
+  # DEBUG BEGIN_STMT
+  # DEBUG xEntryTimeSet => 1
+
+  <bb 24> [local count: 149138045]:
+  # xEntryTimeSet_17 = PHI <xEntryTimeSet_16(22), 1(23)>
+  # DEBUG xEntryTimeSet => xEntryTimeSet_17
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  vPortExitCritical ();
+  # DEBUG BEGIN_STMT
+  vTaskSuspendAll ();
+  # DEBUG BEGIN_STMT
+  vPortEnterCritical ();
+  # DEBUG BEGIN_STMT
+  _8 ={v} MEM[(struct Queue_t *)xQueue_26(D)].cRxLock;
+  if (_8 == -1)
+    goto <bb 25>; [34.00%]
+  else
+    goto <bb 26>; [66.00%]
+
+  <bb 25> [local count: 50706936]:
+  # DEBUG BEGIN_STMT
+  MEM[(struct Queue_t *)xQueue_26(D)].cRxLock ={v} 0;
+
+  <bb 26> [local count: 149138045]:
+  # DEBUG BEGIN_STMT
+  _9 ={v} MEM[(struct Queue_t *)xQueue_26(D)].cTxLock;
+  if (_9 == -1)
+    goto <bb 27>; [34.00%]
+  else
+    goto <bb 28>; [66.00%]
+
+  <bb 27> [local count: 50706936]:
+  # DEBUG BEGIN_STMT
+  MEM[(struct Queue_t *)xQueue_26(D)].cTxLock ={v} 0;
+
+  <bb 28> [local count: 149138045]:
+  # DEBUG BEGIN_STMT
+  vPortExitCritical ();
+  # DEBUG BEGIN_STMT
+  _10 = xTaskCheckForTimeOut (&xTimeOut, &xTicksToWait);
+  if (_10 == 0)
+    goto <bb 29>; [50.00%]
+  else
+    goto <bb 33>; [50.00%]
+
+  <bb 29> [local count: 74569022]:
+  # DEBUG BEGIN_STMT
+  _11 = prvIsQueueEmpty (xQueue_26(D));
+  if (_11 != 0)
+    goto <bb 30>; [50.00%]
+  else
+    goto <bb 32>; [50.00%]
+
+  <bb 30> [local count: 37284511]:
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  _12 = &MEM[(struct Queue_t *)xQueue_26(D)].xTasksWaitingToReceive;
+  xTicksToWait.26_13 = xTicksToWait;
+  vTaskPlaceOnEventList (_12, xTicksToWait.26_13);
+  # DEBUG BEGIN_STMT
+  prvUnlockQueue (xQueue_26(D));
+  # DEBUG BEGIN_STMT
+  _14 = xTaskResumeAll ();
+  if (_14 == 0)
+    goto <bb 31>; [50.00%]
+  else
+    goto <bb 14>; [50.00%]
+
+  <bb 31> [local count: 18642256]:
+  # DEBUG BEGIN_STMT
+  MEM[(volatile uint32_t *)3758157060B] ={v} 268435456;
+  # DEBUG BEGIN_STMT
+  __asm__ __volatile__("dsb" :  :  : "memory");
+  # DEBUG BEGIN_STMT
+  __asm__ __volatile__("isb");
+  # DEBUG BEGIN_STMT
+  goto <bb 14>; [100.00%]
+
+  <bb 32> [local count: 37284511]:
+  # DEBUG BEGIN_STMT
+  prvUnlockQueue (xQueue_26(D));
+  # DEBUG BEGIN_STMT
+  xTaskResumeAll ();
+  goto <bb 14>; [100.00%]
+
+  <bb 33> [local count: 74569022]:
+  # DEBUG BEGIN_STMT
+  prvUnlockQueue (xQueue_26(D));
+  # DEBUG BEGIN_STMT
+  xTaskResumeAll ();
+  # DEBUG BEGIN_STMT
+  _15 = prvIsQueueEmpty (xQueue_26(D));
+  if (_15 != 0)
+    goto <bb 34>; [3.66%]
+  else
+    goto <bb 14>; [96.34%]
+
+  <bb 34> [local count: 14276117]:
+  # _18 = PHI <1(19), 0(21), 0(33)>
+  xTimeOut ={v} {CLOBBER};
+  return _18;
+
+}
+
+
+
+;; Function xQueueReceiveFromISR (xQueueReceiveFromISR, funcdef_no=20, decl_uid=6454, cgraph_uid=21, symbol_order=21)
+
+Modification phase of node xQueueReceiveFromISR/21
+xQueueReceiveFromISR (struct QueueDefinition * xQueue, void * const pvBuffer, BaseType_t * const pxHigherPriorityTaskWoken)
+{
+  uint32_t ulOriginalBASEPRI;
+  uint32_t ulNewBASEPRI;
+  const UBaseType_t uxNumberOfTasks;
+  const int8_t cRxLock;
+  const UBaseType_t uxMessagesWaiting;
+  BaseType_t xReturn;
+  long unsigned int _1;
+  long unsigned int _2;
+  long unsigned int _3;
+  struct List_t * _4;
+  long int _5;
+  long unsigned int _6;
+  unsigned char cRxLock.28_7;
+  unsigned char _8;
+  signed char _9;
+
+  <bb 2> [local count: 35437027]:
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  # DEBUG pxQueue => xQueue_12(D)
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  if (xQueue_12(D) == 0B)
+    goto <bb 3>; [30.00%]
+  else
+    goto <bb 5>; [70.00%]
+
+  <bb 3> [local count: 10631108]:
+  # DEBUG BEGIN_STMT
+  __asm__ __volatile__(" cpsid i " :  :  : "memory");
+
+  <bb 4> [local count: 1073741824]:
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+
+  <bb 22> [local count: 1073741824]:
+  goto <bb 4>; [100.00%]
+
+  <bb 5> [local count: 24805919]:
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  if (pvBuffer_13(D) != 0B)
+    goto <bb 9>; [53.47%]
+  else
+    goto <bb 6>; [46.53%]
+
+  <bb 6> [local count: 11542194]:
+  _1 = MEM[(struct Queue_t *)xQueue_12(D)].uxItemSize;
+  if (_1 == 0)
+    goto <bb 9>; [50.00%]
+  else
+    goto <bb 7>; [50.00%]
+
+  <bb 7> [local count: 5771097]:
+  # DEBUG BEGIN_STMT
+  __asm__ __volatile__(" cpsid i " :  :  : "memory");
+
+  <bb 8> [local count: 582880760]:
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+
+  <bb 24> [local count: 582880760]:
+  goto <bb 8>; [100.00%]
+
+  <bb 9> [local count: 19034822]:
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  vPortValidateInterruptPriority ();
+  # DEBUG BEGIN_STMT
+  # DEBUG INLINE_ENTRY ulPortRaiseBASEPRI
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  __asm__ __volatile__("   mrs %0, basepri                                         
+   mov %1, %2                                              
+   cpsid i                                                 
+   msr basepri, %1                                         
+   isb                                                     
+   dsb                                                     
+   cpsie i                                                 
+" : "=r" ulOriginalBASEPRI_29, "=r" ulNewBASEPRI_30 : "i" 16 : "memory");
+  # DEBUG ulNewBASEPRI => ulNewBASEPRI_30
+  # DEBUG ulOriginalBASEPRI => ulOriginalBASEPRI_29
+  # DEBUG BEGIN_STMT
+  # DEBUG ulNewBASEPRI => NULL
+  # DEBUG ulOriginalBASEPRI => NULL
+  # DEBUG uxSavedInterruptStatus => ulOriginalBASEPRI_29
+  # DEBUG BEGIN_STMT
+  uxMessagesWaiting_16 ={v} MEM[(struct Queue_t *)xQueue_12(D)].uxMessagesWaiting;
+  # DEBUG uxMessagesWaiting => uxMessagesWaiting_16
+  # DEBUG BEGIN_STMT
+  if (uxMessagesWaiting_16 != 0)
+    goto <bb 10>; [33.00%]
+  else
+    goto <bb 21>; [67.00%]
+
+  <bb 10> [local count: 6281491]:
+  # DEBUG BEGIN_STMT
+  cRxLock_17 ={v} MEM[(struct Queue_t *)xQueue_12(D)].cRxLock;
+  # DEBUG cRxLock => cRxLock_17
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  prvCopyDataFromQueue (xQueue_12(D), pvBuffer_13(D));
+  # DEBUG BEGIN_STMT
+  _2 = uxMessagesWaiting_16 + 4294967295;
+  MEM[(struct Queue_t *)xQueue_12(D)].uxMessagesWaiting ={v} _2;
+  # DEBUG BEGIN_STMT
+  if (cRxLock_17 == -1)
+    goto <bb 11>; [51.12%]
+  else
+    goto <bb 15>; [48.88%]
+
+  <bb 11> [local count: 3211098]:
+  # DEBUG BEGIN_STMT
+  _3 = MEM[(struct Queue_t *)xQueue_12(D)].xTasksWaitingToSend.uxNumberOfItems;
+  if (_3 != 0)
+    goto <bb 12>; [33.00%]
+  else
+    goto <bb 21>; [67.00%]
+
+  <bb 12> [local count: 1059662]:
+  # DEBUG BEGIN_STMT
+  _4 = &MEM[(struct Queue_t *)xQueue_12(D)].xTasksWaitingToSend;
+  _5 = xTaskRemoveFromEventList (_4);
+  if (_5 != 0)
+    goto <bb 13>; [50.00%]
+  else
+    goto <bb 21>; [50.00%]
+
+  <bb 13> [local count: 529831]:
+  # DEBUG BEGIN_STMT
+  if (pxHigherPriorityTaskWoken_25(D) != 0B)
+    goto <bb 14>; [70.00%]
+  else
+    goto <bb 21>; [30.00%]
+
+  <bb 14> [local count: 370882]:
+  # DEBUG BEGIN_STMT
+  *pxHigherPriorityTaskWoken_25(D) = 1;
+  goto <bb 21>; [100.00%]
+
+  <bb 15> [local count: 3070393]:
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  uxNumberOfTasks_21 = uxTaskGetNumberOfTasks ();
+  # DEBUG uxNumberOfTasks => uxNumberOfTasks_21
+  # DEBUG BEGIN_STMT
+  _6 = (long unsigned int) cRxLock_17;
+  if (_6 < uxNumberOfTasks_21)
+    goto <bb 16>; [50.00%]
+  else
+    goto <bb 21>; [50.00%]
+
+  <bb 16> [local count: 1535196]:
+  # DEBUG BEGIN_STMT
+  if (cRxLock_17 == 127)
+    goto <bb 17>; [34.00%]
+  else
+    goto <bb 19>; [66.00%]
+
+  <bb 17> [local count: 521967]:
+  # DEBUG BEGIN_STMT
+  __asm__ __volatile__(" cpsid i " :  :  : "memory");
+
+  <bb 18> [local count: 52718642]:
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+
+  <bb 23> [local count: 52718642]:
+  goto <bb 18>; [100.00%]
+
+  <bb 19> [local count: 1013230]:
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  cRxLock.28_7 = (unsigned char) cRxLock_17;
+  _8 = cRxLock.28_7 + 1;
+  _9 = (signed char) _8;
+  MEM[(struct Queue_t *)xQueue_12(D)].cRxLock ={v} _9;
+
+  <bb 21> [local count: 18512855]:
+  # xReturn_10 = PHI <1(15), 0(9), 1(14), 1(12), 1(13), 1(11), 1(19)>
+  # DEBUG xReturn => xReturn_10
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  # DEBUG ulNewMaskValue => ulOriginalBASEPRI_29
+  # DEBUG INLINE_ENTRY vPortSetBASEPRI
+  # DEBUG BEGIN_STMT
+  __asm__ __volatile__("   msr basepri, %0 " :  : "r" ulOriginalBASEPRI_29 : "memory");
+  # DEBUG ulNewMaskValue => NULL
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  return xReturn_10;
+
+}
+
+
+
+;; Function xQueuePeekFromISR (xQueuePeekFromISR, funcdef_no=21, decl_uid=6432, cgraph_uid=22, symbol_order=22)
+
+Modification phase of node xQueuePeekFromISR/22
+xQueuePeekFromISR (struct QueueDefinition * xQueue, void * const pvBuffer)
+{
+  uint32_t ulOriginalBASEPRI;
+  uint32_t ulNewBASEPRI;
+  int8_t * pcOriginalReadPosition;
+  BaseType_t xReturn;
+  long unsigned int _1;
+  long unsigned int _2;
+  long unsigned int _3;
+
+  <bb 2> [local count: 26667774]:
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  # DEBUG pxQueue => xQueue_6(D)
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  if (xQueue_6(D) == 0B)
+    goto <bb 3>; [30.00%]
+  else
+    goto <bb 5>; [70.00%]
+
+  <bb 3> [local count: 8000332]:
+  # DEBUG BEGIN_STMT
+  __asm__ __volatile__(" cpsid i " :  :  : "memory");
+
+  <bb 4> [local count: 808033467]:
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+
+  <bb 15> [local count: 808033467]:
+  goto <bb 4>; [100.00%]
+
+  <bb 5> [local count: 18667442]:
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  if (pvBuffer_7(D) != 0B)
+    goto <bb 9>; [70.00%]
+  else
+    goto <bb 6>; [30.00%]
+
+  <bb 6> [local count: 5600232]:
+  _1 = MEM[(struct Queue_t *)xQueue_6(D)].uxItemSize;
+  if (_1 == 0)
+    goto <bb 9>; [50.00%]
+  else
+    goto <bb 7>; [50.00%]
+
+  <bb 7> [local count: 2800116]:
+  # DEBUG BEGIN_STMT
+  __asm__ __volatile__(" cpsid i " :  :  : "memory");
+
+  <bb 8> [local count: 282811714]:
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+
+  <bb 17> [local count: 282811714]:
+  goto <bb 8>; [100.00%]
+
+  <bb 9> [local count: 15867325]:
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  _2 = MEM[(struct Queue_t *)xQueue_6(D)].uxItemSize;
+  if (_2 == 0)
+    goto <bb 10>; [67.00%]
+  else
+    goto <bb 12>; [33.00%]
+
+  <bb 10> [local count: 10631108]:
+  # DEBUG BEGIN_STMT
+  __asm__ __volatile__(" cpsid i " :  :  : "memory");
+
+  <bb 11> [local count: 1073741824]:
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+
+  <bb 16> [local count: 1073741824]:
+  goto <bb 11>; [100.00%]
+
+  <bb 12> [local count: 5236217]:
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  vPortValidateInterruptPriority ();
+  # DEBUG BEGIN_STMT
+  # DEBUG INLINE_ENTRY ulPortRaiseBASEPRI
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  __asm__ __volatile__("   mrs %0, basepri                                         
+   mov %1, %2                                              
+   cpsid i                                                 
+   msr basepri, %1                                         
+   isb                                                     
+   dsb                                                     
+   cpsie i                                                 
+" : "=r" ulOriginalBASEPRI_16, "=r" ulNewBASEPRI_17 : "i" 16 : "memory");
+  # DEBUG ulNewBASEPRI => ulNewBASEPRI_17
+  # DEBUG ulOriginalBASEPRI => ulOriginalBASEPRI_16
+  # DEBUG BEGIN_STMT
+  # DEBUG ulNewBASEPRI => NULL
+  # DEBUG ulOriginalBASEPRI => NULL
+  # DEBUG uxSavedInterruptStatus => ulOriginalBASEPRI_16
+  # DEBUG BEGIN_STMT
+  _3 ={v} MEM[(struct Queue_t *)xQueue_6(D)].uxMessagesWaiting;
+  if (_3 != 0)
+    goto <bb 13>; [33.00%]
+  else
+    goto <bb 14>; [67.00%]
+
+  <bb 13> [local count: 1727952]:
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  pcOriginalReadPosition_10 = MEM[(struct Queue_t *)xQueue_6(D)].u.xQueue.pcReadFrom;
+  # DEBUG pcOriginalReadPosition => pcOriginalReadPosition_10
+  # DEBUG BEGIN_STMT
+  prvCopyDataFromQueue (xQueue_6(D), pvBuffer_7(D));
+  # DEBUG BEGIN_STMT
+  MEM[(struct Queue_t *)xQueue_6(D)].u.xQueue.pcReadFrom = pcOriginalReadPosition_10;
+  # DEBUG BEGIN_STMT
+  # DEBUG xReturn => 1
+
+  <bb 14> [local count: 5236217]:
+  # xReturn_4 = PHI <1(13), 0(12)>
+  # DEBUG xReturn => xReturn_4
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  # DEBUG ulNewMaskValue => ulOriginalBASEPRI_16
+  # DEBUG INLINE_ENTRY vPortSetBASEPRI
+  # DEBUG BEGIN_STMT
+  __asm__ __volatile__("   msr basepri, %0 " :  : "r" ulOriginalBASEPRI_16 : "memory");
+  # DEBUG ulNewMaskValue => NULL
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  return xReturn_4;
+
+}
+
+
+
+;; Function uxQueueMessagesWaiting (uxQueueMessagesWaiting, funcdef_no=22, decl_uid=6438, cgraph_uid=23, symbol_order=23)
+
+Modification phase of node uxQueueMessagesWaiting/23
+uxQueueMessagesWaiting (struct QueueDefinition * const xQueue)
+{
+  UBaseType_t uxReturn;
+
+  <bb 2> [local count: 22847857]:
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  if (xQueue_1(D) == 0B)
+    goto <bb 3>; [46.53%]
+  else
+    goto <bb 5>; [53.47%]
+
+  <bb 3> [local count: 10631108]:
+  # DEBUG BEGIN_STMT
+  __asm__ __volatile__(" cpsid i " :  :  : "memory");
+
+  <bb 4> [local count: 1073741824]:
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+
+  <bb 6> [local count: 1073741824]:
+  goto <bb 4>; [100.00%]
+
+  <bb 5> [local count: 12216749]:
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  vPortEnterCritical ();
+  # DEBUG BEGIN_STMT
+  uxReturn_4 ={v} MEM[(struct Queue_t *)xQueue_1(D)].uxMessagesWaiting;
+  # DEBUG uxReturn => uxReturn_4
+  # DEBUG BEGIN_STMT
+  vPortExitCritical ();
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  return uxReturn_4;
+
+}
+
+
+
+;; Function uxQueueSpacesAvailable (uxQueueSpacesAvailable, funcdef_no=23, decl_uid=6440, cgraph_uid=24, symbol_order=24)
+
+Modification phase of node uxQueueSpacesAvailable/24
+uxQueueSpacesAvailable (struct QueueDefinition * const xQueue)
+{
+  UBaseType_t uxReturn;
+  long unsigned int _1;
+  long unsigned int _2;
+
+  <bb 2> [local count: 22847857]:
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  # DEBUG pxQueue => xQueue_3(D)
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  if (xQueue_3(D) == 0B)
+    goto <bb 3>; [46.53%]
+  else
+    goto <bb 5>; [53.47%]
+
+  <bb 3> [local count: 10631108]:
+  # DEBUG BEGIN_STMT
+  __asm__ __volatile__(" cpsid i " :  :  : "memory");
+
+  <bb 4> [local count: 1073741824]:
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+
+  <bb 6> [local count: 1073741824]:
+  goto <bb 4>; [100.00%]
+
+  <bb 5> [local count: 12216749]:
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  vPortEnterCritical ();
+  # DEBUG BEGIN_STMT
+  _1 = MEM[(struct Queue_t *)xQueue_3(D)].uxLength;
+  _2 ={v} MEM[(struct Queue_t *)xQueue_3(D)].uxMessagesWaiting;
+  uxReturn_6 = _1 - _2;
+  # DEBUG uxReturn => uxReturn_6
+  # DEBUG BEGIN_STMT
+  vPortExitCritical ();
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  return uxReturn_6;
+
+}
+
+
+
+;; Function uxQueueMessagesWaitingFromISR (uxQueueMessagesWaitingFromISR, funcdef_no=24, decl_uid=6460, cgraph_uid=25, symbol_order=25)
+
+Modification phase of node uxQueueMessagesWaitingFromISR/25
+uxQueueMessagesWaitingFromISR (struct QueueDefinition * const xQueue)
+{
+  UBaseType_t uxReturn;
+
+  <bb 2> [local count: 35437027]:
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  # DEBUG pxQueue => xQueue_1(D)
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  if (xQueue_1(D) == 0B)
+    goto <bb 3>; [30.00%]
+  else
+    goto <bb 5>; [70.00%]
+
+  <bb 3> [local count: 10631108]:
+  # DEBUG BEGIN_STMT
+  __asm__ __volatile__(" cpsid i " :  :  : "memory");
+
+  <bb 4> [local count: 1073741824]:
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+
+  <bb 6> [local count: 1073741824]:
+  goto <bb 4>; [100.00%]
+
+  <bb 5> [local count: 24805919]:
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  uxReturn_3 ={v} MEM[(struct Queue_t *)xQueue_1(D)].uxMessagesWaiting;
+  # DEBUG uxReturn => uxReturn_3
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  return uxReturn_3;
+
+}
+
+
+
+;; Function uxQueueGetQueueNumber (uxQueueGetQueueNumber, funcdef_no=26, decl_uid=6500, cgraph_uid=27, symbol_order=27)
+
+Modification phase of node uxQueueGetQueueNumber/27
+uxQueueGetQueueNumber (struct QueueDefinition * xQueue)
+{
+  UBaseType_t _3;
+
+  <bb 2> [local count: 1073741824]:
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  _3 = MEM[(struct Queue_t *)xQueue_2(D)].uxQueueNumber;
+  return _3;
+
+}
+
+
+
+;; Function vQueueSetQueueNumber (vQueueSetQueueNumber, funcdef_no=27, decl_uid=6498, cgraph_uid=28, symbol_order=28)
+
+Modification phase of node vQueueSetQueueNumber/28
+vQueueSetQueueNumber (struct QueueDefinition * xQueue, UBaseType_t uxQueueNumber)
+{
+  <bb 2> [local count: 1073741824]:
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  MEM[(struct Queue_t *)xQueue_2(D)].uxQueueNumber = uxQueueNumber_3(D);
+  # DEBUG BEGIN_STMT
+  return;
+
+}
+
+
+
+;; Function ucQueueGetQueueType (ucQueueGetQueueType, funcdef_no=28, decl_uid=6502, cgraph_uid=29, symbol_order=29)
+
+Modification phase of node ucQueueGetQueueType/29
+ucQueueGetQueueType (struct QueueDefinition * xQueue)
+{
+  uint8_t _3;
+
+  <bb 2> [local count: 1073741824]:
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  _3 = MEM[(struct Queue_t *)xQueue_2(D)].ucQueueType;
+  return _3;
+
+}
+
+
+
+;; Function uxQueueGetQueueItemSize (uxQueueGetQueueItemSize, funcdef_no=29, decl_uid=6504, cgraph_uid=30, symbol_order=30)
+
+Modification phase of node uxQueueGetQueueItemSize/30
+uxQueueGetQueueItemSize (struct QueueDefinition * xQueue)
+{
+  UBaseType_t _3;
+
+  <bb 2> [local count: 1073741824]:
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  _3 = MEM[(struct Queue_t *)xQueue_2(D)].uxItemSize;
+  return _3;
+
+}
+
+
+
+;; Function uxQueueGetQueueLength (uxQueueGetQueueLength, funcdef_no=30, decl_uid=6506, cgraph_uid=31, symbol_order=31)
+
+Modification phase of node uxQueueGetQueueLength/31
+uxQueueGetQueueLength (struct QueueDefinition * xQueue)
+{
+  UBaseType_t _3;
+
+  <bb 2> [local count: 1073741824]:
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  _3 = MEM[(struct Queue_t *)xQueue_2(D)].uxLength;
+  return _3;
+
+}
+
+
+
+;; Function xQueueIsQueueEmptyFromISR (xQueueIsQueueEmptyFromISR, funcdef_no=36, decl_uid=6456, cgraph_uid=37, symbol_order=37)
+
+Modification phase of node xQueueIsQueueEmptyFromISR/37
+xQueueIsQueueEmptyFromISR (struct QueueDefinition * const xQueue)
+{
+  BaseType_t xReturn;
+  long unsigned int _1;
+
+  <bb 2> [local count: 35437027]:
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  # DEBUG pxQueue => xQueue_3(D)
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  if (xQueue_3(D) == 0B)
+    goto <bb 3>; [30.00%]
+  else
+    goto <bb 5>; [70.00%]
+
+  <bb 3> [local count: 10631108]:
+  # DEBUG BEGIN_STMT
+  __asm__ __volatile__(" cpsid i " :  :  : "memory");
+
+  <bb 4> [local count: 1073741824]:
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+
+  <bb 8> [local count: 1073741824]:
+  goto <bb 4>; [100.00%]
+
+  <bb 5> [local count: 24805919]:
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  _1 ={v} MEM[(struct Queue_t *)xQueue_3(D)].uxMessagesWaiting;
+  if (_1 == 0)
+    goto <bb 7>; [50.00%]
+  else
+    goto <bb 6>; [50.00%]
+
+  <bb 6> [local count: 12402960]:
+  # DEBUG BEGIN_STMT
+  # DEBUG xReturn => 0
+
+  <bb 7> [local count: 24805919]:
+  # xReturn_2 = PHI <1(5), 0(6)>
+  # DEBUG xReturn => xReturn_2
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  return xReturn_2;
+
+}
+
+
+
+;; Function xQueueIsQueueFullFromISR (xQueueIsQueueFullFromISR, funcdef_no=38, decl_uid=6458, cgraph_uid=39, symbol_order=39)
+
+Modification phase of node xQueueIsQueueFullFromISR/39
+xQueueIsQueueFullFromISR (struct QueueDefinition * const xQueue)
+{
+  BaseType_t xReturn;
+  long unsigned int _1;
+  long unsigned int _2;
+
+  <bb 2> [local count: 35437027]:
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  # DEBUG pxQueue => xQueue_4(D)
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  if (xQueue_4(D) == 0B)
+    goto <bb 3>; [30.00%]
+  else
+    goto <bb 5>; [70.00%]
+
+  <bb 3> [local count: 10631108]:
+  # DEBUG BEGIN_STMT
+  __asm__ __volatile__(" cpsid i " :  :  : "memory");
+
+  <bb 4> [local count: 1073741824]:
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+
+  <bb 8> [local count: 1073741824]:
+  goto <bb 4>; [100.00%]
+
+  <bb 5> [local count: 24805919]:
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  _1 ={v} MEM[(struct Queue_t *)xQueue_4(D)].uxMessagesWaiting;
+  _2 = MEM[(struct Queue_t *)xQueue_4(D)].uxLength;
+  if (_1 == _2)
+    goto <bb 7>; [34.00%]
+  else
+    goto <bb 6>; [66.00%]
+
+  <bb 6> [local count: 16371906]:
+  # DEBUG BEGIN_STMT
+  # DEBUG xReturn => 0
+
+  <bb 7> [local count: 24805919]:
+  # xReturn_3 = PHI <1(5), 0(6)>
+  # DEBUG xReturn => xReturn_3
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  return xReturn_3;
+
+}
+
+
+
+;; Function vQueueAddToRegistry (vQueueAddToRegistry, funcdef_no=39, decl_uid=6480, cgraph_uid=40, symbol_order=40)
+
+Modification phase of node vQueueAddToRegistry/40
+vQueueAddToRegistry (struct QueueDefinition * xQueue, const char * pcQueueName)
+{
+  struct QueueRegistryItem_t * pxEntryToWrite;
+  UBaseType_t ux;
+  struct QueueDefinition * _1;
+  const char * _2;
+
+  <bb 2> [local count: 35437027]:
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  # DEBUG pxEntryToWrite => 0B
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  if (xQueue_9(D) == 0B)
+    goto <bb 3>; [30.00%]
+  else
+    goto <bb 5>; [70.00%]
+
+  <bb 3> [local count: 10631108]:
+  # DEBUG BEGIN_STMT
+  __asm__ __volatile__(" cpsid i " :  :  : "memory");
+
+  <bb 4> [local count: 1073741824]:
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+
+  <bb 17> [local count: 1073741824]:
+  goto <bb 4>; [100.00%]
+
+  <bb 5> [local count: 24805919]:
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  if (pcQueueName_10(D) != 0B)
+    goto <bb 16>; [70.00%]
+  else
+    goto <bb 15>; [30.00%]
+
+  <bb 16> [local count: 17364143]:
+  goto <bb 12>; [100.00%]
+
+  <bb 6> [local count: 31290973]:
+  # DEBUG BEGIN_STMT
+  _1 = xQueueRegistry[ux_3].xHandle;
+  if (_1 == xQueue_9(D))
+    goto <bb 7>; [5.50%]
+  else
+    goto <bb 8>; [94.50%]
+
+  <bb 7> [local count: 1721003]:
+  # ux_8 = PHI <ux_3(6)>
+  # DEBUG BEGIN_STMT
+  pxEntryToWrite_14 = &xQueueRegistry[ux_8];
+  # DEBUG pxEntryToWrite => pxEntryToWrite_14
+  # DEBUG BEGIN_STMT
+  goto <bb 13>; [100.00%]
+
+  <bb 8> [local count: 29569969]:
+  # DEBUG BEGIN_STMT
+  if (pxEntryToWrite_5 == 0B)
+    goto <bb 9>; [30.00%]
+  else
+    goto <bb 11>; [70.00%]
+
+  <bb 9> [local count: 8870991]:
+  _2 = xQueueRegistry[ux_3].pcQueueName;
+  if (_2 == 0B)
+    goto <bb 10>; [30.00%]
+  else
+    goto <bb 11>; [70.00%]
+
+  <bb 10> [local count: 2661297]:
+  # DEBUG BEGIN_STMT
+  pxEntryToWrite_12 = &xQueueRegistry[ux_3];
+  # DEBUG pxEntryToWrite => pxEntryToWrite_12
+
+  <bb 11> [local count: 29569969]:
+  # pxEntryToWrite_4 = PHI <pxEntryToWrite_5(8), 0B(9), pxEntryToWrite_12(10)>
+  # DEBUG pxEntryToWrite => pxEntryToWrite_4
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  ux_13 = ux_3 + 1;
+  # DEBUG ux => ux_13
+
+  <bb 12> [local count: 46934113]:
+  # ux_3 = PHI <ux_13(11), 0(16)>
+  # pxEntryToWrite_5 = PHI <pxEntryToWrite_4(11), 0B(16)>
+  # DEBUG pxEntryToWrite => pxEntryToWrite_5
+  # DEBUG ux => ux_3
+  # DEBUG BEGIN_STMT
+  if (ux_3 != 2)
+    goto <bb 6>; [66.67%]
+  else
+    goto <bb 13>; [33.33%]
+
+  <bb 13> [local count: 17364143]:
+  # pxEntryToWrite_6 = PHI <pxEntryToWrite_5(12), pxEntryToWrite_14(7)>
+  # DEBUG pxEntryToWrite => pxEntryToWrite_6
+  # DEBUG BEGIN_STMT
+  if (pxEntryToWrite_6 != 0B)
+    goto <bb 14>; [70.00%]
+  else
+    goto <bb 15>; [30.00%]
+
+  <bb 14> [local count: 12154900]:
+  # DEBUG BEGIN_STMT
+  pxEntryToWrite_6->pcQueueName = pcQueueName_10(D);
+  # DEBUG BEGIN_STMT
+  pxEntryToWrite_6->xHandle = xQueue_9(D);
+
+  <bb 15> [local count: 24805919]:
+  # DEBUG pxEntryToWrite => NULL
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  return;
+
+}
+
+
+
+;; Function pcQueueGetName (pcQueueGetName, funcdef_no=40, decl_uid=6484, cgraph_uid=41, symbol_order=41)
+
+Modification phase of node pcQueueGetName/41
+pcQueueGetName (struct QueueDefinition * xQueue)
+{
+  const char * pcReturn;
+  UBaseType_t ux;
+  struct QueueDefinition * _1;
+
+  <bb 2> [local count: 35437027]:
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  # DEBUG pcReturn => 0B
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  if (xQueue_5(D) == 0B)
+    goto <bb 3>; [30.00%]
+  else
+    goto <bb 10>; [70.00%]
+
+  <bb 10> [local count: 24805919]:
+  goto <bb 8>; [100.00%]
+
+  <bb 3> [local count: 10631108]:
+  # DEBUG BEGIN_STMT
+  __asm__ __volatile__(" cpsid i " :  :  : "memory");
+
+  <bb 4> [local count: 1073741824]:
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+
+  <bb 11> [local count: 1073741824]:
+  goto <bb 4>; [100.00%]
+
+  <bb 5> [local count: 44701390]:
+  # DEBUG BEGIN_STMT
+  _1 = xQueueRegistry[ux_2].xHandle;
+  if (_1 == xQueue_5(D))
+    goto <bb 6>; [5.50%]
+  else
+    goto <bb 7>; [94.50%]
+
+  <bb 6> [local count: 2458576]:
+  # ux_4 = PHI <ux_2(5)>
+  # DEBUG BEGIN_STMT
+  pcReturn_8 = xQueueRegistry[ux_4].pcQueueName;
+  # DEBUG pcReturn => pcReturn_8
+  # DEBUG BEGIN_STMT
+  goto <bb 9>; [100.00%]
+
+  <bb 7> [local count: 42242813]:
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  ux_7 = ux_2 + 1;
+  # DEBUG ux => ux_7
+
+  <bb 8> [local count: 67048732]:
+  # ux_2 = PHI <ux_7(7), 0(10)>
+  # DEBUG ux => ux_2
+  # DEBUG BEGIN_STMT
+  if (ux_2 != 2)
+    goto <bb 5>; [66.67%]
+  else
+    goto <bb 9>; [33.33%]
+
+  <bb 9> [local count: 24805919]:
+  # pcReturn_3 = PHI <pcReturn_8(6), 0B(8)>
+  # DEBUG pcReturn => pcReturn_3
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  return pcReturn_3;
+
+}
+
+
+
+;; Function vQueueUnregisterQueue (vQueueUnregisterQueue, funcdef_no=41, decl_uid=6482, cgraph_uid=42, symbol_order=42)
+
+Modification phase of node vQueueUnregisterQueue/42
+vQueueUnregisterQueue (struct QueueDefinition * xQueue)
+{
+  UBaseType_t ux;
+
+  <bb 2> [local count: 35437027]:
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  if (xQueue_2(D) == 0B)
+    goto <bb 3>; [30.00%]
+  else
+    goto <bb 5>; [70.00%]
+
+  <bb 3> [local count: 10631108]:
+  # DEBUG BEGIN_STMT
+  __asm__ __volatile__(" cpsid i " :  :  : "memory");
+
+  <bb 4> [local count: 1073741824]:
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+
+  <bb 6> [local count: 1073741824]:
+  goto <bb 4>; [100.00%]
+
+  <bb 5> [local count: 24805919]:
+  # ux_1 = PHI <0(2)>
+  vQueueUnregisterQueue.part.0 (xQueue_2(D));
+  # DEBUG BEGIN_STMT
+  return;
+
+}
+
+
+
+;; Function vQueueDelete (vQueueDelete, funcdef_no=25, decl_uid=6442, cgraph_uid=26, symbol_order=26)
+
+Modification phase of node vQueueDelete/26
+vQueueDelete (struct QueueDefinition * xQueue)
+{
+  <bb 2> [local count: 22847857]:
+  # DEBUG BEGIN_STMT
+  # DEBUG pxQueue => xQueue_1(D)
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  if (xQueue_1(D) == 0B)
+    goto <bb 3>; [46.53%]
+  else
+    goto <bb 5>; [53.47%]
+
+  <bb 3> [local count: 10631108]:
+  # DEBUG BEGIN_STMT
+  __asm__ __volatile__(" cpsid i " :  :  : "memory");
+
+  <bb 4> [local count: 1073741824]:
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+
+  <bb 6> [local count: 1073741824]:
+  goto <bb 4>; [100.00%]
+
+  <bb 5> [local count: 12216749]:
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  vQueueUnregisterQueue (xQueue_1(D));
+  # DEBUG BEGIN_STMT
+  vPortFree (xQueue_1(D));
+  # DEBUG BEGIN_STMT
+  return;
+
+}
+
+
+
+;; Function vQueueWaitForMessageRestricted (vQueueWaitForMessageRestricted, funcdef_no=42, decl_uid=6492, cgraph_uid=43, symbol_order=43)
+
+Modification phase of node vQueueWaitForMessageRestricted/43
+vQueueWaitForMessageRestricted (struct QueueDefinition * xQueue, TickType_t xTicksToWait, const BaseType_t xWaitIndefinitely)
+{
+  signed char _1;
+  signed char _2;
+  long unsigned int _3;
+  struct List_t * _4;
+
+  <bb 2> [local count: 1073741824]:
+  # DEBUG BEGIN_STMT
+  # DEBUG pxQueue => xQueue_8(D)
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  vPortEnterCritical ();
+  # DEBUG BEGIN_STMT
+  _1 ={v} MEM[(struct Queue_t *)xQueue_8(D)].cRxLock;
+  if (_1 == -1)
+    goto <bb 3>; [34.00%]
+  else
+    goto <bb 4>; [66.00%]
+
+  <bb 3> [local count: 365072224]:
+  # DEBUG BEGIN_STMT
+  MEM[(struct Queue_t *)xQueue_8(D)].cRxLock ={v} 0;
+
+  <bb 4> [local count: 1073741824]:
+  # DEBUG BEGIN_STMT
+  _2 ={v} MEM[(struct Queue_t *)xQueue_8(D)].cTxLock;
+  if (_2 == -1)
+    goto <bb 5>; [34.00%]
+  else
+    goto <bb 6>; [66.00%]
+
+  <bb 5> [local count: 365072224]:
+  # DEBUG BEGIN_STMT
+  MEM[(struct Queue_t *)xQueue_8(D)].cTxLock ={v} 0;
+
+  <bb 6> [local count: 1073741824]:
+  # DEBUG BEGIN_STMT
+  vPortExitCritical ();
+  # DEBUG BEGIN_STMT
+  _3 ={v} MEM[(struct Queue_t *)xQueue_8(D)].uxMessagesWaiting;
+  if (_3 == 0)
+    goto <bb 7>; [33.00%]
+  else
+    goto <bb 8>; [67.00%]
+
+  <bb 7> [local count: 354334800]:
+  # DEBUG BEGIN_STMT
+  _4 = &MEM[(struct Queue_t *)xQueue_8(D)].xTasksWaitingToReceive;
+  vTaskPlaceOnEventListRestricted (_4, xTicksToWait_14(D), xWaitIndefinitely_15(D));
+
+  <bb 8> [local count: 1073741824]:
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  prvUnlockQueue (xQueue_8(D));
+  # DEBUG BEGIN_STMT
+  return;
+
+}
+
+

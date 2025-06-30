@@ -1,0 +1,53 @@
+
+Analyzing function: vInitInterruptTable/1
+;; 1 loops found
+;;
+;; Loop 0
+;;  header 0, latch 1
+;;  depth 0, outer -1
+;;  nodes: 0 1 2
+;; 2 succs { 1 }
+
+Analyzing function body size: vInitInterruptTable/1
+		Accounting address calculation.
+
+IPA function summary for vInitInterruptTable/1 inlinable
+  global time:     4.000000
+  self size:       5
+  global size:     0
+  min size:       0
+  self stack:      0
+  global stack:    0
+    size:1.000000, time:1.000000
+    size:3.000000, time:2.000000,  executed if:(not inlined)
+    size:1.000000, time:1.000000,  nonconst if:(op0 changed)
+  calls:
+
+Symbol table:
+
+vInitInterruptTable/1 (vInitInterruptTable) @0683b8c0
+  Type: function definition analyzed
+  Visibility: externally_visible public
+  References: __vector_table__/0 (write) 
+  Referring: 
+  Availability: available
+  Function flags: count:1073741824 (estimated locally) body optimize_size
+  Called by: 
+  Calls: 
+__vector_table__/0 (__vector_table__) @0684fab0
+  Type: variable definition analyzed
+  Visibility: externally_visible public section:.irq_handler
+  References: 
+  Referring: vInitInterruptTable/1 (write) 
+  Availability: available
+  Varpool flags:
+vInitInterruptTable (int id, void * vector)
+{
+  <bb 2> [local count: 1073741824]:
+  # DEBUG BEGIN_STMT
+  __vector_table__[id_2(D)] = vector_3(D);
+  return;
+
+}
+
+

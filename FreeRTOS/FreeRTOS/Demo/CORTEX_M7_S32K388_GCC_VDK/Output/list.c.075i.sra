@@ -1,0 +1,322 @@
+Creating summary for uxListRemove/8:
+  Descriptor for parameter 0 pxItemToRemoveD.6138
+    not a candidate for splitting
+
+
+Creating summary for vListInsert/7:
+  Descriptor for parameter 0 pxListD.6129
+    not a candidate for splitting
+  Descriptor for parameter 1 pxNewListItemD.6130
+    not a candidate for splitting
+
+
+Creating summary for vListInsertEnd/6:
+  Descriptor for parameter 0 pxListD.6124
+    not a candidate for splitting
+  Descriptor for parameter 1 pxNewListItemD.6125
+    not a candidate for splitting
+
+
+Creating summary for vListInitialiseItem/5:
+  Descriptor for parameter 0 pxItemD.6121
+    not a candidate for splitting
+
+
+Creating summary for vListInitialise/4:
+  Descriptor for parameter 0 pxListD.6118
+    not a candidate for splitting
+
+
+
+========== IPA-SRA IPA stage ==========
+
+Summary for node uxListRemove/8:
+  Returns value
+  Descriptor for parameter 0:
+    not a candidate for splitting
+
+
+Summary for node vListInsert/7:
+  Descriptor for parameter 0:
+    not a candidate for splitting
+  Descriptor for parameter 1:
+    not a candidate for splitting
+
+
+Summary for node vListInsertEnd/6:
+  Descriptor for parameter 0:
+    not a candidate for splitting
+  Descriptor for parameter 1:
+    not a candidate for splitting
+
+
+Summary for node vListInitialiseItem/5:
+  Descriptor for parameter 0:
+    not a candidate for splitting
+
+
+Summary for node vListInitialise/4:
+  Descriptor for parameter 0:
+    not a candidate for splitting
+
+
+
+Function vListInitialise/4 disqualified because it cannot be made local.
+Function vListInitialiseItem/5 disqualified because it cannot be made local.
+Function vListInsertEnd/6 disqualified because it cannot be made local.
+Function vListInsert/7 disqualified because it cannot be made local.
+Function uxListRemove/8 disqualified because it cannot be made local.
+
+========== IPA-SRA decisions ==========
+
+========== IPA SRA IPA analysis done ==========
+
+
+Reclaiming functions:
+Reclaiming variables:
+Clearing address taken flags:
+Symbol table:
+
+uxListRemove/8 (uxListRemove) @068f3d20
+  Type: function definition analyzed
+  Visibility: externally_visible public
+  References: 
+  Referring: 
+  Availability: available
+  Function flags: count:1073741824 (estimated locally) body optimize_size
+  Called by: 
+  Calls: 
+vListInsert/7 (vListInsert) @068f3a80
+  Type: function definition analyzed
+  Visibility: externally_visible public
+  References: 
+  Referring: 
+  Availability: available
+  Function flags: count:178956971 (estimated locally) body optimize_size
+  Called by: 
+  Calls: 
+vListInsertEnd/6 (vListInsertEnd) @068f37e0
+  Type: function definition analyzed
+  Visibility: externally_visible public
+  References: 
+  Referring: 
+  Availability: available
+  Function flags: count:1073741824 (estimated locally) body optimize_size
+  Called by: 
+  Calls: 
+vListInitialiseItem/5 (vListInitialiseItem) @068f3540
+  Type: function definition analyzed
+  Visibility: externally_visible public
+  References: 
+  Referring: 
+  Availability: available
+  Function flags: count:1073741824 (estimated locally) body optimize_size
+  Called by: 
+  Calls: 
+vListInitialise/4 (vListInitialise) @068f32a0
+  Type: function definition analyzed
+  Visibility: externally_visible public
+  References: 
+  Referring: 
+  Availability: available
+  Function flags: count:1073741824 (estimated locally) body optimize_size
+  Called by: 
+  Calls: 
+uxListRemove (struct ListItem_t * const pxItemToRemove)
+{
+  struct List_t * const pxList;
+  struct xLIST_ITEM * _1;
+  struct xLIST_ITEM * _2;
+  struct ListItem_t * _3;
+  long unsigned int _4;
+  long unsigned int _5;
+
+  <bb 2> [local count: 1073741824]:
+  # DEBUG BEGIN_STMT
+  pxList_9 = pxItemToRemove_8(D)->pvContainer;
+  # DEBUG pxList => pxList_9
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  _1 = pxItemToRemove_8(D)->pxNext;
+  _2 = pxItemToRemove_8(D)->pxPrevious;
+  _1->pxPrevious = _2;
+  # DEBUG BEGIN_STMT
+  _2->pxNext = _1;
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  _3 = pxList_9->pxIndex;
+  if (_3 == pxItemToRemove_8(D))
+    goto <bb 3>; [30.00%]
+  else
+    goto <bb 4>; [70.00%]
+
+  <bb 3> [local count: 322122544]:
+  # DEBUG BEGIN_STMT
+  pxList_9->pxIndex = _2;
+
+  <bb 4> [local count: 1073741824]:
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  pxItemToRemove_8(D)->pvContainer = 0B;
+  # DEBUG BEGIN_STMT
+  _4 = pxList_9->uxNumberOfItems;
+  _5 = _4 + 4294967295;
+  pxList_9->uxNumberOfItems = _5;
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  return _5;
+
+}
+
+
+vListInsert (struct List_t * const pxList, struct ListItem_t * const pxNewListItem)
+{
+  const TickType_t xValueOfInsertion;
+  struct ListItem_t * pxIterator;
+  struct xLIST_ITEM * _1;
+  long unsigned int _2;
+  struct xLIST_ITEM * _3;
+  long unsigned int _4;
+  long unsigned int _5;
+
+  <bb 2> [local count: 178956971]:
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  xValueOfInsertion_10 = pxNewListItem_9(D)->xItemValue;
+  # DEBUG xValueOfInsertion => xValueOfInsertion_10
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  if (xValueOfInsertion_10 == 4294967295)
+    goto <bb 3>; [34.00%]
+  else
+    goto <bb 4>; [66.00%]
+
+  <bb 3> [local count: 60845371]:
+  # DEBUG BEGIN_STMT
+  pxIterator_13 = pxList_11(D)->xListEnd.pxPrevious;
+  # DEBUG pxIterator => pxIterator_13
+  goto <bb 6>; [100.00%]
+
+  <bb 4> [local count: 118111600]:
+  # DEBUG BEGIN_STMT
+  pxIterator_12 = &pxList_11(D)->xListEnd;
+  # DEBUG pxIterator => pxIterator_12
+
+  <bb 5> [local count: 1073741824]:
+  # pxIterator_6 = PHI <pxIterator_12(4), _1(7)>
+  # DEBUG pxIterator => pxIterator_6
+  # DEBUG BEGIN_STMT
+  _1 = pxIterator_6->pxNext;
+  _2 = _1->xItemValue;
+  if (_2 <= xValueOfInsertion_10)
+    goto <bb 7>; [89.00%]
+  else
+    goto <bb 6>; [11.00%]
+
+  <bb 7> [local count: 955630225]:
+  goto <bb 5>; [100.00%]
+
+  <bb 6> [local count: 178956971]:
+  # pxIterator_7 = PHI <pxIterator_13(3), pxIterator_6(5)>
+  # DEBUG pxIterator => pxIterator_7
+  # DEBUG BEGIN_STMT
+  _3 = pxIterator_7->pxNext;
+  pxNewListItem_9(D)->pxNext = _3;
+  # DEBUG BEGIN_STMT
+  _3->pxPrevious = pxNewListItem_9(D);
+  # DEBUG BEGIN_STMT
+  pxNewListItem_9(D)->pxPrevious = pxIterator_7;
+  # DEBUG BEGIN_STMT
+  pxIterator_7->pxNext = pxNewListItem_9(D);
+  # DEBUG BEGIN_STMT
+  pxNewListItem_9(D)->pvContainer = pxList_11(D);
+  # DEBUG BEGIN_STMT
+  _4 = pxList_11(D)->uxNumberOfItems;
+  _5 = _4 + 1;
+  pxList_11(D)->uxNumberOfItems = _5;
+  # DEBUG BEGIN_STMT
+  return;
+
+}
+
+
+vListInsertEnd (struct List_t * const pxList, struct ListItem_t * const pxNewListItem)
+{
+  struct ListItem_t * const pxIndex;
+  struct xLIST_ITEM * _1;
+  struct xLIST_ITEM * _2;
+  long unsigned int _3;
+  long unsigned int _4;
+
+  <bb 2> [local count: 1073741824]:
+  # DEBUG BEGIN_STMT
+  pxIndex_7 = pxList_6(D)->pxIndex;
+  # DEBUG pxIndex => pxIndex_7
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  pxNewListItem_8(D)->pxNext = pxIndex_7;
+  # DEBUG BEGIN_STMT
+  _1 = pxIndex_7->pxPrevious;
+  pxNewListItem_8(D)->pxPrevious = _1;
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  _2 = pxIndex_7->pxPrevious;
+  _2->pxNext = pxNewListItem_8(D);
+  # DEBUG BEGIN_STMT
+  pxIndex_7->pxPrevious = pxNewListItem_8(D);
+  # DEBUG BEGIN_STMT
+  pxNewListItem_8(D)->pvContainer = pxList_6(D);
+  # DEBUG BEGIN_STMT
+  _3 = pxList_6(D)->uxNumberOfItems;
+  _4 = _3 + 1;
+  pxList_6(D)->uxNumberOfItems = _4;
+  # DEBUG BEGIN_STMT
+  return;
+
+}
+
+
+vListInitialiseItem (struct ListItem_t * const pxItem)
+{
+  <bb 2> [local count: 1073741824]:
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  pxItem_2(D)->pvContainer = 0B;
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  return;
+
+}
+
+
+vListInitialise (struct List_t * const pxList)
+{
+  struct MiniListItem_t * _1;
+
+  <bb 2> [local count: 1073741824]:
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  _1 = &pxList_2(D)->xListEnd;
+  pxList_2(D)->pxIndex = _1;
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  pxList_2(D)->xListEnd.xItemValue = 4294967295;
+  # DEBUG BEGIN_STMT
+  pxList_2(D)->xListEnd.pxNext = _1;
+  # DEBUG BEGIN_STMT
+  pxList_2(D)->xListEnd.pxPrevious = _1;
+  # DEBUG BEGIN_STMT
+  pxList_2(D)->uxNumberOfItems = 0;
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  # DEBUG BEGIN_STMT
+  return;
+
+}
+
+
