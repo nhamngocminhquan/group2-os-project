@@ -218,4 +218,7 @@ config IOSB
 config XLNX_VERSAL_TRNG
     bool
 
+config S32K3X8_MC_ME
+    bool
+
 source macio/Kconfig

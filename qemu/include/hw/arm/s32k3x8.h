@@ -15,6 +15,7 @@
 #include "hw/or-irq.h"
 #include "hw/core/split-irq.h"  // For IRQ splitter
 #include "hw/char/s32k3x8_uart.h"  // UART definitions
+#include "hw/misc/s32k_mc_me.h" // MC_ME definitions
 
  //#include "hw/timer/cmsdk-apb-timer.h"
  #include "hw/timer/s32k3x8-timer.h"
@@ -27,7 +28,7 @@
 // Multi-CPU variables
 #define MAX_CPU                     4               // Absolute maximum number of cores (ex. 388)
 #define CPU_MASK                    0b0101          // The 358 has CPUs 0 and 2, so bits 0 and 2 are selected
-#define USE_SBAF                    0
+#define USE_SBAF                    1
 #define IVT_SIZE                    11
 
 // Values from memory map of reference manual
@@ -46,6 +47,9 @@
 
 #define DTCM_BASE_ADDRESS           0x20000000
 #define DTCM_SIZE                   (128 * KiB)
+
+#define AIPS_BASE_ADDRESS           0x40000000
+#define AIPS_SIZE                   (6144 * KiB)
 
 // Peripheral definitions
 #define NUM_TIMERS 3
@@ -74,9 +78,11 @@ struct S32K3X8MachineState {
     MemoryRegion dtcm[MAX_CPU];
     MemoryRegion pflash;
     MemoryRegion dflash;
+    MemoryRegion aips;
 
     S32K3X8UARTState uart[NUM_UARTS];
     S32K3X8Timer timer[NUM_TIMERS];
+    S32KMcMeState mc_me;
     SplitIRQ irq_splitter[NUM_EXT_IRQ];
 };
 

@@ -16,6 +16,7 @@
 
 #include "hw/char/s32k3x8_uart.h"  // UART definitions
 #include "hw/timer/s32k3x8-timer.h"
+#include "hw/misc/s32k_mc_me.h" // MC_ME definitions
 
 #include "qemu/error-report.h"  // For error reporting
 #include "qemu/cutils.h"        // For size_to_str
@@ -147,6 +148,11 @@ static void s32k3x8_init(MachineState *ms) {
         D_FLASH_SIZE, &error_fatal
     );
     memory_region_add_subregion(system_memory, D_FLASH_BASE_ADDRESS, &sms->dflash);
+    // memory_region_init_rom(
+    //     &sms->aips, NULL, "s32k3x8.aips",
+    //     AIPS_SIZE, &error_fatal
+    // );
+    // memory_region_add_subregion(system_memory, AIPS_BASE_ADDRESS, &sms->aips);
 
     // Q:   Create CPU children
     for (int cpu_i = 0; cpu_i < ms->smp.cpus; cpu_i++) {
@@ -302,6 +308,24 @@ static void s32k3x8_init(MachineState *ms) {
 
     }
     /*E: End UART */
+
+        SysBusDevice *sbd;
+        info_report("Initializing MC_ME");
+        g_autofree char *name = g_strdup_printf("mcme");
+        info_report("Initializing MC_ME at %s", name);
+        object_initialize_child(OBJECT(ms), name, &sms->mc_me, TYPE_S32K3X8_MC_ME);
+        info_report("MC_ME initialized at %s", name);
+        sbd = SYS_BUS_DEVICE(&sms->mc_me);
+        // qdev_prop_set_chr(DEVICE(&sms->uart[i]), "chardev", serial_hd(i)); 
+        //For calculating baud-rate. 
+        // qdev_prop_set_uint32(DEVICE(&sms->uart[i]), "pclk-frq", clock_get_hz(sms->sysclk));
+
+        /* Realize UART */
+        sysbus_realize(sbd, &error_fatal);
+
+        /* Map MMIO region */
+        sysbus_mmio_map(sbd, 0, 0x402DC000);
+
 
     // Q:   Load kernel for simulation, size argument means kernel cannot
     //      exceed this size? (probably cropped). We call it twice because

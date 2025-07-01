@@ -695,3 +695,4 @@ config S32K3X8
     select OR_IRQ
     select SPLIT_IRQ
     select UNIMP
+    select S32K3X8_MC_ME

@@ -21,7 +21,7 @@ KERNEL_PORT_DIR := $(KERNEL_DIR)/portable/GCC/ARM_CM7/r0p1
 OUTPUT_DIR := ./Output
 
 DEMO_NAME := demo
-ELF := $(OUTPUT_DIR)/$(DEMO_NAME).elf
+ELF := test.elf
 MAP := $(OUTPUT_DIR)/$(DEMO_NAME).map
 
 # Compiler toolchain
@@ -152,10 +152,10 @@ clean:
 
 qemu_start:
 	$(QEMU) -machine $(MACHINE) -cpu $(CPU) -kernel \
-	$(ELF) -monitor none -nographic -serial stdio
+	test.elf -monitor none -nographic -serial stdio
 
 qemu_debug:
 	$(QEMU) -machine $(MACHINE) -cpu $(CPU) -kernel \
-	$(ELF) -monitor none -nographic -serial stdio $(QEMU_FLAGS_DBG)
+	test.elf -monitor none -nographic -serial stdio $(QEMU_FLAGS_DBG)
 gdb_start:
 	gdb-multiarch $(ELF)
