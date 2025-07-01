@@ -48,8 +48,7 @@ static uint64_t mcme_read(void *opaque, hwaddr off, unsigned size)
     case 0x300: val = s->pconf; break;
     case 0x304: val = s->pupd;  break;
     case 0x308: val = s->stat;  break;
-    case 0x310: val = 0x1000000; break;
-    case 0x314: case 0x318: case 0x31C:
+    case 0x310: case 0x314: case 0x318: case 0x31C:
         val = s->cofb_stat[(off - 0x310) >> 2];
         break;
     case 0x330: case 0x334: case 0x338: case 0x33C:
@@ -77,6 +76,7 @@ static void mcme_write(void *opaque, hwaddr off, uint64_t val, unsigned size)
     case 0x330: case 0x334: case 0x338: case 0x33C: {
         int idx = (off - 0x330) >> 2;
         s->cofb_clken[idx] = val;
+        s->cofb_stat[idx] = val;
         break;
     }
     default:
