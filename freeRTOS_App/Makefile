@@ -158,4 +158,7 @@ qemu_debug:
 	$(QEMU) -machine $(MACHINE) -cpu $(CPU) -kernel \
 	test.elf -monitor none -nographic -serial stdio $(QEMU_FLAGS_DBG)
 gdb_start:
-	gdb-multiarch $(ELF)
+	gdb-multiarch $(ELF) \
+	-ex 'tar rem :1234' \
+	-ex 'layout asm' \
+	-ex 'b Clock_Ip_PowerClockIpModules'

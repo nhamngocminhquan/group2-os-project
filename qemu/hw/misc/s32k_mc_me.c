@@ -36,10 +36,8 @@
 #include "qemu/osdep.h"
 #include "hw/sysbus.h"
 #include "qemu/log.h"
-#include "exec/address-space.h"
 #include "hw/misc/s32k_mc_me.h"
 
-i=0
 /* -------------------- MMIO access helpers ------------------------- */
 static uint64_t mcme_read(void *opaque, hwaddr off, unsigned size)
 {
@@ -50,7 +48,8 @@ static uint64_t mcme_read(void *opaque, hwaddr off, unsigned size)
     case 0x300: val = s->pconf; break;
     case 0x304: val = s->pupd;  break;
     case 0x308: val = s->stat;  break;
-    case 0x310: case 0x314: case 0x318: case 0x31C:
+    case 0x310: val = 0x1000000; break;
+    case 0x314: case 0x318: case 0x31C:
         val = s->cofb_stat[(off - 0x310) >> 2];
         break;
     case 0x330: case 0x334: case 0x338: case 0x33C:
@@ -101,7 +100,7 @@ static const MemoryRegionOps mcme_ops = {
 /* --------------------- Reset & init hooks ------------------------- */
 static void mcme_reset(DeviceState *d)
 {
-    S32KMcMeState *s = S32K_MC_ME(d);
+    S32KMcMeState *s = S32K3X8_MC_ME(d);
 
     s->pconf = 0x00000001;
     s->pupd  = 0x00000000;
@@ -118,10 +117,15 @@ static void mcme_reset(DeviceState *d)
     }
 }
 
+static void s32k3x8_mcme_realize(DeviceState *dev, Error **errp)
+{
+    mcme_reset(dev);
+}
+
 static void mcme_init(Object *obj)
 {
     SysBusDevice *sbd = SYS_BUS_DEVICE(obj);
-    S32KMcMeState *s = S32K_MC_ME(obj);
+    S32KMcMeState *s = S32K3X8_MC_ME(obj);
 
     memory_region_init_io(&s->mmio, obj, &mcme_ops,
                           s, "s32k3x8-mc-me", 0x400);
@@ -132,7 +136,7 @@ static void mcme_init(Object *obj)
 static void mcme_class_init(ObjectClass *oc, void *data)
 {
     DeviceClass *dc = DEVICE_CLASS(oc);
-    dc->reset = mcme_reset;
+    dc->realize = s32k3x8_mcme_realize;
 }
 
 static const TypeInfo mcme_info = {

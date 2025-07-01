@@ -263,6 +263,9 @@ static void s32k3x8_init(MachineState *ms) {
     // Get reference to first CPU for peripherals
     armv7m = DEVICE(&sms->armv7m[0]);
     
+    create_unimplemented_device("AIPS peripheral region @0x40000000",
+                                0x40000000, 0x00600000);
+
      //-------------- TIMER IMPLEMENTATION -----------------
     for (i = 0; i < NUM_TIMERS; i++) {
         g_autofree char *name = g_strdup_printf("timer%d", i);
